@@ -1,0 +1,74 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls">
+    <Style  TargetType="local:ColorPicker">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ColorPicker">
+                    <Grid>
+                        <Canvas>
+                            <Rectangle x:Name="Hue" Canvas.Left="0" Canvas.Top="0" Width="20" Height="120" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint ="0,0" EndPoint="0,1">
+                                        <GradientStop Offset="0.00" Color="#ffff0000"/>
+                                        <GradientStop Offset="0.17" Color="#ffffff00"/>
+                                        <GradientStop Offset="0.33" Color="#ff00ff00"/>
+                                        <GradientStop Offset="0.50" Color="#ff00ffff"/>
+                                        <GradientStop Offset="0.66" Color="#ff0000ff"/>
+                                        <GradientStop Offset="0.83" Color="#ffff00ff"/>
+                                        <GradientStop Offset="1.00" Color="#ffff0000"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Canvas x:Name="HueSelector" Height="8" Canvas.Left="0" Canvas.Top="-4">
+                                <Path Width="5" Height="8" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF000000" Data="F1 M 276.761,316L 262.619,307.835L 262.619,324.165L 276.761,316 Z " />
+                                <Path Width="5" Height="8" Canvas.Top="8" Canvas.Left="20" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF000000" Data="F1 M 276.761,316L 262.619,307.835L 262.619,324.165L 276.761,316 Z ">
+                                    <Path.RenderTransform>
+                                        <RotateTransform Angle="180" />
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <Rectangle x:Name="HueMonitor" Canvas.Top="0" Canvas.Left="0" Fill="Transparent" Width="20" Height="140" />
+                            <Canvas Canvas.Top="0" Canvas.Left="20">
+                                <Rectangle x:Name="Sample" Width="120" Height="120" Fill="Red"></Rectangle>
+                                <Rectangle x:Name="WhiteGradient" Width="120" Height="120">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="#ffffffff"/>
+                                            <GradientStop Offset="1" Color="#00ffffff"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Rectangle x:Name="BlackGradient" Width="120" Height="120">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,1" EndPoint="0, 0">
+                                            <GradientStop Offset="0" Color="#ff000000"/>
+                                            <GradientStop Offset="1" Color="#00000000"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Canvas x:Name="SampleSelector" Width="10" Height="10" Canvas.Left="100" Canvas.Top="96">
+                                    <Ellipse Width="10" Height="10" StrokeThickness="3" Stroke="#FFFFFFFF"/>
+                                    <Ellipse Width="10" Height="10" StrokeThickness="1" Stroke="#FF000000"/>
+                                </Canvas>
+                                <Rectangle x:Name="SampleMonitor" Fill="Transparent" Width="120" Height="120" />
+                            </Canvas>
+                            <Canvas x:Name="SelectedColorCanvas"  Canvas.Top="120" Canvas.Left="0">
+                                <Rectangle x:Name="SelectedColor" Width="140" Height="20" Fill="Black" />
+                            </Canvas>
+                        </Canvas>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

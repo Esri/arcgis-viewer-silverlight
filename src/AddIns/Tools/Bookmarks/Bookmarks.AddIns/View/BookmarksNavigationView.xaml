@@ -1,0 +1,47 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl 
+    x:Class="Bookmarks.AddIns.BookmarksNavigationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    MinWidth="200"
+    mc:Ignorable="d"
+    d:DesignHeight="200" d:DesignWidth="220">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        
+        <!--ListBox to display configured bookmarks -->
+        <ListBox Name="BookmarksListBox" 
+                 VerticalAlignment="Stretch" 
+                 ItemsSource="{Binding Bookmarks}">
+            
+            <i:Interaction.Triggers>
+                
+                <!-- Trigger that zooms to a bookmark's extent when the bookmark is selected -->
+                <i:EventTrigger EventName="SelectionChanged">
+                    <esri:ZoomToAction 
+                        Geometry="{Binding SelectedItem.Extent, 
+                            ElementName=BookmarksListBox}" 
+                        TargetObject="{Binding Map}" />
+                </i:EventTrigger>
+                
+                <!-- Trigger that clears the selected bookmark when a map extent change is completed. 
+                     This is necessary to allow re-selecting the same bookmark twice in a row (e.g. 
+                     bookmark is selected, map is panned, user wants to select the same bookmark again). -->
+                <i:EventTrigger EventName="ExtentChanged" SourceObject="{Binding Map}">
+                    <ei:ChangePropertyAction PropertyName="SelectedItem" Value="{x:Null}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ListBox>
+    </Grid>
+</UserControl>

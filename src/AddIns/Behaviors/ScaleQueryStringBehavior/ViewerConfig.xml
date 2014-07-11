@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+    <Extension Url="Extensions/Esri.ArcGIS.Client.Application.AddIns.ScaleQueryStringBehavior.xap" InsertPath="//Extensions" />
+    <Behavior xmlns:QueryStringSupport="clr-namespace:Esri.ArcGIS.Client.Application.AddIns;assembly=Esri.ArcGIS.Client.Application.AddIns.ScaleQueryStringBehavior"
+            IsEnabled="True" Title="_ScaleQueryStringBehaviorTitle_"
+            InsertPath="//Behaviors" InsertIndex="0">
+        <Behavior.Class>
+            <QueryStringSupport:GetScaleFromQueryStringBehavior />
+        </Behavior.Class>
+    </Behavior>
+</Config>

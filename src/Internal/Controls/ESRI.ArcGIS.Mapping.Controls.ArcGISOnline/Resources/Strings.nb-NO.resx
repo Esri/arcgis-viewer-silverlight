@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFeatureLayer" xml:space="preserve">
+    <value>Legg til geoobjektlag</value>
+  </data>
+  <data name="AddFeatureLayerWindowCheckAll" xml:space="preserve">
+    <value>Merk alle</value>
+  </data>
+  <data name="AddFeatureLayerWindowUnCheckAll" xml:space="preserve">
+    <value>Opphev merking av alle</value>
+  </data>
+  <data name="ArcGIS" xml:space="preserve">
+    <value>ArcGIS</value>
+  </data>
+  <data name="BackStageControlFeatureMaps" xml:space="preserve">
+    <value>Presenterte kart</value>
+  </data>
+  <data name="BackStageControlGroups" xml:space="preserve">
+    <value>Grupper</value>
+  </data>
+  <data name="BackStageControlMyGroups" xml:space="preserve">
+    <value>Mine grupper</value>
+  </data>
+  <data name="BackStageControlMyOrgGroups" xml:space="preserve">
+    <value>Min organisasjons grupper</value>
+  </data>
+  <data name="BackStageControlMyOrgPublicGroups" xml:space="preserve">
+    <value>Min organisasjons offentlige grupper</value>
+  </data>
+  <data name="BackStageControlMyMaps" xml:space="preserve">
+    <value>Mine kart</value>
+  </data>
+  <data name="BackStageControlSearch" xml:space="preserve">
+    <value>Søk</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>Klikk her for å vise beskrivelsen i et separat nettleservindu</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>Lukk detaljer</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Kommentarer</value>
+  </data>
+  <data name="ContentEveryone" xml:space="preserve">
+    <value>alle</value>
+  </data>
+  <data name="ContentGroups" xml:space="preserve">
+    <value>grupper</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Opprettet av</value>
+  </data>
+  <data name="DefineQueryWindowAlias" xml:space="preserve">
+    <value>Alias:</value>
+  </data>
+  <data name="DefineQueryWindowAnd" xml:space="preserve">
+    <value>og</value>
+  </data>
+  <data name="DefineQueryWindowApply" xml:space="preserve">
+    <value>Bruk</value>
+  </data>
+  <data name="DefineQueryWindowClickPickDate" xml:space="preserve">
+    <value>Klikk for å velge en dato som er formatert for bruk i uttrykket.</value>
+  </data>
+  <data name="DefineQueryWindowData" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="DefineQueryWindowExpression" xml:space="preserve">
+    <value>Uttrykk:</value>
+  </data>
+  <data name="DefineQueryWindowFailedToRetrieveSampleFeaturesForLayer" xml:space="preserve">
+    <value>Kunne ikke hente eksempel-geoobjekter for kartlag.</value>
+  </data>
+  <data name="DefineQueryWindowFields" xml:space="preserve">
+    <value>Felt:</value>
+  </data>
+  <data name="DefineQueryWindowLike" xml:space="preserve">
+    <value>lik</value>
+  </data>
+  <data name="DefineQueryWindowName" xml:space="preserve">
+    <value>Navn:</value>
+  </data>
+  <data name="DefineQueryWindowNot" xml:space="preserve">
+    <value>ikke</value>
+  </data>
+  <data name="DefineQueryWindowOr" xml:space="preserve">
+    <value>eller</value>
+  </data>
+  <data name="DefineQueryWindowQuery" xml:space="preserve">
+    <value>Spørring</value>
+  </data>
+  <data name="DefineQueryWindowTableIsSampleOfFeatureLayer" xml:space="preserve">
+    <value>Følgende tabell er et eksempel på geoobjekter på kartlaget.</value>
+  </data>
+  <data name="DefineQueryWindowType" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="DescriptionForMapCanotBeDisplayed" xml:space="preserve">
+    <value>Beskrivelsen av dette kartet kan ikke vises i dette vinduet.</value>
+  </data>
+  <data name="EnterPlaceNameAddressLatLongitutePair" xml:space="preserve">
+    <value>Oppgi stedsnavn, adresse eller bredde-/lengdegradpar</value>
+  </data>
+  <data name="ExceptionDeleteFailed" xml:space="preserve">
+    <value>Sletting mislyktes</value>
+  </data>
+  <data name="ExceptionDeleteFailedUserSignIn" xml:space="preserve">
+    <value>Sletting mislyktes. Bruker er ikke logget på.</value>
+  </data>
+  <data name="ExceptionFaileAcceptApplicateForGroup" xml:space="preserve">
+    <value>Kunne ikke godta søker {0} for gruppe {1}</value>
+  </data>
+  <data name="ExceptionFaileDeclineApplicateForGroup" xml:space="preserve">
+    <value>Kunne ikke avvise søker {0} for gruppe {1}</value>
+  </data>
+  <data name="ExceptionFailedInviteUserToGroup" xml:space="preserve">
+    <value>Kunne ikke invitere brukere {0} til gruppe {1}</value>
+  </data>
+  <data name="ExceptionFailedLeaveRequestForGroup" xml:space="preserve">
+    <value>Kunne ikke sende sende forespørsel om fjerning av bruker {0} fra gruppe {1}</value>
+  </data>
+  <data name="ExceptionFailedSendJoinRequestToGroup" xml:space="preserve">
+    <value>Kunne ikke sende medlemsforespørsel for bruker {0} til gruppe {1}</value>
+  </data>
+  <data name="ExceptionFailedToAcceptGroupInvitationForGroup" xml:space="preserve">
+    <value>Kunne ikke godta gruppeinvitasjon for gruppe {0} av {1}</value>
+  </data>
+  <data name="ExceptionFailedToCreateGroup" xml:space="preserve">
+    <value>Kunne ikke opprette gruppe.</value>
+  </data>
+  <data name="ExceptionFailedToDeclineGroupInvitationForGroup" xml:space="preserve">
+    <value>Kunne ikke avvise gruppeinvitasjon for gruppe {0} av {1}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteGroup" xml:space="preserve">
+    <value>Kunne ikke slette gruppe {0}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteNoitification" xml:space="preserve">
+    <value>Kunne ikke slette varsel {0} av {1}</value>
+  </data>
+  <data name="ExceptionFailedToGetGroupApplicationsForGroup" xml:space="preserve">
+    <value>Kunne ikke hente gruppesøknader for gruppe {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveTagForUser" xml:space="preserve">
+    <value>Kunne ikke hente koder for bruker {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveOrgGroups" xml:space="preserve">
+    <value>Kunne ikke hente organisasjonsgrupper</value>
+  </data>
+  <data name="ExceptionFailedToShareItem" xml:space="preserve">
+    <value>Kunne ikke dele objekt {0}</value>
+  </data>
+  <data name="ExceptionFailedToUpdateGroup" xml:space="preserve">
+    <value>Kunne ikke oppdatere gruppe {0}</value>
+  </data>
+  <data name="ExceptionGetCommentsFailed" xml:space="preserve">
+    <value>Henting av kommentarer mislyktes.</value>
+  </data>
+  <data name="ExceptionGetFolderFailedUserSignedIn" xml:space="preserve">
+    <value>GetFolder mislyktes. Bruker er ikke logget på.</value>
+  </data>
+  <data name="ExceptionNoUserSignedIn" xml:space="preserve">
+    <value>Ingen bruker er logget på.</value>
+  </data>
+  <data name="ExceptionSignInFailed" xml:space="preserve">
+    <value>Pålogging mislyktes.</value>
+  </data>
+  <data name="FeatureMapsControlCloseParenthesis" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="FeatureMapsControlDetails" xml:space="preserve">
+    <value>Detaljer</value>
+  </data>
+  <data name="FeatureMapsControlLastModified" xml:space="preserve">
+    <value>(sist endret: </value>
+  </data>
+  <data name="FeatureMapsControlOpen" xml:space="preserve">
+    <value>Åpne</value>
+  </data>
+  <data name="GroupControlClickHereToViewInSeparateBrowser" xml:space="preserve">
+    <value>Klikk her for å vise beskrivelsen i et separat nettleservindu</value>
+  </data>
+  <data name="GroupControlCloseGroup" xml:space="preserve">
+    <value>Lukk denne gruppen</value>
+  </data>
+  <data name="GroupControlDescription" xml:space="preserve">
+    <value>Beskrivelse</value>
+  </data>
+  <data name="GroupControlFeaturedMaps" xml:space="preserve">
+    <value>Presenterte kart</value>
+  </data>
+  <data name="GroupControlNoFeaturedMapsFound" xml:space="preserve">
+    <value>Fant ingen presenterte kart.</value>
+  </data>
+  <data name="GroupControlNoMapsFound" xml:space="preserve">
+    <value>Fant ingen kart.</value>
+  </data>
+  <data name="GroupControlOwner" xml:space="preserve">
+    <value>Eier</value>
+  </data>
+  <data name="GroupControlPrivateUserCannotFindGroup" xml:space="preserve">
+    <value>Privat (brukere kan ikke finne gruppen, og kan bare bli med etter invitasjon)</value>
+  </data>
+  <data name="GroupControlPublicUserCanSearchAndFindGroup" xml:space="preserve">
+    <value>Offentlig (brukere kan søke etter og finne gruppen)</value>
+  </data>
+  <data name="GroupControlSearchOwner" xml:space="preserve">
+    <value>eier: {0}</value>
+  </data>
+  <data name="GroupControlTags" xml:space="preserve">
+    <value>Koder</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Grupper</value>
+  </data>
+  <data name="HighestRated" xml:space="preserve">
+    <value>Høyest vurderte</value>
+  </data>
+  <data name="HintTextBoxToolTip" xml:space="preserve">
+    <value>Oppgi stedsnavn, adresse eller bredde-/lengdegradpar</value>
+  </data>
+  <data name="ItemNotFound" xml:space="preserve">
+    <value>Fant ikke objekt: {0}</value>
+  </data>
+  <data name="LastModified" xml:space="preserve">
+    <value>Sist endret</value>
+  </data>
+  <data name="MapDetailsRating" xml:space="preserve">
+    <value>({0} vurderinger)</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Kart</value>
+  </data>
+  <data name="MapServiceReferenceInvalid" xml:space="preserve">
+    <value>Karttjenestereferansen er ugyldig. Tjenesten kunne ikke legges til kartet.</value>
+  </data>
+  <data name="MapServiceReferenceNoDetails" xml:space="preserve">
+    <value>Karttjenestereferansen er ugyldig. Ingen detaljer kan vises.</value>
+  </data>
+  <data name="MostComments" xml:space="preserve">
+    <value>Flest kommentarer</value>
+  </data>
+  <data name="MostPopular" xml:space="preserve">
+    <value>Mest populære</value>
+  </data>
+  <data name="MostRecentlyAdded" xml:space="preserve">
+    <value>Sist lagt til</value>
+  </data>
+  <data name="MostRelevant" xml:space="preserve">
+    <value>Mest relevant</value>
+  </data>
+  <data name="MyGroupControlGroups" xml:space="preserve">
+    <value>{0} grupper</value>
+  </data>
+  <data name="MyGroupControlOn" xml:space="preserve">
+    <value>på</value>
+  </data>
+  <data name="MyGroupControlOpenGroup" xml:space="preserve">
+    <value>Åpne denne gruppen</value>
+  </data>
+  <data name="MyGroupControlZeroGroups" xml:space="preserve">
+    <value>0 grupper</value>
+  </data>
+  <data name="MyMapControlMaps" xml:space="preserve">
+    <value>{0} kart</value>
+  </data>
+  <data name="MyMapControlZeroMaps" xml:space="preserve">
+    <value>0 kart</value>
+  </data>
+  <data name="Places" xml:space="preserve">
+    <value>Steder</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Egenskaper</value>
+  </data>
+  <data name="RecentMaps" xml:space="preserve">
+    <value>Siste kart</value>
+  </data>
+  <data name="SearchArcGISCom" xml:space="preserve">
+    <value>Søk på ArcGIS.com</value>
+  </data>
+  <data name="SearchControlAdd" xml:space="preserve">
+    <value>Legg til</value>
+  </data>
+  <data name="SearchControlMapServiceFound" xml:space="preserve">
+    <value>Karttjeneste funnet.</value>
+  </data>
+  <data name="SearchControlResultsFound" xml:space="preserve">
+    <value>{0} resultater funnet.</value>
+  </data>
+  <data name="SearchControlServiceCouldNotBeAccessed" xml:space="preserve">
+    <value>Tjenesten kunne ikke nås.</value>
+  </data>
+  <data name="SearchControlZeroResultsFound" xml:space="preserve">
+    <value>0 resultater funnet.</value>
+  </data>
+  <data name="SearchDetailsBy" xml:space="preserve">
+    <value>ved</value>
+  </data>
+  <data name="SearchDetailsRating" xml:space="preserve">
+    <value>Vurdering: </value>
+  </data>
+  <data name="SearchMapResultsFor" xml:space="preserve">
+    <value>{0} resultater for {1}</value>
+  </data>
+  <data name="SearchTextBoxToolTip" xml:space="preserve">
+    <value>Oppgi stedsnavn, adresse eller bredde-/lengdegradpar</value>
+  </data>
+  <data name="SearchTheWeb" xml:space="preserve">
+    <value>Søk på Internett"</value>
+  </data>
+  <data name="SearchWebDetailsAdd" xml:space="preserve">
+    <value>Legg til</value>
+  </data>
+  <data name="SearchWebDetailsCopyright" xml:space="preserve">
+    <value>Opphavsrett: </value>
+  </data>
+  <data name="SearchWebDetailsDescription" xml:space="preserve">
+    <value>Beskrivelse: </value>
+  </data>
+  <data name="SearchWebDetailsExploreGISServer" xml:space="preserve">
+    <value>Utforsk denne GIS-serveren</value>
+  </data>
+  <data name="SearchWebDetailsName" xml:space="preserve">
+    <value>Navn:</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sorter etter</value>
+  </data>
+  <data name="SortResults" xml:space="preserve">
+    <value>Sorter resultater</value>
+  </data>
+  <data name="SortSearchResults" xml:space="preserve">
+    <value>Sorter søkeresultatene.</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Sammendrag</value>
+  </data>
+  <data name="TheWeb" xml:space="preserve">
+    <value>Internett</value>
+  </data>
+  <data name="TitleAZ" xml:space="preserve">
+    <value>Tittel A-Z</value>
+  </data>
+  <data name="TitleZA" xml:space="preserve">
+    <value>Tittel Z-A</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="UserSearchFailed" xml:space="preserve">
+    <value>Brukersøk mislyktes.</value>
+  </data>
+  <data name="BackStageControlRecent" xml:space="preserve">
+    <value>Nylige</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Logg på</value>
+  </data>
+  <data name="SignInForgotYourPassword" xml:space="preserve">
+    <value>Glemt passordet?</value>
+  </data>
+  <data name="SignInSignUp" xml:space="preserve">
+    <value>Registrer deg</value>
+  </data>
+  <data name="InvalidIDOrPassword" xml:space="preserve">
+    <value>Ugyldig ID eller passord.</value>
+  </data>
+  <data name="NewHere" xml:space="preserve">
+    <value>Ny her?</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Passord:</value>
+  </data>
+  <data name="UsernamePrompt" xml:space="preserve">
+    <value>Brukernavn:</value>
+  </data>
+  <data name="DescriptionForGroupCanotBeDisplayed" xml:space="preserve">
+    <value>Beskrivelsen av denne gruppen kan ikke vises i dette vinduet.</value>
+  </data>
+  <data name="GroupControlOwnerParenthesis" xml:space="preserve">
+    <value>(Eier)</value>
+  </data>
+  <data name="LastModifiedPrompt" xml:space="preserve">
+    <value>(sist endret:</value>
+  </data>
+  <data name="LastModifiedPromptEnd" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="MapDetailsControlAverageRating" xml:space="preserve">
+    <value>Gjennomsnittsvurdering</value>
+  </data>
+  <data name="MapDetailsControlType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="OnWithSpace" xml:space="preserve">
+    <value> på </value>
+  </data>
+  <data name="SearchR" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="LoadingMaps" xml:space="preserve">
+    <value>Laster inn kart...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Fjern</value>
+  </data>
+  <data name="NoFeaturedMaps" xml:space="preserve">
+    <value>Ingen presenterte kart tilgjengelig nå</value>
+  </data>
+  <data name="SigningIn" xml:space="preserve">
+    <value>Logger på...</value>
+  </data>
+  <data name="SignInLabel" xml:space="preserve">
+    <value>Logg på {0}</value>
+  </data>
+  <data name="CreatedByOwnerOnDate" xml:space="preserve">
+    <value>Opprettet av {0} den {1}</value>
+  </data>
+  <data name="WebMapOwnerDateFormat" xml:space="preserve">
+    <value>Webkart av {0} (sist endret: {1})</value>
+  </data>
+  <data name="WebMapBy" xml:space="preserve">
+    <value>Webkart av {0}</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>Pålogging mislyktes</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Medlemmer</value>
+  </data>
+</root>

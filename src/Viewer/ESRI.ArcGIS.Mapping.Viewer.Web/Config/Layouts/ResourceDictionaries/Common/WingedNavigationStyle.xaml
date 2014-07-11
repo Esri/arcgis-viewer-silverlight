@@ -1,0 +1,1011 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"        
+    mc:Ignorable="d" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+	xmlns:converters="clr-namespace:ESRI.ArcGIS.Client.Application.Layout.Converters;assembly=ESRI.ArcGIS.Client.Application.Layout"
+>
+    <converters:LocalizationConverter x:Key="LayoutLocalization"/>
+
+    
+    <Style x:Key="navInnerBorderStyle" TargetType="Border">
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <DropShadowEffect x:Key="NavShadowEffect" Color="Black" Direction="-45" BlurRadius="20" Opacity=".75" />
+
+    <Style x:Key="OuterSideWingBorderStyle" TargetType="Border" >
+        <Setter Property="CornerRadius" Value="5,5,40,0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Margin" Value="0" /> 
+        <Setter Property="BorderBrush" Value="{StaticResource AccentTextColorBrush}" />
+        <Setter Property="MinWidth" Value="200" />
+        <Setter Property="Height" Value="40" /> 
+        <Setter Property="Background" Value="{StaticResource AccentColorBrush}" />
+        <Setter Property="Effect" Value="{StaticResource NavShadowEffect}" />
+    </Style>
+    
+    <Style x:Key="InnerSideWingBorderStyle" TargetType="Border" >
+        <Setter Property="CornerRadius" Value="4,4,39,0" />  
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BorderBrush" Value="{StaticResource SelectionOutlineColorBrush}" />
+        <Setter Property="Background" Value="{StaticResource AccentColorBrush}" />
+        <Setter Property="Padding" Value="90,2,20,2" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="BottomOuterSideWingBorderStyle" TargetType="Border" >
+        <Setter Property="CornerRadius" Value="5,40,5,5" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BorderBrush" Value="{StaticResource AccentTextColorBrush}" />
+        <Setter Property="MinWidth" Value="200" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Background" Value="{StaticResource AccentColorBrush}" />
+        <Setter Property="Effect" Value="{StaticResource NavShadowEffect}" />
+    </Style>
+
+    <Style x:Key="BottomInnerSideWingBorderStyle" TargetType="Border" >
+        <Setter Property="CornerRadius" Value="4,39,4,4" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BorderBrush" Value="{StaticResource SelectionOutlineColorBrush}" />
+        <Setter Property="Background" Value="{StaticResource AccentColorBrush}" />
+        <Setter Property="Padding" Value="90,2,20,2" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <SolidColorBrush x:Key="oceanBrush" Color="#FF6CA1D8" />
+    <SolidColorBrush x:Key="landBrush" Color="#FFD8D7D2" />
+
+    <SolidColorBrush x:Key="levelGreaterThanBrush" Color="#40FFFFFF" />
+    <SolidColorBrush x:Key="levelLessThanBrush" Color="#40000000" />
+    <SolidColorBrush x:Key="levelEqualsBrush" Color="#80FFFFFF" />
+
+    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Name="NavBorderGradient">
+        <GradientStop Color="#FFFFFFFF"/>
+        <GradientStop Color="#FF050745" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="DiskBackgroundGradient" StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#FF4682AD" Offset="0" />
+        <GradientStop Color="#FF265374" Offset="0.498" />
+        <GradientStop Color="#FF366789" Offset="0.484" />
+        <GradientStop Color="#FF022A47" Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="StripeDiagnol" StartPoint="0,0" EndPoint="6,6" MappingMode="Absolute" SpreadMethod="Repeat">
+        <GradientStop Color="#33ffffff" Offset="0.5" />
+        <GradientStop Color="#33000000" Offset="0.5" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="NavNormalBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1"   >
+        <GradientStop Color="#99000000" Offset="0" />
+        <GradientStop Color="#00000000" Offset="0.5" />
+        <GradientStop Color="#99000000" Offset="1" />
+
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="progressBarGlass" Color="Transparent" />
+
+    <SolidColorBrush x:Key="NavHoverBrush" Color="#FFAAAAAA" />
+    <LinearGradientBrush x:Key="NavPressedBrush" EndPoint="0.5,0.971" StartPoint="0.5,0.042">
+        <GradientStop Color="#4C000000" Offset="0" />
+        <GradientStop Color="#26FFFFFF" Offset="1" />
+        <GradientStop Color="#4C000000" Offset="0.467" />
+        <GradientStop Color="#26FFFFFF" Offset="0.479" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="NavDisabledBackgroundBrush" Color="#FFD4D4D4" />
+    <LinearGradientBrush x:Key="NavShineBrush" EndPoint="0.5,0.971" StartPoint="0.5,0.042">
+        <GradientStop Color="#59FFFFFF" Offset="0" />
+        <GradientStop Color="#00FFFFFF" Offset="1" />
+        <GradientStop Color="#26FFFFFF" Offset="0.467" />
+        <GradientStop Color="#00FFFFFF" Offset="0.475" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="HoverNavShineBrush" EndPoint="0.5,0.971" StartPoint="0.5,0.042">
+        <GradientStop Color="#4CFFFFFF" Offset="0" />
+        <GradientStop Color="#26FFFFFF" Offset="1" />
+        <GradientStop Color="#26FFFFFF" Offset="0.467" />
+        <GradientStop Color="#00FFFFFF" Offset="0.475" />
+        <GradientStop Color="#00FFFFFF" Offset="0.856" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ZoomSliderBoxes" StartPoint="0,0.5" EndPoint="1,0.5"   >
+        <GradientStop Color="#66000000" Offset="0" />
+        <GradientStop Color="#00000000" Offset="0.5" />
+        <GradientStop Color="#66000000" Offset="1" />
+
+    </LinearGradientBrush>
+
+    <RadialGradientBrush x:Key="NavButtonGradient" >
+        <GradientStop Color="#00000000" Offset="0"/>
+        <GradientStop Color="#66000000" Offset="1"/>
+    </RadialGradientBrush>
+
+    <!-- Clear Button Style-->
+    <Style TargetType="Button" x:Key="NavClearButtonStyle" >
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="Foreground" Value="#00FFFFFF" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+                    <Grid x:Name="ButtonRoot" RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <ScaleTransform x:Name="ButtonScaleTransform" ScaleX="0.85" ScaleY="0.85" />
+                        </Grid.RenderTransform>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates" >
+                                <vsm:VisualState x:Name="Normal" >
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ButtonRoot" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="0.85" Duration="0:0:0.1" />
+                                        <DoubleAnimation Storyboard.TargetName="ButtonRoot" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="0.85" Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ButtonRoot" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.1" />
+                                        <DoubleAnimation Storyboard.TargetName="ButtonRoot" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Pressed">
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Disabled">
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates" >
+                                <vsm:VisualState x:Name="Focused">
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Unfocused" />
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" CornerRadius="3" Background="#00FFFFFF" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" >
+                            <Grid Background="{TemplateBinding Background}" Margin="1">
+                                <Border Opacity="0" x:Name="BackgroundAnimation" Background="#FF448DCA" />
+                                <Rectangle x:Name="BackgroundGradient" Fill="#00FFFFFF" />
+                            </Grid>
+                        </Border>
+                        <ContentPresenter x:Name="contentPresenter" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}"  />
+                        <Rectangle x:Name="DisabledVisualElement" RadiusX="3" RadiusY="3" Fill="#00FFFFFF" Opacity="0" IsHitTestVisible="false"  />
+                        <Rectangle x:Name="FocusVisualElement" RadiusX="2" RadiusY="2" Margin="1" Stroke="#00FFFFFF" StrokeThickness="1" Opacity="0" IsHitTestVisible="false"  />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Common Thumb-->
+    <Style TargetType="Thumb" x:Key="NavThumbStyle">
+        <Setter Property="Background" Value="{StaticResource DiskBackgroundGradient}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="BorderBrush" Value="{StaticResource NavBorderGradient}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Grid>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualStateGroup.Transitions>
+                                    <vsm:VisualTransition GeneratedDuration="00:00:00.1" To="MouseOver" />
+                                    <vsm:VisualTransition GeneratedDuration="00:00:00.1" To="Pressed" />
+                                    <vsm:VisualTransition From="Normal" GeneratedDuration="00:00:00.3000000" To="MouseOver" />
+                                    <vsm:VisualTransition From="MouseOver" GeneratedDuration="00:00:00.5000000" To="Normal" />
+                                    <vsm:VisualTransition From="Pressed" GeneratedDuration="00:00:00.5000000" To="MouseOver" />
+                                    <vsm:VisualTransition From="MouseOver" GeneratedDuration="00:00:00.3000000" To="Pressed" />
+                                </vsm:VisualStateGroup.Transitions>
+                                <vsm:VisualState x:Name="Normal" />
+                                <vsm:VisualState x:Name="MouseOver">
+                                    <Storyboard>
+
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Pressed">
+                                    <Storyboard>
+
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="PressedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DisabledVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="0.5" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualStateGroup.Transitions>
+                                    <vsm:VisualTransition From="Focused" GeneratedDuration="00:00:00.5000000" To="Unfocused" />
+                                    <vsm:VisualTransition From="Unfocused" GeneratedDuration="00:00:00.3000000" To="Focused" />
+                                </vsm:VisualStateGroup.Transitions>
+                                <vsm:VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.5" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Unfocused" />
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" />
+                        <Border x:Name="HoverBorder" Opacity="0" Background="{StaticResource NavHoverBrush}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" />
+                        <Border x:Name="HoverShineBorder" Opacity="0" Background="{StaticResource HoverNavShineBrush}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" />
+                        <Border x:Name="PressedBorder" Opacity="0" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" Background="{StaticResource NavPressedBrush}" />
+                        <Border x:Name="ShineBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" Background="{StaticResource NavShineBrush}" Opacity="1" />
+                        <Border x:Name="DisabledVisualElement" IsHitTestVisible="false" Background="{StaticResource NavDisabledBackgroundBrush}" CornerRadius="3.5,3.5,3.5,3.5" Opacity="0" />
+                        <Border x:Name="FocusVisualElement" IsHitTestVisible="false" Visibility="Collapsed" BorderBrush="{StaticResource HoverNavShineBrush}" BorderThickness="1" CornerRadius="3,3,3,3" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Common Slider-->
+    <Style TargetType="Slider" x:Key="NavSliderStyle">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Maximum" Value="10" />
+        <Setter Property="Minimum" Value="0" />
+        <Setter Property="Value" Value="0" />
+        <Setter Property="BorderBrush" >
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF161B4B" Offset="0"/>
+                    <GradientStop Color="#FF44449E" Offset="0.5" />
+                    <GradientStop Color="#FF161B4B" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Slider">
+                    <Grid x:Name="Root" RenderTransformOrigin="0.5,0.5">
+                        <Grid.Resources>
+                            <ControlTemplate x:Key="RepeatButtonTemplate">
+                                <Grid x:Name="Root" Opacity="0" Background="Transparent" />
+                            </ControlTemplate>
+                        </Grid.Resources>
+                        <Grid.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                        </Grid.RenderTransform>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal" >
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="MouseOver">
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="0.25" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="HorizontalTemplate" Background="{TemplateBinding Background}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Height="4" Margin="5,0,5,0" Grid.Column="0" Grid.ColumnSpan="3" Fill="#FF022A47" Stroke="Black" StrokeThickness="1" RadiusX="4" RadiusY="4" />
+                            <RepeatButton x:Name="HorizontalTrackLargeChangeDecreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Column="0" />
+                            <Thumb Height="10" x:Name="HorizontalThumb" Style="{StaticResource NavThumbStyle}" Width="8" IsTabStop="True" Grid.Column="1" Cursor="SizeWE" />
+                            <RepeatButton x:Name="HorizontalTrackLargeChangeIncreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Column="2" />
+                        </Grid>
+                        <Grid x:Name="VerticalTemplate" Visibility="Collapsed" Background="{TemplateBinding Background}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Rectangle Margin="0,5,0,5" Width="4" Grid.Row="0" Grid.RowSpan="3" Fill="#FF022A47" Stroke="Black" StrokeThickness="1" RadiusX="4" RadiusY="4" />
+                            <RepeatButton x:Name="VerticalTrackLargeChangeDecreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Row="2" />
+                            <Thumb Height="8" x:Name="VerticalThumb" Width="10" IsTabStop="True" Grid.Row="1" Style="{StaticResource NavThumbStyle}" Cursor="SizeNS" />
+                            <RepeatButton x:Name="VerticalTrackLargeChangeIncreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Row="0" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Zoom Thumb-->
+    <Style TargetType="Thumb" x:Key="NavZoomThumbStyle">
+        <Setter Property="Background" Value="#33FFFFFF" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="BorderBrush" Value="{StaticResource NavNormalBorderBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Grid>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualStateGroup.Transitions>
+                                    <vsm:VisualTransition GeneratedDuration="00:00:00.1" To="MouseOver" />
+                                    <vsm:VisualTransition GeneratedDuration="00:00:00.1" To="Pressed" />
+                                    <vsm:VisualTransition From="Normal" GeneratedDuration="00:00:00.3000000" To="MouseOver" />
+                                    <vsm:VisualTransition From="MouseOver" GeneratedDuration="00:00:00.5000000" To="Normal" />
+                                    <vsm:VisualTransition From="Pressed" GeneratedDuration="00:00:00.5000000" To="MouseOver" />
+                                    <vsm:VisualTransition From="MouseOver" GeneratedDuration="00:00:00.3000000" To="Pressed" />
+                                </vsm:VisualStateGroup.Transitions>
+                                <vsm:VisualState x:Name="Normal" />
+                                <vsm:VisualState x:Name="MouseOver">
+                                    <Storyboard>
+
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Pressed">
+                                    <Storyboard>
+
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="PressedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DisabledVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="0.5" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualStateGroup.Transitions>
+                                    <vsm:VisualTransition From="Focused" GeneratedDuration="00:00:00.5000000" To="Unfocused" />
+                                    <vsm:VisualTransition From="Unfocused" GeneratedDuration="00:00:00.3000000" To="Focused" />
+                                </vsm:VisualStateGroup.Transitions>
+                                <vsm:VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.5" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Unfocused" />
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2" />
+                        <Border x:Name="HoverBorder" Opacity="0" Background="{StaticResource NavHoverBrush}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2" />
+                        <Border x:Name="HoverShineBorder" Opacity="0" Background="{StaticResource HoverNavShineBrush}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2" />
+                        <Border x:Name="PressedBorder" Opacity="0" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2" Background="{StaticResource NavPressedBrush}" />
+                        <Border x:Name="ShineBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2" Background="{StaticResource NavShineBrush}" Opacity="1" />
+                        <Border x:Name="DisabledVisualElement" IsHitTestVisible="false" Background="{StaticResource NavDisabledBackgroundBrush}" CornerRadius="2.5" Opacity="0" />
+                        <Border x:Name="FocusVisualElement" IsHitTestVisible="false" Visibility="Collapsed" BorderBrush="{StaticResource HoverNavShineBrush}" BorderThickness="1" CornerRadius="2" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- Zoom Slider-->
+    <Style TargetType="Slider" x:Key="ZoomNavSliderStyle">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Maximum" Value="1" />
+        <Setter Property="Minimum" Value="0" />
+        <Setter Property="Value" Value="0" />
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0" />
+                    <GradientStop Color="#FF8399A9" Offset="0.375" />
+                    <GradientStop Color="#FF718597" Offset="0.375" />
+                    <GradientStop Color="#FF617584" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Slider">
+                    <Grid x:Name="Root">
+                        <Grid.Resources>
+                            <ControlTemplate x:Key="RepeatButtonTemplate">
+                                <Grid x:Name="Root" Opacity="0" Background="Transparent" />
+                            </ControlTemplate>
+                            <ControlTemplate x:Key="RepeatButtonTemplate2">
+
+                                <Grid x:Name="Root" Opacity="1" Background="{StaticResource levelGreaterThanBrush}" Margin="1"  />
+                            </ControlTemplate>
+                        </Grid.Resources>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal" />
+                                <vsm:VisualState x:Name="MouseOver" />
+                                <vsm:VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="0.5" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="HorizontalTemplate" Background="{TemplateBinding Background}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Height="5" Margin="5,0,5,0" Grid.Column="0" Grid.ColumnSpan="3" Fill="{StaticResource NavNormalBorderBrush}" Stroke="#99000000" StrokeThickness="1"  />
+                            <RepeatButton x:Name="HorizontalTrackLargeChangeDecreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Column="0" />
+                            <Thumb Height="16" x:Name="HorizontalThumb" Width="30" IsTabStop="True" Grid.Column="1" Style="{StaticResource NavZoomThumbStyle}" />
+                            <RepeatButton x:Name="HorizontalTrackLargeChangeIncreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Column="2" />
+                        </Grid>
+                        <Grid x:Name="VerticalTemplate" Visibility="Collapsed" Background="{TemplateBinding Background}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <RepeatButton x:Name="VerticalTrackLargeChangeDecreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate2}" Grid.Row="2" />
+                            <RepeatButton x:Name="VerticalTrackLargeChangeIncreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Row="0" />
+                            <Grid Grid.Row="0" Grid.RowSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsHitTestVisible="False" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+
+                                </Grid.RowDefinitions>
+                                <Rectangle Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="{StaticResource ZoomSliderBoxes}" Stroke="Black" StrokeThickness="1" RadiusX="1" RadiusY="1" />
+                                <Rectangle Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="{StaticResource ZoomSliderBoxes}" Stroke="Black" StrokeThickness="1" RadiusX="1" RadiusY="1" />
+                                <Rectangle Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="{StaticResource ZoomSliderBoxes}" Stroke="Black" StrokeThickness="1" RadiusX="1" RadiusY="1" />
+                                <Rectangle Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="{StaticResource ZoomSliderBoxes}" Stroke="Black" StrokeThickness="1" RadiusX="1" RadiusY="1" />
+                                <Rectangle Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="{StaticResource ZoomSliderBoxes}" Stroke="Black" StrokeThickness="1" RadiusX="1" RadiusY="1" />
+                                <Rectangle Grid.Row="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="{StaticResource ZoomSliderBoxes}" Stroke="Black" StrokeThickness="1" RadiusX="1" RadiusY="1" />
+                                <Rectangle Grid.Row="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="{StaticResource ZoomSliderBoxes}" Stroke="Black" StrokeThickness="1" RadiusX="1" RadiusY="1" />
+                                <Rectangle Grid.Row="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="{StaticResource ZoomSliderBoxes}" Stroke="Black" StrokeThickness="1" RadiusX="1" RadiusY="1" />
+                                <Rectangle Grid.Row="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="{StaticResource ZoomSliderBoxes}" Stroke="Black" StrokeThickness="1" RadiusX="1" RadiusY="1" />
+                                <Rectangle Grid.Row="9" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="{StaticResource ZoomSliderBoxes}" Stroke="Black" StrokeThickness="1" RadiusX="1" RadiusY="1" />
+                            </Grid>
+                            <Thumb Height="6" x:Name="VerticalThumb" Width="24" IsTabStop="True" Grid.Row="1" Style="{StaticResource NavZoomThumbStyle}" Margin="-4,0,-4,0" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="esri:Navigation" x:Key="TopNavigatorStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="esri:Navigation">
+                    <Grid x:Name="root" Effect="{StaticResource NavShadowEffect}" FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}" >
+                        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0"  >
+                            <Border CornerRadius="5,0,40,5" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="1" Margin="0" BorderBrush="{StaticResource AccentTextColorBrush}" >
+                                <Border CornerRadius="4,0,39,4" Width="40" Style="{StaticResource navInnerBorderStyle}" Margin="0" BorderBrush="{StaticResource SelectionOutlineColorBrush}" Background="{StaticResource AccentColorBrush}" Padding="5, 80, 5, 20"  >
+                                    <Grid >
+                                        <Rectangle HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,0" Fill="#00FFFFFF" Width="10" Height="100" />
+                                        <StackPanel Orientation="Vertical" >
+                                            <Grid HorizontalAlignment="Center" Margin="0" Visibility="{Binding Path=Visibility, ElementName=RotateRing}" >
+                                                <Button x:Name="ResetRotation" Height="25" FontSize="8" Width="25" ToolTipService.ToolTip="{Binding ConverterParameter=ResetNorth, Converter={StaticResource LayoutLocalization}}" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="2" Style="{StaticResource NavClearButtonStyle}" Foreground="White" Padding="0" Cursor="Hand" Visibility="{Binding Path=Visibility, ElementName=RotateRing}" >
+                                                    <Button.Content>
+                                                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" >
+                                                            <Ellipse Stroke="Transparent" StrokeThickness="1" Margin="0" Fill="{StaticResource NavButtonGradient}" />
+                                                            <Ellipse Stroke="{StaticResource AccentTextColorBrush}" StrokeThickness="1" Margin="0" Fill="Transparent" Opacity="0.5" />
+                                                            <Canvas Width="16" Height="16" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                                                <Polygon Fill="{StaticResource AccentTextColorBrush}"  Stroke="{StaticResource AccentTextColorBrush}" StrokeThickness="1" Points="0,6 8,0 16,6 12,6 12,16 4,16 4,6 0,6" Opacity="0.25" />
+                                                                <Polyline Stroke="{StaticResource AccentTextColorBrush}" StrokeThickness="1" Points="0,6 8,0 16,6 12,6 12,16 4,16 4,6 0,6" />
+                                                            </Canvas>
+                                                         </Grid>
+                                                    </Button.Content>
+
+                                                </Button>
+                                            </Grid>
+                                            <StackPanel Orientation="Vertical" >
+                                                <Border BorderBrush="#66000000" BorderThickness="1" CornerRadius="15" Padding="0" HorizontalAlignment="Center" >
+                                                    <StackPanel Orientation="Vertical">
+                                                        <Button x:Name="ZoomInButton" Height="20" FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold" Width="20" Padding="-5" ToolTipService.ToolTip="{Binding ConverterParameter=ZoomIn, Converter={StaticResource LayoutLocalization}}" Margin="2,2,2,2" Style="{StaticResource NavClearButtonStyle}" Cursor="Hand" >
+                                                            <Button.Content>
+                                                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20" >
+                                                                    <Ellipse Stroke="Transparent" StrokeThickness="1" Margin="0" Fill="{StaticResource NavButtonGradient}" />
+                                                                    <Ellipse Stroke="{StaticResource AccentTextColorBrush}" StrokeThickness="1" Margin="0" Fill="Transparent" Opacity="0.5" />
+                                                                    <TextBlock FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold" Text="+" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" />
+                                                                </Grid>
+                                                            </Button.Content>
+                                                        </Button>
+                                                        <Grid>
+                                                            <Grid RenderTransformOrigin="0.5,0.5" >
+                                                                <Slider x:Name="ZoomSlider" Orientation="Vertical" Height="90" Minimum="0" SmallChange="1" LargeChange="1" ToolTipService.ToolTip="{Binding ConverterParameter=MoveBarUpZoomInMoveDownToZoomOut, Converter={StaticResource LayoutLocalization}}" Width="20" Style="{StaticResource ZoomNavSliderStyle}" />
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Button x:Name="ZoomOutButton" Height="20" FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold" Width="20" Padding="-5" ToolTipService.ToolTip="{Binding ConverterParameter=ZoomOut, Converter={StaticResource LayoutLocalization}}" Margin="2,2,2,2" Style="{StaticResource NavClearButtonStyle}" Cursor="Hand" >
+                                                            <Button.Content>
+                                                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20" >
+                                                                    <Ellipse Stroke="Transparent" StrokeThickness="1" Margin="0" Fill="{StaticResource NavButtonGradient}" />
+                                                                    <Ellipse Stroke="{StaticResource AccentTextColorBrush}" StrokeThickness="1" Margin="0" Fill="Transparent" Opacity="0.5" />
+                                                                    <TextBlock FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold" Text="-" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" />
+                                                                </Grid>
+                                                            </Button.Content>
+                                                        </Button>
+                                                        <Button x:Name="ZoomFullExtent" Height="20" FontSize="8" Width="20" ToolTipService.ToolTip="{Binding ConverterParameter=FullExtent, Converter={StaticResource LayoutLocalization}}" Margin="2,0,2,5" Style="{StaticResource NavClearButtonStyle}" Foreground="White" Padding="-5" Cursor="Hand"  >
+                                                            <Button.Content>
+
+                                                                <Grid Height="20" Width="20" ToolTipService.ToolTip="{Binding ConverterParameter=FullExtent, Converter={StaticResource LayoutLocalization}}" Margin="-1,0,2,5" >
+                                                                    <Grid RenderTransformOrigin="0.5,0.5" >
+                                                                        <Grid.RenderTransform>
+                                                                            <ScaleTransform ScaleX="0.75" ScaleY="0.75" />
+                                                                        </Grid.RenderTransform>
+                                                                        <Canvas Width="25.002" Height="24.935" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FlowDirection="LeftToRight">
+                                                                            <Ellipse Width="25" Height="25" Fill="#FF6CA1D8"  />
+                                                                            <Path Fill="#FFD8D7D2" Data=" M 8.545,1.761 C 8.563,1.754 9.120,1.177 9.120,1.177 L 9.763,1.248 L 9.815,1.795 L 9.662,1.921 L 9.967,2.241 L 9.429,2.200 C 9.429,2.200 9.120,2.665 9.102,2.665 C 9.083,2.665 8.734,2.650 8.734,2.650 L 8.931,2.152 L 9.362,1.977 L 9.235,1.542 L 8.545,1.780 L 8.545,1.761 L 8.545,1.761 Z M 4.492,11.020 L 4.792,10.904 L 5.127,11.105 L 4.688,11.131 C 4.688,11.131 4.499,11.023 4.492,11.020 L 4.492,11.020 Z M 4.172,10.599 L 3.867,10.424 L 3.779,10.167 L 4.172,10.599 L 4.172,10.599 Z M 3.533,10.007 L 3.288,9.725 L 3.021,9.762 L 3.285,9.565 L 3.604,9.792 L 3.533,10.007 L 3.533,10.007 Z M 8.606,24.331 C 8.250,23.983 7.939,23.565 7.583,23.217 C 7.875,23.035 8.167,22.852 8.458,22.669 C 8.414,22.545 8.369,22.421 8.325,22.297 C 8.483,22.297 8.641,22.297 8.800,22.297 C 9.086,21.784 9.374,21.270 9.660,20.755 C 10.056,20.670 10.452,20.587 10.848,20.502 C 10.991,19.909 11.135,19.316 11.278,18.723 C 11.604,18.351 11.931,17.980 12.257,17.608 C 11.872,17.287 11.485,16.966 11.100,16.643 C 10.813,16.649 10.526,16.654 10.239,16.660 C 9.843,16.421 9.447,16.184 9.052,15.947 C 8.814,16.011 8.577,16.075 8.339,16.139 C 8.310,15.654 8.280,15.170 8.250,14.685 C 7.860,14.582 7.469,14.478 7.078,14.373 C 6.692,13.979 6.306,13.583 5.920,13.187 C 5.782,13.197 5.644,13.207 5.505,13.215 C 5.070,13.029 4.634,12.840 4.199,12.652 C 3.952,12.815 3.705,12.979 3.457,13.142 C 3.214,13.008 2.972,12.874 2.729,12.741 C 2.715,12.306 2.700,11.871 2.686,11.435 C 2.462,11.297 2.240,11.158 2.017,11.020 C 2.166,10.639 2.314,10.258 2.462,9.876 C 2.210,10.020 1.958,10.164 1.706,10.308 C 1.627,10.134 1.547,9.961 1.468,9.788 C 1.775,9.125 2.082,8.462 2.388,7.799 C 2.695,7.809 3.002,7.819 3.309,7.830 C 3.442,7.997 3.576,8.166 3.709,8.333 C 3.649,8.458 3.590,8.581 3.531,8.705 C 3.601,8.897 3.669,9.090 3.739,9.284 C 3.833,8.818 3.927,8.354 4.021,7.888 C 4.401,7.686 4.782,7.482 5.164,7.280 C 5.169,7.111 5.173,6.943 5.178,6.775 C 5.816,6.360 6.455,5.944 7.093,5.528 C 7.231,5.598 7.370,5.667 7.508,5.736 C 7.553,5.578 7.597,5.419 7.642,5.261 C 7.741,5.147 7.840,5.034 7.939,4.920 C 7.771,4.886 7.603,4.851 7.434,4.816 C 7.622,4.747 7.810,4.678 7.999,4.608 C 8.334,4.584 8.670,4.559 9.007,4.535 C 8.908,4.727 8.809,4.920 8.711,5.113 C 8.829,5.187 8.948,5.261 9.066,5.336 C 9.155,5.241 9.245,5.147 9.333,5.054 C 9.269,4.945 9.205,4.836 9.141,4.727 C 9.205,4.559 9.269,4.391 9.333,4.223 C 9.200,4.060 9.066,3.896 8.933,3.733 C 8.943,3.550 8.953,3.367 8.962,3.184 C 8.785,3.204 8.606,3.224 8.428,3.244 C 8.414,3.050 8.399,2.857 8.384,2.665 C 8.285,2.635 8.186,2.605 8.087,2.575 C 7.919,2.763 7.750,2.952 7.583,3.140 C 7.498,3.293 7.415,3.446 7.330,3.600 C 7.172,3.639 7.014,3.679 6.855,3.718 C 6.771,3.856 6.688,3.996 6.603,4.134 C 6.544,4.134 6.484,4.134 6.425,4.134 C 6.420,4.035 6.415,3.936 6.410,3.836 C 6.455,3.713 6.499,3.589 6.544,3.466 C 6.439,3.277 6.336,3.090 6.232,2.902 C 6.899,2.556 7.568,2.209 8.235,1.863 C 8.260,1.779 8.285,1.695 8.310,1.611 C 8.463,1.458 8.616,1.304 8.770,1.150 C 8.488,1.245 8.206,1.338 7.924,1.433 C 8.067,1.314 8.210,1.195 8.354,1.077 C 8.221,1.091 8.087,1.106 7.954,1.121 C 7.840,1.205 7.726,1.289 7.612,1.374 C 7.528,1.334 7.444,1.294 7.360,1.254 C 7.597,1.160 7.930,1.079 8.167,0.984 C 8.415,0.846 8.591,0.803 8.838,0.664 C 9.293,0.674 9.725,0.577 10.180,0.587 C 9.997,0.686 9.813,0.785 9.631,0.883 C 9.833,0.938 10.037,0.993 10.239,1.046 C 10.531,0.968 10.823,0.889 11.114,0.810 C 10.981,0.869 10.848,0.928 10.714,0.988 C 10.837,1.052 10.961,1.116 11.085,1.181 C 11.080,1.497 11.075,1.813 11.070,2.130 C 11.031,2.298 10.991,2.467 10.951,2.635 C 10.857,2.694 10.764,2.753 10.669,2.813 C 10.907,2.941 11.145,3.070 11.382,3.199 C 11.431,3.085 11.481,2.971 11.530,2.857 C 11.659,2.783 11.788,2.709 11.916,2.635 C 11.931,2.561 11.945,2.486 11.961,2.412 C 12.198,2.343 12.436,2.274 12.673,2.204 C 12.688,2.170 12.703,2.135 12.717,2.101 C 12.939,2.057 13.162,2.011 13.385,1.967 C 13.365,1.576 13.346,1.185 13.326,0.795 C 12.975,0.735 12.624,0.675 12.272,0.617 C 12.495,0.587 12.717,0.557 12.939,0.528 C 13.271,0.488 13.603,0.448 13.935,0.409 C 13.523,0.294 13.113,0.181 12.703,0.067 C 12.918,0.055 13.133,0.043 13.348,0.032 C 10.260,-0.205 5.095,0.793 1.869,5.974 C 1.611,6.869 1.354,7.765 1.097,8.660 C 1.068,9.085 1.038,9.511 1.008,9.937 C 1.196,10.179 1.384,10.421 1.572,10.664 C 1.587,10.782 1.602,10.901 1.617,11.020 C 1.839,11.366 2.062,11.712 2.284,12.058 C 2.314,12.231 2.344,12.405 2.374,12.578 C 2.566,12.810 2.760,13.042 2.953,13.275 C 3.036,13.231 3.121,13.187 3.205,13.142 C 3.205,13.142 3.413,14.284 3.398,14.358 C 3.382,14.433 2.819,15.843 2.819,15.843 C 3.180,16.629 3.541,17.415 3.902,18.203 C 4.322,18.500 4.743,18.796 5.164,19.092 C 5.347,19.781 5.530,20.467 5.712,21.156 C 6.015,21.755 6.316,22.352 6.618,22.952 C 7.103,23.333 7.631,23.780 8.116,24.162 C 8.308,24.231 8.433,24.278 8.606,24.331 L 8.606,24.331 Z M 19.324,6.541 L 19.194,6.125 L 19.380,6.362 L 19.324,6.541 L 19.324,6.541 Z M 16.011,3.331 C 16.011,3.368 16.315,3.896 16.315,3.896 L 16.671,4.008 L 16.688,4.677 L 17.325,4.529 L 17.297,4.134 L 16.545,3.703 L 16.374,3.375 L 16.011,3.331 L 16.011,3.331 Z M 15.958,3.993 L 16.033,4.261 L 15.988,4.499 L 16.278,4.275 L 15.958,3.993 L 15.958,3.993 Z M 13.848,2.468 L 13.945,2.736 L 14.524,2.371 L 14.042,2.356 L 13.848,2.468 L 13.848,2.468 Z M 20.509,21.377 C 20.589,21.176 20.667,20.973 20.746,20.770 C 20.755,20.597 20.766,20.422 20.775,20.250 C 20.890,20.087 21.003,19.923 21.117,19.760 C 21.082,19.354 21.048,18.951 21.013,18.544 C 21.265,18.231 21.518,17.920 21.771,17.608 C 21.750,17.143 21.730,16.677 21.711,16.214 C 21.528,15.971 21.344,15.729 21.161,15.486 C 21.240,15.120 21.320,14.754 21.399,14.389 C 21.172,14.324 20.944,14.259 20.717,14.196 C 20.559,14.096 20.399,13.997 20.241,13.899 C 20.059,14.042 19.876,14.186 19.693,14.328 C 19.405,14.333 19.118,14.338 18.832,14.344 C 18.713,14.458 18.595,14.572 18.476,14.685 C 18.061,14.472 17.644,14.259 17.229,14.047 C 17.109,13.769 16.992,13.494 16.873,13.215 C 16.675,13.057 16.478,12.899 16.279,12.741 C 16.294,12.231 16.310,11.722 16.323,11.213 C 16.189,11.064 16.057,10.916 15.924,10.768 C 16.225,10.328 16.526,9.887 16.828,9.446 C 16.996,9.293 17.164,9.140 17.333,8.986 C 17.323,8.803 17.313,8.621 17.303,8.438 C 17.451,8.175 17.601,7.913 17.748,7.651 C 17.981,7.666 18.214,7.681 18.446,7.695 C 18.614,7.538 18.782,7.378 18.950,7.221 C 19.258,7.156 19.564,7.092 19.871,7.028 C 19.970,7.230 20.068,7.433 20.167,7.636 C 20.399,7.681 20.633,7.725 20.865,7.770 C 21.078,7.874 21.290,7.977 21.503,8.081 C 21.488,7.878 21.474,7.675 21.458,7.473 C 21.780,7.522 22.102,7.571 22.423,7.621 C 22.547,7.512 22.671,7.403 22.794,7.295 C 22.641,6.919 22.487,6.543 22.334,6.167 C 22.181,6.305 22.026,6.444 21.874,6.583 C 21.726,6.483 21.578,6.384 21.429,6.285 C 21.310,6.123 21.192,5.959 21.072,5.796 C 21.048,5.865 21.023,5.935 20.999,6.003 C 21.103,6.117 21.206,6.231 21.310,6.345 C 21.296,6.458 21.281,6.572 21.265,6.686 C 20.934,6.365 20.603,6.043 20.271,5.722 C 19.921,5.563 19.569,5.405 19.218,5.247 C 19.415,5.425 19.614,5.603 19.811,5.781 C 19.993,5.895 20.178,6.009 20.360,6.123 C 20.355,6.202 20.352,6.281 20.345,6.360 C 20.386,6.449 20.424,6.538 20.465,6.627 C 20.414,6.657 20.365,6.686 20.315,6.716 C 20.246,6.766 20.178,6.815 20.107,6.864 C 20.034,6.790 19.959,6.716 19.886,6.642 C 19.965,6.617 20.043,6.592 20.124,6.568 C 20.196,6.568 20.271,6.568 20.345,6.568 C 20.221,6.404 20.099,6.241 19.975,6.078 C 19.752,5.999 19.528,5.919 19.308,5.840 C 19.177,5.727 19.049,5.613 18.921,5.499 C 18.822,5.623 18.723,5.746 18.624,5.870 C 18.529,5.895 18.436,5.919 18.343,5.944 C 18.336,6.330 18.332,6.716 18.327,7.102 C 18.129,7.240 17.932,7.378 17.733,7.518 C 17.451,7.418 17.170,7.320 16.889,7.221 C 16.923,7.033 16.959,6.845 16.995,6.658 C 16.904,6.439 16.815,6.221 16.724,6.003 C 16.833,5.973 16.943,5.942 17.051,5.912 C 17.256,5.855 17.641,5.955 17.853,5.944 C 17.694,5.702 17.536,5.459 17.378,5.217 C 17.274,5.183 17.170,5.147 17.065,5.113 C 17.214,5.000 17.362,4.886 17.511,4.772 C 17.511,4.510 17.511,4.247 17.511,3.985 C 17.595,3.936 17.679,3.886 17.764,3.836 C 17.654,3.693 17.545,3.550 17.437,3.406 C 17.564,3.391 17.694,3.377 17.822,3.362 C 17.635,3.228 17.447,3.095 17.258,2.961 C 17.209,3.070 17.160,3.179 17.109,3.288 C 16.902,3.100 16.695,2.912 16.486,2.724 C 16.486,2.521 16.486,2.318 16.486,2.115 C 16.372,1.893 16.259,1.670 16.145,1.448 C 16.447,1.408 16.749,1.369 17.051,1.329 C 17.224,1.482 17.397,1.635 17.570,1.789 C 17.654,1.789 17.739,1.789 17.822,1.789 C 17.817,1.645 17.813,1.502 17.809,1.358 C 17.877,1.319 17.946,1.280 18.016,1.240 C 22.481,3.395 24.693,7.690 24.976,11.247 C 25.229,14.462 23.672,19.706 20.687,21.438 C 20.627,21.417 20.568,21.398 20.509,21.377 L 20.509,21.377 Z" >
+                                                                                <Path.Effect>
+                                                                                    <DropShadowEffect Direction="-90" ShadowDepth="2" />
+                                                                                </Path.Effect>
+                                                                            </Path>
+                                                                            <Ellipse Width="25" Height="25"  >
+                                                                                <Ellipse.Fill>
+                                                                                    <RadialGradientBrush Center="0.49,0.4" >
+                                                                                        <GradientStop Color="#00000000" Offset="0.3"  />
+                                                                                        <GradientStop Color="#52000000" Offset="1" />
+                                                                                    </RadialGradientBrush>
+                                                                                </Ellipse.Fill>
+                                                                            </Ellipse>
+                                                                            <Ellipse Width="7.5" Height="3.75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,3.75,0,0" RenderTransformOrigin="0.5,0.5" >
+                                                                                <Ellipse.Fill>
+                                                                                    <RadialGradientBrush >
+                                                                                        <GradientStop Color="#83FFFFFF" Offset="0.185" />
+                                                                                        <GradientStop Color="#00FFFFFF" Offset="1" />
+                                                                                    </RadialGradientBrush>
+                                                                                </Ellipse.Fill>
+                                                                                <Ellipse.RenderTransform>
+                                                                                    <TransformGroup>
+                                                                                        <ScaleTransform/>
+                                                                                        <SkewTransform AngleX="-64" AngleY="46"/>
+                                                                                        <RotateTransform Angle="-46"/>
+                                                                                        <TranslateTransform/>
+                                                                                    </TransformGroup>
+                                                                                </Ellipse.RenderTransform>
+                                                                            </Ellipse>
+
+                                                                        </Canvas>
+
+                                                                    </Grid>
+                                                                </Grid>
+
+                                                            </Button.Content>
+                                                        </Button>
+
+                                                    </StackPanel>
+                                                </Border>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Border>
+                        </Grid>
+                        <Border CornerRadius="0,0,0,62" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" RenderTransformOrigin="0,0" Margin="1"  >
+                            <Border.RenderTransform>
+                                <ScaleTransform CenterX="0" CenterY="0" ScaleX="0.68" ScaleY="0.68"/>
+                            </Border.RenderTransform>
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="-1,0,0,-1" >
+                                <Grid.RenderTransform>
+                                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1" ScaleY="1"/>
+                                </Grid.RenderTransform>
+                                <Ellipse StrokeThickness="1" Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Stroke="{StaticResource AccentTextColorBrush}" Fill="{StaticResource AccentColorBrush}" />
+                                <Border BorderThickness="1" BorderBrush="Transparent" CornerRadius="60,60,0,0" Width="120" Height="60" Opacity="0.1" Background="{StaticResource AccentTextColorBrush}" VerticalAlignment="Top" />
+
+                                <Grid x:Name="Navigator" RenderTransformOrigin="0.5,0.5" Margin="0" Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" >
+                                    <Grid.RenderTransform>
+                                        <RotateTransform x:Name="TransformRotate" Angle="0"/>
+                                    </Grid.RenderTransform>
+                                    <Ellipse x:Name="RotateRing" StrokeThickness="1" Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{StaticResource AccentTextColorBrush}" Fill="#00FFFFFF" ToolTipService.ToolTip="{Binding ConverterParameter=DragToRotate, Converter={StaticResource LayoutLocalization}}" Cursor="Hand" >
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger >
+                                                <i:Interaction.Behaviors>
+                                                    <ei:ConditionBehavior>
+                                                        <ei:ConditionalExpression>
+                                                            <ei:ComparisonCondition LeftOperand="{Binding Path=FlowDirection, ElementName=root}" 
+															RightOperand="RightToLeft" />
+                                                        </ei:ConditionalExpression>
+                                                    </ei:ConditionBehavior>
+                                                </i:Interaction.Behaviors>
+                                                <ei:ChangePropertyAction PropertyName="Visibility">
+                                                    <ei:ChangePropertyAction.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </ei:ChangePropertyAction.Value>
+                                                </ei:ChangePropertyAction>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Ellipse>
+                                    <Ellipse Fill="White" Stroke="Black" StrokeThickness="1" Width="80" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <Grid x:Name="PanLeft" Width="20" Height="20" Background="#00FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Left" ToolTipService.ToolTip="{Binding ConverterParameter=ClickToMoveWest, Converter={StaticResource LayoutLocalization}}" Cursor="Hand" >
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger >
+                                                <i:Interaction.Behaviors>
+                                                    <ei:ConditionBehavior>
+                                                        <ei:ConditionalExpression>
+                                                            <ei:ComparisonCondition LeftOperand="{Binding Path=FlowDirection, ElementName=root}" 
+															RightOperand="RightToLeft" />
+                                                        </ei:ConditionalExpression>
+                                                    </ei:ConditionBehavior>
+                                                </i:Interaction.Behaviors>
+                                                <ei:ChangePropertyAction PropertyName="HorizontalAlignment" Value="Right">
+                                                </ei:ChangePropertyAction>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                        <TextBlock Text="W" TextAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold"  />
+                                    </Grid>
+                                    <Grid x:Name="PanRight" Width="20" Height="20" Background="#00FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Right" ToolTipService.ToolTip="{Binding ConverterParameter=ClickToMoveEast, Converter={StaticResource LayoutLocalization}}" Cursor="Hand" >
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger >
+                                                <i:Interaction.Behaviors>
+                                                    <ei:ConditionBehavior>
+                                                        <ei:ConditionalExpression>
+                                                            <ei:ComparisonCondition LeftOperand="{Binding Path=FlowDirection, ElementName=root}" 
+															RightOperand="RightToLeft" />
+                                                        </ei:ConditionalExpression>
+                                                    </ei:ConditionBehavior>
+                                                </i:Interaction.Behaviors>
+                                                <ei:ChangePropertyAction PropertyName="HorizontalAlignment" Value="Left">
+                                                </ei:ChangePropertyAction>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                        <TextBlock Text="E" TextAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold"  />
+                                    </Grid>
+                                    <Grid x:Name="PanUp" Width="20" Height="20" Background="#00FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Top" ToolTipService.ToolTip="{Binding ConverterParameter=ClickToMoveNorth, Converter={StaticResource LayoutLocalization}}" Cursor="Hand" >
+                                        <TextBlock Text="N" TextAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold"  />
+                                    </Grid>
+                                    <Grid x:Name="PanDown" Width="20" Height="20" Background="#00FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Bottom" ToolTipService.ToolTip="{Binding ConverterParameter=ClickToMoveSouth, Converter={StaticResource LayoutLocalization}}" Cursor="Hand" >
+                                        <TextBlock Text="S" TextAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold"  />
+                                    </Grid>
+
+                                    <Grid RenderTransformOrigin="0.5,0.5" >
+                                        <Grid.RenderTransform>
+                                            <ScaleTransform ScaleX="0.8" ScaleY="0.8" />
+                                        </Grid.RenderTransform>
+                                        <Canvas Width="104.987" Height="104.987" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FlowDirection="LeftToRight">
+                                            <Ellipse Width="101.05" Height="101.05" Canvas.Left="1.90274" Canvas.Top="1.77166" Fill="#FF6CA1D8"  />
+                                            <Path Width="88.4286" Height="88.9257" Canvas.Left="14.5014" Canvas.Top="1.80439" Stretch="Fill" Fill="#FFD8D7D2" Data="M 81.126,12.2602C 81.2625,12.5777 81.3009,12.6076 81.2213,12.6333C 81.1018,12.6333 81.2298,12.7073 81.3677,12.8496C 81.4659,12.9636 81.8569,13.0946 81.7346,13.1771C 81.5711,13.2341 80.8018,13.2141 81.217,13.4647C 81.5938,13.6882 82.8409,13.9872 82.8409,13.9872C 82.8409,13.9872 83.9116,14.4585 83.9756,14.3802C 83.9997,14.2748 83.586,13.9231 83.6798,13.8833C 83.7737,13.8477 83.768,13.7765 83.677,13.6512C 83.5476,13.496 83.0954,12.9422 82.6901,12.6503C 82.282,12.3627 80.4435,10.8949 80.5018,10.8992C 80.6013,10.9319 81.1985,11.1255 80.7464,10.8066C 80.2913,10.492 79.7098,10.1887 79.6884,10.1303C 79.6628,10.0748 79.7823,10.0748 79.7823,10.0748C 79.5263,9.91537 79.5263,9.91537 79.313,9.78437C 79.313,9.78437 78.9831,9.64771 78.922,9.64912C 78.8609,9.65195 78.7627,9.62066 78.585,9.52527C 78.3646,9.40567 78.1542,9.36722 78.1542,9.36722L 78.7713,9.79719L 78.5082,9.84418C 78.7244,9.96946 78.7244,9.96946 78.9376,10.0962C 78.9632,10.1503 78.9632,10.1503 78.9874,10.2058C 78.9874,10.2058 79.3998,10.3026 79.3984,10.3951C 79.3529,10.4635 79.1083,10.2941 79.2078,10.4151C 79.3059,10.5375 79.5334,10.6429 79.5107,10.6799C 79.4865,10.7155 79.9742,10.8806 80.0709,11.0017C 80.1264,11.0971 80.3226,11.0743 80.3923,11.238C 80.4577,11.406 80.415,11.4672 80.5416,11.547C 80.708,11.6537 81.1687,11.7762 81.3037,11.9271C 81.4004,12.051 81.1018,12.1264 81.1018,12.1264C 81.1161,12.1933 81.1161,12.1933 81.126,12.2602 Z M 80.3738,12.2204C 80.3383,12.2745 79.6216,12.4567 79.3557,12.246C 79.0898,12.0367 78.3134,11.5484 78.5765,11.5825C 78.8395,11.6224 79.2519,11.7036 79.0144,11.443C 78.7741,11.1853 78.2466,10.8308 78.2537,10.7283C 78.2992,10.6528 79.0443,10.7639 79.0443,10.7639C 79.0443,10.7639 79.468,10.744 79.5704,10.8607C 79.6301,10.9518 79.9046,11.0743 79.9941,11.2095C 80.0795,11.3462 80.1378,11.611 80.1378,11.611C 80.1378,11.611 80.1875,11.8004 80.3041,11.9769C 80.4207,12.1535 80.3738,12.2204 80.3738,12.2204 Z M 88.9979,19.9213C 88.9637,20.0808 88.9794,20.1961 89.1884,20.4666C 89.3974,20.7371 89.4856,20.9151 89.396,20.9279C 89.305,20.9435 88.9865,20.7698 89.1585,21.0033C 89.3306,21.2382 89.588,21.4646 89.6022,21.6383C 89.5865,21.7779 89.861,22.1737 89.861,22.1737C 89.861,22.1737 90.4539,22.6876 90.2733,22.2761C 90.0885,21.8675 89.9847,21.4504 89.8965,21.3336C 89.8084,21.2183 89.6392,21.1044 89.6008,20.8182C 89.5268,20.4965 89.4074,20.2772 89.2808,20.1277C 89.1841,20.0153 89.0277,19.9597 88.9979,19.9213 Z M 87.2119,20.6873L 86.8564,20.8838C 86.8536,20.9492 87.0583,21.2653 87.1067,21.224C 87.1536,21.1827 87.2076,20.9435 87.2674,20.9535C 87.3257,20.962 87.3669,20.925 87.5816,21.0517C 87.8233,21.2126 87.7608,21.0147 87.8276,20.9564C 87.893,20.898 88.2926,21.1172 87.9726,20.7656C 87.6499,20.4168 87.4807,20.3128 87.4423,20.4139C 87.401,20.515 87.31,20.7243 87.31,20.7243C 87.2617,20.7058 87.2617,20.7058 87.2119,20.6873 Z M 33.2522,28.7256C 33.4285,28.5562 34.8178,27.4642 35.2102,27.8116C 35.5785,28.1832 36.6051,27.9796 36.935,28.065C 37.2606,28.1505 38.8134,28.6758 39.0566,29.0431C 39.2997,29.4147 39.914,29.708 39.4447,29.9301C 38.9755,30.1536 37.7711,30.3117 37.3218,29.8803C 36.871,29.456 36.2141,28.9933 35.7577,28.9904C 35.2955,28.9919 34.2817,28.8153 34.1537,28.9406C 34.0016,29.0844 34.3983,29.2538 33.9333,29.2353C 33.4882,29.2054 33.2295,29.0816 33.1441,29.0246C 33.0361,28.9904 33.255,28.7769 33.2522,28.7256 Z M 41.2037,30.1949C 40.9591,30.37 39.3879,30.5907 39.7903,31.0221C 40.1685,31.4706 40.6875,31.2086 41.07,31.3567C 41.4682,31.499 42.1763,31.7055 42.2317,31.5603C 42.29,31.4151 42.3227,31.0477 42.6327,31.1018C 42.9626,31.1502 44.2879,30.9167 44.1954,30.8057C 44.1044,30.6961 43.092,29.8931 42.5702,29.9116C 42.0639,29.9258 41.9346,29.8831 41.7227,30.1266C 41.5122,30.37 41.2037,30.1949 41.2037,30.1949 Z M 37.8863,4.48526C 37.9318,4.63049 38.3968,4.44968 38.5816,4.36852C 38.7651,4.28738 39.5215,4.0183 39.1731,4.07095C 38.8234,4.12649 38.5276,4.18485 38.3968,4.27027C 38.266,4.35998 37.8863,4.48526 37.8863,4.48526 Z M 39.9211,4.1692C 39.887,4.23325 39.9026,4.29447 40.042,4.23898C 40.1827,4.18485 40.4671,4.09943 40.4031,4.04535C 40.3875,3.98129 40.5183,3.89158 40.2851,3.98553C 40.0533,4.08093 39.9211,4.1692 39.9211,4.1692 Z M 41.2577,3.54276C 41.3146,3.57266 41.3686,3.57836 41.5108,3.52567C 41.6516,3.47299 41.8819,3.35484 41.7355,3.38757C 41.5407,3.43029 41.4895,3.43741 41.4426,3.45307C 41.3942,3.46731 41.2989,3.50004 41.2577,3.54276 Z M 42.573,2.73837C 42.937,2.66433 43.3025,2.59599 43.6707,2.53192L 43.6693,2.53761L 43.6693,2.53761C 43.5712,2.55897 43.1745,2.63444 42.7763,2.70419C 42.627,2.73409 42.5773,2.74262 42.5773,2.74262M 102.93,53.7974C 102.873,55.8348 102.694,57.8408 102.405,59.8098L 102.398,59.8212L 102.393,59.8711C 102.37,60.0205 102.273,60.5687 102.259,60.6171C 102.252,60.6157 102.203,60.6598 102.256,60.4121C 102.306,60.1643 102.324,60.0647 102.346,59.8625C 102.361,59.713 102.452,58.9086 102.464,58.7577C 102.472,58.6054 102.573,57.7526 102.609,57.5547C 102.643,57.3539 102.656,57.203 102.656,57.203C 102.693,56.8513 102.718,56.0427 102.796,55.5415C 102.836,55.244 102.906,54.3555 102.93,53.7974 Z M 97.1484,28.811C 99.1548,32.6209 100.689,36.717 101.676,41.0238L 101.667,41.0238C 101.653,40.9754 101.637,40.927 101.591,40.7305C 101.507,40.3859 101.062,38.7259 101.062,38.7259C 101.062,38.7259 100.511,37.1498 100.379,36.6629C 100.238,36.1774 100.083,35.6962 99.934,35.3189C 99.7619,34.8989 99.0481,33.1178 98.9486,32.8857C 98.8277,32.6081 98.4822,31.7667 98.3755,31.5389C 98.2476,31.2641 98.5035,31.9248 98.5789,32.1113C 98.6343,32.2522 98.5078,32.0315 98.4239,31.8479C 98.3627,31.7112 98.131,31.2627 98.148,31.3097C 98.1651,31.3581 98.4239,31.9048 98.4651,31.9959C 98.5092,32.0871 98.5604,32.1739 98.677,32.453C 98.8121,32.779 99.0396,33.3399 99.1178,33.525C 99.2116,33.7585 99.7036,35.0285 99.7406,35.121C 99.7619,35.168 99.9624,35.7375 100.106,36.1689C 100.231,36.5519 100.578,37.6054 100.648,37.7948C 100.715,37.9855 101.029,38.7358 101.076,38.9323C 101.12,39.1302 101.172,39.3765 101.254,39.6157C 101.318,39.8093 101.502,40.544 101.589,40.8871C 101.684,41.2801 101.787,41.7228 101.831,41.7655L 101.837,41.7641C 102.102,43.0099 102.323,44.2713 102.495,45.5498L 102.492,45.5512C 102.522,45.8032 102.545,46.0552 102.559,46.2574C 102.575,46.713 102.501,48.3403 102.485,48.8457C 102.461,49.3512 102.56,50.1499 102.555,50.5528C 102.546,51.0055 102.535,51.2063 102.553,51.3572C 102.57,51.4568 102.673,52.3609 102.667,52.7624C 102.66,53.1141 102.536,55.3749 102.491,55.5216C 102.442,55.7195 102.073,56.746 102.003,57.0407C 101.933,57.3354 101.758,57.6657 101.755,57.9661C 101.744,58.3135 101.852,58.3776 101.801,58.7221C 101.748,59.0681 101.545,60.3466 101.458,60.5359C 101.37,60.7225 101.204,60.8947 101.158,61.2393C 101.113,61.5838 101.087,61.7817 100.988,62.1149C 100.898,62.401 100.826,62.5875 100.656,63.1072C 100.473,63.6753 100.251,64.3843 100.096,64.8014C 99.9397,65.2186 99.4548,66.1554 99.1036,66.5113C 98.7339,66.8559 98.3016,66.9726 97.9845,67.3243C 97.656,67.6702 97.3958,67.7827 97.2991,67.9023C 97.2039,68.0191 96.9024,68.0134 96.8839,67.8069C 96.8626,67.6005 96.6934,67.1449 96.6934,67.1449C 96.7204,66.8117 96.938,66.1469 96.8242,65.7211C 96.7019,65.2997 96.5739,63.9315 96.4118,63.372C 96.2426,62.8182 96.2014,61.8856 96.2568,61.2564C 96.3095,60.6271 96.4204,60.2398 96.3791,60.0049C 96.3351,59.7714 96.1403,59.424 96.1459,59.2005C 96.1545,58.977 96.0706,58.2978 95.9568,58.1028C 95.8459,57.8665 95.3994,57.2884 95.4677,56.9453C 95.5345,56.6036 95.8203,54.273 95.8815,54.1448C 95.9412,54.0181 96.5796,53.245 96.5213,52.8464C 96.463,52.4036 96.2796,51.9651 96.2355,51.8341C 96.1914,51.7032 96.0819,51.2675 96.1161,51.1351C 96.1516,51.0468 96.227,50.8247 96.1559,50.6966C 96.0819,50.5243 95.8573,49.9221 95.836,49.7925C 95.816,49.6644 95.6767,48.5838 95.3454,48.0484C 95.0141,47.5644 94.0656,47.0376 94.2164,46.4211C 94.3543,45.7577 94.4538,44.8337 94.4382,44.576C 94.4211,44.3183 94.6956,43.4726 94.4353,43.2192C 94.1709,42.97 93.9064,42.5927 93.6803,42.6454C 93.4428,42.6582 93.1513,42.7693 92.9736,42.5543C 92.7973,42.3407 92.3138,41.4794 92.102,41.4096C 91.8886,41.3398 91.2502,41.1405 91.2502,41.1405C 91.2502,41.1405 90.7781,41.2359 90.5279,41.4737C 90.2748,41.71 89.7387,42.2211 89.2609,42.0346C 88.7789,41.8538 88.1219,41.7342 87.8361,41.8581C 87.5461,41.9819 86.5294,42.2083 86.0701,42.2354C 85.6065,42.2653 82.656,39.4918 82.3517,38.9807C 82.0332,38.4411 81.3692,36.9775 81.1018,36.7127C 80.8345,36.4508 79.832,35.9866 79.8775,35.4342C 79.9302,34.9032 80.2046,33.4965 80.2743,33.3257C 80.3439,33.1548 80.425,31.1816 80.2572,30.6889C 80.0852,30.1949 79.7496,29.1769 79.8932,29.1029C 80.0126,29.0004 80.8843,26.8107 81.2938,26.4434C 81.719,26.1131 82.7428,25.4141 82.7428,25.4141C 82.7428,25.4141 82.602,25.1592 82.747,24.6951C 82.912,24.2651 82.8594,23.7454 83.094,23.4664C 83.3513,23.2243 83.731,22.9823 83.9386,22.6719C 84.1675,22.3957 84.2841,22.1039 84.3069,22.0227C 84.2984,21.9088 84.3311,21.6326 84.5543,21.9102C 84.7733,22.1893 85.0975,22.2505 85.2624,22.2804C 85.453,22.3473 86.4455,22.6079 86.6886,22.5751C 86.9289,22.5467 87.273,22.2505 87.4622,22.2705C 87.6783,22.3274 88.4277,22.4285 89.0163,22.6136C 89.5951,22.8157 90.3501,22.8912 90.6501,23.146C 90.9488,23.4037 91.2943,23.6871 91.263,23.7696C 91.2331,23.8536 91.0753,23.9675 91.3967,24.4459C 91.6882,24.8858 91.9029,25.4354 92.0792,25.7201C 92.2541,26.0063 92.3778,26.153 92.6721,26.3039C 92.9622,26.4605 93.1101,26.3651 93.4443,26.8406C 93.7485,27.2777 94.4524,27.9326 94.9046,28.29C 95.3454,28.6616 94.9259,27.1424 95.3767,27.6806C 95.8175,28.2287 96.1587,28.7242 96.49,29.0545C 96.8342,29.4375 97.228,29.7436 97.228,29.7436C 97.228,29.7436 97.1399,29.3934 97.4527,29.9116C 97.7556,30.437 97.8238,30.5708 97.8622,30.5523L 97.8907,30.427C 97.8907,30.427 97.5537,29.6923 97.4328,29.4133C 97.329,29.1826 97.1953,28.9107 97.1726,28.8652L 97.1484,28.821M 84.3311,13.1401C 89.433,17.3059 93.7073,22.447 96.8697,28.2814L 96.8626,28.2843C 96.8128,28.1974 96.8697,28.3398 96.7673,28.1633C 96.6664,27.9882 96.4118,27.5525 96.3919,27.5639C 96.3649,27.5781 96.3009,27.5567 96.2384,27.477C 96.1744,27.3959 95.8644,27.2279 95.8644,27.2279C 95.8644,27.2279 95.4847,26.6356 95.4094,26.4462C 95.307,26.2142 95.3468,26.19 95.2032,25.9237C 95.0852,25.7016 94.8605,25.3671 94.815,25.2176C 94.7652,25.0695 94.5946,24.6979 94.6344,24.7321L 94.3628,24.5484L 94.5434,24.9727C 94.4737,24.8972 93.885,24.0843 93.9135,24.1868C 93.9405,24.2879 94.0799,24.557 94.2818,24.9029C 94.5107,25.293 94.4069,25.4183 94.4069,25.4183C 94.4069,25.4183 93.8979,24.7976 93.8353,24.6609C 93.7713,24.5228 92.9437,23.2144 92.9025,23.1204C 92.8598,23.0293 92.5683,22.6221 92.4446,22.4655C 92.3209,22.3089 91.1165,21.0347 90.8222,20.6958C 90.525,20.3612 89.7671,19.3718 89.7614,19.4429C 89.7543,19.5155 89.7358,19.6622 89.7358,19.6622C 89.7358,19.6622 90.0032,20.0224 90.1752,20.2018C 90.3131,20.3442 90.4411,20.6246 91.0042,21.1898C 91.5886,21.8021 92.6167,22.9595 92.7063,23.0791C 92.7944,23.1987 92.9053,23.549 92.9053,23.549C 92.9053,23.549 92.2825,22.8342 92.3721,23.0151C 92.4304,23.1574 92.8314,23.6614 92.793,23.6899C 92.7802,23.7597 92.6053,24.1242 92.5129,24.0088C 92.3906,23.8551 92.3664,23.932 92.4134,24.0202C 92.4574,24.107 92.5385,24.3505 92.4318,24.3064C 92.3522,24.3021 91.3355,23.3553 91.391,23.3126C 91.4777,23.3098 91.8816,23.4365 91.9896,23.4778C 92.1261,23.5618 92.3906,23.9149 92.3408,23.7696C 92.2911,23.6244 92.2513,23.4094 92.2456,23.3539C 92.2385,23.297 92.2683,23.2144 92.0806,22.9837C 91.8915,22.756 90.3331,21.1614 90.1226,20.8923C 89.9392,20.6602 88.8443,19.3305 88.8002,19.3063C 88.7533,19.2835 88.6026,19.3518 88.5258,19.3589C 88.4774,19.4016 88.2528,19.7391 87.9755,19.5312C 87.6669,19.292 87.0256,18.7026 86.9702,18.8891C 86.9446,19.1155 86.9531,19.1739 87.1252,19.3404C 87.2972,19.507 87.293,19.6423 87.2674,19.6665C 87.2403,19.6907 86.9972,19.5924 86.9332,19.7832C 86.8678,19.9768 86.6289,20.0067 86.5336,20.0338C 86.4696,20.0936 86.3047,20.2502 86.4057,20.6033C 86.5009,20.9578 86.5365,20.7983 86.4952,21.0261C 86.417,21.2226 86.3132,21.6283 85.9961,21.6696C 85.6762,21.718 84.9354,21.4248 84.8003,21.4888C 84.6666,21.5572 84.4391,21.7124 84.3737,21.654C 84.3069,21.5956 83.822,21.1386 83.7367,21.0361C 83.6812,20.9649 83.2532,20.7086 83.1594,20.7414C 83.067,20.7727 82.4157,20.31 82.3816,20.2174C 82.3489,20.1235 81.6024,18.9717 81.655,18.7097C 81.7019,18.4506 81.8071,17.9822 81.7403,17.7814C 81.6706,17.5821 81.3948,17.2034 81.3948,17.2034C 81.3948,17.2034 81.1018,16.8418 81.3066,16.8048C 81.5128,16.772 81.5924,16.6012 81.7957,16.7179C 81.9991,16.8347 82.1427,16.8774 82.3347,16.9358C 82.5295,16.9955 82.8409,16.9913 82.993,17.0981C 83.1096,17.1764 83.3869,17.3572 83.6457,17.417C 83.9059,17.4796 84.7121,17.7857 84.7392,17.7572C 84.7662,17.7288 84.8287,17.1707 84.5685,16.8162C 84.3424,16.493 84.1562,16.1214 83.9244,15.9491C 83.7296,15.8096 82.2067,14.477 82.2067,14.477C 82.2067,14.477 82.3645,14.4314 82.4683,14.4556C 82.5735,14.4798 83.6727,15.2017 83.4978,15.0308C 83.3243,14.8614 83.0755,14.4741 83.1352,14.4798C 83.2319,14.5154 83.6116,14.6663 83.7026,14.7105C 83.7936,14.7532 84.2756,14.8671 84.3154,14.8201C 84.3154,14.7432 84.3766,14.5183 84.442,14.5154C 84.5102,14.514 84.442,14.3645 84.6226,14.383C 84.7605,14.373 84.5685,13.8235 84.5685,13.8235C 84.5685,13.8235 84.523,13.5658 84.6368,13.6654C 84.7093,13.7338 84.8629,14.02 85.0008,14.0897C 85.0989,14.131 85.089,14.067 85.1003,14.0513C 85.1145,14.0356 84.9752,13.8093 84.7192,13.5658C 84.4988,13.3579 84.213,13.0661 84.3311,13.1401 Z M 82.2849,11.5555C 82.7797,11.9185 83.2689,12.2901 83.7509,12.6717L 83.4324,12.4254C 83.3968,12.3998 82.7257,11.8872 82.2849,11.5555 Z M 68.3641,4.34432C 69.8728,4.84689 71.3488,5.41781 72.792,6.05566L 72.7892,6.06275C 72.6484,6.00581 71.8806,5.74384 71.8806,5.74384C 71.8806,5.74384 70.4515,5.24268 70.3179,5.17151C 70.1828,5.10032 69.695,4.96363 69.56,4.89816C 69.4206,4.83408 69.5173,4.8597 69.577,4.84547C 69.6339,4.83694 69.1007,4.67748 68.8177,4.57355C 68.8177,4.57355 68.5731,4.50805 68.4352,4.44683C 68.293,4.38702 69.1647,4.64756 69.1647,4.64756C 69.1647,4.64756 68.4452,4.40697 68.3044,4.35572C 68.2091,4.32154 68.2617,4.32581 68.3584,4.35285M 54.1462,1.80439C 57.3811,1.9126 60.542,2.32547 63.5964,3.01598L 63.5907,3.0231C 63.3433,2.9747 62.9935,2.91918 62.8442,2.89355C 62.6422,2.86506 62.783,2.93768 62.4417,2.83801C 62.1005,2.74548 61.5331,2.76398 61.2829,2.73124C 60.9828,2.68994 60.8079,2.81809 60.9914,2.932C 61.1236,3.04871 60.5079,3.09998 60.1425,3.17544C 59.8254,3.27511 59.5865,4.21903 59.5865,4.21903L 59.3362,4.24607C 59.3362,4.24607 58.9694,4.05817 58.7475,3.88305C 58.6182,3.72643 58.4063,3.84887 58.2243,3.725C 58.0423,3.60541 57.2886,3.74778 57.1536,3.61823C 56.9701,3.48724 57.3996,3.61538 57.5147,3.45307C 57.5816,3.29504 55.5013,2.62019 55.2581,2.50488C 54.9638,2.39382 55.0647,2.36677 55.9179,2.35824C 56.7725,2.36677 55.4728,2.24433 55.2766,2.19306C 55.0775,2.14466 54.3794,2.01083 54.3808,1.97523C 54.3822,1.9425 53.7807,1.83002 53.8305,1.81721C 53.9144,1.81008 53.9969,1.80439 54.1376,1.80439M 44.3646,2.4166L 44.3675,2.41946C 44.467,2.40664 44.5182,2.40379 44.5182,2.40664C 44.322,2.45361 44.6234,2.41946 44.6234,2.41946C 44.6234,2.41946 46.3753,2.20162 46.1293,2.25571C 45.8321,2.32406 45.5889,2.4052 45.3842,2.39809C 45.2306,2.38669 44.9249,2.38953 44.5239,2.44507C 44.1243,2.50202 43.9253,2.53619 43.7845,2.60596C 43.6466,2.68994 44.2466,2.62302 43.5996,2.71986C 42.9043,2.83376 42.2005,2.91489 42.0199,3.03448C 41.7454,3.19822 41.1198,3.39042 41.3245,3.38757C 41.5293,3.38616 43.1688,2.87646 43.3807,2.92059C 43.594,2.97611 43.9423,2.93056 43.9039,3.00031C 43.8655,3.0715 44.3092,3.00317 44.4158,3.03308C 44.4727,3.0715 44.7016,3.2452 45.0017,3.23524C 45.2519,3.23666 45.5918,3.15408 45.7965,3.19538C 46.0027,3.2395 47.6849,3.16262 47.5853,3.14695C 47.4346,3.13557 45.842,2.78107 46.1421,2.76398C 46.4919,2.74121 48.329,3.15977 48.4186,3.04162C 48.5082,2.92913 48.0489,2.79675 48.1968,2.77395C 48.2949,2.75544 49.0357,2.65151 48.9319,2.59029C 48.7769,2.53619 47.7645,2.41373 47.5085,2.37815C 47.3038,2.34113 46.8772,2.14182 47.281,2.12473C 47.6351,2.12046 48.3916,2.08913 48.3958,2.14182C 48.3503,2.20731 48.3518,2.21442 48.5537,2.22723C 48.7058,2.24575 49.1153,2.3568 49.2618,2.27422C 49.458,2.19592 49.3983,2.0507 49.6486,2.008C 49.8988,1.96954 50.2998,1.93111 50.1477,1.90691C 49.9443,1.88981 49.0357,1.9126 48.8836,1.91401C 48.784,1.91686 48.4357,1.93536 48.0375,1.96384C 46.8004,2.07206 45.5747,2.22155 44.3646,2.4166 Z M 48.1982,89.6084C 48.1072,89.4148 47.8839,89.3963 47.2896,89.3408C 46.7307,89.2881 46.2615,89.1614 46.0269,88.9848C 45.7951,88.804 45.0017,88.2644 45.0116,88.0309C 45.0244,87.7946 45.2733,87.6593 45.1197,87.5141C 44.9675,87.3675 44.9875,87.1027 44.9647,86.8749C 44.942,86.6457 44.0433,86.0491 44.2239,85.8911C 44.3703,85.7259 45.3998,85.3372 45.3799,84.9472C 45.397,84.5642 45.0514,84.305 45.5264,84.1214C 45.9629,83.9292 46.3582,83.5889 46.4165,83.4508C 46.4748,83.3156 46.3084,82.7091 46.1293,82.5083C 45.9515,82.309 45.1624,81.9274 45.2121,81.6028C 45.2903,81.2825 45.215,80.9735 45.6287,81.0162C 46.0411,81.059 46.5573,80.7372 46.6867,80.6845C 46.7862,80.6261 46.3355,79.7392 46.8317,79.4117C 47.345,79.08 48.0332,79.2437 47.9621,78.6884C 47.8982,78.1289 46.4407,77.8171 46.8018,77.642C 47.1559,77.4655 48.5252,77.4897 48.7044,77.1551C 48.9049,76.8191 48.7314,75.7015 49.1068,75.5819C 49.4765,75.4623 52.0545,75.3954 52.1739,75.0209C 52.2891,74.6422 53.0129,73.4819 53.0129,73.4819C 53.0129,73.4819 52.1199,72.6148 52.4029,72.4212C 52.7,72.229 53.9044,72.1108 54.0011,72.0781C 54.1177,72.0453 54.9538,71.7478 55.3221,71.3064C 55.7089,70.8608 55.9819,70.3041 56.2791,69.8727C 56.5791,69.4399 56.9559,69.0228 57.2375,68.7523C 57.5119,68.486 57.6925,67.7158 57.8588,67.4581C 58.0067,67.209 58.611,67.0182 58.6679,66.7804C 58.7305,66.5412 58.7205,66.3277 58.7419,65.939C 58.7703,65.546 58.6338,64.1864 59.0817,64.0298C 59.5339,63.8703 60.0003,63.167 60.3814,62.9079C 60.7639,62.6445 61.1791,62.8737 61.6028,62.6516C 62.0336,62.4252 62.81,62.1234 63.1556,62.1291C 63.4968,62.1405 63.6134,62.3427 63.8893,62.0465C 64.158,61.7618 64.1111,61.8401 64.3656,61.4671C 64.6287,61.0827 64.3471,60.3694 64.7794,60.0633C 65.2046,59.7714 65.5288,59.5778 65.5359,59.2774C 65.5345,58.994 65.597,58.1085 65.7321,57.8522C 65.8743,57.5831 65.7904,53.9199 65.9937,53.8487C 66.1957,53.7718 66.5355,53.7206 66.7047,53.4771C 66.8725,53.2294 67.1256,52.5075 67.3602,52.4805C 67.5963,52.4663 67.8963,52.0349 68.0129,51.9082C 68.1309,51.7943 68.5134,51.5223 68.6627,51.3686C 68.812,51.2091 68.913,51.3358 68.8931,50.5727C 68.8732,49.8039 68.8874,49.2586 68.7679,48.9924C 68.6513,48.7446 67.8991,48.4542 67.4967,48.2164C 67.0901,47.963 66.9934,48.0712 66.5483,47.6114C 66.1061,47.1572 65.816,46.7073 65.2742,46.6162C 64.7325,46.5293 63.0802,46.74 62.7631,46.5023C 62.4531,46.2745 62.0223,45.8573 61.8687,46.0994C 61.7194,46.3442 61.5417,46.5108 61.5118,46.2574C 61.4706,45.9911 61.3966,45.433 61.2772,45.3832C 61.1577,45.3334 60.1837,44.5076 59.8908,44.7127C 59.6007,44.9205 58.3736,46.6333 58.1859,46.3044C 57.9897,45.9698 58.8755,45.144 58.594,44.8607C 58.3167,44.5845 57.6697,44.9575 57.4266,45.1483C 57.1834,45.3377 56.4326,45.5427 56.3288,45.4046C 56.2236,45.2636 56.5393,44.7454 56.7782,44.623C 57.0227,44.5034 57.6157,43.9196 57.6313,43.6249C 57.6484,43.3316 57.0341,42.9971 56.909,42.7721C 56.7895,42.5486 56.3942,40.7931 55.9805,41.1676C 55.5667,41.5434 55.1515,43.2462 54.8045,43.0739C 54.459,42.9003 53.7708,42.2937 53.4778,42.5529C 53.1807,42.8106 53.165,43.4498 52.7996,43.2078C 52.4341,42.9657 51.9294,41.3455 51.9649,40.8486C 51.9919,40.3532 52.2365,39.8577 51.8142,39.3637C 51.372,38.8725 48.9916,37.4146 49.4794,37.1085C 49.9642,36.8053 50.2088,35.6549 49.805,35.9041C 49.3784,36.1589 48.4826,36.7142 48.0076,36.3824C 47.5285,36.055 47.0308,35.5652 46.6938,35.9311C 46.3326,36.3055 45.3927,36.0308 45.5719,35.9995C 45.7667,35.961 45.4112,35.5211 45.2789,35.4883C 45.1467,35.4584 42.5958,35.4129 42.5958,35.4129C 42.5958,35.4129 42.4308,36.1874 42.2886,36.0308C 42.1635,35.867 41.845,35.0868 41.845,35.0868C 41.845,35.0868 40.7103,36.1404 40.3178,36.0479C 39.9182,35.961 39.1461,35.8898 38.7124,36.9918C 38.2773,38.1009 37.4441,38.2276 37.2905,38.0254C 37.1241,37.8389 36.3392,37.6054 35.9183,37.5513C 35.4932,37.5029 35.8387,38.2674 34.9287,37.883C 34.0428,37.4872 33.1655,37.1883 33.1868,36.7626C 33.1953,36.3511 33.6745,34.4575 33.6319,34.1999C 33.5707,33.9578 31.4606,33.5521 30.9743,33.1919C 30.4709,32.8615 30.0784,32.0258 30.2988,31.9433C 30.5221,31.8621 31.762,29.5272 31.4037,29.2695C 31.0695,28.9976 28.9267,29.4247 28.8442,29.802C 28.7461,30.2006 28.1901,31.8123 27.728,31.8422C 27.2431,31.9034 24.7021,32.4344 24.7575,30.2049C 24.8358,28.0522 24.968,27.8757 25.1557,27.598C 25.3448,27.3218 25.6335,27.1367 25.5097,27.0214C 25.386,26.9047 25.2595,26.0576 25.5183,25.7301C 25.7785,25.3998 26.6871,24.9286 26.7355,24.9257C 26.8122,24.8972 27.1251,24.3463 27.4279,24.4573C 27.7578,24.5484 28.1602,24.2751 28.5413,24.3206C 28.9196,24.3705 29.3902,24.6509 29.831,24.51C 30.2434,24.3932 30.4567,24.2024 30.5505,24.0914C 30.6444,23.9789 30.8633,23.4949 31.2629,23.6116C 31.6881,23.7127 31.8445,23.3838 32.0805,23.7753C 32.3194,24.1726 33.1982,23.9262 33.501,23.949C 33.8025,23.9732 33.9219,23.8451 34.1011,24.0586C 34.3073,24.2537 34.6713,24.3918 34.6727,24.7008C 34.677,25.0097 34.5391,25.2133 34.7751,25.629C 34.9884,26.0661 35.3382,26.4818 35.4349,26.5715C 35.5046,26.6783 35.897,26.7765 36.0264,26.6954C 36.1544,26.6142 36.3136,25.9978 36.3591,25.5949C 36.3847,25.2076 36.2681,24.7577 36.2383,24.3904C 36.1857,24.0387 35.6581,23.6529 35.7207,23.1603C 35.7633,22.6862 35.9581,21.8291 36.234,21.6825C 36.5099,21.5372 37.9147,20.2744 38.4309,20.048C 38.9144,19.8373 39.8528,19.3347 39.9282,19.1354C 40.0064,18.9375 39.6609,18.6286 39.6922,18.4036C 39.7604,18.1687 40.0775,17.8697 40.1813,17.612C 40.2524,17.3686 40.4842,17.1308 40.6818,16.8945C 40.8795,16.6596 41.161,16.0516 41.4355,15.9092C 41.6743,15.7768 42.8474,15.4408 43.0693,15.2344C 43.2584,15.0394 44.0333,15.1589 44.0518,14.8998C 44.0746,14.6436 43.0849,14.8187 43.3266,14.5055C 43.5741,14.1908 44.1201,13.7537 44.4599,13.449C 44.8438,13.1373 47.2057,12.125 47.0649,12.2987C 46.8857,12.4781 46.3155,12.7386 46.3667,13.0618C 46.3781,13.3964 46.3013,13.6669 46.7592,13.5573C 47.1801,13.4519 47.1872,13.2084 48.1001,12.8454C 48.9859,12.4952 49.495,12.3314 49.8064,12.1748C 50.1605,12.0196 50.9667,11.9669 50.7932,11.6936C 50.5785,11.4259 50.3382,10.7383 50.0567,10.9248C 49.778,11.1113 49.1566,11.6196 49.1566,11.6196C 48.4385,11.4017 48.4385,11.4017 47.7105,11.1924C 47.7105,11.1924 47.2967,11.5541 47.2924,11.1882C 47.3322,10.8223 47.6451,10.613 47.6451,10.613C 47.6451,10.613 48.0105,10.8778 48.0603,10.5575C 48.1129,10.2428 48.0859,9.97516 48.1598,9.85841C 48.2337,9.74166 46.0155,9.9353 46.1549,9.71177C 46.2544,9.49679 48.0958,9.22628 48.1072,9.3473C 48.1626,9.46405 48.3887,9.57651 48.6617,9.72599C 48.8893,9.87976 49.667,10.0392 49.5234,9.80431C 49.3798,9.57367 48.302,9.11806 48.7442,9.17643C 49.1822,9.23766 49.9287,9.42133 50.2643,9.2576C 50.5586,9.09671 51.9763,8.17273 52.0673,8.43327C 52.1569,8.69522 50.7804,10.3225 50.9966,10.4849C 51.2511,10.6514 53.2916,10.7383 53.165,10.8479C 53.0797,10.959 51.9635,10.9476 52.5422,11.2522C 53.111,11.564 53.3925,11.7335 53.6456,11.443C 53.9002,11.1597 54.0352,10.8977 54.1959,11.0316C 54.3538,11.1654 54.7178,11.2935 54.7178,11.2935C 54.7178,11.2935 55.0875,11.3006 55.2681,11.0928C 55.4074,10.8821 55.5027,10.7041 55.3619,10.3282C 55.2183,9.95808 53.8746,9.47115 53.4067,9.34445C 52.9787,9.22202 52.7214,9.00988 52.8963,8.89313C 53.0697,8.77779 53.4267,8.4717 53.4722,8.36777C 53.5191,8.26385 53.0854,7.77834 53.0868,7.73563C 53.0868,7.69577 53.6328,7.26581 53.2318,7.07217C 52.8266,6.88282 52.2806,6.5924 51.9621,6.69917C 51.645,6.80737 50.1662,7.31421 50.5188,7.11773C 50.9198,6.9241 52.2351,6.6835 51.8213,6.41443C 51.3563,6.15673 50.7108,6.19516 50.5188,6.01292C 50.3254,5.83639 49.5945,5.32384 49.5945,5.32384C 49.5945,5.32384 49.9145,5.12309 49.7666,5.01632C 49.5704,4.91238 48.8949,4.14927 48.8949,4.14927C 48.8949,4.14927 48.2679,3.59543 48.0873,3.77909C 47.9095,3.97131 46.7009,4.89672 46.2544,4.79563C 45.8065,4.70309 45.3927,4.52798 45.4723,4.41122C 45.5065,4.30304 45.6899,3.85741 45.4837,3.80331C 45.2292,3.75916 44.1897,3.79191 44.1727,3.69083C 44.1556,3.59402 43.7276,3.44311 43.6238,3.42744C 43.4717,3.42316 42.9214,3.45734 42.8801,3.50576C 42.8403,3.55416 42.9015,3.61253 42.6498,3.62391C 42.4479,3.62534 42.1933,3.61679 42.0469,3.64527C 41.9004,3.67516 41.353,3.73782 41.1767,3.85598C 41.0003,3.97985 41.1596,4.21903 40.8866,4.35144C 40.6619,4.47672 40.6648,4.48669 40.7828,4.55646C 40.9022,4.63193 40.9207,4.70309 40.7956,4.81274C 40.625,4.93658 39.6467,5.05902 40.4188,5.31387C 41.2392,5.61572 41.1468,5.84777 40.8866,6.18378C 40.6321,6.53259 39.7945,7.04797 39.5372,7.17184C 39.3253,7.28431 39.0167,7.39678 39.0509,7.51212C 39.085,7.62885 38.9556,8.00471 38.9343,8.09441C 38.9129,8.18411 39.0821,8.42187 39.031,8.56852C 38.9812,8.71658 38.9215,9.28608 38.4465,9.28608C 38.0143,9.27612 37.892,9.05258 37.6886,8.88031C 37.4853,8.71232 37.1497,8.72939 37.2478,8.58845C 37.3445,8.44607 37.6744,8.40763 37.5479,8.32221C 37.3772,8.25387 37.272,8.22967 37.363,8.06452C 37.4995,7.88512 37.8934,7.88227 37.6815,7.69292C 37.5166,7.49502 37.4526,7.30141 37.0303,7.38113C 36.6051,7.46371 35.7833,6.30621 35.5586,6.26351C 35.3353,6.22364 34.2845,6.37313 33.8409,6.5924C 33.3987,6.81592 33.1669,7.27863 33.0332,7.21456C 32.8555,7.17326 32.2085,8.009 31.9383,8.00471C 31.6241,8.02466 31.6283,7.33271 31.8857,7.06079C 32.1502,6.79882 32.4374,6.46283 33.0119,6.15102C 33.592,5.84777 35.2258,5.05902 35.2258,5.05902C 35.2258,5.05902 35.1633,5.03625 35.4434,4.92092C 35.769,4.78995 35.7662,4.77856 35.9553,4.70878C 36.0961,4.65753 36.672,4.46819 36.8099,4.40554C 36.9009,4.35856 37.4597,4.12079 37.5166,4.13217C 37.5251,4.15924 36.7388,4.50946 36.8398,4.49951C 36.9421,4.49096 37.5209,4.32011 37.5877,4.36282C 37.6545,4.40981 37.5692,4.47103 37.9844,4.28738C 38.4039,4.11082 38.6513,3.88445 38.9115,3.8802C 39.1248,3.90012 40.1244,3.75632 40.2126,3.69794C 40.2538,3.65381 40.1415,3.61964 39.7761,3.60825C 39.4618,3.604 38.5233,3.80331 38.7622,3.72071C 38.9542,3.65524 39.395,3.54703 39.5343,3.48154C 39.6751,3.42459 39.8685,3.36337 40.1145,3.30072C 40.2126,3.27652 40.2609,3.26229 40.3093,3.24947L 40.3093,3.24094C 31.4165,5.4349 23.4508,9.9837 17.1104,16.1911C 16.9298,16.399 16.8857,16.5471 16.8857,16.5471C 16.8857,16.5471 16.8473,16.651 16.4122,17.1422C 15.9856,17.6391 16.644,17.1578 16.4819,17.5593C 16.3439,17.9822 16.3965,18.1687 15.9671,18.9204C 15.5306,19.7234 14.8381,20.5577 14.622,21.0816C 14.3902,21.6511 14.5651,22.3516 14.558,22.8969C 14.5452,23.4906 14.5907,24.2964 14.8296,24.4146C 15.077,24.5413 15.7083,24.3776 15.7723,24.6566C 15.8406,24.9385 16.0496,25.434 16.034,25.6475C 15.9941,25.8981 15.906,26.3879 16.0112,26.6256C 16.1193,26.8662 16.5089,26.7082 16.5103,26.9787C 16.5131,27.2492 16.4278,27.5098 16.4278,27.5098C 16.4278,27.5098 16.1292,27.7319 16.206,27.8885C 16.26,28.0821 16.6994,28.0138 16.8402,28.1604C 16.9824,28.3099 17.1601,28.6872 17.0848,29.0445C 17.0122,29.4019 16.9724,29.4275 17.1587,29.5457C 17.3222,29.7023 17.6151,29.4959 17.7673,29.6938C 17.9209,29.8931 18.0844,29.6055 18.0048,29.9472C 17.9507,30.2547 17.9763,30.3672 18.0517,30.3672C 18.1256,30.3672 18.5465,30.155 18.5223,29.8959C 18.4996,29.6368 18.4043,29.5229 18.164,29.261C 17.9522,28.9677 17.8128,28.4665 17.8185,28.2658C 17.8242,28.0636 17.709,27.9824 17.6621,27.9497C 17.6407,27.8828 16.8757,26.5388 16.8701,26.479C 16.8644,26.4206 16.6369,25.8696 16.8743,25.6575C 17.0876,25.4838 17.2511,25.2731 17.3535,25.5194C 17.4602,25.7671 17.318,25.8255 17.4545,26.0391C 17.6208,26.2184 17.2497,26.647 17.5839,26.8392C 17.928,27.0371 18.3887,27.9995 18.4342,28.186C 18.5053,28.3384 18.8593,28.4879 19.1537,28.8466C 19.4793,29.1769 19.721,29.2481 19.8817,29.7023C 20.0282,30.1864 20.5287,30.2476 20.3396,30.6833C 20.132,31.1474 19.9158,31.2841 19.9628,31.4535C 20.0097,31.6215 20.4391,32.1653 20.951,32.5313C 21.4729,32.9043 22.9133,33.1847 23.4494,33.4097C 24.011,33.6147 25.0362,34.4476 25.2837,34.1016C 25.5325,33.7571 26.1965,33.1064 26.3899,33.2089C 26.5847,33.3115 26.5165,33.777 27.0454,33.73C 27.5716,33.6916 27.9939,34.3138 28.2484,34.5387C 28.5058,34.7651 29.4698,35.1182 29.6703,35.2676C 29.8879,35.3972 30.333,34.523 30.7283,35.5823C 31.1435,36.6387 31.2643,36.7298 31.5729,37.2125C 31.9042,37.6737 33.4598,38.5835 33.5409,38.7572C 33.6375,38.9138 34.4495,39.5218 35.1178,39.2242C 35.7747,38.9437 35.86,38.3429 36.4388,38.723C 37.0161,39.1089 37.4227,38.7643 37.4142,39.2925C 37.4014,39.8264 38.2503,40.3176 37.4597,41.2815C 36.6777,42.2396 35.1519,43.9068 34.9727,44.4592C 34.7978,45.0102 35.1562,46.619 35.1562,46.619C 35.1562,46.619 34.0911,47.7196 34.3457,48.4713C 34.6016,49.2301 36.1217,50.0502 36.6506,52.2086C 37.191,54.3797 37.2592,54.3712 38.2119,55.5671C 39.1689,56.7545 42.5318,57.5376 42.4052,58.4516C 42.2744,59.3542 42.263,60.2014 42.3953,60.7808C 42.5161,61.3418 42.5346,61.3617 42.4678,61.5496C 42.4038,61.739 42.2431,62.3398 42.2261,62.7441C 42.2175,63.1556 42.1436,63.7678 42.081,63.9073C 42.0085,64.0369 41.8393,65.9575 41.8393,65.9575C 41.8393,65.9575 40.915,65.7126 41.0188,66.1113C 41.1297,66.5156 41.7241,66.4814 41.7853,66.7847C 41.8364,67.0822 41.7085,67.6759 41.7042,67.8126C 41.6843,67.9422 41.3288,68.2525 41.2961,68.3337C 41.2634,68.4134 41.2833,69.2363 41.3914,69.5168C 41.5023,69.8016 41.5677,69.9283 41.4682,70.129C 41.3516,70.3184 41.3871,70.7526 41.2989,71.026C 41.2108,71.2993 40.9819,72.0923 40.6676,72.7259C 40.3377,73.3438 40.1472,73.5801 40.2353,73.7709C 40.3249,73.9617 40.5851,74.003 40.4572,74.1838C 40.3306,74.3646 40.1827,74.2664 40.2808,74.5055C 40.3576,74.7362 40.5851,75.1263 40.6292,75.3769C 40.6534,75.6146 40.1401,75.8083 40.1586,76.0602C 40.1799,76.3094 40.15,76.429 40.1799,77.0982C 40.2012,77.7545 40.3505,78.3653 40.0974,78.7041C 39.8699,79.0501 39.3253,79.023 39.6367,79.6167C 39.9623,80.2161 40.0093,80.3371 39.8827,80.4709C 39.7561,80.6019 39.5912,80.367 39.631,80.8041C 39.6495,81.227 39.9652,81.0518 39.722,81.4548C 39.5059,81.8662 38.8162,81.9061 39.257,82.6834C 39.6922,83.4494 39.3992,82.6863 39.6723,82.2976C 39.9154,81.8904 40.1315,81.9559 40.0334,82.4471C 39.9694,82.9482 39.6467,82.9525 39.7092,83.233C 39.7433,83.5021 39.9979,84.1442 39.9751,84.3919C 39.9524,84.6368 39.6723,84.5969 39.7035,84.9927C 39.7391,85.3842 39.8884,85.4924 39.9353,85.6704C 39.9495,85.8313 39.7775,86.089 39.7732,86.2029C 39.7704,86.3168 39.9694,86.405 40.0647,86.5688C 40.1258,86.7183 41.8507,88.7442 42.2232,88.9635C 42.5602,89.1713 42.5062,89.3721 42.5247,89.449L 42.583,89.533C 42.583,89.533 42.7109,89.6497 42.819,89.6924C 42.8887,89.728 43.1375,89.6896 43.6807,89.896C 44.2267,90.0996 44.5168,90.0313 44.9405,90.2719C 45.3671,90.5096 45.5804,90.8627 45.7311,90.6791C 45.8435,90.4869 45.8648,90.3644 46.0326,90.2904C 46.2004,90.2164 46.5829,89.5173 46.9583,89.5444C 47.3337,89.5686 47.3607,89.6526 47.5071,89.691C 47.6522,89.7337 47.8427,89.738 48.0361,89.6995C 48.1925,89.654 48.1982,89.6084 48.1982,89.6084 Z ">
+                                                <Path.Effect>
+                                                    <DropShadowEffect Direction="-90" ShadowDepth="2" />
+                                                </Path.Effect>
+                                            </Path>
+                                            <Ellipse Width="101.05" Height="101.05" Canvas.Left="1.90274" Canvas.Top="1.77166" >
+                                                <Ellipse.Fill>
+                                                    <RadialGradientBrush Center="0.49,0.4" >
+                                                        <GradientStop Color="#00000000" Offset="0.3"  />
+                                                        <GradientStop Color="#52000000" Offset="1" />
+                                                    </RadialGradientBrush>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
+                                            <Ellipse Width="30" Height="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,15,0,0" RenderTransformOrigin="0.5,0.5" >
+                                                <Ellipse.Fill>
+                                                    <RadialGradientBrush >
+                                                        <GradientStop Color="#83FFFFFF" Offset="0.185" />
+                                                        <GradientStop Color="#00FFFFFF" Offset="1" />
+                                                    </RadialGradientBrush>
+                                                </Ellipse.Fill>
+                                                <Ellipse.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform/>
+                                                        <SkewTransform AngleX="-64" AngleY="46"/>
+                                                        <RotateTransform Angle="-46"/>
+                                                        <TranslateTransform/>
+                                                    </TransformGroup>
+                                                </Ellipse.RenderTransform>
+                                            </Ellipse>
+
+                                        </Canvas>
+
+                                    </Grid>
+                                </Grid>
+                                <Ellipse Fill="#00FFFFFF" StrokeThickness="0" Width="80" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" >
+                                </Ellipse>
+
+
+                            </Grid>
+                        </Border>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="esri:Navigation" x:Key="BottomNavigatorStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="esri:Navigation">
+                    <Grid x:Name="root" Effect="{StaticResource NavShadowEffect}" FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}" >
+
+                        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0"  >
+                            <Border CornerRadius="5,40,5,5" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="1" Margin="0" BorderBrush="{StaticResource AccentTextColorBrush}" >
+                                <Border CornerRadius="4,39,4,4" Width="40" Style="{StaticResource navInnerBorderStyle}" Margin="0" BorderBrush="{StaticResource SelectionOutlineColorBrush}" Background="{StaticResource AccentColorBrush}" Padding="5, 20, 5, 80"  >
+                                    <Grid >
+                                        <Rectangle HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,0" Fill="#00FFFFFF" Width="10" Height="100" />
+                                        <StackPanel Orientation="Vertical" >
+                                            <StackPanel Orientation="Vertical" >
+                                                <Border BorderBrush="#66000000" BorderThickness="1" CornerRadius="15" Padding="0" HorizontalAlignment="Center" >
+                                                    <StackPanel Orientation="Vertical">
+                                                        <Button x:Name="ZoomInButton" Height="20" FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold" Width="20" Padding="-5" ToolTipService.ToolTip="{Binding ConverterParameter=ZoomIn, Converter={StaticResource LayoutLocalization}}" Margin="2,2,2,2" Style="{StaticResource NavClearButtonStyle}" Cursor="Hand" >
+                                                            <Button.Content>
+                                                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20" >
+                                                                    <Ellipse Stroke="Transparent" StrokeThickness="1" Margin="0" Fill="{StaticResource NavButtonGradient}" />
+                                                                    <Ellipse Stroke="{StaticResource AccentTextColorBrush}" StrokeThickness="1" Margin="0" Fill="Transparent" Opacity="0.5" />
+                                                                    <TextBlock FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold" Text="+" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" />
+                                                                </Grid>
+                                                            </Button.Content>
+                                                        </Button>
+                                                        <Grid>
+                                                            <Grid RenderTransformOrigin="0.5,0.5" >
+                                                                <Slider x:Name="ZoomSlider" Orientation="Vertical" Height="90" Minimum="0" SmallChange="1" LargeChange="1" ToolTipService.ToolTip="{Binding ConverterParameter=MoveBarUpZoomInMoveDownToZoomOut, Converter={StaticResource LayoutLocalization}}" Width="20" Style="{StaticResource ZoomNavSliderStyle}" />
+                                                            </Grid>
+                                                        </Grid>
+                                                        <Button x:Name="ZoomOutButton" Height="20" FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold" Width="20" Padding="-5" ToolTipService.ToolTip="{Binding ConverterParameter=ZoomOut, Converter={StaticResource LayoutLocalization}}" Margin="2,2,2,2" Style="{StaticResource NavClearButtonStyle}" Cursor="Hand" >
+                                                            <Button.Content>
+                                                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="20" Height="20" >
+                                                                    <Ellipse Stroke="Transparent" StrokeThickness="1" Margin="0" Fill="{StaticResource NavButtonGradient}" />
+                                                                    <Ellipse Stroke="{StaticResource AccentTextColorBrush}" StrokeThickness="1" Margin="0" Fill="Transparent" Opacity="0.5" />
+                                                                    <TextBlock FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold" Text="-" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" />
+                                                                </Grid>
+                                                            </Button.Content>
+                                                        </Button>
+                                                        <Button x:Name="ZoomFullExtent" Height="20" FontSize="8" Width="20" ToolTipService.ToolTip="{Binding ConverterParameter=FullExtent, Converter={StaticResource LayoutLocalization}}" Margin="2,0,2,5" Style="{StaticResource NavClearButtonStyle}" Foreground="White" Padding="-5" Cursor="Hand"  >
+                                                            <Button.Content>
+
+                                                                <Grid Height="20" Width="20" ToolTipService.ToolTip="{Binding ConverterParameter=FullExtent, Converter={StaticResource LayoutLocalization}}" Margin="-1,0,2,5" >
+                                                                    <Grid RenderTransformOrigin="0.5,0.5" >
+                                                                        <Grid.RenderTransform>
+                                                                            <ScaleTransform ScaleX="0.75" ScaleY="0.75" />
+                                                                        </Grid.RenderTransform>
+                                                                        <Canvas Width="25.002" Height="24.935" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FlowDirection="LeftToRight">
+                                                                            <Ellipse Width="25" Height="25" Fill="#FF6CA1D8"  />
+                                                                            <Path Fill="#FFD8D7D2" Data=" M 8.545,1.761 C 8.563,1.754 9.120,1.177 9.120,1.177 L 9.763,1.248 L 9.815,1.795 L 9.662,1.921 L 9.967,2.241 L 9.429,2.200 C 9.429,2.200 9.120,2.665 9.102,2.665 C 9.083,2.665 8.734,2.650 8.734,2.650 L 8.931,2.152 L 9.362,1.977 L 9.235,1.542 L 8.545,1.780 L 8.545,1.761 L 8.545,1.761 Z M 4.492,11.020 L 4.792,10.904 L 5.127,11.105 L 4.688,11.131 C 4.688,11.131 4.499,11.023 4.492,11.020 L 4.492,11.020 Z M 4.172,10.599 L 3.867,10.424 L 3.779,10.167 L 4.172,10.599 L 4.172,10.599 Z M 3.533,10.007 L 3.288,9.725 L 3.021,9.762 L 3.285,9.565 L 3.604,9.792 L 3.533,10.007 L 3.533,10.007 Z M 8.606,24.331 C 8.250,23.983 7.939,23.565 7.583,23.217 C 7.875,23.035 8.167,22.852 8.458,22.669 C 8.414,22.545 8.369,22.421 8.325,22.297 C 8.483,22.297 8.641,22.297 8.800,22.297 C 9.086,21.784 9.374,21.270 9.660,20.755 C 10.056,20.670 10.452,20.587 10.848,20.502 C 10.991,19.909 11.135,19.316 11.278,18.723 C 11.604,18.351 11.931,17.980 12.257,17.608 C 11.872,17.287 11.485,16.966 11.100,16.643 C 10.813,16.649 10.526,16.654 10.239,16.660 C 9.843,16.421 9.447,16.184 9.052,15.947 C 8.814,16.011 8.577,16.075 8.339,16.139 C 8.310,15.654 8.280,15.170 8.250,14.685 C 7.860,14.582 7.469,14.478 7.078,14.373 C 6.692,13.979 6.306,13.583 5.920,13.187 C 5.782,13.197 5.644,13.207 5.505,13.215 C 5.070,13.029 4.634,12.840 4.199,12.652 C 3.952,12.815 3.705,12.979 3.457,13.142 C 3.214,13.008 2.972,12.874 2.729,12.741 C 2.715,12.306 2.700,11.871 2.686,11.435 C 2.462,11.297 2.240,11.158 2.017,11.020 C 2.166,10.639 2.314,10.258 2.462,9.876 C 2.210,10.020 1.958,10.164 1.706,10.308 C 1.627,10.134 1.547,9.961 1.468,9.788 C 1.775,9.125 2.082,8.462 2.388,7.799 C 2.695,7.809 3.002,7.819 3.309,7.830 C 3.442,7.997 3.576,8.166 3.709,8.333 C 3.649,8.458 3.590,8.581 3.531,8.705 C 3.601,8.897 3.669,9.090 3.739,9.284 C 3.833,8.818 3.927,8.354 4.021,7.888 C 4.401,7.686 4.782,7.482 5.164,7.280 C 5.169,7.111 5.173,6.943 5.178,6.775 C 5.816,6.360 6.455,5.944 7.093,5.528 C 7.231,5.598 7.370,5.667 7.508,5.736 C 7.553,5.578 7.597,5.419 7.642,5.261 C 7.741,5.147 7.840,5.034 7.939,4.920 C 7.771,4.886 7.603,4.851 7.434,4.816 C 7.622,4.747 7.810,4.678 7.999,4.608 C 8.334,4.584 8.670,4.559 9.007,4.535 C 8.908,4.727 8.809,4.920 8.711,5.113 C 8.829,5.187 8.948,5.261 9.066,5.336 C 9.155,5.241 9.245,5.147 9.333,5.054 C 9.269,4.945 9.205,4.836 9.141,4.727 C 9.205,4.559 9.269,4.391 9.333,4.223 C 9.200,4.060 9.066,3.896 8.933,3.733 C 8.943,3.550 8.953,3.367 8.962,3.184 C 8.785,3.204 8.606,3.224 8.428,3.244 C 8.414,3.050 8.399,2.857 8.384,2.665 C 8.285,2.635 8.186,2.605 8.087,2.575 C 7.919,2.763 7.750,2.952 7.583,3.140 C 7.498,3.293 7.415,3.446 7.330,3.600 C 7.172,3.639 7.014,3.679 6.855,3.718 C 6.771,3.856 6.688,3.996 6.603,4.134 C 6.544,4.134 6.484,4.134 6.425,4.134 C 6.420,4.035 6.415,3.936 6.410,3.836 C 6.455,3.713 6.499,3.589 6.544,3.466 C 6.439,3.277 6.336,3.090 6.232,2.902 C 6.899,2.556 7.568,2.209 8.235,1.863 C 8.260,1.779 8.285,1.695 8.310,1.611 C 8.463,1.458 8.616,1.304 8.770,1.150 C 8.488,1.245 8.206,1.338 7.924,1.433 C 8.067,1.314 8.210,1.195 8.354,1.077 C 8.221,1.091 8.087,1.106 7.954,1.121 C 7.840,1.205 7.726,1.289 7.612,1.374 C 7.528,1.334 7.444,1.294 7.360,1.254 C 7.597,1.160 7.930,1.079 8.167,0.984 C 8.415,0.846 8.591,0.803 8.838,0.664 C 9.293,0.674 9.725,0.577 10.180,0.587 C 9.997,0.686 9.813,0.785 9.631,0.883 C 9.833,0.938 10.037,0.993 10.239,1.046 C 10.531,0.968 10.823,0.889 11.114,0.810 C 10.981,0.869 10.848,0.928 10.714,0.988 C 10.837,1.052 10.961,1.116 11.085,1.181 C 11.080,1.497 11.075,1.813 11.070,2.130 C 11.031,2.298 10.991,2.467 10.951,2.635 C 10.857,2.694 10.764,2.753 10.669,2.813 C 10.907,2.941 11.145,3.070 11.382,3.199 C 11.431,3.085 11.481,2.971 11.530,2.857 C 11.659,2.783 11.788,2.709 11.916,2.635 C 11.931,2.561 11.945,2.486 11.961,2.412 C 12.198,2.343 12.436,2.274 12.673,2.204 C 12.688,2.170 12.703,2.135 12.717,2.101 C 12.939,2.057 13.162,2.011 13.385,1.967 C 13.365,1.576 13.346,1.185 13.326,0.795 C 12.975,0.735 12.624,0.675 12.272,0.617 C 12.495,0.587 12.717,0.557 12.939,0.528 C 13.271,0.488 13.603,0.448 13.935,0.409 C 13.523,0.294 13.113,0.181 12.703,0.067 C 12.918,0.055 13.133,0.043 13.348,0.032 C 10.260,-0.205 5.095,0.793 1.869,5.974 C 1.611,6.869 1.354,7.765 1.097,8.660 C 1.068,9.085 1.038,9.511 1.008,9.937 C 1.196,10.179 1.384,10.421 1.572,10.664 C 1.587,10.782 1.602,10.901 1.617,11.020 C 1.839,11.366 2.062,11.712 2.284,12.058 C 2.314,12.231 2.344,12.405 2.374,12.578 C 2.566,12.810 2.760,13.042 2.953,13.275 C 3.036,13.231 3.121,13.187 3.205,13.142 C 3.205,13.142 3.413,14.284 3.398,14.358 C 3.382,14.433 2.819,15.843 2.819,15.843 C 3.180,16.629 3.541,17.415 3.902,18.203 C 4.322,18.500 4.743,18.796 5.164,19.092 C 5.347,19.781 5.530,20.467 5.712,21.156 C 6.015,21.755 6.316,22.352 6.618,22.952 C 7.103,23.333 7.631,23.780 8.116,24.162 C 8.308,24.231 8.433,24.278 8.606,24.331 L 8.606,24.331 Z M 19.324,6.541 L 19.194,6.125 L 19.380,6.362 L 19.324,6.541 L 19.324,6.541 Z M 16.011,3.331 C 16.011,3.368 16.315,3.896 16.315,3.896 L 16.671,4.008 L 16.688,4.677 L 17.325,4.529 L 17.297,4.134 L 16.545,3.703 L 16.374,3.375 L 16.011,3.331 L 16.011,3.331 Z M 15.958,3.993 L 16.033,4.261 L 15.988,4.499 L 16.278,4.275 L 15.958,3.993 L 15.958,3.993 Z M 13.848,2.468 L 13.945,2.736 L 14.524,2.371 L 14.042,2.356 L 13.848,2.468 L 13.848,2.468 Z M 20.509,21.377 C 20.589,21.176 20.667,20.973 20.746,20.770 C 20.755,20.597 20.766,20.422 20.775,20.250 C 20.890,20.087 21.003,19.923 21.117,19.760 C 21.082,19.354 21.048,18.951 21.013,18.544 C 21.265,18.231 21.518,17.920 21.771,17.608 C 21.750,17.143 21.730,16.677 21.711,16.214 C 21.528,15.971 21.344,15.729 21.161,15.486 C 21.240,15.120 21.320,14.754 21.399,14.389 C 21.172,14.324 20.944,14.259 20.717,14.196 C 20.559,14.096 20.399,13.997 20.241,13.899 C 20.059,14.042 19.876,14.186 19.693,14.328 C 19.405,14.333 19.118,14.338 18.832,14.344 C 18.713,14.458 18.595,14.572 18.476,14.685 C 18.061,14.472 17.644,14.259 17.229,14.047 C 17.109,13.769 16.992,13.494 16.873,13.215 C 16.675,13.057 16.478,12.899 16.279,12.741 C 16.294,12.231 16.310,11.722 16.323,11.213 C 16.189,11.064 16.057,10.916 15.924,10.768 C 16.225,10.328 16.526,9.887 16.828,9.446 C 16.996,9.293 17.164,9.140 17.333,8.986 C 17.323,8.803 17.313,8.621 17.303,8.438 C 17.451,8.175 17.601,7.913 17.748,7.651 C 17.981,7.666 18.214,7.681 18.446,7.695 C 18.614,7.538 18.782,7.378 18.950,7.221 C 19.258,7.156 19.564,7.092 19.871,7.028 C 19.970,7.230 20.068,7.433 20.167,7.636 C 20.399,7.681 20.633,7.725 20.865,7.770 C 21.078,7.874 21.290,7.977 21.503,8.081 C 21.488,7.878 21.474,7.675 21.458,7.473 C 21.780,7.522 22.102,7.571 22.423,7.621 C 22.547,7.512 22.671,7.403 22.794,7.295 C 22.641,6.919 22.487,6.543 22.334,6.167 C 22.181,6.305 22.026,6.444 21.874,6.583 C 21.726,6.483 21.578,6.384 21.429,6.285 C 21.310,6.123 21.192,5.959 21.072,5.796 C 21.048,5.865 21.023,5.935 20.999,6.003 C 21.103,6.117 21.206,6.231 21.310,6.345 C 21.296,6.458 21.281,6.572 21.265,6.686 C 20.934,6.365 20.603,6.043 20.271,5.722 C 19.921,5.563 19.569,5.405 19.218,5.247 C 19.415,5.425 19.614,5.603 19.811,5.781 C 19.993,5.895 20.178,6.009 20.360,6.123 C 20.355,6.202 20.352,6.281 20.345,6.360 C 20.386,6.449 20.424,6.538 20.465,6.627 C 20.414,6.657 20.365,6.686 20.315,6.716 C 20.246,6.766 20.178,6.815 20.107,6.864 C 20.034,6.790 19.959,6.716 19.886,6.642 C 19.965,6.617 20.043,6.592 20.124,6.568 C 20.196,6.568 20.271,6.568 20.345,6.568 C 20.221,6.404 20.099,6.241 19.975,6.078 C 19.752,5.999 19.528,5.919 19.308,5.840 C 19.177,5.727 19.049,5.613 18.921,5.499 C 18.822,5.623 18.723,5.746 18.624,5.870 C 18.529,5.895 18.436,5.919 18.343,5.944 C 18.336,6.330 18.332,6.716 18.327,7.102 C 18.129,7.240 17.932,7.378 17.733,7.518 C 17.451,7.418 17.170,7.320 16.889,7.221 C 16.923,7.033 16.959,6.845 16.995,6.658 C 16.904,6.439 16.815,6.221 16.724,6.003 C 16.833,5.973 16.943,5.942 17.051,5.912 C 17.256,5.855 17.641,5.955 17.853,5.944 C 17.694,5.702 17.536,5.459 17.378,5.217 C 17.274,5.183 17.170,5.147 17.065,5.113 C 17.214,5.000 17.362,4.886 17.511,4.772 C 17.511,4.510 17.511,4.247 17.511,3.985 C 17.595,3.936 17.679,3.886 17.764,3.836 C 17.654,3.693 17.545,3.550 17.437,3.406 C 17.564,3.391 17.694,3.377 17.822,3.362 C 17.635,3.228 17.447,3.095 17.258,2.961 C 17.209,3.070 17.160,3.179 17.109,3.288 C 16.902,3.100 16.695,2.912 16.486,2.724 C 16.486,2.521 16.486,2.318 16.486,2.115 C 16.372,1.893 16.259,1.670 16.145,1.448 C 16.447,1.408 16.749,1.369 17.051,1.329 C 17.224,1.482 17.397,1.635 17.570,1.789 C 17.654,1.789 17.739,1.789 17.822,1.789 C 17.817,1.645 17.813,1.502 17.809,1.358 C 17.877,1.319 17.946,1.280 18.016,1.240 C 22.481,3.395 24.693,7.690 24.976,11.247 C 25.229,14.462 23.672,19.706 20.687,21.438 C 20.627,21.417 20.568,21.398 20.509,21.377 L 20.509,21.377 Z" >
+                                                                                <Path.Effect>
+                                                                                    <DropShadowEffect Direction="-90" ShadowDepth="2" />
+                                                                                </Path.Effect>
+                                                                            </Path>
+                                                                            <Ellipse Width="25" Height="25"  >
+                                                                                <Ellipse.Fill>
+                                                                                    <RadialGradientBrush Center="0.49,0.4" >
+                                                                                        <GradientStop Color="#00000000" Offset="0.3"  />
+                                                                                        <GradientStop Color="#52000000" Offset="1" />
+                                                                                    </RadialGradientBrush>
+                                                                                </Ellipse.Fill>
+                                                                            </Ellipse>
+                                                                            <Ellipse Width="7.5" Height="3.75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,3.75,0,0" RenderTransformOrigin="0.5,0.5" >
+                                                                                <Ellipse.Fill>
+                                                                                    <RadialGradientBrush >
+                                                                                        <GradientStop Color="#83FFFFFF" Offset="0.185" />
+                                                                                        <GradientStop Color="#00FFFFFF" Offset="1" />
+                                                                                    </RadialGradientBrush>
+                                                                                </Ellipse.Fill>
+                                                                                <Ellipse.RenderTransform>
+                                                                                    <TransformGroup>
+                                                                                        <ScaleTransform/>
+                                                                                        <SkewTransform AngleX="-64" AngleY="46"/>
+                                                                                        <RotateTransform Angle="-46"/>
+                                                                                        <TranslateTransform/>
+                                                                                    </TransformGroup>
+                                                                                </Ellipse.RenderTransform>
+                                                                            </Ellipse>
+
+                                                                        </Canvas>
+
+                                                                    </Grid>
+                                                                </Grid>
+
+                                                            </Button.Content>
+                                                        </Button>
+
+                                                    </StackPanel>
+                                                </Border>
+                                            </StackPanel>
+                                            <Grid HorizontalAlignment="Center" Margin="0" Visibility="{Binding Path=Visibility, ElementName=RotateRing}" >
+                                                <Button x:Name="ResetRotation" Height="25" FontSize="8" Width="25" ToolTipService.ToolTip="{Binding ConverterParameter=ResetNorth, Converter={StaticResource LayoutLocalization}}" HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="2" Style="{StaticResource NavClearButtonStyle}" Foreground="White" Padding="0" Cursor="Hand" >                                                               <Button.Content>
+                                                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="25" Height="25" >
+                                                            <Ellipse Stroke="Transparent" StrokeThickness="1" Margin="0" Fill="{StaticResource NavButtonGradient}" />
+                                                            <Ellipse Stroke="{StaticResource AccentTextColorBrush}" StrokeThickness="1" Margin="0" Fill="Transparent" Opacity="0.5" />
+                                                            <Canvas Width="16" Height="16" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                                                <Polygon Fill="{StaticResource AccentTextColorBrush}"  Stroke="{StaticResource AccentTextColorBrush}" StrokeThickness="1" Points="0,6 8,0 16,6 12,6 12,16 4,16 4,6 0,6" Opacity="0.25" />
+                                                                <Polyline Stroke="{StaticResource AccentTextColorBrush}" StrokeThickness="1" Points="0,6 8,0 16,6 12,6 12,16 4,16 4,6 0,6" />
+                                                            </Canvas>
+                                                        </Grid>
+                                                    </Button.Content>
+
+                                                </Button>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Border>
+                        </Grid>
+                        <Border x:Name="NavCircle" CornerRadius="0,62,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Row="1" RenderTransformOrigin="0,1" Margin="1"  >
+                            <Border.RenderTransform>
+                                <ScaleTransform x:Name="NavCircleScale" CenterX="0" CenterY="0" ScaleX="0.68" ScaleY="0.68"/>
+                            </Border.RenderTransform>
+                            <Grid x:Name="MoveGrid" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="-1,0,0,-1" >
+                                <Grid.RenderTransform>
+                                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="1" ScaleY="1"/>
+                                </Grid.RenderTransform>
+                                <Grid.Projection >
+                                    <PlaneProjection x:Name="NavProjection" RotationX="0" />
+                                </Grid.Projection>
+                                <Ellipse StrokeThickness="1" Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Stroke="{StaticResource AccentTextColorBrush}" Fill="{StaticResource AccentColorBrush}" />
+                                <Border BorderThickness="1" BorderBrush="Transparent" CornerRadius="60,60,0,0" Width="120" Height="60" Opacity="0.1" Background="{StaticResource AccentTextColorBrush}" VerticalAlignment="Top" />
+
+                                <Grid x:Name="Navigator" RenderTransformOrigin="0.5,0.5" Margin="0" Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" >
+                                    <Grid.RenderTransform>
+                                        <RotateTransform x:Name="TransformRotate" Angle="0"/>
+                                    </Grid.RenderTransform>
+                                    <Ellipse x:Name="RotateRing" StrokeThickness="1" Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{StaticResource AccentTextColorBrush}" Fill="#00FFFFFF" ToolTipService.ToolTip="{Binding ConverterParameter=DragToRotate, Converter={StaticResource LayoutLocalization}}" Cursor="Hand" >
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger >
+                                                <i:Interaction.Behaviors>
+                                                    <ei:ConditionBehavior>
+                                                        <ei:ConditionalExpression>
+                                                            <ei:ComparisonCondition LeftOperand="{Binding Path=FlowDirection, ElementName=root}" 
+															RightOperand="RightToLeft" />
+                                                        </ei:ConditionalExpression>
+                                                    </ei:ConditionBehavior>
+                                                </i:Interaction.Behaviors>
+                                                <ei:ChangePropertyAction PropertyName="Visibility">
+                                                    <ei:ChangePropertyAction.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </ei:ChangePropertyAction.Value>
+                                                </ei:ChangePropertyAction>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Ellipse>
+                                    <Ellipse x:Name="innerRing" Fill="White" Stroke="Black" StrokeThickness="1" Width="80" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <Grid x:Name="PanLeft" Width="20" Height="20" Background="#00FFFFFF" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTipService.ToolTip="{Binding ConverterParameter=ClickToMoveWest, Converter={StaticResource LayoutLocalization}}" Cursor="Hand" >
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger >
+                                                <i:Interaction.Behaviors>
+                                                    <ei:ConditionBehavior>
+                                                        <ei:ConditionalExpression>
+                                                            <ei:ComparisonCondition LeftOperand="{Binding Path=FlowDirection, ElementName=root}" 
+															RightOperand="RightToLeft" />
+                                                        </ei:ConditionalExpression>
+                                                    </ei:ConditionBehavior>
+                                                </i:Interaction.Behaviors>
+                                                <ei:ChangePropertyAction PropertyName="HorizontalAlignment" Value="Right">
+                                                </ei:ChangePropertyAction>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                        <TextBlock Text="W" TextAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold"  />
+                                    </Grid>
+                                    <Grid x:Name="PanRight" Width="20" Height="20" Background="#00FFFFFF" HorizontalAlignment="Right" VerticalAlignment="Center"  ToolTipService.ToolTip="{Binding ConverterParameter=ClickToMoveEast, Converter={StaticResource LayoutLocalization}}" Cursor="Hand" >
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger >
+                                                <i:Interaction.Behaviors>
+                                                    <ei:ConditionBehavior>
+                                                        <ei:ConditionalExpression>
+                                                            <ei:ComparisonCondition LeftOperand="{Binding Path=FlowDirection, ElementName=root}" 
+															RightOperand="RightToLeft" />
+                                                        </ei:ConditionalExpression>
+                                                    </ei:ConditionBehavior>
+                                                </i:Interaction.Behaviors>
+                                                <ei:ChangePropertyAction PropertyName="HorizontalAlignment" Value="Left">
+                                                </ei:ChangePropertyAction>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                        <TextBlock Text="E" TextAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold"  />
+                                    </Grid>
+                                    <Grid x:Name="PanUp" Width="20" Height="20" Background="#00FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Top" ToolTipService.ToolTip="{Binding ConverterParameter=ClickToMoveNorth, Converter={StaticResource LayoutLocalization}}" Cursor="Hand" >
+                                        <TextBlock Text="N" TextAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold"  />
+                                    </Grid>
+                                    <Grid x:Name="PanDown" Width="20" Height="20" Background="#00FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Bottom" ToolTipService.ToolTip="{Binding ConverterParameter=ClickToMoveSouth, Converter={StaticResource LayoutLocalization}}" Cursor="Hand" >
+                                        <TextBlock Text="S" TextAlignment="Center" VerticalAlignment="Center" FontSize="12" Foreground="{StaticResource AccentTextColorBrush}" FontWeight="Bold"  />
+                                    </Grid>
+
+                                    <Grid x:Name="LargeGlobeGrid" RenderTransformOrigin="0.5,0.5" >
+                                        <Grid.RenderTransform>
+                                            <ScaleTransform x:Name="LargeGlobeScale" ScaleX="0.8" ScaleY="0.8" />
+                                        </Grid.RenderTransform>
+                                        <Canvas x:Name="LargeGlobeCanvas" Width="104.987" Height="104.987" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FlowDirection="LeftToRight">
+                                            <Ellipse x:Name="LargeOceanEllipse" Width="101.05" Height="101.05" Canvas.Left="1.90274" Canvas.Top="1.77166" Fill="#FF6CA1D8"  />
+                                            <Path x:Name="LargeLandPath" Width="88.4286" Height="88.9257" Canvas.Left="14.5014" Canvas.Top="1.80439" Stretch="Fill" Fill="#FFD8D7D2" Data="M 81.126,12.2602C 81.2625,12.5777 81.3009,12.6076 81.2213,12.6333C 81.1018,12.6333 81.2298,12.7073 81.3677,12.8496C 81.4659,12.9636 81.8569,13.0946 81.7346,13.1771C 81.5711,13.2341 80.8018,13.2141 81.217,13.4647C 81.5938,13.6882 82.8409,13.9872 82.8409,13.9872C 82.8409,13.9872 83.9116,14.4585 83.9756,14.3802C 83.9997,14.2748 83.586,13.9231 83.6798,13.8833C 83.7737,13.8477 83.768,13.7765 83.677,13.6512C 83.5476,13.496 83.0954,12.9422 82.6901,12.6503C 82.282,12.3627 80.4435,10.8949 80.5018,10.8992C 80.6013,10.9319 81.1985,11.1255 80.7464,10.8066C 80.2913,10.492 79.7098,10.1887 79.6884,10.1303C 79.6628,10.0748 79.7823,10.0748 79.7823,10.0748C 79.5263,9.91537 79.5263,9.91537 79.313,9.78437C 79.313,9.78437 78.9831,9.64771 78.922,9.64912C 78.8609,9.65195 78.7627,9.62066 78.585,9.52527C 78.3646,9.40567 78.1542,9.36722 78.1542,9.36722L 78.7713,9.79719L 78.5082,9.84418C 78.7244,9.96946 78.7244,9.96946 78.9376,10.0962C 78.9632,10.1503 78.9632,10.1503 78.9874,10.2058C 78.9874,10.2058 79.3998,10.3026 79.3984,10.3951C 79.3529,10.4635 79.1083,10.2941 79.2078,10.4151C 79.3059,10.5375 79.5334,10.6429 79.5107,10.6799C 79.4865,10.7155 79.9742,10.8806 80.0709,11.0017C 80.1264,11.0971 80.3226,11.0743 80.3923,11.238C 80.4577,11.406 80.415,11.4672 80.5416,11.547C 80.708,11.6537 81.1687,11.7762 81.3037,11.9271C 81.4004,12.051 81.1018,12.1264 81.1018,12.1264C 81.1161,12.1933 81.1161,12.1933 81.126,12.2602 Z M 80.3738,12.2204C 80.3383,12.2745 79.6216,12.4567 79.3557,12.246C 79.0898,12.0367 78.3134,11.5484 78.5765,11.5825C 78.8395,11.6224 79.2519,11.7036 79.0144,11.443C 78.7741,11.1853 78.2466,10.8308 78.2537,10.7283C 78.2992,10.6528 79.0443,10.7639 79.0443,10.7639C 79.0443,10.7639 79.468,10.744 79.5704,10.8607C 79.6301,10.9518 79.9046,11.0743 79.9941,11.2095C 80.0795,11.3462 80.1378,11.611 80.1378,11.611C 80.1378,11.611 80.1875,11.8004 80.3041,11.9769C 80.4207,12.1535 80.3738,12.2204 80.3738,12.2204 Z M 88.9979,19.9213C 88.9637,20.0808 88.9794,20.1961 89.1884,20.4666C 89.3974,20.7371 89.4856,20.9151 89.396,20.9279C 89.305,20.9435 88.9865,20.7698 89.1585,21.0033C 89.3306,21.2382 89.588,21.4646 89.6022,21.6383C 89.5865,21.7779 89.861,22.1737 89.861,22.1737C 89.861,22.1737 90.4539,22.6876 90.2733,22.2761C 90.0885,21.8675 89.9847,21.4504 89.8965,21.3336C 89.8084,21.2183 89.6392,21.1044 89.6008,20.8182C 89.5268,20.4965 89.4074,20.2772 89.2808,20.1277C 89.1841,20.0153 89.0277,19.9597 88.9979,19.9213 Z M 87.2119,20.6873L 86.8564,20.8838C 86.8536,20.9492 87.0583,21.2653 87.1067,21.224C 87.1536,21.1827 87.2076,20.9435 87.2674,20.9535C 87.3257,20.962 87.3669,20.925 87.5816,21.0517C 87.8233,21.2126 87.7608,21.0147 87.8276,20.9564C 87.893,20.898 88.2926,21.1172 87.9726,20.7656C 87.6499,20.4168 87.4807,20.3128 87.4423,20.4139C 87.401,20.515 87.31,20.7243 87.31,20.7243C 87.2617,20.7058 87.2617,20.7058 87.2119,20.6873 Z M 33.2522,28.7256C 33.4285,28.5562 34.8178,27.4642 35.2102,27.8116C 35.5785,28.1832 36.6051,27.9796 36.935,28.065C 37.2606,28.1505 38.8134,28.6758 39.0566,29.0431C 39.2997,29.4147 39.914,29.708 39.4447,29.9301C 38.9755,30.1536 37.7711,30.3117 37.3218,29.8803C 36.871,29.456 36.2141,28.9933 35.7577,28.9904C 35.2955,28.9919 34.2817,28.8153 34.1537,28.9406C 34.0016,29.0844 34.3983,29.2538 33.9333,29.2353C 33.4882,29.2054 33.2295,29.0816 33.1441,29.0246C 33.0361,28.9904 33.255,28.7769 33.2522,28.7256 Z M 41.2037,30.1949C 40.9591,30.37 39.3879,30.5907 39.7903,31.0221C 40.1685,31.4706 40.6875,31.2086 41.07,31.3567C 41.4682,31.499 42.1763,31.7055 42.2317,31.5603C 42.29,31.4151 42.3227,31.0477 42.6327,31.1018C 42.9626,31.1502 44.2879,30.9167 44.1954,30.8057C 44.1044,30.6961 43.092,29.8931 42.5702,29.9116C 42.0639,29.9258 41.9346,29.8831 41.7227,30.1266C 41.5122,30.37 41.2037,30.1949 41.2037,30.1949 Z M 37.8863,4.48526C 37.9318,4.63049 38.3968,4.44968 38.5816,4.36852C 38.7651,4.28738 39.5215,4.0183 39.1731,4.07095C 38.8234,4.12649 38.5276,4.18485 38.3968,4.27027C 38.266,4.35998 37.8863,4.48526 37.8863,4.48526 Z M 39.9211,4.1692C 39.887,4.23325 39.9026,4.29447 40.042,4.23898C 40.1827,4.18485 40.4671,4.09943 40.4031,4.04535C 40.3875,3.98129 40.5183,3.89158 40.2851,3.98553C 40.0533,4.08093 39.9211,4.1692 39.9211,4.1692 Z M 41.2577,3.54276C 41.3146,3.57266 41.3686,3.57836 41.5108,3.52567C 41.6516,3.47299 41.8819,3.35484 41.7355,3.38757C 41.5407,3.43029 41.4895,3.43741 41.4426,3.45307C 41.3942,3.46731 41.2989,3.50004 41.2577,3.54276 Z M 42.573,2.73837C 42.937,2.66433 43.3025,2.59599 43.6707,2.53192L 43.6693,2.53761L 43.6693,2.53761C 43.5712,2.55897 43.1745,2.63444 42.7763,2.70419C 42.627,2.73409 42.5773,2.74262 42.5773,2.74262M 102.93,53.7974C 102.873,55.8348 102.694,57.8408 102.405,59.8098L 102.398,59.8212L 102.393,59.8711C 102.37,60.0205 102.273,60.5687 102.259,60.6171C 102.252,60.6157 102.203,60.6598 102.256,60.4121C 102.306,60.1643 102.324,60.0647 102.346,59.8625C 102.361,59.713 102.452,58.9086 102.464,58.7577C 102.472,58.6054 102.573,57.7526 102.609,57.5547C 102.643,57.3539 102.656,57.203 102.656,57.203C 102.693,56.8513 102.718,56.0427 102.796,55.5415C 102.836,55.244 102.906,54.3555 102.93,53.7974 Z M 97.1484,28.811C 99.1548,32.6209 100.689,36.717 101.676,41.0238L 101.667,41.0238C 101.653,40.9754 101.637,40.927 101.591,40.7305C 101.507,40.3859 101.062,38.7259 101.062,38.7259C 101.062,38.7259 100.511,37.1498 100.379,36.6629C 100.238,36.1774 100.083,35.6962 99.934,35.3189C 99.7619,34.8989 99.0481,33.1178 98.9486,32.8857C 98.8277,32.6081 98.4822,31.7667 98.3755,31.5389C 98.2476,31.2641 98.5035,31.9248 98.5789,32.1113C 98.6343,32.2522 98.5078,32.0315 98.4239,31.8479C 98.3627,31.7112 98.131,31.2627 98.148,31.3097C 98.1651,31.3581 98.4239,31.9048 98.4651,31.9959C 98.5092,32.0871 98.5604,32.1739 98.677,32.453C 98.8121,32.779 99.0396,33.3399 99.1178,33.525C 99.2116,33.7585 99.7036,35.0285 99.7406,35.121C 99.7619,35.168 99.9624,35.7375 100.106,36.1689C 100.231,36.5519 100.578,37.6054 100.648,37.7948C 100.715,37.9855 101.029,38.7358 101.076,38.9323C 101.12,39.1302 101.172,39.3765 101.254,39.6157C 101.318,39.8093 101.502,40.544 101.589,40.8871C 101.684,41.2801 101.787,41.7228 101.831,41.7655L 101.837,41.7641C 102.102,43.0099 102.323,44.2713 102.495,45.5498L 102.492,45.5512C 102.522,45.8032 102.545,46.0552 102.559,46.2574C 102.575,46.713 102.501,48.3403 102.485,48.8457C 102.461,49.3512 102.56,50.1499 102.555,50.5528C 102.546,51.0055 102.535,51.2063 102.553,51.3572C 102.57,51.4568 102.673,52.3609 102.667,52.7624C 102.66,53.1141 102.536,55.3749 102.491,55.5216C 102.442,55.7195 102.073,56.746 102.003,57.0407C 101.933,57.3354 101.758,57.6657 101.755,57.9661C 101.744,58.3135 101.852,58.3776 101.801,58.7221C 101.748,59.0681 101.545,60.3466 101.458,60.5359C 101.37,60.7225 101.204,60.8947 101.158,61.2393C 101.113,61.5838 101.087,61.7817 100.988,62.1149C 100.898,62.401 100.826,62.5875 100.656,63.1072C 100.473,63.6753 100.251,64.3843 100.096,64.8014C 99.9397,65.2186 99.4548,66.1554 99.1036,66.5113C 98.7339,66.8559 98.3016,66.9726 97.9845,67.3243C 97.656,67.6702 97.3958,67.7827 97.2991,67.9023C 97.2039,68.0191 96.9024,68.0134 96.8839,67.8069C 96.8626,67.6005 96.6934,67.1449 96.6934,67.1449C 96.7204,66.8117 96.938,66.1469 96.8242,65.7211C 96.7019,65.2997 96.5739,63.9315 96.4118,63.372C 96.2426,62.8182 96.2014,61.8856 96.2568,61.2564C 96.3095,60.6271 96.4204,60.2398 96.3791,60.0049C 96.3351,59.7714 96.1403,59.424 96.1459,59.2005C 96.1545,58.977 96.0706,58.2978 95.9568,58.1028C 95.8459,57.8665 95.3994,57.2884 95.4677,56.9453C 95.5345,56.6036 95.8203,54.273 95.8815,54.1448C 95.9412,54.0181 96.5796,53.245 96.5213,52.8464C 96.463,52.4036 96.2796,51.9651 96.2355,51.8341C 96.1914,51.7032 96.0819,51.2675 96.1161,51.1351C 96.1516,51.0468 96.227,50.8247 96.1559,50.6966C 96.0819,50.5243 95.8573,49.9221 95.836,49.7925C 95.816,49.6644 95.6767,48.5838 95.3454,48.0484C 95.0141,47.5644 94.0656,47.0376 94.2164,46.4211C 94.3543,45.7577 94.4538,44.8337 94.4382,44.576C 94.4211,44.3183 94.6956,43.4726 94.4353,43.2192C 94.1709,42.97 93.9064,42.5927 93.6803,42.6454C 93.4428,42.6582 93.1513,42.7693 92.9736,42.5543C 92.7973,42.3407 92.3138,41.4794 92.102,41.4096C 91.8886,41.3398 91.2502,41.1405 91.2502,41.1405C 91.2502,41.1405 90.7781,41.2359 90.5279,41.4737C 90.2748,41.71 89.7387,42.2211 89.2609,42.0346C 88.7789,41.8538 88.1219,41.7342 87.8361,41.8581C 87.5461,41.9819 86.5294,42.2083 86.0701,42.2354C 85.6065,42.2653 82.656,39.4918 82.3517,38.9807C 82.0332,38.4411 81.3692,36.9775 81.1018,36.7127C 80.8345,36.4508 79.832,35.9866 79.8775,35.4342C 79.9302,34.9032 80.2046,33.4965 80.2743,33.3257C 80.3439,33.1548 80.425,31.1816 80.2572,30.6889C 80.0852,30.1949 79.7496,29.1769 79.8932,29.1029C 80.0126,29.0004 80.8843,26.8107 81.2938,26.4434C 81.719,26.1131 82.7428,25.4141 82.7428,25.4141C 82.7428,25.4141 82.602,25.1592 82.747,24.6951C 82.912,24.2651 82.8594,23.7454 83.094,23.4664C 83.3513,23.2243 83.731,22.9823 83.9386,22.6719C 84.1675,22.3957 84.2841,22.1039 84.3069,22.0227C 84.2984,21.9088 84.3311,21.6326 84.5543,21.9102C 84.7733,22.1893 85.0975,22.2505 85.2624,22.2804C 85.453,22.3473 86.4455,22.6079 86.6886,22.5751C 86.9289,22.5467 87.273,22.2505 87.4622,22.2705C 87.6783,22.3274 88.4277,22.4285 89.0163,22.6136C 89.5951,22.8157 90.3501,22.8912 90.6501,23.146C 90.9488,23.4037 91.2943,23.6871 91.263,23.7696C 91.2331,23.8536 91.0753,23.9675 91.3967,24.4459C 91.6882,24.8858 91.9029,25.4354 92.0792,25.7201C 92.2541,26.0063 92.3778,26.153 92.6721,26.3039C 92.9622,26.4605 93.1101,26.3651 93.4443,26.8406C 93.7485,27.2777 94.4524,27.9326 94.9046,28.29C 95.3454,28.6616 94.9259,27.1424 95.3767,27.6806C 95.8175,28.2287 96.1587,28.7242 96.49,29.0545C 96.8342,29.4375 97.228,29.7436 97.228,29.7436C 97.228,29.7436 97.1399,29.3934 97.4527,29.9116C 97.7556,30.437 97.8238,30.5708 97.8622,30.5523L 97.8907,30.427C 97.8907,30.427 97.5537,29.6923 97.4328,29.4133C 97.329,29.1826 97.1953,28.9107 97.1726,28.8652L 97.1484,28.821M 84.3311,13.1401C 89.433,17.3059 93.7073,22.447 96.8697,28.2814L 96.8626,28.2843C 96.8128,28.1974 96.8697,28.3398 96.7673,28.1633C 96.6664,27.9882 96.4118,27.5525 96.3919,27.5639C 96.3649,27.5781 96.3009,27.5567 96.2384,27.477C 96.1744,27.3959 95.8644,27.2279 95.8644,27.2279C 95.8644,27.2279 95.4847,26.6356 95.4094,26.4462C 95.307,26.2142 95.3468,26.19 95.2032,25.9237C 95.0852,25.7016 94.8605,25.3671 94.815,25.2176C 94.7652,25.0695 94.5946,24.6979 94.6344,24.7321L 94.3628,24.5484L 94.5434,24.9727C 94.4737,24.8972 93.885,24.0843 93.9135,24.1868C 93.9405,24.2879 94.0799,24.557 94.2818,24.9029C 94.5107,25.293 94.4069,25.4183 94.4069,25.4183C 94.4069,25.4183 93.8979,24.7976 93.8353,24.6609C 93.7713,24.5228 92.9437,23.2144 92.9025,23.1204C 92.8598,23.0293 92.5683,22.6221 92.4446,22.4655C 92.3209,22.3089 91.1165,21.0347 90.8222,20.6958C 90.525,20.3612 89.7671,19.3718 89.7614,19.4429C 89.7543,19.5155 89.7358,19.6622 89.7358,19.6622C 89.7358,19.6622 90.0032,20.0224 90.1752,20.2018C 90.3131,20.3442 90.4411,20.6246 91.0042,21.1898C 91.5886,21.8021 92.6167,22.9595 92.7063,23.0791C 92.7944,23.1987 92.9053,23.549 92.9053,23.549C 92.9053,23.549 92.2825,22.8342 92.3721,23.0151C 92.4304,23.1574 92.8314,23.6614 92.793,23.6899C 92.7802,23.7597 92.6053,24.1242 92.5129,24.0088C 92.3906,23.8551 92.3664,23.932 92.4134,24.0202C 92.4574,24.107 92.5385,24.3505 92.4318,24.3064C 92.3522,24.3021 91.3355,23.3553 91.391,23.3126C 91.4777,23.3098 91.8816,23.4365 91.9896,23.4778C 92.1261,23.5618 92.3906,23.9149 92.3408,23.7696C 92.2911,23.6244 92.2513,23.4094 92.2456,23.3539C 92.2385,23.297 92.2683,23.2144 92.0806,22.9837C 91.8915,22.756 90.3331,21.1614 90.1226,20.8923C 89.9392,20.6602 88.8443,19.3305 88.8002,19.3063C 88.7533,19.2835 88.6026,19.3518 88.5258,19.3589C 88.4774,19.4016 88.2528,19.7391 87.9755,19.5312C 87.6669,19.292 87.0256,18.7026 86.9702,18.8891C 86.9446,19.1155 86.9531,19.1739 87.1252,19.3404C 87.2972,19.507 87.293,19.6423 87.2674,19.6665C 87.2403,19.6907 86.9972,19.5924 86.9332,19.7832C 86.8678,19.9768 86.6289,20.0067 86.5336,20.0338C 86.4696,20.0936 86.3047,20.2502 86.4057,20.6033C 86.5009,20.9578 86.5365,20.7983 86.4952,21.0261C 86.417,21.2226 86.3132,21.6283 85.9961,21.6696C 85.6762,21.718 84.9354,21.4248 84.8003,21.4888C 84.6666,21.5572 84.4391,21.7124 84.3737,21.654C 84.3069,21.5956 83.822,21.1386 83.7367,21.0361C 83.6812,20.9649 83.2532,20.7086 83.1594,20.7414C 83.067,20.7727 82.4157,20.31 82.3816,20.2174C 82.3489,20.1235 81.6024,18.9717 81.655,18.7097C 81.7019,18.4506 81.8071,17.9822 81.7403,17.7814C 81.6706,17.5821 81.3948,17.2034 81.3948,17.2034C 81.3948,17.2034 81.1018,16.8418 81.3066,16.8048C 81.5128,16.772 81.5924,16.6012 81.7957,16.7179C 81.9991,16.8347 82.1427,16.8774 82.3347,16.9358C 82.5295,16.9955 82.8409,16.9913 82.993,17.0981C 83.1096,17.1764 83.3869,17.3572 83.6457,17.417C 83.9059,17.4796 84.7121,17.7857 84.7392,17.7572C 84.7662,17.7288 84.8287,17.1707 84.5685,16.8162C 84.3424,16.493 84.1562,16.1214 83.9244,15.9491C 83.7296,15.8096 82.2067,14.477 82.2067,14.477C 82.2067,14.477 82.3645,14.4314 82.4683,14.4556C 82.5735,14.4798 83.6727,15.2017 83.4978,15.0308C 83.3243,14.8614 83.0755,14.4741 83.1352,14.4798C 83.2319,14.5154 83.6116,14.6663 83.7026,14.7105C 83.7936,14.7532 84.2756,14.8671 84.3154,14.8201C 84.3154,14.7432 84.3766,14.5183 84.442,14.5154C 84.5102,14.514 84.442,14.3645 84.6226,14.383C 84.7605,14.373 84.5685,13.8235 84.5685,13.8235C 84.5685,13.8235 84.523,13.5658 84.6368,13.6654C 84.7093,13.7338 84.8629,14.02 85.0008,14.0897C 85.0989,14.131 85.089,14.067 85.1003,14.0513C 85.1145,14.0356 84.9752,13.8093 84.7192,13.5658C 84.4988,13.3579 84.213,13.0661 84.3311,13.1401 Z M 82.2849,11.5555C 82.7797,11.9185 83.2689,12.2901 83.7509,12.6717L 83.4324,12.4254C 83.3968,12.3998 82.7257,11.8872 82.2849,11.5555 Z M 68.3641,4.34432C 69.8728,4.84689 71.3488,5.41781 72.792,6.05566L 72.7892,6.06275C 72.6484,6.00581 71.8806,5.74384 71.8806,5.74384C 71.8806,5.74384 70.4515,5.24268 70.3179,5.17151C 70.1828,5.10032 69.695,4.96363 69.56,4.89816C 69.4206,4.83408 69.5173,4.8597 69.577,4.84547C 69.6339,4.83694 69.1007,4.67748 68.8177,4.57355C 68.8177,4.57355 68.5731,4.50805 68.4352,4.44683C 68.293,4.38702 69.1647,4.64756 69.1647,4.64756C 69.1647,4.64756 68.4452,4.40697 68.3044,4.35572C 68.2091,4.32154 68.2617,4.32581 68.3584,4.35285M 54.1462,1.80439C 57.3811,1.9126 60.542,2.32547 63.5964,3.01598L 63.5907,3.0231C 63.3433,2.9747 62.9935,2.91918 62.8442,2.89355C 62.6422,2.86506 62.783,2.93768 62.4417,2.83801C 62.1005,2.74548 61.5331,2.76398 61.2829,2.73124C 60.9828,2.68994 60.8079,2.81809 60.9914,2.932C 61.1236,3.04871 60.5079,3.09998 60.1425,3.17544C 59.8254,3.27511 59.5865,4.21903 59.5865,4.21903L 59.3362,4.24607C 59.3362,4.24607 58.9694,4.05817 58.7475,3.88305C 58.6182,3.72643 58.4063,3.84887 58.2243,3.725C 58.0423,3.60541 57.2886,3.74778 57.1536,3.61823C 56.9701,3.48724 57.3996,3.61538 57.5147,3.45307C 57.5816,3.29504 55.5013,2.62019 55.2581,2.50488C 54.9638,2.39382 55.0647,2.36677 55.9179,2.35824C 56.7725,2.36677 55.4728,2.24433 55.2766,2.19306C 55.0775,2.14466 54.3794,2.01083 54.3808,1.97523C 54.3822,1.9425 53.7807,1.83002 53.8305,1.81721C 53.9144,1.81008 53.9969,1.80439 54.1376,1.80439M 44.3646,2.4166L 44.3675,2.41946C 44.467,2.40664 44.5182,2.40379 44.5182,2.40664C 44.322,2.45361 44.6234,2.41946 44.6234,2.41946C 44.6234,2.41946 46.3753,2.20162 46.1293,2.25571C 45.8321,2.32406 45.5889,2.4052 45.3842,2.39809C 45.2306,2.38669 44.9249,2.38953 44.5239,2.44507C 44.1243,2.50202 43.9253,2.53619 43.7845,2.60596C 43.6466,2.68994 44.2466,2.62302 43.5996,2.71986C 42.9043,2.83376 42.2005,2.91489 42.0199,3.03448C 41.7454,3.19822 41.1198,3.39042 41.3245,3.38757C 41.5293,3.38616 43.1688,2.87646 43.3807,2.92059C 43.594,2.97611 43.9423,2.93056 43.9039,3.00031C 43.8655,3.0715 44.3092,3.00317 44.4158,3.03308C 44.4727,3.0715 44.7016,3.2452 45.0017,3.23524C 45.2519,3.23666 45.5918,3.15408 45.7965,3.19538C 46.0027,3.2395 47.6849,3.16262 47.5853,3.14695C 47.4346,3.13557 45.842,2.78107 46.1421,2.76398C 46.4919,2.74121 48.329,3.15977 48.4186,3.04162C 48.5082,2.92913 48.0489,2.79675 48.1968,2.77395C 48.2949,2.75544 49.0357,2.65151 48.9319,2.59029C 48.7769,2.53619 47.7645,2.41373 47.5085,2.37815C 47.3038,2.34113 46.8772,2.14182 47.281,2.12473C 47.6351,2.12046 48.3916,2.08913 48.3958,2.14182C 48.3503,2.20731 48.3518,2.21442 48.5537,2.22723C 48.7058,2.24575 49.1153,2.3568 49.2618,2.27422C 49.458,2.19592 49.3983,2.0507 49.6486,2.008C 49.8988,1.96954 50.2998,1.93111 50.1477,1.90691C 49.9443,1.88981 49.0357,1.9126 48.8836,1.91401C 48.784,1.91686 48.4357,1.93536 48.0375,1.96384C 46.8004,2.07206 45.5747,2.22155 44.3646,2.4166 Z M 48.1982,89.6084C 48.1072,89.4148 47.8839,89.3963 47.2896,89.3408C 46.7307,89.2881 46.2615,89.1614 46.0269,88.9848C 45.7951,88.804 45.0017,88.2644 45.0116,88.0309C 45.0244,87.7946 45.2733,87.6593 45.1197,87.5141C 44.9675,87.3675 44.9875,87.1027 44.9647,86.8749C 44.942,86.6457 44.0433,86.0491 44.2239,85.8911C 44.3703,85.7259 45.3998,85.3372 45.3799,84.9472C 45.397,84.5642 45.0514,84.305 45.5264,84.1214C 45.9629,83.9292 46.3582,83.5889 46.4165,83.4508C 46.4748,83.3156 46.3084,82.7091 46.1293,82.5083C 45.9515,82.309 45.1624,81.9274 45.2121,81.6028C 45.2903,81.2825 45.215,80.9735 45.6287,81.0162C 46.0411,81.059 46.5573,80.7372 46.6867,80.6845C 46.7862,80.6261 46.3355,79.7392 46.8317,79.4117C 47.345,79.08 48.0332,79.2437 47.9621,78.6884C 47.8982,78.1289 46.4407,77.8171 46.8018,77.642C 47.1559,77.4655 48.5252,77.4897 48.7044,77.1551C 48.9049,76.8191 48.7314,75.7015 49.1068,75.5819C 49.4765,75.4623 52.0545,75.3954 52.1739,75.0209C 52.2891,74.6422 53.0129,73.4819 53.0129,73.4819C 53.0129,73.4819 52.1199,72.6148 52.4029,72.4212C 52.7,72.229 53.9044,72.1108 54.0011,72.0781C 54.1177,72.0453 54.9538,71.7478 55.3221,71.3064C 55.7089,70.8608 55.9819,70.3041 56.2791,69.8727C 56.5791,69.4399 56.9559,69.0228 57.2375,68.7523C 57.5119,68.486 57.6925,67.7158 57.8588,67.4581C 58.0067,67.209 58.611,67.0182 58.6679,66.7804C 58.7305,66.5412 58.7205,66.3277 58.7419,65.939C 58.7703,65.546 58.6338,64.1864 59.0817,64.0298C 59.5339,63.8703 60.0003,63.167 60.3814,62.9079C 60.7639,62.6445 61.1791,62.8737 61.6028,62.6516C 62.0336,62.4252 62.81,62.1234 63.1556,62.1291C 63.4968,62.1405 63.6134,62.3427 63.8893,62.0465C 64.158,61.7618 64.1111,61.8401 64.3656,61.4671C 64.6287,61.0827 64.3471,60.3694 64.7794,60.0633C 65.2046,59.7714 65.5288,59.5778 65.5359,59.2774C 65.5345,58.994 65.597,58.1085 65.7321,57.8522C 65.8743,57.5831 65.7904,53.9199 65.9937,53.8487C 66.1957,53.7718 66.5355,53.7206 66.7047,53.4771C 66.8725,53.2294 67.1256,52.5075 67.3602,52.4805C 67.5963,52.4663 67.8963,52.0349 68.0129,51.9082C 68.1309,51.7943 68.5134,51.5223 68.6627,51.3686C 68.812,51.2091 68.913,51.3358 68.8931,50.5727C 68.8732,49.8039 68.8874,49.2586 68.7679,48.9924C 68.6513,48.7446 67.8991,48.4542 67.4967,48.2164C 67.0901,47.963 66.9934,48.0712 66.5483,47.6114C 66.1061,47.1572 65.816,46.7073 65.2742,46.6162C 64.7325,46.5293 63.0802,46.74 62.7631,46.5023C 62.4531,46.2745 62.0223,45.8573 61.8687,46.0994C 61.7194,46.3442 61.5417,46.5108 61.5118,46.2574C 61.4706,45.9911 61.3966,45.433 61.2772,45.3832C 61.1577,45.3334 60.1837,44.5076 59.8908,44.7127C 59.6007,44.9205 58.3736,46.6333 58.1859,46.3044C 57.9897,45.9698 58.8755,45.144 58.594,44.8607C 58.3167,44.5845 57.6697,44.9575 57.4266,45.1483C 57.1834,45.3377 56.4326,45.5427 56.3288,45.4046C 56.2236,45.2636 56.5393,44.7454 56.7782,44.623C 57.0227,44.5034 57.6157,43.9196 57.6313,43.6249C 57.6484,43.3316 57.0341,42.9971 56.909,42.7721C 56.7895,42.5486 56.3942,40.7931 55.9805,41.1676C 55.5667,41.5434 55.1515,43.2462 54.8045,43.0739C 54.459,42.9003 53.7708,42.2937 53.4778,42.5529C 53.1807,42.8106 53.165,43.4498 52.7996,43.2078C 52.4341,42.9657 51.9294,41.3455 51.9649,40.8486C 51.9919,40.3532 52.2365,39.8577 51.8142,39.3637C 51.372,38.8725 48.9916,37.4146 49.4794,37.1085C 49.9642,36.8053 50.2088,35.6549 49.805,35.9041C 49.3784,36.1589 48.4826,36.7142 48.0076,36.3824C 47.5285,36.055 47.0308,35.5652 46.6938,35.9311C 46.3326,36.3055 45.3927,36.0308 45.5719,35.9995C 45.7667,35.961 45.4112,35.5211 45.2789,35.4883C 45.1467,35.4584 42.5958,35.4129 42.5958,35.4129C 42.5958,35.4129 42.4308,36.1874 42.2886,36.0308C 42.1635,35.867 41.845,35.0868 41.845,35.0868C 41.845,35.0868 40.7103,36.1404 40.3178,36.0479C 39.9182,35.961 39.1461,35.8898 38.7124,36.9918C 38.2773,38.1009 37.4441,38.2276 37.2905,38.0254C 37.1241,37.8389 36.3392,37.6054 35.9183,37.5513C 35.4932,37.5029 35.8387,38.2674 34.9287,37.883C 34.0428,37.4872 33.1655,37.1883 33.1868,36.7626C 33.1953,36.3511 33.6745,34.4575 33.6319,34.1999C 33.5707,33.9578 31.4606,33.5521 30.9743,33.1919C 30.4709,32.8615 30.0784,32.0258 30.2988,31.9433C 30.5221,31.8621 31.762,29.5272 31.4037,29.2695C 31.0695,28.9976 28.9267,29.4247 28.8442,29.802C 28.7461,30.2006 28.1901,31.8123 27.728,31.8422C 27.2431,31.9034 24.7021,32.4344 24.7575,30.2049C 24.8358,28.0522 24.968,27.8757 25.1557,27.598C 25.3448,27.3218 25.6335,27.1367 25.5097,27.0214C 25.386,26.9047 25.2595,26.0576 25.5183,25.7301C 25.7785,25.3998 26.6871,24.9286 26.7355,24.9257C 26.8122,24.8972 27.1251,24.3463 27.4279,24.4573C 27.7578,24.5484 28.1602,24.2751 28.5413,24.3206C 28.9196,24.3705 29.3902,24.6509 29.831,24.51C 30.2434,24.3932 30.4567,24.2024 30.5505,24.0914C 30.6444,23.9789 30.8633,23.4949 31.2629,23.6116C 31.6881,23.7127 31.8445,23.3838 32.0805,23.7753C 32.3194,24.1726 33.1982,23.9262 33.501,23.949C 33.8025,23.9732 33.9219,23.8451 34.1011,24.0586C 34.3073,24.2537 34.6713,24.3918 34.6727,24.7008C 34.677,25.0097 34.5391,25.2133 34.7751,25.629C 34.9884,26.0661 35.3382,26.4818 35.4349,26.5715C 35.5046,26.6783 35.897,26.7765 36.0264,26.6954C 36.1544,26.6142 36.3136,25.9978 36.3591,25.5949C 36.3847,25.2076 36.2681,24.7577 36.2383,24.3904C 36.1857,24.0387 35.6581,23.6529 35.7207,23.1603C 35.7633,22.6862 35.9581,21.8291 36.234,21.6825C 36.5099,21.5372 37.9147,20.2744 38.4309,20.048C 38.9144,19.8373 39.8528,19.3347 39.9282,19.1354C 40.0064,18.9375 39.6609,18.6286 39.6922,18.4036C 39.7604,18.1687 40.0775,17.8697 40.1813,17.612C 40.2524,17.3686 40.4842,17.1308 40.6818,16.8945C 40.8795,16.6596 41.161,16.0516 41.4355,15.9092C 41.6743,15.7768 42.8474,15.4408 43.0693,15.2344C 43.2584,15.0394 44.0333,15.1589 44.0518,14.8998C 44.0746,14.6436 43.0849,14.8187 43.3266,14.5055C 43.5741,14.1908 44.1201,13.7537 44.4599,13.449C 44.8438,13.1373 47.2057,12.125 47.0649,12.2987C 46.8857,12.4781 46.3155,12.7386 46.3667,13.0618C 46.3781,13.3964 46.3013,13.6669 46.7592,13.5573C 47.1801,13.4519 47.1872,13.2084 48.1001,12.8454C 48.9859,12.4952 49.495,12.3314 49.8064,12.1748C 50.1605,12.0196 50.9667,11.9669 50.7932,11.6936C 50.5785,11.4259 50.3382,10.7383 50.0567,10.9248C 49.778,11.1113 49.1566,11.6196 49.1566,11.6196C 48.4385,11.4017 48.4385,11.4017 47.7105,11.1924C 47.7105,11.1924 47.2967,11.5541 47.2924,11.1882C 47.3322,10.8223 47.6451,10.613 47.6451,10.613C 47.6451,10.613 48.0105,10.8778 48.0603,10.5575C 48.1129,10.2428 48.0859,9.97516 48.1598,9.85841C 48.2337,9.74166 46.0155,9.9353 46.1549,9.71177C 46.2544,9.49679 48.0958,9.22628 48.1072,9.3473C 48.1626,9.46405 48.3887,9.57651 48.6617,9.72599C 48.8893,9.87976 49.667,10.0392 49.5234,9.80431C 49.3798,9.57367 48.302,9.11806 48.7442,9.17643C 49.1822,9.23766 49.9287,9.42133 50.2643,9.2576C 50.5586,9.09671 51.9763,8.17273 52.0673,8.43327C 52.1569,8.69522 50.7804,10.3225 50.9966,10.4849C 51.2511,10.6514 53.2916,10.7383 53.165,10.8479C 53.0797,10.959 51.9635,10.9476 52.5422,11.2522C 53.111,11.564 53.3925,11.7335 53.6456,11.443C 53.9002,11.1597 54.0352,10.8977 54.1959,11.0316C 54.3538,11.1654 54.7178,11.2935 54.7178,11.2935C 54.7178,11.2935 55.0875,11.3006 55.2681,11.0928C 55.4074,10.8821 55.5027,10.7041 55.3619,10.3282C 55.2183,9.95808 53.8746,9.47115 53.4067,9.34445C 52.9787,9.22202 52.7214,9.00988 52.8963,8.89313C 53.0697,8.77779 53.4267,8.4717 53.4722,8.36777C 53.5191,8.26385 53.0854,7.77834 53.0868,7.73563C 53.0868,7.69577 53.6328,7.26581 53.2318,7.07217C 52.8266,6.88282 52.2806,6.5924 51.9621,6.69917C 51.645,6.80737 50.1662,7.31421 50.5188,7.11773C 50.9198,6.9241 52.2351,6.6835 51.8213,6.41443C 51.3563,6.15673 50.7108,6.19516 50.5188,6.01292C 50.3254,5.83639 49.5945,5.32384 49.5945,5.32384C 49.5945,5.32384 49.9145,5.12309 49.7666,5.01632C 49.5704,4.91238 48.8949,4.14927 48.8949,4.14927C 48.8949,4.14927 48.2679,3.59543 48.0873,3.77909C 47.9095,3.97131 46.7009,4.89672 46.2544,4.79563C 45.8065,4.70309 45.3927,4.52798 45.4723,4.41122C 45.5065,4.30304 45.6899,3.85741 45.4837,3.80331C 45.2292,3.75916 44.1897,3.79191 44.1727,3.69083C 44.1556,3.59402 43.7276,3.44311 43.6238,3.42744C 43.4717,3.42316 42.9214,3.45734 42.8801,3.50576C 42.8403,3.55416 42.9015,3.61253 42.6498,3.62391C 42.4479,3.62534 42.1933,3.61679 42.0469,3.64527C 41.9004,3.67516 41.353,3.73782 41.1767,3.85598C 41.0003,3.97985 41.1596,4.21903 40.8866,4.35144C 40.6619,4.47672 40.6648,4.48669 40.7828,4.55646C 40.9022,4.63193 40.9207,4.70309 40.7956,4.81274C 40.625,4.93658 39.6467,5.05902 40.4188,5.31387C 41.2392,5.61572 41.1468,5.84777 40.8866,6.18378C 40.6321,6.53259 39.7945,7.04797 39.5372,7.17184C 39.3253,7.28431 39.0167,7.39678 39.0509,7.51212C 39.085,7.62885 38.9556,8.00471 38.9343,8.09441C 38.9129,8.18411 39.0821,8.42187 39.031,8.56852C 38.9812,8.71658 38.9215,9.28608 38.4465,9.28608C 38.0143,9.27612 37.892,9.05258 37.6886,8.88031C 37.4853,8.71232 37.1497,8.72939 37.2478,8.58845C 37.3445,8.44607 37.6744,8.40763 37.5479,8.32221C 37.3772,8.25387 37.272,8.22967 37.363,8.06452C 37.4995,7.88512 37.8934,7.88227 37.6815,7.69292C 37.5166,7.49502 37.4526,7.30141 37.0303,7.38113C 36.6051,7.46371 35.7833,6.30621 35.5586,6.26351C 35.3353,6.22364 34.2845,6.37313 33.8409,6.5924C 33.3987,6.81592 33.1669,7.27863 33.0332,7.21456C 32.8555,7.17326 32.2085,8.009 31.9383,8.00471C 31.6241,8.02466 31.6283,7.33271 31.8857,7.06079C 32.1502,6.79882 32.4374,6.46283 33.0119,6.15102C 33.592,5.84777 35.2258,5.05902 35.2258,5.05902C 35.2258,5.05902 35.1633,5.03625 35.4434,4.92092C 35.769,4.78995 35.7662,4.77856 35.9553,4.70878C 36.0961,4.65753 36.672,4.46819 36.8099,4.40554C 36.9009,4.35856 37.4597,4.12079 37.5166,4.13217C 37.5251,4.15924 36.7388,4.50946 36.8398,4.49951C 36.9421,4.49096 37.5209,4.32011 37.5877,4.36282C 37.6545,4.40981 37.5692,4.47103 37.9844,4.28738C 38.4039,4.11082 38.6513,3.88445 38.9115,3.8802C 39.1248,3.90012 40.1244,3.75632 40.2126,3.69794C 40.2538,3.65381 40.1415,3.61964 39.7761,3.60825C 39.4618,3.604 38.5233,3.80331 38.7622,3.72071C 38.9542,3.65524 39.395,3.54703 39.5343,3.48154C 39.6751,3.42459 39.8685,3.36337 40.1145,3.30072C 40.2126,3.27652 40.2609,3.26229 40.3093,3.24947L 40.3093,3.24094C 31.4165,5.4349 23.4508,9.9837 17.1104,16.1911C 16.9298,16.399 16.8857,16.5471 16.8857,16.5471C 16.8857,16.5471 16.8473,16.651 16.4122,17.1422C 15.9856,17.6391 16.644,17.1578 16.4819,17.5593C 16.3439,17.9822 16.3965,18.1687 15.9671,18.9204C 15.5306,19.7234 14.8381,20.5577 14.622,21.0816C 14.3902,21.6511 14.5651,22.3516 14.558,22.8969C 14.5452,23.4906 14.5907,24.2964 14.8296,24.4146C 15.077,24.5413 15.7083,24.3776 15.7723,24.6566C 15.8406,24.9385 16.0496,25.434 16.034,25.6475C 15.9941,25.8981 15.906,26.3879 16.0112,26.6256C 16.1193,26.8662 16.5089,26.7082 16.5103,26.9787C 16.5131,27.2492 16.4278,27.5098 16.4278,27.5098C 16.4278,27.5098 16.1292,27.7319 16.206,27.8885C 16.26,28.0821 16.6994,28.0138 16.8402,28.1604C 16.9824,28.3099 17.1601,28.6872 17.0848,29.0445C 17.0122,29.4019 16.9724,29.4275 17.1587,29.5457C 17.3222,29.7023 17.6151,29.4959 17.7673,29.6938C 17.9209,29.8931 18.0844,29.6055 18.0048,29.9472C 17.9507,30.2547 17.9763,30.3672 18.0517,30.3672C 18.1256,30.3672 18.5465,30.155 18.5223,29.8959C 18.4996,29.6368 18.4043,29.5229 18.164,29.261C 17.9522,28.9677 17.8128,28.4665 17.8185,28.2658C 17.8242,28.0636 17.709,27.9824 17.6621,27.9497C 17.6407,27.8828 16.8757,26.5388 16.8701,26.479C 16.8644,26.4206 16.6369,25.8696 16.8743,25.6575C 17.0876,25.4838 17.2511,25.2731 17.3535,25.5194C 17.4602,25.7671 17.318,25.8255 17.4545,26.0391C 17.6208,26.2184 17.2497,26.647 17.5839,26.8392C 17.928,27.0371 18.3887,27.9995 18.4342,28.186C 18.5053,28.3384 18.8593,28.4879 19.1537,28.8466C 19.4793,29.1769 19.721,29.2481 19.8817,29.7023C 20.0282,30.1864 20.5287,30.2476 20.3396,30.6833C 20.132,31.1474 19.9158,31.2841 19.9628,31.4535C 20.0097,31.6215 20.4391,32.1653 20.951,32.5313C 21.4729,32.9043 22.9133,33.1847 23.4494,33.4097C 24.011,33.6147 25.0362,34.4476 25.2837,34.1016C 25.5325,33.7571 26.1965,33.1064 26.3899,33.2089C 26.5847,33.3115 26.5165,33.777 27.0454,33.73C 27.5716,33.6916 27.9939,34.3138 28.2484,34.5387C 28.5058,34.7651 29.4698,35.1182 29.6703,35.2676C 29.8879,35.3972 30.333,34.523 30.7283,35.5823C 31.1435,36.6387 31.2643,36.7298 31.5729,37.2125C 31.9042,37.6737 33.4598,38.5835 33.5409,38.7572C 33.6375,38.9138 34.4495,39.5218 35.1178,39.2242C 35.7747,38.9437 35.86,38.3429 36.4388,38.723C 37.0161,39.1089 37.4227,38.7643 37.4142,39.2925C 37.4014,39.8264 38.2503,40.3176 37.4597,41.2815C 36.6777,42.2396 35.1519,43.9068 34.9727,44.4592C 34.7978,45.0102 35.1562,46.619 35.1562,46.619C 35.1562,46.619 34.0911,47.7196 34.3457,48.4713C 34.6016,49.2301 36.1217,50.0502 36.6506,52.2086C 37.191,54.3797 37.2592,54.3712 38.2119,55.5671C 39.1689,56.7545 42.5318,57.5376 42.4052,58.4516C 42.2744,59.3542 42.263,60.2014 42.3953,60.7808C 42.5161,61.3418 42.5346,61.3617 42.4678,61.5496C 42.4038,61.739 42.2431,62.3398 42.2261,62.7441C 42.2175,63.1556 42.1436,63.7678 42.081,63.9073C 42.0085,64.0369 41.8393,65.9575 41.8393,65.9575C 41.8393,65.9575 40.915,65.7126 41.0188,66.1113C 41.1297,66.5156 41.7241,66.4814 41.7853,66.7847C 41.8364,67.0822 41.7085,67.6759 41.7042,67.8126C 41.6843,67.9422 41.3288,68.2525 41.2961,68.3337C 41.2634,68.4134 41.2833,69.2363 41.3914,69.5168C 41.5023,69.8016 41.5677,69.9283 41.4682,70.129C 41.3516,70.3184 41.3871,70.7526 41.2989,71.026C 41.2108,71.2993 40.9819,72.0923 40.6676,72.7259C 40.3377,73.3438 40.1472,73.5801 40.2353,73.7709C 40.3249,73.9617 40.5851,74.003 40.4572,74.1838C 40.3306,74.3646 40.1827,74.2664 40.2808,74.5055C 40.3576,74.7362 40.5851,75.1263 40.6292,75.3769C 40.6534,75.6146 40.1401,75.8083 40.1586,76.0602C 40.1799,76.3094 40.15,76.429 40.1799,77.0982C 40.2012,77.7545 40.3505,78.3653 40.0974,78.7041C 39.8699,79.0501 39.3253,79.023 39.6367,79.6167C 39.9623,80.2161 40.0093,80.3371 39.8827,80.4709C 39.7561,80.6019 39.5912,80.367 39.631,80.8041C 39.6495,81.227 39.9652,81.0518 39.722,81.4548C 39.5059,81.8662 38.8162,81.9061 39.257,82.6834C 39.6922,83.4494 39.3992,82.6863 39.6723,82.2976C 39.9154,81.8904 40.1315,81.9559 40.0334,82.4471C 39.9694,82.9482 39.6467,82.9525 39.7092,83.233C 39.7433,83.5021 39.9979,84.1442 39.9751,84.3919C 39.9524,84.6368 39.6723,84.5969 39.7035,84.9927C 39.7391,85.3842 39.8884,85.4924 39.9353,85.6704C 39.9495,85.8313 39.7775,86.089 39.7732,86.2029C 39.7704,86.3168 39.9694,86.405 40.0647,86.5688C 40.1258,86.7183 41.8507,88.7442 42.2232,88.9635C 42.5602,89.1713 42.5062,89.3721 42.5247,89.449L 42.583,89.533C 42.583,89.533 42.7109,89.6497 42.819,89.6924C 42.8887,89.728 43.1375,89.6896 43.6807,89.896C 44.2267,90.0996 44.5168,90.0313 44.9405,90.2719C 45.3671,90.5096 45.5804,90.8627 45.7311,90.6791C 45.8435,90.4869 45.8648,90.3644 46.0326,90.2904C 46.2004,90.2164 46.5829,89.5173 46.9583,89.5444C 47.3337,89.5686 47.3607,89.6526 47.5071,89.691C 47.6522,89.7337 47.8427,89.738 48.0361,89.6995C 48.1925,89.654 48.1982,89.6084 48.1982,89.6084 Z ">
+                                                <Path.Effect>
+                                                    <DropShadowEffect Direction="-90" ShadowDepth="2" />
+                                                </Path.Effect>
+                                            </Path>
+                                            <Ellipse x:Name="LargeDarkEdgeEllipse" Width="101.05" Height="101.05" Canvas.Left="1.90274" Canvas.Top="1.77166" >
+                                                <Ellipse.Fill>
+                                                    <RadialGradientBrush Center="0.49,0.4" >
+                                                        <GradientStop Color="#00000000" Offset="0.3"  />
+                                                        <GradientStop Color="#52000000" Offset="1" />
+                                                    </RadialGradientBrush>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
+                                            <Ellipse x:Name="LargeHighlightGlowEllipse" Width="30" Height="15" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,15,0,0" RenderTransformOrigin="0.5,0.5" >
+                                                <Ellipse.Fill>
+                                                    <RadialGradientBrush >
+                                                        <GradientStop Color="#83FFFFFF" Offset="0.185" />
+                                                        <GradientStop Color="#00FFFFFF" Offset="1" />
+                                                    </RadialGradientBrush>
+                                                </Ellipse.Fill>
+                                                <Ellipse.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform/>
+                                                        <SkewTransform AngleX="-64" AngleY="46"/>
+                                                        <RotateTransform Angle="-46"/>
+                                                        <TranslateTransform/>
+                                                    </TransformGroup>
+                                                </Ellipse.RenderTransform>
+                                            </Ellipse>
+
+                                        </Canvas>
+
+                                    </Grid>
+                                </Grid>
+                                <Ellipse x:Name="GlobeGlass" Fill="#00FFFFFF" StrokeThickness="0" Width="80" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" >
+                                </Ellipse>
+
+
+                            </Grid>
+                        </Border>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

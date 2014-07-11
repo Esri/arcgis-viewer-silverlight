@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddPointInstructions" xml:space="preserve">
+    <value>הקש במפה ליצירת {0} ישויות.</value>
+  </data>
+  <data name="AddSelect" xml:space="preserve">
+    <value>הוסף לבחירה</value>
+  </data>
+  <data name="AddSelectDescription" xml:space="preserve">
+    <value>הוסף ישויות לנבחרים</value>
+  </data>
+  <data name="AddShapeInstructions" xml:space="preserve">
+    <value>הקש במפה להוספת נקודות מפנה, ולאחר מכן הקשה כפולה ליצירת {0} ישויות.</value>
+  </data>
+  <data name="AttributesOf" xml:space="preserve">
+    <value>מאפיינים של {0}</value>
+  </data>
+  <data name="AutoCompleteDescription" xml:space="preserve">
+    <value>השלם פוליגונים באופן אוטומטי</value>
+  </data>
+  <data name="AutoComplete" xml:space="preserve">
+    <value>השלם אוטומטית</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>התמקד אוטומטית לנבחרים</value>
+  </data>
+  <data name="BrowseTabHeader" xml:space="preserve">
+    <value>נתב</value>
+  </data>
+  <data name="BtnBack" xml:space="preserve">
+    <value>חזור</value>
+  </data>
+  <data name="BtnCancel" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="BtnNext" xml:space="preserve">
+    <value>הבא</value>
+  </data>
+  <data name="BtnOk" xml:space="preserve">
+    <value>אישור</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>כפתור</value>
+  </data>
+  <data name="CancelTool" xml:space="preserve">
+    <value>בלי ביטול</value>
+  </data>
+  <data name="ClearSelect" xml:space="preserve">
+    <value>נקה בחירה</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>לחץ לתזוזה מזרחה</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>לחץ לתזוזה צפונה</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>לחץ לתזוזה דרומה</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>לחץ לתזוזה מערבה</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>בצע</value>
+  </data>
+  <data name="ContentsTabHeader" xml:space="preserve">
+    <value>תכולה</value>
+  </data>
+  <data name="ContentTypeColon" xml:space="preserve">
+    <value>סוג תכולה: </value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>גזור</value>
+  </data>
+  <data name="CutDescription" xml:space="preserve">
+    <value>גזור ישות</value>
+  </data>
+  <data name="DeleteAttachment" xml:space="preserve">
+    <value>מחק קישור זה</value>
+  </data>
+  <data name="DeleteSelect" xml:space="preserve">
+    <value>מחק בחירה</value>
+  </data>
+  <data name="DeleteSelectDescription" xml:space="preserve">
+    <value>מחק ישויות נבחרות</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>גרור כדי לסובב</value>
+  </data>
+  <data name="DragToZoomInOrOut" xml:space="preserve">
+    <value>גרור להתמקדות פנימה או החוצה</value>
+  </data>
+  <data name="DrawingDotDot" xml:space="preserve">
+    <value>מצייר</value>
+  </data>
+  <data name="EditGeometry" xml:space="preserve">
+    <value>ערוך shape</value>
+  </data>
+  <data name="EditShapeDescription" xml:space="preserve">
+    <value>ערוך גיאומטרית הישות, המיקום, הסיבוב, או קנה המידה</value>
+  </data>
+  <data name="EditTabHeader" xml:space="preserve">
+    <value>הוסף ישויות</value>
+  </data>
+  <data name="EditValues" xml:space="preserve">
+    <value>ערוך ערכים</value>
+  </data>
+  <data name="EditValuesDescription" xml:space="preserve">
+    <value>ערוך ערכי הישות</value>
+  </data>
+  <data name="Freehand" xml:space="preserve">
+    <value>ציור חופשי</value>
+  </data>
+  <data name="FreehandDescription" xml:space="preserve">
+    <value>השתמש ביד חופשית כדי ליצור קווים או צורות</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>תיחום מלא</value>
+  </data>
+  <data name="MapContentsTabHeader" xml:space="preserve">
+    <value>תכולת המפה</value>
+  </data>
+  <data name="MoveBarUpZoomInMoveDownToZoomOut" xml:space="preserve">
+    <value>הזז את הסרגל מעלה להתמקדות פנימה, ולמטה להתמקדות החוצה</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>הזז לראשון</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>הזז לאחרון</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>הזז להבא</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>הזז לקודם</value>
+  </data>
+  <data name="NameColon" xml:space="preserve">
+    <value>שם: </value>
+  </data>
+  <data name="NewSelect" xml:space="preserve">
+    <value>בחירה חדשה</value>
+  </data>
+  <data name="NewSelectDescription" xml:space="preserve">
+    <value>התחל בחירה חדשה</value>
+  </data>
+  <data name="OpenItem" xml:space="preserve">
+    <value>פתח פריט</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>אפשרויות</value>
+  </data>
+  <data name="OptionsDotDot" xml:space="preserve">
+    <value>אפשרויות...</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>הדפסה</value>
+  </data>
+  <data name="PrintPreviewColon" xml:space="preserve">
+    <value>הדפס תצוגה מקדימה:</value>
+  </data>
+  <data name="RecordColon" xml:space="preserve">
+    <value>רשומה:</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>נבחרו {0} מתוך {1} רשומות</value>
+  </data>
+  <data name="RemoveSelect" xml:space="preserve">
+    <value>הסר מהבחירה</value>
+  </data>
+  <data name="RemoveSelectDescription" xml:space="preserve">
+    <value>הסר ישות מהבחירה הנוכחית</value>
+  </data>
+  <data name="ResetNorth" xml:space="preserve">
+    <value>אפס לצפון</value>
+  </data>
+  <data name="Reshape" xml:space="preserve">
+    <value>עצב מחדש</value>
+  </data>
+  <data name="ReshapeDescription" xml:space="preserve">
+    <value>עצב מחדש ישות</value>
+  </data>
+  <data name="SaveEdit" xml:space="preserve">
+    <value>שמור עריכה</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>חפש</value>
+  </data>
+  <data name="SearchTabHeader" xml:space="preserve">
+    <value>חפש</value>
+  </data>
+  <data name="SizeColon" xml:space="preserve">
+    <value>גודל: </value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>החלף בחירה</value>
+  </data>
+  <data name="Union" xml:space="preserve">
+    <value>איחוד</value>
+  </data>
+  <data name="UnionDescription" xml:space="preserve">
+    <value>בצע איחוד לישויות הנבחרות</value>
+  </data>
+  <data name="UriColon" xml:space="preserve">
+    <value>Uri: </value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>ורסיה</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>התמקדות</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>הגדלה</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>התמקדות החוצה</value>
+  </data>
+  <data name="CouldNotLoadViewer" xml:space="preserve">
+    <value>לא ניתן ללטעון את הצפיין. לפרטים נוספים, בדוק את לוח הבקרה של הדפדפן.</value>
+  </data>
+  <data name="InitializingViewer" xml:space="preserve">
+    <value>מאתחל את הצפיין...</value>
+  </data>
+</root>

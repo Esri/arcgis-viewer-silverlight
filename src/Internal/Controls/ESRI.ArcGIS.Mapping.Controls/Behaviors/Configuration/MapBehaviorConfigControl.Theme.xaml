@@ -1,0 +1,267 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls">
+
+    <local:ExtensionDisplayNameConverter x:Name="ExtensionDisplayNameConverter" />
+    <local:NotNullBoolConverter x:Key="NotNullBoolConverter" />
+    <local:StringResourcesManager x:Key="Localization" />
+    <local:InvertVisibilityConverter x:Key="InvertVisibilityConverter"/>
+    <local:NotNullOrEmptyStringToBoolConverter x:Key="NotNullOrEmptyStringToBoolConverter"/>
+
+    <Style TargetType="local:MapBehaviorConfigControl">
+        <Setter Property="Width" Value="400"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:MapBehaviorConfigControl">
+                    <Grid x:Name="LayoutRoot" Height="380">
+                        <Grid Visibility="{Binding TypeSelectionVisibility, RelativeSource={RelativeSource TemplatedParent}}">
+                            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10,10,10,0">
+								<TextBlock Text="{Binding ConverterParameter=SelectBehaviorToAdd, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                           HorizontalAlignment="Left" FontStyle="Italic" FontSize="12"/>
+                                <Rectangle Height="1" Fill="{StaticResource DesignHostAccentBrush}" 
+                                           Margin="0,2,100,7" HorizontalAlignment="Stretch">
+                                    <Rectangle.OpacityMask>
+                                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                            <GradientStop Color="#FF000000" Offset="0" />
+                                            <GradientStop Color="#00000000" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.OpacityMask>
+                                </Rectangle>
+                                <local:AvailableBehaviorItemsControl x:Name="AvailableBehaviorItemsControl"
+                                        Height="300" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+								<Button x:Name="btnNext" Content="{Binding ConverterParameter=Next, Converter={StaticResource Localization}, Source={StaticResource Localization}}"  Margin="0,5,0,3" Padding="10,5,10,5" 
+                                        Command="{TemplateBinding NextCommand}"   
+                                        HorizontalAlignment="Right" IsEnabled="{Binding ElementName=AvailableBehaviorItemsControl, Path=SelectedItem, Converter={StaticResource NotNullBoolConverter}}"
+                                        Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                        Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Visibility="{Binding TypeSelectionVisibility, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource InvertVisibilityConverter}}" 
+                              Background="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="{Binding ConverterParameter=ConfigureBehavior, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                       HorizontalAlignment="Left" FontStyle="Italic" FontSize="12" 
+                                       Margin="10,10,10,0" Grid.ColumnSpan="2"/>
+                            <Rectangle Height="1" Fill="{StaticResource DesignHostAccentBrush}" 
+                                           Margin="10,2,100,4" HorizontalAlignment="Stretch"
+                                       Grid.Row="1" Grid.ColumnSpan="2">
+                                <Rectangle.OpacityMask>
+                                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                        <GradientStop Color="#FF000000" Offset="0" />
+                                        <GradientStop Color="#00000000" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                            <TextBlock Text="{Binding ConverterParameter=TitlePrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                       VerticalAlignment="Top" Margin="15,8,3,5" 
+                                       Foreground="{StaticResource DesignHostBackgroundTextBrush}" 
+                                       Grid.Row="2"/>
+                            <TextBox x:Name="txtTitle" VerticalAlignment="Top" Grid.Column="1" Margin="0,5,15,5" 
+                                     Text="{Binding Path=ExtensionBehavior.Title, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" 
+                                     Grid.Row="2"/>
+
+                            <Grid Grid.ColumnSpan="2" Grid.Row="3" Margin="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <Button x:Name="btnConfigure" Margin="0" Padding="10,5"
+                                    CommandParameter="{Binding Path=ExtensionBehavior, RelativeSource={RelativeSource TemplatedParent}}"
+                                    ToolTipService.ToolTip="{Binding ConverterParameter=ConfigureDescription, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                    Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                    Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}" 
+                                    Visibility="Visible">
+                                    <Button.Command>
+                                        <local:ConfigureMapBehaviorCommand />
+                                    </Button.Command>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/ESRI.ArcGIS.Mapping.Controls;component/Images/icons/configure16.png" />
+                                        <TextBlock Text="{Binding ConverterParameter=Configure, Converter={StaticResource Localization}, Source={StaticResource Localization}}" />
+                                    </StackPanel>
+                                </Button>
+
+                                <StackPanel Margin="0" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
+                                    <Button Content="{Binding ConverterParameter=ShowMapContents, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Padding="10,5" Margin="0,0,5,0"
+                                        HorizontalAlignment="Right" 
+                                        IsEnabled="{Binding ElementName=txtTitle, Path=Text, Converter={StaticResource NotNullOrEmptyStringToBoolConverter}}"
+                                        Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                        Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Click">
+                                                <ei:ChangePropertyAction 
+                                                    TargetObject="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                    Value="Visible" PropertyName="TypeSelectionVisibility" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Button>
+                                    <Button Content="{Binding ConverterParameter=OK, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Padding="10,5" Margin="0,0,5,0"
+                                        HorizontalAlignment="Right" 
+                                        Command="{TemplateBinding OKCommand}"
+                                        IsEnabled="{Binding ElementName=txtTitle, Path=Text, Converter={StaticResource NotNullOrEmptyStringToBoolConverter}}"
+                                        Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                        Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}" />
+                                    <Button Content="{Binding ConverterParameter=Cancel, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Padding="10,5"
+                                        HorizontalAlignment="Right" 
+                                        Command="{TemplateBinding CancelCommand}"    
+                                        Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                        Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}" />
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ComboBoxStyle" TargetType="ComboBox">
+        <Setter Property="Padding" Value="6,2,25,2" />
+        <Setter Property="Background" Value="#FF1F3B53"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="TabNavigation" Value="Once" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <Grid.Resources>
+                            <Style x:Name="comboToggleStyle" TargetType="ToggleButton">
+                                <Setter Property="Foreground" Value="#FF333333"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderBrush">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                                            <GradientStop Color="#FF617584" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="Padding" Value="3"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Grid Cursor="Hand">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="Normal"/>
+                                                        <VisualState x:Name="MouseOver">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" Storyboard.TargetName="BackgroundOverlay" Storyboard.TargetProperty="Opacity" To="1"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Pressed">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" Storyboard.TargetName="Highlight" Storyboard.TargetProperty="Opacity" To="1"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Disabled" />
+                                                    </VisualStateGroup>
+                                                    <VisualStateGroup x:Name="CheckStates">
+                                                        <VisualState x:Name="Checked">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" Storyboard.TargetName="Highlight" Storyboard.TargetProperty="(UIElement.Opacity)" To="1"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Unchecked" />
+                                                    </VisualStateGroup>
+                                                    <VisualStateGroup x:Name="FocusStates">
+                                                        <VisualState x:Name="Focused" />
+                                                        <VisualState x:Name="Unfocused" />
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <Rectangle x:Name="BackgroundOverlay" Opacity="0.4" Fill="Transparent" StrokeThickness="{TemplateBinding BorderThickness}" 
+                                                                               Stroke="DarkGray" Margin="{TemplateBinding BorderThickness}"/>
+                                                <Rectangle x:Name="Highlight" Opacity="0" IsHitTestVisible="false" Stroke="Black" StrokeThickness="1" Margin="{TemplateBinding BorderThickness}" />
+                                                <ContentPresenter
+                                                          x:Name="contentPresenter"
+                                                          Content="{TemplateBinding Content}"
+                                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                          Margin="{TemplateBinding Padding}"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Grid.Resources>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused"/>
+                                <VisualState x:Name="FocusedDropDown">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="ContentPresenterBorder">
+                            <Grid>
+                                <ToggleButton x:Name="DropDownToggle" Style="{StaticResource comboToggleStyle}"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="0" HorizontalContentAlignment="Right" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
+                                    <Path x:Name="BtnArrow" Height="4" Width="8" Stretch="Uniform" Data="F1 M 301.14,-189.041L 311.57,-189.041L 306.355,-182.942L 301.14,-189.041 Z " Margin="0,0,6,0" HorizontalAlignment="Right">
+                                        <Path.Fill>
+                                            <SolidColorBrush x:Name="BtnArrowColor" Color="#FF333333"/>
+                                        </Path.Fill>
+                                    </Path>
+                                </ToggleButton>
+                                <ContentPresenter x:Name="ContentPresenter"  
+                                                        Margin="{TemplateBinding Padding}"  
+                                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                </ContentPresenter>
+                            </Grid>
+                        </Border>
+                        <Rectangle x:Name="FocusVisualElement" Margin="1"  Stroke="{StaticResource SelectionOutlineColorBrush}" StrokeThickness="1" Opacity="0" IsHitTestVisible="false" />
+                        <Popup x:Name="Popup">
+                            <Border x:Name="PopupBorder" HorizontalAlignment="Stretch" Height="Auto" BorderThickness="{TemplateBinding BorderThickness}" 
+                                                        BorderBrush="Black" 
+                                                        Background="White">
+                                <ScrollViewer x:Name="ScrollViewer" BorderThickness="0" Padding="1">
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,124 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:esri="clr-namespace:ESRI.ArcGIS.Client.Application.Controls;assembly=ESRI.ArcGIS.Client.Application.Controls"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls.Editor"
+    xmlns:esriConverters="clr-namespace:ESRI.ArcGIS.Client.Application.Layout.Converters;assembly=ESRI.ArcGIS.Client.Application.Layout"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit">
+    
+    <local:AddIntegerConverter x:Key="AddIntegerConverter" />
+    <local:InvertVisibilityConverter x:Key="InvertVisConverter" />
+    <esriConverters:BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    <local:StringResourcesManager x:Key="Localization" />
+
+    <Style x:Key="NoConfigurationWizardStyle" TargetType="esri:Wizard">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="esri:Wizard">
+                    <Grid Margin="10,5,10,10" Height="{TemplateBinding ContentHeight}" Width="{TemplateBinding ContentWidth}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <toolkit:TransitioningContentControl
+                                        FontSize="12" Margin="0,5,0,0"
+                                        HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
+                                        Content="{Binding CurrentPage.Heading, RelativeSource={RelativeSource TemplatedParent}}"/>
+                        <toolkit:TransitioningContentControl
+                                        Grid.Row="1"
+                                        Content="{Binding CurrentPage.Description, RelativeSource={RelativeSource TemplatedParent}}"
+                                        HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                        <Rectangle Fill="{StaticResource DesignHostBackgroundTextBrush}" Height="1" HorizontalAlignment="Stretch"
+                                   Grid.Row="2" Margin="0,3,0,0">
+                            <Rectangle.OpacityMask>
+                                <LinearGradientBrush StartPoint="0, 0.5" EndPoint="1, 0.5">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Offset="0" Color="White" />
+                                        <GradientStop Offset="0.9" Color="Transparent" />
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+                        <toolkit:TransitioningContentControl
+                                        Grid.Row="3"
+										Margin="0,3,0,0"
+                                        Content="{Binding CurrentPage.Content, RelativeSource={RelativeSource TemplatedParent}}"
+                                        HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
+                                        VerticalContentAlignment="Stretch"/>
+                        <Grid Margin="0,10,0,0" Grid.Row="4">
+                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" >
+                                <Button Content="{Binding ConverterParameter=Back, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                    Height="26" MinWidth="50"
+                                    Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                    Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                    Command="{Binding Back, RelativeSource={RelativeSource TemplatedParent}}" 
+                                    Visibility="{Binding IsEnabled, RelativeSource={RelativeSource Self}, Converter={StaticResource BoolToVisConverter}}"/>
+                                <Button x:Name="NextButton" Height="26" Margin="4,0,0,0" MinWidth="50"
+                                    Content="{Binding ConverterParameter=Next, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                    Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                    Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                    Command="{Binding Next, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger SourceObject="{Binding RelativeSource={RelativeSource TemplatedParent}}" EventName="PageChanged">
+                                            <i:Interaction.Behaviors>
+                                                <ei:ConditionBehavior>
+                                                    <ei:ConditionalExpression>
+                                                        <ei:ComparisonCondition LeftOperand="{Binding CurrentPageIndex, RelativeSource={RelativeSource TemplatedParent}}" 
+															Operator="LessThan" 
+															RightOperand="{Binding Pages.Count, ConverterParameter=-1, Converter={StaticResource AddIntegerConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                    </ei:ConditionalExpression>
+                                                </ei:ConditionBehavior>
+                                            </i:Interaction.Behaviors>
+                                            <ei:ChangePropertyAction PropertyName="Visibility">
+                                                <ei:ChangePropertyAction.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </ei:ChangePropertyAction.Value>
+                                            </ei:ChangePropertyAction>
+                                        </i:EventTrigger>
+                                        <i:EventTrigger SourceObject="{Binding RelativeSource={RelativeSource TemplatedParent}}" EventName="PageChanged">
+                                            <i:Interaction.Behaviors>
+                                                <ei:ConditionBehavior>
+                                                    <ei:ConditionalExpression>
+                                                        <ei:ComparisonCondition LeftOperand="{Binding CurrentPageIndex, RelativeSource={RelativeSource TemplatedParent}}" 
+															RightOperand="{Binding Pages.Count, ConverterParameter=-1, Converter={StaticResource AddIntegerConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                                                    </ei:ConditionalExpression>
+                                                </ei:ConditionBehavior>
+                                            </i:Interaction.Behaviors>
+                                            <ei:ChangePropertyAction PropertyName="Visibility">
+                                                <ei:ChangePropertyAction.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </ei:ChangePropertyAction.Value>
+                                            </ei:ChangePropertyAction>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </Button>
+                                <Button Content="{Binding ConverterParameter=OK, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Height="26" Margin="4,0,0,0" MinWidth="50"
+                                    Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                    Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                    Command="{Binding Complete, RelativeSource={RelativeSource TemplatedParent}}"
+                                    Visibility="{Binding Visibility, ElementName=NextButton, Converter={StaticResource InvertVisConverter}}"/>
+                                <Button Content="{Binding ConverterParameter=Cancel, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Height="26" Margin="4,0,0,0" MinWidth="50"
+                                    Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                    Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                    Command="{Binding Cancel, RelativeSource={RelativeSource TemplatedParent}}" />
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,143 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl 
+    x:Class="SearchTool.SingleLineSearchInputView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400"
+    xmlns:local="clr-namespace:SearchTool"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions">
+    <UserControl.Resources>
+        <local:EmptyTextVisibilityConverter x:Key="EmptyTextVisibilityConverter" />
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="/SearchTool.AddIns;component/AppResources.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- search input textbox -->
+        <TextBox 
+            x:Name="SearchTextBox"
+            Text="{Binding Input, Mode=TwoWay}"
+            Padding="2,2,22,2"
+            Grid.ColumnSpan="2"
+            TextWrapping="NoWrap"
+            Background="White"
+            VerticalContentAlignment="Center">
+            <i:Interaction.Triggers>
+                
+                <!-- execute search on enter -->
+                <local:KeyPressedTrigger Key="Enter">
+                    <i:InvokeCommandAction
+                        Command="{Binding Search}"
+                        CommandParameter="{Binding Input}" />
+                </local:KeyPressedTrigger>
+            </i:Interaction.Triggers>
+            <i:Interaction.Behaviors>
+                <local:UpdateBindingOnTextChanged />
+            </i:Interaction.Behaviors>
+        </TextBox>
+
+        <!-- clear search input button -->
+        <Button Grid.Column="1"
+                x:Name="ClearButton"
+                Width="20"
+                Height="20"
+                HorizontalAlignment="Right"
+                Margin="0,0,3,0"
+                Visibility="{Binding Input,
+                    Converter={StaticResource EmptyTextVisibilityConverter}}"
+                Cursor="Hand">
+            <i:Interaction.Triggers>
+                
+                <!-- clear search text on click -->
+                <i:EventTrigger EventName="Click">
+                    <ei:ChangePropertyAction
+                            TargetObject="{Binding ElementName=SearchTextBox}"
+                            PropertyName="Text"
+                            Value="" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <Button.Template>
+                <ControlTemplate>
+                    <Border 
+                        Width="14"
+                        Height="14"
+                        Background="LightGray"
+                        CornerRadius="15">
+                        <TextBlock 
+                            Foreground="White"
+                            TextAlignment="center"
+                            Text="r"
+                            FontSize="10"
+                            VerticalAlignment="center"
+                            FontFamily="Webdings" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- search button -->
+        <Button 
+            Grid.Column="2"
+            x:Name="SearchButton"
+            Cursor="Hand"
+            HorizontalAlignment="Right"
+            Width="20"
+            Height="20"
+            Margin="3,0,0,0"
+            Command="{Binding Search}"
+            CommandParameter="{Binding Input}">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image 
+                        x:Name="Image"
+                        Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Images/find.png"
+                        Stretch="None">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Image"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="1" 
+                                            Duration="00:00:00"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="Image"
+                                            Storyboard.TargetProperty="Opacity"
+                                            To="0.5" 
+                                            Duration="00:00:00"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Image>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</UserControl>

@@ -1,0 +1,485 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl x:Class="PrintTool.AddIns.View.PrintLayoutPicker"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:local="clr-namespace:PrintTool.AddIns"
+			 mc:Ignorable="d"
+			 d:DesignHeight="600"
+			 d:DesignWidth="720">
+	<Grid x:Name="LayoutRoot">
+		<Grid.Resources>
+			<!-- NOTE: some resources get resolved at runtime-->
+			<!-- object for accessing localized string resources -->
+			<local:ResourceHelper x:Key="Strings" />
+			<!-- object for updating visibility from boolean property -->
+			<local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+			<local:ReverseBoolToVisibilityConverter x:Key="ReverseBoolToVisibilityConverter" />
+			<!-- The DataContextProxy allows explicit binding to the parent UserControl's DataContext.  This permits 
+        binding to the ViewModel in nested objects such as DataTemplates. -->
+			<local:DataContextProxy x:Key="DataContextProxy" />
+			<!-- converter for manipulating bound values -->
+			<local:RuntimeUrlResolver x:Key="RuntimeUrlResolver" />
+			<!-- style for ListBox ItemContainer -->
+			<Style x:Key="LayoutItemStyle"
+				   TargetType="ListBoxItem">
+				<Setter Property="Padding"
+						Value="0" />
+				<Setter Property="HorizontalContentAlignment"
+						Value="Left" />
+				<Setter Property="VerticalContentAlignment"
+						Value="Top" />
+				<Setter Property="Background"
+						Value="Transparent" />
+				<Setter Property="BorderThickness"
+						Value="0" />
+				<Setter Property="TabNavigation"
+						Value="Local" />
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="ListBoxItem">
+							<Grid Background="{TemplateBinding Background}">
+								<VisualStateManager.VisualStateGroups>
+									<VisualStateGroup x:Name="CommonStates">
+										<VisualState x:Name="Normal" />
+										<VisualState x:Name="MouseOver" />
+										<VisualState x:Name="Disabled">
+											<Storyboard>
+												<DoubleAnimation Duration="0"
+																 To=".55"
+																 Storyboard.TargetProperty="Opacity"
+																 Storyboard.TargetName="contentPresenter" />
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+									<VisualStateGroup x:Name="SelectionStates">
+										<VisualState x:Name="Unselected" />
+										<VisualState x:Name="Selected" />
+									</VisualStateGroup>
+									<VisualStateGroup x:Name="FocusStates">
+										<VisualState x:Name="Focused" />
+										<VisualState x:Name="Unfocused" />
+									</VisualStateGroup>
+								</VisualStateManager.VisualStateGroups>
+								<ContentPresenter x:Name="contentPresenter"
+												  ContentTemplate="{TemplateBinding ContentTemplate}"
+												  Content="{TemplateBinding Content}"
+												  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+												  Margin="{TemplateBinding Padding}" />
+							</Grid>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<!-- style for ComboBox -->
+			<Style x:Key="LayoutComboBoxStyle"
+				   TargetType="ComboBox">
+				<Setter Property="Padding"
+						Value="6,2,25,2" />
+				<Setter Property="Background"
+						Value="#FF1F3B53" />
+				<Setter Property="HorizontalContentAlignment"
+						Value="Left" />
+				<Setter Property="BorderThickness"
+						Value="1" />
+				<Setter Property="TabNavigation"
+						Value="Once" />
+				<Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+						Value="Auto" />
+				<Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+						Value="Auto" />
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="ComboBox">
+							<Grid>
+								<Grid.Resources>
+									<Style x:Name="comboToggleStyle"
+										   TargetType="ToggleButton">
+										<Setter Property="Foreground"
+												Value="#FF333333" />
+										<Setter Property="Background"
+												Value="Transparent" />
+										<Setter Property="BorderBrush">
+											<Setter.Value>
+												<LinearGradientBrush EndPoint="0.5,1"
+																	 StartPoint="0.5,0">
+													<GradientStop Color="#FFA3AEB9"
+																  Offset="0" />
+													<GradientStop Color="#FF8399A9"
+																  Offset="0.375" />
+													<GradientStop Color="#FF718597"
+																  Offset="0.375" />
+													<GradientStop Color="#FF617584"
+																  Offset="1" />
+												</LinearGradientBrush>
+											</Setter.Value>
+										</Setter>
+										<Setter Property="BorderThickness"
+												Value="1" />
+										<Setter Property="Padding"
+												Value="3" />
+										<Setter Property="Template">
+											<Setter.Value>
+												<ControlTemplate TargetType="ToggleButton">
+													<Grid Cursor="Hand">
+														<VisualStateManager.VisualStateGroups>
+															<VisualStateGroup x:Name="CommonStates">
+																<VisualState x:Name="Normal" />
+																<VisualState x:Name="MouseOver">
+																	<Storyboard>
+																		<DoubleAnimation Duration="0"
+																						 Storyboard.TargetName="BackgroundOverlay"
+																						 Storyboard.TargetProperty="Opacity"
+																						 To="1" />
+																	</Storyboard>
+																</VisualState>
+																<VisualState x:Name="Pressed">
+																	<Storyboard>
+																		<DoubleAnimation Duration="0"
+																						 Storyboard.TargetName="Highlight"
+																						 Storyboard.TargetProperty="Opacity"
+																						 To="1" />
+																	</Storyboard>
+																</VisualState>
+																<VisualState x:Name="Disabled" />
+															</VisualStateGroup>
+															<VisualStateGroup x:Name="CheckStates">
+																<VisualState x:Name="Checked">
+																	<Storyboard>
+																		<DoubleAnimation Duration="0"
+																						 Storyboard.TargetName="Highlight"
+																						 Storyboard.TargetProperty="(UIElement.Opacity)"
+																						 To="1" />
+																	</Storyboard>
+																</VisualState>
+																<VisualState x:Name="Unchecked" />
+															</VisualStateGroup>
+															<VisualStateGroup x:Name="FocusStates">
+																<VisualState x:Name="Focused" />
+																<VisualState x:Name="Unfocused" />
+															</VisualStateGroup>
+														</VisualStateManager.VisualStateGroups>
+														<Rectangle x:Name="Background"
+																   RadiusX="3"
+																   RadiusY="3"
+																   Fill="Transparent"
+																   StrokeThickness="{TemplateBinding BorderThickness}"
+																   Stroke="{TemplateBinding BorderBrush}" />
+														<Rectangle x:Name="BackgroundOverlay"
+																   Opacity="0"
+																   Fill="Transparent"
+																   StrokeThickness="{TemplateBinding BorderThickness}"
+																   Stroke="{StaticResource DesignHostBackgroundTextBrush}"
+																   Margin="{TemplateBinding BorderThickness}" />
+														<Rectangle x:Name="Highlight"
+																   Opacity="0"
+																   IsHitTestVisible="false"
+																   Stroke="{StaticResource DesignHostAccentBrush}"
+																   StrokeThickness="1"
+																   Margin="{TemplateBinding BorderThickness}" />
+														<ContentPresenter x:Name="contentPresenter"
+																		  Content="{TemplateBinding Content}"
+																		  ContentTemplate="{TemplateBinding ContentTemplate}"
+																		  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+																		  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+																		  Margin="{TemplateBinding Padding}" />
+													</Grid>
+												</ControlTemplate>
+											</Setter.Value>
+										</Setter>
+									</Style>
+								</Grid.Resources>
+								<VisualStateManager.VisualStateGroups>
+									<VisualStateGroup x:Name="CommonStates">
+										<VisualState x:Name="Normal" />
+										<VisualState x:Name="MouseOver" />
+										<VisualState x:Name="Disabled" />
+									</VisualStateGroup>
+									<VisualStateGroup x:Name="FocusStates">
+										<VisualState x:Name="Focused" />
+										<VisualState x:Name="Unfocused" />
+										<VisualState x:Name="FocusedDropDown">
+											<Storyboard>
+												<ObjectAnimationUsingKeyFrames Duration="00:00:00"
+																			   Storyboard.TargetName="PopupBorder"
+																			   Storyboard.TargetProperty="Visibility">
+													<DiscreteObjectKeyFrame KeyTime="00:00:00">
+														<DiscreteObjectKeyFrame.Value>
+															<Visibility>Visible</Visibility>
+														</DiscreteObjectKeyFrame.Value>
+													</DiscreteObjectKeyFrame>
+												</ObjectAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+								</VisualStateManager.VisualStateGroups>
+								<Border x:Name="ContentPresenterBorder">
+									<Grid>
+										<ToggleButton x:Name="DropDownToggle"
+													  Style="{StaticResource comboToggleStyle}"
+													  HorizontalAlignment="Stretch"
+													  VerticalAlignment="Stretch"
+													  Margin="0"
+													  HorizontalContentAlignment="Right"
+													  Background="{TemplateBinding Background}"
+													  BorderThickness="{TemplateBinding BorderThickness}"
+													  BorderBrush="{TemplateBinding BorderBrush}">
+											<Path x:Name="BtnArrow"
+												  Height="4"
+												  Width="8"
+												  Stretch="Uniform"
+												  Data="F1 M 301.14,-189.041L 311.57,-189.041L 306.355,-182.942L 301.14,-189.041 Z "
+												  Margin="0,0,6,0"
+												  HorizontalAlignment="Right"
+												  Fill="{StaticResource DesignHostBackgroundTextBrush}" />
+										</ToggleButton>
+										<ContentPresenter x:Name="ContentPresenter"
+														  Margin="{TemplateBinding Padding}"
+														  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+														  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"></ContentPresenter>
+									</Grid>
+								</Border>
+								<Rectangle x:Name="FocusVisualElement"
+										   Margin="1"
+										   Stroke="{StaticResource DesignHostSelectionOutlineBrush}"
+										   StrokeThickness="1"
+										   Opacity="0"
+										   IsHitTestVisible="false" />
+								<Popup x:Name="Popup">
+									<Border x:Name="PopupBorder"
+											HorizontalAlignment="Stretch"
+											Height="Auto"
+											BorderThickness="{TemplateBinding BorderThickness}"
+											BorderBrush="Black"
+											Background="{StaticResource DesignHostBackgroundBrush}">
+										<ScrollViewer x:Name="ScrollViewer"
+													  BorderThickness="0"
+													  Padding="1">
+											<ItemsPresenter />
+										</ScrollViewer>
+									</Border>
+								</Popup>
+							</Grid>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<!-- style for ComboBox ItemContainer -->
+			<Style x:Key="ListBoxItemStyle"
+				   TargetType="ListBoxItem">
+				<Setter Property="Padding"
+						Value="3" />
+				<Setter Property="HorizontalAlignment"
+						Value="Stretch" />
+				<Setter Property="HorizontalContentAlignment"
+						Value="Stretch" />
+				<Setter Property="VerticalContentAlignment"
+						Value="Top" />
+				<Setter Property="Background"
+						Value="Transparent" />
+				<Setter Property="BorderThickness"
+						Value="0" />
+				<Setter Property="TabNavigation"
+						Value="Local" />
+				<Setter Property="Foreground"
+						Value="{StaticResource DesignHostBackgroundTextBrush}" />
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="ListBoxItem">
+							<Grid Background="{TemplateBinding Background}">
+								<VisualStateManager.VisualStateGroups>
+									<VisualStateGroup x:Name="CommonStates">
+										<VisualState x:Name="Normal" />
+										<VisualState x:Name="MouseOver">
+											<Storyboard>
+												<DoubleAnimation Storyboard.TargetName="fillColor"
+																 Storyboard.TargetProperty="Opacity"
+																 Duration="0"
+																 To="0.35" />
+											</Storyboard>
+										</VisualState>
+										<VisualState x:Name="Disabled">
+											<Storyboard>
+												<DoubleAnimation Storyboard.TargetName="contentPresenter"
+																 Storyboard.TargetProperty="Opacity"
+																 Duration="0"
+																 To=".55" />
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+									<VisualStateGroup x:Name="SelectionStates">
+										<VisualState x:Name="Unselected" />
+										<VisualState x:Name="Selected">
+											<Storyboard>
+												<DoubleAnimation Storyboard.TargetName="fillColor2"
+																 Storyboard.TargetProperty="Opacity"
+																 Duration="0"
+																 To="0.75" />
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+									<VisualStateGroup x:Name="FocusStates">
+										<VisualState x:Name="Focused" />
+										<VisualState x:Name="Unfocused" />
+									</VisualStateGroup>
+								</VisualStateManager.VisualStateGroups>
+								<Rectangle x:Name="fillColor"
+										   Opacity="0"
+										   Fill="{StaticResource DesignHostSelectionBrush}"
+										   Stroke="{StaticResource DesignHostSelectionOutlineBrush}"
+										   IsHitTestVisible="False"
+										   RadiusX="1"
+										   RadiusY="1"
+										   StrokeThickness="1" />
+								<Rectangle x:Name="fillColor2"
+										   Opacity="0"
+										   Fill="{StaticResource DesignHostSelectionBrush}"
+										   Stroke="{StaticResource DesignHostSelectionOutlineBrush}"
+										   IsHitTestVisible="False"
+										   RadiusX="1"
+										   RadiusY="1"
+										   StrokeThickness="1" />
+								<ContentControl x:Name="contentPresenter"
+												Content="{TemplateBinding Content}"
+												ContentTemplate="{TemplateBinding ContentTemplate}"
+												HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+												Margin="{TemplateBinding Padding}"
+												Foreground="{TemplateBinding Foreground}" />
+							</Grid>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</Grid.Resources>
+		<ScrollViewer HorizontalScrollBarVisibility="Auto"
+					  VerticalScrollBarVisibility="Auto"
+					  BorderThickness="0">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<StackPanel HorizontalAlignment="Center"
+							Orientation="Horizontal">
+					<!-- Holds print layout items, marking current print layout selection with current selected item displayed in text. -->
+					<ComboBox HorizontalAlignment="Center"
+							  Name="LayoutsComboBox"
+							  Margin="2"
+							  FontSize="13"
+							  BorderBrush="Transparent"
+							  FontWeight="Bold"
+							  ItemsSource="{Binding}"
+							  SelectedItem="{Binding SelectedLayout, Mode=TwoWay}"
+							  ItemContainerStyle="{StaticResource ListBoxItemStyle}"
+							  Style="{StaticResource LayoutComboBoxStyle}">
+						<ComboBox.ItemTemplate>
+							<DataTemplate>
+								<Grid>
+									<TextBlock Text="{Binding DisplayName}"
+											   TextTrimming="WordEllipsis"
+											   Visibility="{Binding DataSource.IsConfig, Source={StaticResource DataContextProxy}, Converter={StaticResource ReverseBoolToVisibilityConverter}}"
+											   Foreground="{StaticResource BackgroundTextColorBrush}" />
+									<TextBlock Text="{Binding DisplayName}"
+											   TextTrimming="WordEllipsis"
+											   Visibility="{Binding DataSource.IsConfig, Source={StaticResource DataContextProxy}, Converter={StaticResource BoolToVisibilityConverter}}"
+											   Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+								</Grid>
+							</DataTemplate>
+						</ComboBox.ItemTemplate>
+					</ComboBox>
+					<!--Button used to apply submit current print layout selection -->
+					<Button x:Name="ApplyButton"
+							HorizontalAlignment="Right"
+							Command="{Binding Apply}"
+							Content="{Binding LocalizedStrings.Apply, Source={StaticResource Strings}}"
+							Foreground="{StaticResource DesignHostAccentTextBrush}"
+							Style="{StaticResource GradientButtonStyle}"
+							Background="{StaticResource DesignHostAccentBrush}"
+							BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+							Margin="3"
+							Padding="15,4,15,7" />
+				</StackPanel>
+				<!-- Buttons used to navigate the print layout list -->
+				<StackPanel Orientation="Horizontal"
+							Grid.Column="2"
+							HorizontalAlignment="Center"
+							Grid.Row="1">
+					<Button x:Name="PreviousButton"
+							Command="{Binding MovePrevious}"
+							Foreground="{StaticResource DesignHostAccentTextBrush}"
+							Style="{StaticResource GradientButtonStyle}"
+							Background="{StaticResource DesignHostAccentBrush}"
+							BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+							Content="&lt;&lt;"
+							Height="27"
+							MinWidth="50"
+							Margin="3" />
+					<Button x:Name="NextButton"
+							Command="{Binding MoveNext}"
+							Foreground="{StaticResource DesignHostAccentTextBrush}"
+							Style="{StaticResource GradientButtonStyle}"
+							Background="{StaticResource DesignHostAccentBrush}"
+							BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+							Content="&gt;&gt;"
+							Height="27"
+							MinWidth="50"
+							Margin="3" />
+				</StackPanel>
+				<!-- Holds print layout items, marking current selection with current selected item displayed with description and image preview -->
+				<ListBox x:Name="Layouts"
+						 Grid.Row="2"
+						 Width="664"
+						 Height="500"
+						 Padding="0"
+						 Margin="10,3,10,10"
+						 Background="Transparent"
+						 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+						 ScrollViewer.VerticalScrollBarVisibility="Hidden"
+						 BorderThickness="0"
+						 ItemsSource="{Binding}"
+						 SelectedItem="{Binding SelectedLayout, Mode=TwoWay}"
+						 ItemContainerStyle="{StaticResource LayoutItemStyle}">
+					<ListBox.ItemsPanel>
+						<ItemsPanelTemplate>
+							<StackPanel Orientation="Horizontal" />
+						</ItemsPanelTemplate>
+					</ListBox.ItemsPanel>
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Orientation="Vertical">
+								<Grid>
+									<TextBlock Text="{Binding Description}"
+											   TextWrapping="Wrap"
+											   Foreground="{StaticResource BackgroundTextColorBrush}"
+											   Visibility="{Binding DataSource.IsConfig, Source={StaticResource DataContextProxy}, Converter={StaticResource ReverseBoolToVisibilityConverter}}"
+											   Margin="5,5,0,5" />
+									<TextBlock Text="{Binding Description}"
+											   TextWrapping="Wrap"
+											   Visibility="{Binding DataSource.IsConfig, Source={StaticResource DataContextProxy}, Converter={StaticResource BoolToVisibilityConverter}}"
+											   Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+											   Margin="5,5,0,5" />
+								</Grid>
+								<Border BorderThickness="1"
+										BorderBrush="Gray">
+									<Image Width="661"
+										   Height="471"
+										   Stretch="UniformToFill"
+										   Source="{Binding PreviewImagePath, Converter={StaticResource RuntimeUrlResolver}}" />
+								</Border>
+							</StackPanel>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</Grid>
+		</ScrollViewer>
+	</Grid>
+</UserControl>

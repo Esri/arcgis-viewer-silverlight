@@ -1,0 +1,2079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptChangesTooltip" xml:space="preserve">
+    <value>変更の確定</value>
+  </data>
+  <data name="AddCoordsToListFailedCaption" xml:space="preserve">
+    <value>検索結果の保存に失敗しました</value>
+  </data>
+  <data name="AddCoordsToListFailedPrompt" xml:space="preserve">
+    <value>照合した住所の座標をリストに追加できませんでした。やり直しますか？</value>
+  </data>
+  <data name="AddData" xml:space="preserve">
+    <value>データの追加</value>
+  </data>
+  <data name="AddDataSetTooltip" xml:space="preserve">
+    <value>データ セットの追加</value>
+  </data>
+  <data name="AddDataTooltip" xml:space="preserve">
+    <value>マップにその他のデータを追加します</value>
+  </data>
+  <data name="AddRange" xml:space="preserve">
+    <value>範囲の追加</value>
+  </data>
+  <data name="AddressMatchError" xml:space="preserve">
+    <value>住所の照合でエラーが発生しました: {0}</value>
+  </data>
+  <data name="AddressMatchingServicePrompt" xml:space="preserve">
+    <value>サービス:</value>
+  </data>
+  <data name="AdvancedClusterProperties" xml:space="preserve">
+    <value>高度なクラスタ プロパティ</value>
+  </data>
+  <data name="AGSOImagery" xml:space="preserve">
+    <value>衛星画像</value>
+  </data>
+  <data name="AGSOStreets" xml:space="preserve">
+    <value>道路地図</value>
+  </data>
+  <data name="AGSOTopo" xml:space="preserve">
+    <value>地形図</value>
+  </data>
+  <data name="AliasHeader" xml:space="preserve">
+    <value>エイリアス</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>適用</value>
+  </data>
+  <data name="ArcGISOnline" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="ArcGISServer" xml:space="preserve">
+    <value>ArcGIS Server</value>
+  </data>
+  <data name="AssociatedMapPrompt" xml:space="preserve">
+    <value>マップ:</value>
+  </data>
+  <data name="AutoScroll" xml:space="preserve">
+    <value>自動スクロール:</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>背景</value>
+  </data>
+  <data name="BaseMapConfigurationSectionHeader" xml:space="preserve">
+    <value>ベースマップ</value>
+  </data>
+  <data name="BaseMapPrompt" xml:space="preserve">
+    <value>ベースマップ:</value>
+  </data>
+  <data name="BingMaps" xml:space="preserve">
+    <value>Bing Maps</value>
+  </data>
+  <data name="BingMapsAccountInfo" xml:space="preserve">
+    <value>Bing Maps アカウント情報</value>
+  </data>
+  <data name="BingMapsAerial" xml:space="preserve">
+    <value>航空写真</value>
+  </data>
+  <data name="BingMapsAerialWithLabels" xml:space="preserve">
+    <value>航空写真 - ラベル</value>
+  </data>
+  <data name="BingMapsInitializeFailed" xml:space="preserve">
+    <value>Bing Maps の認証に失敗しました。ArcGIS Online のベースマップを代わりに使用します。詳細については、管理者にお問い合わせください。</value>
+  </data>
+  <data name="BingMapsRoads" xml:space="preserve">
+    <value>道路地図</value>
+  </data>
+  <data name="Border" xml:space="preserve">
+    <value>枠線</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>参照...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>キャンセル中</value>
+  </data>
+  <data name="ChangeBaseMapTooltip" xml:space="preserve">
+    <value>ベースマップを変更します</value>
+  </data>
+  <data name="ChangeColorRampTooltip" xml:space="preserve">
+    <value>配色を選択します</value>
+  </data>
+  <data name="ChangeGradientStopsTooltip" xml:space="preserve">
+    <value>クリックしてヒート マップのグラデーション ストップを選択します</value>
+  </data>
+  <data name="CheckForUpdatesPrompt" xml:space="preserve">
+    <value>更新の確認:</value>
+  </data>
+  <data name="CheckForUpdateTooltip" xml:space="preserve">
+    <value>マップが画面移動またはズームされたときに、更新されたリスト データを取得します</value>
+  </data>
+  <data name="ChooseBaseMapLayer" xml:space="preserve">
+    <value>ベースマップの選択</value>
+  </data>
+  <data name="ChooseLayerHeader" xml:space="preserve">
+    <value>データセットの選択</value>
+  </data>
+  <data name="CityPrompt" xml:space="preserve">
+    <value>都市:</value>
+  </data>
+  <data name="ClassifyBy" xml:space="preserve">
+    <value>値の範囲に使用するフィールドを選択します</value>
+  </data>
+  <data name="ClassifyByPrompt" xml:space="preserve">
+    <value>分類方法:</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>すべてクリア</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>選択の解除</value>
+  </data>
+  <data name="ClickSeqmentToZoom" xml:space="preserve">
+    <value>個々のセグメントをクリックして、そのセグメントにズームします。</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>クリックして東へ移動</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>クリックして北へ移動</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>クリックして南へ移動</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>クリックして西へ移動</value>
+  </data>
+  <data name="ClusterAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>高度なプロパティ</value>
+  </data>
+  <data name="ClusterFeaturesTooltipFirstBit" xml:space="preserve">
+    <value>クラスタ</value>
+  </data>
+  <data name="ClusterFeaturesTooltipSecondBit" xml:space="preserve">
+    <value>フィーチャ</value>
+  </data>
+  <data name="ClusterTooltip" xml:space="preserve">
+    <value>フィーチャのクラスタを一緒に描画します</value>
+  </data>
+  <data name="ColorsPrompt" xml:space="preserve">
+    <value>色:</value>
+  </data>
+  <data name="ConfigurationTooltip" xml:space="preserve">
+    <value>構成</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>構成</value>
+  </data>
+  <data name="ConfigureBingMapsCredentials" xml:space="preserve">
+    <value>クリックして Bing Maps のアカウント情報を構成します</value>
+  </data>
+  <data name="ConfigureSettings" xml:space="preserve">
+    <value>設定の構成</value>
+  </data>
+  <data name="ConfigureTooltip" xml:space="preserve">
+    <value>構成</value>
+  </data>
+  <data name="CountryPrompt" xml:space="preserve">
+    <value>国:</value>
+  </data>
+  <data name="CurrentSymbolPrompt" xml:space="preserve">
+    <value>現在のシンボル:</value>
+  </data>
+  <data name="CustomColorRamp" xml:space="preserve">
+    <value>カスタム</value>
+  </data>
+  <data name="CustomColorRampToolTip" xml:space="preserve">
+    <value>各値の範囲の色を選択します</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>データ ソース:</value>
+  </data>
+  <data name="DataSourceTooltip" xml:space="preserve">
+    <value>SharePoint、Spatial Data Server、または ArcGIS Server のエンドポイントの URL を入力します</value>
+  </data>
+  <data name="DefinitionTabHeader" xml:space="preserve">
+    <value>定義</value>
+  </data>
+  <data name="DefinitionTabHeaderTooltip" xml:space="preserve">
+    <value>現在のデータ セットのプロパティを定義します</value>
+  </data>
+  <data name="DeleteConnectionCaption" xml:space="preserve">
+    <value>削除の確認</value>
+  </data>
+  <data name="DeleteConnectionPrompt" xml:space="preserve">
+    <value>この接続を削除してもよろしいですか？</value>
+  </data>
+  <data name="DeleteLayerMessageCaption" xml:space="preserve">
+    <value>削除の確認</value>
+  </data>
+  <data name="DeleteLayerPrompt" xml:space="preserve">
+    <value>このデータセットをマップから削除してもよろしいですか？</value>
+  </data>
+  <data name="DeleteRange" xml:space="preserve">
+    <value>範囲の削除</value>
+  </data>
+  <data name="DisplayNamePrompt" xml:space="preserve">
+    <value>表示名:</value>
+  </data>
+  <data name="DisplayNameTooltip" xml:space="preserve">
+    <value>現在のデータセットの表示名を定義します</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>ドラッグして回転</value>
+  </data>
+  <data name="DuplicateDataSource" xml:space="preserve">
+    <value>{0} はすでにデータ ソースとして追加されています</value>
+  </data>
+  <data name="DuplicateMapServiceLayer" xml:space="preserve">
+    <value>マップ サービスはすでに追加されています</value>
+  </data>
+  <data name="DuplicateMapServiceLayerCaption" xml:space="preserve">
+    <value>重複が検出されました</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="EnterCredentials" xml:space="preserve">
+    <value>ユーザ名とパスワードを入力してください</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="Europe" xml:space="preserve">
+    <value>ヨーロッパ</value>
+  </data>
+  <data name="Every" xml:space="preserve">
+    <value>間隔</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>展開/折りたたみ</value>
+  </data>
+  <data name="ExportSelection" xml:space="preserve">
+    <value>選択セットのエクスポート</value>
+  </data>
+  <data name="FieldHeader" xml:space="preserve">
+    <value>フィールド</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>塗りつぶし</value>
+  </data>
+  <data name="FilterByMapView" xml:space="preserve">
+    <value>マップ範囲によるフィルタ:</value>
+  </data>
+  <data name="FilterExpressionPrompt" xml:space="preserve">
+    <value>フィルタの条件式:</value>
+  </data>
+  <data name="FilterExpressionTooltip" xml:space="preserve">
+    <value>フィルタを現在のデータ セットに適用します</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="FindDirections" xml:space="preserve">
+    <value>ルート検索</value>
+  </data>
+  <data name="FindLocation" xml:space="preserve">
+    <value>場所の検索</value>
+  </data>
+  <data name="FindNearby" xml:space="preserve">
+    <value>近傍検索</value>
+  </data>
+  <data name="FixLocation" xml:space="preserve">
+    <value>場所の修正</value>
+  </data>
+  <data name="Foreground" xml:space="preserve">
+    <value>前景色</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>詳細情報</value>
+  </data>
+  <data name="FromPrompt" xml:space="preserve">
+    <value>から</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>全体表示</value>
+  </data>
+  <data name="GetListItemsFailed" xml:space="preserve">
+    <value>サイト {1} の {0} からアイテムを取得できませんでした</value>
+  </data>
+  <data name="GetListItemsFailedPromptRemove" xml:space="preserve">
+    <value>サイト {1} の {0} からアイテムを取得できませんでした。このビューをマップから削除しますか？</value>
+  </data>
+  <data name="GetListsFailed" xml:space="preserve">
+    <value>リストの取得に失敗しました: {0}</value>
+  </data>
+  <data name="HeatMap" xml:space="preserve">
+    <value>ヒート マップ</value>
+  </data>
+  <data name="HeatMapAdvancedProperties" xml:space="preserve">
+    <value>ヒート マップ プロパティ</value>
+  </data>
+  <data name="HeatMapAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>ヒート マップ レンダリングのプロパティ</value>
+  </data>
+  <data name="HeatMapTooltip" xml:space="preserve">
+    <value>データをヒート マップとして表示します</value>
+  </data>
+  <data name="HundredPercent" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="InitializationError" xml:space="preserve">
+    <value>初期化エラー: {0}</value>
+  </data>
+  <data name="IntensityPrompt" xml:space="preserve">
+    <value>強度:</value>
+  </data>
+  <data name="InvalidUrlCaption" xml:space="preserve">
+    <value>URL が無効です</value>
+  </data>
+  <data name="InvalidUrlPrompt" xml:space="preserve">
+    <value>有効な URL を入力してください</value>
+  </data>
+  <data name="LatitudePrompt" xml:space="preserve">
+    <value>緯度（Y）:</value>
+  </data>
+  <data name="LayerInfoRetrievalError" xml:space="preserve">
+    <value>レイヤ情報の取得中にエラーが発生しました: {0}</value>
+  </data>
+  <data name="LayersTabHeader" xml:space="preserve">
+    <value>レイヤの表示設定</value>
+  </data>
+  <data name="LayersTabHeaderTooltip" xml:space="preserve">
+    <value>レイヤの表示設定を構成します</value>
+  </data>
+  <data name="ListViewHeader" xml:space="preserve">
+    <value>リスト ビュー</value>
+  </data>
+  <data name="LoadDataSourceTooltip" xml:space="preserve">
+    <value>データ ソースの読み込み</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="LocateByAddress" xml:space="preserve">
+    <value>住所</value>
+  </data>
+  <data name="LocateByAddressTooltip" xml:space="preserve">
+    <value>住所照合を使用して現在のリスト データを描画します</value>
+  </data>
+  <data name="LocateByCoordinates" xml:space="preserve">
+    <value>座標</value>
+  </data>
+  <data name="LocateByCoordinatesTooltip" xml:space="preserve">
+    <value>座標を使用して現在のリスト データを描画します</value>
+  </data>
+  <data name="LocateByPrompt" xml:space="preserve">
+    <value>検索条件:</value>
+  </data>
+  <data name="LocateTooltip" xml:space="preserve">
+    <value>現在のリストの住所を照合します</value>
+  </data>
+  <data name="LocateUpdateTooltip" xml:space="preserve">
+    <value>選択した座標フィールドに基づいて現在のリストを描画します</value>
+  </data>
+  <data name="LocationFieldsTabHeader" xml:space="preserve">
+    <value>ロケーション フィールド</value>
+  </data>
+  <data name="LocationFieldsTabHeaderTooltip" xml:space="preserve">
+    <value>現在のデータ セットの住所または位置情報 フィールドを選択します</value>
+  </data>
+  <data name="LongitudePrompt" xml:space="preserve">
+    <value>経度（X）:</value>
+  </data>
+  <data name="MapContentsTooltip" xml:space="preserve">
+    <value>マップ コンテンツ</value>
+  </data>
+  <data name="MapXaml" xml:space="preserve">
+    <value>マップ XAML</value>
+  </data>
+  <data name="MapXamlRepresentation" xml:space="preserve">
+    <value>マップの XAML 表現</value>
+  </data>
+  <data name="MaxPrompt" xml:space="preserve">
+    <value>最大:</value>
+  </data>
+  <data name="MinPrompt" xml:space="preserve">
+    <value>最小:</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>分</value>
+  </data>
+  <data name="ModifyRangeTooltip" xml:space="preserve">
+    <value>範囲の変更</value>
+  </data>
+  <data name="MoveBarUpDown" xml:space="preserve">
+    <value>バーの上下移動で拡大/縮小</value>
+  </data>
+  <data name="MoveDownTooltip" xml:space="preserve">
+    <value>下へ移動</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>先頭へ移動</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>末尾へ移動</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>次へ移動</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>前へ移動</value>
+  </data>
+  <data name="MoveRangeTooltip" xml:space="preserve">
+    <value>範囲を移動</value>
+  </data>
+  <data name="MoveUpTooltip" xml:space="preserve">
+    <value>上へ移動</value>
+  </data>
+  <data name="MultiLayerCacheNotSupported" xml:space="preserve">
+    <value>マルチレイヤ キャッシュ タイルのマップ サービスはサポートされていません。代わりに、単一の融合キャッシュを使用または作成してください。</value>
+  </data>
+  <data name="MultiLayerCacheNotSupportedCaption" xml:space="preserve">
+    <value>マルチレイヤ キャッシュ タイルのサービスはサポートされていません</value>
+  </data>
+  <data name="MultipleViewsNotAllowed" xml:space="preserve">
+    <value>SharePoint リスト ビューを複数回追加することはできません</value>
+  </data>
+  <data name="NewDataSourceHelpText" xml:space="preserve">
+    <value>&lt;サーバ名または http エンドポイントを入力します&gt;</value>
+  </data>
+  <data name="NextRange" xml:space="preserve">
+    <value>次の範囲</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefined" xml:space="preserve">
+    <value>リストのロケーション フィールドがマップされていません。リスト内の列を適切なフィールドにマップしてください。</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefinedCaption" xml:space="preserve">
+    <value>ロケーション フィールドのマッピングを定義します</value>
+  </data>
+  <data name="NoAssociatedMapWebPart" xml:space="preserve">
+    <value>Map Web パーツが見つかりませんでした。</value>
+  </data>
+  <data name="NoDistinctNumericFields" xml:space="preserve">
+    <value>このデータ セットのすべての数値フィールドは、最小値と最大値が同じです。値の範囲を構成するには、最小値と最大値が異なっている必要があります。</value>
+  </data>
+  <data name="NoGeographicListsFound" xml:space="preserve">
+    <value>{0} には位置情報データを含むリストが見つかりませんでした</value>
+  </data>
+  <data name="NoLayersAdded" xml:space="preserve">
+    <value>[データの追加] ボタンをクリックして、マップにデータを追加します</value>
+  </data>
+  <data name="NoGPServicesFound" xml:space="preserve">
+    <value>{0} にジオプロセシング サービスが見つかりませんでした</value>
+  </data>
+  <data name="NoMapServicesFound" xml:space="preserve">
+    <value>{0} にマップ サービスが見つかりませんでした</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="NoNumericFieldsFound" xml:space="preserve">
+    <value>このデータ セットには数値フィールドが含まれていません。値の範囲は、少なくとも 1 つの数値フィールドを含むデータ セットのみで設定できます。</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>レコードがありません</value>
+  </data>
+  <data name="NoRecordsForVisibleLayer" xml:space="preserve">
+    <value>このリストのアイテムはマップによって取得されていません。アイテムを表示するには、リストの表示設定をオンにします。</value>
+  </data>
+  <data name="NoResultsCaption" xml:space="preserve">
+    <value>結果がありません</value>
+  </data>
+  <data name="NoResultsLayerNotVisible" xml:space="preserve">
+    <value>リストがマップで非表示であるため、レコードが見つかりませんでした</value>
+  </data>
+  <data name="NorthAmerica" xml:space="preserve">
+    <value>北米</value>
+  </data>
+  <data name="NoSpatialTablesFound" xml:space="preserve">
+    <value>{0} には空間データを含むテーブルが見つかりませんでした</value>
+  </data>
+  <data name="NumericFieldNotDistinct" xml:space="preserve">
+    <value>{0} フィールドに含まれる最小値と最大値が同じです。値の範囲は、最小値と最大値が異なるフィールドのみで構成できます。</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OnPanAndZoom" xml:space="preserve">
+    <value>画面移動およびズーム時</value>
+  </data>
+  <data name="OperationalDataSectionHeader" xml:space="preserve">
+    <value>データ</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>パスワード:</value>
+  </data>
+  <data name="PleaseSpecifyDataSourceMessage" xml:space="preserve">
+    <value>データ ソースを指定してください</value>
+  </data>
+  <data name="PollForUpdatesTooltip" xml:space="preserve">
+    <value>リスト データを更新する間隔を定義します</value>
+  </data>
+  <data name="PopUpTabHeader" xml:space="preserve">
+    <value>ポップアップ</value>
+  </data>
+  <data name="PopUpTabHeaderTooltip" xml:space="preserve">
+    <value>現在のデータ セットのマップ情報ポップアップを構成します</value>
+  </data>
+  <data name="PreDefinedColorRamp" xml:space="preserve">
+    <value>定義済み</value>
+  </data>
+  <data name="PreDefinedColorRampTooltip" xml:space="preserve">
+    <value>定義済みの色セットを適用します</value>
+  </data>
+  <data name="PreviousRange" xml:space="preserve">
+    <value>前の範囲</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>製品</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>プロパティ - {0}</value>
+  </data>
+  <data name="RecordsPrompt" xml:space="preserve">
+    <value>レコード:</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="RefreshError" xml:space="preserve">
+    <value>{0} レイヤの更新中にエラーが発生しました</value>
+  </data>
+  <data name="RefreshMapXamlTooltip" xml:space="preserve">
+    <value>マップ XAML の更新</value>
+  </data>
+  <data name="RefreshTooltip" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="RemoveTooltip" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="ResetExtent" xml:space="preserve">
+    <value>範囲のリセット</value>
+  </data>
+  <data name="ResetExtentTooltip" xml:space="preserve">
+    <value>マップの範囲を ArcGIS サーバ サービスで定義された初期範囲にリセットします。</value>
+  </data>
+  <data name="ResetMapRotation" xml:space="preserve">
+    <value>マップの回転をリセットします</value>
+  </data>
+  <data name="ResolutionPrompt" xml:space="preserve">
+    <value>解像度:</value>
+  </data>
+  <data name="ResultsViewHeader" xml:space="preserve">
+    <value>結果ビュー</value>
+  </data>
+  <data name="RetrievingBaseMaps" xml:space="preserve">
+    <value>利用可能なベースマップを取得しています</value>
+  </data>
+  <data name="RetrievingGeometryType" xml:space="preserve">
+    <value>ジオメトリ タイプを取得しています</value>
+  </data>
+  <data name="RetrievingInformation" xml:space="preserve">
+    <value>サーバから情報を取得しています</value>
+  </data>
+  <data name="RollBackChangesTooltip" xml:space="preserve">
+    <value>変更のロール バック</value>
+  </data>
+  <data name="ScaleBarUnit_feet" xml:space="preserve">
+    <value>ft</value>
+  </data>
+  <data name="ScaleBarUnit_kilometers" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="ScaleBarUnit_meters" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="ScaleBarUnit_miles" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>すべて選択</value>
+  </data>
+  <data name="SelectAllTooltip" xml:space="preserve">
+    <value>すべて選択</value>
+  </data>
+  <data name="SelectedRangePrompt" xml:space="preserve">
+    <value>範囲:</value>
+  </data>
+  <data name="SelectedRecordsFormatString" xml:space="preserve">
+    <value>（{0} / {1} レコードを選択）</value>
+  </data>
+  <data name="SelectRangeTooltip" xml:space="preserve">
+    <value>編集する範囲の選択</value>
+  </data>
+  <data name="ServerPrompt" xml:space="preserve">
+    <value>サーバ:</value>
+  </data>
+  <data name="ServiceConnectionError" xml:space="preserve">
+    <value>{0} への接続中にエラーが発生しました。URL を確認し、サービスが実行中であることを確認してからもう一度やり直してください。</value>
+  </data>
+  <data name="ServiceConnectionErrorCaption" xml:space="preserve">
+    <value>接続エラー</value>
+  </data>
+  <data name="ServiceConnectionErrorDuringInit" xml:space="preserve">
+    <value>{0} に接続できません。</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="ShowHide" xml:space="preserve">
+    <value>表示/非表示</value>
+  </data>
+  <data name="ShowHideTooltip" xml:space="preserve">
+    <value>表示/非表示</value>
+  </data>
+  <data name="SimpleSymbolType" xml:space="preserve">
+    <value>シンプル</value>
+  </data>
+  <data name="SimpleSymbolTypeTooltip" xml:space="preserve">
+    <value>現在のデータ セットを 1 つのシンボルで表示します</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>ソース:</value>
+  </data>
+  <data name="Staging" xml:space="preserve">
+    <value>ステージング</value>
+  </data>
+  <data name="StatePrompt" xml:space="preserve">
+    <value>州/行政区画:</value>
+  </data>
+  <data name="SymbolsTabHeader" xml:space="preserve">
+    <value>シンボル</value>
+  </data>
+  <data name="SymbolsTabHeaderTooltip" xml:space="preserve">
+    <value>現在のデータ セットの表示を構成します</value>
+  </data>
+  <data name="SymbolTypePrompt" xml:space="preserve">
+    <value>シンボル タイプ:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>から</value>
+  </data>
+  <data name="TokenAuthenticationFailed" xml:space="preserve">
+    <value>Bing Maps の認証に失敗しました。認証情報を確認して、もう一度やり直してください。</value>
+  </data>
+  <data name="TokenConnectionFailed" xml:space="preserve">
+    <value>トークンを取得するための接続に失敗しました。ホスト サーバへの接続を確認して、もう一度やり直してください。</value>
+  </data>
+  <data name="TolerancePrompt" xml:space="preserve">
+    <value>許容値:</value>
+  </data>
+  <data name="ToPrompt" xml:space="preserve">
+    <value>から</value>
+  </data>
+  <data name="TotalDistancePrompt" xml:space="preserve">
+    <value>総距離:</value>
+  </data>
+  <data name="TotalTimePrompt" xml:space="preserve">
+    <value>総時間:</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>透過表示</value>
+  </data>
+  <data name="TransparencyPrompt" xml:space="preserve">
+    <value>透過表示:</value>
+  </data>
+  <data name="UnhandledSilverlightError" xml:space="preserve">
+    <value>Silverlight アプリケーションで処理されないエラーが発生しました</value>
+  </data>
+  <data name="UpdateAddress" xml:space="preserve">
+    <value>住所の更新</value>
+  </data>
+  <data name="UpdateLayerError" xml:space="preserve">
+    <value>レイヤの更新中にエラーが発生しました: {0}</value>
+  </data>
+  <data name="UpdateListError" xml:space="preserve">
+    <value>リストの変更の適用中にエラーが発生しました: {0}</value>
+  </data>
+  <data name="UrlPrompt" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="UserNamePrompt" xml:space="preserve">
+    <value>ユーザ:</value>
+  </data>
+  <data name="UseStagingServer" xml:space="preserve">
+    <value>ステージング サーバを使用します</value>
+  </data>
+  <data name="ValidAddressError" xml:space="preserve">
+    <value>有効な住所を入力してください</value>
+  </data>
+  <data name="ValidAddressErrorCaption" xml:space="preserve">
+    <value>住所が無効です</value>
+  </data>
+  <data name="ValidCoordinatesError" xml:space="preserve">
+    <value>有効な座標を入力してください</value>
+  </data>
+  <data name="ValidCoordinatesErrorCaption" xml:space="preserve">
+    <value>座標が無効です</value>
+  </data>
+  <data name="ValueRanges" xml:space="preserve">
+    <value>値の範囲</value>
+  </data>
+  <data name="ValueRangesTooltip" xml:space="preserve">
+    <value>現在のデータ セットを値の範囲に基づいて表示します</value>
+  </data>
+  <data name="ViewItem" xml:space="preserve">
+    <value>アイテムの表示</value>
+  </data>
+  <data name="VisibleHeader" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>幅</value>
+  </data>
+  <data name="XamlRepresentation" xml:space="preserve">
+    <value>現在のレイヤの XAML を表示</value>
+  </data>
+  <data name="XamlViewTabHeader" xml:space="preserve">
+    <value>XAML ビュー</value>
+  </data>
+  <data name="XamlViewTabHeaderTooltip" xml:space="preserve">
+    <value>生成されたレイヤの XAML を表示</value>
+  </data>
+  <data name="ZeroPercent" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="Zip4Prompt" xml:space="preserve">
+    <value>Zip4:</value>
+  </data>
+  <data name="ZipPrompt" xml:space="preserve">
+    <value>Zip/郵便番号:</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>拡大</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>縮小</value>
+  </data>
+  <data name="ZoomOutButton" xml:space="preserve">
+    <value>縮小</value>
+  </data>
+  <data name="ZoomRangeTooltip" xml:space="preserve">
+    <value>範囲にズーム</value>
+  </data>
+  <data name="ZoomToAllRecords" xml:space="preserve">
+    <value>移動</value>
+  </data>
+  <data name="ZoomToItem" xml:space="preserve">
+    <value>アイテムにズーム</value>
+  </data>
+  <data name="ZoomToSelection" xml:space="preserve">
+    <value>選択セットにズーム</value>
+  </data>
+  <data name="ConfigFileUrlTextboxTooltip" xml:space="preserve">
+    <value>構成ファイルの URL を入力します</value>
+  </data>
+  <data name="ConnectToSharePointDataSource" xml:space="preserve">
+    <value>&lt;SharePoint サイトの URL を入力します&gt;</value>
+  </data>
+  <data name="ExportToFile" xml:space="preserve">
+    <value>ファイルにエクスポートします</value>
+  </data>
+  <data name="FileNamePrompt" xml:space="preserve">
+    <value>ファイル名:</value>
+  </data>
+  <data name="MustEnterFileName" xml:space="preserve">
+    <value>ファイル名を入力してください</value>
+  </data>
+  <data name="MustEnterFileNameTitle" xml:space="preserve">
+    <value>ファイル名がありません</value>
+  </data>
+  <data name="OverwriteExistingFile" xml:space="preserve">
+    <value>既存のファイルを上書きします</value>
+  </data>
+  <data name="UrlToSitePrompt" xml:space="preserve">
+    <value>サイトの URL:</value>
+  </data>
+  <data name="CustomBaseMap" xml:space="preserve">
+    <value>ArcGIS Server ベースマップ</value>
+  </data>
+  <data name="AGSDataSourceTooltip" xml:space="preserve">
+    <value>ArcGIS Server のエンドポイントの URL を入力します</value>
+  </data>
+  <data name="NotUsingBingMapsResource" xml:space="preserve">
+    <value>アプリケーションは Bing Maps のリソースを使用していません。ここでは、アカウント情報を構成する必要がありません。</value>
+  </data>
+  <data name="NotUsingBingMapsResourceCaption" xml:space="preserve">
+    <value>Bings Maps リソースがありません</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="BrowseForBaseMap" xml:space="preserve">
+    <value>ベースマップの参照</value>
+  </data>
+  <data name="EnterUrl" xml:space="preserve">
+    <value>URL の入力</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatch" xml:space="preserve">
+    <value>キャッシュされたマップサービスの空間参照がベースマップの空間参照と一致しません。このマップ サービスは追加できません。</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatchCaption" xml:space="preserve">
+    <value>空間参照の不一致</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemoved" xml:space="preserve">
+    <value>操作データセットに、選択したベースマップと空間参照が一致していないマップ サービスが含まれています。操作を続けるには、これらのマップ サービスを削除する必要があります。[OK] をクリックして削除してください。</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemovedCaption" xml:space="preserve">
+    <value>操作データセットの不一致</value>
+  </data>
+  <data name="AddContentTitle" xml:space="preserve">
+    <value>コンテンツの追加</value>
+  </data>
+  <data name="BaseMapGalleryTitle" xml:space="preserve">
+    <value>ベースマップの選択</value>
+  </data>
+  <data name="BrowseForBaseMapTitle" xml:space="preserve">
+    <value>ベースマップの参照</value>
+  </data>
+  <data name="EnterUrlDialogTitle" xml:space="preserve">
+    <value>ベースマップの URL を入力します</value>
+  </data>
+  <data name="MapContentsTitle" xml:space="preserve">
+    <value>マップ コンテンツ</value>
+  </data>
+  <data name="CanOnlyUseCachedMapServicesAsBaseMap" xml:space="preserve">
+    <value>キャッシュ マップサービスのみベースマップとして使用できます。</value>
+  </data>
+  <data name="InvalidMapServiceCaption" xml:space="preserve">
+    <value>マップ サービスが無効です </value>
+  </data>
+  <data name="MapTipBorderColorTooltip" xml:space="preserve">
+    <value>マップチップの枠線の色を変更します</value>
+  </data>
+  <data name="MapTipFillColorTooltip" xml:space="preserve">
+    <value>マップチップの塗りつぶし色を変更します</value>
+  </data>
+  <data name="MapTipForegroundColorTooltip" xml:space="preserve">
+    <value>マップチップのテキストの色を変更します</value>
+  </data>
+  <data name="SampleMapTipText" xml:space="preserve">
+    <value>サンプル テキスト</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>選択されているレイヤの追加</value>
+  </data>
+  <data name="AttributePrompt" xml:space="preserve">
+    <value>属性:</value>
+  </data>
+  <data name="ColorScheme" xml:space="preserve">
+    <value>配色</value>
+  </data>
+  <data name="MoreOptions" xml:space="preserve">
+    <value>追加オプション</value>
+  </data>
+  <data name="RendererPrompt" xml:space="preserve">
+    <value>レンダラ:</value>
+  </data>
+  <data name="SymbolOptions" xml:space="preserve">
+    <value>スキーマ オプション</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>現在のシンボル:</value>
+  </data>
+  <data name="Basemap" xml:space="preserve">
+    <value>ベースマップ</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>前面へ移動</value>
+  </data>
+  <data name="ClassBreaks" xml:space="preserve">
+    <value>クラス閾値</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>色</value>
+  </data>
+  <data name="FromServer" xml:space="preserve">
+    <value>参照...</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>ホーム</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>マップ</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>マップ コンテンツ</value>
+  </data>
+  <data name="MapTip" xml:space="preserve">
+    <value>マップ チップ</value>
+  </data>
+  <data name="MoreSymbolOptions" xml:space="preserve">
+    <value>スキーマ オプション</value>
+  </data>
+  <data name="Organize" xml:space="preserve">
+    <value>整理</value>
+  </data>
+  <data name="RefreshLayer" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>検索...</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>背面へ移動</value>
+  </data>
+  <data name="SingleSymbol" xml:space="preserve">
+    <value>単一シンボル</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>サイズ</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="UniqueValues" xml:space="preserve">
+    <value>個別値</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="CategoryPrompt" xml:space="preserve">
+    <value>カテゴリ:</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>シンボル</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="DrawOrder" xml:space="preserve">
+    <value>描画順序</value>
+  </data>
+  <data name="Popups" xml:space="preserve">
+    <value>ポップアップ</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>テーブル</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>ポップアップの構成</value>
+  </data>
+  <data name="AddUniqueValue" xml:space="preserve">
+    <value>値の追加</value>
+  </data>
+  <data name="DeleteUniqueValue" xml:space="preserve">
+    <value>選択した値の削除</value>
+  </data>
+  <data name="NextUniqueValue" xml:space="preserve">
+    <value>次の個別値</value>
+  </data>
+  <data name="PreviousUniqueValue" xml:space="preserve">
+    <value>前の個別値</value>
+  </data>
+  <data name="ValuePrompt" xml:space="preserve">
+    <value>値:</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>レイヤ</value>
+  </data>
+  <data name="MapCenterTooltip" xml:space="preserve">
+    <value>ArcGIS.com マップ センター</value>
+  </data>
+  <data name="ClassesPrompt" xml:space="preserve">
+    <value>クラス:</value>
+  </data>
+  <data name="InvalidClassBreakValue" xml:space="preserve">
+    <value>無効な値</value>
+  </data>
+  <data name="DefaultSymbol" xml:space="preserve">
+    <value>デフォルトのシンボル</value>
+  </data>
+  <data name="MaxPointsPrompt" xml:space="preserve">
+    <value>最大ポイント:</value>
+  </data>
+  <data name="RadiusPrompt" xml:space="preserve">
+    <value>半径:</value>
+  </data>
+  <data name="UsePointClustering" xml:space="preserve">
+    <value>クラスタ シンボルを使用</value>
+  </data>
+  <data name="AddContent" xml:space="preserve">
+    <value>コンテンツの追加</value>
+  </data>
+  <data name="LayerSymbology" xml:space="preserve">
+    <value>シンボル</value>
+  </data>
+  <data name="AutoUpdates" xml:space="preserve">
+    <value>自動更新</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>間隔</value>
+  </data>
+  <data name="PollForUpdates" xml:space="preserve">
+    <value>更新を確認</value>
+  </data>
+  <data name="UpdateOnExtentChanged" xml:space="preserve">
+    <value>範囲を変更したときに更新</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>フィルタ</value>
+  </data>
+  <data name="FilterLayerTitle" xml:space="preserve">
+    <value>フィルタの条件式を指定</value>
+  </data>
+  <data name="FilterByMapExtent" xml:space="preserve">
+    <value>範囲によりフィルタします</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>全画面表示</value>
+  </data>
+  <data name="AutoScrollRow" xml:space="preserve">
+    <value>行の自動スクロール</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>サービスの詳細</value>
+  </data>
+  <data name="DatasetPrompt" xml:space="preserve">
+    <value>データセット:</value>
+  </data>
+  <data name="DistancePrompt" xml:space="preserve">
+    <value>距離:</value>
+  </data>
+  <data name="FindNearbyTitle" xml:space="preserve">
+    <value>近傍検索</value>
+  </data>
+  <data name="InvalidDistance" xml:space="preserve">
+    <value>有効な距離を入力してください</value>
+  </data>
+  <data name="InvalidDistanceCaption" xml:space="preserve">
+    <value>無効な距離</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>キロメートル</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>メートル</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>マイル</value>
+  </data>
+  <data name="SelectionTools" xml:space="preserve">
+    <value>選択ツール</value>
+  </data>
+  <data name="BufferDistance" xml:space="preserve">
+    <value>バッファ距離</value>
+  </data>
+  <data name="Feed" xml:space="preserve">
+    <value>GeoRSS...</value>
+  </data>
+  <data name="FindNearbyBufferPrefix" xml:space="preserve">
+    <value>近傍バッファの検索 - </value>
+  </data>
+  <data name="FindNearbyPrefix" xml:space="preserve">
+    <value>近傍検索 - </value>
+  </data>
+  <data name="SelectByDraw" xml:space="preserve">
+    <value>描画による選択</value>
+  </data>
+  <data name="ColorSchemePrompt" xml:space="preserve">
+    <value>配色:</value>
+  </data>
+  <data name="EditValuesPrompt" xml:space="preserve">
+    <value>値の編集:</value>
+  </data>
+  <data name="TypeValueToAdd" xml:space="preserve">
+    <value>追加する値を入力します</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>テーマ</value>
+  </data>
+  <data name="AddGeoRSSTitle" xml:space="preserve">
+    <value>GeoRSS フィードの URL を入力します</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>ヘッダー:</value>
+  </data>
+  <data name="BrowseDialogGeographicDataNotFound" xml:space="preserve">
+    <value>ジオグラフィック データが見つかりませんでした</value>
+  </data>
+  <data name="DefaultBasemapLayerDisplayName" xml:space="preserve">
+    <value>ベースマップ</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>レイヤ:</value>
+  </data>
+  <data name="AddLayerTooltip" xml:space="preserve">
+    <value>選択した ArcGIS Server、SharePoint、または Spatial Data Server のデータセットをマップに追加します</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>名前の変更</value>
+  </data>
+  <data name="ODataFeed" xml:space="preserve">
+    <value>OData...</value>
+  </data>
+  <data name="SignInWithGlobalAccount" xml:space="preserve">
+    <value>Esri Global Account を使用してサインイン</value>
+  </data>
+  <data name="ClusterColor" xml:space="preserve">
+    <value>クラスタの背景色</value>
+  </data>
+  <data name="ClusterTextColor" xml:space="preserve">
+    <value>クラスタの前景色</value>
+  </data>
+  <data name="Clustering" xml:space="preserve">
+    <value>クラスタリング</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="HeatMapAdd" xml:space="preserve">
+    <value>ヒート マップの追加</value>
+  </data>
+  <data name="Intensity" xml:space="preserve">
+    <value>強度</value>
+  </data>
+  <data name="OpenItemOnClick" xml:space="preserve">
+    <value>クリックしてアイテムを開く</value>
+  </data>
+  <data name="Symbology" xml:space="preserve">
+    <value>シンボル</value>
+  </data>
+  <data name="ShowMapContents" xml:space="preserve">
+    <value>戻る</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>属性</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>その他</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>高度な設定</value>
+  </data>
+  <data name="ExtensionLoadFailed" xml:space="preserve">
+    <value>エクステンションの読み込みに失敗しました</value>
+  </data>
+  <data name="ToolClassLoadFailed" xml:space="preserve">
+    <value>ツール クラスの読み込みに失敗しました</value>
+  </data>
+  <data name="ToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>ツール クラスの読み込みの構成に失敗しました</value>
+  </data>
+  <data name="ExtensionInitializationFailed" xml:space="preserve">
+    <value>カスタム コマンドのインスタンス作成に失敗しました。</value>
+  </data>
+  <data name="ExtensionInitializationFailedHeader" xml:space="preserve">
+    <value>エクステンションの初期化に失敗しました</value>
+  </data>
+  <data name="Less" xml:space="preserve">
+    <value>折りたたむ</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>詳細を表示</value>
+  </data>
+  <data name="ConfiguringLayer" xml:space="preserve">
+    <value>構成:</value>
+  </data>
+  <data name="RemoveLayerCaption" xml:space="preserve">
+    <value>レイヤの削除</value>
+  </data>
+  <data name="RemoveLayerNameSubstitude" xml:space="preserve">
+    <value>選択済み</value>
+  </data>
+  <data name="RemoveLayerPrompt" xml:space="preserve">
+    <value>{0} レイヤをマップから削除しますか？</value>
+  </data>
+  <data name="BrowseNoEllipsis" xml:space="preserve">
+    <value>参照</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>コンテンツ</value>
+  </data>
+  <data name="GeoRSS" xml:space="preserve">
+    <value>GeoRSS</value>
+  </data>
+  <data name="SearchNoEllipsis" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="ErrorLoadConfigurationOfExtension" xml:space="preserve">
+    <value>エクステンション（{0}）の LoadConfiguration で処理されないエラーが発生しました</value>
+  </data>
+  <data name="ErrorNoPrinterContainerFoundInPrintTemplate" xml:space="preserve">
+    <value>印刷テンプレートに印刷コンテナが見つかりませんでした。</value>
+  </data>
+  <data name="ErrorSaveConfigurationOfExtension" xml:space="preserve">
+    <value>エクステンション（{0}）の SaveConfiguration で処理されないエラーが発生しました</value>
+  </data>
+  <data name="ExceptionCachedMapServiceSpatialReferenceDoesNotMatch" xml:space="preserve">
+    <value>キャッシュ マップ サービスの空間参照が一致しません。</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitialized" xml:space="preserve">
+    <value>マップを初期化する前に ZoomMapToExtent を呼び出すことはできません。MapLayersInitialized を使用して、このイベントを待機してください。</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitializedMapReferenceNull" xml:space="preserve">
+    <value>マップを初期化する前に ZoomMapToExtent を呼び出すことはできません。マップの空間参照が Null です。</value>
+  </data>
+  <data name="ExceptionConnectionTypeDoesNotCoorespondToDatasourceWhichHasResources" xml:space="preserve">
+    <value>接続タイプ {0} が、リソースのあるデータソース（{1}）に一致しません</value>
+  </data>
+  <data name="ExceptionCouldNotFindElementWithName" xml:space="preserve">
+    <value>{0} という名前のエレメントが見つかりませんでした。</value>
+  </data>
+  <data name="ExceptionCouldNotFindToggleButtonWithName" xml:space="preserve">
+    <value>{0} という名前のトグル ボタンが見つかりませんでした。</value>
+  </data>
+  <data name="ExceptionDatasourceNotLoadedForBaseMapType" xml:space="preserve">
+    <value>ベースマップ タイプ {0} のデータソースが読み込まれていません</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>エレメント</value>
+  </data>
+  <data name="ExceptionMapHasNotBeenInitializedYet" xml:space="preserve">
+    <value>マップが初期化されていません</value>
+  </data>
+  <data name="ExceptionMapLayersHaveNotBeenInstantiated" xml:space="preserve">
+    <value>マップ レイヤのインスタンスが作成されていません。ベースマップは MapLayersInitialized が実行された後にだけ変更できます</value>
+  </data>
+  <data name="ExceptionMapNotSet" xml:space="preserve">
+    <value>マップが設定されていません</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationProvider" xml:space="preserve">
+    <value>ConfigurationProvider を指定する必要があります</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationStoreProvider" xml:space="preserve">
+    <value>ConfigurationStoreProvider を指定する必要があります</value>
+  </data>
+  <data name="ExceptionMustSpecifyDataSourceProvider" xml:space="preserve">
+    <value>DataSourceProvider を指定する必要があります</value>
+  </data>
+  <data name="ExceptionMustSpecifyLayoutProvider" xml:space="preserve">
+    <value>LayoutProvider を指定する必要があります</value>
+  </data>
+  <data name="ExceptionMustSpecifySpatialReferenceOnEnvelope" xml:space="preserve">
+    <value>エンベロープの空間参照を指定する必要があります</value>
+  </data>
+  <data name="ExceptionMustSpecifyThemeProvider" xml:space="preserve">
+    <value>ThemeProvider を指定する必要があります</value>
+  </data>
+  <data name="ExceptionNoBingMapsTokenAvailable" xml:space="preserve">
+    <value>Bing Maps のトークンを利用できません</value>
+  </data>
+  <data name="ExceptionNoGeometryServiceUrlSpecifiedLayerZoomedIsDifferentSpatialReference" xml:space="preserve">
+    <value>ジオメトリ サービスの URL が指定されていません。ズームされたレイヤはマップと異なる空間参照にあり、ジオメトリ サービスを使用して全体表示を再投影変換する必要があります</value>
+  </data>
+  <data name="ExceptionNotSupported" xml:space="preserve">
+    <value>サポートされていません</value>
+  </data>
+  <data name="ExceptionNullBaseMapInfo" xml:space="preserve">
+    <value>baseMapInfo</value>
+  </data>
+  <data name="ExceptionOnlyCachedServicesCanBeUsedAsBaseMaps" xml:space="preserve">
+    <value>キャッシュされたマップ サービスだけをベースマップとして使用できます</value>
+  </data>
+  <data name="ExceptionUnableToInstantiateDatasourceForBaseMapType" xml:space="preserve">
+    <value>ベースマップ タイプ {0} のデータソースのインスタンスを作成できません</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>構成情報を取得できません。返された情報はありません。</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasource" xml:space="preserve">
+    <value>{0} のデータソースを取得できません</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasourceConnectionType" xml:space="preserve">
+    <value>接続タイプ {0} のデータソースを取得できません</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>読み込んでいます...</value>
+  </data>
+  <data name="LoadingMapCenter" xml:space="preserve">
+    <value>マップ センターを読み込んでいます...</value>
+  </data>
+  <data name="LogUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>構成情報を取得できません</value>
+  </data>
+  <data name="MsgErrorExecutingBufferOperation" xml:space="preserve">
+    <value>バッファ操作の実行中にエラーが発生しました。</value>
+  </data>
+  <data name="MsgErrorExecutingRelationAsyncOperation" xml:space="preserve">
+    <value>RelationAsync 操作の実行中にエラーが発生しました</value>
+  </data>
+  <data name="MsgErrorOpeningFile" xml:space="preserve">
+    <value>ファイルを開いているときにエラーが発生しました</value>
+  </data>
+  <data name="MsgErrorRetrievingSubLayersForMapService" xml:space="preserve">
+    <value>マップ サービスのサブ レイヤを取得中にエラーが発生しました</value>
+  </data>
+  <data name="MsgErrorSavingFile" xml:space="preserve">
+    <value>ファイルの保存中にエラーが発生しました</value>
+  </data>
+  <data name="MsgNoFeaturesSelected" xml:space="preserve">
+    <value>フィーチャが選択されていません</value>
+  </data>
+  <data name="MsgNoResourcesFound" xml:space="preserve">
+    <value>リソースが見つかりませんでした</value>
+  </data>
+  <data name="MsgUnableToAccessGeometryService" xml:space="preserve">
+    <value>ジオメトリ サービスにアクセスできません。</value>
+  </data>
+  <data name="MsgUnableToCreateLayer" xml:space="preserve">
+    <value>レイヤを作成できません</value>
+  </data>
+  <data name="MsgUnableToRetrieveResources" xml:space="preserve">
+    <value>リソースを取得できません。</value>
+  </data>
+  <data name="MsgUnknownError" xml:space="preserve">
+    <value>不明なエラー</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>ユーザが不明です</value>
+  </data>
+  <data name="NotValidMapDocument" xml:space="preserve">
+    <value>有効なマップ ドキュメントではありません。</value>
+  </data>
+  <data name="ErrorRetrievingSymbols" xml:space="preserve">
+    <value>シンボルの取得中にエラーが発生しました</value>
+  </data>
+  <data name="ExceptionCacheMapServicesCannotReproject" xml:space="preserve">
+    <value>アプリケーション内のキャッシュされたマップ サービスは再投影変換できません</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>ArcGIS.com から Web マップを開く</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>サインイン</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>サインアウト</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>背景テキスト</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>メンバ</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>プレビュー</value>
+  </data>
+  <data name="SelectedItem" xml:space="preserve">
+    <value>選択したアイテム</value>
+  </data>
+  <data name="RecordOutOfSelected" xml:space="preserve">
+    <value>（{0} / {1} レコードを選択）</value>
+  </data>
+  <data name="ExtensionInitializationFailedUrl" xml:space="preserve">
+    <value>カスタム コマンドのインスタンスを作成できませんでした。URL: {0}</value>
+  </data>
+  <data name="HeatMapTitle" xml:space="preserve">
+    <value>{0} ヒート マップ</value>
+  </data>
+  <data name="CurrentColor" xml:space="preserve">
+    <value>現在の色</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>説明:</value>
+  </data>
+  <data name="HeightPrompt" xml:space="preserve">
+    <value>高さ:</value>
+  </data>
+  <data name="Moredotdot" xml:space="preserve">
+    <value>詳細...</value>
+  </data>
+  <data name="NotificationDontShowDialogOnStartup" xml:space="preserve">
+    <value>起動時にこのダイアログを表示しない</value>
+  </data>
+  <data name="RecordPrompt" xml:space="preserve">
+    <value>レコード:</value>
+  </data>
+  <data name="StandardColors" xml:space="preserve">
+    <value>標準色</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>テーマ色</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>タイトル:</value>
+  </data>
+  <data name="WidthPrompt" xml:space="preserve">
+    <value>幅:</value>
+  </data>
+  <data name="MapBehaviors" xml:space="preserve">
+    <value>マップ ビヘイビアー</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="MapBehaviorAdd" xml:space="preserve">
+    <value>新しいマップ ビヘイビアーを追加します</value>
+  </data>
+  <data name="MapBehaviorConfigure" xml:space="preserve">
+    <value>選択されているマップ ビヘイビアーを構成します</value>
+  </data>
+  <data name="MapBehaviorMoveDown" xml:space="preserve">
+    <value>選択されているマップ ビヘイビアーを 1 つ下に移動します</value>
+  </data>
+  <data name="MapBehaviorMoveUp" xml:space="preserve">
+    <value>選択されているマップ ビヘイビアーを 1 つ上に移動します</value>
+  </data>
+  <data name="MapBehaviorRemove" xml:space="preserve">
+    <value>選択されているマップ ビヘイビアーを削除します</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviors" xml:space="preserve">
+    <value>マップにビヘイビアーが関連付けられていません。</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviorsInEdit" xml:space="preserve">
+    <value>[追加] をクリックして、新しいマップ ビヘイビアーを構成します。</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>移動</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>上へ</value>
+  </data>
+  <data name="AddLabel" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="BehaviorClassLoadFailed" xml:space="preserve">
+    <value>ビヘイビアー クラスの読み込みが失敗しました</value>
+  </data>
+  <data name="BehaviorConfigurationFailed" xml:space="preserve">
+    <value>ビヘイビアーの構成が失敗しました</value>
+  </data>
+  <data name="BehaviorConfigurationFailedDescription" xml:space="preserve">
+    <value>ビヘイビアーの構成メソッドが例外をスローしました。</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>ビヘイビアー クラスの構成の読み込みに失敗しました</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailedDescription" xml:space="preserve">
+    <value>ビヘイビアーの構成の読み込みで例外がスローされました。</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>タイプ:</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>現在のレイヤのフィーチャに基づいて、ヒート マップ レイヤを作成します</value>
+  </data>
+  <data name="ClusterColorDescription" xml:space="preserve">
+    <value>現在のレイヤのクラスタの背景色を設定します</value>
+  </data>
+  <data name="ClusterTextColorDescription" xml:space="preserve">
+    <value>現在のレイヤのクラスタの枠線とテキストの色を設定します</value>
+  </data>
+  <data name="FilterDescription" xml:space="preserve">
+    <value>属性の検索条件を指定することで、現在のレイヤ内のフィーチャをフィルタします</value>
+  </data>
+  <data name="HeatMapColorDescription" xml:space="preserve">
+    <value>ヒート マップの配色を選択します</value>
+  </data>
+  <data name="IntensityDescription" xml:space="preserve">
+    <value>ヒート マップの強度を調整します。強度が強いほど、ホット スポットが大きくなります。</value>
+  </data>
+  <data name="MaxPoints" xml:space="preserve">
+    <value>最大ポイント</value>
+  </data>
+  <data name="MaxPointsDescription" xml:space="preserve">
+    <value>1 クラスタ内にグループ化されるフィーチャの最大数を設定します</value>
+  </data>
+  <data name="OpenItemOnClickDescription" xml:space="preserve">
+    <value>フィーチャをクリックすると、フィーチャの詳細が新しいブラウザ ウィンドウに表示されます</value>
+  </data>
+  <data name="PollForUpdatesDescription" xml:space="preserve">
+    <value>フィードの更新を指定した間隔で取得するかどうかを設定します</value>
+  </data>
+  <data name="PopupsDescription" xml:space="preserve">
+    <value>現在のレイヤのポップアップに表示される属性を構成します</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>半径</value>
+  </data>
+  <data name="RadiusDescription" xml:space="preserve">
+    <value>1 クラスタ内にグループ化されるフィーチャが存在する範囲の半径をピクセルで指定します</value>
+  </data>
+  <data name="SymbologyDescription" xml:space="preserve">
+    <value>現在のレイヤの表示に使用されるシンボルを構成します</value>
+  </data>
+  <data name="TableDescription" xml:space="preserve">
+    <value>現在のレイヤの属性テーブルに表示されるフィールドを構成します</value>
+  </data>
+  <data name="UpdateOnExtentChangedDescription" xml:space="preserve">
+    <value>マップを移動またはズームしたときに、フィードの更新を取得するかどうかを設定します</value>
+  </data>
+  <data name="UsePointClusteringDescription" xml:space="preserve">
+    <value>ポイントのグループを 1 つのクラスタ化されたフィーチャとして表示するかどうかを指定します</value>
+  </data>
+  <data name="SelectTheLayout" xml:space="preserve">
+    <value>レイアウトの選択...</value>
+  </data>
+  <data name="SelectThePrintLayout" xml:space="preserve">
+    <value>印刷レイアウトの選択</value>
+  </data>
+  <data name="BehaviorPrompt" xml:space="preserve">
+    <value>ビヘイビアー:</value>
+  </data>
+  <data name="Cluster" xml:space="preserve">
+    <value>クラスタ</value>
+  </data>
+  <data name="ClusterFeatures" xml:space="preserve">
+    <value>クラスタ フィーチャ</value>
+  </data>
+  <data name="ConfigureRange" xml:space="preserve">
+    <value>範囲の構成</value>
+  </data>
+  <data name="EnablePrompt" xml:space="preserve">
+    <value>有効:</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>フィーチャ</value>
+  </data>
+  <data name="RenderAsHeatMap" xml:space="preserve">
+    <value>ヒート マップとして描画</value>
+  </data>
+  <data name="RenderHeatMapAdvancedProperties" xml:space="preserve">
+    <value>ヒート マップ描画の高度な設定プロパティ</value>
+  </data>
+  <data name="Tolerance" xml:space="preserve">
+    <value>許容値</value>
+  </data>
+  <data name="LayoutPrompt" xml:space="preserve">
+    <value>レイアウト:</value>
+  </data>
+  <data name="ConfigurePrint" xml:space="preserve">
+    <value>印刷の構成</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>印刷</value>
+  </data>
+  <data name="LayoutResourceDownloadError" xml:space="preserve">
+    <value>レイアウト リソースのダウンロード中にエラーが発生しました。</value>
+  </data>
+  <data name="ChangeBackground" xml:space="preserve">
+    <value>背景の変更</value>
+  </data>
+  <data name="PreviewTheme" xml:space="preserve">
+    <value>テーマのプレビュー</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>無題</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>ビヘイビアーの追加</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>グラデーション</value>
+  </data>
+  <data name="Solid" xml:space="preserve">
+    <value>実線</value>
+  </data>
+  <data name="ToggleRibbonVisibility" xml:space="preserve">
+    <value>リボンの表示設定の切り替え</value>
+  </data>
+  <data name="ArcGISSilverlightVersion" xml:space="preserve">
+    <value>ArcGIS API for Silverlight:</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>バージョン:</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>バージョン情報</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>下へ移動</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>上へ移動</value>
+  </data>
+  <data name="ConstrainExtentBehaviorMessage" xml:space="preserve">
+    <value>制限として使用するマップの範囲にズームして、[適用] を押します。</value>
+  </data>
+  <data name="ConstrainExtentBehaviorTitle" xml:space="preserve">
+    <value>マップ範囲の制限の設定</value>
+  </data>
+  <data name="DeleteBehaviorCaption" xml:space="preserve">
+    <value>このビヘイビアーを削除してもよろしいですか？</value>
+  </data>
+  <data name="DeleteBehaviorPrompt" xml:space="preserve">
+    <value>削除の確認</value>
+  </data>
+  <data name="CurrentConstrainExtentLabel" xml:space="preserve">
+    <value>現在の範囲に制限するエンベロープ:</value>
+  </data>
+  <data name="ConstrainExtentNotSetMessage" xml:space="preserve">
+    <value>マップ範囲の制限が設定されていません。</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>設定されていません</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>ベースマップの構成</value>
+  </data>
+  <data name="ConfigureTheSetOfBaseMaps" xml:space="preserve">
+    <value>ベースマップのセットを構成します</value>
+  </data>
+  <data name="AddNewBaseMap" xml:space="preserve">
+    <value>新しいベースマップを追加します</value>
+  </data>
+  <data name="ClickImageToChangeThumbnailIcon" xml:space="preserve">
+    <value>画像をクリックして、サムネイル アイコンを変更します</value>
+  </data>
+  <data name="RequiresBingAppID" xml:space="preserve">
+    <value>Bing アプリケーション ID が必要です</value>
+  </data>
+  <data name="DeleteCurrentlySelectedBaseMap" xml:space="preserve">
+    <value>現在選択しているベースマップを削除します</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapDown" xml:space="preserve">
+    <value>現在選択しているベースマップを下へ移動します</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapUp" xml:space="preserve">
+    <value>現在選択しているベースマップを上へ移動します</value>
+  </data>
+  <data name="SubTypePrompt" xml:space="preserve">
+    <value>サブ タイプ:</value>
+  </data>
+  <data name="TextPrompt" xml:space="preserve">
+    <value>テキスト:</value>
+  </data>
+  <data name="ThumbnailPrompt" xml:space="preserve">
+    <value>サムネイル:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>次へ</value>
+  </data>
+  <data name="NoBehaviorTitleSpecified" xml:space="preserve">
+    <value>ビヘイビアーのタイトルが指定されていません</value>
+  </data>
+  <data name="PleaseProvideValidTitleForNewBehavior" xml:space="preserve">
+    <value>新しいビヘイビアーに有効なタイトルを指定してください。</value>
+  </data>
+  <data name="SelectBehaviorToAdd" xml:space="preserve">
+    <value>ビヘイビアーの選択</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>モード</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>キャッシュ サイズ: </value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>マップ範囲内のフィーチャのみを取得</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>すべてのフィーチャを一括して取得</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>フィーチャのキャッシュ サイズ</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>レイヤに含めることのできるフィーチャの最大数です。新しいフィーチャを取得するときにこの上限を超えると、レイヤから一番古いフィーチャが削除されます。</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>マップ範囲内のフィーチャのみを取得</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>レイヤの読み込み時や更新時に、現在のマップ エリア内にあるフィーチャだけが取得され、その他のフィーチャは、マップ エリアが変更されたときに取得されます</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>すべてのフィーチャを取得</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>レイヤの読み込み時や更新時に、レイヤ内のすべてのフィーチャを取得します</value>
+  </data>
+  <data name="BrowseContentUrlWatermark" xml:space="preserve">
+    <value>サーバまたはレイヤの URL を入力</value>
+  </data>
+  <data name="BrowseDialogNoResourcesFound" xml:space="preserve">
+    <value>リソースが見つかりませんでした。</value>
+  </data>
+  <data name="BrowseDialogNoServerOrLayerFound" xml:space="preserve">
+    <value>サービスまたはレイヤが見つかりませんでした。</value>
+  </data>
+  <data name="SecureServices" xml:space="preserve">
+    <value>セキュアなサービス</value>
+  </data>
+  <data name="AutoUpdateNumericDescription" xml:space="preserve">
+    <value>更新間隔を秒または分で設定します。この設定が無効になるまで、このレイヤはこの間隔で自動更新されます。</value>
+  </data>
+  <data name="AutoUpdateNumericTooltip" xml:space="preserve">
+    <value>自動更新間隔</value>
+  </data>
+  <data name="AutoUpdatePollingDescription" xml:space="preserve">
+    <value>フィーチャ レイヤを定期的に自動更新するかどうかを設定します</value>
+  </data>
+  <data name="AutoUpdatePollingTooltip" xml:space="preserve">
+    <value>フィーチャ レイヤの自動更新</value>
+  </data>
+  <data name="AutoUpdateIntervalText" xml:space="preserve">
+    <value>間隔:</value>
+  </data>
+  <data name="AutoUpdateLayerConfigTitle" xml:space="preserve">
+    <value>自動更新</value>
+  </data>
+  <data name="AvailableLayers" xml:space="preserve">
+    <value>使用可能なレイヤ:</value>
+  </data>
+  <data name="EnablePopups" xml:space="preserve">
+    <value>ポップアップを表示</value>
+  </data>
+  <data name="EnablePopupsForLayer" xml:space="preserve">
+    <value>このレイヤのポップアップを表示</value>
+  </data>
+  <data name="OnClick" xml:space="preserve">
+    <value>クリック時</value>
+  </data>
+  <data name="OnHover" xml:space="preserve">
+    <value>マウスホバー時</value>
+  </data>
+  <data name="ConfigureEditorWidget" xml:space="preserve">
+    <value>編集の構成</value>
+  </data>
+  <data name="SnapshotModeNote" xml:space="preserve">
+    <value>注意: データセット内のフィーチャの数が、サービスから返されるフィーチャの最大数を超えた場合、レイヤにすべてのフィーチャを追加できません</value>
+  </data>
+  <data name="GraphicSymbolsTakePrecedence" xml:space="preserve">
+    <value>ここで定義されたシンボルよりも、個別のグラフィックスのシンボル（定義されている場合）を優先</value>
+  </data>
+  <data name="SpatialReference" xml:space="preserve">
+    <value>空間参照:</value>
+  </data>
+  <data name="XMax" xml:space="preserve">
+    <value>最大 X:</value>
+  </data>
+  <data name="XMin" xml:space="preserve">
+    <value>最小 X:</value>
+  </data>
+  <data name="YMax" xml:space="preserve">
+    <value>最大 Y</value>
+  </data>
+  <data name="YMin" xml:space="preserve">
+    <value>最小 Y</value>
+  </data>
+  <data name="NotFoundInLayout" xml:space="preserve">
+    <value>現在のレイアウト内に {0} は見つかりませんでした</value>
+  </data>
+  <data name="ToggleEditFailed" xml:space="preserve">
+    <value>編集コントロールの切り替えに失敗しました。現在のレイアウトは編集をサポートしていない可能性があります。</value>
+  </data>
+  <data name="PopupFromWebMap" xml:space="preserve">
+    <value>Web マップからポップアップ定義を使用</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>選択セットに自動ズーム</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>変更を確定</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>オプション</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>（{0} / {1} レコードを選択）</value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>選択セットの切り替え</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>フィーチャの取得</value>
+  </data>
+  <data name="ConfigureSecuredServices" xml:space="preserve">
+    <value>セキュアなサービスの構成</value>
+  </data>
+  <data name="ErrorChangingProxies" xml:space="preserve">
+    <value>プロキシの変更中にエラーが発生しました</value>
+  </data>
+  <data name="ProxyUrl" xml:space="preserve">
+    <value>プロキシ URL:</value>
+  </data>
+  <data name="SpecifyUrlToProxyPageUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>使用するプロキシ ページの URL を指定して、このアプリケーションのセキュアに保護されたサービスにアクセスします。このプロキシは、セキュアなサービスを使用するアプリケーションのすべてのレイヤで共有されます。</value>
+  </data>
+  <data name="UsesProxy" xml:space="preserve">
+    <value>プロキシの使用</value>
+  </data>
+  <data name="WhetherThisLayerUsesProxyServiceForaccessingRestrictedService" xml:space="preserve">
+    <value>このレイヤがプロキシ サービスを使用して制限されたサービスにアクセスするかどうかを指定します。［プロキシの構成］をクリックしてプロキシ URL を設定します。</value>
+  </data>
+  <data name="LayerHasNoAttributes" xml:space="preserve">
+    <value>選択されているレイヤには表示可能な属性がありません。</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>詳細</value>
+  </data>
+  <data name="ToggleErrorDetails" xml:space="preserve">
+    <value>エラーの詳細の表示/非表示を切り替えます。</value>
+  </data>
+  <data name="LayerIsNotGraphicsLayer" xml:space="preserve">
+    <value>選択されたレイヤは ArcGIS Server のダイナミック マップ サービス レイヤまたはキャッシュ マップ サービス レイヤのため、属性を表示できません。詳細は、ヘルプの「Layer Types」をご参照ください。</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteBasemap" xml:space="preserve">
+    <value>このベースマップを削除してもよろしいですか？</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>削除を確認します</value>
+  </data>
+  <data name="NewBasemap" xml:space="preserve">
+    <value>新規ベースマップ</value>
+  </data>
+  <data name="ConfigureSelectedLayer" xml:space="preserve">
+    <value>選択されているレイヤを構成します</value>
+  </data>
+  <data name="SelectLayerToAdd" xml:space="preserve">
+    <value>レイヤの参照</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>セキュアなサービスにアクセス</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>セキュアなサービスの追加</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>プロキシの構成</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServices" xml:space="preserve">
+    <value>このアプリケーションにセキュアなサービスにアクセスするためのプロキシを構成します</value>
+  </data>
+  <data name="BehaviorSaveFailed" xml:space="preserve">
+    <value>ビヘイビアーの構成を保存できませんでした</value>
+  </data>
+  <data name="BehaviorSaveFailedMessage" xml:space="preserve">
+    <value>アタッチされたマップ ビヘイビアーの構成を保存しているときにエラーが発生しました。</value>
+  </data>
+  <data name="LayerInitFailure" xml:space="preserve">
+    <value>レイヤ初期化エラー</value>
+  </data>
+  <data name="LayerNotInitialized" xml:space="preserve">
+    <value>レイヤを初期化できませんでした。</value>
+  </data>
+  <data name="DeleteGraphicConfirmation" xml:space="preserve">
+    <value>フィーチャを削除しますか？</value>
+  </data>
+  <data name="DeleteGraphicConfirmationTitle" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="EditValuesCommandEditorBackButtonContent" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="ConfigureBehavior" xml:space="preserve">
+    <value>ビヘイビアーの構成</value>
+  </data>
+  <data name="DisablePopupForLayer" xml:space="preserve">
+    <value>ポップアップの無効化</value>
+  </data>
+  <data name="EnablePopupForLayer" xml:space="preserve">
+    <value>ポップアップの有効化</value>
+  </data>
+  <data name="LinkWebMapDialogCaption" xml:space="preserve">
+    <value>Web マップへのリンク</value>
+  </data>
+  <data name="LinkWebMapDialogMessage" xml:space="preserve">
+    <value>Web マップからマップ構成を読み込みます。既存のマップ構成は失われます。続行しますか？</value>
+  </data>
+  <data name="UnlinkWebMapDialogCaption" xml:space="preserve">
+    <value>Web マップからリンクを解除</value>
+  </data>
+  <data name="UnlinkWebMapDialogMessage" xml:space="preserve">
+    <value>マップ構成の、Web マップへのリンクが解除されます。レイヤの追加、削除、および構成はできますが、Web マップに対する更新内容はマップに表示されなくなります。続行しますか？</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>標準</value>
+  </data>
+  <data name="Business" xml:space="preserve">
+    <value>ビジネス</value>
+  </data>
+  <data name="Cartography" xml:space="preserve">
+    <value>カートグラフィ</value>
+  </data>
+  <data name="Outdoor_Recreation" xml:space="preserve">
+    <value>アウトドア レクリエーション</value>
+  </data>
+  <data name="People_and_Places" xml:space="preserve">
+    <value>人と場所</value>
+  </data>
+  <data name="Public_Safety_and_Health" xml:space="preserve">
+    <value>安全と衛生</value>
+  </data>
+  <data name="Transportation" xml:space="preserve">
+    <value>交通</value>
+  </data>
+  <data name="WebMapLoadFailed" xml:space="preserve">
+    <value>{0} の ID を持つ Web マップを読み込めませんでした。このマップにアクセスする権限を持っていないか、該当するマップが存在していない可能性があります。</value>
+  </data>
+  <data name="ClusteringDisallowedCaption" xml:space="preserve">
+    <value>クラスタリング エラー</value>
+  </data>
+  <data name="ClusteringDisallowedMessage" xml:space="preserve">
+    <value>レイヤが編集対象にされている場合、クラスタリングできません。</value>
+  </data>
+  <data name="UnsupportedBasemapType" xml:space="preserve">
+    <value>サポートされていないベースマップ タイプ</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>プロキシの利用</value>
+  </data>
+  <data name="AreaNotesLayer" xml:space="preserve">
+    <value>{0} - 面積</value>
+  </data>
+  <data name="LineNotesLayer" xml:space="preserve">
+    <value>{0} - ライン</value>
+  </data>
+  <data name="PointNotesLayer" xml:space="preserve">
+    <value>{0} - ポイント</value>
+  </data>
+  <data name="Editing" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>有効</value>
+  </data>
+  <data name="ArcGISPortalDefaultName" xml:space="preserve">
+    <value>Portal for ArcGIS</value>
+  </data>
+  <data name="SignInToArcGISServer" xml:space="preserve">
+    <value>{0} の ArcGIS Server にサイン イン</value>
+  </data>
+  <data name="InvalidUrlUserPassword" xml:space="preserve">
+    <value>無効な URL、ユーザ名、またはパスワード</value>
+  </data>
+  <data name="SignInTo" xml:space="preserve">
+    <value>{0} にサイン イン</value>
+  </data>
+  <data name="SignInToServer" xml:space="preserve">
+    <value>ArcGIS Server にサイン イン</value>
+  </data>
+  <data name="SignInToSecureServices" xml:space="preserve">
+    <value>サイン インしてセキュアなサービスにアクセス</value>
+  </data>
+  <data name="OpenStreetMap" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="FeatureLayer" xml:space="preserve">
+    <value>フィーチャ レイヤ</value>
+  </data>
+  <data name="MapLayer" xml:space="preserve">
+    <value>マップ レイヤ</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>サイン インに失敗しました。</value>
+  </data>
+</root>

@@ -1,0 +1,40 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls"
+    >
+
+    <local:StringResourcesManager x:Key="Localization" />
+
+    <Style TargetType="local:ColorRampControl">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ColorRampControl">
+                    <ScrollViewer x:Name="ColorRampsScrollViewer" HorizontalScrollBarVisibility="Hidden"  Margin="0" 
+                                  VerticalScrollBarVisibility="Auto" Grid.Row="0" Padding="0" BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                  Style="{StaticResource ThinBarScrollViewerStyle}"
+                                  Background="{TemplateBinding Background}">
+                        <ListBox x:Name="ColorRampsListBox" Width="{TemplateBinding Width}" VerticalAlignment="Top" 
+                                 Margin="0" Padding="0" BorderThickness="0"
+                                 Background="Transparent">
+                            <ToolTipService.ToolTip>
+                                <TextBlock FontSize="11" 
+                                           Text="{Binding ConverterParameter=ChangeColorRampTooltip, Converter={StaticResource Localization}, Source={StaticResource Localization}}" />
+                            </ToolTipService.ToolTip>
+                        </ListBox>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

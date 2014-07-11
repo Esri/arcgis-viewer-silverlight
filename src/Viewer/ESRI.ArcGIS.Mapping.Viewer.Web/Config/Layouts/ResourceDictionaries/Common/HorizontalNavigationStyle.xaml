@@ -1,0 +1,426 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"        
+    mc:Ignorable="d" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:converters="clr-namespace:ESRI.ArcGIS.Client.Application.Layout.Converters;assembly=ESRI.ArcGIS.Client.Application.Layout"
+>
+    <converters:LocalizationConverter x:Key="LayoutLocalization"/>
+    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Name="NavBorderGradient">
+        <GradientStop Color="#FFFFFFFF"/>
+        <GradientStop Color="#FF050745" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#FFD4D4D4" />
+    <LinearGradientBrush x:Key="ShineBrush" EndPoint="0.5,0.971" StartPoint="0.5,0.042">
+        <GradientStop Color="#59FFFFFF" Offset="0" />
+        <GradientStop Color="#00FFFFFF" Offset="1" />
+        <GradientStop Color="#26FFFFFF" Offset="0.467" />
+        <GradientStop Color="#00FFFFFF" Offset="0.475" />
+    </LinearGradientBrush>
+    
+    <SolidColorBrush x:Key="HoverBrush" Color="#FFAAAAAA" />
+
+    <LinearGradientBrush x:Key="HoverShineBrush" EndPoint="0.5,0.971" StartPoint="0.5,0.042">
+        <GradientStop Color="#4CFFFFFF" Offset="0" />
+        <GradientStop Color="#26FFFFFF" Offset="1" />
+        <GradientStop Color="#26FFFFFF" Offset="0.467" />
+        <GradientStop Color="#00FFFFFF" Offset="0.475" />
+        <GradientStop Color="#00FFFFFF" Offset="0.856" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="PressedBrush" EndPoint="0.5,0.971" StartPoint="0.5,0.042">
+        <GradientStop Color="#4C000000" Offset="0" />
+        <GradientStop Color="#26FFFFFF" Offset="1" />
+        <GradientStop Color="#4C000000" Offset="0.467" />
+        <GradientStop Color="#26FFFFFF" Offset="0.479" />
+    </LinearGradientBrush>
+
+    <Style TargetType="Button" x:Key="ClearButtonStyle" >
+        <Setter Property="Background" Value="#00FFFFFF" />
+        <Setter Property="Foreground" Value="#00FFFFFF" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="#00FFFFFF" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid x:Name="ButtonRoot" RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <ScaleTransform x:Name="ButtonScaleTransform" ScaleX="0.85" ScaleY="0.85" />
+                        </Grid.RenderTransform>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates" >
+                                <VisualState x:Name="Normal" >
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ButtonRoot" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="0.85" Duration="0:0:0.1" />
+                                        <DoubleAnimation Storyboard.TargetName="ButtonRoot" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="0.85" Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ButtonRoot" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.1" />
+                                        <DoubleAnimation Storyboard.TargetName="ButtonRoot" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates" >
+                                <VisualState x:Name="Focused">
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" CornerRadius="3" Background="#00FFFFFF" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" >
+                            <Grid Background="{TemplateBinding Background}" Margin="1">
+                                <Border Opacity="0" x:Name="BackgroundAnimation" Background="#FF448DCA" />
+                                <Rectangle x:Name="BackgroundGradient" Fill="#00FFFFFF" />
+                            </Grid>
+                        </Border>
+                        <ContentPresenter x:Name="contentPresenter" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}"  />
+                        <Rectangle x:Name="DisabledVisualElement" RadiusX="3" RadiusY="3" Fill="#00FFFFFF" Opacity="0" IsHitTestVisible="false"  />
+                        <Rectangle x:Name="FocusVisualElement" RadiusX="2" RadiusY="2" Margin="1" Stroke="#00FFFFFF" StrokeThickness="1" Opacity="0" IsHitTestVisible="false"  />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Thumb" x:Name="ThumbStyle">
+        <Setter Property="Background" Value="{StaticResource AccentColorBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="BorderBrush" Value="{StaticResource NavBorderGradient}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb"  xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="00:00:00.1" To="MouseOver" />
+                                    <VisualTransition GeneratedDuration="00:00:00.1" To="Pressed" />
+                                    <VisualTransition From="Normal" GeneratedDuration="00:00:00.3000000" To="MouseOver" />
+                                    <VisualTransition From="MouseOver" GeneratedDuration="00:00:00.5000000" To="Normal" />
+                                    <VisualTransition From="Pressed" GeneratedDuration="00:00:00.5000000" To="MouseOver" />
+                                    <VisualTransition From="MouseOver" GeneratedDuration="00:00:00.3000000" To="Pressed" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="PressedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DisabledVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="0.5" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition From="Focused" GeneratedDuration="00:00:00.5000000" To="Unfocused" />
+                                    <VisualTransition From="Unfocused" GeneratedDuration="00:00:00.3000000" To="Focused" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.5" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" />
+                        <Border x:Name="HoverBorder" Opacity="0" Background="{StaticResource HoverBrush}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" />
+                        <Border x:Name="HoverShineBorder" Opacity="0" Background="{StaticResource HoverShineBrush}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" />
+                        <Border x:Name="PressedBorder" Opacity="0" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" Background="{StaticResource PressedBrush}" />
+                        <Border x:Name="ShineBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" Background="{StaticResource ShineBrush}" Opacity="1" />
+                        <Border x:Name="DisabledVisualElement" IsHitTestVisible="false" Background="{StaticResource DisabledBackgroundBrush}" CornerRadius="3.5,3.5,3.5,3.5" Opacity="0" />
+                        <Border x:Name="FocusVisualElement" IsHitTestVisible="false" Visibility="Collapsed" BorderBrush="{StaticResource HoverShineBrush}" BorderThickness="1" CornerRadius="3,3,3,3" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Slider-->
+    <Style TargetType="Slider" x:Name="SliderStyle">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Maximum" Value="10" />
+        <Setter Property="Minimum" Value="0" />
+        <Setter Property="Value" Value="0" />
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0" />
+                    <GradientStop Color="#FF8399A9" Offset="0.375" />
+                    <GradientStop Color="#FF718597" Offset="0.375" />
+                    <GradientStop Color="#FF617584" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Slider"  xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+                    <Grid x:Name="Root" RenderTransformOrigin="0.5,0.5">
+                        <Grid.Resources>
+                            <ControlTemplate x:Key="RepeatButtonTemplate">
+                                <Grid x:Name="Root" Opacity="0" Background="Transparent" />
+                            </ControlTemplate>
+                        </Grid.Resources>
+                        <Grid.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                        </Grid.RenderTransform>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="0.25" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="HorizontalTemplate" Background="{TemplateBinding Background}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Height="5" Margin="5,0,5,0" Grid.Column="0" Grid.ColumnSpan="3" Fill="{StaticResource AccentColorBrush}" Stroke="{x:Null}" StrokeThickness="{TemplateBinding BorderThickness}" RadiusX="2" RadiusY="2" />
+                            <RepeatButton x:Name="HorizontalTrackLargeChangeDecreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Column="0" />
+                            <Thumb Height="16" x:Name="HorizontalThumb" Style="{StaticResource ThumbStyle}" Width="16" IsTabStop="True" Grid.Column="1" />
+                            <RepeatButton x:Name="HorizontalTrackLargeChangeIncreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Column="2" />
+                        </Grid>
+                        <Grid x:Name="VerticalTemplate" Visibility="Collapsed" Background="{TemplateBinding Background}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Rectangle Margin="0,5,0,5" Width="8" Grid.Row="0" Grid.RowSpan="3" Fill="{StaticResource AccentColorBrush}" Stroke="#FF000000" StrokeThickness="2" RadiusX="2" RadiusY="2" />
+                            <RepeatButton x:Name="VerticalTrackLargeChangeDecreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Row="2" />
+                            <Thumb Height="8" x:Name="VerticalThumb" Width="16" IsTabStop="True" Grid.Row="1" Style="{StaticResource ThumbStyle}" />
+                            <RepeatButton x:Name="VerticalTrackLargeChangeIncreaseRepeatButton" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}" Grid.Row="0" />
+                        </Grid>
+                    </Grid>
+    <!--Thumb-->
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="esri:Navigation" x:Name="NavigationStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="esri:Navigation">
+                    <Grid x:Name="root" FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}" >
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource ClearButtonStyle}" Margin="0,0,0,10" FlowDirection="LeftToRight" >
+                                <Grid x:Name="PanGrid" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+									<Grid x:Name="PanLeft" Grid.Column="0" Grid.Row="1" Width="10" Height="10" Cursor="Hand" ToolTipService.ToolTip="{Binding ConverterParameter=ClickToMoveWest, Converter={StaticResource LayoutLocalization}}" Background="#00FFFFFF" >
+                                        <Polygon Fill="#44FFFFFF" Points="0,5 10,0 10,10 0,5" Stroke="{StaticResource AccentColorBrush}" StrokeThickness="1" />
+                                    </Grid>
+									<Grid x:Name="PanRight" Grid.Column="2" Grid.Row="1" Width="10" Height="10" Cursor="Hand" ToolTipService.ToolTip="{Binding ConverterParameter=ClickToMoveEast, Converter={StaticResource LayoutLocalization}}" Background="#00FFFFFF" >
+                                        <Polygon Fill="#44FFFFFF" Points="0,0 10,5 0,10 0,0" Stroke="{StaticResource AccentColorBrush}" StrokeThickness="1" />
+                                    </Grid>
+									<Grid x:Name="PanUp" Grid.Column="1" Grid.Row="0" Width="10" Height="10" Cursor="Hand" ToolTipService.ToolTip="{Binding ConverterParameter=ClickToMoveNorth, Converter={StaticResource LayoutLocalization}}" Background="#00FFFFFF" >
+                                        <Polygon Fill="#44FFFFFF" Points="0,10 5,0 10,10 0,10" Stroke="{StaticResource AccentColorBrush}" StrokeThickness="1" />
+                                    </Grid>
+									<Grid x:Name="PanDown" Grid.Column="1" Grid.Row="2" Width="10" Height="10" Cursor="Hand" ToolTipService.ToolTip="{Binding ConverterParameter=ClickToMoveSouth, Converter={StaticResource LayoutLocalization}}" Background="#00FFFFFF" >
+                                        <Polygon Fill="#44FFFFFF" Points="0,0 5,10 10,00 0,0" Stroke="{StaticResource AccentColorBrush}" StrokeThickness="1" />
+                                    </Grid>
+                                </Grid>
+                            </Button>
+
+							<Button x:Name="ZoomFullExtent" DataContext="{TemplateBinding Map}" Cursor="Hand"  Style="{StaticResource ClearButtonStyle}" Grid.Column="0" HorizontalAlignment="Left" Margin="0,0,0,5" ToolTipService.ToolTip="{Binding ConverterParameter=FullExtent, Converter={StaticResource LayoutLocalization}}" >
+                                <Grid RenderTransformOrigin="0.5,0.5" >
+                                    <Grid.RenderTransform>
+                                        <ScaleTransform x:Name="GlobeScale" ScaleX="1" ScaleY="1" />
+                                    </Grid.RenderTransform>
+                                    <Canvas x:Name="GlobeCanvas" Width="25.002" Height="24.935" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FlowDirection="LeftToRight" >
+                                        <Ellipse x:Name="OceanEllipse" Width="25" Height="25" Fill="#FF6CA1D8"  />
+                                        <Path x:Name="LandPath" Fill="#FFD8D7D2" Data=" M 8.545,1.761 C 8.563,1.754 9.120,1.177 9.120,1.177 L 9.763,1.248 L 9.815,1.795 L 9.662,1.921 L 9.967,2.241 L 9.429,2.200 C 9.429,2.200 9.120,2.665 9.102,2.665 C 9.083,2.665 8.734,2.650 8.734,2.650 L 8.931,2.152 L 9.362,1.977 L 9.235,1.542 L 8.545,1.780 L 8.545,1.761 L 8.545,1.761 Z M 4.492,11.020 L 4.792,10.904 L 5.127,11.105 L 4.688,11.131 C 4.688,11.131 4.499,11.023 4.492,11.020 L 4.492,11.020 Z M 4.172,10.599 L 3.867,10.424 L 3.779,10.167 L 4.172,10.599 L 4.172,10.599 Z M 3.533,10.007 L 3.288,9.725 L 3.021,9.762 L 3.285,9.565 L 3.604,9.792 L 3.533,10.007 L 3.533,10.007 Z M 8.606,24.331 C 8.250,23.983 7.939,23.565 7.583,23.217 C 7.875,23.035 8.167,22.852 8.458,22.669 C 8.414,22.545 8.369,22.421 8.325,22.297 C 8.483,22.297 8.641,22.297 8.800,22.297 C 9.086,21.784 9.374,21.270 9.660,20.755 C 10.056,20.670 10.452,20.587 10.848,20.502 C 10.991,19.909 11.135,19.316 11.278,18.723 C 11.604,18.351 11.931,17.980 12.257,17.608 C 11.872,17.287 11.485,16.966 11.100,16.643 C 10.813,16.649 10.526,16.654 10.239,16.660 C 9.843,16.421 9.447,16.184 9.052,15.947 C 8.814,16.011 8.577,16.075 8.339,16.139 C 8.310,15.654 8.280,15.170 8.250,14.685 C 7.860,14.582 7.469,14.478 7.078,14.373 C 6.692,13.979 6.306,13.583 5.920,13.187 C 5.782,13.197 5.644,13.207 5.505,13.215 C 5.070,13.029 4.634,12.840 4.199,12.652 C 3.952,12.815 3.705,12.979 3.457,13.142 C 3.214,13.008 2.972,12.874 2.729,12.741 C 2.715,12.306 2.700,11.871 2.686,11.435 C 2.462,11.297 2.240,11.158 2.017,11.020 C 2.166,10.639 2.314,10.258 2.462,9.876 C 2.210,10.020 1.958,10.164 1.706,10.308 C 1.627,10.134 1.547,9.961 1.468,9.788 C 1.775,9.125 2.082,8.462 2.388,7.799 C 2.695,7.809 3.002,7.819 3.309,7.830 C 3.442,7.997 3.576,8.166 3.709,8.333 C 3.649,8.458 3.590,8.581 3.531,8.705 C 3.601,8.897 3.669,9.090 3.739,9.284 C 3.833,8.818 3.927,8.354 4.021,7.888 C 4.401,7.686 4.782,7.482 5.164,7.280 C 5.169,7.111 5.173,6.943 5.178,6.775 C 5.816,6.360 6.455,5.944 7.093,5.528 C 7.231,5.598 7.370,5.667 7.508,5.736 C 7.553,5.578 7.597,5.419 7.642,5.261 C 7.741,5.147 7.840,5.034 7.939,4.920 C 7.771,4.886 7.603,4.851 7.434,4.816 C 7.622,4.747 7.810,4.678 7.999,4.608 C 8.334,4.584 8.670,4.559 9.007,4.535 C 8.908,4.727 8.809,4.920 8.711,5.113 C 8.829,5.187 8.948,5.261 9.066,5.336 C 9.155,5.241 9.245,5.147 9.333,5.054 C 9.269,4.945 9.205,4.836 9.141,4.727 C 9.205,4.559 9.269,4.391 9.333,4.223 C 9.200,4.060 9.066,3.896 8.933,3.733 C 8.943,3.550 8.953,3.367 8.962,3.184 C 8.785,3.204 8.606,3.224 8.428,3.244 C 8.414,3.050 8.399,2.857 8.384,2.665 C 8.285,2.635 8.186,2.605 8.087,2.575 C 7.919,2.763 7.750,2.952 7.583,3.140 C 7.498,3.293 7.415,3.446 7.330,3.600 C 7.172,3.639 7.014,3.679 6.855,3.718 C 6.771,3.856 6.688,3.996 6.603,4.134 C 6.544,4.134 6.484,4.134 6.425,4.134 C 6.420,4.035 6.415,3.936 6.410,3.836 C 6.455,3.713 6.499,3.589 6.544,3.466 C 6.439,3.277 6.336,3.090 6.232,2.902 C 6.899,2.556 7.568,2.209 8.235,1.863 C 8.260,1.779 8.285,1.695 8.310,1.611 C 8.463,1.458 8.616,1.304 8.770,1.150 C 8.488,1.245 8.206,1.338 7.924,1.433 C 8.067,1.314 8.210,1.195 8.354,1.077 C 8.221,1.091 8.087,1.106 7.954,1.121 C 7.840,1.205 7.726,1.289 7.612,1.374 C 7.528,1.334 7.444,1.294 7.360,1.254 C 7.597,1.160 7.930,1.079 8.167,0.984 C 8.415,0.846 8.591,0.803 8.838,0.664 C 9.293,0.674 9.725,0.577 10.180,0.587 C 9.997,0.686 9.813,0.785 9.631,0.883 C 9.833,0.938 10.037,0.993 10.239,1.046 C 10.531,0.968 10.823,0.889 11.114,0.810 C 10.981,0.869 10.848,0.928 10.714,0.988 C 10.837,1.052 10.961,1.116 11.085,1.181 C 11.080,1.497 11.075,1.813 11.070,2.130 C 11.031,2.298 10.991,2.467 10.951,2.635 C 10.857,2.694 10.764,2.753 10.669,2.813 C 10.907,2.941 11.145,3.070 11.382,3.199 C 11.431,3.085 11.481,2.971 11.530,2.857 C 11.659,2.783 11.788,2.709 11.916,2.635 C 11.931,2.561 11.945,2.486 11.961,2.412 C 12.198,2.343 12.436,2.274 12.673,2.204 C 12.688,2.170 12.703,2.135 12.717,2.101 C 12.939,2.057 13.162,2.011 13.385,1.967 C 13.365,1.576 13.346,1.185 13.326,0.795 C 12.975,0.735 12.624,0.675 12.272,0.617 C 12.495,0.587 12.717,0.557 12.939,0.528 C 13.271,0.488 13.603,0.448 13.935,0.409 C 13.523,0.294 13.113,0.181 12.703,0.067 C 12.918,0.055 13.133,0.043 13.348,0.032 C 10.260,-0.205 5.095,0.793 1.869,5.974 C 1.611,6.869 1.354,7.765 1.097,8.660 C 1.068,9.085 1.038,9.511 1.008,9.937 C 1.196,10.179 1.384,10.421 1.572,10.664 C 1.587,10.782 1.602,10.901 1.617,11.020 C 1.839,11.366 2.062,11.712 2.284,12.058 C 2.314,12.231 2.344,12.405 2.374,12.578 C 2.566,12.810 2.760,13.042 2.953,13.275 C 3.036,13.231 3.121,13.187 3.205,13.142 C 3.205,13.142 3.413,14.284 3.398,14.358 C 3.382,14.433 2.819,15.843 2.819,15.843 C 3.180,16.629 3.541,17.415 3.902,18.203 C 4.322,18.500 4.743,18.796 5.164,19.092 C 5.347,19.781 5.530,20.467 5.712,21.156 C 6.015,21.755 6.316,22.352 6.618,22.952 C 7.103,23.333 7.631,23.780 8.116,24.162 C 8.308,24.231 8.433,24.278 8.606,24.331 L 8.606,24.331 Z M 19.324,6.541 L 19.194,6.125 L 19.380,6.362 L 19.324,6.541 L 19.324,6.541 Z M 16.011,3.331 C 16.011,3.368 16.315,3.896 16.315,3.896 L 16.671,4.008 L 16.688,4.677 L 17.325,4.529 L 17.297,4.134 L 16.545,3.703 L 16.374,3.375 L 16.011,3.331 L 16.011,3.331 Z M 15.958,3.993 L 16.033,4.261 L 15.988,4.499 L 16.278,4.275 L 15.958,3.993 L 15.958,3.993 Z M 13.848,2.468 L 13.945,2.736 L 14.524,2.371 L 14.042,2.356 L 13.848,2.468 L 13.848,2.468 Z M 20.509,21.377 C 20.589,21.176 20.667,20.973 20.746,20.770 C 20.755,20.597 20.766,20.422 20.775,20.250 C 20.890,20.087 21.003,19.923 21.117,19.760 C 21.082,19.354 21.048,18.951 21.013,18.544 C 21.265,18.231 21.518,17.920 21.771,17.608 C 21.750,17.143 21.730,16.677 21.711,16.214 C 21.528,15.971 21.344,15.729 21.161,15.486 C 21.240,15.120 21.320,14.754 21.399,14.389 C 21.172,14.324 20.944,14.259 20.717,14.196 C 20.559,14.096 20.399,13.997 20.241,13.899 C 20.059,14.042 19.876,14.186 19.693,14.328 C 19.405,14.333 19.118,14.338 18.832,14.344 C 18.713,14.458 18.595,14.572 18.476,14.685 C 18.061,14.472 17.644,14.259 17.229,14.047 C 17.109,13.769 16.992,13.494 16.873,13.215 C 16.675,13.057 16.478,12.899 16.279,12.741 C 16.294,12.231 16.310,11.722 16.323,11.213 C 16.189,11.064 16.057,10.916 15.924,10.768 C 16.225,10.328 16.526,9.887 16.828,9.446 C 16.996,9.293 17.164,9.140 17.333,8.986 C 17.323,8.803 17.313,8.621 17.303,8.438 C 17.451,8.175 17.601,7.913 17.748,7.651 C 17.981,7.666 18.214,7.681 18.446,7.695 C 18.614,7.538 18.782,7.378 18.950,7.221 C 19.258,7.156 19.564,7.092 19.871,7.028 C 19.970,7.230 20.068,7.433 20.167,7.636 C 20.399,7.681 20.633,7.725 20.865,7.770 C 21.078,7.874 21.290,7.977 21.503,8.081 C 21.488,7.878 21.474,7.675 21.458,7.473 C 21.780,7.522 22.102,7.571 22.423,7.621 C 22.547,7.512 22.671,7.403 22.794,7.295 C 22.641,6.919 22.487,6.543 22.334,6.167 C 22.181,6.305 22.026,6.444 21.874,6.583 C 21.726,6.483 21.578,6.384 21.429,6.285 C 21.310,6.123 21.192,5.959 21.072,5.796 C 21.048,5.865 21.023,5.935 20.999,6.003 C 21.103,6.117 21.206,6.231 21.310,6.345 C 21.296,6.458 21.281,6.572 21.265,6.686 C 20.934,6.365 20.603,6.043 20.271,5.722 C 19.921,5.563 19.569,5.405 19.218,5.247 C 19.415,5.425 19.614,5.603 19.811,5.781 C 19.993,5.895 20.178,6.009 20.360,6.123 C 20.355,6.202 20.352,6.281 20.345,6.360 C 20.386,6.449 20.424,6.538 20.465,6.627 C 20.414,6.657 20.365,6.686 20.315,6.716 C 20.246,6.766 20.178,6.815 20.107,6.864 C 20.034,6.790 19.959,6.716 19.886,6.642 C 19.965,6.617 20.043,6.592 20.124,6.568 C 20.196,6.568 20.271,6.568 20.345,6.568 C 20.221,6.404 20.099,6.241 19.975,6.078 C 19.752,5.999 19.528,5.919 19.308,5.840 C 19.177,5.727 19.049,5.613 18.921,5.499 C 18.822,5.623 18.723,5.746 18.624,5.870 C 18.529,5.895 18.436,5.919 18.343,5.944 C 18.336,6.330 18.332,6.716 18.327,7.102 C 18.129,7.240 17.932,7.378 17.733,7.518 C 17.451,7.418 17.170,7.320 16.889,7.221 C 16.923,7.033 16.959,6.845 16.995,6.658 C 16.904,6.439 16.815,6.221 16.724,6.003 C 16.833,5.973 16.943,5.942 17.051,5.912 C 17.256,5.855 17.641,5.955 17.853,5.944 C 17.694,5.702 17.536,5.459 17.378,5.217 C 17.274,5.183 17.170,5.147 17.065,5.113 C 17.214,5.000 17.362,4.886 17.511,4.772 C 17.511,4.510 17.511,4.247 17.511,3.985 C 17.595,3.936 17.679,3.886 17.764,3.836 C 17.654,3.693 17.545,3.550 17.437,3.406 C 17.564,3.391 17.694,3.377 17.822,3.362 C 17.635,3.228 17.447,3.095 17.258,2.961 C 17.209,3.070 17.160,3.179 17.109,3.288 C 16.902,3.100 16.695,2.912 16.486,2.724 C 16.486,2.521 16.486,2.318 16.486,2.115 C 16.372,1.893 16.259,1.670 16.145,1.448 C 16.447,1.408 16.749,1.369 17.051,1.329 C 17.224,1.482 17.397,1.635 17.570,1.789 C 17.654,1.789 17.739,1.789 17.822,1.789 C 17.817,1.645 17.813,1.502 17.809,1.358 C 17.877,1.319 17.946,1.280 18.016,1.240 C 22.481,3.395 24.693,7.690 24.976,11.247 C 25.229,14.462 23.672,19.706 20.687,21.438 C 20.627,21.417 20.568,21.398 20.509,21.377 L 20.509,21.377 Z" >
+                                            <Path.Effect>
+                                                <DropShadowEffect Direction="-90" ShadowDepth="2" />
+                                            </Path.Effect>
+                                        </Path>
+                                        <Ellipse x:Name="DarkEdgeEllipse" Width="25" Height="25"  >
+                                            <Ellipse.Fill>
+                                                <RadialGradientBrush Center="0.49,0.4" >
+                                                    <GradientStop Color="#00000000" Offset="0.3"  />
+                                                    <GradientStop Color="#52000000" Offset="1" />
+                                                </RadialGradientBrush>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                        <Ellipse x:Name="HighlightGlowEllipse" Width="7.5" Height="3.75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,3.75,0,0" RenderTransformOrigin="0.5,0.5" >
+                                            <Ellipse.Fill>
+                                                <RadialGradientBrush >
+                                                    <GradientStop Color="#83FFFFFF" Offset="0.185" />
+                                                    <GradientStop Color="#00FFFFFF" Offset="1" />
+                                                </RadialGradientBrush>
+                                            </Ellipse.Fill>
+                                            <Ellipse.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform/>
+                                                    <SkewTransform AngleX="-64" AngleY="46"/>
+                                                    <RotateTransform Angle="-46"/>
+                                                    <TranslateTransform/>
+                                                </TransformGroup>
+                                            </Ellipse.RenderTransform>
+                                        </Ellipse>
+
+                                    </Canvas>
+                                </Grid>
+
+                            </Button>
+
+							<Button x:Name="ZoomOutButton" DataContext="{TemplateBinding Map}" Cursor="Hand"  Style="{StaticResource ClearButtonStyle}" Grid.Column="0" HorizontalAlignment="Left" Margin="0,0,0,5" ToolTipService.ToolTip="{Binding ConverterParameter=ZoomOut, Converter={StaticResource LayoutLocalization}}" >
+                                <Grid RenderTransformOrigin="0.5,0.5" >
+                                    <Grid.RenderTransform>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </Grid.RenderTransform>
+                                    <Canvas Width="25.002" Height="24.935" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                        <Ellipse Width="25" Height="25" Fill="{StaticResource AccentColorBrush}"  />
+
+                                        <Grid Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock Text="-" FontSize="20" FontWeight="Bold" Foreground="{StaticResource AccentTextColorBrush}" TextAlignment="Center" VerticalAlignment="Center" Margin="0" />
+                                        </Grid>
+                                        <Ellipse Width="25" Height="25"  >
+                                            <Ellipse.Fill>
+                                                <RadialGradientBrush Center="0.49,0.4" >
+                                                    <GradientStop Color="#00000000" Offset="0.3"  />
+                                                    <GradientStop Color="#52000000" Offset="1" />
+                                                </RadialGradientBrush>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                        <Ellipse Width="7.5" Height="3.75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,3.75,0,0" RenderTransformOrigin="0.5,0.5" >
+                                            <Ellipse.Fill>
+                                                <RadialGradientBrush >
+                                                    <GradientStop Color="#83FFFFFF" Offset="0.185" />
+                                                    <GradientStop Color="#00FFFFFF" Offset="1" />
+                                                </RadialGradientBrush>
+                                            </Ellipse.Fill>
+                                            <Ellipse.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform/>
+                                                    <SkewTransform AngleX="-64" AngleY="46"/>
+                                                    <RotateTransform Angle="-46"/>
+                                                    <TranslateTransform/>
+                                                </TransformGroup>
+                                            </Ellipse.RenderTransform>
+                                        </Ellipse>
+
+                                    </Canvas>
+                                </Grid>
+
+                            </Button>
+
+                            <Slider x:Name="ZoomSlider" Cursor="Hand" VerticalAlignment="Center"  Margin="0,0,0,5" Style="{StaticResource SliderStyle}"
+                                                                  Orientation="Horizontal" LargeChange="1" Width="150"
+                                                                  Maximum="15" Minimum="0" SmallChange="1" Value="0" 
+                                                                  ToolTipService.ToolTip="{Binding ConverterParameter=DragToZoomInOrOut, Converter={StaticResource LayoutLocalization}}" Height="25"
+                                                                  
+                                                                  />
+
+							<Button x:Name="ZoomInButton" DataContext="{TemplateBinding Map}" Cursor="Hand"  Style="{StaticResource ClearButtonStyle}" Grid.Column="0" HorizontalAlignment="Left" Margin="0,0,0,5" ToolTipService.ToolTip="{Binding ConverterParameter=ZoomIn, Converter={StaticResource LayoutLocalization}}" >
+                                <Grid RenderTransformOrigin="0.5,0.5" >
+                                    <Grid.RenderTransform>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    </Grid.RenderTransform>
+                                    <Canvas Width="25.002" Height="24.935" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                        <Ellipse Width="25" Height="25" Fill="{StaticResource AccentColorBrush}"  />
+
+                                        <Grid Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock Text="+" FontSize="20" FontWeight="Bold" Foreground="{StaticResource AccentTextColorBrush}" TextAlignment="Center" VerticalAlignment="Center" Margin="0" />
+                                        </Grid>
+                                        <Ellipse Width="25" Height="25"  >
+                                            <Ellipse.Fill>
+                                                <RadialGradientBrush Center="0.49,0.4" >
+                                                    <GradientStop Color="#00000000" Offset="0.3"  />
+                                                    <GradientStop Color="#52000000" Offset="1" />
+                                                </RadialGradientBrush>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                        <Ellipse Width="7.5" Height="3.75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,3.75,0,0" RenderTransformOrigin="0.5,0.5" >
+                                            <Ellipse.Fill>
+                                                <RadialGradientBrush >
+                                                    <GradientStop Color="#83FFFFFF" Offset="0.185" />
+                                                    <GradientStop Color="#00FFFFFF" Offset="1" />
+                                                </RadialGradientBrush>
+                                            </Ellipse.Fill>
+                                            <Ellipse.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform/>
+                                                    <SkewTransform AngleX="-64" AngleY="46"/>
+                                                    <RotateTransform Angle="-46"/>
+                                                    <TranslateTransform/>
+                                                </TransformGroup>
+                                            </Ellipse.RenderTransform>
+                                        </Ellipse>
+
+                                    </Canvas>
+                                </Grid>
+
+                            </Button>
+
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

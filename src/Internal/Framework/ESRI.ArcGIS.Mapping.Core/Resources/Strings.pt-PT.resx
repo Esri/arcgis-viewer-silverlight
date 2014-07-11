@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ExceptionAdditionConverterDoesNotSupportType" xml:space="preserve">
+    <value>AdditionConverter não tem suporte para o tipo {0}</value>
+  </data>
+  <data name="ExceptionCannotcallSyncronousMethodGetFileAsText" xml:space="preserve">
+    <value>Não é possível solicitar o método síncrono GetFileAsText em Silverlight. Em alternativa, utilize GetFileAsTextAsync.</value>
+  </data>
+  <data name="ExceptionCannotCompareWith" xml:space="preserve">
+    <value>Não é possível comparar com {0}</value>
+  </data>
+  <data name="ExceptionCannotDeserializeResponse" xml:space="preserve">
+    <value>Não é possível desserializar resposta</value>
+  </data>
+  <data name="ExceptionClusterer" xml:space="preserve">
+    <value>Clusterer</value>
+  </data>
+  <data name="ExceptionConfigFileUrlMustBeSpecified" xml:space="preserve">
+    <value>ConfigFileUrl deverá ser especificado</value>
+  </data>
+  <data name="ExceptionConfigurationFileEmpty" xml:space="preserve">
+    <value>O ficheiro de configuração estava vazio</value>
+  </data>
+  <data name="ExceptionConfigurationXmlIsEmpty" xml:space="preserve">
+    <value>O xml do ficheiro de config está vazio</value>
+  </data>
+  <data name="ExceptionDataSource" xml:space="preserve">
+    <value>dataSource</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>elemento</value>
+  </data>
+  <data name="ExceptionEmptyFile" xml:space="preserve">
+    <value>Ficheiro vazio</value>
+  </data>
+  <data name="ExceptionExtensionUrl" xml:space="preserve">
+    <value>extensionURL</value>
+  </data>
+  <data name="ExceptionFileNotFound" xml:space="preserve">
+    <value>Ficheiro não encontrado</value>
+  </data>
+  <data name="ExceptionGraphicsLayer" xml:space="preserve">
+    <value>graphicsLayer</value>
+  </data>
+  <data name="ExceptionIdforDataSourceMustNotBeEmpty" xml:space="preserve">
+    <value>Id para dataSource não deverá estar vazio</value>
+  </data>
+  <data name="ExceptionInconsistentTotalNumberOfValues" xml:space="preserve">
+    <value>Número total de valores inconsistente</value>
+  </data>
+  <data name="ExceptionInvalidFileMustBeUrlForSilverlightApplication" xml:space="preserve">
+    <value>O ficheiro não é válido. Deverá ser um Url para aplicações silverlight</value>
+  </data>
+  <data name="ExceptionInvalidPathForresourceDictionary" xml:space="preserve">
+    <value>O caminho não é válido para dicionário de recursos {0}</value>
+  </data>
+  <data name="ExceptionLayer" xml:space="preserve">
+    <value>camada</value>
+  </data>
+  <data name="ExceptionMap" xml:space="preserve">
+    <value>mapa</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationFile" xml:space="preserve">
+    <value>Deverá definir o ConfigurationFile</value>
+  </data>
+  <data name="ExceptionMustSpecifyFile" xml:space="preserve">
+    <value>Deverá definir o ficheiro</value>
+  </data>
+  <data name="ExceptionMustSpecifyFileUrl" xml:space="preserve">
+    <value>Deverá definir o FileUrl</value>
+  </data>
+  <data name="ExceptionMustSpecifyLocatorUrl" xml:space="preserve">
+    <value>Deverá definir o LocatorUrl</value>
+  </data>
+  <data name="ExceptionMustSpecifyValidFileUrl" xml:space="preserve">
+    <value>Deverá definir um FileUrl válido</value>
+  </data>
+  <data name="ExceptionNamespaces" xml:space="preserve">
+    <value>namespaces</value>
+  </data>
+  <data name="ExceptionNoBrushesFound" xml:space="preserve">
+    <value>Nenhum pincel encontrado</value>
+  </data>
+  <data name="ExceptionNoDefaultSymbolsFoundInDictionaryForGeometryType" xml:space="preserve">
+    <value>Nenhum símbolo padrão encontrado no dicionário {0} para geometrytype = {1}</value>
+  </data>
+  <data name="ExceptionNoResourceDictionaryAvailableForGeometryType" xml:space="preserve">
+    <value>Nenhum Dicionário de Recursos disponível para geometryType = {0}</value>
+  </data>
+  <data name="ExceptionNoResourceDictionaryfoundForGeometryType" xml:space="preserve">
+    <value>Nenhum dicionário de recursos encontrado para geometrytype = {0}</value>
+  </data>
+  <data name="ExceptionNoResultsFromProjection" xml:space="preserve">
+    <value>Nenhum resultado da projeção</value>
+  </data>
+  <data name="ExceptionNoSymbolAvailableInResourceDictionary" xml:space="preserve">
+    <value>Nenhum Símbolo disponível no dicionário de recursos {0}</value>
+  </data>
+  <data name="ExceptionNoThemeFileUrlSpecified" xml:space="preserve">
+    <value>Sem ThemeFileUrl definido</value>
+  </data>
+  <data name="ExceptionNumberofGraphicsBeforeAndAfterProjectionAreNotEqual" xml:space="preserve">
+    <value>O número de gráficos antes e depois da projeção não é igual</value>
+  </data>
+  <data name="ExceptionOutputSpatialReference" xml:space="preserve">
+    <value>outputSpatialReference</value>
+  </data>
+  <data name="ExceptionRequiresPointValue" xml:space="preserve">
+    <value>Requer um valor de ponto</value>
+  </data>
+  <data name="ExceptionResourceDictionaryEmpty" xml:space="preserve">
+    <value>O dicionário de recursos está vazio</value>
+  </data>
+  <data name="ExceptionSymbolConfigXmlEmpty" xml:space="preserve">
+    <value>O symbolConfigXml está vazio</value>
+  </data>
+  <data name="ExceptionSymbolDescriptionValueNull" xml:space="preserve">
+    <value>O valor SymbolDescription é nulo</value>
+  </data>
+  <data name="ExceptionSymbolFolderParentUrlMustBeSpecified" xml:space="preserve">
+    <value>O SymbolFolderParentUrl deve ser definido</value>
+  </data>
+  <data name="ExceptionUnableToLoadconfigurationStoreFromEmbeddedResource" xml:space="preserve">
+    <value>Não foi possível carregar o armazenamento de configurações do recurso incorporado</value>
+  </data>
+  <data name="ExceptionUnableToParseFile" xml:space="preserve">
+    <value>Não foi possível analisar o ficheiro</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConnectionsFromEmbeddedResource" xml:space="preserve">
+    <value>Não foi possível obter as ligações do recurso incorporado</value>
+  </data>
+  <data name="ExceptionUnableToretrievedefaultLinearGradientBrushes" xml:space="preserve">
+    <value>Não foi possível obter pincéis gradientes lineares padrão</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveLinearGradientBrushes" xml:space="preserve">
+    <value>Não foi possível obter pincéis gradientes lineares.</value>
+  </data>
+  <data name="ExceptionUnableToretrieveResourceDictionaryContents" xml:space="preserve">
+    <value>Não foi possível obter o conteúdo do dicionário de recursos</value>
+  </data>
+  <data name="ExceptionUnknownError" xml:space="preserve">
+    <value>Erro Desconhecido</value>
+  </data>
+  <data name="Graphics" xml:space="preserve">
+    <value>gráficos</value>
+  </data>
+  <data name="NoneInAngleBraces" xml:space="preserve">
+    <value>&lt;nenhum&gt;</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>Pontos</value>
+  </data>
+  <data name="FlagCheckered" xml:space="preserve">
+    <value>Bandeira Quadriculada</value>
+  </data>
+  <data name="FlagGreen" xml:space="preserve">
+    <value>Bandeira Verde</value>
+  </data>
+  <data name="FlagRed" xml:space="preserve">
+    <value>Bandeira Vermelha</value>
+  </data>
+  <data name="FlagWhite" xml:space="preserve">
+    <value>Bandeira Branca</value>
+  </data>
+  <data name="FlagYellow" xml:space="preserve">
+    <value>Bandeira Amarela</value>
+  </data>
+  <data name="Pin2RedShiny" xml:space="preserve">
+    <value>Alfinete Vermelho Brilhante 2</value>
+  </data>
+  <data name="PinBlueShiny" xml:space="preserve">
+    <value>Alfinete Azul Brilhante</value>
+  </data>
+  <data name="PinGoldShiny" xml:space="preserve">
+    <value>Alfinete Dourado Brilhante</value>
+  </data>
+  <data name="PinGreenShiny" xml:space="preserve">
+    <value>Alfinete Verde Brilhante</value>
+  </data>
+  <data name="PinLightBlueShiny" xml:space="preserve">
+    <value>Alfinete Azul Claro Brilhante</value>
+  </data>
+  <data name="PinLightGreenShiny" xml:space="preserve">
+    <value>Alfinete Verde Claro Brilhante</value>
+  </data>
+  <data name="PinPurpleShiny" xml:space="preserve">
+    <value>Alfinete Púrpura Brilhante</value>
+  </data>
+  <data name="PinShiny" xml:space="preserve">
+    <value>Alfinete Brilhante</value>
+  </data>
+  <data name="RedShinyPin" xml:space="preserve">
+    <value>Alfinete Vermelho Brilhante</value>
+  </data>
+  <data name="StickpinBlack" xml:space="preserve">
+    <value>Alfinete Preto</value>
+  </data>
+  <data name="StickpinBlue" xml:space="preserve">
+    <value>Alfinete Azul</value>
+  </data>
+  <data name="StickpinBrown" xml:space="preserve">
+    <value>Alfinete Castanho</value>
+  </data>
+  <data name="StickpinGray" xml:space="preserve">
+    <value>Alfinete Cinza</value>
+  </data>
+  <data name="StickpinGreen" xml:space="preserve">
+    <value>Alfinete Verde</value>
+  </data>
+  <data name="StickpinLightBlue" xml:space="preserve">
+    <value>Alfinete Azul Claro</value>
+  </data>
+  <data name="StickpinOrange" xml:space="preserve">
+    <value>Alfinete Laranja</value>
+  </data>
+  <data name="StickpinPurple" xml:space="preserve">
+    <value>Alfinete Roxo</value>
+  </data>
+  <data name="StickpinRed" xml:space="preserve">
+    <value>Alfinete Vermelho</value>
+  </data>
+  <data name="StickpinSpringGreen" xml:space="preserve">
+    <value>Alfinete Verde Primavera</value>
+  </data>
+  <data name="StickpinWhite" xml:space="preserve">
+    <value>Alfinete Branco</value>
+  </data>
+  <data name="StickpinYellow" xml:space="preserve">
+    <value>Alfinete Amarelo</value>
+  </data>
+  <data name="SymbolAmberBeacon" xml:space="preserve">
+    <value>Raio Âmbar</value>
+  </data>
+  <data name="SymbolBlackBeacon" xml:space="preserve">
+    <value>Raio Preto</value>
+  </data>
+  <data name="SymbolBlackWaypoint" xml:space="preserve">
+    <value>Ponto Intermédio Preto</value>
+  </data>
+  <data name="SymbolBlueBeacon" xml:space="preserve">
+    <value>Raio Azul</value>
+  </data>
+  <data name="SymbolBlueSphere" xml:space="preserve">
+    <value>Esfera Azul</value>
+  </data>
+  <data name="SymbolBlueWaypoint" xml:space="preserve">
+    <value>Ponto Intermédio Azul</value>
+  </data>
+  <data name="SymbolCapital1" xml:space="preserve">
+    <value>Capital 1</value>
+  </data>
+  <data name="SymbolCapital2" xml:space="preserve">
+    <value>Capital 2</value>
+  </data>
+  <data name="SymbolCircleX" xml:space="preserve">
+    <value>Círculo com X</value>
+  </data>
+  <data name="SymbolCrossHair" xml:space="preserve">
+    <value>Cross Hair</value>
+  </data>
+  <data name="SymbolGreenBeacon" xml:space="preserve">
+    <value>Raio Verde</value>
+  </data>
+  <data name="SymbolGreenSphere" xml:space="preserve">
+    <value>Esfera Verde</value>
+  </data>
+  <data name="SymbolOrangeBeacon" xml:space="preserve">
+    <value>Raio Laranja</value>
+  </data>
+  <data name="SymbolOrangeSphere" xml:space="preserve">
+    <value>Esfera Laranja</value>
+  </data>
+  <data name="SymbolPopulated1" xml:space="preserve">
+    <value>Povoação 1</value>
+  </data>
+  <data name="SymbolPopulated2" xml:space="preserve">
+    <value>Povoação 2</value>
+  </data>
+  <data name="SymbolPopulated3" xml:space="preserve">
+    <value>Povoação 3</value>
+  </data>
+  <data name="SymbolPopulated4" xml:space="preserve">
+    <value>Povoação 4</value>
+  </data>
+  <data name="SymbolPopulated5" xml:space="preserve">
+    <value>Povoação 5</value>
+  </data>
+  <data name="SymbolPopulated6" xml:space="preserve">
+    <value>Povoação 6</value>
+  </data>
+  <data name="SymbolPopulated7" xml:space="preserve">
+    <value>Povoação 7</value>
+  </data>
+  <data name="SymbolPurpleSphere" xml:space="preserve">
+    <value>Esfera Roxa</value>
+  </data>
+  <data name="SymbolRedBeacon" xml:space="preserve">
+    <value>Raio Vermelho</value>
+  </data>
+  <data name="SymbolRedSphere" xml:space="preserve">
+    <value>Esfera Vermelha</value>
+  </data>
+  <data name="SymbolWhiteWaypoint" xml:space="preserve">
+    <value>Ponto Intermédio Branco</value>
+  </data>
+  <data name="SymbolYellowArrow" xml:space="preserve">
+    <value>Seta Amarela</value>
+  </data>
+  <data name="SymbolYellowSphere" xml:space="preserve">
+    <value>Esfera Amarela</value>
+  </data>
+  <data name="ExceptionRequiresParameter" xml:space="preserve">
+    <value>Requer que um parâmetro seja definido</value>
+  </data>
+  <data name="ExceptionAppendPropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>AppendProperty solicitado fora de um objeto</value>
+  </data>
+  <data name="ExceptionBadEscape" xml:space="preserve">
+    <value>Saída com Problema</value>
+  </data>
+  <data name="ExceptionConverters" xml:space="preserve">
+    <value>conversores</value>
+  </data>
+  <data name="ExceptionEndArrayCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>EndArray solicitado sem StartArray correspondente</value>
+  </data>
+  <data name="ExceptionEndArrayIndentedCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>EndArrayIndented solicitado sem StartArray correspondente</value>
+  </data>
+  <data name="ExceptionEndObjectCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>EndObject solicitado sem StartObject correspondente</value>
+  </data>
+  <data name="ExceptionEndObjectIndentedCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>EndObjectIndented solicitado sem StartObject correspondente</value>
+  </data>
+  <data name="ExceptionInput" xml:space="preserve">
+    <value>input</value>
+  </data>
+  <data name="ExceptionStartPropertycalledOutsideOfAnObject" xml:space="preserve">
+    <value>StartProperty solicitado fora de um objeto</value>
+  </data>
+  <data name="ExceptionType" xml:space="preserve">
+    <value>tipo</value>
+  </data>
+  <data name="ExceptionWritePropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>WriteProperty solicitado fora de um objeto</value>
+  </data>
+  <data name="MoreInfo" xml:space="preserve">
+    <value>Mais info</value>
+  </data>
+  <data name="RootVisualError" xml:space="preserve">
+    <value>Não foi possível obter a raiz visual da aplicação</value>
+  </data>
+  <data name="ExceptionNoResult" xml:space="preserve">
+    <value>Não foi devolvido nenhum resultado do pedido</value>
+  </data>
+</root>

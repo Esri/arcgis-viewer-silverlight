@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewerApplication LogoFilePath="Images/logo.png"
+                   LayoutFilePath="Config/Layouts/Glass.xaml">
+
+    <TitleText>ArcGIS Viewer for Silverlight</TitleText>
+  <Version>3.2.0.0</Version>
+    <HelpLinks>
+        <HelpLink>
+            <DisplayText>Help</DisplayText>
+            <Url>http://links.esri.com/silverlightviewer</Url>
+        </HelpLink>
+        <HelpLink>
+            <DisplayText>Forums</DisplayText>
+            <Url>http://forums.arcgis.com/forums/211-ArcGIS-Viewer-for-Silverlight</Url>
+        </HelpLink>
+        <HelpLink>
+            <DisplayText>Blog</DisplayText>
+            <Url>http://blogs.esri.com/Dev/blogs/silverlightwpf/</Url>
+        </HelpLink>
+    </HelpLinks>
+
+    <Extensions>
+    <Extension Url="Extensions/Esri.ArcGIS.Client.Application.AddIns.CenterQueryStringBehavior.xap" />
+    <Extension Url="Extensions/Esri.ArcGIS.Client.Application.AddIns.ExtentQueryStringBehavior.xap" />
+    <Extension Url="Extensions/QueryRelatedRecords.AddIns.xap" />
+    <Extension Url="Extensions/Esri.ArcGIS.Client.Application.AddIns.ScaleLevelQueryStringBehavior.xap" />
+    <Extension Url="Extensions/Esri.ArcGIS.Client.Application.AddIns.ScaleQueryStringBehavior.xap" />
+        <Extension Url="Extensions/SearchTool.AddIns.xap" />
+    <Extension Url="Extensions/Esri.ArcGIS.Client.Application.AddIns.WebMapQueryStringBehavior.xap" />
+        <Extension Url="Extensions/$safeprojectname$.AddIns.xap" />
+    </Extensions>
+
+    <ArcGISOnlineSharing>http://www.arcgis.com/sharing/</ArcGISOnlineSharing>
+
+    <ArcGISOnlineSharingSecure>https://www.arcgis.com/sharing/</ArcGISOnlineSharingSecure>
+
+    <ArcGISOnlineProxy></ArcGISOnlineProxy>
+
+    <GeometryService>http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer</GeometryService>
+
+    <BingMapsAppId></BingMapsAppId>
+
+</ViewerApplication>

@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Добавить поведение</value>
+  </data>
+  <data name="AddBehaviorDescription" xml:space="preserve">
+    <value>Добавить поведение во вьюер</value>
+  </data>
+  <data name="AddGeoprocessing" xml:space="preserve">
+    <value>Добавить геообработку</value>
+  </data>
+  <data name="AddGeoprocessingDescription" xml:space="preserve">
+    <value>Добавить во вьюер инструмент геообработки. Инструмент геообработки даст пользователям вьюера возможность использовать сервис геообработки ArcGIS Server.</value>
+  </data>
+  <data name="AddGeoRSSDescription" xml:space="preserve">
+    <value>Добавить гео-поддерживающий RSS-канал на карту</value>
+  </data>
+  <data name="AddGP" xml:space="preserve">
+    <value>Добавить геообработку</value>
+  </data>
+  <data name="AddTool" xml:space="preserve">
+    <value>Добавить инструмент</value>
+  </data>
+  <data name="AddToolDescription" xml:space="preserve">
+    <value>Добавить инструмент во вьюер</value>
+  </data>
+  <data name="ApplicationBuilderSettings" xml:space="preserve">
+    <value>Настройки конструктора приложения</value>
+  </data>
+  <data name="ApplicationBuilderSettingsDescription" xml:space="preserve">
+    <value>Просмотреть и изменить настройки Конструктора приложения, включая управление вложениями и базовыми картами.</value>
+  </data>
+  <data name="AttributeTable" xml:space="preserve">
+    <value>Таблица атрибутов</value>
+  </data>
+  <data name="BasemapGalleryDescription" xml:space="preserve">
+    <value>Выбрать другой базовый слой для карты</value>
+  </data>
+  <data name="Behaviors" xml:space="preserve">
+    <value>Варианты поведения</value>
+  </data>
+  <data name="Branding" xml:space="preserve">
+    <value>Брендинг</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="ChangeLayout" xml:space="preserve">
+    <value>Изменить компоновку</value>
+  </data>
+  <data name="ChangeLayoutDescription" xml:space="preserve">
+    <value>Выбрать новую компоновку для вьюера</value>
+  </data>
+  <data name="ChangeLogo" xml:space="preserve">
+    <value>Изменить логотип</value>
+  </data>
+  <data name="ChangeLogoDescription" xml:space="preserve">
+    <value>Выбрать логотип для вьюера</value>
+  </data>
+  <data name="ChangeTitleAndLinks" xml:space="preserve">
+    <value>Изменение название и ссылки</value>
+  </data>
+  <data name="ChangeTitleAndLinksDescription" xml:space="preserve">
+    <value>Изменить заголовок вьюера и гиперссылки</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Настройка</value>
+  </data>
+  <data name="ConfigureTheme" xml:space="preserve">
+    <value>Настройка темы</value>
+  </data>
+  <data name="ConfigureThemeDescription" xml:space="preserve">
+    <value>Изменить цвета темы вьюера</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Во весь экран</value>
+  </data>
+  <data name="FullScreenDescription" xml:space="preserve">
+    <value>Разместить конструктор приложения в полноэкранном режиме</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Домашняя страница</value>
+  </data>
+  <data name="HomeDescription" xml:space="preserve">
+    <value>Вернуться к стартовой странице конструктора приложения</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>Компоновка</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Логотип</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Управлять</value>
+  </data>
+  <data name="ManageBehaviors" xml:space="preserve">
+    <value>Управлять поведением</value>
+  </data>
+  <data name="ManageBehaviorsDescription" xml:space="preserve">
+    <value>Поведение вьюера: включить, отключить, переупорядочить добавить или удалить</value>
+  </data>
+  <data name="ManageToolbars" xml:space="preserve">
+    <value>Управлять панелями инструментов</value>
+  </data>
+  <data name="ManageToolbarsDescription" xml:space="preserve">
+    <value>Добавить, удалить, переместить или конфигурировать инструменты на панелях инструментов вьюера</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Развернуть</value>
+  </data>
+  <data name="PublishDescription" xml:space="preserve">
+    <value>Развернуть текущий вьюер на новом веб-сайте</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Сбросить</value>
+  </data>
+  <data name="ResetTheme" xml:space="preserve">
+    <value>Сбросить тему</value>
+  </data>
+  <data name="ResetThemeDescription" xml:space="preserve">
+    <value>Восстановить цвета темы вьюера до значений по умолчанию</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="SaveDescription" xml:space="preserve">
+    <value>Сохранить текущий вьюер</value>
+  </data>
+  <data name="SelectTheTool" xml:space="preserve">
+    <value>Выберите инструмент...</value>
+  </data>
+  <data name="TitleAndLinks" xml:space="preserve">
+    <value>Название и ссылки</value>
+  </data>
+  <data name="ToggleBrowseDescription" xml:space="preserve">
+    <value>Показать или скрыть панель «обзор».  Обзор позволяет просмотреть содержимое ArcGIS Server или конечную точку Spatial Data Service и добавить слои на карту.</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>Показать или скрыть список содержимого карты</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>Показать или скрыть панель поиска.  Поиск дает возможность искать местоположения, содержимое в ArcGIS.com или сервисы ArcGIS Server.</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>Показать или скрыть таблицу атрибутов для текущего выбранного слоя</value>
+  </data>
+  <data name="ToggleToolbar" xml:space="preserve">
+    <value>Переключить панель инструментов</value>
+  </data>
+  <data name="ToggleToolbarDescription" xml:space="preserve">
+    <value>Показать или скрыть панель инструментов конструктора приложения</value>
+  </data>
+  <data name="Toolbar" xml:space="preserve">
+    <value>Панель инструментов</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="Accent" xml:space="preserve">
+    <value>Выделить</value>
+  </data>
+  <data name="AccentText" xml:space="preserve">
+    <value>Выделить текст</value>
+  </data>
+  <data name="AddNewGroupOrControl" xml:space="preserve">
+    <value>Добавить новую группу или элемент управления</value>
+  </data>
+  <data name="AddOns" xml:space="preserve">
+    <value>Надстройки</value>
+  </data>
+  <data name="ApplicationProperties" xml:space="preserve">
+    <value>Свойства приложения</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="ArcGISApplicationBuilder" xml:space="preserve">
+    <value>Конструктор приложения - {0}</value>
+  </data>
+  <data name="ArcGISViewerForMicrosoftSilverlight" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Фон</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Текст фона</value>
+  </data>
+  <data name="BaseMaps" xml:space="preserve">
+    <value>Базовые карты</value>
+  </data>
+  <data name="BrowseForFile" xml:space="preserve">
+    <value>Поиск файла</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>Поиск ресурсов</value>
+  </data>
+  <data name="BuilderTutorial" xml:space="preserve">
+    <value>Обучающее руководство конструктора</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="ChangesSavedSuccessfully" xml:space="preserve">
+    <value>Изменения успешно сохранены.</value>
+  </data>
+  <data name="ChooseExistingProject" xml:space="preserve">
+    <value>Выбрать существующий проект</value>
+  </data>
+  <data name="ChooseLayout" xml:space="preserve">
+    <value>Выбрать компоновку</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>Конфигурация</value>
+  </data>
+  <data name="ConfigureExtensions" xml:space="preserve">
+    <value>Настроить дополнительные модули</value>
+  </data>
+  <data name="ConfigureOptionsThatApplyToCurrentUser" xml:space="preserve">
+    <value>Конфигурировать настройки, чтобы применить к текущему пользователю</value>
+  </data>
+  <data name="ConfigureSelectedGroupOrControl" xml:space="preserve">
+    <value>Конфигурировать выбранную группу или элемент управления</value>
+  </data>
+  <data name="ConfigureSetOfBaseMapsUsedByBuilder" xml:space="preserve">
+    <value>Настроить набор базовых карт, доступных в конструкторе приложения</value>
+  </data>
+  <data name="CopySite" xml:space="preserve">
+    <value>Копировать сайт</value>
+  </data>
+  <data name="CreateApplicationUsingDefaultMap" xml:space="preserve">
+    <value>Новая карта</value>
+  </data>
+  <data name="CreateApplicationUsingWebMapFromArcGISCom" xml:space="preserve">
+    <value>Веб-карты</value>
+  </data>
+  <data name="CreateNewApplication" xml:space="preserve">
+    <value>Создать новое приложение</value>
+  </data>
+  <data name="CurrentToolbars" xml:space="preserve">
+    <value>Текущие панели инструментов</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="DeleteSite" xml:space="preserve">
+    <value>Удалить сайт</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Описание:</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Подробнее</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Вниз</value>
+  </data>
+  <data name="EditSelectedGroupOrControl" xml:space="preserve">
+    <value>Изменить выбранную группу или элемент управления</value>
+  </data>
+  <data name="EditSite" xml:space="preserve">
+    <value>Редактировать сайт</value>
+  </data>
+  <data name="ExceptionUnhandledError" xml:space="preserve">
+    <value>Необработанная ошибка {0}</value>
+  </data>
+  <data name="ExtensionNotifications" xml:space="preserve">
+    <value>Уведомления дополнительных модулей</value>
+  </data>
+  <data name="Extensions" xml:space="preserve">
+    <value>Дополнительные модули</value>
+  </data>
+  <data name="HelpLinks" xml:space="preserve">
+    <value>Ссылки</value>
+  </data>
+  <data name="IconPrompt" xml:space="preserve">
+    <value>Значок:</value>
+  </data>
+  <data name="LabelPrompt" xml:space="preserve">
+    <value>Надпись:</value>
+  </data>
+  <data name="LoadingSites" xml:space="preserve">
+    <value>Загрузка сайтов...</value>
+  </data>
+  <data name="ManageExtensions" xml:space="preserve">
+    <value>Управление дополнительными модулями</value>
+  </data>
+  <data name="MoreSiteOptions" xml:space="preserve">
+    <value>Дополнительные параметры сайта</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Переместить</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Переместить вниз</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Переместить вверх</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="NamePrompt" xml:space="preserve">
+    <value>Имя:</value>
+  </data>
+  <data name="NewMap" xml:space="preserve">
+    <value>Новая карта</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="PersonalSettings" xml:space="preserve">
+    <value>Персональные настройки</value>
+  </data>
+  <data name="PublishApplication" xml:space="preserve">
+    <value>Развернуть приложение</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="RemoveSelectedGroupOrControl" xml:space="preserve">
+    <value>Удалить выбранную группу или элемент управления</value>
+  </data>
+  <data name="ReturnToPreviousScreen" xml:space="preserve">
+    <value>Вернуться к предыдущему экрану</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>Выборка</value>
+  </data>
+  <data name="SelectionOutline" xml:space="preserve">
+    <value>Выбор структуры</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="StartWithExistingMap" xml:space="preserve">
+    <value>Начать с существующими</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Успешно</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Настройка темы</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Цвета темы</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Название:</value>
+  </data>
+  <data name="ToolbarPrompt" xml:space="preserve">
+    <value>Панель инструментов:</value>
+  </data>
+  <data name="TooltipPrompt" xml:space="preserve">
+    <value>Подсказка инструмента:</value>
+  </data>
+  <data name="TypePrompt" xml:space="preserve">
+    <value>Тип:</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Вверх</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Добро пожаловать</value>
+  </data>
+  <data name="WelcomeMsgParagraph1" xml:space="preserve">
+    <value>ArcGIS Application Builder - это веб-приложение, дающее возможность создавать и изменять приложения вьюера  полностью интерактивно в реальном времени. Application Builder и приложения вьюера построены при помощи ArcGIS API for Silverlight.</value>
+  </data>
+  <data name="WelcomeMsgParagraph2" xml:space="preserve">
+    <value>Чтобы начать создание вьюера, нажмите на кнопку ниже Создать новое приложение. Настраиваемый вами вьюер будет находиться ниже панели инструментов конструктора приложений. Вы можете конфигурировать базовую карту вьюера, слои, инструменты, заголовок, логотип, цвета и наиболее часто используемые инструменты на панели инструментов. После того, как вьюер настроен, нажмите кнопку Разместить, чтобы разместить его на новом веб-сайте.</value>
+  </data>
+  <data name="AvailableTools" xml:space="preserve">
+    <value>Доступные инструменты</value>
+  </data>
+  <data name="BrowseForImage" xml:space="preserve">
+    <value>Поиск изображений</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="ErrorUnableToRetrieveDetailsForExtension" xml:space="preserve">
+    <value>Не удается получить сведения для пакета надстроек.</value>
+  </data>
+  <data name="ExtensionContainsTheFollowingAddOns" xml:space="preserve">
+    <value>Пакет надстроек '{0}' содержит следующие надстройки:</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteButton" xml:space="preserve">
+    <value>Вы уверены, что вы хотите удалить эту кнопку?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteGroup" xml:space="preserve">
+    <value>Вы уверены, что вы хотите удалить эту группу?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteWebSite" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить этот веб-сайт?</value>
+  </data>
+  <data name="AssemblyAlreadyIncludeInTheApplication" xml:space="preserve">
+    <value>{1}Сборка '{0}' уже входит во время выполнения приложения.{1}Рассмотрите вопрос об оптимизации размера и скорости загрузки вашего дополнительного модуля, отметив ссылку на сборку с CopyLocal = false, чтобы исключить сборку при создании пакета .xap</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Подтвердите удаление</value>
+  </data>
+  <data name="DeletingExtensionWillMakeItUnavailableForFurtherUse" xml:space="preserve">
+    <value>Удаление дополнительного модуля сделает его недоступным для дальнейшего использования в новых приложениях и изменения в существующих приложениях. {0}Вы уверены, что вы хотите удалить?</value>
+  </data>
+  <data name="DeletingSite" xml:space="preserve">
+    <value>Удаление сайта...</value>
+  </data>
+  <data name="EditTool" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="EnterNameForApplication" xml:space="preserve">
+    <value>Пожалуйста, введите имя для приложения</value>
+  </data>
+  <data name="ErrorDetailsNotKnown" xml:space="preserve">
+    <value>Подробности ошибки не известны</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="ErrorRetrievingMapDocumentForSite" xml:space="preserve">
+    <value>Ошибка при получении документа карты для сайта</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Ошибки</value>
+  </data>
+  <data name="ExtensionAlreadyExists" xml:space="preserve">
+    <value>Надстройка уже существует</value>
+  </data>
+  <data name="ExtensionDetails" xml:space="preserve">
+    <value>Подробная информация надстройки: {0}</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsErrors" xml:space="preserve">
+    <value>Пакет надстроек, который вы пытаетесь развернуть, содержит ошибки. Они должны быть решены перед продолжением.</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsWarnings" xml:space="preserve">
+    <value>Пакет надстроек, который вы пытаетесь развернуть, содержит предупреждения. Просьба пересмотреть их перед продолжением.</value>
+  </data>
+  <data name="ExtensionWithSameNameAlreadyExist" xml:space="preserve">
+    <value>Пакет надстроек с тем же именем уже существует. Вы хотите перезаписать его?</value>
+  </data>
+  <data name="FailedToCreateAndPublishApplication" xml:space="preserve">
+    <value>Не удалось создать и развернуть приложение</value>
+  </data>
+  <data name="FollowingErrorsFound" xml:space="preserve">
+    <value>Были обнаружены следующие ошибки.</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>Недопустимое имя</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Открыть веб-карту с ArcGIS.com</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Пожалуйста, подождите...</value>
+  </data>
+  <data name="TutorialModeDisable" xml:space="preserve">
+    <value>Отключить "Начало работы"</value>
+  </data>
+  <data name="TutorialModeEnable" xml:space="preserve">
+    <value>Включить "Начало работы"</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>О Конструкторе приложения</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Просмотреть диалоговое окно о программе Конструктор приложения</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="GettingStartedAddGPDescription" xml:space="preserve">
+    <value>Применить пространственную аналитику сервисов геообработки ArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddGPTitle" xml:space="preserve">
+    <value>Добавить сервисы геокодирования</value>
+  </data>
+  <data name="GettingStartedAddLayersDescription" xml:space="preserve">
+    <value>Добавьте данные из ArcGIS Online и ArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddLayersTitle" xml:space="preserve">
+    <value>Добавить оперативные слои</value>
+  </data>
+  <data name="GettingStartedAddToolsDescription" xml:space="preserve">
+    <value>Настроить функциональность приложения</value>
+  </data>
+  <data name="GettingStartedAddToolsTitle" xml:space="preserve">
+    <value>Добавить инструменты</value>
+  </data>
+  <data name="GettingStartedBasemapDescription" xml:space="preserve">
+    <value>Выбрать базовую карту из ArcGIS Online, Bing Maps или OpenStreetMap.</value>
+  </data>
+  <data name="GettingStartedBasemapTitle" xml:space="preserve">
+    <value>Выбрать базовую карту</value>
+  </data>
+  <data name="GettingStartedChooseLogoDescription" xml:space="preserve">
+    <value>Маркировать вьюер логотипом вашей организации.</value>
+  </data>
+  <data name="GettingStartedChooseLogoTitle" xml:space="preserve">
+    <value>Выбрать логотип</value>
+  </data>
+  <data name="GettingStartedSelectLayoutDescription" xml:space="preserve">
+    <value>Определите внешний вид и стиль вашего вьюера.</value>
+  </data>
+  <data name="GettingStartedSelectLayoutTitle" xml:space="preserve">
+    <value>Выбрать макет</value>
+  </data>
+  <data name="GettingStartedSetTitleDescription" xml:space="preserve">
+    <value>Задать заголовок вашего приложения.</value>
+  </data>
+  <data name="GettingStartedSetTitleTitle" xml:space="preserve">
+    <value>Задать заголовок</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailable" xml:space="preserve">
+    <value>Доступны следующие дополнения. Нажмите</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableHere" xml:space="preserve">
+    <value>здесь</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableToUploadANewOne" xml:space="preserve">
+    <value>чтобы загрузить новое с диска.</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlDownToolbarTree" xml:space="preserve">
+    <value>Переместить выбранную группу или элемент управления вниз по дереву панели инструментов</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlUpToolbarTree" xml:space="preserve">
+    <value>Переместить выбранную группу или элемент управления вверх по дереву панели инструментов</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Далее</value>
+  </data>
+  <data name="SelectAToolToAdd" xml:space="preserve">
+    <value>Выбрать инструмент для добавления:</value>
+  </data>
+  <data name="ChooseMap" xml:space="preserve">
+    <value>Конструктор приложения - Выбрать карту</value>
+  </data>
+  <data name="AddInPackagesContain" xml:space="preserve">
+    <value>Пакет надстроек содержит надстройки: инструменты, поведение и элементы управления, используемые в макете</value>
+  </data>
+  <data name="AvailableAddInPackages" xml:space="preserve">
+    <value>Доступные пакеты надстроек:</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>Кнопка</value>
+  </data>
+  <data name="ConfigureElementsRelatedToMap" xml:space="preserve">
+    <value>Настроить элементы, относящиеся к карте</value>
+  </data>
+  <data name="ConfigureToolsOfYourApplication" xml:space="preserve">
+    <value>Настроить инструменты вашего приложения</value>
+  </data>
+  <data name="DisableGettingStarted" xml:space="preserve">
+    <value>Отключить "Начало работы"</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>Начало работы</value>
+  </data>
+  <data name="ShowMe" xml:space="preserve">
+    <value>Показать</value>
+  </data>
+  <data name="SpecifyLayoutOfYourApplication" xml:space="preserve">
+    <value>Укажите макет вашего приложения</value>
+  </data>
+  <data name="UploadAddInPackages" xml:space="preserve">
+    <value>Загрузить пакеты надстроек</value>
+  </data>
+  <data name="UploadAddIns" xml:space="preserve">
+    <value>Загрузить надстройки</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="AreYouSureYouWantToLeavePageUnsavedChangesLost" xml:space="preserve">
+    <value>Вы уверены, что вы хотите покинуть эту страницу? Все несохраненные изменения могут быть потеряны.</value>
+  </data>
+  <data name="ConfirmPageChange" xml:space="preserve">
+    <value>Подтвердите изменение страницы</value>
+  </data>
+  <data name="SpecifyToolProperties" xml:space="preserve">
+    <value>Указать свойства инструмента</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>Сохранить как...</value>
+  </data>
+  <data name="AddGroupButton" xml:space="preserve">
+    <value>Добавить группу</value>
+  </data>
+  <data name="CannotAddElement" xml:space="preserve">
+    <value>Не удается добавить элемент</value>
+  </data>
+  <data name="CannotAddGroupButton" xml:space="preserve">
+    <value>Не удается добавить группу</value>
+  </data>
+  <data name="CannotAddTool" xml:space="preserve">
+    <value>Не удается добавить инструмент</value>
+  </data>
+  <data name="ChooseAvailableTool" xml:space="preserve">
+    <value>Вы должны выбрать индивидуальный инструмент из дерева доступных инструментов.</value>
+  </data>
+  <data name="DefaultGroupButtonDescription" xml:space="preserve">
+    <value>Новая группа</value>
+  </data>
+  <data name="DefaultGroupButtonLabel" xml:space="preserve">
+    <value>Новая группа</value>
+  </data>
+  <data name="RootLevelToAddGroup" xml:space="preserve">
+    <value>Вы должны выбрать панель инструментов или узел корневого уровня панели инструментов для добавления новой группы.</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>&lt;Разделитель&gt;</value>
+  </data>
+  <data name="MoveIntoGroup" xml:space="preserve">
+    <value>Переместить в группу '{0}'</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>Изменить группу</value>
+  </data>
+  <data name="ConfigureControls" xml:space="preserve">
+    <value>Настроить элементы управления</value>
+  </data>
+  <data name="ConfigureControlsDescription" xml:space="preserve">
+    <value>Изменить конфигурацию элементов управления вьюера</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Режим</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Размер кэша:</value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>OnDemand</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>SnapShot</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Размер кэша по требованию слоя объектов</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Задать размер кэша в режиме FeatureLayer OnDemand (по умолчанию= 1000)</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>Режим FeatureLayer OnDemand</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Выбрать режим запроса для слоя OnDemand (только FeatureLayers)</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>Режим FeatureLayer SnapShot</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Выбрать режим запроса для слоя SnapShot (только FeatureLayers)</value>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>Добавить ссылку</value>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Удалить ссылку</value>
+  </data>
+  <data name="ConfigureControlsBanner" xml:space="preserve">
+    <value>Элементы управления для настройки</value>
+  </data>
+  <data name="Controls" xml:space="preserve">
+    <value>Элементы управления</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Получение объектов</value>
+  </data>
+  <data name="AddGroupDotDot" xml:space="preserve">
+    <value>Добавить группу...</value>
+  </data>
+  <data name="AddSeparator" xml:space="preserve">
+    <value>Добавить разделитель</value>
+  </data>
+  <data name="ApplicationBuilderDashSettings" xml:space="preserve">
+    <value>Конструктор приложения - Настройки</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Обзор</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Ресурсы</value>
+  </data>
+  <data name="CurrentViewerApplications" xml:space="preserve">
+    <value>Текущие приложения вьюера</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Содержание карты</value>
+  </data>
+  <data name="NoFilesFound" xml:space="preserve">
+    <value>Файлы не найдены.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="ViewerProject" xml:space="preserve">
+    <value>Проект вьюера</value>
+  </data>
+  <data name="WebMap" xml:space="preserve">
+    <value>Веб-карта</value>
+  </data>
+  <data name="AddLayerFailed" xml:space="preserve">
+    <value>Не удалось добавить слой</value>
+  </data>
+  <data name="AddLayerFailedExplanation" xml:space="preserve">
+    <value>Невозможно добавить слой. Причина ошибки: {0}.</value>
+  </data>
+  <data name="AddLayerFailedNoDetails" xml:space="preserve">
+    <value>[невозможно извлечь подробную информацию]</value>
+  </data>
+  <data name="ConfigureLayers" xml:space="preserve">
+    <value>Конфигурировать слои</value>
+  </data>
+  <data name="ConfigureLayersDescription" xml:space="preserve">
+    <value>Изменить внешний вид и поведение слоев на карте</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Слои</value>
+  </data>
+  <data name="SiteCopyFailed" xml:space="preserve">
+    <value>Копирование сайта прервано</value>
+  </data>
+  <data name="SiteDeploymentFailed" xml:space="preserve">
+    <value>Развертывание сайта прервано</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Переместить вверх</value>
+  </data>
+  <data name="BringsCurrentlySelectedLayerForward" xml:space="preserve">
+    <value>Перемещает слой в списке порядка отображения на одну позицию вверх</value>
+  </data>
+  <data name="ConfigureCurrentlySelectedLayer" xml:space="preserve">
+    <value>Настройка выделенного слоя</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Настроить прокси-сервер, используемый для доступа к защищенным сервисам из этого приложения</value>
+  </data>
+  <data name="ConfigureSecureServices" xml:space="preserve">
+    <value>Настройка защищенных сервисов</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>Перейти к</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="RefreshCurrentlySelectedLayer" xml:space="preserve">
+    <value>Обновить текущий выбранный слой</value>
+  </data>
+  <data name="RemovesCurrentlySelectedLayer" xml:space="preserve">
+    <value>Удаляет текущий выбранный слой</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Переименовать</value>
+  </data>
+  <data name="RenameCurrentlySelectedLayer" xml:space="preserve">
+    <value>Переименовать текущий выбранный слой</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Переместить вниз</value>
+  </data>
+  <data name="SendsCurrentlySelectedLayerBackward" xml:space="preserve">
+    <value>Перемещает слой в списке порядка отображения слоев на одну позицию вниз</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Детали сервиса</value>
+  </data>
+  <data name="ViewInformationAboutSelectedLayerDatasource" xml:space="preserve">
+    <value>Показать информацию о источнике данных выбранного слоя</value>
+  </data>
+  <data name="ZoomToCurrentlySelectedLayer" xml:space="preserve">
+    <value>Приблизить к текущему выбранному слою</value>
+  </data>
+  <data name="CannotAddDropdownCommandsToAGroup" xml:space="preserve">
+    <value>Не удалось добавить команды drop down в группу.</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Настроить базовые карты</value>
+  </data>
+  <data name="FlashAnimationIsNotDefinedOnTargetBuilderToolbarButton" xml:space="preserve">
+    <value>Флэш-анимация не задана на кнопке целевой панели инструментов Builder</value>
+  </data>
+  <data name="ManageAddInsToolsBehaviorsControls" xml:space="preserve">
+    <value>Управление надстройками: Инструменты, Поведение, Элементы управления</value>
+  </data>
+  <data name="ManagePersonalSettings" xml:space="preserve">
+    <value>Управление персональными настройками</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Доступ к защищенным сервисам</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Добавить защищенные сервисы</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Настроить прокси-сервер</value>
+  </data>
+  <data name="NewApplication" xml:space="preserve">
+    <value>Конструктор приложения - Новое приложение (не развернуто)</value>
+  </data>
+  <data name="NotDeployed" xml:space="preserve">
+    <value>(не развернуто)</value>
+  </data>
+  <data name="DeployingApplication" xml:space="preserve">
+    <value>Разворачивание приложения...</value>
+  </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>Настройки приложения</value>
+  </data>
+  <data name="ArcGISOnlineSecure" xml:space="preserve">
+    <value>ArcGIS Online Безопасность:</value>
+  </data>
+  <data name="ArcGISOnlineSharing" xml:space="preserve">
+    <value>ArcGIS Online Общий доступ:</value>
+  </data>
+  <data name="BingAppId" xml:space="preserve">
+    <value>Bing AppID:</value>
+  </data>
+  <data name="CurrentApplicationSettings" xml:space="preserve">
+    <value>Текущие настройки приложения</value>
+  </data>
+  <data name="DefaultSettings" xml:space="preserve">
+    <value>Установки по умолчанию</value>
+  </data>
+  <data name="GeometryService" xml:space="preserve">
+    <value>Сервис геометрии:</value>
+  </data>
+  <data name="ManageApplicationSettings" xml:space="preserve">
+    <value>Управление настройками приложения</value>
+  </data>
+  <data name="BasedOnWebMap" xml:space="preserve">
+    <value>На основе Веб-карты:</value>
+  </data>
+  <data name="LinkedToWebMap" xml:space="preserve">
+    <value>Подключен к Веб-карте</value>
+  </data>
+  <data name="LinkToWebMap" xml:space="preserve">
+    <value>Ссылка</value>
+  </data>
+  <data name="MapConfigurationUnavailable" xml:space="preserve">
+    <value>Конфигурация карты для этого приложения ссылается на веб-карту. Для редактирования конфигурации отключите приложение от веб-карты.</value>
+  </data>
+  <data name="UnlinkFromWebMap" xml:space="preserve">
+    <value>Отключить</value>
+  </data>
+  <data name="UnableToDeployApplication" xml:space="preserve">
+    <value>Не удалось развернуть приложение.</value>
+  </data>
+  <data name="UnableToSaveApplicationChanges" xml:space="preserve">
+    <value>Не удалось сохранить изменения в приложении.</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Прокси-сервер:</value>
+  </data>
+  <data name="HideGettingStarted" xml:space="preserve">
+    <value>Скрыть справку "Начало работы"</value>
+  </data>
+  <data name="ShowGettingStarted" xml:space="preserve">
+    <value>Показать справку "Начало работы"</value>
+  </data>
+  <data name="DisplayText" xml:space="preserve">
+    <value>Отображаемый текст</value>
+  </data>
+  <data name="UpgradeSite" xml:space="preserve">
+    <value>Обновить это приложение Viewer до текущей версии</value>
+  </data>
+  <data name="UpgradingApplication" xml:space="preserve">
+    <value>Обновление приложения...</value>
+  </data>
+  <data name="NewLink" xml:space="preserve">
+    <value>Новая связь</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Поведение</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>Элемент управления</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Слой</value>
+  </data>
+  <data name="Tool" xml:space="preserve">
+    <value>Инструмент</value>
+  </data>
+</root>

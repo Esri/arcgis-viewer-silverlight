@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D4B8CF5C-B2CF-45D1-9FBB-AAA152E44718}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ESRI.ArcGIS.Mapping.Core</RootNamespace>
+    <AssemblyName>ESRI.ArcGIS.Mapping.Core</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\output\Internal\Framework\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;VIEWER</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\output\Internal\Framework\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;VIEWER</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Q:\esriKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.Client">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-Core.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Bing">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-Bing.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Bing.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Portal">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-Portal.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Portal.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Toolkit.DataSources">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-ToolkitDataSources.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Toolkit.DataSources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition.Initialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ComponentModel.Composition.Initialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>..\..\..\packages\Microsoft.Bcl.1.1.9\lib\sl5\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\packages\Microsoft.Bcl.1.1.9\lib\sl5\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Runtime.Serialization.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Syndication, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\..\packages\Microsoft.Bcl.1.1.9\lib\sl5\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\..\..\..\SharedFiles\DepFiles\DotNet\Expression\Silverlight\v5.0\System.Windows.Interactivity.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\build\include\buildnum.cs">
+      <Link>Properties\buildnum.cs</Link>
+    </Compile>
+    <Compile Include="ActivityIndicator\ActivityIndicator.cs" />
+    <Compile Include="Basics\AppCoreHelper.cs" />
+    <Compile Include="Basics\IApplicationServices.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\CultureHelper.cs" />
+    <Compile Include="Common\DataFile.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\ExceptionEventArgs.cs" />
+    <Compile Include="Common\FieldHelper.cs" />
+    <Compile Include="Common\FileLoader.cs" />
+    <Compile Include="Common\IdentifySupport.cs" />
+    <Compile Include="Common\ViewerApplication.cs" />
+    <Compile Include="Common\WebClientFactory.cs" />
+    <Compile Include="Common\WebClientHelper.cs" />
+    <Compile Include="ConfigurationStore\LocationProviderField.cs" />
+    <Compile Include="ConfigurationStore\LocationProviderInfo.cs" />
+    <Compile Include="ConfigurationStore\PlaceNameLookup\PlaceNameLookupField.cs" />
+    <Compile Include="ConfigurationStore\PlaceNameLookup\PlaceNameLookupInfo.cs" />
+    <Compile Include="ConfigurationStore\SchemeBasedConfigurationStoreProvider.cs" />
+    <Compile Include="Configuration\MapDocumentPersistance.cs" />
+    <Compile Include="Extensions\AssemblyManager.cs" />
+    <Compile Include="Extensions\ExtensionAttachedProperties.cs" />
+    <Compile Include="LayerExtensions\GraphicsLayerTypeFixer.cs" />
+    <Compile Include="LayerExtensions\LayerDetails\LayerInformation.cs" />
+    <Compile Include="Json\JavaScriptConverter.cs" />
+    <Compile Include="Json\JavaScriptObjectDeserializer.cs" />
+    <Compile Include="Json\JavaScriptSerializer.cs" />
+    <Compile Include="Json\JavaScriptString.cs" />
+    <Compile Include="Json\JavaScriptTypeResolver.cs" />
+    <Compile Include="Json\JsonWriter.cs" />
+    <Compile Include="Json\ObjectConverter.cs" />
+    <Compile Include="Json\SimpleTypeResolver.cs" />
+    <Compile Include="LayerExtensions\LayerErrorHandler.cs" />
+    <Compile Include="LayerExtensions\ProxyUrlHelper.cs" />
+    <Compile Include="Localization\SatelliteResources.cs" />
+    <Compile Include="Layouts\LayoutFileProvider.cs" />
+    <Compile Include="Layouts\LayoutProvider.cs" />
+    <Compile Include="BackwardsCompatibility\ApplicationMapTipExtensions.cs" />
+    <Compile Include="MapExtensions\BingExtensions.cs" />
+    <Compile Include="MapExtensions\MapProperties.cs" />
+    <Compile Include="MapExtensions\MapExtensions.cs" />
+    <Compile Include="MapTips\MapTipsHelper.cs" />
+    <Compile Include="MapTips\PopupInfo.cs" />
+    <Compile Include="Resources\LocalizableStrings.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RibbonConfiguration\HelpLink.cs" />
+    <Compile Include="Security\SignInViewModel.cs" />
+    <Compile Include="Serialization\ExtensionMethods.cs" />
+    <Compile Include="Symbols\AdditionConverter.cs" />
+    <Compile Include="Symbols\ImageSymbolEntry.cs" />
+    <Compile Include="Symbols\MarginConverter.cs" />
+    <Compile Include="Symbols\Obsolete\MarkerSymbol.cs" />
+    <Compile Include="Symbols\Obsolete\MultiplePathMarkerSymbol.cs" />
+    <Compile Include="Symbols\CustomSymbolXamlWriter.cs" />
+    <Compile Include="Symbols\GeometryConverter.cs" />
+    <Compile Include="Common\GeometryServiceOperationHelper.cs" />
+    <Compile Include="ConfigurationStore\Locators\LocatorServiceMetaDataRetrievalHelper.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Configuration\ConfigurationStoreHelper.cs" />
+    <Compile Include="CustomFields\DateTimeFieldValue.cs" />
+    <Compile Include="CustomFields\NumericFieldValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensions\ConfigurationType.cs" />
+    <Compile Include="Extensions\CustomMapElement.cs" />
+    <Compile Include="Extensions\ExtensionData.cs" />
+    <Compile Include="Extensions\ExtensionsDataManager.cs" />
+    <Compile Include="LayerExtensions\CustomGeoRssLayer.cs" />
+    <Compile Include="LayerExtensions\ICustomGraphicsLayer.cs" />
+    <Compile Include="LayerExtensions\PersistedGraphic.cs" />
+    <Compile Include="LayerExtensions\UniqueValueInfoObj.cs" />
+    <Compile Include="MapExtensions\NavigationExtensions.cs" />
+    <Compile Include="MapTips\IAttachmentsProvider.cs" />
+    <Compile Include="MapTips\MultipleAttachmentsInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Extensions\CustomBehavior.cs" />
+    <Compile Include="Extensions\CustomCommand.cs" />
+    <Compile Include="Extensions\ExtensionsManager.cs" />
+    <Compile Include="CustomFields\AttachmentFieldValue.cs" />
+    <Compile Include="CustomFields\CurrencyFieldValue.cs" />
+    <Compile Include="CustomFields\EntityFieldValue.cs" />
+    <Compile Include="CustomFields\HyperlinkFieldValue.cs" />
+    <Compile Include="CustomFields\HyperlinkImageFieldValue.cs" />
+    <Compile Include="CustomFields\LookupFieldValue.cs" />
+    <Compile Include="Extensions\ReferenceAssembly.cs" />
+    <Compile Include="LayerExtensions\HeatMapLayerBase.cs" />
+    <Compile Include="LayerExtensions\CustomGraphicsLayer.cs" />
+    <Compile Include="LayerExtensions\HeatMapFeatureLayer.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="LayerExtensions\ICustomSymbol.cs" />
+    <Compile Include="RibbonConfiguration\ExtensionBehavior.cs" />
+    <Compile Include="RibbonConfiguration\ExtensionCommand.cs" />
+    <Compile Include="RibbonConfiguration\RibbonConfiguration.cs" />
+    <Compile Include="RibbonConfiguration\RibbonControl.cs" />
+    <Compile Include="MapExtensions\ScaleBarExtensions.cs" />
+    <Compile Include="Serialization\JsonSerializer.cs" />
+    <Compile Include="Serialization\XmlSerializer.cs" />
+    <Compile Include="Symbols\Constants.cs" />
+    <Compile Include="Symbols\CartographicLineSymbol.cs" />
+    <Compile Include="Symbols\FileSymbolConfigProvider.cs" />
+    <Compile Include="Symbols\Obsolete\SimpleFillSymbol.cs" />
+    <Compile Include="Symbols\Obsolete\PathMarkerSymbol.cs" />
+    <Compile Include="Symbols\ResourceData.cs" />
+    <Compile Include="Symbols\Obsolete\SimpleLineSymbol.cs" />
+    <Compile Include="Symbols\HiddenRenderer.cs" />
+    <Compile Include="Symbols\ImageFillSymbol.cs" />
+    <Compile Include="Symbols\SymbolConfigProvider.cs" />
+    <Compile Include="Symbols\SymbolDescription.cs" />
+    <Compile Include="Symbols\SymbolExtensions.cs" />
+    <Compile Include="Symbols\SymbolJsonHelper.cs" />
+    <Compile Include="Symbols\SymbologyInfo.cs" />
+    <Compile Include="Symbols\SymbolResourceDictionaryEntry.cs" />
+    <Compile Include="Symbols\SymbolUtils.cs" />
+    <Compile Include="Theming\ApplicationColorSet.cs" />
+    <Compile Include="Theming\ThemeColorSet.cs" />
+    <Compile Include="Theming\ThemeProvider.cs" />
+    <Compile Include="UrlResolve\ImageUrlResolver.cs" />
+    <Compile Include="UrlResolve\IUrlResolver.cs" />
+    <Compile Include="CredentialManagement.cs" />
+    <Compile Include="Utils\AsyncExtensions.cs" />
+    <Compile Include="WebMap\WebMapSettings.cs" />
+    <Compile Include="XamlWriter\BehaviorXamlWriter.cs" />
+    <Compile Include="XamlWriter\BrushXamlWriter.cs" />
+    <Compile Include="XamlWriter\Layers\ArcGISDynamicMapServiceLayerXamlWriter.cs" />
+    <Compile Include="XamlWriter\Layers\ArcGISImageServiceLayerXamlWriter.cs" />
+    <Compile Include="XamlWriter\Layers\ArcGISTiledMapServiceLayerXamlWriter.cs" />
+    <Compile Include="XamlWriter\Layers\BingMapsTiledLayerXamlWriter.cs" />
+    <Compile Include="XamlWriter\Layers\GeoRssLayerXamlWriter.cs" />
+    <Compile Include="XamlWriter\Layers\HeatMapFeatureLayerXamlWriter.cs" />
+    <Compile Include="XamlWriter\Layers\FeatureLayerXamlWriter.cs" />
+    <Compile Include="XamlWriter\Layers\GraphicsLayerXamlWriter.cs" />
+    <Compile Include="XamlWriter\Layers\HeatMapLayerXamlWriter.cs" />
+    <Compile Include="XamlWriter\Layers\KmlLayerXamlWriter.cs" />
+    <Compile Include="XamlWriter\Layers\OpenStreetMapLayerXamlWriter.cs" />
+    <Compile Include="XamlWriter\Layers\WmsLayerXamlWriter.cs" />
+    <Compile Include="XamlWriter\MapXamlWriter.cs" />
+    <Compile Include="XamlWriter\SymbolXamlWriter.cs" />
+    <Compile Include="XamlWriter\XamlWriterBase.cs" />
+    <Compile Include="ConfigurationStore\BaseMaps\BaseMapInfo.cs" />
+    <Compile Include="ConfigurationStore\BaseMaps\BaseMapType.cs" />
+    <Compile Include="ConfigurationStore\ConfigurationStore.cs" />
+    <Compile Include="ConfigurationStore\FileConfigurationStoreProvider.cs" />
+    <Compile Include="ConfigurationStore\GeometryService\GeometryServiceInfo.cs" />
+    <Compile Include="ConfigurationStore\ConfigurationStoreProviderEventArgs.cs" />
+    <Compile Include="ConfigurationStore\ConfigurationStoreProvider.cs" />
+    <Compile Include="Configuration\ConfigurationProvider.cs" />
+    <Compile Include="Configuration\FileConfigurationProvider.cs" />
+    <Compile Include="Configuration\ConfigurationProviderEventArgs.cs" />
+    <Compile Include="ConfigurationStore\Locators\GeocodeService.cs" />
+    <Compile Include="ConfigurationStore\Locators\LocatorAddressField.cs" />
+    <Compile Include="ConfigurationStore\Locators\LocatorInfo.cs" />
+    <Compile Include="Connections\Connection.cs" />
+    <Compile Include="Connections\ConnectionsProvider.cs" />
+    <Compile Include="Connections\ConnectionsProviderEventArgs.cs" />
+    <Compile Include="Connections\FileConnectionsProvider.cs" />
+    <Compile Include="DataSources\BaseMapDataSource.cs" />
+    <Compile Include="DataSources\BaseMapDataSourceWithResources.cs" />
+    <Compile Include="DataSources\DataSourceEventArgs.cs" />
+    <Compile Include="DataSources\DataSource.cs" />
+    <Compile Include="DataSources\DataSourceProviderBase.cs" />
+    <Compile Include="DataSources\DataSourceWithResources.cs" />
+    <Compile Include="DataSources\IBaseMapDataSource.cs" />
+    <Compile Include="DataSources\IDataSourceWithResources.cs" />
+    <Compile Include="DataSources\MapServiceMetaData.cs" />
+    <Compile Include="DataSources\DataSourceManager.cs" />
+    <Compile Include="DataSources\Resource.cs" />
+    <Compile Include="DataSources\UrlTimestampStore.cs" />
+    <Compile Include="LayerExtensions\ICustomLayer.cs" />
+    <Compile Include="LayerExtensions\LayerDetails\FieldInfo.cs" />
+    <Compile Include="LayerExtensions\LayerDetails\LayerDetails.cs" />
+    <Compile Include="LayerExtensions\LayerExtensions.cs" />
+    <Compile Include="XamlWriter\Layers\LayerXamlWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XamlWriter\XamlWriterFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\WPF\Core\ESRI.ArcGIS.Mapping.Core\Embedded\Symbols\BasicFillSymbols.json.txt">
+      <Link>Embedded\Symbols\BasicFillSymbols.json</Link>
+    </None>
+    <None Include="..\..\..\WPF\Core\ESRI.ArcGIS.Mapping.Core\Embedded\Symbols\BasicLineSymbols.json.txt">
+      <Link>Embedded\Symbols\BasicLineSymbols.json</Link>
+    </None>
+    <None Include="..\..\..\WPF\Core\ESRI.ArcGIS.Mapping.Core\Embedded\Symbols\BasicSymbols.json.txt">
+      <Link>Embedded\Symbols\BasicSymbols.json</Link>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Embedded\DefaultConfiguration.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Embedded\DefaultConfigurationStore.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Embedded\DefaultConnections.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Embedded\DefaultSymbols.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Embedded\ThematicMapBrushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Embedded\HeatMapBrushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Symbols\Symbols.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Extensibility\ESRI.ArcGIS.Client.Application.Controls\ESRI.ArcGIS.Client.Application.Controls.csproj">
+      <Project>{94d632f6-47d0-42a5-9a3a-a3a79a06f07c}</Project>
+      <Name>ESRI.ArcGIS.Client.Application.Controls</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Extensibility\ESRI.ArcGIS.Client.Application.Layout\ESRI.ArcGIS.Client.Application.Layout.csproj">
+      <Project>{641b599d-f3de-444f-b707-7cb44c49818a}</Project>
+      <Name>ESRI.ArcGIS.Client.Application.Layout</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Extensibility\ESRI.ArcGIS.Client.Extensibility\ESRI.ArcGIS.Client.Extensiblity.csproj">
+      <Project>{ff603a2d-885f-4c43-b9ff-703bcfe8a9f1}</Project>
+      <Name>ESRI.ArcGIS.Client.Extensiblity</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ESRI.ArcGIS.Mapping.Windowing\ESRI.ArcGIS.Mapping.Windowing.csproj">
+      <Project>{C3B83892-A7B4-4AC6-A788-269B4641FD1B}</Project>
+      <Name>ESRI.ArcGIS.Mapping.Windowing</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Embedded\ImageSymbolLookup.xml" />
+    <Page Include="ActivityIndicator\ActivityIndicator.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

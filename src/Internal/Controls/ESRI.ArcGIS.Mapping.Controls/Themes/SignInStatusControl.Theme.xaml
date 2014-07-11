@@ -1,0 +1,309 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls"
+    xmlns:mapping="http://schemas.esri.com/arcgis/mapping/2009"
+    xmlns:appControls="clr-namespace:ESRI.ArcGIS.Client.Application.Controls;assembly=ESRI.ArcGIS.Mapping.Windowing">
+
+    <ControlTemplate x:Key="NoFocusHyperlink"  TargetType="HyperlinkButton">
+        <Grid Cursor="{TemplateBinding Cursor}"
+        Background="{TemplateBinding Background}">
+            <Grid.Resources>
+                <mapping:InvertVisibilityConverter x:Key="InvertVisibilityConverter" />
+            </Grid.Resources>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="contentPresenter"
+                                Storyboard.TargetProperty="Opacity" To="0" />
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="underline"
+                                Storyboard.TargetProperty="Opacity" To="1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Normal">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="contentPresenter"
+                                Storyboard.TargetProperty="Opacity" To="1" />
+                            <DoubleAnimation Duration="0" Storyboard.TargetName="underline"
+                                Storyboard.TargetProperty="Opacity" To="0" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <TextBlock 
+                x:Name="underline"
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                Margin="{TemplateBinding Padding}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                Text="{TemplateBinding Content}"
+                TextDecorations="Underline"
+                Opacity="0"/>
+            <TextBlock 
+                x:Name="contentPresenter"
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                Margin="{TemplateBinding Padding}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                Text="{TemplateBinding Content}"/>
+        </Grid>
+    </ControlTemplate>
+
+    <local:StringResourcesManager x:Key="LocalizationSignIn" />
+	<Style TargetType="local:SignInStatusControl">
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:SignInStatusControl">
+                    <Grid VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                        <Grid.Resources>
+                            <mapping:NullVisibilityConverter x:Key="NullVisibilityConverter" />
+                            <mapping:InvertVisibilityConverter x:Key="InvertVisibilityConverter" />
+                            <mapping:GreaterThanToVisibilityConverter x:Key="GreaterThanToVisibilityConverter" />
+                            <mapping:IntVisibilityConverter x:Key="IntVisibilityConverter" />
+                        </Grid.Resources>
+
+                        <Grid
+                            x:Name="UserNameGrid" 
+                        VerticalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            
+                            <!-- Button to show sign-in or user name text, opens menu to
+                                 sign-in/sign out when clicked -->
+                            <Button
+                                Foreground="{TemplateBinding Foreground}"
+                                Cursor="Hand"
+                                Grid.ColumnSpan="2"
+                                Margin="0,2,0,0">
+                                    
+                                <!-- Trigger to open menu on click -->
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Click">
+                                        <ei:ChangePropertyAction 
+                                            TargetObject="{Binding ElementName=Menu}"
+                                            PropertyName="IsOpen"
+                                            Value="True"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <ContentControl Content="{TemplateBinding Content}"/>
+                                    </ControlTemplate>
+                                </Button.Template>
+                                
+                                <!-- Button content -->
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <!-- Display text -->
+                                    <TextBlock Text="{Binding UserDisplayName}"
+                                                Foreground="{TemplateBinding Foreground}"/>
+                                    
+                                    <!-- Drop down arrow -->
+                                    <Path x:Name="BtnArrow" Height="4" Width="8" 
+                                        Stretch="Uniform" Fill="{TemplateBinding Foreground}" 
+                                        Data="F1 M 301.14,-189.041L 311.57,-189.041L 306.355,-182.942L 301.14,-189.041 Z " 
+                                            Margin="5,0,0,0" 
+                                            Grid.Column="1"/>
+                                </Grid>
+                            </Button>
+                                
+                            <!-- Menu for option to sign in and out -->
+                            <Popup Name="Menu" IsOpen="False" Grid.Row="1"
+                                   Margin="0,3,0,0">
+                                <i:Interaction.Behaviors>
+                                    <local:ClosePopupOnClickBehavior />
+                                    <local:RightAlignPopupBehavior
+                                        AlignmentTarget="{Binding ElementName=UserNameGrid}" />
+                                </i:Interaction.Behaviors>
+                                <Border Background="{TemplateBinding Background}" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"
+                                        HorizontalAlignment="Right">
+
+                                    <Grid Margin="10,6,10,10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        
+                                        <!-- Sign in to Online/Portal.  Visible if user is not signed in to 
+                                             Online/Portal.  -->
+                                        <HyperlinkButton 
+                                            x:Name="SignInToAgolLink"
+                                            Content="{Binding PortalName, 
+                                                ConverterParameter=SignInTo,
+                                                Converter={StaticResource LocalizationSignIn}}" 
+                                            VerticalAlignment="Center"
+                                            Foreground="{TemplateBinding Foreground}"
+                                            Template="{StaticResource NoFocusHyperlink}"
+                                            Visibility="{Binding PortalUser, 
+                                                Converter={StaticResource NullVisibilityConverter}}"
+                                            Margin="0,4,0,0">
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Click">
+                                                    <ei:ChangePropertyAction 
+                                                        TargetObject="{Binding ElementName=Menu}"
+                                                        PropertyName="IsOpen"
+                                                        Value="False"/>
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                            <HyperlinkButton.Command>
+                                                <local:SignInToAGSOLCommand />
+                                            </HyperlinkButton.Command>
+                                        </HyperlinkButton>
+                                        
+                                        <!-- Sign in to ArcGIS Server.  Always visible. -->
+                                        <HyperlinkButton 
+                                            Content="{Binding ConverterParameter=SignInToServer,
+                                                Converter={StaticResource LocalizationSignIn}}" 
+                                            VerticalAlignment="Center"
+                                            Foreground="{TemplateBinding Foreground}"
+                                            Template="{StaticResource NoFocusHyperlink}"
+                                            Grid.Row="1"
+                                            Margin="0,4,0,0">
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Click">
+                                                    <ei:ChangePropertyAction 
+                                                        TargetObject="{Binding ElementName=Menu}"
+                                                        PropertyName="IsOpen"
+                                                        Value="False"/>
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                            <HyperlinkButton.Command>
+                                                <local:SignInToServerCommand PromptForUrl="True" />
+                                            </HyperlinkButton.Command>
+                                        </HyperlinkButton>
+                                        
+                                        <!-- Sign out.  Visible if at least one user is signed in. -->
+                                        <HyperlinkButton 
+                                            Content="{Binding ConverterParameter=SignOut, 
+                                                Converter={StaticResource LocalizationSignIn}, 
+                                                Source={StaticResource LocalizationSignIn}}" 
+                                            VerticalAlignment="Center"
+                                            Foreground="{TemplateBinding Foreground}"
+                                            Template="{StaticResource NoFocusHyperlink}"
+                                            Visibility="{Binding SignOutVisibility}"
+                                            Grid.Row="2"
+                                            Margin="0,4,0,0">
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Click">
+                                                    <ei:ChangePropertyAction 
+                                                        TargetObject="{Binding ElementName=Menu}"
+                                                        PropertyName="IsOpen"
+                                                        Value="False"/>
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                            <HyperlinkButton.Command>
+                                                <local:SignOutAllCommand />
+                                            </HyperlinkButton.Command>
+                                        </HyperlinkButton>
+                                        
+                                        
+                                        <!--==============================================================
+                                             Code to be used when functionality is implemented to allow 
+                                             users to sign out individual accounts in addition to signing 
+                                             out all. 
+                                            ==============================================================-->
+                                        
+                                        <!-- Sign out (if exactly 1 is signed in) -->
+                                        <!--<HyperlinkButton 
+                                            Content="{Binding ConverterParameter=SignOut, 
+                                                Converter={StaticResource LocalizationSignIn}, 
+                                                Source={StaticResource LocalizationSignIn}}" 
+                                            VerticalAlignment="Center"
+                                            Foreground="{TemplateBinding Foreground}"
+                                            Template="{StaticResource NoFocusHyperlink}"
+                                            Visibility="{Binding Credentials.Count, 
+                                                Converter={StaticResource IntVisibilityConverter},
+                                                ConverterParameter=1}"
+                                            Grid.Row="2"
+                                            Margin="0,4,0,0">
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Click">
+                                                    <ei:ChangePropertyAction 
+                                                        TargetObject="{Binding ElementName=Menu}"
+                                                        PropertyName="IsOpen"
+                                                        Value="False"/>
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                            <HyperlinkButton.Command>
+                                                <local:SignOutAllCommand />
+                                            </HyperlinkButton.Command>
+                                        </HyperlinkButton>-->
+                                        
+                                        <!-- Sign out all (if more than one are signed in) -->
+                                        <!--<HyperlinkButton 
+                                            Content="Sign Out All" 
+                                            VerticalAlignment="Center"
+                                            Foreground="{TemplateBinding Foreground}"
+                                            Template="{StaticResource NoFocusHyperlink}"
+                                            Visibility="{Binding Credentials.Count, 
+                                                Converter={StaticResource GreaterThanToVisibilityConverter},
+                                                ConverterParameter=1}"
+                                            Grid.Row="2"
+                                            Margin="0,4,0,0">
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Click">
+                                                    <ei:ChangePropertyAction 
+                                                        TargetObject="{Binding ElementName=Menu}"
+                                                        PropertyName="IsOpen"
+                                                        Value="False"/>
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                            <HyperlinkButton.Command>
+                                                <local:SignOutAllCommand />
+                                            </HyperlinkButton.Command>
+                                        </HyperlinkButton>-->
+                                        
+                                        <!-- Sign out specific (appears if more than one are signed in) -->
+                                        <!--<HyperlinkButton 
+                                            Content="Sign Out..." 
+                                            VerticalAlignment="Center"
+                                            Foreground="{TemplateBinding Foreground}"
+                                            Template="{StaticResource NoFocusHyperlink}"
+                                            Visibility="{Binding Credentials.Count, 
+                                                Converter={StaticResource GreaterThanToVisibilityConverter},
+                                                ConverterParameter=1}"
+                                            Grid.Row="3"
+                                            Margin="0,4,0,0">
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Click">
+                                                    <ei:ChangePropertyAction 
+                                                        TargetObject="{Binding ElementName=Menu}"
+                                                        PropertyName="IsOpen"
+                                                        Value="False"/>
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                            <HyperlinkButton.Command>
+                                                <local:SignOutFromAGSOLCommand />
+                                            </HyperlinkButton.Command>
+                                        </HyperlinkButton>-->
+                                    </Grid>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

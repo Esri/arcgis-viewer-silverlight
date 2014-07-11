@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFeatureLayer" xml:space="preserve">
+    <value>Adăugare straturi tematice de obiecte spaţiale</value>
+  </data>
+  <data name="AddFeatureLayerWindowCheckAll" xml:space="preserve">
+    <value>Bifare tot</value>
+  </data>
+  <data name="AddFeatureLayerWindowUnCheckAll" xml:space="preserve">
+    <value>Debifare tot</value>
+  </data>
+  <data name="ArcGIS" xml:space="preserve">
+    <value>ArcGIS</value>
+  </data>
+  <data name="BackStageControlFeatureMaps" xml:space="preserve">
+    <value>Hărţi promovate</value>
+  </data>
+  <data name="BackStageControlGroups" xml:space="preserve">
+    <value>Grupuri</value>
+  </data>
+  <data name="BackStageControlMyGroups" xml:space="preserve">
+    <value>Grupurile mele</value>
+  </data>
+  <data name="BackStageControlMyOrgGroups" xml:space="preserve">
+    <value>Grupurile organizaţiei mele</value>
+  </data>
+  <data name="BackStageControlMyOrgPublicGroups" xml:space="preserve">
+    <value>Grupurile publice ale organizaţiei mele</value>
+  </data>
+  <data name="BackStageControlMyMaps" xml:space="preserve">
+    <value>Hărţile mele</value>
+  </data>
+  <data name="BackStageControlSearch" xml:space="preserve">
+    <value>Căutare</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>Faceţi clic aici pentru a vedea descrierea într-o fereastră de browser separată</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>Închidere detalii</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comentarii</value>
+  </data>
+  <data name="ContentEveryone" xml:space="preserve">
+    <value>toată lumea</value>
+  </data>
+  <data name="ContentGroups" xml:space="preserve">
+    <value>grupuri</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Creat de</value>
+  </data>
+  <data name="DefineQueryWindowAlias" xml:space="preserve">
+    <value>Pseudonim:</value>
+  </data>
+  <data name="DefineQueryWindowAnd" xml:space="preserve">
+    <value>şi</value>
+  </data>
+  <data name="DefineQueryWindowApply" xml:space="preserve">
+    <value>Aplicare</value>
+  </data>
+  <data name="DefineQueryWindowClickPickDate" xml:space="preserve">
+    <value>Faceţi clic pentru a selecta o dată care este formatată pentru utilizarea în expresie.</value>
+  </data>
+  <data name="DefineQueryWindowData" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DefineQueryWindowExpression" xml:space="preserve">
+    <value>Expresie:</value>
+  </data>
+  <data name="DefineQueryWindowFailedToRetrieveSampleFeaturesForLayer" xml:space="preserve">
+    <value>Eşec la preluarea obiectele spaţiale eşantion pentru stratul tematic.</value>
+  </data>
+  <data name="DefineQueryWindowFields" xml:space="preserve">
+    <value>Câmpuri:</value>
+  </data>
+  <data name="DefineQueryWindowLike" xml:space="preserve">
+    <value>precum</value>
+  </data>
+  <data name="DefineQueryWindowName" xml:space="preserve">
+    <value>Nume:</value>
+  </data>
+  <data name="DefineQueryWindowNot" xml:space="preserve">
+    <value>nu</value>
+  </data>
+  <data name="DefineQueryWindowOr" xml:space="preserve">
+    <value>sau</value>
+  </data>
+  <data name="DefineQueryWindowQuery" xml:space="preserve">
+    <value>Interogare</value>
+  </data>
+  <data name="DefineQueryWindowTableIsSampleOfFeatureLayer" xml:space="preserve">
+    <value>Următorul tabel este un exemplu de obiecte spaţiale din stratul tematic.</value>
+  </data>
+  <data name="DefineQueryWindowType" xml:space="preserve">
+    <value>Tip:</value>
+  </data>
+  <data name="DescriptionForMapCanotBeDisplayed" xml:space="preserve">
+    <value>Descrierea acestei hărţi nu poate fi afişată în această fereastră.</value>
+  </data>
+  <data name="ExceptionDeleteFailed" xml:space="preserve">
+    <value>Ştergere eşuată</value>
+  </data>
+  <data name="ExceptionDeleteFailedUserSignIn" xml:space="preserve">
+    <value>Ştergere eşuată. Utilizatorul nu este autentificat.</value>
+  </data>
+  <data name="ExceptionFaileAcceptApplicateForGroup" xml:space="preserve">
+    <value>Eşec la acceptarea aplicantului {0} pentru grupul {1}</value>
+  </data>
+  <data name="ExceptionFaileDeclineApplicateForGroup" xml:space="preserve">
+    <value>Eşec la declinarea aplicantului {0} pentru grup {1}</value>
+  </data>
+  <data name="ExceptionFailedInviteUserToGroup" xml:space="preserve">
+    <value>Eşec la invitarea utilizatorilor {0} în grupul {1}</value>
+  </data>
+  <data name="ExceptionFailedLeaveRequestForGroup" xml:space="preserve">
+    <value>Eşec la trimiterea solicitării de părăsire pentru utilizatorul {0} din grupul {1}</value>
+  </data>
+  <data name="ExceptionFailedSendJoinRequestToGroup" xml:space="preserve">
+    <value>Eşec la trimiterea solicitării de înscriere pentru utilizatorul {0} la grupul {1}</value>
+  </data>
+  <data name="ExceptionFailedToAcceptGroupInvitationForGroup" xml:space="preserve">
+    <value>Eşec la acceptarea invitaţiei de grup pentru grupul {0} de la {1}</value>
+  </data>
+  <data name="ExceptionFailedToCreateGroup" xml:space="preserve">
+    <value>Crearea grupului a eşuat.</value>
+  </data>
+  <data name="ExceptionFailedToDeclineGroupInvitationForGroup" xml:space="preserve">
+    <value>Eşec la refuzarea invitaţiei de grup pentru grupul {0} de la {1}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteGroup" xml:space="preserve">
+    <value>Eşec la ştergerea grupului {0}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteNoitification" xml:space="preserve">
+    <value>Eşec la ştergere notificării {0} de la {1}</value>
+  </data>
+  <data name="ExceptionFailedToGetGroupApplicationsForGroup" xml:space="preserve">
+    <value>Eşec la obţinerea aplicaţiilor pentru grupul {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveTagForUser" xml:space="preserve">
+    <value>Eşec la preluarea etichetelor pentru utilizatorul {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveOrgGroups" xml:space="preserve">
+    <value>Eşec la preluarea grupurilor organizaţionale</value>
+  </data>
+  <data name="ExceptionFailedToShareItem" xml:space="preserve">
+    <value>Eşec la partajarea elementului {0}</value>
+  </data>
+  <data name="ExceptionFailedToUpdateGroup" xml:space="preserve">
+    <value>Eşec la actualizarea grupului {0}</value>
+  </data>
+  <data name="ExceptionGetCommentsFailed" xml:space="preserve">
+    <value>Obţinere comentarii eşuată.</value>
+  </data>
+  <data name="ExceptionGetFolderFailedUserSignedIn" xml:space="preserve">
+    <value>GetFolder eşuat. Utilizatorul nu a fost autentificat.</value>
+  </data>
+  <data name="ExceptionNoUserSignedIn" xml:space="preserve">
+    <value>Niciun utilizator autentificat.</value>
+  </data>
+  <data name="ExceptionSignInFailed" xml:space="preserve">
+    <value>Autentificare eşuată.</value>
+  </data>
+  <data name="FeatureMapsControlCloseParenthesis" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="FeatureMapsControlDetails" xml:space="preserve">
+    <value>Detalii</value>
+  </data>
+  <data name="FeatureMapsControlLastModified" xml:space="preserve">
+    <value>(ultima modificare: </value>
+  </data>
+  <data name="FeatureMapsControlOpen" xml:space="preserve">
+    <value>Deschidere</value>
+  </data>
+  <data name="GroupControlClickHereToViewInSeparateBrowser" xml:space="preserve">
+    <value>Faceţi clic aici pentru a vedea descrierea într-o fereastră de browser separată</value>
+  </data>
+  <data name="GroupControlCloseGroup" xml:space="preserve">
+    <value>Închidere acest grup</value>
+  </data>
+  <data name="GroupControlDescription" xml:space="preserve">
+    <value>Descriere</value>
+  </data>
+  <data name="GroupControlFeaturedMaps" xml:space="preserve">
+    <value>Hărţi promovate</value>
+  </data>
+  <data name="GroupControlNoFeaturedMapsFound" xml:space="preserve">
+    <value>Nu a fost găsită nicio hartă cu obiecte spaţiale.</value>
+  </data>
+  <data name="GroupControlNoMapsFound" xml:space="preserve">
+    <value>Nu a fost găsită nicio hartă.</value>
+  </data>
+  <data name="GroupControlOwner" xml:space="preserve">
+    <value>Proprietar</value>
+  </data>
+  <data name="GroupControlPrivateUserCannotFindGroup" xml:space="preserve">
+    <value>Privat (Utilizatorii nu pot găsi grupul şi se pot înscrie numai pe bază de invitaţie)</value>
+  </data>
+  <data name="GroupControlPublicUserCanSearchAndFindGroup" xml:space="preserve">
+    <value>Public (Utilizatorii pot căuta şi găsi grupul)</value>
+  </data>
+  <data name="GroupControlSearchOwner" xml:space="preserve">
+    <value>proprietar: {0}</value>
+  </data>
+  <data name="GroupControlTags" xml:space="preserve">
+    <value>Etichete</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Grupuri</value>
+  </data>
+  <data name="HighestRated" xml:space="preserve">
+    <value>Calificativul cel mai mare</value>
+  </data>
+  <data name="ItemNotFound" xml:space="preserve">
+    <value>Element negăsit: {0}</value>
+  </data>
+  <data name="LastModified" xml:space="preserve">
+    <value>Ultima modificare</value>
+  </data>
+  <data name="MapDetailsRating" xml:space="preserve">
+    <value>({0} calificative)</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Hărţi</value>
+  </data>
+  <data name="MapServiceReferenceInvalid" xml:space="preserve">
+    <value>Referinţa pentru serviciul de hartă este nevalidă. Serviciul nu a putut fi adăugat la hartă.</value>
+  </data>
+  <data name="MapServiceReferenceNoDetails" xml:space="preserve">
+    <value>Referinţa pentru serviciul de hartă este nevalidă. Nu poate fi afişat niciun detaliu.</value>
+  </data>
+  <data name="MostComments" xml:space="preserve">
+    <value>Cele mai multe comentarii</value>
+  </data>
+  <data name="MostPopular" xml:space="preserve">
+    <value>Cel mai popular</value>
+  </data>
+  <data name="MostRecentlyAdded" xml:space="preserve">
+    <value>Cel mai recent adăugat</value>
+  </data>
+  <data name="MostRelevant" xml:space="preserve">
+    <value>Cel mai relevant</value>
+  </data>
+  <data name="MyGroupControlGroups" xml:space="preserve">
+    <value>{0} grupuri</value>
+  </data>
+  <data name="MyGroupControlOn" xml:space="preserve">
+    <value>în data de</value>
+  </data>
+  <data name="MyGroupControlOpenGroup" xml:space="preserve">
+    <value>Deschideţi acest grup</value>
+  </data>
+  <data name="MyGroupControlZeroGroups" xml:space="preserve">
+    <value>0 grupuri</value>
+  </data>
+  <data name="MyMapControlMaps" xml:space="preserve">
+    <value>{0} hărţi</value>
+  </data>
+  <data name="MyMapControlZeroMaps" xml:space="preserve">
+    <value>0 hărţi</value>
+  </data>
+  <data name="Places" xml:space="preserve">
+    <value>Locuri</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Proprietăţi</value>
+  </data>
+  <data name="RecentMaps" xml:space="preserve">
+    <value>Hărţi recente</value>
+  </data>
+  <data name="SearchArcGISCom" xml:space="preserve">
+    <value>Căutaţi în ArcGIS Online servicii de hărţi, imagini şi obiecte spaţiale</value>
+  </data>
+  <data name="SearchControlAdd" xml:space="preserve">
+    <value>Adăugare</value>
+  </data>
+  <data name="SearchControlMapServiceFound" xml:space="preserve">
+    <value>Serviciu de hartă găsit.</value>
+  </data>
+  <data name="SearchControlResultsFound" xml:space="preserve">
+    <value>{0} rezultate</value>
+  </data>
+  <data name="SearchControlServiceCouldNotBeAccessed" xml:space="preserve">
+    <value>Serviciul nu a putut fi accesat.</value>
+  </data>
+  <data name="SearchControlZeroResultsFound" xml:space="preserve">
+    <value>0 rezultate găsite.</value>
+  </data>
+  <data name="SearchDetailsBy" xml:space="preserve">
+    <value>de</value>
+  </data>
+  <data name="SearchDetailsRating" xml:space="preserve">
+    <value>Calificativ: </value>
+  </data>
+  <data name="SearchMapResultsFor" xml:space="preserve">
+    <value>{0} rezultate pentru {1}</value>
+  </data>
+  <data name="SearchTheWeb" xml:space="preserve">
+    <value>Căutaţi servicii de hartă pe Web</value>
+  </data>
+  <data name="SearchWebDetailsAdd" xml:space="preserve">
+    <value>Adăugare</value>
+  </data>
+  <data name="SearchWebDetailsCopyright" xml:space="preserve">
+    <value>Drepturi de autor: </value>
+  </data>
+  <data name="SearchWebDetailsDescription" xml:space="preserve">
+    <value>Descriere: </value>
+  </data>
+  <data name="SearchWebDetailsExploreGISServer" xml:space="preserve">
+    <value>Explorare acest server GIS</value>
+  </data>
+  <data name="SearchWebDetailsName" xml:space="preserve">
+    <value>Nume:</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sortare după</value>
+  </data>
+  <data name="SortResults" xml:space="preserve">
+    <value>Sortare rezultate</value>
+  </data>
+  <data name="SortSearchResults" xml:space="preserve">
+    <value>Sortaţi rezultatele căutării.</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Rezumat</value>
+  </data>
+  <data name="TheWeb" xml:space="preserve">
+    <value>Web</value>
+  </data>
+  <data name="TitleAZ" xml:space="preserve">
+    <value>Titlu A-Z</value>
+  </data>
+  <data name="TitleZA" xml:space="preserve">
+    <value>Titlu Z-A</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="UserSearchFailed" xml:space="preserve">
+    <value>Căutarea utilizatorului a eşuat.</value>
+  </data>
+  <data name="BackStageControlRecent" xml:space="preserve">
+    <value>Recente</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Autentificare</value>
+  </data>
+  <data name="SignInForgotYourPassword" xml:space="preserve">
+    <value>Aţi uitat parola?</value>
+  </data>
+  <data name="SignInSignUp" xml:space="preserve">
+    <value>Înregistrare</value>
+  </data>
+  <data name="InvalidIDOrPassword" xml:space="preserve">
+    <value>ID sau parolă nevalidă.</value>
+  </data>
+  <data name="NewHere" xml:space="preserve">
+    <value>Sunteţi nou aici?</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Parolă:</value>
+  </data>
+  <data name="UsernamePrompt" xml:space="preserve">
+    <value>Nume utilizator:</value>
+  </data>
+  <data name="DescriptionForGroupCanotBeDisplayed" xml:space="preserve">
+    <value>Descrierea acestui grup nu poate fi afişată în această fereastră.</value>
+  </data>
+  <data name="GroupControlOwnerParenthesis" xml:space="preserve">
+    <value>(Proprietar)</value>
+  </data>
+  <data name="LastModifiedPrompt" xml:space="preserve">
+    <value>(ultima modificare:</value>
+  </data>
+  <data name="LastModifiedPromptEnd" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="MapDetailsControlAverageRating" xml:space="preserve">
+    <value>Calificativ mediu</value>
+  </data>
+  <data name="MapDetailsControlType" xml:space="preserve">
+    <value>Tip</value>
+  </data>
+  <data name="OnWithSpace" xml:space="preserve">
+    <value> la </value>
+  </data>
+  <data name="SearchR" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="LoadingMaps" xml:space="preserve">
+    <value>Se încarcă hărţi...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Eliminare</value>
+  </data>
+  <data name="NoFeaturedMaps" xml:space="preserve">
+    <value>În prezent nu este disponibilă nicio hartă cu obiecte spaţiale</value>
+  </data>
+  <data name="SigningIn" xml:space="preserve">
+    <value>Autentificare...</value>
+  </data>
+  <data name="SignInLabel" xml:space="preserve">
+    <value>Autentificare la {0}</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Detalii serviciu</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="NumberResults" xml:space="preserve">
+    <value>(Rezultate {0})</value>
+  </data>
+  <data name="ProjectInputsNotValid" xml:space="preserve">
+    <value>Trebuie specificate geometria ţintă, referinţa spaţială de ieşire şi URL-ul către un serviciu de geometrie</value>
+  </data>
+  <data name="AGOL" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="NoResults" xml:space="preserve">
+    <value>Niciun rezultat de afişat</value>
+  </data>
+  <data name="SearchPlaces" xml:space="preserve">
+    <value>Căutaţi adrese, oraşe sau alte locuri</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adresă</value>
+  </data>
+  <data name="AddressTitleExpression" xml:space="preserve">
+    <value>{Adresă}</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Căutare</value>
+  </data>
+  <data name="SearchCategory" xml:space="preserve">
+    <value>Interogare</value>
+  </data>
+  <data name="SearchDescription" xml:space="preserve">
+    <value>Căutaţi locuri sau conţinut de adăugat la hartă</value>
+  </data>
+  <data name="SearchToolName" xml:space="preserve">
+    <value>Căutare</value>
+  </data>
+  <data name="ServiceConnectionFailed" xml:space="preserve">
+    <value>Conexiunea la serviciu a eşuat. Aceasta nu poate fi adăugată la hartă.</value>
+  </data>
+  <data name="CannotConvertBack" xml:space="preserve">
+    <value>Nu se poate converti înapoi</value>
+  </data>
+  <data name="EmptyGeometryServiceUrl" xml:space="preserve">
+    <value>URL-ul serviciului de geometrie nu poate fi o valoare nulă sau necompletată</value>
+  </data>
+  <data name="EmptyLocatorUrl" xml:space="preserve">
+    <value>URL-ul serviciului localizator nu poate fi o valoare nulă sau necompletată</value>
+  </data>
+  <data name="InvalidSearchResultType" xml:space="preserve">
+    <value>Rezultatul căutării trebuie să fie de tipul ArcGISPortalItem, WebSearchResultItem sau ArcGISService</value>
+  </data>
+  <data name="MustSpecifyExtentFields" xml:space="preserve">
+    <value>Trebuie specificate toate câmpurile de extindere</value>
+  </data>
+  <data name="NullExtentSpatialRef" xml:space="preserve">
+    <value>Referinţa spaţială pentru extindere nu poate fi nulă</value>
+  </data>
+  <data name="CommandNotExecutable" xml:space="preserve">
+    <value>Comanda nu este o stare executabilă</value>
+  </data>
+  <data name="ZeroExtentWidthError" xml:space="preserve">
+    <value>Lăţimea pentru extindere trebuie să fie mai mare ca zero</value>
+  </data>
+  <data name="Searching" xml:space="preserve">
+    <value>Se caută...</value>
+  </data>
+  <data name="IncludedSearches" xml:space="preserve">
+    <value>Căutări incluse:</value>
+  </data>
+  <data name="SearchType" xml:space="preserve">
+    <value>Tip căutare:</value>
+  </data>
+  <data name="SelectSearchTypes" xml:space="preserve">
+    <value>Selectaţi tipurile de căutări de inclus</value>
+  </data>
+  <data name="LocatorUrl" xml:space="preserve">
+    <value>URL-ul serviciului:</value>
+  </data>
+  <data name="Bottom" xml:space="preserve">
+    <value>Jos:</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Conectare</value>
+  </data>
+  <data name="ConnectedTo" xml:space="preserve">
+    <value>Conectat la serviciul localizator {0}</value>
+  </data>
+  <data name="ExtentFields" xml:space="preserve">
+    <value>Utilizare câmpuri pentru extindere</value>
+  </data>
+  <data name="Left" xml:space="preserve">
+    <value>Stânga:</value>
+  </data>
+  <data name="Right" xml:space="preserve">
+    <value>Dreapta:</value>
+  </data>
+  <data name="Top" xml:space="preserve">
+    <value>Sus:</value>
+  </data>
+  <data name="ConfigureLocatorService" xml:space="preserve">
+    <value>{0} Căutare: Specificaţi un serviciu localizator</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>Se conectează...</value>
+  </data>
+  <data name="ExtentFieldsTooltip" xml:space="preserve">
+    <value>Utilizaţi câmpuri pentru a defini extinderea rezultatelor căutării. Extinderea este utilizată pentru transfocarea la un rezultat.</value>
+  </data>
+  <data name="ExtentWidth" xml:space="preserve">
+    <value>Utilizare lăţime extindere</value>
+  </data>
+  <data name="ExtentWidthInputError" xml:space="preserve">
+    <value>Lăţimea extinderii trebuie să fie un număr mai mare decât zero</value>
+  </data>
+  <data name="ExtentWidthTooltip" xml:space="preserve">
+    <value>Utilizaţi o lăţime pentru a defini extinderea rezultatelor căutării. Extinderea este utilizată pentru transfocarea la un rezultat.</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Metri</value>
+  </data>
+  <data name="AddSearchError" xml:space="preserve">
+    <value>Tipul căutării nu a putut fi adăugat. Comanda nu se află în prezent într-o stare executabilă.</value>
+  </data>
+  <data name="ClickConnect" xml:space="preserve">
+    <value>Faceţi clic pentru a verifica URL-ul</value>
+  </data>
+  <data name="ClickNext" xml:space="preserve">
+    <value>Faceţi clic pe Înainte pentru a continua</value>
+  </data>
+  <data name="ConfigureResultExtent" xml:space="preserve">
+    <value>{0} Căutare: Alegeţi modul de transfocare la fiecare rezultat</value>
+  </data>
+  <data name="EnterLocatorUrl" xml:space="preserve">
+    <value>Introduceţi un URL către un serviciu de localizator ArcGIS Server</value>
+  </data>
+  <data name="LocatorConnectionFailed" xml:space="preserve">
+    <value>Conexiune eşuată. Verificaţi URL-ul şi încercaţi din nou.</value>
+  </data>
+  <data name="LocatorUrlMustEndWith" xml:space="preserve">
+    <value>URL-ul trebuie să se termine cu „GeocodeServer”</value>
+  </data>
+  <data name="UnitsCentimeters" xml:space="preserve">
+    <value>Centimetri</value>
+  </data>
+  <data name="UnitsFeet" xml:space="preserve">
+    <value>Ft</value>
+  </data>
+  <data name="UnitsInches" xml:space="preserve">
+    <value>Inci</value>
+  </data>
+  <data name="UnitsKilometers" xml:space="preserve">
+    <value>Kilometri</value>
+  </data>
+  <data name="UnitsMeters" xml:space="preserve">
+    <value>Metri</value>
+  </data>
+  <data name="UnitsMiles" xml:space="preserve">
+    <value>Mile</value>
+  </data>
+  <data name="UnitsNauticalMiles" xml:space="preserve">
+    <value>Mile marine</value>
+  </data>
+  <data name="UnitsYards" xml:space="preserve">
+    <value>Yarzi</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Utilizare Proxy</value>
+  </data>
+  <data name="ConnectingToLocatorService" xml:space="preserve">
+    <value>Se conectează la serviciul de localizator...</value>
+  </data>
+  <data name="ContainsErrorMessage" xml:space="preserve">
+    <value>Colecţia trebuie să implementeze o metodă Conţine care să accepte un parametru cu tip de returnare boolean</value>
+  </data>
+  <data name="ExpectedItemTypeMismatch" xml:space="preserve">
+    <value>{0}.Metoda Conţine aşteaptă ca intrare un obiect de tipul {1}. A fost transmis un parametru de tipul {2}.</value>
+  </data>
+</root>

@@ -1,0 +1,493 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:esriMapping="http://schemas.esri.com/arcgis/mapping/2009"    
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:ctlPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+	xmlns:extensibility="http://schemas.esri.com/arcgis/client/extensibility/2010"
+	xmlns:converters="clr-namespace:ESRI.ArcGIS.Client.Application.Layout.Converters;assembly=ESRI.ArcGIS.Client.Application.Layout"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    mc:Ignorable="d"
+    d:DesignHeight="600" d:DesignWidth="600">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourceDictionaries/Common/Shared_Resources.xaml" />
+                <ResourceDictionary Source="ResourceDictionaries/Common/HorizontalNavigationStyle.xaml" />
+                <ResourceDictionary Source="ResourceDictionaries/EditorWidget_Resources.xaml" />
+                <ResourceDictionary Source="ResourceDictionaries/Common/HoverPopupContainerStyle.xaml" />
+                <ResourceDictionary Source="ResourceDictionaries/Common/OnClickPopupContainerStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <extensibility:MapApplicationBindingSource x:Key="MapApplication" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" d:DataContext="{Binding Source={StaticResource ViewerDataSource}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Rectangle x:Name="BackgroundColorRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="{StaticResource AccentColorBrush}" Grid.RowSpan="2" />
+        <Rectangle x:Name="BackgroundTintRectangle" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.RowSpan="2" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0,5" StartPoint="0,0" SpreadMethod="Repeat" MappingMode="Absolute">
+                    <GradientStop Color="#88000000" Offset="0"/>
+                    <GradientStop Color="#BB000000" Offset="0.75"/>
+                    <GradientStop Color="#FF000000" Offset="0.75"/>
+                    <GradientStop Color="#FF000000" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Grid x:Name="HeaderGrid" HorizontalAlignment="Left" Margin="10,5,10,5" Grid.Row="0" VerticalAlignment="Top"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Image x:Name="HeaderImage" Grid.Column="0" Source="{Binding LogoFilePath, Converter={StaticResource ImageUrlResolver}}" Stretch="Uniform" MaxWidth="35" Effect="{StaticResource SlightDropShadow}" VerticalAlignment="Center" HorizontalAlignment="Left" />
+            <Grid Margin="5,0,0,0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <TextBlock x:Name="ViewerTitle"  Text="{Binding TitleText}" Grid.Column="1" FontWeight="ExtraBold" FontSize="24" Foreground="White" Margin="0" />
+            </Grid>
+        </Grid>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Grid.Column="1" >
+            <ItemsControl ItemsSource="{Binding HelpLinks}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,2,-16,5" >
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <HyperlinkButton NavigateUri="{Binding Url}" TargetName="_blank" Foreground="White" >
+                                <Grid Effect="{StaticResource SlightDropShadow}">
+                                    <TextBlock Text="{Binding DisplayText}" >
+                                        <TextBlock.Effect>
+                                            <BlurEffect Radius="5" />
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                    <TextBlock Text="{Binding DisplayText}" Foreground="White"  />
+
+                                </Grid>
+
+                            </HyperlinkButton>
+                            <Rectangle Height="12" Width="1" Fill="White" Margin="10,1,10,1" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+            <ContentControl x:Name="MainToolbarContainer" Margin="0,0,5,0" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                                MinWidth="50" >
+                <ContentControl.Effect>
+                    <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="1" Direction="300" />
+                </ContentControl.Effect>
+            </ContentControl>
+
+        </StackPanel>
+
+
+        <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="295" MinWidth="295" MaxWidth="450" />
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="InfoGrid" Grid.Column="1" >
+
+
+
+                <Grid x:Name="SidePanelContainerGird" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,10,10" Visibility="{Binding ElementName=SidePanelContainer, Path=Visibility}" >
+                    <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF1B1B1B" Stroke="{StaticResource AccentColorBrush}" StrokeThickness="2" Margin="0" Grid.RowSpan="3" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect Opacity="0.75" Color="Black" BlurRadius="10" ShadowDepth="5" />
+                        </Rectangle.Effect>
+                    </Rectangle>
+
+                    <Border HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="2" Background="#44FFFFFF" CornerRadius="0,0,2,2" Margin="0" />
+                    <Border HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="2" Background="#44FFFFFF" CornerRadius="0,2,2,0" Margin="0" Grid.RowSpan="3" />
+
+                    <Border BorderThickness="2" HorizontalAlignment="Stretch" Background="{StaticResource BackgroundGradientBrush}" Margin="13" >
+                        <Border.BorderBrush>
+                            <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                <GradientStop Color="#FF292929" Offset="0.385"/>
+                                <GradientStop Color="#FF8D8D8D" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <Grid HorizontalAlignment="Stretch" Margin="0" VerticalAlignment="Stretch" Visibility="{Binding ElementName=SidePanelContainer, Path=Visibility}" >
+                            <sdk:TabControl x:Name="SidePanelContainer"
+                                TabStripPlacement="Top"
+                                BorderBrush="Transparent"
+                                Background="{StaticResource BackgroundGradientBrush}"
+                                Style="{StaticResource SidePanelTabControlStyle}" SelectedIndex="2"
+                                Visibility="Visible"
+                                VerticalAlignment="Stretch"
+                                >
+
+                                <sdk:TabItem Header="{Binding ConverterParameter=SearchTabHeader, Converter={StaticResource LayoutLocalization}}"
+                                    ToolTipService.ToolTip="{Binding ConverterParameter=SearchTabHeader, Converter={StaticResource LayoutLocalization}}"
+                                    Name="SearchTabItem" Cursor="Hand"
+                                         VerticalAlignment="Stretch"
+                                    Visibility="Visible">
+
+                                    <Grid>
+                                        <Grid Margin="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="2" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Text="{Binding ConverterParameter=Search, Converter={StaticResource LayoutLocalization}}"
+                                                Foreground="{StaticResource BackgroundTextColorBrush}"
+                                                Margin="7"
+                                                FontSize="14" />
+
+                                            <Rectangle Grid.Row="1"                                               
+                                                Fill="{StaticResource AccentColorGradientBrush}" />
+
+                                            <ContentControl HorizontalContentAlignment="Stretch"
+                                    VerticalContentAlignment="Stretch" 
+                                    Name="SearchControlContainer"
+                                    Visibility="Visible"
+                                    Grid.Row="2" />
+                                        </Grid>
+                                    </Grid>
+
+                                </sdk:TabItem>
+
+                                <sdk:TabItem Header="{Binding ConverterParameter=BrowseTabHeader, Converter={StaticResource LayoutLocalization}}"
+                            ToolTipService.ToolTip="{Binding ConverterParameter=BrowseTabHeader, Converter={StaticResource LayoutLocalization}}"
+                            Name="BrowseTabItem" Cursor="Hand"
+                                         VerticalAlignment="Stretch"
+                            Visibility="Visible">
+                                    <Grid>
+                                        <Grid Margin="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="2" />
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Text="{Binding ConverterParameter=BrowseTabHeader, Converter={StaticResource LayoutLocalization}}"
+                                    Foreground="{StaticResource BackgroundTextColorBrush}"
+                                    Margin="7"
+                                    FontSize="14" />
+
+                                            <Rectangle Grid.Row="1"
+                                    Fill="{StaticResource AccentColorGradientBrush}" />
+
+                                            <ContentControl HorizontalContentAlignment="Stretch"
+                                    VerticalContentAlignment="Stretch" 
+                                    Name="AddContentControlContainer"
+                                    Visibility="Visible" 
+                                    Grid.Row="2"/>
+
+                                        </Grid>
+                                    </Grid>
+                                </sdk:TabItem>
+
+                                <sdk:TabItem Header="{Binding ConverterParameter=ContentsTabHeader, Converter={StaticResource LayoutLocalization}}"
+                            ToolTipService.ToolTip="{Binding ConverterParameter=ContentsTabHeader, Converter={StaticResource LayoutLocalization}}"
+                            Name="MapContentsTabItem" Cursor="Hand"
+                                         VerticalAlignment="Stretch"
+                            Visibility="Visible">
+
+                                    <Grid Margin="2">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="2" />
+                                            <RowDefinition />
+                                            <RowDefinition Height="2" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+
+                                        <TextBlock Text="{Binding ConverterParameter=MapContentsTabHeader, Converter={StaticResource LayoutLocalization}}"
+                                        Foreground="{StaticResource BackgroundTextColorBrush}"
+                                        Margin="7"
+                                        FontSize="14" />
+
+                                        <Rectangle Grid.Row="1"
+                                        Fill="{StaticResource AccentColorGradientBrush}" />
+
+                                        <ContentControl 
+                                            Grid.Row="2"
+                                            HorizontalContentAlignment="Stretch"
+                                            VerticalContentAlignment="Stretch"
+                                            Name="MapContentsContainer"
+                                            Visibility="Visible"
+                                            Foreground="{StaticResource BackgroundTextColorBrush}"
+                                            Background="{StaticResource BackgroundGradientBrush}"/>
+
+                                        <Rectangle Grid.Row="3"
+                                            Fill="{StaticResource AccentColorGradientBrush}" Visibility="{Binding ElementName=LayerConfigurationToolbarContainer, Path=Visibility}"/>
+
+                                        <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="3">
+                                            <ContentControl Name="LayerConfigurationToolbarContainer"></ContentControl>
+                                        </StackPanel>
+                                    </Grid>
+                                </sdk:TabItem>
+
+                                <sdk:TabItem Header="{Binding ConverterParameter=EditTabHeader, Converter={StaticResource LayoutLocalization}}"
+                            ToolTipService.ToolTip="{Binding ConverterParameter=EditTabHeader, Converter={StaticResource LayoutLocalization}}"
+                            Name="EditTabItem" Cursor="Hand"
+                                         VerticalAlignment="Stretch"
+                            Visibility="Collapsed">
+                                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="2" />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="{Binding ConverterParameter=EditTabHeader, Converter={StaticResource LayoutLocalization}}"
+                                        Foreground="{StaticResource BackgroundTextColorBrush}"
+                                        Margin="9,9,9,7"
+                                        FontSize="14" />
+
+                                        <Rectangle Grid.Row="1"
+                                        Fill="{StaticResource AccentColorGradientBrush}" />
+                                        <Grid x:Name="Editing" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Grid.Row="2" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <esri:EditorWidget x:Name="editorWidget" 
+                                               GeometryServiceUrl="{Binding Urls.GeometryServiceUrl, Source={StaticResource MapApplication}}"
+                                               Map="{Binding ElementName=Map}"
+                                               ShowAttributesOnAdd="False"
+                                               HorizontalAlignment="Stretch" Margin="-7,0,-4,0"
+                                               Style="{StaticResource EditorWidgetStyle}">
+                                            </esri:EditorWidget>
+
+                                            <ContentControl x:Name="EditorConfigContainer" 
+                                Grid.Row="1"
+                                DataContext="{Binding Path=Content.Command.Configuration, RelativeSource={RelativeSource Self}}"
+                                HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                            </ContentControl>
+                                        </Grid>
+
+                                    </Grid>
+                                </sdk:TabItem>
+
+                            </sdk:TabControl>
+                        </Grid>
+
+                    </Border>
+                </Grid>
+ 
+                <Button x:Name="SidePanelCloseButton" Content="{Binding ConverterParameter=Button, Converter={StaticResource LayoutLocalization}}" Opacity="1" HorizontalAlignment="Right" VerticalAlignment="Top" Width="23" Margin="0,14,24,0" Visibility="{Binding Visibility, ElementName=SidePanelContainer}" Style="{StaticResource CloseButtonStyle}" Background="{StaticResource AccentColorBrush}" BorderBrush="{StaticResource AccentColorBrush}" Foreground="{StaticResource AccentTextColorBrush}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <ei:ChangePropertyAction TargetObject="{Binding ElementName=SidePanelContainer}" PropertyName="Visibility">
+                                <ei:ChangePropertyAction.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </ei:ChangePropertyAction.Value>
+                            </ei:ChangePropertyAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+
+            </Grid>
+
+
+            <Grid x:Name="MapGrid" Margin="10,0,10,10" Grid.Column="0"
+                  Grid.ColumnSpan="{Binding ElementName=SidePanelContainer, Path=Visibility, Converter={StaticResource VisibilityToIntConverter}, ConverterParameter='1,2'}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="175" MinHeight="75" MaxHeight="450" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="#FF1B1B1B" Stroke="{StaticResource AccentColorBrush}" StrokeThickness="2" Margin="0" Grid.RowSpan="3" >
+                    <Rectangle.Effect>
+                        <DropShadowEffect Opacity="0.75" Color="Black" BlurRadius="10" ShadowDepth="5" />
+                    </Rectangle.Effect>
+                </Rectangle>
+
+                <Border HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="2" Background="#44FFFFFF" CornerRadius="0,0,2,2" Margin="0" />
+                <Border HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="2" Background="#44FFFFFF" CornerRadius="0,2,2,0" Margin="0" Grid.RowSpan="3" />
+
+                <Border BorderThickness="2" HorizontalAlignment="Stretch" Background="White" Margin="13,13,13,0" Grid.RowSpan="{Binding Visibility, ConverterParameter=1\,2, Converter={StaticResource VisibilityToIntConverter}, ElementName=FeatureDataGridContainer}" >
+                    <Border.BorderBrush>
+                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                            <GradientStop Color="#FF292929" Offset="0.385"/>
+                            <GradientStop Color="#FF8D8D8D" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.BorderBrush>
+                    <Grid>
+                        <esri:Map x:Name="Map" HorizontalAlignment="Stretch" IsLogoVisible="False"  VerticalAlignment="Stretch" Grid.ColumnSpan="2" Grid.RowSpan="2" 
+                            d:DataContext="{Binding RelativeSource={RelativeSource Self}, Converter={StaticResource SampleGraphicsLayerConverter}}"
+                              WrapAround="True">
+
+                        </esri:Map>
+
+
+                        <ContentControl x:Name="AttributionDisplayContainer"
+                                    HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                                    Margin="0,0,5,5"/>
+                    </Grid>
+
+                </Border>
+
+                <Grid x:Name="FeatureDataGridContainerGrid" Margin="13,5,12,0" VerticalAlignment="Stretch" Grid.Row="1" Opacity="0" HorizontalAlignment="Stretch" Visibility="{Binding ElementName=FeatureDataGridContainer, Path=Visibility}" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border BorderThickness="1,1,1,0.5" BorderBrush="{StaticResource BackgroundTextColorBrush}" 
+                                Margin="0,0,0,-2" VerticalAlignment="Top" Background="{StaticResource BackgroundEndGradientStopColorBrush}">
+                        <TextBlock TextWrapping="Wrap" Foreground="{StaticResource BackgroundTextColorBrush}" 
+                                Text="{Binding SelectedLayerName,
+                                ConverterParameter=AttributesOf,
+                                Converter={StaticResource LayoutLocalization},
+                                Source={StaticResource MapApplication}}"                                             
+                                FontSize="12" FontWeight="Bold"
+                                Margin="5,3,3,5"/>
+                    </Border>
+                    <ContentControl x:Name="FeatureDataGridContainer" 
+                            Margin="0"
+                            Background="Transparent"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch" Visibility="Collapsed"
+                            Grid.Row="1">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="FeatureDataGridContainer_CommonStates">
+                                <VisualState x:Name="FeatureDataGridContainer_Show">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="FeatureDataGridContainer" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimation Storyboard.TargetName="FeatureDataGridContainerGrid" Storyboard.TargetProperty="Opacity"
+											To="1" Duration="0:0:.7" BeginTime="0:0:0.15" />
+                                        <DoubleAnimation Storyboard.TargetName="FeatureDataGridCloseButton" Storyboard.TargetProperty="Opacity"
+											To="1" Duration="0:0:.7" BeginTime="0:0:0.15" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="FeatureDataGridContainer_Hide">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="FeatureDataGridContainerGrid" Storyboard.TargetProperty="Opacity"
+											To="0" Duration="0:0:0.2" />
+                                        <DoubleAnimation Storyboard.TargetName="FeatureDataGridCloseButton" Storyboard.TargetProperty="Opacity"
+											To="0" Duration="0:0:0.2" />
+                                        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00.2" Duration="00:00:00.0010000" Storyboard.TargetName="FeatureDataGridContainer" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <esri:FeatureDataGrid
+            		        x:Name="FeatureDataGrid"                 
+            		        Map="{Binding ElementName=Map}"
+            		        HorizontalGridLinesBrush="#FF45647D" 
+            		        VerticalGridLinesBrush="#FFC7E3FA"
+            		        Foreground="#FF3b5a73"
+            		        AutoGenerateColumns="False" 
+                            DataContext="{Binding}"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch" 
+                            BorderBrush="{StaticResource BackgroundTextColorBrush}"
+                            ColumnHeaderStyle="{StaticResource DefaultColumnHeaderStyle}"
+                            RowStyle="{StaticResource DefaultRowStyle}"
+                            RowHeaderStyle="{StaticResource DefaultRowHeaderStyle}"
+                            CellStyle="{StaticResource DefaultCellStyle}"
+                            Style="{StaticResource FeatureDataGridStyle}" 
+                            BorderThickness="1,0,1,1"/>
+                    </ContentControl>
+                    <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0"
+                                Grid.Row="1">
+                        <StackPanel Orientation="Horizontal">
+                            <ContentControl x:Name="RecordFilterToolbarContainer"/>
+                            <ContentControl x:Name="FeatureDataGridToolbarContainer" Margin="30,0,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <Button x:Name="FeatureDataGridCloseButton" Content="{Binding ConverterParameter=Button, Converter={StaticResource LayoutLocalization}}" 
+                            HorizontalAlignment="Right" VerticalAlignment="Top" Opacity="0" Width="23" Margin="0" 
+                            Visibility="{Binding Visibility, ElementName=FeatureDataGridContainer}" 
+                            Style="{StaticResource FeatureDataGridCloseButton}" 
+                            Background="{StaticResource AccentColorBrush}" BorderBrush="{StaticResource AccentColorBrush}" 
+                            Foreground="{StaticResource AccentTextColorBrush}" Grid.Column="1" BorderThickness="1">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <ei:ChangePropertyAction TargetObject="{Binding ElementName=FeatureDataGridContainer}" PropertyName="Visibility">
+                                    <ei:ChangePropertyAction.Value>
+                                        <Visibility>Collapsed</Visibility>
+                                    </ei:ChangePropertyAction.Value>
+                                </ei:ChangePropertyAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
+                </Grid>
+
+                <controls:GridSplitter 
+                                   Grid.Row="1" Grid.Column="0"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Top"
+                                   Visibility="{Binding ElementName=FeatureDataGridContainer, Path=Visibility}" 
+                                   Background="Transparent" Margin="0" 
+                                    Style="{StaticResource NoFocusGridSplitterStyle}"/>
+
+
+                <Grid HorizontalAlignment="Stretch" MinHeight="25" Grid.Row="2" Margin="18,0,18,0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <esri:MapProgressBar Map="{Binding ElementName=Map}" Width="250" Height="30" Style="{StaticResource MapProgressBarStyle}" Margin="20,0,0,0" Grid.Column="0" VerticalAlignment="Center" />
+
+                    <esri:Navigation x:Name="NavigationControl" Map="{Binding ElementName=Map}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,-2,0,-4"
+                                 Style="{StaticResource NavigationStyle}"/>
+
+                    <ContentControl x:Name="ScaleBarContainer" Grid.Column="0"
+                                                      Margin="20,-3,0,-3"                                                   
+                                                      HorizontalAlignment="Left" 
+                                                      HorizontalContentAlignment="Stretch"                                
+                                                      VerticalAlignment="Center"                                                                                                     
+                                                      Foreground="WhiteSmoke">
+                    </ContentControl>
+
+
+                </Grid>
+
+            </Grid>
+
+
+            <controls:GridSplitter Grid.Column="0"
+                                   HorizontalAlignment="Right"
+                                   VerticalAlignment="Stretch"
+                                   Visibility="Visible" 
+                                   Background="Transparent" Margin="0" 
+                                   Style="{StaticResource NoFocusGridSplitterStyle}"/>
+        </Grid>
+
+        <!-- Loading overlay.  Shown during Viewer initialization. -->
+        <ContentControl x:Name="LoadingOverlay" Template="{StaticResource LoadingOverlayTemplate}" 
+                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.RowSpan="2" />
+    </Grid>
+</UserControl>

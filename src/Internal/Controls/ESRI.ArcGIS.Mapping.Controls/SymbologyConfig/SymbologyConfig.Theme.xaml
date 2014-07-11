@@ -1,0 +1,170 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls">
+    
+    <Style TargetType="local:SymbologyConfig">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:SymbologyConfig">
+                    <Grid>
+                        <StackPanel>
+                            <StackPanel x:Name="SymbolTypePanel" Margin="10,10,0,0" Orientation="Horizontal">
+                                <TextBlock Text="Symbol Type:" 
+                                   FontSize="11" FontWeight="Normal" FontFamily="Verdana" Foreground="Black" HorizontalAlignment="Left"
+                                   VerticalAlignment="Center" />
+                                <RadioButton x:Name="SimpleSymbolOption" Content="Simple" GroupName="SymbolType" 
+                                    FontFamily="Verdana" FontSize="11" Foreground="Black" Margin="5,0,0,0" Cursor="Hand"
+                                    VerticalAlignment="Center">
+                                    <ToolTipService.ToolTip>
+                                        <TextBlock FontSize="11" Text="Simple Symbol" />
+                                    </ToolTipService.ToolTip>
+                                </RadioButton>
+                                <RadioButton x:Name="ClassBreaksOption" Content="Value Ranges" 
+                                    GroupName="SymbolType" 
+                                    FontFamily="Verdana" FontSize="11" Foreground="Black" Margin="5,0,0,0"
+                                    VerticalAlignment="Center" Cursor="Hand">
+                                    <ToolTipService.ToolTip>
+                                        <TextBlock FontSize="11" Text="Value Ranges" />
+                                    </ToolTipService.ToolTip>
+                                </RadioButton>
+                            </StackPanel>
+
+                            <ContentControl x:Name="ClassifySection" Visibility="Collapsed">
+                                <StackPanel VerticalAlignment="Center" Margin="10,0,10,0">
+                                    <Grid Margin="0,5,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="Classify By:" VerticalAlignment="Center" FontSize="11" FontFamily="Verdana" Foreground="Black"
+                                FontWeight="Normal" />
+                                        <ComboBox x:Name="NumericFields" Grid.Column="1" />
+                                        <TextBlock Text="Colors:" x:Name="lblColors" VerticalAlignment="Center" FontSize="11" FontFamily="Verdana" Foreground="Black"
+                                FontWeight="Normal" Grid.Row="1" />
+
+                                        <ContentControl x:Name="FillSymbolSourceTypeSection" Grid.Row="1" Grid.Column="1">
+                                            <StackPanel Orientation="Horizontal">
+                                                <RadioButton x:Name="PredefinedColorsOption" GroupName="2" 
+                                FontFamily="Verdana" Margin="3" FontSize="11"  Cursor="Hand">
+                                                    <ToolTipService.ToolTip>
+                                                        <TextBlock FontSize="11" Text="Set of predefined colors" />
+                                                    </ToolTipService.ToolTip>
+                                                    <RadioButton.Content>
+                                                        <TextBlock Text="Pre-Defined"/>
+                                                    </RadioButton.Content>
+                                                </RadioButton>
+                                                <RadioButton x:Name="CustomColorsOption" GroupName="2" 
+                                FontFamily="Verdana" Margin="3" FontSize="11" Cursor="Hand">
+                                                    <RadioButton.Content>
+                                                        <TextBlock Text="Custom Colors" />
+                                                    </RadioButton.Content>
+                                                    <ToolTipService.ToolTip>
+                                                        <TextBlock FontSize="11" Text="Custom" />
+                                                    </ToolTipService.ToolTip>
+                                                </RadioButton>
+                                            </StackPanel>
+                                        </ContentControl>
+                                    </Grid>
+                                </StackPanel>
+                            </ContentControl>
+
+                            <ContentControl x:Name="DefaultSymbolConfigContainer" VerticalAlignment="Center" Margin="10,5,10,0">
+
+                            </ContentControl>
+
+                            <Grid x:Name="ClassBreakConfigContainer" Height="208" Visibility="Collapsed">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <local:MultiThumbSlider x:Name="ClassBreaksSlider" Orientation="Vertical"
+                                    VerticalAlignment="Center" HorizontalAlignment="Center"                                           
+                                    FontWeight="Normal" Height="195" Width="30" Margin="15,0,10,0" />
+                                <Border BorderBrush="Black" Grid.Column="1" BorderThickness="2" Padding="5" CornerRadius="4" Margin="0,5,5,0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="23"/>
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                                <TextBlock FontWeight="Bold" FontFamily="Verdana"  VerticalAlignment="Center" 
+                                                FontSize="11" Foreground="Black" Text="Range:"/>
+                                                <TextBlock x:Name="MinTextBlock" FontFamily="Verdana" 
+                                                FontSize="11" Foreground="Black" Cursor="Hand"  VerticalAlignment="Center" 
+                                                Margin="5,0,0,0">
+                                                <ToolTipService.ToolTip>
+                                                    <TextBlock FontSize="11" Text="Modify Range" />
+                                                </ToolTipService.ToolTip>
+                                        </TextBlock>
+                                                <TextBox x:Name="MinTextBox" FontSize="11" FontFamily="Verdana" 
+                                                    Visibility="Collapsed" VerticalAlignment="Center"  
+                                                    Width="80" Margin="5,0,0,0"/>
+                                                <TextBlock Text="To" FontFamily="Verdana" VerticalAlignment="Center" 
+                                                    FontSize="11" Foreground="Black" Margin="5,0,0,0" />
+                                                <TextBlock x:Name="MaxTextBlock" FontFamily="Verdana" 
+                                                    FontSize="11" Foreground="Black" Cursor="Hand" VerticalAlignment="Center" 
+                                                    Margin="5,0,0,0">
+                                                    <ToolTipService.ToolTip>
+                                                        <TextBlock FontSize="11" Text="Modify Range" />
+                                                    </ToolTipService.ToolTip>
+                                                </TextBlock>
+                                                <TextBox x:Name="MaxTextBox" FontSize="11" FontFamily="Verdana" Margin="5,0,0,0"
+                                                    Visibility="Collapsed" VerticalAlignment="Center"  
+                                                    Width="80" FontWeight="Normal" />
+                                            </StackPanel>
+
+                                            <StackPanel HorizontalAlignment="Right" Grid.Column="1" Orientation="Horizontal">
+                                                <Button x:Name="AddRangeButton" Content="+">
+                                                    <ToolTipService.ToolTip>
+                                                        <TextBlock Text="Add Range" Foreground="Black" FontFamily="Verdana" FontSize="11"  />
+                                                    </ToolTipService.ToolTip>
+                                                </Button>
+                                                <Button x:Name="DeleteRangeButton" Content="X">
+                                                    <ToolTipService.ToolTip>
+                                                        <TextBlock Text="DeleteRange" Foreground="Black" FontFamily="Verdana" FontSize="11"  />
+                                                    </ToolTipService.ToolTip>
+                                                </Button>
+                                                <Button x:Name="PreviousRangeButton" IsEnabled="False" Content="&lt;&lt;">
+                                                    <ToolTipService.ToolTip>
+                                                        <TextBlock Text="Previous Range" Foreground="Black" FontFamily="Verdana" FontSize="11"  />
+                                                    </ToolTipService.ToolTip>
+                                                </Button>
+                                                <Button x:Name="NextRangeButton" Content="&gt;&gt;">
+                                                    <ToolTipService.ToolTip>
+                                                        <TextBlock Text="Next Range" Foreground="Black" FontFamily="Verdana" FontSize="11"  />
+                                                    </ToolTipService.ToolTip>
+                                                </Button>
+                                            </StackPanel>
+                                        </Grid>
+                                        <ContentControl x:Name="ClassBreakSymbologyConfigContainer" Grid.Row="1" Margin="0,5,0,0">
+
+                                        </ContentControl>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

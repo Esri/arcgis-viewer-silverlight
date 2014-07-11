@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ToolPanels xmlns:esri="http://schemas.esri.com/arcgis/mapping/2009"
+xmlns:$safeprojectname$="clr-namespace:$safeprojectname$.AddIns;assembly=$safeprojectname$.AddIns"
+    xmlns:SearchTool="clr-namespace:SearchTool;assembly=SearchTool.AddIns">
+  <ToolPanel Name="Main Toolbar" ContainerName="MainToolbarContainer" Orientation="Horizontal">
+    <Tools>
+      <Tool Label="My Sample Tool" Icon="/ESRI.ArcGIS.Mapping.Controls;component/images/icon_tools16.png" Description="My Sample Tool">
+        <Tool.Class>
+          <$safeprojectname$:MyTool />
+        </Tool.Class>
+        <Tool.ConfigData>Hello World!</Tool.ConfigData>
+      </Tool>
+
+      <Tool Label="Choose Basemap" Icon="Images/toolbar/BaseMapGallery16.png" Description="Select a basemap for the map">
+        <Tool.Class>
+          <esri:BaseMapGallery />
+        </Tool.Class>
+        <Tool.ConfigData>
+          <BaseMaps>
+            <BaseMapInfo>
+              <DisplayName>Streets</DisplayName>
+              <Name>Streets</Name>
+              <ThumbnailImage>Images/basemaps/agol_streets.png</ThumbnailImage>
+              <Url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer</Url>
+              <BaseMapType>ArcGISServer</BaseMapType>
+            </BaseMapInfo>
+            <BaseMapInfo>
+              <DisplayName>Topographic</DisplayName>
+              <Name>Topo</Name>
+              <ThumbnailImage>Images/basemaps/agol_topo.png</ThumbnailImage>
+              <Url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer</Url>
+              <BaseMapType>ArcGISServer</BaseMapType>
+            </BaseMapInfo>
+            <BaseMapInfo>
+              <DisplayName>Imagery</DisplayName>
+              <Name>Imagery</Name>
+              <ThumbnailImage>Images/basemaps/agol_imagery.png</ThumbnailImage>
+              <Url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer</Url>
+              <BaseMapType>ArcGISServer</BaseMapType>
+            </BaseMapInfo>
+            <BaseMapInfo>
+              <DisplayName>USA Topo Maps</DisplayName>
+              <Name>USA Topo Maps</Name>
+              <ThumbnailImage>Images/basemaps/agol_usa.png</ThumbnailImage>
+              <Url>http://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer</Url>
+              <BaseMapType>ArcGISServer</BaseMapType>
+            </BaseMapInfo>
+            <BaseMapInfo>
+              <DisplayName>Ocean</DisplayName>
+              <Name>Ocean</Name>
+              <ThumbnailImage>Images/basemaps/agol_ocean.png</ThumbnailImage>
+              <Url>http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer</Url>
+              <BaseMapType>ArcGISServer</BaseMapType>
+            </BaseMapInfo>
+            <BaseMapInfo>
+              <DisplayName>Light Gray Canvas</DisplayName>
+              <Name>Light Gray Canvas</Name>
+              <ThumbnailImage>Images/basemaps/agol_gray_canvas.png</ThumbnailImage>
+              <Url>http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer</Url>
+              <BaseMapType>ArcGISServer</BaseMapType>
+            </BaseMapInfo>
+            <BaseMapInfo>
+              <DisplayName>Terrain</DisplayName>
+              <Name>Terrain</Name>
+              <ThumbnailImage>Images/basemaps/agol_terrain.png</ThumbnailImage>
+              <Url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer</Url>
+              <BaseMapType>ArcGISServer</BaseMapType>
+            </BaseMapInfo>
+            <BaseMapInfo>
+              <DisplayName>Shaded Relief</DisplayName>
+              <Name>Shaded Relief</Name>
+              <ThumbnailImage>Images/basemaps/agol_world_relief.png</ThumbnailImage>
+              <Url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer</Url>
+              <BaseMapType>ArcGISServer</BaseMapType>
+            </BaseMapInfo>
+            <BaseMapInfo>
+              <DisplayName>OpenStreetMap</DisplayName>
+              <Name>OpenStreetMap</Name>
+              <ThumbnailImage>Images/basemaps/osm.png</ThumbnailImage>
+              <Url>http://OpenStreetMap.org</Url>
+              <BaseMapType>OpenStreetMap</BaseMapType>
+            </BaseMapInfo>
+            <BaseMapInfo>
+              <DisplayName>Bing Maps Roads</DisplayName>
+              <Name>Roads</Name>
+              <ThumbnailImage>Images/basemaps/bingmaps_roads.png</ThumbnailImage>
+              <Url>http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc</Url>
+              <BaseMapType>BingMaps</BaseMapType>
+            </BaseMapInfo>
+            <BaseMapInfo>
+              <DisplayName>Bing Maps Aerial</DisplayName>
+              <Name>Aerial</Name>
+              <ThumbnailImage>Images/basemaps/bingmaps_aerial.png</ThumbnailImage>
+              <Url>http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc</Url>
+              <BaseMapType>BingMaps</BaseMapType>
+            </BaseMapInfo>
+            <BaseMapInfo>
+              <DisplayName>Bing Maps Hybrid</DisplayName>
+              <Name>Hybrid</Name>
+              <ThumbnailImage>Images/basemaps/bingmaps_hybrid.png</ThumbnailImage>
+              <Url>http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc</Url>
+              <BaseMapType>BingMaps</BaseMapType>
+            </BaseMapInfo>
+          </BaseMaps>
+        </Tool.ConfigData>
+      </Tool>
+      <Tool Label="Map Contents" Icon="Images/toolbar/ToggleMapContentsCommand16.png" Description="Toggle map contents">
+        <Tool.Class>
+          <esri:ToggleMapContentsCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Attribute Table" Icon="Images/toolbar/ToggleTableCommand16.png" Description="Show or hide the attributes table">
+        <Tool.Class>
+          <esri:ToggleTableCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:extensibility="clr-namespace:ESRI.ArcGIS.Client.Extensibility;assembly=ESRI.ArcGIS.Client.Extensibility" xmlns:esri="http://schemas.esri.com/arcgis/mapping/2009" xmlns:SearchTool="clr-namespace:SearchTool;assembly=SearchTool.AddIns" Label="Search" Icon="/SearchTool.AddIns;component/Images/search.png" Description="Search for places or content to add to the map">
+        <Tool.Class>
+          <SearchTool:SearchTool />
+        </Tool.Class>
+        <Tool.ConfigData>
+          <ArrayOfKeyValuePairOfstringArrayOfKeyValueOfstringstringty7Ep6D1 xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/System.Collections.Generic">
+            <KeyValuePairOfstringArrayOfKeyValueOfstringstringty7Ep6D1>
+              <Key>SearchTool.ArcGISLocatorPlaceSearchProvider, SearchTool.AddIns, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7d02758d2b79eff1</Key>
+              <Value xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d3p1:KeyValueOfstringstring>
+                  <d3p1:Key>Name</d3p1:Key>
+                  <d3p1:Value>Places</d3p1:Value>
+                </d3p1:KeyValueOfstringstring>
+                <d3p1:KeyValueOfstringstring>
+                  <d3p1:Key>Description</d3p1:Key>
+                  <d3p1:Value>Search for addresses, cities, or other places</d3p1:Value>
+                </d3p1:KeyValueOfstringstring>
+                <d3p1:KeyValueOfstringstring>
+                  <d3p1:Key>Configuration</d3p1:Key>
+                  <d3p1:Value>&lt;ArrayOfKeyValueOfstringanyType xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2003/10/Serialization/Arrays"&gt;&lt;KeyValueOfstringanyType&gt;&lt;Key&gt;LocatorInfo&lt;/Key&gt;&lt;Value xmlns:d3p1="http://schemas.datacontract.org/2004/07/SearchTool" i:type="d3p1:LocatorService"&gt;&lt;d3p1:Title&gt;World&lt;/d3p1:Title&gt;&lt;d3p1:Url&gt;http://geocode.arcgis.com/ArcGIS/rest/services/World/GeocodeServer&lt;/d3p1:Url&gt;&lt;d3p1:copyrightText i:nil="true" /&gt;&lt;d3p1:currentVersion&gt;10.11&lt;/d3p1:currentVersion&gt;&lt;d3p1:description i:nil="true" /&gt;&lt;d3p1:serviceDescription&gt;World&lt;/d3p1:serviceDescription&gt;&lt;d3p1:spatialReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/ESRI.ArcGIS.Client.Geometry"&gt;&lt;d4p1:wkid&gt;4326&lt;/d4p1:wkid&gt;&lt;/d3p1:spatialReference&gt;&lt;d3p1:units i:nil="true" /&gt;&lt;d3p1:addressFields&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Address&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;100&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Address&lt;/d3p1:name&gt;&lt;d3p1:required&gt;true&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Admin1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;40&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Admin1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Admin2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Admin2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Admin3&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Admin3&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Admin4&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Admin4&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Postal&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Postal&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;PostalExt&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;PostalExt&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Country&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;CountryCode&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;/d3p1:addressFields&gt;&lt;d3p1:candidateFields&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Loc_name&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;22&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Loc_name&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Shape&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Shape&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeGeometry&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Score&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Score&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Match_Addr&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;300&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Match_Addr&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;SubAdmin&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;150&lt;/d3p1:length&gt;&lt;d3p1:name&gt;SubAdmin&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;DepAdmin&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;90&lt;/d3p1:length&gt;&lt;d3p1:name&gt;DepAdmin&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Admin&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;120&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Admin&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Country&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;40&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Country&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;DisplayX&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;DisplayX&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;DisplayY&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;DisplayY&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;X&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;X&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Y&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Y&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Ymax&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Ymax&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Ymin&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Ymin&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Xmin&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Xmin&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Xmax&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Xmax&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Addr_Type&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;30&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Addr_Type&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Type&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;120&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Type&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Rank&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Rank&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Side&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;6&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Side&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddNum&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;80&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddNum&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StPreDir&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StPreDir&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StPreType&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;30&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StPreType&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StName&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;150&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StName&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StType&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;30&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StType&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StDir&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StDir&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Locality&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;80&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Locality&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Postal&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Postal&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;PostalExt&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;PostalExt&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;LangCode&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;50&lt;/d3p1:length&gt;&lt;d3p1:name&gt;LangCode&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddNumFrom&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;10&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddNumFrom&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddNumTo&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;10&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddNumTo&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddBldg&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;70&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddBldg&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Status&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;1&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Status&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;/d3p1:candidateFields&gt;&lt;d3p1:intersectionCandidateFields&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Loc_name&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;22&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Loc_name&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Shape&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Shape&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeGeometry&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Score&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Score&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Match_Addr&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;300&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Match_Addr&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;SubAdmin&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;150&lt;/d3p1:length&gt;&lt;d3p1:name&gt;SubAdmin&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;DepAdmin&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;90&lt;/d3p1:length&gt;&lt;d3p1:name&gt;DepAdmin&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Admin&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;120&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Admin&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Country&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;40&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Country&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;DisplayX&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;DisplayX&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;DisplayY&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;DisplayY&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;X&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;X&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Y&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Y&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Ymax&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Ymax&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Ymin&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Ymin&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Xmin&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Xmin&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Xmax&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Xmax&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Addr_Type&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;30&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Addr_Type&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Type&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;120&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Type&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Rank&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Rank&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Side&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;6&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Side&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddNum&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;80&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddNum&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StPreDir&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StPreDir&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StPreType&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;30&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StPreType&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StName&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;150&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StName&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StType&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;30&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StType&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StDir&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StDir&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Locality&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;80&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Locality&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Postal&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Postal&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;PostalExt&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;PostalExt&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;LangCode&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;50&lt;/d3p1:length&gt;&lt;d3p1:name&gt;LangCode&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Side1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;1&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Side1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddNumFrom1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;10&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddNumFrom1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddNumTo1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;10&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddNumTo1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StPreDir1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StPreDir1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StPreType1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;25&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StPreType1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StName1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;150&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StName1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StType1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;30&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StType1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StDir1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StDir1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Admin1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;70&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Admin1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Postal1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Postal1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Side2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;1&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Side2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddNumFrom2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;10&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddNumFrom2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddNumTo2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;10&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddNumTo2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StPreDir2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StPreDir2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StPreType2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;25&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StPreType2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StName2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;150&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StName2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StType2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;30&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StType2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;StDir2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;StDir2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Admin2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;70&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Admin2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Postal2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Postal2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddBldg&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;70&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddBldg&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Locality1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;80&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Locality1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Country1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;40&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Country1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Xmin1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Xmin1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Xmax1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Xmax1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Ymin1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Ymin1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Ymax1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Ymax1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Locality2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;80&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Locality2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Country2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;40&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Country2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Xmin2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Xmin2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Xmax2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Xmax2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Ymin2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Ymin2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Ymax2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Ymax2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;SubAdmin1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;100&lt;/d3p1:length&gt;&lt;d3p1:name&gt;SubAdmin1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;LangCode1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;10&lt;/d3p1:length&gt;&lt;d3p1:name&gt;LangCode1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;SubAdmin2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;100&lt;/d3p1:length&gt;&lt;d3p1:name&gt;SubAdmin2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;LangCode2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;10&lt;/d3p1:length&gt;&lt;d3p1:name&gt;LangCode2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;DepAdmin1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;70&lt;/d3p1:length&gt;&lt;d3p1:name&gt;DepAdmin1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;DepAdmin2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;70&lt;/d3p1:length&gt;&lt;d3p1:name&gt;DepAdmin2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Shape1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Shape1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeGeometry&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;PostalExt1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;PostalExt1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Shape2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Shape2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeGeometry&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;PostalExt2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;20&lt;/d3p1:length&gt;&lt;d3p1:name&gt;PostalExt2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddNumFrom&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;5&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddNumFrom&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddNumTo&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;5&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddNumTo&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;Status&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;1&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Status&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddNum1&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;10&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddNum1&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;d3p1:Field&gt;&lt;d3p1:alias&gt;AddNum2&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;10&lt;/d3p1:length&gt;&lt;d3p1:name&gt;AddNum2&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:Field&gt;&lt;/d3p1:intersectionCandidateFields&gt;&lt;d3p1:locatorProperties&gt;&lt;d3p1:EndOffset&gt;0&lt;/d3p1:EndOffset&gt;&lt;d3p1:IntersectionConnectors i:nil="true" /&gt;&lt;d3p1:MatchIfScoresTie&gt;false&lt;/d3p1:MatchIfScoresTie&gt;&lt;d3p1:MinimumCandidateScore&gt;0&lt;/d3p1:MinimumCandidateScore&gt;&lt;d3p1:SideOffset&gt;0&lt;/d3p1:SideOffset&gt;&lt;d3p1:SideOffsetUnits i:nil="true" /&gt;&lt;d3p1:SpellingSensitivity&gt;0&lt;/d3p1:SpellingSensitivity&gt;&lt;d3p1:SuggestedBatchSize&gt;50&lt;/d3p1:SuggestedBatchSize&gt;&lt;d3p1:UICLSID&gt;3d486637-6bcf-4a0c-83db-a02d437fb8fc&lt;/d3p1:UICLSID&gt;&lt;d3p1:WritePercentAlongField&gt;FALSE&lt;/d3p1:WritePercentAlongField&gt;&lt;d3p1:WriteReferenceIDField&gt;FALSE&lt;/d3p1:WriteReferenceIDField&gt;&lt;d3p1:WriteStandardizedAddressFields i:nil="true" /&gt;&lt;d3p1:WriteXYCoordFields&gt;FALSE&lt;/d3p1:WriteXYCoordFields&gt;&lt;/d3p1:locatorProperties&gt;&lt;d3p1:singleLineAddressField&gt;&lt;d3p1:alias&gt;Single Line Input&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;100&lt;/d3p1:length&gt;&lt;d3p1:name&gt;SingleLine&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeString&lt;/d3p1:type&gt;&lt;/d3p1:singleLineAddressField&gt;&lt;/Value&gt;&lt;/KeyValueOfstringanyType&gt;&lt;KeyValueOfstringanyType&gt;&lt;Key&gt;UseExtentFields&lt;/Key&gt;&lt;Value xmlns:d3p1="http://www.w3.org/2001/XMLSchema" i:type="d3p1:boolean"&gt;true&lt;/Value&gt;&lt;/KeyValueOfstringanyType&gt;&lt;KeyValueOfstringanyType&gt;&lt;Key&gt;ExtentFields&lt;/Key&gt;&lt;Value xmlns:d3p1="http://schemas.datacontract.org/2004/07/SearchTool" i:type="d3p1:ExtentFields"&gt;&lt;d3p1:XMaxField&gt;&lt;d3p1:alias&gt;Xmax&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Xmax&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:XMaxField&gt;&lt;d3p1:XMinField&gt;&lt;d3p1:alias&gt;Xmin&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Xmin&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:XMinField&gt;&lt;d3p1:YMaxField&gt;&lt;d3p1:alias&gt;Ymax&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Ymax&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:YMaxField&gt;&lt;d3p1:YMinField&gt;&lt;d3p1:alias&gt;Ymin&lt;/d3p1:alias&gt;&lt;d3p1:length&gt;0&lt;/d3p1:length&gt;&lt;d3p1:name&gt;Ymin&lt;/d3p1:name&gt;&lt;d3p1:required&gt;false&lt;/d3p1:required&gt;&lt;d3p1:type&gt;esriFieldTypeDouble&lt;/d3p1:type&gt;&lt;/d3p1:YMinField&gt;&lt;/Value&gt;&lt;/KeyValueOfstringanyType&gt;&lt;KeyValueOfstringanyType&gt;&lt;Key&gt;WidthUnit&lt;/Key&gt;&lt;Value xmlns:d3p1="http://schemas.datacontract.org/2004/07/SearchTool" i:type="d3p1:LengthUnits"&gt;UnitsMeters&lt;/Value&gt;&lt;/KeyValueOfstringanyType&gt;&lt;KeyValueOfstringanyType&gt;&lt;Key&gt;UseProxy&lt;/Key&gt;&lt;Value xmlns:d3p1="http://www.w3.org/2001/XMLSchema" i:type="d3p1:boolean"&gt;false&lt;/Value&gt;&lt;/KeyValueOfstringanyType&gt;&lt;/ArrayOfKeyValueOfstringanyType&gt;</d3p1:Value>
+                </d3p1:KeyValueOfstringstring>
+              </Value>
+            </KeyValuePairOfstringArrayOfKeyValueOfstringstringty7Ep6D1>
+            <KeyValuePairOfstringArrayOfKeyValueOfstringstringty7Ep6D1>
+              <Key>SearchTool.ArcGISPortalServiceSearchProvider, SearchTool.AddIns, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7d02758d2b79eff1</Key>
+              <Value xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d3p1:KeyValueOfstringstring>
+                  <d3p1:Key>Name</d3p1:Key>
+                  <d3p1:Value>ArcGIS Online</d3p1:Value>
+                </d3p1:KeyValueOfstringstring>
+                <d3p1:KeyValueOfstringstring>
+                  <d3p1:Key>Description</d3p1:Key>
+                  <d3p1:Value>Search ArcGIS Online for map, image, and feature services</d3p1:Value>
+                </d3p1:KeyValueOfstringstring>
+              </Value>
+            </KeyValuePairOfstringArrayOfKeyValueOfstringstringty7Ep6D1>
+            <KeyValuePairOfstringArrayOfKeyValueOfstringstringty7Ep6D1>
+              <Key>SearchTool.GoogleServiceSearchProvider, SearchTool.AddIns, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7d02758d2b79eff1</Key>
+              <Value xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d3p1:KeyValueOfstringstring>
+                  <d3p1:Key>Name</d3p1:Key>
+                  <d3p1:Value>The Web</d3p1:Value>
+                </d3p1:KeyValueOfstringstring>
+                <d3p1:KeyValueOfstringstring>
+                  <d3p1:Key>Description</d3p1:Key>
+                  <d3p1:Value>Search for map services on the web</d3p1:Value>
+                </d3p1:KeyValueOfstringstring>
+              </Value>
+            </KeyValuePairOfstringArrayOfKeyValueOfstringstringty7Ep6D1>
+          </ArrayOfKeyValuePairOfstringArrayOfKeyValueOfstringstringty7Ep6D1>
+        </Tool.ConfigData>
+      </Tool>
+      <Tool Label="Select" Icon="Images/toolbar/SelectByDrawCommand16.png" Description="Select features by drawing a box on the map">
+        <Tool.Class>
+          <esri:SelectByDrawCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Clear Selection" Icon="Images/toolbar/ClearSelectionCommand16.png" Description="Clear the selected features from the currently selected layer">
+        <Tool.Class>
+          <esri:ClearSelectionCommand />
+        </Tool.Class>
+      </Tool>
+    </Tools>
+  </ToolPanel>
+  <ToolPanel Name="Layer Toolbar" ContainerName="LayerConfigurationToolbarContainer" Orientation="Horizontal">
+    <Tools>
+      <Tool Label="Refresh" Icon="Images/toolbar/RefreshLayerCommand16.png" Description="Refresh the currently selected layer">
+        <Tool.Class>
+          <esri:RefreshLayerCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Go To" Icon="Images/toolbar/GoToLayerCommand16.png" Description="Zoom to the currently selected layer">
+        <Tool.Class>
+          <esri:GoToLayerCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Service Details" Icon="Images/toolbar/ServiceDetailsCommand16.png" Description="View information about the selected layer&apos;s data source">
+        <Tool.Class>
+          <esri:ServiceDetailsCommand />
+        </Tool.Class>
+      </Tool>
+    </Tools>
+  </ToolPanel>
+  <ToolPanel Name="Layer Context Menu" ContainerName="LayerConfigurationContextMenuContainer" Orientation="Vertical">
+    <Tools>
+      <Tool Label="Refresh" Icon="Images/toolbar/RefreshLayerCommand16.png" Description="Refresh the currently selected layer">
+        <Tool.Class>
+          <esri:RefreshLayerCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Go To" Icon="Images/toolbar/GoToLayerCommand16.png" Description="Zoom to the currently selected layer">
+        <Tool.Class>
+          <esri:GoToLayerCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Service Details" Icon="Images/toolbar/ServiceDetailsCommand16.png" Description="View information about the selected layer&apos;s data source">
+        <Tool.Class>
+          <esri:ServiceDetailsCommand />
+        </Tool.Class>
+      </Tool>
+    </Tools>
+  </ToolPanel>
+  <ToolPanel Name="Attribute Table Toolbar" ContainerName="FeatureDataGridToolbarContainer" Orientation="Horizontal">
+    <Tools>
+      <Tool Label="Select All" Icon="Images/toolbar/SelectAllCommand16.png" Description="Select all the features in the currently selected layer">
+        <Tool.Class>
+          <esri:SelectAllCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Zoom to Selection" Icon="Images/toolbar/zoomToSelectionCommand16.png" Description="Zoom to the currently selected features">
+        <Tool.Class>
+          <esri:ZoomToSelectionCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Export Selection" Icon="Images/toolbar/ExportSelectionCommand16.png" Description="Export the attributes of selected features to a CSV file">
+        <Tool.Class>
+          <esri:ExportSelectionCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Clear Selection" Icon="Images/toolbar/ClearSelectionCommand16.png" Description="Clear the selected features from the currently selected layer">
+        <Tool.Class>
+          <esri:ClearSelectionCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Filter by Map Extent" Icon="Images/toolbar/ToggleFilterFeaturesByMapExtentCommand16.png" Description="Only show records for the features within the current map extent">
+        <Tool.Class>
+          <esri:ToggleFilterFeaturesByMapExtentCommand />
+        </Tool.Class>
+      </Tool>
+    </Tools>
+  </ToolPanel>
+  <ToolPanel Name="Filter Records Toolbar" ContainerName="RecordFilterToolbarContainer" Orientation="Horizontal">
+    <Tools>
+      <Tool Label="Show All" Icon="Images/toolbar/ToggleAttributeDisplayAllCommand16.png" Description="Show records for all features in the current layer">
+        <Tool.Class>
+          <esri:ToggleAttributeDisplayAllCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Show Selected" Icon="Images/toolbar/ToggleAttributeDisplaySelectedCommand16.png" Description="Show records for selected features in the current layer">
+        <Tool.Class>
+          <esri:ToggleAttributeDisplaySelectedCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Show Unselected" Icon="Images/toolbar/ToggleAttributeDisplayNotSelectedCommand16.png" Description="Show records for unselected features in the current layer">
+        <Tool.Class>
+          <esri:ToggleAttributeDisplayNotSelectedCommand />
+        </Tool.Class>
+      </Tool>
+    </Tools>
+  </ToolPanel>
+  <ToolPanel Name="Pop-Up Toolbar" ContainerName="PopupToolbarContainer" Orientation="Horizontal">
+    <Tools>
+      <Tool xmlns:QueryRelated="clr-namespace:QueryRelatedRecords.AddIns;assembly=QueryRelatedRecords.AddIns" Label="Get Related Records" Icon="/QueryRelatedRecords.AddIns;component/images/GetRelatedRecords16.png" Description="Retrieve the related records for a feature">
+        <Tool.Class>
+          <QueryRelated:QueryRelatedTool />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Delete Feature" Icon="Images/toolbar/DeleteGraphicCommand16.png" Description="Remove the feature from the layer">
+        <Tool.Class>
+          <esri:DeleteGraphicCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Edit Shape" Icon="Images/toolbar/EditShapeCommand16.png" Description="Modify the feature&apos;s geometry">
+        <Tool.Class>
+          <esri:EditShapeCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Edit Values" Icon="Images/toolbar/EditValuesCommand16.png" Description="Modify the feature&apos;s attribute values">
+        <Tool.Class>
+          <esri:EditValuesCommand />
+        </Tool.Class>
+      </Tool>
+      <Tool Label="Add Attachment" Icon="Images/toolbar/AddAttachmentsCommand16.png" Description="Add an attachment to the feature">
+        <Tool.Class>
+          <esri:AddAttachmentsCommand />
+        </Tool.Class>
+      </Tool>
+    </Tools>
+  </ToolPanel>
+</ToolPanels>

@@ -1,0 +1,102 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ESRI.ArcGIS.Client.Extensibility;component/Themes/Common.Theme.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Design host brushes -->
+    <SolidColorBrush x:Key="DesignHostBackgroundStartBrush" Color="{StaticResource BackgroundStartGradientStopColor}" />
+    <SolidColorBrush x:Key="DesignHostBackgroundEndBrush" Color="{StaticResource BackgroundEndGradientStopColor}" />
+    <LinearGradientBrush x:Key="DesignHostBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="-1" ScaleY="1"/>
+                <SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5"/>
+                <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="{StaticResource BackgroundStartGradientStopColor}"/>
+        <GradientStop Color="{StaticResource BackgroundEndGradientStopColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="DesignHostBackgroundTextBrush" Color="{StaticResource BackgroundTextColor}" />
+
+    <SolidColorBrush x:Key="DesignHostAccentBrush" Color="{StaticResource AccentColor}" />
+    <SolidColorBrush x:Key="DesignHostAccentTextBrush" Color="{StaticResource AccentTextColor}" />
+
+    <SolidColorBrush x:Key="DesignHostSelectionBrush" Color="{StaticResource SelectionColor}" />
+    <SolidColorBrush x:Key="DesignHostSelectionOutlineBrush" Color="{StaticResource SelectionOutlineColor}" />
+    <SolidColorBrush x:Key="DesignHostMouseOverBrush" Color="{StaticResource MouseOverColor}" />
+
+    <!-- Design host scroll viewer -->
+    <Style x:Key="DesignHostScrollViewerStyle" TargetType="ScrollViewer">
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Visible" />
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollViewer">
+                    <Border CornerRadius="2" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <ScrollContentPresenter x:Name="ScrollContentPresenter"
+                                                  Cursor="{TemplateBinding Cursor}"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"/>
+
+                            <Rectangle Grid.Column="1" Grid.Row="1" Fill="{TemplateBinding Background}"/>
+
+                            <ScrollBar x:Name="VerticalScrollBar"
+                                     IsTabStop="False"
+                                     Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                     Grid.Column="1" Grid.Row="0" Orientation="Vertical"
+                                     ViewportSize="{TemplateBinding ViewportHeight}"
+                                     Maximum="{TemplateBinding ScrollableHeight}"
+                                     Minimum="0"
+                                       Width="11"
+                                     Value="{TemplateBinding VerticalOffset}"
+                                     Style="{StaticResource BuilderScrollBarStyle}"
+                                       Foreground="{StaticResource DesignHostAccentBrush}"
+                                       BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                       Background="Transparent"/>
+
+                            <ScrollBar x:Name="HorizontalScrollBar"
+                                     IsTabStop="False"
+                                     Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                     Grid.Column="0" Grid.Row="1" Orientation="Horizontal"
+                                     ViewportSize="{TemplateBinding ViewportWidth}"
+                                     Maximum="{TemplateBinding ScrollableWidth}"
+                                     Minimum="0"
+                                       Height="11"
+                                     Value="{TemplateBinding HorizontalOffset}"
+                                     Style="{StaticResource BuilderScrollBarStyle}"
+                                       Foreground="{StaticResource DesignHostAccentBrush}"
+                                       BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                       Background="Transparent"/>
+
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

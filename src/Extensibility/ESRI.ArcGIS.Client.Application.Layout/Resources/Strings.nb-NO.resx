@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddPointInstructions" xml:space="preserve">
+    <value>Klikk på kartet for å opprette {0} geoobjekt.</value>
+  </data>
+  <data name="AddSelect" xml:space="preserve">
+    <value>Legg til utvalg</value>
+  </data>
+  <data name="AddSelectDescription" xml:space="preserve">
+    <value>Legg geoobjekter til gjeldende utvalg</value>
+  </data>
+  <data name="AddShapeInstructions" xml:space="preserve">
+    <value>Klikk på kartet for å legge til knekkpunkter, og dobbeltklikk deretter for å opprette {0} geoobjekt.</value>
+  </data>
+  <data name="AttributesOf" xml:space="preserve">
+    <value>Attributter for {0}</value>
+  </data>
+  <data name="AutoCompleteDescription" xml:space="preserve">
+    <value>Autofullfør polygoner</value>
+  </data>
+  <data name="AutoComplete" xml:space="preserve">
+    <value>Autofullfør</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>Autozoom til valgt</value>
+  </data>
+  <data name="BrowseTabHeader" xml:space="preserve">
+    <value>Bla gjennom</value>
+  </data>
+  <data name="BtnBack" xml:space="preserve">
+    <value>Tilbake</value>
+  </data>
+  <data name="BtnCancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="BtnNext" xml:space="preserve">
+    <value>Neste</value>
+  </data>
+  <data name="BtnOk" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>Knapp</value>
+  </data>
+  <data name="CancelTool" xml:space="preserve">
+    <value>Avbryt verktøy</value>
+  </data>
+  <data name="ClearSelect" xml:space="preserve">
+    <value>Tøm utvalg</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>Klikk for å flytte østover</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>Klikk for å flytte nordover</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>Klikk for å flytte sørover</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>Klikk for å flytte vestover</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Bekreft</value>
+  </data>
+  <data name="ContentsTabHeader" xml:space="preserve">
+    <value>Innhold</value>
+  </data>
+  <data name="ContentTypeColon" xml:space="preserve">
+    <value>Innholdstype: </value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Klipp ut</value>
+  </data>
+  <data name="CutDescription" xml:space="preserve">
+    <value>Klipp ut geoobjekt</value>
+  </data>
+  <data name="DeleteAttachment" xml:space="preserve">
+    <value>Slett dette vedlegget</value>
+  </data>
+  <data name="DeleteSelect" xml:space="preserve">
+    <value>Slett utvalg</value>
+  </data>
+  <data name="DeleteSelectDescription" xml:space="preserve">
+    <value>Slett valgte geoobjekter</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>Dra for å rotere</value>
+  </data>
+  <data name="DragToZoomInOrOut" xml:space="preserve">
+    <value>Dra for å zoome inn eller ut</value>
+  </data>
+  <data name="DrawingDotDot" xml:space="preserve">
+    <value>Tegner...</value>
+  </data>
+  <data name="EditGeometry" xml:space="preserve">
+    <value>Rediger figur</value>
+  </data>
+  <data name="EditShapeDescription" xml:space="preserve">
+    <value>Rediger geoobjektgeometri, plassering, rotasjon eller målestokk</value>
+  </data>
+  <data name="EditTabHeader" xml:space="preserve">
+    <value>Legg til geoobjekter</value>
+  </data>
+  <data name="EditValues" xml:space="preserve">
+    <value>Rediger verdier</value>
+  </data>
+  <data name="EditValuesDescription" xml:space="preserve">
+    <value>Rediger geoobjektverdier</value>
+  </data>
+  <data name="Freehand" xml:space="preserve">
+    <value>Frihånd</value>
+  </data>
+  <data name="FreehandDescription" xml:space="preserve">
+    <value>Bruk frihånd til å opprette linjer eller figurer</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>Full utstrekning</value>
+  </data>
+  <data name="MapContentsTabHeader" xml:space="preserve">
+    <value>Kartinnhold</value>
+  </data>
+  <data name="MoveBarUpZoomInMoveDownToZoomOut" xml:space="preserve">
+    <value>Flytt stolpen opp for å zoome inn, ned for å zoome ut</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>Flytt fremst</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>Flytt bakerst</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>Flytt neste</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>Flytt forrige</value>
+  </data>
+  <data name="NameColon" xml:space="preserve">
+    <value>Navn: </value>
+  </data>
+  <data name="NewSelect" xml:space="preserve">
+    <value>Nytt valg</value>
+  </data>
+  <data name="NewSelectDescription" xml:space="preserve">
+    <value>Start et nytt utvalg</value>
+  </data>
+  <data name="OpenItem" xml:space="preserve">
+    <value>Åpne objekt</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Alternativer</value>
+  </data>
+  <data name="OptionsDotDot" xml:space="preserve">
+    <value>Alternativer ...</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Skriv ut</value>
+  </data>
+  <data name="PrintPreviewColon" xml:space="preserve">
+    <value>Forhåndsvisning:</value>
+  </data>
+  <data name="RecordColon" xml:space="preserve">
+    <value>Post:</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>Poster ({0} av {1} valgt)</value>
+  </data>
+  <data name="RemoveSelect" xml:space="preserve">
+    <value>Fjern fra utvalg</value>
+  </data>
+  <data name="RemoveSelectDescription" xml:space="preserve">
+    <value>Fjern geoobjekt fra gjeldende utvalg</value>
+  </data>
+  <data name="ResetNorth" xml:space="preserve">
+    <value>Nullstill nord</value>
+  </data>
+  <data name="Reshape" xml:space="preserve">
+    <value>Omforme</value>
+  </data>
+  <data name="ReshapeDescription" xml:space="preserve">
+    <value>Gi geoobjekt ny form</value>
+  </data>
+  <data name="SaveEdit" xml:space="preserve">
+    <value>Lagre endringer</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Søk</value>
+  </data>
+  <data name="SearchTabHeader" xml:space="preserve">
+    <value>Søk</value>
+  </data>
+  <data name="SizeColon" xml:space="preserve">
+    <value>Størrelse: </value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>Bytt utvalg</value>
+  </data>
+  <data name="Union" xml:space="preserve">
+    <value>Union</value>
+  </data>
+  <data name="UnionDescription" xml:space="preserve">
+    <value>Utfør union på valgte geoobjekter</value>
+  </data>
+  <data name="UriColon" xml:space="preserve">
+    <value>Uri: </value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versjon</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Zoom inn</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Zoom ut</value>
+  </data>
+  <data name="CouldNotLoadViewer" xml:space="preserve">
+    <value>Viewer kunne ikke lastes inn. Se nettleserens konsoll for flere detaljer.</value>
+  </data>
+  <data name="InitializingViewer" xml:space="preserve">
+    <value>Initialiserer Viewer...</value>
+  </data>
+</root>

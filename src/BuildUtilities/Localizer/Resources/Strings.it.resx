@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_ArcGISOnline_" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="_BingMapsRoads_" xml:space="preserve">
+    <value>Bing Maps - Indicazioni stradali</value>
+  </data>
+  <data name="_Business_" xml:space="preserve">
+    <value>Aziende</value>
+  </data>
+  <data name="_Cartography_" xml:space="preserve">
+    <value>Cartografia</value>
+  </data>
+  <data name="_ChooseBasemap_" xml:space="preserve">
+    <value>Scegli mappa di base</value>
+  </data>
+  <data name="_OutdoorRecreation_" xml:space="preserve">
+    <value>Attività ricreative all'aperto</value>
+  </data>
+  <data name="_PeopleandPlaces_" xml:space="preserve">
+    <value>Persone e luoghi</value>
+  </data>
+  <data name="_PublicSafetyandHealth_" xml:space="preserve">
+    <value>Salute e pubblica sicurezza</value>
+  </data>
+  <data name="_Standard_" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="_Transportation_" xml:space="preserve">
+    <value>Trasporti</value>
+  </data>
+  <data name="_BingMapsAerial_" xml:space="preserve">
+    <value>Bing Maps - Vista aerea</value>
+  </data>
+  <data name="_BingMapsHybrid_" xml:space="preserve">
+    <value>Bing Maps - Vista ibrida</value>
+  </data>
+  <data name="_Streets_" xml:space="preserve">
+    <value>Strade</value>
+  </data>
+  <data name="_Topographic_" xml:space="preserve">
+    <value>Dati topografici</value>
+  </data>
+  <data name="_Imagery_" xml:space="preserve">
+    <value>Immagini</value>
+  </data>
+  <data name="_Terrain_" xml:space="preserve">
+    <value>Terreno</value>
+  </data>
+  <data name="_USATopoMaps_" xml:space="preserve">
+    <value>Mappe topografiche - USA</value>
+  </data>
+  <data name="_OpenStreetMap_" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="_AttributeTable_" xml:space="preserve">
+    <value>Tabella attributi</value>
+  </data>
+  <data name="_ClearSelectedFeaturesFromCurrentlySelectedLayer_" xml:space="preserve">
+    <value>Cancella le feature selezionate dal layer attualmente selezionato</value>
+  </data>
+  <data name="_ClearSelection_" xml:space="preserve">
+    <value>Cancella selezione</value>
+  </data>
+  <data name="_ExportAttributesOfSelectedFeaturesToCSVFile_" xml:space="preserve">
+    <value>Esporta gli attributi delle feature selezionate in un file CSV</value>
+  </data>
+  <data name="_ExportSelection_" xml:space="preserve">
+    <value>Esporta selezione</value>
+  </data>
+  <data name="_GoTo_" xml:space="preserve">
+    <value>Vai a</value>
+  </data>
+  <data name="_MapContents_" xml:space="preserve">
+    <value>Contenuti mappa</value>
+  </data>
+  <data name="_RefreshCurrentlySelectedLayer_" xml:space="preserve">
+    <value>Aggiorna il layer attualmente selezionato</value>
+  </data>
+  <data name="_Refresh_" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="_SearchForPlacesOrLayers_" xml:space="preserve">
+    <value>Cerca posizioni e layer</value>
+  </data>
+  <data name="_Search_" xml:space="preserve">
+    <value>Cerca</value>
+  </data>
+  <data name="_SelectABasemapForTheMap_" xml:space="preserve">
+    <value>Selezionare una mappa di base per la mappa</value>
+  </data>
+  <data name="_SelectAllFeaturesInCurrentlySelectedLayer_" xml:space="preserve">
+    <value>Seleziona tutte le feature nel layer attualmente selezionato</value>
+  </data>
+  <data name="_SelectAll_" xml:space="preserve">
+    <value>Seleziona tutto</value>
+  </data>
+  <data name="_SelectFeaturesByDrawingBoxOnMap_" xml:space="preserve">
+    <value>Selezione feature tracciando un riquadro sulla mappa</value>
+  </data>
+  <data name="_Select_" xml:space="preserve">
+    <value>Seleziona</value>
+  </data>
+  <data name="_ServiceDetails_" xml:space="preserve">
+    <value>Dettagli servizio</value>
+  </data>
+  <data name="_ShowOrHideTheAttributesTable_" xml:space="preserve">
+    <value>Mostra o nasconde la tabella degli attributi</value>
+  </data>
+  <data name="_ToggleMapContents_" xml:space="preserve">
+    <value>Visualizza/Nascondi contenuti mappa</value>
+  </data>
+  <data name="_ViewInformationAboutSelectedLayerDatasource_" xml:space="preserve">
+    <value>Visualizza informazioni sull'origine dati del layer selezionato</value>
+  </data>
+  <data name="_ZoomToCurrentlySelectedFeatures_" xml:space="preserve">
+    <value>Zoom sulle feature attualmente selezionate</value>
+  </data>
+  <data name="_ZoomToCurrentlySelectedLayer_" xml:space="preserve">
+    <value>Zoom sul layer attualmente selezionato</value>
+  </data>
+  <data name="_ZoomToSelection_" xml:space="preserve">
+    <value>Zoom su selezione</value>
+  </data>
+  <data name="_ArcGISViewerForMicrosoftSilverlight_" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="_AStreetMapOfTheWorld_" xml:space="preserve">
+    <value>Mappa topografica che include confini, città, caratteristiche idrografiche e geofisiche, parchi, punti di riferimento, trasporti ed edifici.</value>
+  </data>
+  <data name="_BasicPrintLayout_" xml:space="preserve">
+    <value>Layout di stampa di base.</value>
+  </data>
+  <data name="_Blog_" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="_CategoryColon_" xml:space="preserve">
+    <value>Categoria:</value>
+  </data>
+  <data name="_CodeColon_" xml:space="preserve">
+    <value>Codice:</value>
+  </data>
+  <data name="_ErrorUnHandledErrorInSilverlightApplcation_" xml:space="preserve">
+    <value>Errore non gestito nell'applicazione Silverlight</value>
+  </data>
+  <data name="_FileColon_" xml:space="preserve">
+    <value>File:</value>
+  </data>
+  <data name="_Forums_" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+  <data name="_Help_" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="_LineColon_" xml:space="preserve">
+    <value>Linea:</value>
+  </data>
+  <data name="_Loading_" xml:space="preserve">
+    <value>Download in corso...</value>
+  </data>
+  <data name="_MessageColon_" xml:space="preserve">
+    <value>Messaggio:</value>
+  </data>
+  <data name="_MethodNameColon_" xml:space="preserve">
+    <value>Nome metodo:</value>
+  </data>
+  <data name="_PositionColon_" xml:space="preserve">
+    <value>Posizione:</value>
+  </data>
+  <data name="_PrintLayoutWithMapElementsLikeOverviewMap_" xml:space="preserve">
+    <value>Layout di stampa con elementi di mappa quali la visione di insieme.</value>
+  </data>
+  <data name="_ArcGISApplicationBuilderForMicrosoftSilverlight_" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight - Application Builder</value>
+  </data>
+  <data name="_LoadingColon_" xml:space="preserve">
+    <value>Download:</value>
+  </data>
+  <data name="_PoweredByArcGIS_" xml:space="preserve">
+    <value>Powered by ArcGIS</value>
+  </data>
+  <data name="_AttachmentEditor_" xml:space="preserve">
+    <value>Allega documenti</value>
+  </data>
+  <data name="_AttachmentDocumentsToSelectedFeature_" xml:space="preserve">
+    <value>Allega documenti alla feature selezionata</value>
+  </data>
+  <data name="_FilterByExtentTooltip_" xml:space="preserve">
+    <value>Visualizza solo i record relativi alle feature all'interno dell'estensione mappa corrente</value>
+  </data>
+  <data name="_FilterByExtent_" xml:space="preserve">
+    <value>Filtra per estensione mappa</value>
+  </data>
+  <data name="_ShowAllTooltip_" xml:space="preserve">
+    <value>Mostra record relativi a tutte le feature nel layer corrente</value>
+  </data>
+  <data name="_ShowAll_" xml:space="preserve">
+    <value>Mostra tutto</value>
+  </data>
+  <data name="_ShowSelectedTooltip_" xml:space="preserve">
+    <value>Mostra record relativi alle feature selezionate nel layer corrente</value>
+  </data>
+  <data name="_ShowSelected_" xml:space="preserve">
+    <value>Mostra selezionate</value>
+  </data>
+  <data name="_ShowUnselectedTooltip_" xml:space="preserve">
+    <value>Mostra record relativi alle feature non selezionate nel layer corrente</value>
+  </data>
+  <data name="_ShowUnselected_" xml:space="preserve">
+    <value>Mostra non selezionate</value>
+  </data>
+  <data name="_Ocean_" xml:space="preserve">
+    <value>Oceano</value>
+  </data>
+  <data name="_Physical_" xml:space="preserve">
+    <value>Fisico</value>
+  </data>
+  <data name="_ShadedRelief_" xml:space="preserve">
+    <value>Rilievo ombreggiato</value>
+  </data>
+  <data name="_Color_" xml:space="preserve">
+    <value>Colore</value>
+  </data>
+  <data name="_PopupToolbarAddAttachements_" xml:space="preserve">
+    <value>Aggiungi allegato</value>
+  </data>
+  <data name="_PopupToolbarAddAttachmentsTooltip_" xml:space="preserve">
+    <value>Aggiunge un allegato alla feature</value>
+  </data>
+  <data name="_PopupToolbarDeleteTooltip_" xml:space="preserve">
+    <value>Rimuove la feature dal layer</value>
+  </data>
+  <data name="_PopupToolbarDelete_" xml:space="preserve">
+    <value>Elimina feature</value>
+  </data>
+  <data name="_PopupToolbarEditShapeTooltip_" xml:space="preserve">
+    <value>Modifica la geometria della feature</value>
+  </data>
+  <data name="_PopupToolbarEditShape_" xml:space="preserve">
+    <value>Modifica forma</value>
+  </data>
+  <data name="_PopupToolbarEditValuesTooltip_" xml:space="preserve">
+    <value>Modifica i valori degli attributi della feature</value>
+  </data>
+  <data name="_PopupToolbarEditValues_" xml:space="preserve">
+    <value>Modifica valori</value>
+  </data>
+  <data name="_LightGrayCanvas_" xml:space="preserve">
+    <value>Area di disegno grigio chiaro</value>
+  </data>
+  <data name="_ArcGISOnlineDescription_" xml:space="preserve">
+    <value>Cerca map service, image service e feature service in ArcGIS Online</value>
+  </data>
+  <data name="_PlacesDescription_" xml:space="preserve">
+    <value>Cerca indirizzi, città o altre località</value>
+  </data>
+  <data name="_Places_" xml:space="preserve">
+    <value>Luoghi</value>
+  </data>
+  <data name="_SearchDescription_" xml:space="preserve">
+    <value>Cerca località o contenuti da aggiungere alla mappa</value>
+  </data>
+  <data name="_TheWebDescription_" xml:space="preserve">
+    <value>Cerca map service nel Web</value>
+  </data>
+  <data name="_TheWeb_" xml:space="preserve">
+    <value>Web</value>
+  </data>
+  <data name="_AttributeTableToolbar_" xml:space="preserve">
+    <value>Barra degli strumenti Tabella attributi</value>
+  </data>
+  <data name="_FilterRecordsToolbar_" xml:space="preserve">
+    <value>Barra degli strumenti Filtra record</value>
+  </data>
+  <data name="_LayerContextMenu_" xml:space="preserve">
+    <value>Menu contestuale Layer</value>
+  </data>
+  <data name="_LayerToolbar_" xml:space="preserve">
+    <value>Barra degli strumenti Layer</value>
+  </data>
+  <data name="_MainToolbar_" xml:space="preserve">
+    <value>Barra degli strumenti principale</value>
+  </data>
+  <data name="_PopupToolbar_" xml:space="preserve">
+    <value>Barra degli strumenti popup</value>
+  </data>
+  <data name="_Identify_" xml:space="preserve">
+    <value>Identifica</value>
+  </data>
+  <data name="_Accordion_" xml:space="preserve">
+    <value>Soffietto</value>
+  </data>
+  <data name="_Basic_" xml:space="preserve">
+    <value>Semplice</value>
+  </data>
+  <data name="_BlackBoxReverse_" xml:space="preserve">
+    <value>Riquadro nero - Inverso</value>
+  </data>
+  <data name="_BlackBox_" xml:space="preserve">
+    <value>Riquadro nero</value>
+  </data>
+  <data name="_FloatingPanels_" xml:space="preserve">
+    <value>Pannelli mobili</value>
+  </data>
+  <data name="_Glass_" xml:space="preserve">
+    <value>Vetro</value>
+  </data>
+  <data name="_UnderGlow_" xml:space="preserve">
+    <value>In evidenza</value>
+  </data>
+  <data name="_Wings_" xml:space="preserve">
+    <value>Ali</value>
+  </data>
+  <data name="_WithMapElements_" xml:space="preserve">
+    <value>Con elementi della mappa</value>
+  </data>
+  <data name="_StartXMax_" xml:space="preserve">
+    <value>-5753581.74313559</value>
+  </data>
+  <data name="_StartXMin_" xml:space="preserve">
+    <value>-15499611.752488</value>
+  </data>
+  <data name="_StartYMax_" xml:space="preserve">
+    <value>6681909.77215536</value>
+  </data>
+  <data name="_StartYMin_" xml:space="preserve">
+    <value>2862067.82166302</value>
+  </data>
+  <data name="_FlowDirection_" xml:space="preserve">
+    <value>LeftToRight</value>
+  </data>
+  <data name="_QueryRelatedToolDescription_" xml:space="preserve">
+    <value>Recupera i record correlati per una feature</value>
+  </data>
+  <data name="_QueryRelatedToolTitle_" xml:space="preserve">
+    <value>Recupera record correlati</value>
+  </data>
+  <data name="_ExtentQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>Inizializza estensione da stringa di interrogazione</value>
+  </data>
+  <data name="_ScaleQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>Inizializza scala da stringa di interrogazione</value>
+  </data>
+  <data name="_CenterQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>Inizializza centro da stringa di interrogazione</value>
+  </data>
+  <data name="_ScaleLevelQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>Inizializza livello di scala da stringa di interrogazione</value>
+  </data>
+  <data name="_WebMapQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>Carica mappa Web da stringa di interrogazione</value>
+  </data>
+  <data name="_HelpUrl_" xml:space="preserve">
+    <value>http://links.esri.com/silverlightviewer/help/it</value>
+  </data>
+</root>

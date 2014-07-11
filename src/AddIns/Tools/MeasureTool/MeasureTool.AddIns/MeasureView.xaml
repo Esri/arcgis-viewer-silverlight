@@ -1,0 +1,2354 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl 
+    x:Class="MeasureTool.Addins.MeasureView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"     
+    xmlns:esriFS="clr-namespace:ESRI.ArcGIS.Client.FeatureService.Symbols;assembly=ESRI.ArcGIS.Client"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"             
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+    xmlns:esriExt="http://schemas.esri.com/arcgis/client/extensibility/2010"
+    xmlns:local="clr-namespace:MeasureTool.Addins;assembly=MeasureTool.Addins"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d" 
+    d:DesignHeight="433" d:DesignWidth="411"
+    FontFamily="Segoe UI"
+    FontSize="13"
+    Width="350"
+    MinHeight="235">
+
+    <!--================================================
+        RESOURCES
+        Styles, converters, etc used within the view
+        ================================================-->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <sys:Double x:Key="AccentOpacity">0.4</sys:Double>
+
+            <!-- object for accessing localized string resources -->
+            <local:ResourceHelper x:Key="Strings" />
+            
+            <!-- converters for manipulating bound values -->
+            <local:IntToVisibilityConverter x:Key="IntToVisibilityConverter" />
+            <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+            <local:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter" />
+            <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <local:FormatResourceConverter x:Key="FormatResourceConverter" />
+            <local:IsTypeToVisibilityConverter x:Key="IsTypeToVisibilityConverter" />
+            <local:IsTypeConverter x:Key="IsTypeConverter" />
+
+            <!--=========================================
+                SYMBOLS USED TO SHOW MEASURE GEOMETRIES 
+                =========================================-->
+            
+            <!-- SYMBOLS FOR GRAPHICS ADDED BY DRAWING -->
+            
+            <!-- Point symbol - control template specified to show circle with an
+                 outline and a dot in the middle -->
+            <esriFS:SimpleMarkerSymbol
+                x:Key="DrawGraphicMarkerSymbol"
+                Color="#99FFFFFF"
+                OutlineColor="Red"
+                Size="21"
+                OutlineThickness="2">
+                <esriFS:SimpleMarkerSymbol.ControlTemplate>
+                    <ControlTemplate>
+                        <Grid
+                            RenderTransformOrigin="{Binding Symbol.RenderTransformPoint}">
+                        <Ellipse x:Name="ellipse"
+                            Fill="{Binding Symbol.Color}"
+                            Width="{Binding Symbol.Size}"
+                            Height="{Binding Symbol.Size}"
+                            Stroke="{Binding Symbol.OutlineColor}"
+                            StrokeThickness="{Binding Symbol.OutlineThickness}">
+                        </Ellipse>
+                            <Ellipse 
+                                Fill="{Binding Symbol.Color}"
+                                Width="3"
+                                Height="3"
+                                Stroke="{Binding Symbol.OutlineColor}"
+                                StrokeThickness="{Binding Symbol.OutlineThickness}">
+                            </Ellipse>
+                        </Grid>
+                    </ControlTemplate>
+                </esriFS:SimpleMarkerSymbol.ControlTemplate>
+            </esriFS:SimpleMarkerSymbol>
+
+            <!-- Line symbol -->
+            <esri:LineSymbol 
+                x:Key="DrawGraphicLineSymbol"
+                Color="Red"
+                Width="3" />
+
+            <!-- Fill symbol -->
+            <esri:FillSymbol 
+                x:Key="DrawGraphicFillSymbol"
+                BorderThickness="3"
+                BorderBrush="Red"
+                Fill="#88FFFFFF" />
+
+            
+            <!-- SYMBOLS FOR GRAPHICS SHOWN WHILE DRAWING -->
+            
+            <!-- Line symbol - control template specified to define dashed line -->
+            <esri:LineSymbol 
+                x:Key="DrawLineSymbol"
+                Color="Red"
+                Width="3">
+                <esri:LineSymbol.ControlTemplate>
+                    <ControlTemplate>
+                        <Path 
+                            x:Name="Element"
+                            Stroke="{Binding Symbol.Color}"
+                            StrokeStartLineCap="Round"
+                            StrokeThickness="{Binding Symbol.Width}"
+                            StrokeLineJoin="Round"
+                            StrokeEndLineCap="Round"
+                            StrokeDashArray="10,5" />
+                    </ControlTemplate>
+                </esri:LineSymbol.ControlTemplate>
+            </esri:LineSymbol>
+
+            <!-- Polygon symbol - control template defined to specify dashed line -->
+            <esri:FillSymbol 
+                x:Key="DrawFillSymbol"
+                BorderThickness="3"
+                BorderBrush="Red"
+                Fill="#55FFFFFF">
+                <esri:FillSymbol.ControlTemplate>
+                    <ControlTemplate>
+                        <Path 
+                            x:Name="Element"
+                            Stroke="{Binding Symbol.BorderBrush}"
+                            StrokeStartLineCap="Round"
+                            StrokeThickness="{Binding Symbol.BorderThickness}"
+                            StrokeLineJoin="Round"
+                            StrokeEndLineCap="Round"
+                            Fill="{Binding Symbol.Fill}"
+                            StrokeDashArray="10,5"/>
+                    </ControlTemplate>
+                </esri:FillSymbol.ControlTemplate>
+            </esri:FillSymbol>
+
+
+            <!-- SYMBOLS FOR GRAPHICS ADDED BY SELECTING FEATURES TO MEASURE -->
+
+            <!-- Point symbol - control template defined to specify symbol as a
+                 square with tick marks on each side -->
+            <esriFS:SimpleMarkerSymbol 
+                x:Key="SelectMarkerSymbol"
+                Size="25"
+                Color="Transparent"
+                OutlineColor="Navy"
+                OutlineThickness="5"
+                SelectionColor="Cyan">
+                <esriFS:SimpleMarkerSymbol.ControlTemplate>
+                        <ControlTemplate>
+                        <Grid
+                            RenderTransformOrigin="{Binding Symbol.RenderTransformPoint}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected" />
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <DoubleAnimation 
+                                                Storyboard.TargetName="SelectionRectangle"
+                                                Storyboard.TargetProperty="Opacity" 
+                                                Duration="0:0:0.25" 
+                                                To="1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            
+                            <!-- Base symbol rectangles-->
+                            
+                            <!-- left tickmark -->
+                            <Rectangle
+                                Width="7"
+                                Margin="-7,0,0,0"
+                                Height="{Binding Symbol.OutlineThickness}"
+                                Fill="{Binding Symbol.OutlineColor}"
+                                Stroke="Transparent"
+                                Grid.Row="1" />
+                            <!-- top tickmark -->
+                            <Rectangle
+                                Height="7"
+                                Margin="0,-7,0,0"
+                                Width="{Binding Symbol.OutlineThickness}"
+                                Fill="{Binding Symbol.OutlineColor}"
+                                Stroke="Transparent"
+                                Grid.Column="1" />
+                            <!-- center square -->                            
+                            <Rectangle 
+                                x:Name="Rectangle" 
+                                Width="{Binding Symbol.Size}" 
+                                Height="{Binding Symbol.Size}" 
+                                Fill="{Binding Symbol.Color}" 
+                                Stroke="{Binding Symbol.OutlineColor}"
+                                StrokeThickness="{Binding Symbol.OutlineThickness}"
+                                Grid.Row="1"
+                                Grid.Column="1" />
+                            <!-- right tickmark -->
+                            <Rectangle
+                                Width="7"
+                                Height="{Binding Symbol.OutlineThickness}"
+                                Fill="{Binding Symbol.OutlineColor}"
+                                Stroke="Transparent"
+                                Grid.Row="1"
+                                Grid.Column="2"/>
+                            <!-- bottom tickmark -->
+                            <Rectangle
+                                Height="7"
+                                Width="{Binding Symbol.OutlineThickness}"
+                                Fill="{Binding Symbol.OutlineColor}"
+                                Stroke="Transparent"
+                                Grid.Row="2"
+                                Grid.Column="1" />
+                            
+                            <!-- Selection symbol rectangles -->
+
+                            <!-- left tickmark -->
+                            <Rectangle
+                                Width="8"
+                                Margin="-6,0,-2,0"
+                                Height="3"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Opacity="{Binding Opacity, ElementName=SelectionRectangle}"
+                                Fill="{Binding Symbol.SelectionColor}"
+                                Stroke="Transparent"
+                                Grid.Row="1" />
+                            <!-- top tickmark -->
+                            <Rectangle
+                                Height="8"
+                                Margin="0,-6,0,-2"
+                                Width="3"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Opacity="{Binding Opacity, ElementName=SelectionRectangle}"
+                                Fill="{Binding Symbol.SelectionColor}"
+                                Stroke="Transparent"
+                                Grid.Column="1" />
+                            <!-- center square -->
+                            <Rectangle 
+                                x:Name="SelectionRectangle"
+                                Opacity="0"
+                                Margin="1"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Fill="Transparent" 
+                                Stroke="{Binding Symbol.SelectionColor}"
+                                StrokeThickness="3"
+                                Grid.Row="1"
+                                Grid.Column="1"/>
+                            <!-- right tickmark -->
+                            <Rectangle
+                                Width="8"
+                                Margin="-2,0,0,0"
+                                Height="3"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Opacity="{Binding Opacity, ElementName=SelectionRectangle}"
+                                Fill="{Binding Symbol.SelectionColor}"
+                                Stroke="Transparent"
+                                Grid.Row="1"
+                                Grid.Column="2"/>
+                            <!-- bottom tickmark -->
+                            <Rectangle
+                                Height="8"
+                                Margin="0,-2,0,0"
+                                Width="3"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Opacity="{Binding Opacity, ElementName=SelectionRectangle}"
+                                Fill="{Binding Symbol.SelectionColor}"
+                                Stroke="Transparent"
+                                Grid.Row="2"
+                                Grid.Column="1" />
+                        </Grid>
+                    </ControlTemplate>
+                </esriFS:SimpleMarkerSymbol.ControlTemplate>
+                </esriFS:SimpleMarkerSymbol>
+            
+            <!-- Line symbol - control template defined to specify selection animation -->
+            <esri:LineSymbol 
+                x:Key="SelectLineSymbol"
+                Color="Transparent"
+                Width="4">
+                <esri:LineSymbol.ControlTemplate>
+                    <ControlTemplate>
+                        <Path 
+                            x:Name="Element"
+                            Stroke="{Binding Symbol.Color}"
+                            StrokeStartLineCap="Round"
+                            StrokeThickness="{Binding Symbol.Width}"
+                            StrokeLineJoin="Round"
+                            StrokeEndLineCap="Round">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Element" 
+												Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+												To="Cyan"  Duration="00:00:00.2" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Path>
+                    </ControlTemplate>
+                </esri:LineSymbol.ControlTemplate>
+            </esri:LineSymbol>
+
+            <!-- Polygon symbol - control template defined to specify selection animation -->
+            <esri:FillSymbol 
+                x:Key="SelectFillSymbol"
+                BorderThickness="4"
+                BorderBrush="Transparent"
+                Fill="Transparent">
+                <esri:FillSymbol.ControlTemplate>
+                    <ControlTemplate>
+                        <Path 
+                            x:Name="Element"
+                            Stroke="{Binding Symbol.BorderBrush}"
+                            StrokeStartLineCap="Round"
+                            StrokeThickness="{Binding Symbol.BorderThickness}"
+                            StrokeLineJoin="Round"
+                            StrokeEndLineCap="Round"
+                            Fill="{Binding Symbol.Fill}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Element" 
+											    Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+											    To="Cyan" Duration="00:00:00.2"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Path>
+                    </ControlTemplate>
+                </esri:FillSymbol.ControlTemplate>
+            </esri:FillSymbol>
+
+            
+            <!--===================================================================
+                DRAW POPUP STYLE 
+                appearance of popup containing draw instructions and measurements 
+                =================================================================== -->
+
+            <Style x:Key="PopupTemplate" TargetType="ContentControl">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ContentControl">
+                            <Grid>
+                                <!-- Borders and background are rendered with rectangles because 
+                                they are lightweight.  Text is rendered on top so the borders
+                                and background can have transparency without affecting text. -->
+
+                                <!-- Outer border -->
+                                <Rectangle
+                                    RadiusX="2"
+                                    RadiusY="2"
+                                    StrokeThickness="1"
+                                    Stroke="{StaticResource AccentTextColorBrush}"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Opacity="0.8"/>
+                                <!-- Inner border -->
+                                <Rectangle
+                                    RadiusX="2"
+                                    RadiusY="2"
+                                    StrokeThickness="1"
+                                    Stroke="{StaticResource AccentColorBrush}"
+                                    Margin="1"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch" />
+                                <!-- Background -->
+                                <Rectangle
+                                    RadiusX="2"
+                                    RadiusY="2"
+                                    StrokeThickness="0"
+                                    Fill="{StaticResource BackgroundGradientBrush}"
+                                    Margin="2"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Opacity="0.8" />
+                                <!-- Instructions and measurement text -->
+                                <TextBlock
+                                    Foreground="{StaticResource BackgroundTextColorBrush}"
+                                    Text="{Binding}" 
+                                    Margin="10,5,10,7"
+                                    FontFamily="Segoe UI" 
+                                    FontSize="13"
+                                    LineStackingStrategy="BlockLineHeight"
+                                    LineHeight="20"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            
+            <!--===================================================================
+                RADIO BUTTON STYLES 
+                appearance of buttons for choosing whether to draw shapes or 
+                select features and for what shape to draw 
+                =================================================================== -->
+            
+            <Style x:Key="LeftRadioButtonStyle" TargetType="RadioButton">
+                <Setter Property="Background" Value="{StaticResource BackgroundGradientBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource BackgroundTextColorBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource AccentColorBrush}" />
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.15" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="BackgroundOverlay2"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.5" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="BackgroundOverlay"/>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.5" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="Background"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To=".55" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualElement"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused">
+                                        </VisualState>
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="CheckStates">
+                                        <VisualState x:Name="Checked">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.3" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="BackgroundOverlay3"/>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.8" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="Background"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unchecked"/>
+                                        <VisualState x:Name="Indeterminate"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Border 
+                                    x:Name="Background" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    Background="{TemplateBinding Background}" 
+                                    CornerRadius="5,0,0,5" />
+                                <Border
+                                    x:Name="BackgroundOverlay"
+                                    BorderThickness="0"
+                                    Margin="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Foreground}"
+                                    Opacity="0"
+                                    CornerRadius="4,0,0,4"/>
+                                <Border
+                                    x:Name="BackgroundOverlay2"
+                                    BorderThickness="0"
+                                    Margin="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Foreground}"
+                                    Opacity="0"
+                                    CornerRadius="4,0,0,4"/>
+                                <Border
+                                    x:Name="BackgroundOverlay3"
+                                    BorderThickness="0"
+                                    Margin="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Foreground}"
+                                    Opacity="0"
+                                    CornerRadius="4,0,0,4"/>
+                                <ContentPresenter 
+                                    x:Name="contentPresenter" 
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                    Content="{TemplateBinding Content}" 
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                    Margin="{TemplateBinding Padding}" 
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Border 
+                                    x:Name="DisabledVisualElement" 
+                                    Background="#FFFFFFFF" 
+                                    BorderThickness="0"
+                                    IsHitTestVisible="false" 
+                                    Opacity="0"
+                                    CornerRadius="5,0,0,5"/>
+                                <Border 
+                                    x:Name="FocusVisualElement"
+                                    IsHitTestVisible="false"
+                                    Margin="1"
+                                    Opacity="0"
+                                    CornerRadius="4,0,0,4"
+                                    BorderBrush="#FF6DBDD1" 
+                                    BorderThickness="1" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="RightRadioButtonStyle" TargetType="RadioButton">
+                <Setter Property="Background" Value="{StaticResource BackgroundGradientBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource BackgroundTextColorBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource AccentColorBrush}" />
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="BorderThickness" Value="0,1,1,1"/>
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.15" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="BackgroundOverlay2"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.5" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="BackgroundOverlay"/>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.5" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="Background"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To=".55" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualElement"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused">
+                                        </VisualState>
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="CheckStates">
+                                        <VisualState x:Name="Checked">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.3" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="BackgroundOverlay3"/>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.8" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="Background"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unchecked"/>
+                                        <VisualState x:Name="Indeterminate"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Border 
+                                    x:Name="Background" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    Background="{TemplateBinding Background}" 
+                                    CornerRadius="0,5,5,0" />
+                                <Border
+                                    x:Name="BackgroundOverlay"
+                                    BorderThickness="0"
+                                    Margin="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Foreground}"
+                                    Opacity="0"
+                                    CornerRadius="0,4,4,0"/>
+                                <Border
+                                    x:Name="BackgroundOverlay2"
+                                    BorderThickness="0"
+                                    Margin="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Foreground}"
+                                    Opacity="0"
+                                    CornerRadius="0,4,4,0"/>
+                                <Border
+                                    x:Name="BackgroundOverlay3"
+                                    BorderThickness="0"
+                                    Margin="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Foreground}"
+                                    Opacity="0"
+                                    CornerRadius="0,4,4,0"/>
+                                <ContentPresenter 
+                                    x:Name="contentPresenter" 
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                    Content="{TemplateBinding Content}" 
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                    Margin="{TemplateBinding Padding}" 
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Border 
+                                    x:Name="DisabledVisualElement" 
+                                    Background="#FFFFFFFF" 
+                                    BorderThickness="0"
+                                    IsHitTestVisible="false" 
+                                    Opacity="0"
+                                    CornerRadius="0,5,5,0"/>
+                                <Border 
+                                    x:Name="FocusVisualElement"
+                                    IsHitTestVisible="false"
+                                    Margin="1"
+                                    Opacity="0"
+                                    CornerRadius="0,4,4,0"
+                                    BorderBrush="#FF6DBDD1" 
+                                    BorderThickness="1" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="MiddleRadioButtonStyle" TargetType="RadioButton">
+                <Setter Property="Background" Value="{StaticResource BackgroundGradientBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource BackgroundTextColorBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource AccentColorBrush}" />
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="BorderThickness" Value="0,1,1,1"/>
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.15" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="BackgroundOverlay2"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.5" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="BackgroundOverlay"/>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.5" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="Background"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To=".55" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualElement"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused">
+                                        </VisualState>
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="CheckStates">
+                                        <VisualState x:Name="Checked">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.3" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="BackgroundOverlay3"/>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="0.8" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="Background"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unchecked"/>
+                                        <VisualState x:Name="Indeterminate"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Border 
+                                    x:Name="Background" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    Background="{TemplateBinding Background}" />
+                                <Border
+                                    x:Name="BackgroundOverlay"
+                                    BorderThickness="0"
+                                    Margin="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Foreground}"
+                                    Opacity="0"/>
+                                <Border
+                                    x:Name="BackgroundOverlay2"
+                                    BorderThickness="0"
+                                    Margin="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Foreground}"
+                                    Opacity="0"/>
+                                <Border
+                                    x:Name="BackgroundOverlay3"
+                                    BorderThickness="0"
+                                    Margin="{TemplateBinding BorderThickness}"
+                                    Background="{TemplateBinding Foreground}"
+                                    Opacity="0"/>
+                                <ContentPresenter 
+                                    x:Name="contentPresenter" 
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                    Content="{TemplateBinding Content}" 
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                    Margin="{TemplateBinding Padding}" 
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Border 
+                                    x:Name="DisabledVisualElement" 
+                                    Background="#FFFFFFFF" 
+                                    BorderThickness="0"
+                                    IsHitTestVisible="false" 
+                                    Opacity="0"/>
+                                <Border 
+                                    x:Name="FocusVisualElement"
+                                    IsHitTestVisible="false"
+                                    Margin="1"
+                                    Opacity="0"
+                                    BorderBrush="#FF6DBDD1" 
+                                    BorderThickness="1" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
+            <!--===============================
+                ERROR DETAILS EXPANDER STYLE 
+                ===============================-->
+
+            <Style x:Key="ExpanderToggleButtonStyle" TargetType="ToggleButton">
+                <Setter Property="Background" Value="{StaticResource BackgroundGradientBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource BackgroundTextColorBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource AccentColorBrush}" />
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="BorderThickness" Value="0,1,1,1"/>
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ToggleButton">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver" />
+                                        <VisualState x:Name="Pressed" />
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Duration="0" To=".55" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Storyboard.TargetName="DisabledVisualElement"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused">
+                                        </VisualState>
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="CheckStates">
+                                        <VisualState x:Name="Checked">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Duration="0" 
+                                                    To="180" 
+                                                    Storyboard.TargetProperty="(Path.RenderTransform).(RotateTransform.Angle)" 
+                                                    Storyboard.TargetName="Arrow"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unchecked"/>
+                                        <VisualState x:Name="Indeterminate"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <ContentPresenter 
+                                    x:Name="contentPresenter" 
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                    Content="{TemplateBinding Content}" 
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                    Margin="{TemplateBinding Padding}" 
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Path 
+                                    x:Name="Arrow"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Margin="3,0,0,0"
+                                    RenderTransformOrigin="0.5,0.5"
+                                    Stroke="{TemplateBinding Foreground}"
+                                    StrokeThickness="2"
+                                    Data="M 1,1 L 4.5,4.5 L 8,1"
+                                    Grid.Column="1">
+                                    <Path.RenderTransform>
+                                        <RotateTransform Angle="0" />
+                                    </Path.RenderTransform>
+                                </Path>
+                                <Border 
+                                    x:Name="DisabledVisualElement" 
+                                    Background="#FFFFFFFF" 
+                                    BorderThickness="0"
+                                    IsHitTestVisible="false" 
+                                    Opacity="0"
+                                    Grid.ColumnSpan="2"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Used as a proxy for objects that a need an explicit binding source to preserve DataContext -->
+            <Grid x:Key="DataContextProxy" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <i:Interaction.Triggers>
+        
+        <!-- ======================== 
+             INITIALIZATION LOGIC 
+             ======================== -->
+        <i:EventTrigger EventName="Loaded">
+            
+            <!-- Add the graphics layer for storing user-drawn geometries and selected features -->
+            <local:AddLayerAction 
+                TargetObject="{Binding Map}" 
+                Layer="{Binding DrawLayer}" />
+            
+            <!-- Set RendererTakesPrecedence to false so symbols can be set directly on measure graphics -->
+            <ei:ChangePropertyAction
+                TargetObject="{Binding DrawLayer}"
+                PropertyName="RendererTakesPrecedence"
+                Value="False" />
+            
+            <!-- Attach behavior to show a popup with instructions and measurements while drawing -->
+            <local:AttachBehaviorAction TargetObject="{Binding DrawObject}">
+                <local:AttachBehaviorAction.Behavior>
+
+                    <!-- Specify binding source explicitly for unit bindings. Otehrwise, the implicit binding 
+                         source changes when the behavior is attached -->
+                    <local:DrawPopupBehavior 
+                        PopupTemplate="{StaticResource PopupTemplate}"
+                        LinearUnit="{Binding DataContext.LinearUnit, 
+                            Source={StaticResource DataContextProxy}}" 
+                        ArealUnit="{Binding DataContext.ArealUnit, 
+                            Source={StaticResource DataContextProxy}}" />
+                </local:AttachBehaviorAction.Behavior>
+            </local:AttachBehaviorAction>
+            
+            <!-- Attach behavior for retrieving feature when measure layer is clicked 
+                 (when measuring features in an existing layer) -->
+            <local:AttachBehaviorAction 
+                TargetObject="{Binding MeasureLayer}">
+                <local:AttachBehaviorAction.Behavior>
+                    
+                    <!-- Specify the binding source explicitly for binding to ViewModel properties -->
+                    <local:GetFeatureOnClickBehavior
+                        Map="{Binding DataContext.Map, 
+                            Source={StaticResource DataContextProxy}}"
+                        SubLayer="{Binding DataContext.MeasureSubLayer, 
+                            Source={StaticResource DataContextProxy}}"
+                        Feature="{Binding DataContext.CurrentGraphic, Mode=TwoWay, 
+                            Source={StaticResource DataContextProxy}}"
+                        IsBusy="{Binding DataContext.RetrievingFeatures, Mode=TwoWay, 
+                            Source={StaticResource DataContextProxy}}"
+                        Error="{Binding Error, Mode=TwoWay}" />
+                </local:AttachBehaviorAction.Behavior>
+            </local:AttachBehaviorAction>
+            
+            <!-- set the symbols to use while drawing lines and polygons on the map -->
+            <ei:ChangePropertyAction
+                TargetObject="{Binding DrawObject}"
+                PropertyName="LineSymbol"
+                Value="{StaticResource DrawLineSymbol}" />
+            <ei:ChangePropertyAction
+                TargetObject="{Binding DrawObject}"
+                PropertyName="FillSymbol"
+                Value="{StaticResource DrawFillSymbol}" />
+        </i:EventTrigger>
+        
+        <!-- ===================
+             CLEANUP LOGIC 
+             =================== -->
+        <i:EventTrigger EventName="Unloaded">
+
+            <!-- Disable draw surface -->
+            <ei:ChangePropertyAction
+                TargetObject="{Binding DrawObject}"
+                PropertyName="IsEnabled"
+                Value="False" />
+            
+            <!-- Remove layer -->
+            <local:RemoveLayerAction 
+                TargetObject="{Binding Map}" 
+                Layer="{Binding DrawLayer}"/>
+            
+            <!-- Clear graphics from layer -->
+            <ei:CallMethodAction
+                TargetObject="{Binding DrawLayer.Graphics}"
+                MethodName="Clear" />
+            
+            <!-- Detach popup behavior -->
+            <local:DetachBehaviorAction 
+                TargetObject="{Binding DrawObject}"
+                BehaviorType="local:DrawPopupBehavior" />
+
+            <!-- Detach behavior that retrieves features on click -->
+            <local:DetachBehaviorAction 
+                TargetObject="{Binding MeasureLayer}"
+                BehaviorType="local:GetFeatureOnClickBehavior" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <!--===========================================
+        LAYOUT
+        Positioning of elements within the view 
+        ===========================================-->
+    <Grid 
+        x:Name="LayoutRoot"
+        Background="Transparent" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!-- Draw Shape/Select Feature -->
+            <RowDefinition Height="Auto" /> <!-- Shape Buttons / Layer selection-->
+            <RowDefinition Height="Auto" /> <!-- Status -->
+            <RowDefinition Height="*" />    <!-- Measurements section separator -->
+            <RowDefinition Height="Auto" /> <!-- Measurements -->
+        </Grid.RowDefinitions>
+                
+        <!--====================================================
+            MEASURE SHAPE / MEASURE FEATURE 
+            Buttons for selecting whether to measure shapes
+            drawn on the map or existing features
+            ====================================================-->            
+        <Grid
+            Visibility="{Binding MeasurableLayers.Count,                
+                Converter={StaticResource IntToVisibilityConverter}}"
+            Margin="0,0,0,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- Button for drawing shapes to measure -->
+            <RadioButton 
+                Name="DrawShapesButton" 
+                Style="{StaticResource LeftRadioButtonStyle}"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center"
+                Padding="8"
+                FontFamily="Segoe UI"
+                FontSize="13">
+
+                <!-- Put content in an explicit TextBlock to enable text wrapping -->
+                <RadioButton.Content>
+                    <TextBlock
+                        Text="{Binding LocalizedStrings.MeasureLabelShapesDraw,
+                                Source={StaticResource Strings}}"
+                        TextWrapping="Wrap"/>
+                </RadioButton.Content>
+                <i:Interaction.Triggers>
+                    
+                    <!-- Logic for when button is loaded -->
+                    <i:EventTrigger EventName="Loaded">
+                        
+                        <!--Check the button to set the measure mode to drawing shapes on the map.
+                            Done on load so it is reset every time the view is shown. -->
+                        <ei:ChangePropertyAction
+                            PropertyName="IsChecked"
+                            Value="True" />
+
+                        <!-- Update the status message to instruct users to select a shape -->
+                        <ei:ChangePropertyAction 
+                            TargetObject="{Binding}" 
+                            PropertyName="StatusMessage" 
+                            Value="{Binding LocalizedStrings.StatusClickShapeButton,
+                                Source={StaticResource Strings}}" />
+                    </i:EventTrigger>
+                        
+                    <!-- Logic for when button is selected, i.e. drawing shapes to measure is enabled -->
+                    <i:EventTrigger EventName="Checked">
+                        
+                        <!-- Clear measurements -->
+                        <ei:CallMethodAction
+                            TargetObject="{Binding}"
+                            MethodName="ResetMeasurements" />
+
+                        <!-- Clear measure layer -->
+                        <ei:ChangePropertyAction 
+                            TargetObject="{Binding}" 
+                            PropertyName="MeasureLayer" 
+                            Value="{x:Null}" />
+
+                        <!-- Update the status message to instruct users to select a shape -->
+                        <ei:ChangePropertyAction 
+                            TargetObject="{Binding}" 
+                            PropertyName="StatusMessage" 
+                            Value="{Binding LocalizedStrings.StatusClickShapeButton,
+                                Source={StaticResource Strings}}" />
+
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+            
+            <!-- Button for selecting features to measure -->
+            <RadioButton 
+                Name="SelectFeaturesButton" 
+                Style="{StaticResource RightRadioButtonStyle}"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Grid.Column="1"
+                Padding="8"
+                FontFamily="Segoe UI"
+                FontSize="13">
+
+                <!-- Put content in an explicit TextBlock to enable text wrapping -->
+                <RadioButton.Content>
+                    <TextBlock
+                        Text="{Binding LocalizedStrings.MeasureLabelFeaturesMap,
+                                Source={StaticResource Strings}}"
+                        TextWrapping="Wrap"/>
+                </RadioButton.Content>
+
+                <!-- Logic executed when button is selected, i.e. selecting features to measure is enabled -->
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Checked">
+                        
+                        <!-- Clear out measurements -->
+                        <ei:CallMethodAction
+                            TargetObject="{Binding}"
+                            MethodName="ResetMeasurements" />
+
+                        <!-- Clear out current measure graphic -->
+                        <ei:ChangePropertyAction 
+                            TargetObject="{Binding}" 
+                            PropertyName="CurrentGraphic" 
+                            Value="{x:Null}" />
+
+                        <!-- Disable draw object -->
+                        <ei:ChangePropertyAction
+                            TargetObject="{Binding DrawObject}"
+                            PropertyName="IsEnabled"
+                            Value="False" />
+
+                        <!-- Check reset button to uncheck other interactive draw mode buttons -->
+                        <ei:ChangePropertyAction
+                            TargetObject="{Binding ElementName=ResetButton}"
+                            PropertyName="IsChecked"
+                            Value="True" />
+
+                        <!-- Set the measure layer to the first layer in the collection -->
+                        <ei:ChangePropertyAction
+                            TargetObject="{Binding}"
+                            PropertyName="MeasureLayer"
+                            Value="{Binding MeasurableLayers[0]}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+        </Grid>
+                    
+        <!--============================================================
+            SHAPE TO DRAW
+            Buttons for selecting the type of shape to draw on the map
+            ============================================================-->
+        <Grid
+            Visibility="{Binding IsChecked, ElementName=DrawShapesButton, 
+                Converter={StaticResource BoolToVisibilityConverter}}"
+            Grid.Row="1">
+            <!-- one column for each button -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Button for drawing a point to measure -->
+            <RadioButton 
+                Name="DrawPointButton"
+                Style="{StaticResource LeftRadioButtonStyle}"
+                HorizontalAlignment="Stretch"
+                ToolTipService.ToolTip="{Binding LocalizedStrings.TooltipPoint,
+                    Source={StaticResource Strings}}"
+                ToolTipService.Placement="Bottom"
+                GroupName="DrawButtons">
+                <Image Source="images/Point.png" Stretch="None" />
+                <i:Interaction.Triggers>
+
+                    <!-- Logic executed when button is selected -->
+                    <i:EventTrigger EventName="Checked">
+                        
+                        <!-- set draw mode and enable drawing surface -->
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="DrawMode"
+                                Value="Point" />
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="IsEnabled"
+                                Value="True" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+
+            <!-- Button for drawing a polyline to measure -->
+            <RadioButton 
+                Name="DrawPolylineButton" 
+                Style="{StaticResource MiddleRadioButtonStyle}" 
+                HorizontalAlignment="Stretch"
+                ToolTipService.ToolTip="{Binding LocalizedStrings.TooltipPolyline,
+                    Source={StaticResource Strings}}"
+                ToolTipService.Placement="Bottom"
+                GroupName="DrawButtons"
+                Grid.Column="1">
+                <Image Source="images/Polyline.png" Stretch="None" />
+                <i:Interaction.Triggers>
+                    
+                    <!-- Logic executed when button is selected -->
+                    <i:EventTrigger EventName="Checked" >
+                        
+                        <!-- set draw mode and enable drawing surface -->
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="DrawMode"
+                                Value="Polyline" />
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="IsEnabled"
+                                Value="True" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+
+            <!-- Button for drawing a freehand line to measure -->
+            <RadioButton 
+                Name="DrawFreehandLineButton"
+                Style="{StaticResource MiddleRadioButtonStyle}" 
+                HorizontalAlignment="Stretch"
+                ToolTipService.ToolTip="{Binding LocalizedStrings.TooltipFreehandLine,
+                    Source={StaticResource Strings}}"
+                ToolTipService.Placement="Bottom"
+                GroupName="DrawButtons"
+                Grid.Column="2">
+                <Image Source="images/FreehandLine.png" Stretch="None" />
+                <i:Interaction.Triggers>
+                    
+                    <!-- Logic executed when button is selected -->
+                    <i:EventTrigger EventName="Checked">
+
+                        <!-- set draw mode and enable drawing surface -->
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="DrawMode"
+                                Value="Freehand" />
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="IsEnabled"
+                                Value="True" />
+
+                        <!-- set freehand draw mode (DrawMode alone does not distinguish between freehand line and freehand polygon) -->
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding}"
+                                PropertyName="FreehandDrawMode"
+                                Value="Polyline" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+
+            <!-- Button for drawing a rectangle to measure -->
+            <RadioButton 
+                Name="DrawRectangleButton" 
+                Style="{StaticResource MiddleRadioButtonStyle}" 
+                HorizontalAlignment="Stretch"
+                ToolTipService.ToolTip="{Binding LocalizedStrings.TooltipRectangle,
+                    Source={StaticResource Strings}}"
+                ToolTipService.Placement="Bottom"
+                GroupName="DrawButtons"
+                Grid.Column="3">
+                <Image Source="images/rectangle.png" Stretch="None" />
+                
+                <!-- Logic executed when the button is selected-->
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Checked">
+                        
+                        <!-- set draw mode and enable drawing surface -->
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="DrawMode"
+                                Value="Rectangle" />
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="IsEnabled"
+                                Value="True" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+
+            <!-- Button for drawing a circle to measure -->
+            <RadioButton 
+                Name="DrawCircleButton" 
+                Style="{StaticResource MiddleRadioButtonStyle}" 
+                HorizontalAlignment="Stretch"
+                ToolTipService.ToolTip="{Binding LocalizedStrings.TooltipCircle,
+                    Source={StaticResource Strings}}"
+                ToolTipService.Placement="Bottom"  
+                GroupName="DrawButtons"
+                Grid.Column="4">
+                <Image Source="images/circle.png" Stretch="None" />
+                
+                <!-- Logic executed when button is selected -->
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Checked">
+
+                        <!-- set draw mode and enable drawing surface -->
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="DrawMode"
+                                Value="Circle" />
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="IsEnabled"
+                                Value="True" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+
+            <!-- Button for drawing an ellipse to measure -->
+            <RadioButton 
+                Name="DrawEllipseButton" 
+                Style="{StaticResource MiddleRadioButtonStyle}" 
+                HorizontalAlignment="Stretch"
+                ToolTipService.ToolTip="{Binding LocalizedStrings.TooltipEllipse,
+                    Source={StaticResource Strings}}"
+                ToolTipService.Placement="Bottom"  
+                GroupName="DrawButtons"
+                Grid.Column="5">
+                <Image Source="images/ellipse.png" Stretch="None" />
+                
+                <!-- Logic executed when the button is selected -->
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Checked">
+
+                        <!-- set draw mode and enable drawing surface -->
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="DrawMode"
+                                Value="Ellipse" />
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="IsEnabled"
+                                Value="True" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+
+            <!-- Button for drawing a polygon to measure -->
+            <RadioButton 
+                Name="DrawPolygonButton" 
+                Style="{StaticResource MiddleRadioButtonStyle}" 
+                HorizontalAlignment="Stretch"
+                ToolTipService.ToolTip="{Binding LocalizedStrings.TooltipPolygon,
+                    Source={StaticResource Strings}}"
+                ToolTipService.Placement="Bottom"  
+                GroupName="DrawButtons"
+                Grid.Column="6">
+                <Image Source="images/polygon.png" Stretch="None" />
+                <i:Interaction.Triggers>
+                    
+                    <!-- Logic executed when the button is selected -->
+                    <i:EventTrigger EventName="Checked">
+
+                        <!-- set draw mode and enable drawing surface -->
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="DrawMode"
+                                Value="Polygon" />
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="IsEnabled"
+                                Value="True" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+
+            <!-- Button for drawing a freehand polygon to measure -->
+            <RadioButton 
+                Name="DrawFreehandPolygonButton" 
+                Style="{StaticResource RightRadioButtonStyle}" 
+                HorizontalAlignment="Stretch"
+                ToolTipService.ToolTip="{Binding LocalizedStrings.TooltipFreehandPolygon,
+                    Source={StaticResource Strings}}"
+                ToolTipService.Placement="Bottom" 
+                GroupName="DrawButtons"
+                Grid.Column="7">
+                <Image Source="images/FreehandPolygon.png" Stretch="None" />
+                <i:Interaction.Triggers>
+                    
+                    <!-- Logic executed when the button is selected -->
+                    <i:EventTrigger EventName="Checked">
+
+                        <!-- set draw mode and enable drawing surface -->
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="DrawMode"
+                                Value="Freehand" />
+
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding DrawObject}"
+                                PropertyName="IsEnabled"
+                                Value="True" />
+
+                        <!-- set freehand draw mode (DrawMode alone does not distinguish between freehand line and freehand polygon) -->
+                        <ei:ChangePropertyAction
+                                TargetObject="{Binding}"
+                                PropertyName="FreehandDrawMode"
+                                Value="Polygon" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+
+            <!-- hidden button that can be programmatically selected to deselect other buttons -->
+            <RadioButton 
+                Name="ResetButton" 
+                Width="0" 
+                GroupName="DrawButtons">
+                
+                <i:Interaction.Triggers>
+                    
+                    <!-- Select the on load to ensure that none of the shape buttons are selected
+                         when the view is loaded -->
+                    <i:EventTrigger EventName="Loaded">
+                        <ei:ChangePropertyAction
+                            PropertyName="IsChecked"
+                            Value="True" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </RadioButton>
+
+            <!-- ====================================================
+                 TRIGGERS FOR HANDLING DRAW EVENTS  
+                 Processing and measurement of user-drawn shapes
+                 ==================================================== -->
+            <i:Interaction.Triggers>
+
+                <!-- ========================================== 
+                     INITIALIZATION - WHEN DRAWING IS STARTED 
+                     ==========================================-->
+
+                <!-- Update status message when drawing is enabled -->
+                <ei:PropertyChangedTrigger 
+                        Binding="{Binding DrawObject.IsEnabled}">
+
+                    <!-- make sure drawing is being enabled, not disabled -->
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                        LeftOperand="{Binding DrawObject.IsEnabled}" 
+                                        Operator="Equal"
+                                        RightOperand="True" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+
+                    <!-- update the message -->
+                    <ei:ChangePropertyAction
+                            TargetObject="{Binding}"
+                            PropertyName="StatusMessage"
+                            Value="{Binding LocalizedStrings.StatusDrawShape,
+                                Source={StaticResource Strings}}" />
+                </ei:PropertyChangedTrigger>
+
+                <!-- When drawing is started, update status message and clear existing graphics, 
+                            measure geometry, and measures -->
+                <i:EventTrigger EventName="DrawBegin" SourceObject="{Binding DrawObject}">
+
+                    <!-- Update status message -->
+                    <ei:ChangePropertyAction
+                            TargetObject="{Binding}"
+                            PropertyName="StatusMessage"
+                            Value="{Binding LocalizedStrings.StatusDrawing,
+                                Source={StaticResource Strings}}" />
+
+                    <!-- Clear measure graphics -->
+                    <ei:CallMethodAction 
+                            TargetObject="{Binding DrawLayer.Graphics}"
+                            MethodName="Clear" />
+
+                    <!-- Clear measurements -->
+                    <ei:CallMethodAction 
+                            TargetObject="{Binding}"
+                            MethodName="ResetMeasurements" />
+                </i:EventTrigger>
+
+                <!-- ========================================== 
+                     PROCESS DRAW GEOMETRIES AND DO MEASURING 
+                     ==========================================-->
+                
+                <!-- For freehand polygon, convert drawn geometry to a polygon.  Freehand draw mode
+                     always yields a polyline geometry, so it needs to be converted. -->
+                <i:EventTrigger EventName="DrawComplete" SourceObject="{Binding DrawObject}">
+                    
+                    <!-- Check that the draw mode and freehand draw mode indicate a freehand polygon -->
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression ForwardChaining="And">
+                                <ei:ComparisonCondition 
+                                        LeftOperand="{Binding DrawObject.DrawMode}" 
+                                        Operator="Equal"
+                                        RightOperand="Freehand" />
+                                <ei:ComparisonCondition 
+                                        LeftOperand="{Binding FreehandDrawMode}" 
+                                        Operator="Equal"
+                                        RightOperand="Polygon" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+
+                    <!-- Convert the draw geometry to a polygon -->
+                    <local:PolylineToPolygonAction
+                            Polyline="{Binding DrawGeometry}"
+                            Polygon="{Binding DrawGeometry, Mode=TwoWay}" />
+                </i:EventTrigger>
+
+                <!-- For rectangle, convert drawn geometry to a polygon.  Rectangle draw mode
+                     yields an envelope, so it needs to be converted. -->
+                <i:EventTrigger EventName="DrawComplete" SourceObject="{Binding DrawObject}">
+                    
+                    <!-- Make sure the draw mode is rectangle -->
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                        LeftOperand="{Binding DrawObject.DrawMode}" 
+                                        Operator="Equal"
+                                        RightOperand="Rectangle" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+
+                    <!-- Convert the geometry -->
+                    <local:EnvelopeToPolygonAction
+                            Envelope="{Binding DrawGeometry}"
+                            Polygon="{Binding DrawGeometry, Mode=TwoWay}" />
+                </i:EventTrigger>
+
+
+                <!-- Add the measure graphic to the map and perform measurements -->
+                <i:EventTrigger EventName="DrawComplete" SourceObject="{Binding DrawObject}">
+
+                    <!-- Update status message to "calculating" and busy state to true -->
+                    <ei:ChangePropertyAction
+                            TargetObject="{Binding}"
+                            PropertyName="StatusMessage"
+                            Value="{Binding LocalizedStrings.StatusCalculating,
+                                Source={StaticResource Strings}}" />
+                    <ei:ChangePropertyAction
+                            TargetObject="{Binding}"
+                            PropertyName="IsBusy"
+                            Value="True" />
+
+                    <!-- Convert draw geometry to a graphic and store as ViewModel's CurrentGraphic -->
+                    <local:GeometryToGraphicAction 
+                            Geometry="{Binding DrawGeometry}"                                                              
+                            Graphic="{Binding CurrentGraphic, Mode=TwoWay}" />
+
+                    <!-- Add the graphic to the map -->
+                    <local:AddGraphicAction 
+                            TargetObject="{Binding DrawLayer}" 
+                            Graphic="{Binding CurrentGraphic}" />
+
+                    <!-- Project the geometry to WGS 84 so it can be used in geodesic area and length calculation.  
+                         Note that the ProjectGeometryAction will skip the projection if the geometry is already 
+                         in WGS 84, or do the transformation client-side if it is in Web Mercator. 
+                    
+                         Note that the input comes from the ViewModel's DrawGeometry property, and the output is 
+                         stored on the MeasurableGeometry property -->
+                    <local:ProjectGeometryAction
+                            TargetObject="{Binding DrawGeometry}"
+                            GeometryServiceUrl="{Binding GeometryServiceUrl}"
+                            OutputGeometry="{Binding MeasurableGeometry, Mode=TwoWay}"
+                            Error="{Binding Error, Mode=TwoWay}">
+                        <local:ProjectGeometryAction.OutputSpatialReference>
+                            <esri:SpatialReference WKID="4326" />
+                        </local:ProjectGeometryAction.OutputSpatialReference>
+
+                        <!-- Continue processing once the projection operation is completed -->
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Completed">
+
+                                <!-- Simplify the geometry to ensure that it can be measured. This is required
+                                     for self-intersecting lines and polygons.  For points, the simplify action 
+                                     will just complete immediately.                                  
+                    
+                                     Note that the input comes from the ViewModel's MeasurableGeometry property, 
+                                     and the output is written to this property as well -->
+                                <local:SimplifyGeometryAction
+                                        TargetObject="{Binding MeasurableGeometry}"
+                                        GeometryServiceUrl="{Binding GeometryServiceUrl}"
+                                        OutputGeometry="{Binding MeasurableGeometry, Mode=TwoWay}"
+                                        Error="{Binding Error, Mode=TwoWay}">
+                                    <i:Interaction.Triggers>
+
+                                        <!-- Continue processing once the simplify operation is completed. -->
+                                        <i:EventTrigger EventName="Completed">
+
+                                            <!-- Measure the geometry.  Note that the ViewModel's measure properties - 
+                                                 latitude, longitude, length, and area - are all bound to the measure 
+                                                 action.  The view displays measurements by binding to the same 
+                                                 properties. -->
+                                            <local:MeasureAction 
+                                                    TargetObject="{Binding MeasurableGeometry}" 
+                                                    Latitude="{Binding Latitude, Mode=TwoWay}"
+                                                    Longitude="{Binding Longitude, Mode=TwoWay}"
+                                                    Length="{Binding Length, Mode=TwoWay}"
+                                                    Area="{Binding Area, Mode=TwoWay}"
+                                                    GeometryServiceUrl="{Binding GeometryServiceUrl}"
+                                                    Error="{Binding Error, Mode=TwoWay}">
+                                                <i:Interaction.Triggers>
+
+                                                    <!-- Update status message and busy state on completion -->
+                                                    <i:EventTrigger EventName="Completed">
+                                                        <ei:ChangePropertyAction
+                                                                TargetObject="{Binding}"
+                                                                PropertyName="StatusMessage"
+                                                                Value="{Binding LocalizedStrings.StatusCalculateCompleteDrawAgain,
+                                                                    Source={StaticResource Strings}}" />
+                                                        <ei:ChangePropertyAction
+                                                                TargetObject="{Binding}"
+                                                                PropertyName="IsBusy"
+                                                                Value="False" />
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </local:MeasureAction>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </local:SimplifyGeometryAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </local:ProjectGeometryAction>
+                </i:EventTrigger>
+
+                <!-- ===============================
+                     SET SYMBOL ON OUTPUT GRAPHIC 
+                     =============================== -->
+                
+                <!-- Set symbol for point graphics -->
+                <i:EventTrigger EventName="DrawComplete" SourceObject="{Binding DrawObject}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                        LeftOperand="{Binding CurrentGraphic.Geometry, 
+                                            Converter={StaticResource IsTypeConverter}, 
+                                            ConverterParameter=ESRI.ArcGIS.Client~ESRI.ArcGIS.Client.Geometry~MapPoint}" 
+                                        RightOperand="True" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction
+                            TargetObject="{Binding CurrentGraphic}"
+                            PropertyName="Symbol"
+                            Value="{StaticResource DrawGraphicMarkerSymbol}" />
+                </i:EventTrigger>
+
+                <!-- Set symbol for line graphics -->
+                <i:EventTrigger EventName="DrawComplete" SourceObject="{Binding DrawObject}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                        LeftOperand="{Binding CurrentGraphic.Geometry, 
+                                            Converter={StaticResource IsTypeConverter}, 
+                                            ConverterParameter=ESRI.ArcGIS.Client~ESRI.ArcGIS.Client.Geometry~Polyline}" 
+                                        RightOperand="True" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction
+                            TargetObject="{Binding CurrentGraphic}"
+                            PropertyName="Symbol"
+                            Value="{StaticResource DrawGraphicLineSymbol}" />
+                </i:EventTrigger>
+
+                <!-- Set symbol for polygon graphics -->
+                <i:EventTrigger EventName="DrawComplete" SourceObject="{Binding DrawObject}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                        LeftOperand="{Binding CurrentGraphic.Geometry, 
+                                            Converter={StaticResource IsTypeConverter}, 
+                                            ConverterParameter=ESRI.ArcGIS.Client~ESRI.ArcGIS.Client.Geometry~Polygon}" 
+                                        RightOperand="True" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction
+                            TargetObject="{Binding CurrentGraphic}"
+                            PropertyName="Symbol"
+                            Value="{StaticResource DrawGraphicFillSymbol}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
+        </Grid>
+        
+        <!--=========================================================
+            LAYER SELECTION
+            Menus for selecting the layer to measure features from
+            =========================================================-->
+        <Grid
+            Visibility="{Binding IsChecked, ElementName=SelectFeaturesButton,
+                Converter={StaticResource BoolToVisibilityConverter}}"
+            Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>          
+                
+            <!-- ===========================
+                 ROW 1 - LAYER SELECTION
+                 ===========================-->
+            <TextBlock  
+                Text="{Binding LocalizedStrings.LayerPrompt,
+                    Source={StaticResource Strings}}" 
+                Opacity="{StaticResource AccentOpacity}"
+                VerticalAlignment="Center"/>
+            <ComboBox 
+                Name="cmbLayers" 
+                HorizontalAlignment="Stretch"
+                Foreground="Black"
+                Margin="10,0,0,0"
+                ItemsSource="{Binding MeasurableLayers}"
+                SelectedItem="{Binding MeasureLayer, Mode=TwoWay}" 
+                Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding (esriExt:MapApplication.LayerName)}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+
+                <i:Interaction.Triggers>
+                    
+                    <!-- Logic executed when a new layer is selected -->
+                    <i:EventTrigger EventName="SelectionChanged">
+                        
+                        <!-- Clear results from the map -->
+                        <ei:CallMethodAction 
+                            TargetObject="{Binding DrawLayer.Graphics}"
+                            MethodName="Clear" />
+
+                        <!-- Clear previous measurements -->
+                        <ei:CallMethodAction 
+                            TargetObject="{Binding}"
+                            MethodName="ResetMeasurements" />
+
+                        <!-- Force the drop-down to close -->
+                        <ei:ChangePropertyAction
+                            PropertyName="IsDropDownOpen"
+                            Value="False" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+
+            <!-- ================================
+                 ROW 2 - SUB-LAYER SELECTION 
+                 ================================-->
+            <TextBlock  
+                Text="{Binding LocalizedStrings.SubLayerPrompt,
+                    Source={StaticResource Strings}}" 
+                Visibility="{Binding Visibility, ElementName=cmbSubLayers}"
+                Opacity="{StaticResource AccentOpacity}"
+                VerticalAlignment="Center"
+                Grid.Row="1"
+                Margin="0,5,0,0"/>
+            <ComboBox 
+                x:Name="cmbSubLayers" 
+                Margin="10,5,0,0"
+                HorizontalAlignment="Stretch"    
+                Foreground="Black"
+                ItemsSource="{Binding MeasurableSubLayers}"
+                DisplayMemberPath="Name"
+                SelectedValue="{Binding MeasureSubLayer, Mode=TwoWay}"
+                Visibility="{Binding SelectedValue, ElementName=cmbLayers, 
+                    Converter={StaticResource IsTypeToVisibilityConverter},
+                    ConverterParameter=ESRI.ArcGIS.Client~ESRI.ArcGIS.Client~ArcGISDynamicMapServiceLayer}" 
+                Grid.Row="1"
+                Grid.Column="1">
+
+                <i:Interaction.Triggers>
+                    
+                    <!-- Logic executed when a new sub-layer is selected -->
+                    <i:EventTrigger EventName="SelectionChanged">
+                        
+                        <!-- Clear results from the map -->
+                        <ei:CallMethodAction 
+                            TargetObject="{Binding DrawLayer.Graphics}"
+                            MethodName="Clear" />
+
+                        <!-- Clear previous measurements -->
+                        <ei:CallMethodAction 
+                            TargetObject="{Binding}"
+                            MethodName="ResetMeasurements" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+
+            <!-- =============================================================
+                 LOGIC FOR UPDATING STATUS AND MEASURING SELECTED FEATURES 
+                 =============================================================-->
+            <i:Interaction.Triggers>
+
+                <!-- Update of instructions to include layer name when measure layer is changed -->
+                <ei:PropertyChangedTrigger Binding="{Binding MeasureLayerName}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding MeasureLayerName}" 
+									Operator="NotEqual" 
+									RightOperand="{x:Null}"/>
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+
+                    <!-- Set the status message -->
+                    <ei:ChangePropertyAction 
+                        TargetObject="{Binding}" 
+                        PropertyName="StatusMessage" 
+                            Value="{Binding MeasureLayerName,
+                        Converter={StaticResource FormatResourceConverter},
+                        ConverterParameter=MeasureLabelClickFeature}" />
+                </ei:PropertyChangedTrigger>
+
+                <!-- Revert to drawing shapes when no measurable layers are available.  Check for
+                     this scenario by getting the number of measurable layers when the measure 
+                     layer changes. -->
+                <ei:PropertyChangedTrigger Binding="{Binding MeasurableLayers.Count}">
+                    
+                    <!-- Check whether the number of measurable layers is zero-->
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding MeasurableLayers.Count}" 
+									Operator="Equal" 
+									RightOperand="0"/>
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    
+                    <!-- Switch to measuring shapes -->
+                    <ei:ChangePropertyAction 
+                        TargetObject="{Binding ElementName=DrawShapesButton}" 
+                        PropertyName="IsChecked" 
+                            Value="True" />
+                </ei:PropertyChangedTrigger>
+
+                <!-- Initialization when feature clicked is being retrieved.  Relies on RetrievingFeatures
+                     changing because GetFeatureOnClickBehavior is bound to this property on the ViewModel -->
+                <ei:PropertyChangedTrigger Binding="{Binding RetrievingFeatures}">
+                    <i:Interaction.Behaviors>
+                            
+                        <!-- Make sure measure layer is not null and RetrievingFeatures == true -->
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding MeasureLayer}" 
+									Operator="NotEqual" 
+									RightOperand="{x:Null}" />
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding RetrievingFeatures}" 
+									Operator="Equal" 
+									RightOperand="True" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+
+                    <!-- Clear previous result graphic -->
+                    <ei:ChangePropertyAction 
+                        TargetObject="{Binding}"
+                        PropertyName="CurrentGraphic" 
+                        Value="{x:Null}"/>
+
+                    <!-- Clear previous measurements -->
+                    <ei:CallMethodAction 
+                        TargetObject="{Binding}"
+                        MethodName="ResetMeasurements" />
+
+                    <!-- Clear graphics from the results layer -->
+                    <ei:CallMethodAction 
+                        TargetObject="{Binding DrawLayer.Graphics}"
+                        MethodName="Clear" />
+
+                    <!-- Update status message to show calculating -->
+                    <ei:ChangePropertyAction
+                            TargetObject="{Binding}"
+                            PropertyName="StatusMessage"
+                            Value="{Binding LocalizedStrings.StatusCalculating,
+                                Source={StaticResource Strings}}" />
+                </ei:PropertyChangedTrigger>
+                
+                <!-- ======================================
+                     SET SYMBOL FOR CLICKED FEATURE
+                     ====================================== -->
+                
+                <!-- Set symbol for point layers.  Listen to the CurrentGraphic because this is updated 
+                     by the GetFeatureOnClickBehavior once the feature is retrieved.  -->
+                <ei:PropertyChangedTrigger Binding="{Binding CurrentGraphic}">
+
+                    <!-- Make sure that a measure layer is selected and the current graphic's 
+                         geometry type is point -->
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding MeasureLayer}" 
+									Operator="NotEqual" 
+									RightOperand="{x:Null}"/>
+                                <ei:ComparisonCondition
+                                    LeftOperand="{Binding CurrentGraphic.Geometry,
+                                        Converter={StaticResource IsTypeConverter},
+                                        ConverterParameter=ESRI.ArcGIS.Client~ESRI.ArcGIS.Client.Geometry~MapPoint}"
+                                    Operator="Equal"
+                                    RightOperand="True" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+
+                    <!-- Apply the symbol for point features to the current graphic -->
+                    <ei:ChangePropertyAction
+                        TargetObject="{Binding CurrentGraphic}"
+                        PropertyName="Symbol"
+                        Value="{StaticResource SelectMarkerSymbol}" />
+                </ei:PropertyChangedTrigger>
+
+                <!-- Set symbol for line layers.  Listen to the CurrentGraphic because this is updated 
+                     by the GetFeatureOnClickBehavior once the feature is retrieved.  -->
+                <ei:PropertyChangedTrigger Binding="{Binding CurrentGraphic}">
+                    
+                    <!-- Make sure that a measure layer is selected and the current graphic's 
+                         geometry type is polyline -->
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding MeasureLayer}" 
+									Operator="NotEqual" 
+									RightOperand="{x:Null}"/>
+                                <ei:ComparisonCondition
+                                    LeftOperand="{Binding CurrentGraphic.Geometry,
+                                        Converter={StaticResource IsTypeConverter},
+                                        ConverterParameter=ESRI.ArcGIS.Client~ESRI.ArcGIS.Client.Geometry~Polyline}"
+                                    Operator="Equal"
+                                    RightOperand="True" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+
+                    <!-- Apply the symbol for line features to the current graphic -->
+                    <ei:ChangePropertyAction
+                        TargetObject="{Binding CurrentGraphic}"
+                        PropertyName="Symbol"
+                        Value="{StaticResource SelectLineSymbol}" />
+                </ei:PropertyChangedTrigger>
+
+
+                <!-- Set symbol for polygon layers.  Listen to the CurrentGraphic because this is updated 
+                     by the GetFeatureOnClickBehavior once the feature is retrieved.  -->
+                <ei:PropertyChangedTrigger Binding="{Binding CurrentGraphic}">
+
+                    <!-- Make sure that a measure layer is selected and the current graphic's 
+                         geometry type is polygon -->
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding MeasureLayer}" 
+									Operator="NotEqual" 
+									RightOperand="{x:Null}"/>
+                                <ei:ComparisonCondition
+                                    LeftOperand="{Binding CurrentGraphic.Geometry,
+                                        Converter={StaticResource IsTypeConverter},
+                                        ConverterParameter=ESRI.ArcGIS.Client~ESRI.ArcGIS.Client.Geometry~Polygon}"
+                                    Operator="Equal"
+                                    RightOperand="True" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+
+                    <!-- Apply the symbol for polygon features to the current graphic -->
+                    <ei:ChangePropertyAction
+                        TargetObject="{Binding CurrentGraphic}"
+                        PropertyName="Symbol"
+                        Value="{StaticResource SelectFillSymbol}" />
+                </ei:PropertyChangedTrigger>
+
+                <!-- =============================================
+                     PROCESS CLICKED FEATURE AND DO MEASURING 
+                     ============================================= -->
+                <ei:PropertyChangedTrigger Binding="{Binding CurrentGraphic}">
+
+                    <!-- Make sure a layer is selected to measure features from -->
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding MeasureLayer}" 
+									Operator="NotEqual" 
+									RightOperand="{x:Null}"/>
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+
+                    <!-- Add the clicked feature to the results layer -->
+                    <local:AddGraphicAction 
+                        TargetObject="{Binding DrawLayer}" 
+                        Graphic="{Binding CurrentGraphic}" />
+
+                    <!-- Project the geometry to WGS 84 so it can be used in geodesic area and length calculation.  
+                         Note that the ProjectGeometryAction will skip the projection if the geometry is already 
+                         in WGS 84, or do the transformation client-side if it is in Web Mercator. 
+                    
+                    
+                         Note that the input comes from the ViewModel's DrawGeometry property, and the output is 
+                         stored on the MeasurableGeometry property -->
+                    <local:ProjectGeometryAction
+                            TargetObject="{Binding CurrentGraphic.Geometry}"
+                            GeometryServiceUrl="{Binding GeometryServiceUrl}"
+                            OutputGeometry="{Binding MeasurableGeometry, Mode=TwoWay}"
+                            Error="{Binding Error, Mode=TwoWay}">
+                        <local:ProjectGeometryAction.OutputSpatialReference>
+                            <esri:SpatialReference WKID="4326" />
+                        </local:ProjectGeometryAction.OutputSpatialReference>
+
+                        <!-- Continue processing once the project operation is completed -->
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Completed">
+
+                                <!-- Simplify the geometry to ensure that it can be measured. This is required for 
+                                     self-intersecting lines and polygons. Completed will be fired immediately for points.  
+                                                    
+                                     Note that the input comes from the ViewModel's MeasurableGeometry property, 
+                                     and the output is written to this property as well -->
+                                <local:SimplifyGeometryAction
+                                        TargetObject="{Binding MeasurableGeometry}"
+                                        GeometryServiceUrl="{Binding GeometryServiceUrl}"
+                                        OutputGeometry="{Binding MeasurableGeometry, Mode=TwoWay}"
+                                        Error="{Binding Error, Mode=TwoWay}">
+                                    <i:Interaction.Triggers>
+
+                                        <!-- Continue processing once the simplify operation is completed. -->
+                                        <i:EventTrigger EventName="Completed">
+
+                                            <!-- Measure the geometry.  Note that the ViewModel's measure properties - 
+                                                 latitude, longitude, length, and area - are all bound to the measure 
+                                                 action.  The view displays measurements by binding to the same 
+                                                 properties. -->
+                                            <local:MeasureAction TargetObject="{Binding MeasurableGeometry}" 
+                                                Latitude="{Binding Latitude, Mode=TwoWay}"
+                                                Longitude="{Binding Longitude, Mode=TwoWay}"
+                                                Length="{Binding Length, Mode=TwoWay}"
+                                                Area="{Binding Area, Mode=TwoWay}"
+                                                GeometryServiceUrl="{Binding GeometryServiceUrl}"
+                                                Error="{Binding Error, Mode=TwoWay}">
+                                                <i:Interaction.Triggers>
+
+                                                    <!-- Update status message and busy state on completion -->
+                                                    <i:EventTrigger EventName="Completed">
+                                                        
+                                                        <!-- Select the graphic -->
+                                                        <ei:CallMethodAction 
+                                                            TargetObject="{Binding DrawLayer.Graphics[0]}" 
+                                                            MethodName="Select" />
+
+                                                        <!-- Update busy state -->
+                                                        <ei:ChangePropertyAction
+                                                            TargetObject="{Binding}"
+                                                            PropertyName="IsBusy"
+                                                            Value="False" />
+                                                        
+                                                        <!-- Set the status message -->
+                                                        <ei:ChangePropertyAction 
+                                                            TargetObject="{Binding}" 
+                                                            PropertyName="StatusMessage" 
+                                                            Value="{Binding LocalizedStrings.MeasureLabelClickAnotherFeature,
+                                                                Source={StaticResource Strings}}" />
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </local:MeasureAction>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </local:SimplifyGeometryAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </local:ProjectGeometryAction>
+                </ei:PropertyChangedTrigger>
+
+            </i:Interaction.Triggers>
+
+        </Grid>
+        
+        <!--========================================================== 
+            STATUS MESSAGE 
+            Display of instructions, status, busy state, and errors
+            =========================================================== -->        
+        <Grid
+            Margin="0,10,0,0"
+            Grid.Row="2"
+            VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" /> <!-- Operation status/instructions -->
+                <RowDefinition Height="Auto" /> <!-- Busy indicator or error details header -->
+                <RowDefinition Height="Auto" /> <!-- Error details -->
+            </Grid.RowDefinitions>
+            
+            <!-- ================================ 
+                 ROW 1 - STATUS/INSTRUCTIONS 
+                 ================================ -->
+            
+            <!-- Ordinary status/instructions -->
+            <TextBlock
+                Text="{Binding StatusMessage}"
+                Visibility="{Binding Error, 
+                    Converter={StaticResource NullToVisibilityConverter}}"
+                TextWrapping="Wrap"
+                FontFamily="Segoe UI"
+                FontSize="13"
+                FontStyle="Italic"
+                Opacity="0.7"/>
+            
+            <!-- Failure notification -->
+            <TextBlock
+                Text="{Binding LocalizedStrings.MeasureFailed,
+                    Source={StaticResource Strings}}"
+                Visibility="{Binding Error, 
+                    Converter={StaticResource NotNullToVisibilityConverter}}"
+                TextWrapping="Wrap"
+                FontFamily="Segoe UI"
+                FontSize="13"
+                FontStyle="Italic"
+                Opacity="0.7"/>
+
+            <!-- ================================================ 
+                 ROW 2 - BUSY INDICATOR / ERROR DETAILS HEADER
+                 ================================================-->
+
+            <!-- Busy indicator.  Is only visible when Error is null and IsBusy is true. -->
+            <Grid
+                Grid.Row="1"
+                Visibility="{Binding Error, 
+                    Converter={StaticResource NullToVisibilityConverter}}">
+                <ProgressBar
+                    Visibility="{Binding IsBusy,
+                        Converter={StaticResource BoolToVisibilityConverter}}"
+                    Margin="0,5,0,0"
+                    HorizontalAlignment="Left"
+                    IsIndeterminate="True"
+                    Height="18"
+                    Width="200"/>
+            </Grid>
+            
+            <!-- Error details header -->
+            <ToggleButton
+                x:Name="ErrorDetailsButton"
+                Content="{Binding LocalizedStrings.ErrorDetails,
+                    Source={StaticResource Strings}}"
+                Visibility="{Binding Error, 
+                    Converter={StaticResource NotNullToVisibilityConverter}}"
+                Margin="0,4,0,0"
+                Padding="0"
+                Style="{StaticResource ExpanderToggleButtonStyle}"
+                FontFamily="Segoe UI"
+                FontSize="13"
+                Opacity="{StaticResource AccentOpacity}"
+                Grid.Row="1" />
+            
+            <!-- ========================= 
+                 ROW 3 - ERROR DETAILS 
+                 ========================= -->
+            <TextBlock
+                Text="{Binding Error.Message}"
+                Visibility="{Binding IsChecked, ElementName=ErrorDetailsButton,
+                    Converter={StaticResource BoolToVisibilityConverter}}"
+                Margin="0,2,0,0"
+                TextWrapping="Wrap"
+                FontFamily="Segoe UI"
+                FontSize="12"
+                FontStyle="Italic"
+                Opacity="{StaticResource AccentOpacity}"
+                Grid.Row="2"/>
+        </Grid>
+
+        
+        <!--=============================  
+            MEASUREMENTS DISPLAY AREA
+            ============================= -->
+
+        <!-- Measurements section separator.  Only visible when there are measurements. -->
+        <Rectangle 
+            Visibility="{Binding HasMeasurements, 
+                Converter={StaticResource BoolToVisibilityConverter}}"
+            Height="1"
+            Margin="0,10,0,10"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center"
+            Fill="{StaticResource AccentColorBrush}" 
+            Grid.Row="3">
+            <Rectangle.OpacityMask>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Offset="0" Color="#40000000" />
+                    <GradientStop Offset="0.25" Color="#66000000" />
+                    <GradientStop Offset="0.65" Color="#66000000" />
+                    <GradientStop Offset="1" Color="#05000000" />
+                </LinearGradientBrush>
+            </Rectangle.OpacityMask>
+        </Rectangle>
+
+        <!-- Measurements section.  Only visible when there are measurements -->
+        <Grid
+            Visibility="{Binding HasMeasurements, 
+                Converter={StaticResource BoolToVisibilityConverter}}"
+            VerticalAlignment="Bottom"
+            Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" /> <!-- Header -->
+                <RowDefinition Height="Auto" /> <!-- First measurement -->
+                <RowDefinition Height="Auto" /> <!-- Second measurement -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" /> <!-- Measurement label -->
+                <ColumnDefinition Width="Auto" /> <!-- Measurement value -->
+                <ColumnDefinition Width="*" /> <!-- Units -->
+            </Grid.ColumnDefinitions>
+
+            <!-- ===============================
+                 ROW 1 - MEASUREMENTS HEADER 
+                 ===============================-->
+            <TextBlock 
+                Text="{Binding LocalizedStrings.MeasureLabelMeasurements,
+                    Source={StaticResource Strings}}" 
+                Opacity="0.6"
+                FontWeight="Bold"
+                FontSize="14"
+                FontStyle="Italic"
+                Grid.ColumnSpan="3"/>
+
+            <!-- =====================================
+                 ROW 2 - LATITUDE/LENGTH/PERIMETER 
+                 =====================================-->
+
+            <!-- Latitude label -->
+            <TextBlock 
+                Margin="5,5,0,0"                      
+                Opacity="{StaticResource AccentOpacity}"
+                Text="{Binding LocalizedStrings.MeasureLabelLatitude,
+                    Source={StaticResource Strings}}" 
+                Visibility="{Binding Latitude, 
+                    Converter={StaticResource NotNullToVisibilityConverter}}"
+                Grid.Row="1"/>
+
+            <!-- Latitude value -->
+            <TextBlock 
+                Margin="5,5,0,0"
+                Text="{Binding Path=Latitude, StringFormat=\{0:n2\}}" 
+                Visibility="{Binding Latitude, 
+                    Converter={StaticResource NotNullToVisibilityConverter}}"
+                Grid.Row="1"
+                Grid.Column="1"/>
+
+            <!-- Length label - show if drawn geometry is a line -->
+            <Border 
+                Visibility="{Binding MeasurableGeometry, 
+                    Converter={StaticResource IsTypeToVisibilityConverter}, 
+                    ConverterParameter=ESRI.ArcGIS.Client~ESRI.ArcGIS.Client.Geometry~Polyline}"
+                Grid.Row="1">
+                <TextBlock 
+                    Opacity="{StaticResource AccentOpacity}"
+                    Margin="5,5,0,0"  
+                    Text="{Binding LocalizedStrings.MeasureLabelLength,
+                        Source={StaticResource Strings}}" 
+                    Visibility="{Binding Length, 
+                        Converter={StaticResource NotNullToVisibilityConverter}}"/>
+            </Border>
+
+            <!--Perimeter label - show if drawn geometry is a polygon-->
+            <Border 
+                Visibility="{Binding MeasurableGeometry, 
+                    Converter={StaticResource IsTypeToVisibilityConverter}, 
+                    ConverterParameter=ESRI.ArcGIS.Client~ESRI.ArcGIS.Client.Geometry~Polygon}"
+                Grid.Row="1">
+                <TextBlock 
+                    Opacity="{StaticResource AccentOpacity}"
+                    Margin="5,5,0,0"  
+                    Text="{Binding LocalizedStrings.MeasureLabelPerimeter,
+                        Source={StaticResource Strings}}" 
+                    Visibility="{Binding Length, 
+                        Converter={StaticResource NotNullToVisibilityConverter}}"/>
+            </Border>
+
+            <!-- Length/perimeter measurement -->
+            <TextBlock  
+                Margin="5,5,0,0"
+                HorizontalAlignment="Right"
+                Text="{Binding LengthInCurrentUnits, StringFormat=\{0:n2\}}"
+                Visibility="{Binding Length, 
+                    Converter={StaticResource NotNullToVisibilityConverter}}" 
+                Grid.Row="1"
+                Grid.Column="1"/>
+
+            <!-- Length units -->
+            <ComboBox 
+                Margin="10,3,0,0"
+                HorizontalAlignment="Stretch" 
+                Foreground="Black"
+                ItemsSource="{Binding LinearUnits}"
+                SelectedValuePath="Key" 
+                DisplayMemberPath="Value"
+                SelectedValue="{Binding LinearUnit, Mode=TwoWay}"
+                Visibility="{Binding Length,
+                    Converter={StaticResource NotNullToVisibilityConverter}}"
+                Grid.Row="1"
+                Grid.Column="2" />
+
+            <!-- ==========================
+                 ROW 3 - LONGITUDE/AREA 
+                 ==========================-->
+            
+            <!-- Longitude label -->
+            <TextBlock 
+                Opacity="{StaticResource AccentOpacity}"
+                Margin="5,5,0,0" 
+                Text="{Binding LocalizedStrings.MeasureLabelLongitude,
+                    Source={StaticResource Strings}}" 
+                Visibility="{Binding Longitude, 
+                    Converter={StaticResource NotNullToVisibilityConverter}}"
+                Grid.Row="2"/>
+
+            <!-- Longitude value -->
+            <TextBlock 
+                Margin="5,5,0,0"
+                Text="{Binding Longitude, StringFormat=\{0:n2\}}"                                
+                Visibility="{Binding Longitude, 
+                    Converter={StaticResource NotNullToVisibilityConverter}}" 
+                Grid.Row="2"
+                Grid.Column="1"/>
+
+            <!-- Area label -->
+            <TextBlock 
+                Opacity="{StaticResource AccentOpacity}"
+                Margin="5,5,0,0" 
+                Text="{Binding LocalizedStrings.MeasureLabelArea,
+                    Source={StaticResource Strings}}" 
+                Visibility="{Binding Area, 
+                    Converter={StaticResource NotNullToVisibilityConverter}}"
+                Grid.Row="2"/>
+
+            <!-- Area value -->
+            <TextBlock   
+                Margin="5,5,0,0"
+                HorizontalAlignment="Right"
+                Text="{Binding AreaInCurrentUnits, StringFormat=\{0:n2\}}"
+                Visibility="{Binding Area, 
+                    Converter={StaticResource NotNullToVisibilityConverter}}" 
+                Grid.Row="2"
+                Grid.Column="1"/>
+
+            <!-- Area units -->
+            <ComboBox 
+                Margin="10,3,0,0"
+                HorizontalAlignment="Stretch" 
+                Foreground="Black"
+                ItemsSource="{Binding ArealUnits}"
+                SelectedValuePath="Key" 
+                DisplayMemberPath="Value"
+                SelectedValue="{Binding ArealUnit, Mode=TwoWay}"
+                Visibility="{Binding Area, 
+                    Converter={StaticResource NotNullToVisibilityConverter}}"
+                Grid.Row="2" Grid.Column="2">
+            </ComboBox>
+        </Grid>
+
+    </Grid>
+
+</UserControl>
+
+
+

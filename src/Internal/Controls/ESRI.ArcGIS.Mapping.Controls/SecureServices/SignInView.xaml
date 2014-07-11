@@ -1,0 +1,181 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl 
+    x:Class="ESRI.ArcGIS.Mapping.Controls.SignInView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:behaviors="clr-namespace:ESRI.ArcGIS.Mapping.Behaviors;assembly=ESRI.ArcGIS.Mapping.Behaviors"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:agol="clr-namespace:ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;assembly=ESRI.ArcGIS.Mapping.Controls.ArcGISOnline"
+    xmlns:esriControls="clr-namespace:ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;assembly=ESRI.ArcGIS.Mapping.Controls.ArcGISOnline"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls;assembly=ESRI.ArcGIS.Mapping.Controls"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/AppResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <agol:StringResourcesManager x:Key="Localization" />
+            <local:StringResourcesManager x:Key="ControlsLocalization" />
+            <esriControls:VisibilityConverter x:Key="VisibilityConverter" />
+            <esriControls:ReverseBooleanConverter x:Key="ReverseBooleanConverter" />
+            <esriControls:NotNullVisibilityConverter x:Key="NotNullVisibilityConverter" />
+            <esriControls:NullVisibilityConverter x:Key="NullVisibilityConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="250" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Sign in failure message -->
+        <TextBlock 
+            Text="{Binding SignInError}"
+            Foreground="{StaticResource ErrorNotificationBrush}"
+            FontWeight="Bold"
+            Visibility="{Binding SignInError, Converter={StaticResource NotNullVisibilityConverter}}"
+            Grid.ColumnSpan="2"
+            Margin="0,0,0,10" />
+
+        <!-- Sign in label -->
+        <Grid
+            Visibility="{Binding SignInLabel, Converter={StaticResource NotNullVisibilityConverter}}"
+            Grid.ColumnSpan="2">
+            <TextBlock 
+                Text="{Binding SignInLabel}"
+                Visibility="{Binding SignInError, Converter={StaticResource NullVisibilityConverter}}"
+                Margin="0,0,0,10" />
+        </Grid>
+
+        <!-- User name label and textbox -->
+        <TextBlock 
+            Text="{Binding ConverterParameter=UrlPrompt, Converter={StaticResource ControlsLocalization}}"
+            Grid.Row="1" 
+            VerticalAlignment="Center"
+            Margin="0,0,5,10" 
+            Visibility="{Binding PromptForUrl, Converter={StaticResource VisibilityConverter}}"/>
+        <TextBox  
+            Text="{Binding Url, Mode=TwoWay}"
+            IsEnabled="{Binding SigningIn, Converter={StaticResource ReverseBooleanConverter}}"
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="0,0,0,10"
+            Visibility="{Binding PromptForUrl, Converter={StaticResource VisibilityConverter}}">
+            <i:Interaction.Behaviors>
+                <behaviors:UpdateBindingOnTextChanged />
+            </i:Interaction.Behaviors>
+            <i:Interaction.Triggers>
+                <local:KeyPressedTrigger Key="Enter">
+                    <i:InvokeCommandAction Command="{Binding SignIn}" />
+                </local:KeyPressedTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>
+
+        <!-- User name label and textbox -->
+        <TextBlock 
+            Text="{Binding ConverterParameter=UsernamePrompt, Converter={StaticResource Localization}}"
+            Grid.Row="2" 
+            VerticalAlignment="Center"
+            Margin="0,0,5,10" />
+        <TextBox  
+            Text="{Binding Username, Mode=TwoWay}"
+            IsEnabled="{Binding SigningIn, Converter={StaticResource ReverseBooleanConverter}}"
+            Grid.Row="2"
+            Grid.Column="2"
+            Margin="0,0,0,10">
+            <i:Interaction.Behaviors>
+                <behaviors:UpdateBindingOnTextChanged />
+            </i:Interaction.Behaviors>
+            <i:Interaction.Triggers>
+                <local:KeyPressedTrigger Key="Enter">
+                    <i:InvokeCommandAction Command="{Binding SignIn}" />
+                </local:KeyPressedTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>
+
+        <!-- Password label and textbox -->
+        <TextBlock  
+            Text="{Binding ConverterParameter=PasswordPrompt, Converter={StaticResource Localization}}"
+            Grid.Row="3" 
+            VerticalAlignment="Center"
+            Margin="0,0,5,10" />
+        <PasswordBox 
+            Password="{Binding Password, Mode=TwoWay}"
+            IsEnabled="{Binding SigningIn, Converter={StaticResource ReverseBooleanConverter}}"
+            Grid.Row="3"
+            Grid.Column="1"
+            Margin="0,0,0,10">
+            <i:Interaction.Behaviors>
+                <behaviors:UpdateBindingOnTextChanged />
+            </i:Interaction.Behaviors>
+            <i:Interaction.Triggers>
+                <local:KeyPressedTrigger Key="Enter">
+                    <i:InvokeCommandAction Command="{Binding SignIn}" />
+                </local:KeyPressedTrigger>
+            </i:Interaction.Triggers>
+        </PasswordBox>
+        
+        <!-- OK/Cancel buttons -->
+        <Grid Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Right">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button 
+                Content="{Binding ConverterParameter=SignIn, Converter={StaticResource Localization}}"
+                MinWidth="60"
+                Padding="10,5"
+                HorizontalAlignment="Right"
+                IsEnabled="{Binding SigningIn, Converter={StaticResource ReverseBooleanConverter}}"
+                Style="{StaticResource GradientButtonStyle}" 
+                Foreground="{StaticResource DesignHostAccentTextBrush}" 
+                Background="{StaticResource DesignHostAccentBrush}" 
+                BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                Command="{Binding SignIn}"/>
+            <Button 
+                Content="{Binding ConverterParameter=Cancel, Converter={StaticResource Localization}}"
+                MinWidth="60"
+                Padding="10,5"
+                HorizontalAlignment="Right"
+                IsEnabled="{Binding SigningIn, Converter={StaticResource ReverseBooleanConverter}}"
+                Margin="5,0,0,0"
+                Style="{StaticResource GradientButtonStyle}" 
+                Foreground="{StaticResource DesignHostAccentTextBrush}" 
+                Background="{StaticResource DesignHostAccentBrush}" 
+                BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                Command="{Binding Cancel}"
+                Grid.Column="1"/>
+        </Grid>
+
+        <!-- Sign-in activity indicator -->
+        <toolkit:BusyIndicator 
+            BusyContent="{Binding ConverterParameter=SigningIn, Converter={StaticResource Localization}}" 
+            IsBusy="True" 
+            Grid.RowSpan="5" 
+            Grid.ColumnSpan="2" 
+            Foreground="Black"
+            Visibility="{Binding SigningIn, Converter={StaticResource VisibilityConverter}}"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" />
+    </Grid>
+</UserControl>

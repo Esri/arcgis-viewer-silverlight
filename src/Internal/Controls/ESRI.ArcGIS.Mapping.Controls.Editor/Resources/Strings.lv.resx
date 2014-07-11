@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlwaysDisplayDefaultTemplates" xml:space="preserve">
+    <value>Parādīt noklusējuma šablonus, kad neviens cits šablons neeksistē</value>
+  </data>
+  <data name="AutoComplete" xml:space="preserve">
+    <value>Pielipināt laukumus pie tuvējiem elementiem</value>
+  </data>
+  <data name="AutoSelect" xml:space="preserve">
+    <value>Automātiski izvēlēties elementus, ja nepieciešams, - izmantot Griezt, Pārveidot, Saaudzēt un automātiskās pabeigšanas instrumentus</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Atpakaļ</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Atcelt</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Konfigurēt</value>
+  </data>
+  <data name="Continuous" xml:space="preserve">
+    <value>Uzglabāt uzlabotas rediģēšanas rīkus aktīvus, līdz  ir izvēlēts atšķirīgs instruments</value>
+  </data>
+  <data name="DefaultLayerIds" xml:space="preserve">
+    <value>Rediģēt visus elementu slāņus</value>
+  </data>
+  <data name="EditModes" xml:space="preserve">
+    <value>Rediģēšanas režīmi:</value>
+  </data>
+  <data name="EditOperations" xml:space="preserve">
+    <value>Iespējot grafiskās operācijas:</value>
+  </data>
+  <data name="EditorWidgetConfiguration" xml:space="preserve">
+    <value>Konfigurēt Rediģēšanu</value>
+  </data>
+  <data name="EditVerticesEnabled" xml:space="preserve">
+    <value>Virsotņu rediģēšana</value>
+  </data>
+  <data name="Freehand" xml:space="preserve">
+    <value>Brīvroka</value>
+  </data>
+  <data name="MaintainAspectRatio" xml:space="preserve">
+    <value>Uzturēt ģeometrijas proporcijas</value>
+  </data>
+  <data name="MoveEnabled" xml:space="preserve">
+    <value>Pārvieto</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Nākošais</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Labi</value>
+  </data>
+  <data name="RotateEnabled" xml:space="preserve">
+    <value>Rotē</value>
+  </data>
+  <data name="ScaleEnabled" xml:space="preserve">
+    <value>Mērogs</value>
+  </data>
+  <data name="SelectLayersForEdit" xml:space="preserve">
+    <value>Rediģē tikai šos slāņus:</value>
+  </data>
+  <data name="ShowAttributesOnAdd" xml:space="preserve">
+    <value>Rediģēt vērtības, ja elementi ir pievienoti</value>
+  </data>
+  <data name="AdvancedOptionsHeader" xml:space="preserve">
+    <value>Uzlabotās rediģēšanas rīki...</value>
+  </data>
+  <data name="SelectLayersHeader" xml:space="preserve">
+    <value>Izvēlēties slāņus rediģēšanai</value>
+  </data>
+  <data name="AutoSaveEditChanges" xml:space="preserve">
+    <value>Automātiski saglabāt labojumus</value>
+  </data>
+  <data name="AttachmentEditorClose" xml:space="preserve">
+    <value>Aizvērt</value>
+  </data>
+  <data name="AttachmentEditorFilterIndexPrompt" xml:space="preserve">
+    <value>Filtrē Indeksu:</value>
+  </data>
+  <data name="AttachmentEditorFilterPrompt" xml:space="preserve">
+    <value>Filtrs:</value>
+  </data>
+  <data name="AttachmentEditorHeader" xml:space="preserve">
+    <value>Piesaistes redaktors</value>
+  </data>
+  <data name="AttachmentEditorHeightPrompt" xml:space="preserve">
+    <value>Dialoga augstums:</value>
+  </data>
+  <data name="AttachmentEditorMultiSelectPrompt" xml:space="preserve">
+    <value>Atļaut vairākas piesaistes augšupielādēt uzreiz</value>
+  </data>
+  <data name="AttachmentEditorWidthPrompt" xml:space="preserve">
+    <value>Dialoga platums:</value>
+  </data>
+  <data name="AttachmentEditorConfigHeader" xml:space="preserve">
+    <value>Konfigurēt Piesaistes redaktoru</value>
+  </data>
+  <data name="AttachmentEditorDescription" xml:space="preserve">
+    <value>Ļauj augšupielādēt, lejupielādēt un izdzēst failus, kas saistīti ar grafiskiem elementiem no FeatureLayer</value>
+  </data>
+  <data name="AttachmentEditorDisplayName" xml:space="preserve">
+    <value>Piesaistīt dokumentu</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Aizvērt</value>
+  </data>
+  <data name="SetLayerPopupOnClick" xml:space="preserve">
+    <value>Parādīt rediģēšanai izvēlētajiem slāņiem uznirstošos logus uz peles klikšķi</value>
+  </data>
+  <data name="AddToSelection" xml:space="preserve">
+    <value>Pievienot izvēlētajam</value>
+  </data>
+  <data name="AutocompleteTool" xml:space="preserve">
+    <value>Automātiski pabeigt</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Notīrīt izvēlēto</value>
+  </data>
+  <data name="ClearTool" xml:space="preserve">
+    <value>Rīks Notīrīt</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Griezt</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Izdzēst</value>
+  </data>
+  <data name="EditingShapesEnabled" xml:space="preserve">
+    <value>Atļaut rediģēt formas</value>
+  </data>
+  <data name="EditorOptionsHeader" xml:space="preserve">
+    <value>Izvēlieties rediģēšanas opcijas</value>
+  </data>
+  <data name="EditShape" xml:space="preserve">
+    <value>Rediģēt formu</value>
+  </data>
+  <data name="EditValues" xml:space="preserve">
+    <value>Rediģēt vērtības</value>
+  </data>
+  <data name="RemoveFromSelection" xml:space="preserve">
+    <value>Izņemt no izvēlētā</value>
+  </data>
+  <data name="Reshape" xml:space="preserve">
+    <value>Pārveidot</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Izvēlēties</value>
+  </data>
+  <data name="SelectTools" xml:space="preserve">
+    <value>Izvēlēšanās rīki:</value>
+  </data>
+  <data name="Union" xml:space="preserve">
+    <value>Saaudzēt</value>
+  </data>
+  <data name="AdvancedOptionsHeaderHide" xml:space="preserve">
+    <value>Paslēpt uzlabotos rīkus</value>
+  </data>
+  <data name="EditToolbarWithAddFeatures" xml:space="preserve">
+    <value>Rīkjosla Rediģēt pieejama ar Pievienot elementus</value>
+  </data>
+  <data name="DisableClustering" xml:space="preserve">
+    <value>Atspējot Klasterus</value>
+  </data>
+  <data name="DisableClusteringPrompt" xml:space="preserve">
+    <value>Klasteru slāņiem nav atļauta rediģēšana. Vai vēlaties tagad atspējot klasterus?</value>
+  </data>
+</root>

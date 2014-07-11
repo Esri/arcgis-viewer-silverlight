@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ViewerApplication LogoFilePath="Images/logo.png"
+                   LayoutFilePath="Config/Layouts/Glass.xaml">
+
+  <TitleText>_ArcGISViewerForMicrosoftSilverlight_</TitleText>
+  <Version>3.2.0.0</Version>
+  <HelpLinks>
+    <HelpLink>
+      <DisplayText>_Help_</DisplayText>
+      <Url>_HelpUrl_</Url>
+    </HelpLink>
+    <HelpLink>
+      <DisplayText>_Forums_</DisplayText>
+      <Url>http://forums.arcgis.com/forums/211-ArcGIS-Viewer-for-Silverlight</Url>
+    </HelpLink>
+    <HelpLink>
+      <DisplayText>_Blog_</DisplayText>
+      <Url>http://blogs.esri.com/Dev/blogs/silverlightwpf/</Url>
+    </HelpLink>
+  </HelpLinks>
+    <Extensions />
+  <ArcGISOnlineSharing>http://www.arcgis.com/sharing/</ArcGISOnlineSharing>
+  <ArcGISOnlineSharingSecure>https://www.arcgis.com/sharing/</ArcGISOnlineSharingSecure>
+  <ArcGISOnlineProxy></ArcGISOnlineProxy>
+  <GeometryService>http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer</GeometryService>
+  <Proxy></Proxy>
+  <BingMapsAppId></BingMapsAppId>
+  <WebMap>
+    <ID></ID>
+    <Title></Title>
+    <Linked></Linked>
+  </WebMap>
+</ViewerApplication>

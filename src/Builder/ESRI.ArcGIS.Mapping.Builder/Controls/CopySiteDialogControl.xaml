@@ -1,0 +1,54 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl x:Class="ESRI.ArcGIS.Mapping.Builder.CopySiteDialogControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+    xmlns:mapping="http://schemas.esri.com/arcgis/mapping/2009"
+    Loaded="CopySiteDialogControl_Loaded">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition  />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="10,5,0,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="200" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding ConverterParameter=NamePrompt, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" VerticalAlignment="Center" Margin="8,0,0,0" />
+            <TextBox x:Name="NameTextBox" Grid.Column="1" VerticalAlignment="Center" Margin="3" MaxLength="60" KeyDown="CheckForEnterKeyDown" />
+            <TextBlock Text="{Binding ConverterParameter=DescriptionPrompt, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" Grid.Row="1" VerticalAlignment="Top" Margin="8,8,0,0" />
+            <TextBox x:Name="DescriptionTextBox" Grid.Row="1" Grid.Column="1" AcceptsReturn="True" Height="80" VerticalAlignment="Center" Margin="3" />
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <mapping:ActivityIndicator x:Name="ProgressIndicator" Visibility="Collapsed" HorizontalAlignment="Right" Width="25" AutoStartProgressAnimation="False" />
+
+            <Button x:Name="OKButton" Grid.Column="1" Content="{Binding ConverterParameter=OK, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" Height="25" MinWidth="50" Click="OKButton_Click" HorizontalAlignment="Right" 
+                Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                />
+            <Button x:Name="CancelButton" Grid.Column="2" Content="{Binding ConverterParameter=Cancel, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" Height="25" MinWidth="50"  Margin="3" 
+                    Click="CancelButton_Click" 
+                            Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                            Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}" />
+        </Grid>
+    </Grid>
+</UserControl>

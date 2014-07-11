@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddLayersToMap" xml:space="preserve">
+    <value>将 {0} 个图层添加到地图</value>
+  </data>
+  <data name="ApplyChanges" xml:space="preserve">
+    <value>应用更改</value>
+  </data>
+  <data name="BrowseToGP" xml:space="preserve">
+    <value>浏览到地理处理服务</value>
+  </data>
+  <data name="BrowseToTask" xml:space="preserve">
+    <value>浏览至任务...</value>
+  </data>
+  <data name="BySelectingLayerFromMap" xml:space="preserve">
+    <value>通过选择地图中的图层</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>清除所有字段</value>
+  </data>
+  <data name="ConfigurationError" xml:space="preserve">
+    <value>配置错误</value>
+  </data>
+  <data name="ConfigureGeoprocessing" xml:space="preserve">
+    <value>配置地理处理</value>
+  </data>
+  <data name="ConfigureInputHeading" xml:space="preserve">
+    <value>配置输入参数</value>
+  </data>
+  <data name="ConfigureInputParameterForGeoprocessingTask" xml:space="preserve">
+    <value>配置地理处理任务的输入参数</value>
+  </data>
+  <data name="ConfigureOutputHeading" xml:space="preserve">
+    <value>配置输出参数</value>
+  </data>
+  <data name="ConfigureOutputParameterForGeoprocessingTask" xml:space="preserve">
+    <value>配置地理处理任务的输出参数</value>
+  </data>
+  <data name="ConfigurePopupFieldAliasesAndVisibility" xml:space="preserve">
+    <value>配置弹出窗口中字段的别名和可见性</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>配置弹出窗口</value>
+  </data>
+  <data name="ConfigureRenderer" xml:space="preserve">
+    <value>配置渲染器</value>
+  </data>
+  <data name="ConfigureSelectedGPTask" xml:space="preserve">
+    <value>配置所选地理处理任务</value>
+  </data>
+  <data name="ConfigureTitleAndLayerOrder" xml:space="preserve">
+    <value>配置标题和图层顺序</value>
+  </data>
+  <data name="Configuring" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="DrawLine" xml:space="preserve">
+    <value>绘制线</value>
+  </data>
+  <data name="DrawPoint" xml:space="preserve">
+    <value>绘制点</value>
+  </data>
+  <data name="DrawPolygon" xml:space="preserve">
+    <value>绘制面</value>
+  </data>
+  <data name="EnterUrlForFile" xml:space="preserve">
+    <value>输入文件的 URL</value>
+  </data>
+  <data name="EnterUrlForRasterData" xml:space="preserve">
+    <value>输入栅格数据的 URL</value>
+  </data>
+  <data name="EnterUrlForRasterDataLayer" xml:space="preserve">
+    <value>输入栅格数据图层的 URL</value>
+  </data>
+  <data name="EnterUrlForRecordset" xml:space="preserve">
+    <value>输入记录集的 URL</value>
+  </data>
+  <data name="ExceptionAppendPropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>在对象之外调用 AppendProperty</value>
+  </data>
+  <data name="ExceptionBadEscape" xml:space="preserve">
+    <value>错误转义</value>
+  </data>
+  <data name="ExceptionConverters" xml:space="preserve">
+    <value>转换器</value>
+  </data>
+  <data name="ExceptionEndArrayCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>在没有匹配的 StartArray 时调用 EndArray</value>
+  </data>
+  <data name="ExceptionEndArrayIndentedCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>在没有匹配的 StartArray 时调用 EndArrayIndented</value>
+  </data>
+  <data name="ExceptionEndObjectCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>在没有匹配的 StartObject 时调用 EndObject</value>
+  </data>
+  <data name="ExceptionEndObjectIndentedCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>在没有匹配的 StartObject 时调用 EndObjectIndented</value>
+  </data>
+  <data name="ExceptionInput" xml:space="preserve">
+    <value>输入</value>
+  </data>
+  <data name="ExceptionStartPropertycalledOutsideOfAnObject" xml:space="preserve">
+    <value>在对象之外调用 StartProperty</value>
+  </data>
+  <data name="ExceptionType" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="ExceptionWritePropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>在对象之外调用 WriteProperty</value>
+  </data>
+  <data name="FailedToLoad" xml:space="preserve">
+    <value>加载失败</value>
+  </data>
+  <data name="FailedToLoadTaskInformation" xml:space="preserve">
+    <value>加载任务信息失败。</value>
+  </data>
+  <data name="FieldInformationIsNotKnown" xml:space="preserve">
+    <value>字段信息未知。</value>
+  </data>
+  <data name="GeometryTypeIsNotKnown" xml:space="preserve">
+    <value>几何类型未知。</value>
+  </data>
+  <data name="GeoprocessingHasNotBeenconfigured" xml:space="preserve">
+    <value>地理处理未进行配置。</value>
+  </data>
+  <data name="GettingResults" xml:space="preserve">
+    <value>正在获取结果...</value>
+  </data>
+  <data name="GPBrowseInstructions" xml:space="preserve">
+    <value>输入指向 ArcGIS Server 的 URL 或从下拉列表中选择服务器。然后选择要配置的地理处理任务并单击“下一步”。</value>
+  </data>
+  <data name="GPBrowseTooltip" xml:space="preserve">
+    <value>输入指向包含地理处理服务的 ArcGIS Server 的 URL</value>
+  </data>
+  <data name="GPBrowseWatermark" xml:space="preserve">
+    <value>输入服务器或地理处理任务 URL</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>页眉:</value>
+  </data>
+  <data name="InformationAboutThisGeoprocessingTool" xml:space="preserve">
+    <value>有关此地理处理工具的信息。</value>
+  </data>
+  <data name="Input" xml:space="preserve">
+    <value>输入</value>
+  </data>
+  <data name="Interactively" xml:space="preserve">
+    <value>交互式</value>
+  </data>
+  <data name="LabelDefaultValue" xml:space="preserve">
+    <value>默认值:</value>
+  </data>
+  <data name="LabelError" xml:space="preserve">
+    <value>错误:</value>
+  </data>
+  <data name="LabelFormat" xml:space="preserve">
+    <value>格式:</value>
+  </data>
+  <data name="LabelFormatTooltip" xml:space="preserve">
+    <value>格式工具提示:</value>
+  </data>
+  <data name="LabelInputFeatures" xml:space="preserve">
+    <value>输入要素:</value>
+  </data>
+  <data name="LabelLabel" xml:space="preserve">
+    <value>标注:</value>
+  </data>
+  <data name="LabelLayerName" xml:space="preserve">
+    <value>图层名称:</value>
+  </data>
+  <data name="LabelPopUps" xml:space="preserve">
+    <value>弹出窗口:</value>
+  </data>
+  <data name="LabelRenderer" xml:space="preserve">
+    <value>渲染器:</value>
+  </data>
+  <data name="LabelShowParameter" xml:space="preserve">
+    <value>显示参数:</value>
+  </data>
+  <data name="LabelTooltip" xml:space="preserve">
+    <value>工具提示:</value>
+  </data>
+  <data name="LabelTransparency" xml:space="preserve">
+    <value>透明度:</value>
+  </data>
+  <data name="LabelType" xml:space="preserve">
+    <value>类型:</value>
+  </data>
+  <data name="LabelUrl" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="LayerOrder" xml:space="preserve">
+    <value>图层顺序:</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>正在加载...</value>
+  </data>
+  <data name="NoLayersAvailable" xml:space="preserve">
+    <value>可用图层不到 {0} 个</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>不可用</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="OnlyUrlOutputIsSupportedForRecordsets" xml:space="preserve">
+    <value>&lt;记录集仅支持 URL 输出&gt;</value>
+  </data>
+  <data name="OrangeStickpin" xml:space="preserve">
+    <value>橙色别针</value>
+  </data>
+  <data name="OrderLayers" xml:space="preserve">
+    <value>排序图层</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>输出</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>必选</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>结果</value>
+  </data>
+  <data name="SaveWebpartByClickingOK" xml:space="preserve">
+    <value>请单击“确定”或“应用”保存 Web 部件。</value>
+  </data>
+  <data name="SelectGeoprocessingTask" xml:space="preserve">
+    <value>选择地理处理任务</value>
+  </data>
+  <data name="SpecifyOrderOfLayersCreatedByGeoprocessingTask" xml:space="preserve">
+    <value>指定将由地理处理任务创建的图层的顺序</value>
+  </data>
+  <data name="TaskPrompt" xml:space="preserve">
+    <value>所选地理处理任务:</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>对话框标题:</value>
+  </data>
+  <data name="UnknownGeometryType" xml:space="preserve">
+    <value>未知的几何类型</value>
+  </data>
+  <data name="FromMapExtent" xml:space="preserve">
+    <value>使用地图的范围</value>
+  </data>
+  <data name="ZoomToExtentInput" xml:space="preserve">
+    <value>&lt;缩放至您要用作输入的范围 &gt;</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>选择所有字段</value>
+  </data>
+  <data name="JobFailed" xml:space="preserve">
+    <value>地理处理作业已失败</value>
+  </data>
+  <data name="Centimeters" xml:space="preserve">
+    <value>厘米</value>
+  </data>
+  <data name="DecimalDegrees" xml:space="preserve">
+    <value>十进制度</value>
+  </data>
+  <data name="Decimeters" xml:space="preserve">
+    <value>分米</value>
+  </data>
+  <data name="Feet" xml:space="preserve">
+    <value>英尺</value>
+  </data>
+  <data name="Inches" xml:space="preserve">
+    <value>英寸</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>公里</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>米</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>英里</value>
+  </data>
+  <data name="Millimeters" xml:space="preserve">
+    <value>毫米</value>
+  </data>
+  <data name="NauticalMiles" xml:space="preserve">
+    <value>海里</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>磅</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="Yards" xml:space="preserve">
+    <value>码</value>
+  </data>
+  <data name="EmptyResponse" xml:space="preserve">
+    <value>服务返回一个空响应</value>
+  </data>
+  <data name="UnexpectedServiceAccessError" xml:space="preserve">
+    <value>访问地理处理服务时发生意外错误。</value>
+  </data>
+  <data name="Executing" xml:space="preserve">
+    <value>正在执行...</value>
+  </data>
+  <data name="Execute" xml:space="preserve">
+    <value>执行</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>已取消</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>正在取消</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>失败</value>
+  </data>
+  <data name="Submitted" xml:space="preserve">
+    <value>已提交</value>
+  </data>
+  <data name="Succeeded" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>正在等待</value>
+  </data>
+</root>

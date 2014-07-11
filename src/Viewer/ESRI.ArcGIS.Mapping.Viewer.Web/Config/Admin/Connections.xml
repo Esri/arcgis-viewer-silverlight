@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfConnection xmlns="http://schemas.datacontract.org/2004/07/ESRI.ArcGIS.Mapping.Core">  
+  <Connection>
+    <Name>_ArcGISOnline_</Name>
+    <Url>http://services.arcgisonline.com/arcgis/rest/services</Url>
+    <ConnectionType>ArcGISServer</ConnectionType>
+  </Connection>
+</ArrayOfConnection>

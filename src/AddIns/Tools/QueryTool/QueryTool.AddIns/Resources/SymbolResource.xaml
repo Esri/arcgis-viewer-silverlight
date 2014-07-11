@@ -1,0 +1,133 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:esriFS="clr-namespace:ESRI.ArcGIS.Client.FeatureService.Symbols;assembly=ESRI.ArcGIS.Client">    
+    <!-- Point symbol - control template defined to specify symbol as a
+                 square with tick marks on each side -->
+    <esriFS:SimpleMarkerSymbol 
+        x:Key="SelectMarkerSymbol"
+        Size="14"
+        Color="#99FFFFFF"
+        OutlineColor="Navy"                               
+        OutlineThickness="2"
+        SelectionColor="Cyan">
+        <esriFS:SimpleMarkerSymbol.ControlTemplate>
+            <ControlTemplate>
+                <Grid RenderTransformOrigin="{Binding Symbol.RenderTransformPoint}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="SelectionStates">
+                            <VisualState x:Name="Unselected" />
+                            <VisualState x:Name="Selected">
+                                <Storyboard>
+                                    <DoubleAnimation 
+                                        Storyboard.TargetName="SelectionEllipse"
+                                        Storyboard.TargetProperty="Opacity"
+                                        Duration="0:0:0.25"
+                                        To="1" />
+                                </Storyboard>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                    <Ellipse 
+                        x:Name="FillEllipse"
+                        Fill="{Binding Symbol.Color}"
+                        Width="{Binding Symbol.Size}"
+                        Height="{Binding Symbol.Size}"
+                        StrokeThickness="0">
+                    </Ellipse>
+                    <Ellipse 
+                        x:Name="SelectionEllipse"
+                        Fill="{Binding Symbol.SelectionColor}"
+                        Width="{Binding Symbol.Size}"
+                        Height="{Binding Symbol.Size}"
+                        StrokeThickness="0"
+                        Opacity="0">
+                    </Ellipse>
+                    <Ellipse 
+                        x:Name="OutlineEllipse"
+                        Fill="Transparent"
+                        Width="{Binding Symbol.Size}"
+                        Height="{Binding Symbol.Size}"
+                        Stroke="{Binding Symbol.OutlineColor}"
+                        StrokeThickness="{Binding Symbol.OutlineThickness}">
+                    </Ellipse>                    
+                </Grid>
+            </ControlTemplate>
+        </esriFS:SimpleMarkerSymbol.ControlTemplate>
+    </esriFS:SimpleMarkerSymbol>
+    
+    <!-- Line symbol - control template defined to specify selection animation -->
+    <esri:LineSymbol x:Key="SelectLineSymbol"
+                     Color="Transparent"
+                     Width="4">
+        <esri:LineSymbol.ControlTemplate>
+            <ControlTemplate>
+                <Path x:Name="Element"
+                      Stroke="{Binding Symbol.Color}"
+                      StrokeStartLineCap="Round"
+                      StrokeThickness="{Binding Symbol.Width}"
+                      StrokeLineJoin="Round"
+                      StrokeEndLineCap="Round">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="SelectionStates">
+                            <VisualState x:Name="Selected">
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="Element"
+                                                    Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+                                                    To="Cyan"
+                                                    Duration="00:00:00.2" />
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Normal">
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="Element"
+                                                    Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+                                                    To="Navy"
+                                                    Duration="00:00:00.2" />
+                                </Storyboard>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Path>
+            </ControlTemplate>
+        </esri:LineSymbol.ControlTemplate>
+    </esri:LineSymbol>
+    <!-- Polygon symbol - control template defined to specify selection animation -->
+    <esri:FillSymbol x:Key="SelectFillSymbol"
+                     BorderThickness="4"
+                     BorderBrush="Navy"
+                     Fill="#44FFFFFF">
+        <esri:FillSymbol.ControlTemplate>
+            <ControlTemplate>
+                <Path x:Name="Element"
+                      Stroke="{Binding Symbol.BorderBrush}"
+                      StrokeStartLineCap="Round"
+                      StrokeThickness="{Binding Symbol.BorderThickness}"
+                      StrokeLineJoin="Round"
+                      StrokeEndLineCap="Round"
+                      Fill="{Binding Symbol.Fill}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="SelectionStates">
+                            <VisualState x:Name="Selected">
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="Element"
+                                                    Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+                                                    To="Cyan"
+                                                    Duration="00:00:00.2" />
+                                </Storyboard>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Path>
+            </ControlTemplate>
+        </esri:FillSymbol.ControlTemplate>
+    </esri:FillSymbol>
+</ResourceDictionary>

@@ -1,0 +1,330 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl x:Class="ESRI.ArcGIS.Mapping.Builder.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Builder"
+	xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:Layout="clr-namespace:ESRI.ArcGIS.Client.Application.Layout;assembly=ESRI.ArcGIS.Client.Application.Layout"
+    xmlns:converters="clr-namespace:ESRI.ArcGIS.Client.Application.Layout.Converters;assembly=ESRI.ArcGIS.Client.Application.Layout"
+    xmlns:mapping="clr-namespace:ESRI.ArcGIS.Mapping.Controls;assembly=ESRI.ArcGIS.Mapping.Controls"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:behaviors="clr-namespace:ESRI.ArcGIS.Mapping.Behaviors;assembly=ESRI.ArcGIS.Mapping.Behaviors"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <UserControl.Resources>
+        <Layout:RTLHelper x:Key="RTLHelper" />
+        <local:ViewerAppSettingsViewModel x:Key="ViewerApplication" />
+        <local:BuilderAppSettingsViewModel x:Key="BuilderApplication" />
+        <converters:NotNullVisibilityConverter x:Key="NotNullVisibilityConverter"/>
+        <local:FlowDirectionToAlignmentConverter x:Key="FlowDirectionToAlignmentConverter" />
+
+        <ControlTemplate x:Key="AlignmentTextBoxTemplate" TargetType="TextBox">
+            <Grid x:Name="RootElement">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="MouseOverBorder" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="#FF99C1E2" Duration="0"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Disabled">
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="DisabledVisualElement" Storyboard.TargetProperty="Opacity" To="1" Duration="0"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="ReadOnly">
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="ReadOnlyVisualElement" Storyboard.TargetProperty="Opacity" To="1" Duration="0" />
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="FocusStates">
+                        <VisualState x:Name="Focused">
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="Opacity" To="1" Duration="0"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Unfocused">
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="Opacity" To="0" Duration="0"/>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border x:Name="Border" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="1" Opacity="1" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
+                    <Grid>
+                        <Border x:Name="ReadOnlyVisualElement" Opacity="0" Background="#5EC9C9C9"/>
+                        <Border x:Name="MouseOverBorder" BorderThickness="1" BorderBrush="Transparent">
+                            <ScrollViewer x:Name="ContentElement" Padding="{TemplateBinding Padding}" BorderThickness="0" IsTabStop="False"
+                                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border x:Name="DisabledVisualElement" Background="#A5F7F7F7" BorderBrush="#A5F7F7F7" BorderThickness="{TemplateBinding BorderThickness}" Opacity="0" IsHitTestVisible="False"/>
+                <Border x:Name="FocusVisualElement" BorderBrush="#FF6DBDD1" BorderThickness="{TemplateBinding BorderThickness}" Margin="1" Opacity="0" IsHitTestVisible="False"/>
+            </Grid>
+        </ControlTemplate>
+
+    </UserControl.Resources>
+    <Grid FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+        <sdk:TabControl x:Name="TutorialTab" TabStripPlacement="Top"  BorderBrush="#FFCFD3E7" Background="Transparent"
+                Grid.Row="1" Margin="10,0,10,10" HorizontalAlignment="Stretch">
+            <sdk:TabItem Header="{Binding ConverterParameter=BaseMaps, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                    Style="{StaticResource LeftTabStyle}">
+                <Border CornerRadius="5"
+                        BorderBrush="#FFCFD3E7"
+                        BorderThickness="1"
+                        Background="Transparent" 
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Margin="10">
+                    <local:BaseMapsConfigControl HorizontalAlignment="Left"
+                                                 VerticalAlignment="Top"
+                                                 Margin="15" />
+                </Border>
+                <ToolTipService.ToolTip>
+                    <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}"
+                             Content="{Binding ConverterParameter=ConfigureBasemaps, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+                </ToolTipService.ToolTip>
+            </sdk:TabItem>
+            <sdk:TabItem Header="{Binding ConverterParameter=AddOns, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                    Style="{StaticResource TabStyle}">
+                <local:ExtensionsManager ExtensionsCatalogChanged="ExtensionsCatalog_Changed"
+                                         HorizontalAlignment="Stretch"
+                                         HorizontalContentAlignment="Left"
+                                         VerticalAlignment="Top"
+                                         Margin="15" />
+                <ToolTipService.ToolTip>
+                    <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}"
+                             Content="{Binding ConverterParameter=ManageAddInsToolsBehaviorsControls, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+                </ToolTipService.ToolTip>
+
+            </sdk:TabItem>
+            <sdk:TabItem Header="{Binding ConverterParameter=ApplicationSettings, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                    Style="{StaticResource TabStyle}">
+                <ToolTipService.ToolTip>
+                    <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}"
+                             Content="{Binding ConverterParameter=ManageApplicationSettings, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+                </ToolTipService.ToolTip>
+                <Border CornerRadius="5" BorderBrush="#FFCFD3E7" BorderThickness="1" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10" >
+                    <StackPanel Margin="15" >
+
+                        <!-- Builder settings (default app settings) -->
+                        <StackPanel>
+                            <TextBlock Foreground="White" FontSize="14" Margin="3" Text="{Binding ConverterParameter=DefaultSettings, Converter={StaticResource BuilderLocalization}}" />
+                            <Grid Margin="15,3,3,3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="500"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                
+                                <!-- Bing Key -->
+                                <TextBlock Foreground="White" Text="{Binding ConverterParameter=BingAppId, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
+                                <TextBox Grid.Column="1"  Margin="3" FlowDirection="LeftToRight"
+                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                         Template="{StaticResource AlignmentTextBoxTemplate}"
+                                     Text="{Binding BingMapsAppId, Source={StaticResource BuilderApplication}, Mode=TwoWay}">
+                                    <i:Interaction.Behaviors>
+                                        <behaviors:UpdateBindingOnTextChanged />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                                
+                                <!-- Geometry Service -->
+                                <TextBlock Foreground="White" Grid.Row="1" Text="{Binding ConverterParameter=GeometryService, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
+                                <TextBox Grid.Column="1" Grid.Row="1" Margin="3" FlowDirection="LeftToRight"
+                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                         Template="{StaticResource AlignmentTextBoxTemplate}"
+                                     Text="{Binding GeometryServiceUrl, Source={StaticResource BuilderApplication}, Mode=TwoWay}">
+                                    <i:Interaction.Behaviors>
+                                        <behaviors:UpdateBindingOnTextChanged />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                                
+                                <!-- ArcGIS Portal URL -->
+                                <TextBlock Foreground="White" Grid.Row="2" Text="{Binding ConverterParameter=ArcGISOnlineSharing, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
+                                <TextBox Grid.Column="1" Grid.Row="2" Margin="3" FlowDirection="LeftToRight"
+                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                         Template="{StaticResource AlignmentTextBoxTemplate}"
+                                     Text="{Binding ArcGISOnlineSharing, Source={StaticResource BuilderApplication}, Mode=TwoWay}">
+                                    <i:Interaction.Behaviors>
+                                        <behaviors:UpdateBindingOnTextChanged />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                                
+                                <!-- ArcGIS Portal Secure URL -->
+                                <TextBlock Foreground="White" Grid.Row="3" Text="{Binding ConverterParameter=ArcGISOnlineSecure, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
+                                <TextBox Grid.Column="1" Grid.Row="3" Margin="3" FlowDirection="LeftToRight"
+                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                         Template="{StaticResource AlignmentTextBoxTemplate}"
+                                     Text="{Binding ArcGISOnlineSecure, Source={StaticResource BuilderApplication}, Mode=TwoWay}">
+                                    <i:Interaction.Behaviors>
+                                        <behaviors:UpdateBindingOnTextChanged />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                                
+                                <!-- Proxy Url -->
+                                <TextBlock Foreground="White" Grid.Row="4" Text="{Binding ConverterParameter=Proxy, 
+                                    Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
+                                <TextBox Grid.Column="1" Grid.Row="4" Margin="3" FlowDirection="LeftToRight"
+                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                         Template="{StaticResource AlignmentTextBoxTemplate}"
+                                     Text="{Binding Proxy, Source={StaticResource BuilderApplication}, Mode=TwoWay}">
+                                    <i:Interaction.Behaviors>
+                                        <behaviors:UpdateBindingOnTextChanged />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button Margin="3"
+                                        Command="{Binding ApplyCommand, Source={StaticResource BuilderApplication}}" Padding="10,5,10,5"
+                                        Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                        Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                        Content="{Binding ConverterParameter=Apply, Converter={StaticResource BuilderLocalization}}">
+                                </Button>
+                                <Button Margin="3"
+                                        Command="{Binding CancelCommand, Source={StaticResource BuilderApplication}}" Padding="10,5,10,5"
+                                        Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                        Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                        Content="{Binding ConverterParameter=Cancel, Converter={StaticResource BuilderLocalization}}">
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                        
+                        <!-- Viewer settings (current app settings) -->
+                        <StackPanel Visibility="{Binding ViewerApplication, Source={StaticResource ViewerApplication}, Converter={StaticResource NotNullVisibilityConverter}}">
+                            <TextBlock Foreground="White" Margin="3" FontSize="14" Text="{Binding ConverterParameter=CurrentApplicationSettings, Converter={StaticResource BuilderLocalization}}" />
+                            <Grid Margin="15,3,3,3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="500"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                
+                                <!-- Bing Key -->
+                                <TextBlock Foreground="White" Text="{Binding ConverterParameter=BingAppId, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
+                                <TextBox Grid.Column="1"  Margin="3"
+                                     Text="{Binding BingMapsAppId, Source={StaticResource ViewerApplication}, Mode=TwoWay}" FlowDirection="LeftToRight"
+                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                         Template="{StaticResource AlignmentTextBoxTemplate}">
+                                    <i:Interaction.Behaviors>
+                                        <behaviors:UpdateBindingOnTextChanged />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                                
+                                <!-- Geometry Service -->
+                                <TextBlock Foreground="White" Grid.Row="1" Text="{Binding ConverterParameter=GeometryService, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
+                                <TextBox Grid.Column="1" Grid.Row="1" Margin="3"
+                                     Text="{Binding GeometryServiceUrl, Source={StaticResource ViewerApplication}, Mode=TwoWay}" FlowDirection="LeftToRight"
+                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                         Template="{StaticResource AlignmentTextBoxTemplate}">
+                                    <i:Interaction.Behaviors>
+                                        <behaviors:UpdateBindingOnTextChanged />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                                
+                                <!-- ArcGIS Portal URL -->
+                                <TextBlock Foreground="White" Grid.Row="2" Text="{Binding ConverterParameter=ArcGISOnlineSharing, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
+                                <TextBox Grid.Column="1" Grid.Row="2" Margin="3"
+                                     Text="{Binding ArcGISOnlineSharing, Source={StaticResource ViewerApplication}, Mode=TwoWay}" FlowDirection="LeftToRight"
+                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                         Template="{StaticResource AlignmentTextBoxTemplate}">
+                                    <i:Interaction.Behaviors>
+                                        <behaviors:UpdateBindingOnTextChanged />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                                
+                                <!-- ArcGIS Portal Secure URL -->
+                                <TextBlock Foreground="White" Grid.Row="3" Text="{Binding ConverterParameter=ArcGISOnlineSecure, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
+                                <TextBox Grid.Column="1" Grid.Row="3" Margin="3"
+                                     Text="{Binding ArcGISOnlineSecure, Source={StaticResource ViewerApplication}, Mode=TwoWay}" FlowDirection="LeftToRight"
+                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                         Template="{StaticResource AlignmentTextBoxTemplate}">
+                                    <i:Interaction.Behaviors>
+                                        <behaviors:UpdateBindingOnTextChanged />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+
+                                <!-- Proxy URL -->
+                                <TextBlock Foreground="White" Grid.Row="4" Text="{Binding ConverterParameter=Proxy, 
+                                        Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
+                                <TextBox Grid.Column="1" Grid.Row="4" Margin="3"
+                                     Text="{Binding Proxy, Source={StaticResource ViewerApplication}, Mode=TwoWay}" FlowDirection="LeftToRight"
+                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                         Template="{StaticResource AlignmentTextBoxTemplate}">
+                                    <i:Interaction.Behaviors>
+                                        <behaviors:UpdateBindingOnTextChanged />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button Margin="3"
+                                        Command="{Binding ApplyCommand, Source={StaticResource ViewerApplication}}" Padding="10,5,10,5"
+                                        Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                        Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                        Content="{Binding ConverterParameter=Apply, Converter={StaticResource BuilderLocalization}}">
+                                </Button>
+                                <Button Margin="3"
+                                        Command="{Binding CancelCommand, Source={StaticResource ViewerApplication}}" Padding="10,5,10,5"
+                                        Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                        Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                        Content="{Binding ConverterParameter=Cancel, Converter={StaticResource BuilderLocalization}}">
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </sdk:TabItem>
+            <sdk:TabItem Header="{Binding ConverterParameter=PersonalSettings, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                         Style="{StaticResource RightTabStyle}">
+                <Border CornerRadius="5"
+                        BorderBrush="#FFCFD3E7"
+                        BorderThickness="1"
+                        Background="Transparent"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Margin="10">
+                    <local:PersonalSettings Margin="15" />
+                </Border>
+                <ToolTipService.ToolTip>
+                    <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}"
+                             Content="{Binding ConverterParameter=ManagePersonalSettings, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+                </ToolTipService.ToolTip>
+
+            </sdk:TabItem>
+        </sdk:TabControl>
+    </Grid>
+</UserControl>

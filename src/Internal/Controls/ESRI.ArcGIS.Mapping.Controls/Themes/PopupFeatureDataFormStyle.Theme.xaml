@@ -1,0 +1,410 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+                    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+                    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls;assembly=ESRI.ArcGIS.Mapping.Controls">
+
+    <local:InvertVisibilityConverter x:Key="InvertVisibilityConverter" />
+    
+    <Style x:Key="FeatureDataFormLabel" TargetType="ContentControl">
+        <Setter Property="Foreground" Value="{StaticResource BackgroundTextColorBrush}" />
+    </Style>
+ 
+    <Style x:Key="FeatureDataFormDatePicker" TargetType="controls:DatePicker">
+        <Setter Property="Foreground" Value="Black" />
+    </Style>         
+    
+    <Style x:Key="FeatureDataFormListBoxItem" TargetType="ListBoxItem">
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="TabNavigation" Value="Local" />
+        <Setter Property="Foreground" Value="{StaticResource BackgroundTextColorBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Grid Background="{TemplateBinding Background}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="fillColor" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="Opacity" Duration="0" To=".55" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected" />
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="fillColor2" Storyboard.TargetProperty="Opacity" Duration="0" To="0.75"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="fillColor" Opacity="0" Fill="{StaticResource SelectionColorBrush}" Stroke="{StaticResource SelectionOutlineColorBrush}"
+                                   IsHitTestVisible="False" RadiusX="1" RadiusY="1" StrokeThickness="1"/>
+                        <Rectangle x:Name="fillColor2" Opacity="0" Fill="{StaticResource SelectionColorBrush}" Stroke="{StaticResource SelectionOutlineColorBrush}" 
+                                   IsHitTestVisible="False" RadiusX="1" RadiusY="1" StrokeThickness="1"/>
+                        <ContentControl
+                              x:Name="contentPresenter"
+                              Content="{TemplateBinding Content}"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"                            
+                              Margin="{TemplateBinding Padding}" Foreground="{TemplateBinding Foreground}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FeatureDataFormComboBox" TargetType="ComboBox">
+        <Setter Property="Padding" Value="6,2,25,2" />
+        <Setter Property="Background" Value="#FF1F3B53"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="TabNavigation" Value="Once" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ItemContainerStyle" Value="{StaticResource FeatureDataFormListBoxItem}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <Grid.Resources>
+                            <Style x:Name="comboToggleStyle" TargetType="ToggleButton">
+                                <Setter Property="Foreground" Value="#FF333333"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderBrush">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                                            <GradientStop Color="#FF617584" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="Padding" Value="3"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Grid Cursor="Hand">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="Normal"/>
+                                                        <VisualState x:Name="MouseOver">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" Storyboard.TargetName="BackgroundOverlay" Storyboard.TargetProperty="Opacity" To="1"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Pressed">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" Storyboard.TargetName="Highlight" Storyboard.TargetProperty="Opacity" To="1"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Disabled" />
+                                                    </VisualStateGroup>
+                                                    <VisualStateGroup x:Name="CheckStates">
+                                                        <VisualState x:Name="Checked">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" Storyboard.TargetName="Highlight" Storyboard.TargetProperty="(UIElement.Opacity)" To="1"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Unchecked" />
+                                                    </VisualStateGroup>
+                                                    <VisualStateGroup x:Name="FocusStates">
+                                                        <VisualState x:Name="Focused" />
+                                                        <VisualState x:Name="Unfocused" />
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <Rectangle x:Name="Background" Fill="Transparent" StrokeThickness="{TemplateBinding BorderThickness}" Stroke="{TemplateBinding BorderBrush}"/>
+                                                <Rectangle x:Name="BackgroundOverlay" Opacity="0" Fill="Transparent" StrokeThickness="{TemplateBinding BorderThickness}" 
+                                                                               Stroke="{StaticResource BackgroundTextColorBrush}" Margin="{TemplateBinding BorderThickness}"/>
+                                                <Rectangle x:Name="Highlight" Opacity="0" IsHitTestVisible="false" Stroke="{StaticResource AccentColorBrush}" StrokeThickness="1" Margin="{TemplateBinding BorderThickness}" />
+                                                <ContentPresenter
+                                                          x:Name="contentPresenter"
+                                                          Content="{TemplateBinding Content}"
+                                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                          Margin="{TemplateBinding Padding}"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Grid.Resources>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused"/>
+                                <VisualState x:Name="FocusedDropDown">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="ContentPresenterBorder">
+                            <Grid>
+                                <ToggleButton x:Name="DropDownToggle" Style="{StaticResource comboToggleStyle}"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="0" HorizontalContentAlignment="Right" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
+                                    <Path x:Name="BtnArrow" Height="4" Width="8" Stretch="Uniform" 
+                                          Data="F1 M 301.14,-189.041L 311.57,-189.041L 306.355,-182.942L 301.14,-189.041 Z " Margin="0,0,6,0" 
+                                          HorizontalAlignment="Right" Fill="{StaticResource BackgroundTextColorBrush}" />
+                                </ToggleButton>
+                                <ContentPresenter x:Name="ContentPresenter"  
+                                                        Margin="{TemplateBinding Padding}"  
+                                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                </ContentPresenter>
+                            </Grid>
+                        </Border>
+                        <Rectangle x:Name="FocusVisualElement" Margin="1"  Stroke="{StaticResource SelectionOutlineColorBrush}" StrokeThickness="1" Opacity="0" IsHitTestVisible="false" />
+                        <Popup x:Name="Popup">
+                            <Border x:Name="PopupBorder" HorizontalAlignment="Stretch" Height="Auto" BorderThickness="{TemplateBinding BorderThickness}" 
+                                                        BorderBrush="Black" 
+                                                        Background="{StaticResource BackgroundGradientBrush}">
+                                <ScrollViewer x:Name="ScrollViewer" BorderThickness="0" Padding="1"
+                                              Style="{StaticResource ThinBarScrollViewerStyle}">
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PopupFeatureDataFormStyle"
+           TargetType="esri:FeatureDataForm">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{StaticResource BackgroundTextColorBrush}" />
+        <Setter Property="CommitButtonStyle" Value="{StaticResource GradientButtonStyle}" />
+        <Setter Property="ComboBoxStyle" Value="{StaticResource FeatureDataFormComboBox}" />
+        <Setter Property="LabelStyle" Value="{StaticResource FeatureDataFormLabel}" />
+        <Setter Property="DatePickerStyle" Value="{StaticResource FeatureDataFormDatePicker}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="esri:FeatureDataForm">
+                    <Border x:Name="DataFormBorder"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="2"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid Background="{TemplateBinding Background}" >
+                            <Grid.Resources>
+                                <Style x:Key="CloseButtonStyle"
+                                       TargetType="Button">
+                                    <Setter Property="Background"
+                                            Value="Transparent" />
+                                    <Setter Property="BorderBrush"
+                                            Value="Transparent" />
+                                    <Setter Property="BorderThickness"
+                                            Value="1" />
+                                    <Setter Property="Foreground"
+                                            Value="Black" />
+                                    <Setter Property="Width"
+                                            Value="20" />
+                                    <Setter Property="Height"
+                                            Value="20" />
+                                    <Setter Property="IsTabStop"
+                                            Value="False" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}"
+                                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                                        CornerRadius="2"   >
+                                                    <VisualStateManager.VisualStateGroups>
+                                                        <VisualStateGroup x:Name="CommonStates">
+                                                            <VisualState x:Name="Normal">
+                                                                <Storyboard>
+                                                                    <DoubleAnimation BeginTime="00:00:00"
+                                                                                     Storyboard.TargetName="path"
+                                                                                     Storyboard.TargetProperty="Opacity"
+                                                                                     To="1"
+                                                                                     Duration="0:0:0.5" />
+                                                                </Storyboard>
+                                                            </VisualState>
+                                                            <VisualState x:Name="MouseOver">
+                                                                <Storyboard>
+                                                                    <DoubleAnimation BeginTime="00:00:00"
+                                                                                     Storyboard.TargetName="path"
+                                                                                     Storyboard.TargetProperty="Opacity"
+                                                                                     To="0.6"
+                                                                                     Duration="0:0:0.5">
+                                                                        <DoubleAnimation.EasingFunction>
+                                                                            <QuarticEase EasingMode="EaseOut" />
+                                                                        </DoubleAnimation.EasingFunction>
+                                                                    </DoubleAnimation>
+                                                                </Storyboard>
+                                                            </VisualState>
+                                                            <VisualState x:Name="Pressed">
+                                                                <Storyboard>
+                                                                    <DoubleAnimation Duration="0"
+                                                                                     To="0.6"
+                                                                                     Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                                                     Storyboard.TargetName="path"
+                                                                                     />
+                                                                </Storyboard>
+                                                            </VisualState>
+                                                            <VisualState x:Name="Disabled" />
+                                                        </VisualStateGroup>
+                                                    </VisualStateManager.VisualStateGroups>
+                                                    <Path x:Name="path"
+                                                          Fill="{TemplateBinding Foreground}"
+                                                          Stroke="{TemplateBinding Foreground}"
+                                                          StrokeThickness="2"
+                                                          Width="10"
+                                                          Height="10"
+                                                          Stretch="Fill">
+                                                        <Path.Data>
+                                                            <GeometryGroup>
+                                                                <LineGeometry StartPoint="2,2"
+                                                                              EndPoint="8,8"></LineGeometry>
+                                                                <LineGeometry StartPoint="2,8"
+                                                                              EndPoint="8,2"></LineGeometry>
+                                                            </GeometryGroup>
+                                                        </Path.Data>
+                                                    </Path>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Grid.Resources>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="1" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock FontSize="13" FontWeight="Bold" HorizontalAlignment="Left"
+                                       Foreground="{TemplateBinding Foreground}" 
+                                       Text="{Binding PopupItem.Title}" 
+                                       VerticalAlignment="Center" Margin="5,0,0,0"/>
+                            <Button x:Name="CloseButton" 
+                                    Grid.Column="1"
+                                    Style="{StaticResource CloseButtonStyle}"
+                                    Foreground="{TemplateBinding Foreground}"
+                                    Cursor="Hand"
+                                    HorizontalAlignment="Right" Margin="5,3,3,0">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Click">
+                                        <ei:ChangePropertyAction TargetObject="{Binding Container}"
+                                                                 PropertyName="IsOpen"
+                                                                 Value="false" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </Button>
+
+                            <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                       Grid.Row="1" Margin="0" Fill="{TemplateBinding Foreground}"
+                                       Grid.ColumnSpan="2">
+                                <Rectangle.OpacityMask>
+                                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                        <GradientStop Color="White" Offset="0" />
+                                        <GradientStop Color="#22FFFFFF" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+
+                            <ScrollViewer x:Name="ContentScrollViewer" Grid.Row="2" Grid.ColumnSpan="2"
+                                          Style="{StaticResource ThinBarScrollViewerStyle}"
+                                          IsTabStop="False"
+                                          Background="{x:Null}"
+                                          Padding="{TemplateBinding Padding}"
+                                          VerticalScrollBarVisibility="Auto">
+                                <ContentPresenter x:Name="ContentPresenter" 
+                                                  HorizontalAlignment="Left"/>
+                            </ScrollViewer>
+                            <StackPanel Grid.Row="3" Margin="0,8,0,3" HorizontalAlignment="Right"
+                                        Grid.ColumnSpan="2" Orientation="Horizontal">
+                                <Button x:Name="CommitButton"
+                                        Content="{TemplateBinding CommitButtonContent}"
+                                        Style="{TemplateBinding CommitButtonStyle}"
+                                        Foreground="{StaticResource AccentTextColorBrush}" 
+                                        Background="{StaticResource AccentColorBrush}" 
+                                        BorderBrush="{StaticResource AccentTextColorBrush}"
+                                        MinWidth="60"
+                                        Height="27"
+                                        Visibility="Collapsed"
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        HorizontalContentAlignment="Center"
+                                        VerticalContentAlignment="Center" />
+                                <Button x:Name="BackButton"
+                                        Margin="5,0,0,0"
+                                        Style="{TemplateBinding CommitButtonStyle}"
+                                        Foreground="{StaticResource AccentTextColorBrush}" 
+                                        Background="{StaticResource AccentColorBrush}" 
+                                        BorderBrush="{StaticResource AccentTextColorBrush}"
+                                        MinWidth="60"
+                                        Height="27"
+                                        Grid.Column="0"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        HorizontalContentAlignment="Center"
+                                        VerticalContentAlignment="Center" />
+                                <!-- Padding rectangle to align buttons based on whether the 
+                                scroll viewer's scrollbar is visible -->
+                                <Rectangle VerticalAlignment="Stretch" Width="12" Fill="Transparent"
+                                    Stroke="Transparent" 
+                                    Visibility="{Binding ComputedVerticalScrollBarVisibility,
+                                    ElementName=ContentScrollViewer,
+                                    Converter={StaticResource InvertVisibilityConverter}}" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

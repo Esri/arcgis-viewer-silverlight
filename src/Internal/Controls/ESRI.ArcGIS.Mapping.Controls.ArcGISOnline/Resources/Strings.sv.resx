@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFeatureLayer" xml:space="preserve">
+    <value>Lägg till geoobjektslager</value>
+  </data>
+  <data name="AddFeatureLayerWindowCheckAll" xml:space="preserve">
+    <value>Markera alla</value>
+  </data>
+  <data name="AddFeatureLayerWindowUnCheckAll" xml:space="preserve">
+    <value>Avmarkera alla</value>
+  </data>
+  <data name="ArcGIS" xml:space="preserve">
+    <value>ArcGIS</value>
+  </data>
+  <data name="BackStageControlFeatureMaps" xml:space="preserve">
+    <value>Representerade kartor</value>
+  </data>
+  <data name="BackStageControlGroups" xml:space="preserve">
+    <value>Grupper</value>
+  </data>
+  <data name="BackStageControlMyGroups" xml:space="preserve">
+    <value>Mina grupper</value>
+  </data>
+  <data name="BackStageControlMyOrgGroups" xml:space="preserve">
+    <value>Min organisations grupper</value>
+  </data>
+  <data name="BackStageControlMyOrgPublicGroups" xml:space="preserve">
+    <value>Min organisations offentliga grupper</value>
+  </data>
+  <data name="BackStageControlMyMaps" xml:space="preserve">
+    <value>Mina kartor</value>
+  </data>
+  <data name="BackStageControlSearch" xml:space="preserve">
+    <value>Sök</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>Klicka här om du vill visa beskrivningen i ett separat webbläsarfönster</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>Utförlig information</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Kommentarer</value>
+  </data>
+  <data name="ContentEveryone" xml:space="preserve">
+    <value>alla</value>
+  </data>
+  <data name="ContentGroups" xml:space="preserve">
+    <value>grupper</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Skapad av</value>
+  </data>
+  <data name="DefineQueryWindowAlias" xml:space="preserve">
+    <value>Alias:</value>
+  </data>
+  <data name="DefineQueryWindowAnd" xml:space="preserve">
+    <value>och</value>
+  </data>
+  <data name="DefineQueryWindowApply" xml:space="preserve">
+    <value>Använd</value>
+  </data>
+  <data name="DefineQueryWindowClickPickDate" xml:space="preserve">
+    <value>Klicka för att välja ett datum som är formaterat för användning i uttrycket.</value>
+  </data>
+  <data name="DefineQueryWindowData" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="DefineQueryWindowExpression" xml:space="preserve">
+    <value>Uttryck:</value>
+  </data>
+  <data name="DefineQueryWindowFailedToRetrieveSampleFeaturesForLayer" xml:space="preserve">
+    <value>Det gick inte att hämta exempelobjekt för lagret.</value>
+  </data>
+  <data name="DefineQueryWindowFields" xml:space="preserve">
+    <value>Fält:</value>
+  </data>
+  <data name="DefineQueryWindowLike" xml:space="preserve">
+    <value>like</value>
+  </data>
+  <data name="DefineQueryWindowName" xml:space="preserve">
+    <value>Namn:</value>
+  </data>
+  <data name="DefineQueryWindowNot" xml:space="preserve">
+    <value>inte</value>
+  </data>
+  <data name="DefineQueryWindowOr" xml:space="preserve">
+    <value>eller</value>
+  </data>
+  <data name="DefineQueryWindowQuery" xml:space="preserve">
+    <value>Fråga</value>
+  </data>
+  <data name="DefineQueryWindowTableIsSampleOfFeatureLayer" xml:space="preserve">
+    <value>Följande tabell är exempel på objekt i lagret.</value>
+  </data>
+  <data name="DefineQueryWindowType" xml:space="preserve">
+    <value>Typ:</value>
+  </data>
+  <data name="DescriptionForMapCanotBeDisplayed" xml:space="preserve">
+    <value>Det går inte att visa beskrivningen för den här kartan i det här fönstret.</value>
+  </data>
+  <data name="EnterPlaceNameAddressLatLongitutePair" xml:space="preserve">
+    <value>Ange platsens namn, adress eller latitud-longitud</value>
+  </data>
+  <data name="ExceptionDeleteFailed" xml:space="preserve">
+    <value>Det gick inte att ta bort</value>
+  </data>
+  <data name="ExceptionDeleteFailedUserSignIn" xml:space="preserve">
+    <value>Det gick inte att ta bort. Användaren är inte inloggad.</value>
+  </data>
+  <data name="ExceptionFaileAcceptApplicateForGroup" xml:space="preserve">
+    <value>Det gick inte att acceptera sökanden {0} för gruppen {1}</value>
+  </data>
+  <data name="ExceptionFaileDeclineApplicateForGroup" xml:space="preserve">
+    <value>Det gick inte att neka sökanden {0} för gruppen {1}</value>
+  </data>
+  <data name="ExceptionFailedInviteUserToGroup" xml:space="preserve">
+    <value>Det gick inte att bjuda in användare {0} till gruppen {1}</value>
+  </data>
+  <data name="ExceptionFailedLeaveRequestForGroup" xml:space="preserve">
+    <value>Det gick inte att skicka begäran att ta bort användaren {0} från gruppen {1}</value>
+  </data>
+  <data name="ExceptionFailedSendJoinRequestToGroup" xml:space="preserve">
+    <value>Det gick inte att skicka begäran att lägga till användaren {0} till gruppen {1}</value>
+  </data>
+  <data name="ExceptionFailedToAcceptGroupInvitationForGroup" xml:space="preserve">
+    <value>Det gick inte att acceptera gruppinbjudan för gruppen {0} av {1}</value>
+  </data>
+  <data name="ExceptionFailedToCreateGroup" xml:space="preserve">
+    <value>Det gick inte att skapa grupp.</value>
+  </data>
+  <data name="ExceptionFailedToDeclineGroupInvitationForGroup" xml:space="preserve">
+    <value>Det gick inte att neka gruppinbjudan för gruppen {0} av {1}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteGroup" xml:space="preserve">
+    <value>Det gick inte att ta bort gruppen {0}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteNoitification" xml:space="preserve">
+    <value>Det gick inte att ta bort meddelande {0} av {1}</value>
+  </data>
+  <data name="ExceptionFailedToGetGroupApplicationsForGroup" xml:space="preserve">
+    <value>Det gick inte att hämta gruppapplikationer för gruppen {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveTagForUser" xml:space="preserve">
+    <value>Det gick inte att hämta taggar för användaren {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveOrgGroups" xml:space="preserve">
+    <value>Det gick inte att hämta organisationsgrupper</value>
+  </data>
+  <data name="ExceptionFailedToShareItem" xml:space="preserve">
+    <value>Det gick inte att dela objektet {0}</value>
+  </data>
+  <data name="ExceptionFailedToUpdateGroup" xml:space="preserve">
+    <value>Det gick inte att uppdatera gruppen {0}</value>
+  </data>
+  <data name="ExceptionGetCommentsFailed" xml:space="preserve">
+    <value>Det gick inte att hämta kommentarer.</value>
+  </data>
+  <data name="ExceptionGetFolderFailedUserSignedIn" xml:space="preserve">
+    <value>GetFolder misslyckades. Användaren är inte inloggad.</value>
+  </data>
+  <data name="ExceptionNoUserSignedIn" xml:space="preserve">
+    <value>Det finns ingen inloggad användare.</value>
+  </data>
+  <data name="ExceptionSignInFailed" xml:space="preserve">
+    <value>Inloggningen misslyckades.</value>
+  </data>
+  <data name="FeatureMapsControlCloseParenthesis" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="FeatureMapsControlDetails" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="FeatureMapsControlLastModified" xml:space="preserve">
+    <value>(senast ändrad: </value>
+  </data>
+  <data name="FeatureMapsControlOpen" xml:space="preserve">
+    <value>Öppna</value>
+  </data>
+  <data name="GroupControlClickHereToViewInSeparateBrowser" xml:space="preserve">
+    <value>Klicka här om du vill visa beskrivningen i ett separat webbläsarfönster</value>
+  </data>
+  <data name="GroupControlCloseGroup" xml:space="preserve">
+    <value>Stäng den här gruppen</value>
+  </data>
+  <data name="GroupControlDescription" xml:space="preserve">
+    <value>Beskrivning</value>
+  </data>
+  <data name="GroupControlFeaturedMaps" xml:space="preserve">
+    <value>Representerade kartor</value>
+  </data>
+  <data name="GroupControlNoFeaturedMapsFound" xml:space="preserve">
+    <value>Det gick inte att hitta några aktuella kartor.</value>
+  </data>
+  <data name="GroupControlNoMapsFound" xml:space="preserve">
+    <value>Det gick inte att hitta några kartor.</value>
+  </data>
+  <data name="GroupControlOwner" xml:space="preserve">
+    <value>Ägare</value>
+  </data>
+  <data name="GroupControlPrivateUserCannotFindGroup" xml:space="preserve">
+    <value>Privat (användare kan inte hitta gruppen och kan endast gå med genom inbjudan)</value>
+  </data>
+  <data name="GroupControlPublicUserCanSearchAndFindGroup" xml:space="preserve">
+    <value>Offentlig (användare kan söka efter och hitta gruppen)</value>
+  </data>
+  <data name="GroupControlSearchOwner" xml:space="preserve">
+    <value>ägare: {0}</value>
+  </data>
+  <data name="GroupControlTags" xml:space="preserve">
+    <value>Taggar</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Grupper</value>
+  </data>
+  <data name="HighestRated" xml:space="preserve">
+    <value>Högsta betyg</value>
+  </data>
+  <data name="HintTextBoxToolTip" xml:space="preserve">
+    <value>Ange platsens namn, adress eller latitud-longitud</value>
+  </data>
+  <data name="ItemNotFound" xml:space="preserve">
+    <value>Det gick inte att hitta objektet: {0}</value>
+  </data>
+  <data name="LastModified" xml:space="preserve">
+    <value>Senast ändrat</value>
+  </data>
+  <data name="MapDetailsRating" xml:space="preserve">
+    <value>({0} bedömningar)</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Kartor</value>
+  </data>
+  <data name="MapServiceReferenceInvalid" xml:space="preserve">
+    <value>Karttjänstreferensen är ogiltig. Det gick inte att lägga till tjänsten till kartan.</value>
+  </data>
+  <data name="MapServiceReferenceNoDetails" xml:space="preserve">
+    <value>Karttjänstreferensen är ogiltig. Det går inte att visa någon information.</value>
+  </data>
+  <data name="MostComments" xml:space="preserve">
+    <value>Flest kommentarer</value>
+  </data>
+  <data name="MostPopular" xml:space="preserve">
+    <value>Mest populära</value>
+  </data>
+  <data name="MostRecentlyAdded" xml:space="preserve">
+    <value>Senast tillagda</value>
+  </data>
+  <data name="MostRelevant" xml:space="preserve">
+    <value>Mest relevanta</value>
+  </data>
+  <data name="MyGroupControlGroups" xml:space="preserve">
+    <value>{0} grupper</value>
+  </data>
+  <data name="MyGroupControlOn" xml:space="preserve">
+    <value>på</value>
+  </data>
+  <data name="MyGroupControlOpenGroup" xml:space="preserve">
+    <value>Öppna den här gruppen</value>
+  </data>
+  <data name="MyGroupControlZeroGroups" xml:space="preserve">
+    <value>0 grupper</value>
+  </data>
+  <data name="MyMapControlMaps" xml:space="preserve">
+    <value>{0} kartor</value>
+  </data>
+  <data name="MyMapControlZeroMaps" xml:space="preserve">
+    <value>0 kartor</value>
+  </data>
+  <data name="Places" xml:space="preserve">
+    <value>Platser</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Egenskaper</value>
+  </data>
+  <data name="RecentMaps" xml:space="preserve">
+    <value>Nyligen använda kartor</value>
+  </data>
+  <data name="SearchArcGISCom" xml:space="preserve">
+    <value>Sök på ArcGIS.com</value>
+  </data>
+  <data name="SearchControlAdd" xml:space="preserve">
+    <value>Lägg till</value>
+  </data>
+  <data name="SearchControlMapServiceFound" xml:space="preserve">
+    <value>Karttjänst hittades.</value>
+  </data>
+  <data name="SearchControlResultsFound" xml:space="preserve">
+    <value>{0} resultat hittades.</value>
+  </data>
+  <data name="SearchControlServiceCouldNotBeAccessed" xml:space="preserve">
+    <value>Det gick inte att komma åt tjänsten.</value>
+  </data>
+  <data name="SearchControlZeroResultsFound" xml:space="preserve">
+    <value>0 resultat hittades.</value>
+  </data>
+  <data name="SearchDetailsBy" xml:space="preserve">
+    <value>av</value>
+  </data>
+  <data name="SearchDetailsRating" xml:space="preserve">
+    <value>Bedömning: </value>
+  </data>
+  <data name="SearchMapResultsFor" xml:space="preserve">
+    <value>{0} resultat för {1}</value>
+  </data>
+  <data name="SearchTextBoxToolTip" xml:space="preserve">
+    <value>Ange platsens namn, adress eller latitud-longitud</value>
+  </data>
+  <data name="SearchTheWeb" xml:space="preserve">
+    <value>Sök på webben</value>
+  </data>
+  <data name="SearchWebDetailsAdd" xml:space="preserve">
+    <value>Lägg till</value>
+  </data>
+  <data name="SearchWebDetailsCopyright" xml:space="preserve">
+    <value>Copyright: </value>
+  </data>
+  <data name="SearchWebDetailsDescription" xml:space="preserve">
+    <value>Beskrivning: </value>
+  </data>
+  <data name="SearchWebDetailsExploreGISServer" xml:space="preserve">
+    <value>Utforska den här GIS-servern</value>
+  </data>
+  <data name="SearchWebDetailsName" xml:space="preserve">
+    <value>Namn:</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sortera efter</value>
+  </data>
+  <data name="SortResults" xml:space="preserve">
+    <value>Sortera resultat</value>
+  </data>
+  <data name="SortSearchResults" xml:space="preserve">
+    <value>Sortera sökresultaten.</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Sammanfattning</value>
+  </data>
+  <data name="TheWeb" xml:space="preserve">
+    <value>Webben</value>
+  </data>
+  <data name="TitleAZ" xml:space="preserve">
+    <value>Titel A-Ö</value>
+  </data>
+  <data name="TitleZA" xml:space="preserve">
+    <value>Titel Ö-A</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="UserSearchFailed" xml:space="preserve">
+    <value>Det gick inte att hitta användaren.</value>
+  </data>
+  <data name="BackStageControlRecent" xml:space="preserve">
+    <value>Senaste</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Logga in</value>
+  </data>
+  <data name="SignInForgotYourPassword" xml:space="preserve">
+    <value>Har du glömt lösenordet?</value>
+  </data>
+  <data name="SignInSignUp" xml:space="preserve">
+    <value>Registrera</value>
+  </data>
+  <data name="InvalidIDOrPassword" xml:space="preserve">
+    <value>Ogiltigt ID eller lösenord.</value>
+  </data>
+  <data name="NewHere" xml:space="preserve">
+    <value>Ny här?</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Lösenord:</value>
+  </data>
+  <data name="UsernamePrompt" xml:space="preserve">
+    <value>Användarnamn:</value>
+  </data>
+  <data name="DescriptionForGroupCanotBeDisplayed" xml:space="preserve">
+    <value>Det går inte att visa beskrivningen för den här gruppen i det här fönstret.</value>
+  </data>
+  <data name="GroupControlOwnerParenthesis" xml:space="preserve">
+    <value>(Ägare)</value>
+  </data>
+  <data name="LastModifiedPrompt" xml:space="preserve">
+    <value>(senast ändrat:</value>
+  </data>
+  <data name="LastModifiedPromptEnd" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="MapDetailsControlAverageRating" xml:space="preserve">
+    <value>Genomsnittsbetyg</value>
+  </data>
+  <data name="MapDetailsControlType" xml:space="preserve">
+    <value>Typ</value>
+  </data>
+  <data name="OnWithSpace" xml:space="preserve">
+    <value> på </value>
+  </data>
+  <data name="SearchR" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="LoadingMaps" xml:space="preserve">
+    <value>Läser in kartor...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="NoFeaturedMaps" xml:space="preserve">
+    <value>Det finns för närvarande inga aktuella kartor tillgängliga</value>
+  </data>
+  <data name="SigningIn" xml:space="preserve">
+    <value>Loggar in...</value>
+  </data>
+  <data name="SignInLabel" xml:space="preserve">
+    <value>Logga in på {0}</value>
+  </data>
+  <data name="CreatedByOwnerOnDate" xml:space="preserve">
+    <value>Skapad av {0} den {1}</value>
+  </data>
+  <data name="WebMapOwnerDateFormat" xml:space="preserve">
+    <value>Webbkarta av {0} (senast ändrad: {1})</value>
+  </data>
+  <data name="WebMapBy" xml:space="preserve">
+    <value>Webbkarta av {0}</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>Inloggningen misslyckades.</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Medlemmar</value>
+  </data>
+</root>

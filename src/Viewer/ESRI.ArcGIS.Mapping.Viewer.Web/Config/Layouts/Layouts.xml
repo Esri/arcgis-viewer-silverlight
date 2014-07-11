@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layouts>
+    <Layout DisplayName="_Accordion_" File="Config/Layouts/Accordion.xaml" PreviewImage="Config/Layouts/Accordion.png" />
+    <Layout DisplayName="_Basic_" File="Config/Layouts/Basic.xaml" PreviewImage="Config/Layouts/Basic.png" />
+    <Layout DisplayName="_BlackBox_" File="Config/Layouts/BlackBox.xaml" PreviewImage="Config/Layouts/BlackBox.png" />
+    <Layout DisplayName="_BlackBoxReverse_" File="Config/Layouts/BlackBox_-_Reverse.xaml" PreviewImage="Config/Layouts/BlackBox_-_Reverse.png" />
+    <Layout DisplayName="_FloatingPanels_" File="Config/Layouts/FloatingPanels.xaml" PreviewImage="Config/Layouts/FloatingPanels.png" />
+    <Layout DisplayName="_Glass_" File="Config/Layouts/Glass.xaml" PreviewImage="Config/Layouts/Glass.png" />
+    <Layout DisplayName="_UnderGlow_" File="Config/Layouts/UnderGlow.xaml" PreviewImage="Config/Layouts/UnderGlow.png" />
+    <Layout DisplayName="_Wings_" File="Config/Layouts/Wings.xaml" PreviewImage="Config/Layouts/Wings.png" />
+</Layouts>

@@ -1,0 +1,49 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls"        
+    >
+	<local:StringResourcesManager x:Key="Localization" />
+	<Style TargetType="local:LineSymbolConfigControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:LineSymbolConfigControl">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel HorizontalAlignment="Left" Margin="5" >
+							<TextBlock Text="{Binding ConverterParameter=WidthPrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}" FontSize="11" FontFamily="Verdana" Foreground="Black"/>
+                            <TextBox x:Name="WidthTextBox" FontSize="10" FontFamily="Verdana" Height="19" Width="35" VerticalAlignment="Top" 
+                                     Margin="5" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" VerticalAlignment="Top"
+                                HorizontalAlignment="Left" Margin="5">
+							<TextBlock Text="{Binding ConverterParameter=TransparencyPrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}" FontSize="11" FontFamily="Verdana" Foreground="Black" Margin="0,0,0,5"/>
+                            <Slider x:Name="OpacitySlider" Orientation="Horizontal" IsDirectionReversed="True" Minimum="0" Maximum="1" 
+                                />
+                        </StackPanel>
+                        <Grid Grid.Column="1" Grid.RowSpan="2">
+                            <local:ColorPicker x:Name="ColorPicker" />
+                            <local:PreDefinedColorRampControl x:Name="PreDefinedColorRampControl" 
+                                       Margin="8,0,15,0" VerticalAlignment="Top"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

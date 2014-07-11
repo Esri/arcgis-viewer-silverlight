@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Extensions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Extension Name="Esri.ArcGIS.Client.Application.AddIns.ScaleLevelQueryStringBehavior" Required="true">
+    <Assemblies>
+      <Assembly Name="Esri.ArcGIS.Client.Application.AddIns.ScaleLevelQueryStringBehavior" />
+    </Assemblies>
+  </Extension>
+</Extensions>

@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlwaysDisplayDefaultTemplates" xml:space="preserve">
+    <value>Wyświetl szablony domyślne, jeśli nie ma innych szablonów</value>
+  </data>
+  <data name="AutoComplete" xml:space="preserve">
+    <value>Dociągnij wielokąty do pobliskich obiektów</value>
+  </data>
+  <data name="AutoSelect" xml:space="preserve">
+    <value>Automatycznie wybierz obiekty w razie potrzeby - używane przez narzędzia Wytnij, Zmień kształt, Sumuj i Autouzupełnianie</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Powrót</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Konfiguruj</value>
+  </data>
+  <data name="Continuous" xml:space="preserve">
+    <value>Utrzymaj aktywność zaawansowanych narzędzi edycji do chwili wybrania innego narzędzia</value>
+  </data>
+  <data name="DefaultLayerIds" xml:space="preserve">
+    <value>Edytuj wszystkie warstwy obiektów</value>
+  </data>
+  <data name="EditModes" xml:space="preserve">
+    <value>Edytuj tryby:</value>
+  </data>
+  <data name="EditOperations" xml:space="preserve">
+    <value>Włącz operacje graficzne:</value>
+  </data>
+  <data name="EditorWidgetConfiguration" xml:space="preserve">
+    <value>Konfiguruj edycję</value>
+  </data>
+  <data name="EditVerticesEnabled" xml:space="preserve">
+    <value>Edycja wierzchołka</value>
+  </data>
+  <data name="Freehand" xml:space="preserve">
+    <value>Dowolna linia</value>
+  </data>
+  <data name="MaintainAspectRatio" xml:space="preserve">
+    <value>Zachowaj proporcję geometrii</value>
+  </data>
+  <data name="MoveEnabled" xml:space="preserve">
+    <value>Przesuwanie</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Następny</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="RotateEnabled" xml:space="preserve">
+    <value>Obracanie</value>
+  </data>
+  <data name="ScaleEnabled" xml:space="preserve">
+    <value>Skalowanie</value>
+  </data>
+  <data name="SelectLayersForEdit" xml:space="preserve">
+    <value>Edytuj tylko te warstwy:</value>
+  </data>
+  <data name="ShowAttributesOnAdd" xml:space="preserve">
+    <value>Edytuj wartości, gdy są dodawane obiekty</value>
+  </data>
+  <data name="AdvancedOptionsHeader" xml:space="preserve">
+    <value>Zaawansowane narzędzia edycji...</value>
+  </data>
+  <data name="SelectLayersHeader" xml:space="preserve">
+    <value>Wybierz warstwy do edycji</value>
+  </data>
+  <data name="AutoSaveEditChanges" xml:space="preserve">
+    <value>Automatycznie zapisz wyniki edycji</value>
+  </data>
+  <data name="AttachmentEditorClose" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="AttachmentEditorFilterIndexPrompt" xml:space="preserve">
+    <value>Filtruj indeks:</value>
+  </data>
+  <data name="AttachmentEditorFilterPrompt" xml:space="preserve">
+    <value>Filtr:</value>
+  </data>
+  <data name="AttachmentEditorHeader" xml:space="preserve">
+    <value>Edytor załączników</value>
+  </data>
+  <data name="AttachmentEditorHeightPrompt" xml:space="preserve">
+    <value>Wysokość okna dialogowego:</value>
+  </data>
+  <data name="AttachmentEditorMultiSelectPrompt" xml:space="preserve">
+    <value>Zezwalaj na jednoczesne przesyłanie wielu załączników</value>
+  </data>
+  <data name="AttachmentEditorWidthPrompt" xml:space="preserve">
+    <value>Szerokość okna dialogowego:</value>
+  </data>
+  <data name="AttachmentEditorConfigHeader" xml:space="preserve">
+    <value>Konfiguruj edytor załączników</value>
+  </data>
+  <data name="AttachmentEditorDescription" xml:space="preserve">
+    <value>Umożliwia przesyłanie, pobieranie i usuwanie plików powiązanych z obiektami graficznymi w FeatureLayer</value>
+  </data>
+  <data name="AttachmentEditorDisplayName" xml:space="preserve">
+    <value>Dołącz dokument</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="SetLayerPopupOnClick" xml:space="preserve">
+    <value>Dla warstw wybranych do edycji wyświetlaj okna podręczne po kliknięciu myszą</value>
+  </data>
+  <data name="AddToSelection" xml:space="preserve">
+    <value>Dodaj do selekcji</value>
+  </data>
+  <data name="AutocompleteTool" xml:space="preserve">
+    <value>Autouzupełnianie</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Wyczyść selekcję</value>
+  </data>
+  <data name="ClearTool" xml:space="preserve">
+    <value>Narzędzie usuwania</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Wytnij</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="EditingShapesEnabled" xml:space="preserve">
+    <value>Zezwalaj na edycję geometrii</value>
+  </data>
+  <data name="EditorOptionsHeader" xml:space="preserve">
+    <value>Wybierz opcje edycji</value>
+  </data>
+  <data name="EditShape" xml:space="preserve">
+    <value>Edytuj geometrię</value>
+  </data>
+  <data name="EditValues" xml:space="preserve">
+    <value>Edytuj wartości</value>
+  </data>
+  <data name="RemoveFromSelection" xml:space="preserve">
+    <value>Usuń z selekcji</value>
+  </data>
+  <data name="Reshape" xml:space="preserve">
+    <value>Przekształć</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Wybierz</value>
+  </data>
+  <data name="SelectTools" xml:space="preserve">
+    <value>Wybierz narzędzia:</value>
+  </data>
+  <data name="Union" xml:space="preserve">
+    <value>Sumuj</value>
+  </data>
+  <data name="AdvancedOptionsHeaderHide" xml:space="preserve">
+    <value>Ukryj narzędzia zaawansowane</value>
+  </data>
+  <data name="EditToolbarWithAddFeatures" xml:space="preserve">
+    <value>Pasek narzędzi edycji jest dostępny z opcją Dodaj obiekty</value>
+  </data>
+  <data name="DisableClustering" xml:space="preserve">
+    <value>Wyłącz klastrowanie</value>
+  </data>
+  <data name="DisableClusteringPrompt" xml:space="preserve">
+    <value>Dla warstw w klastrach edycja warstwy jest niedozwolona. Czy chcesz teraz wyłączyć klastrowanie?</value>
+  </data>
+</root>

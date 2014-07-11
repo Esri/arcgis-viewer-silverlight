@@ -1,0 +1,2079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptChangesTooltip" xml:space="preserve">
+    <value>接受更改</value>
+  </data>
+  <data name="AddCoordsToListFailedCaption" xml:space="preserve">
+    <value>保存定位结果失败</value>
+  </data>
+  <data name="AddCoordsToListFailedPrompt" xml:space="preserve">
+    <value>向列表添加匹配地址的坐标失败。是否重试?</value>
+  </data>
+  <data name="AddData" xml:space="preserve">
+    <value>添加数据</value>
+  </data>
+  <data name="AddDataSetTooltip" xml:space="preserve">
+    <value>添加数据集</value>
+  </data>
+  <data name="AddDataTooltip" xml:space="preserve">
+    <value>向地图添加更多数据</value>
+  </data>
+  <data name="AddRange" xml:space="preserve">
+    <value>添加范围</value>
+  </data>
+  <data name="AddressMatchError" xml:space="preserve">
+    <value>地址匹配出错: {0}</value>
+  </data>
+  <data name="AddressMatchingServicePrompt" xml:space="preserve">
+    <value>服务:</value>
+  </data>
+  <data name="AdvancedClusterProperties" xml:space="preserve">
+    <value>高级簇属性</value>
+  </data>
+  <data name="AGSOImagery" xml:space="preserve">
+    <value>影像图</value>
+  </data>
+  <data name="AGSOStreets" xml:space="preserve">
+    <value>街道图</value>
+  </data>
+  <data name="AGSOTopo" xml:space="preserve">
+    <value>地形图</value>
+  </data>
+  <data name="AliasHeader" xml:space="preserve">
+    <value>别名</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="ArcGISOnline" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="ArcGISServer" xml:space="preserve">
+    <value>ArcGIS Server</value>
+  </data>
+  <data name="AssociatedMapPrompt" xml:space="preserve">
+    <value>地图:</value>
+  </data>
+  <data name="AutoScroll" xml:space="preserve">
+    <value>自动滚动:</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>背景</value>
+  </data>
+  <data name="BaseMapConfigurationSectionHeader" xml:space="preserve">
+    <value>底图</value>
+  </data>
+  <data name="BaseMapPrompt" xml:space="preserve">
+    <value>底图:</value>
+  </data>
+  <data name="BingMaps" xml:space="preserve">
+    <value>Bing 地图</value>
+  </data>
+  <data name="BingMapsAccountInfo" xml:space="preserve">
+    <value>Bing 地图帐户信息</value>
+  </data>
+  <data name="BingMapsAerial" xml:space="preserve">
+    <value>航空地图</value>
+  </data>
+  <data name="BingMapsAerialWithLabels" xml:space="preserve">
+    <value>航空地图 - 标注</value>
+  </data>
+  <data name="BingMapsInitializeFailed" xml:space="preserve">
+    <value>Bing 地图身份验证失败。将使用 ArcGIS Online 底图代替。请联系您的管理员寻求更多帮助。</value>
+  </data>
+  <data name="BingMapsRoads" xml:space="preserve">
+    <value>道路地图</value>
+  </data>
+  <data name="Border" xml:space="preserve">
+    <value>边框</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>浏览...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>正在取消</value>
+  </data>
+  <data name="ChangeBaseMapTooltip" xml:space="preserve">
+    <value>更改底图</value>
+  </data>
+  <data name="ChangeColorRampTooltip" xml:space="preserve">
+    <value>选择配色方案</value>
+  </data>
+  <data name="ChangeGradientStopsTooltip" xml:space="preserve">
+    <value>单击以选择热点图的渐变停止点</value>
+  </data>
+  <data name="CheckForUpdatesPrompt" xml:space="preserve">
+    <value>检查更新:</value>
+  </data>
+  <data name="CheckForUpdateTooltip" xml:space="preserve">
+    <value>平移或缩放地图时获取更新的列表数据</value>
+  </data>
+  <data name="ChooseBaseMapLayer" xml:space="preserve">
+    <value>选择底图</value>
+  </data>
+  <data name="ChooseLayerHeader" xml:space="preserve">
+    <value>选择数据集</value>
+  </data>
+  <data name="CityPrompt" xml:space="preserve">
+    <value>城市:</value>
+  </data>
+  <data name="ClassifyBy" xml:space="preserve">
+    <value>选择确定值范围的字段</value>
+  </data>
+  <data name="ClassifyByPrompt" xml:space="preserve">
+    <value>分类依据:</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>全部清除</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>清除所选内容</value>
+  </data>
+  <data name="ClickSeqmentToZoom" xml:space="preserve">
+    <value>单击单一线段以缩放到该线段。</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>单击以向东移动</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>单击以向北移动</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>单击以向南移动</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>单击以向西移动</value>
+  </data>
+  <data name="ClusterAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>高级属性</value>
+  </data>
+  <data name="ClusterFeaturesTooltipFirstBit" xml:space="preserve">
+    <value>簇</value>
+  </data>
+  <data name="ClusterFeaturesTooltipSecondBit" xml:space="preserve">
+    <value>要素</value>
+  </data>
+  <data name="ClusterTooltip" xml:space="preserve">
+    <value>将要素的簇绘制在一起</value>
+  </data>
+  <data name="ColorsPrompt" xml:space="preserve">
+    <value>颜色:</value>
+  </data>
+  <data name="ConfigurationTooltip" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="ConfigureBingMapsCredentials" xml:space="preserve">
+    <value>单击以配置 Bing 地图帐户信息</value>
+  </data>
+  <data name="ConfigureSettings" xml:space="preserve">
+    <value>配置设置</value>
+  </data>
+  <data name="ConfigureTooltip" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="CountryPrompt" xml:space="preserve">
+    <value>国家:</value>
+  </data>
+  <data name="CurrentSymbolPrompt" xml:space="preserve">
+    <value>当前符号:</value>
+  </data>
+  <data name="CustomColorRamp" xml:space="preserve">
+    <value>自定义</value>
+  </data>
+  <data name="CustomColorRampToolTip" xml:space="preserve">
+    <value>选取每个值范围的颜色</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>数据源:</value>
+  </data>
+  <data name="DataSourceTooltip" xml:space="preserve">
+    <value>输入 SharePoint、Spatial Data Service 或 ArcGIS Server 端点的 URL</value>
+  </data>
+  <data name="DefinitionTabHeader" xml:space="preserve">
+    <value>定义</value>
+  </data>
+  <data name="DefinitionTabHeaderTooltip" xml:space="preserve">
+    <value>定义当前数据集的属性</value>
+  </data>
+  <data name="DeleteConnectionCaption" xml:space="preserve">
+    <value>确认删除</value>
+  </data>
+  <data name="DeleteConnectionPrompt" xml:space="preserve">
+    <value>确定要删除此连接?</value>
+  </data>
+  <data name="DeleteLayerMessageCaption" xml:space="preserve">
+    <value>确认删除</value>
+  </data>
+  <data name="DeleteLayerPrompt" xml:space="preserve">
+    <value>确定要从地图中删除此数据集?</value>
+  </data>
+  <data name="DeleteRange" xml:space="preserve">
+    <value>删除范围</value>
+  </data>
+  <data name="DisplayNamePrompt" xml:space="preserve">
+    <value>显示名称:</value>
+  </data>
+  <data name="DisplayNameTooltip" xml:space="preserve">
+    <value>定义当前数据集的显示名称</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>拖动以旋转</value>
+  </data>
+  <data name="DuplicateDataSource" xml:space="preserve">
+    <value>{0} 已添加为数据源</value>
+  </data>
+  <data name="DuplicateMapServiceLayer" xml:space="preserve">
+    <value>已添加地图服务</value>
+  </data>
+  <data name="DuplicateMapServiceLayerCaption" xml:space="preserve">
+    <value>检测到重复项</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="EnterCredentials" xml:space="preserve">
+    <value>请输入用户名和密码</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="Europe" xml:space="preserve">
+    <value>欧洲</value>
+  </data>
+  <data name="Every" xml:space="preserve">
+    <value>每隔</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>展开/折叠</value>
+  </data>
+  <data name="ExportSelection" xml:space="preserve">
+    <value>导出所选内容</value>
+  </data>
+  <data name="FieldHeader" xml:space="preserve">
+    <value>字段</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>填充</value>
+  </data>
+  <data name="FilterByMapView" xml:space="preserve">
+    <value>按地图视图过滤:</value>
+  </data>
+  <data name="FilterExpressionPrompt" xml:space="preserve">
+    <value>过滤表达式:</value>
+  </data>
+  <data name="FilterExpressionTooltip" xml:space="preserve">
+    <value>将过滤器应用于当前数据集</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>查找</value>
+  </data>
+  <data name="FindDirections" xml:space="preserve">
+    <value>查找方向</value>
+  </data>
+  <data name="FindLocation" xml:space="preserve">
+    <value>查找位置</value>
+  </data>
+  <data name="FindNearby" xml:space="preserve">
+    <value>查找附近地点</value>
+  </data>
+  <data name="FixLocation" xml:space="preserve">
+    <value>固定位置</value>
+  </data>
+  <data name="Foreground" xml:space="preserve">
+    <value>前景</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>更多信息</value>
+  </data>
+  <data name="FromPrompt" xml:space="preserve">
+    <value>从:</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>全图</value>
+  </data>
+  <data name="GetListItemsFailed" xml:space="preserve">
+    <value>无法从站点 {1} 的 {0} 中检索项目</value>
+  </data>
+  <data name="GetListItemsFailedPromptRemove" xml:space="preserve">
+    <value>无法从站点 {1} 的 {0} 中检索项目。是否从地图中删除此视图?</value>
+  </data>
+  <data name="GetListsFailed" xml:space="preserve">
+    <value>检索列表失败: {0}</value>
+  </data>
+  <data name="HeatMap" xml:space="preserve">
+    <value>热点图</value>
+  </data>
+  <data name="HeatMapAdvancedProperties" xml:space="preserve">
+    <value>热点图属性</value>
+  </data>
+  <data name="HeatMapAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>热点图渲染的属性</value>
+  </data>
+  <data name="HeatMapTooltip" xml:space="preserve">
+    <value>将数据显示为热点图</value>
+  </data>
+  <data name="HundredPercent" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="InitializationError" xml:space="preserve">
+    <value>初始化错误: {0}</value>
+  </data>
+  <data name="IntensityPrompt" xml:space="preserve">
+    <value>强度:</value>
+  </data>
+  <data name="InvalidUrlCaption" xml:space="preserve">
+    <value>URL 无效</value>
+  </data>
+  <data name="InvalidUrlPrompt" xml:space="preserve">
+    <value>请输入有效的 URL</value>
+  </data>
+  <data name="LatitudePrompt" xml:space="preserve">
+    <value>纬度(Y):</value>
+  </data>
+  <data name="LayerInfoRetrievalError" xml:space="preserve">
+    <value>检索图层信息时出错: {0}</value>
+  </data>
+  <data name="LayersTabHeader" xml:space="preserve">
+    <value>图层可见性</value>
+  </data>
+  <data name="LayersTabHeaderTooltip" xml:space="preserve">
+    <value>配置图层的可见性</value>
+  </data>
+  <data name="ListViewHeader" xml:space="preserve">
+    <value>列表视图</value>
+  </data>
+  <data name="LoadDataSourceTooltip" xml:space="preserve">
+    <value>加载数据源</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>查找</value>
+  </data>
+  <data name="LocateByAddress" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="LocateByAddressTooltip" xml:space="preserve">
+    <value>使用地址匹配功能绘制当前列表数据</value>
+  </data>
+  <data name="LocateByCoordinates" xml:space="preserve">
+    <value>坐标</value>
+  </data>
+  <data name="LocateByCoordinatesTooltip" xml:space="preserve">
+    <value>使用坐标绘制当前列表数据</value>
+  </data>
+  <data name="LocateByPrompt" xml:space="preserve">
+    <value>定位依据:</value>
+  </data>
+  <data name="LocateTooltip" xml:space="preserve">
+    <value>地址匹配当前列表</value>
+  </data>
+  <data name="LocateUpdateTooltip" xml:space="preserve">
+    <value>基于所选坐标字段绘制当前列表</value>
+  </data>
+  <data name="LocationFieldsTabHeader" xml:space="preserve">
+    <value>位置字段</value>
+  </data>
+  <data name="LocationFieldsTabHeaderTooltip" xml:space="preserve">
+    <value>选择当前数据集的地址或地理字段</value>
+  </data>
+  <data name="LongitudePrompt" xml:space="preserve">
+    <value>经度(X):</value>
+  </data>
+  <data name="MapContentsTooltip" xml:space="preserve">
+    <value>地图内容</value>
+  </data>
+  <data name="MapXaml" xml:space="preserve">
+    <value>地图 XAML</value>
+  </data>
+  <data name="MapXamlRepresentation" xml:space="preserve">
+    <value>地图的 XAML 表示</value>
+  </data>
+  <data name="MaxPrompt" xml:space="preserve">
+    <value>最大值:</value>
+  </data>
+  <data name="MinPrompt" xml:space="preserve">
+    <value>最小值:</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>分</value>
+  </data>
+  <data name="ModifyRangeTooltip" xml:space="preserve">
+    <value>修改范围</value>
+  </data>
+  <data name="MoveBarUpDown" xml:space="preserve">
+    <value>向上移动比例尺放大，向下移动比例尺缩小</value>
+  </data>
+  <data name="MoveDownTooltip" xml:space="preserve">
+    <value>下移</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>移动第一个</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>移动最后一个</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>移动下一个</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>移动上一个</value>
+  </data>
+  <data name="MoveRangeTooltip" xml:space="preserve">
+    <value>移动范围</value>
+  </data>
+  <data name="MoveUpTooltip" xml:space="preserve">
+    <value>上移</value>
+  </data>
+  <data name="MultiLayerCacheNotSupported" xml:space="preserve">
+    <value>不支持多图层缓存切片地图服务。请使用或创建单个融合缓存。</value>
+  </data>
+  <data name="MultiLayerCacheNotSupportedCaption" xml:space="preserve">
+    <value>不支持多图层缓存切片服务</value>
+  </data>
+  <data name="MultipleViewsNotAllowed" xml:space="preserve">
+    <value>不能多次添加 SharePoint 列表视图</value>
+  </data>
+  <data name="NewDataSourceHelpText" xml:space="preserve">
+    <value>&lt;输入服务器名称或 http 端点&gt;</value>
+  </data>
+  <data name="NextRange" xml:space="preserve">
+    <value>下一个范围</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefined" xml:space="preserve">
+    <value>尚未映射列表的位置字段。请将列表中的列映射到相应字段。</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefinedCaption" xml:space="preserve">
+    <value>定义位置字段映射</value>
+  </data>
+  <data name="NoAssociatedMapWebPart" xml:space="preserve">
+    <value>找不到任何地图 web 部件。</value>
+  </data>
+  <data name="NoDistinctNumericFields" xml:space="preserve">
+    <value>此数据集中的所有数值字段的最小值和最大值都相同。要配置值范围，最小值和最大值不能相同。</value>
+  </data>
+  <data name="NoGeographicListsFound" xml:space="preserve">
+    <value>在 {0} 找不到包含地理数据的列表</value>
+  </data>
+  <data name="NoLayersAdded" xml:space="preserve">
+    <value>单击“添加数据”按钮将数据添加到地图</value>
+  </data>
+  <data name="NoGPServicesFound" xml:space="preserve">
+    <value>在 {0} 中找不到任何地理处理服务</value>
+  </data>
+  <data name="NoMapServicesFound" xml:space="preserve">
+    <value>在 {0} 中找不到任何地图服务</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="NoNumericFieldsFound" xml:space="preserve">
+    <value>此数据集不包含任何数值字段。只能在至少包含一个数值字段的数据集上设置值范围。</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>无任何记录</value>
+  </data>
+  <data name="NoRecordsForVisibleLayer" xml:space="preserve">
+    <value>地图并未检索此列表的项目。打开此列表的可见性以查看其项目。</value>
+  </data>
+  <data name="NoResultsCaption" xml:space="preserve">
+    <value>无任何结果</value>
+  </data>
+  <data name="NoResultsLayerNotVisible" xml:space="preserve">
+    <value>找不到任何记录，因为该列表在地图上不可见</value>
+  </data>
+  <data name="NorthAmerica" xml:space="preserve">
+    <value>北美洲</value>
+  </data>
+  <data name="NoSpatialTablesFound" xml:space="preserve">
+    <value>在 {0} 中找不到包含空间数据的表格</value>
+  </data>
+  <data name="NumericFieldNotDistinct" xml:space="preserve">
+    <value>{0} 字段包含的最小值和最大值相同。只能在最小值和最大值不同的字段上配置值范围。</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="OnPanAndZoom" xml:space="preserve">
+    <value>平移和缩放时</value>
+  </data>
+  <data name="OperationalDataSectionHeader" xml:space="preserve">
+    <value>数据</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>密码:</value>
+  </data>
+  <data name="PleaseSpecifyDataSourceMessage" xml:space="preserve">
+    <value>请指定数据源</value>
+  </data>
+  <data name="PollForUpdatesTooltip" xml:space="preserve">
+    <value>定义获取更新的列表数据的时间间隔</value>
+  </data>
+  <data name="PopUpTabHeader" xml:space="preserve">
+    <value>弹出窗口</value>
+  </data>
+  <data name="PopUpTabHeaderTooltip" xml:space="preserve">
+    <value>配置当前数据集的地图信息弹出</value>
+  </data>
+  <data name="PreDefinedColorRamp" xml:space="preserve">
+    <value>预定义</value>
+  </data>
+  <data name="PreDefinedColorRampTooltip" xml:space="preserve">
+    <value>应用一组预定义颜色</value>
+  </data>
+  <data name="PreviousRange" xml:space="preserve">
+    <value>上一个范围</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>生产</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>属性 - {0}</value>
+  </data>
+  <data name="RecordsPrompt" xml:space="preserve">
+    <value>记录:</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="RefreshError" xml:space="preserve">
+    <value>刷新 {0} 图层时出错</value>
+  </data>
+  <data name="RefreshMapXamlTooltip" xml:space="preserve">
+    <value>刷新地图 XAML</value>
+  </data>
+  <data name="RefreshTooltip" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="RemoveTooltip" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="ResetExtent" xml:space="preserve">
+    <value>重置范围</value>
+  </data>
+  <data name="ResetExtentTooltip" xml:space="preserve">
+    <value>将地图范围重置为 ArcGIS server 服务定义的初始范围。</value>
+  </data>
+  <data name="ResetMapRotation" xml:space="preserve">
+    <value>重置地图旋转</value>
+  </data>
+  <data name="ResolutionPrompt" xml:space="preserve">
+    <value>分辨率:</value>
+  </data>
+  <data name="ResultsViewHeader" xml:space="preserve">
+    <value>结果视图</value>
+  </data>
+  <data name="RetrievingBaseMaps" xml:space="preserve">
+    <value>正在检索可用的底图</value>
+  </data>
+  <data name="RetrievingGeometryType" xml:space="preserve">
+    <value>正在检索几何类型</value>
+  </data>
+  <data name="RetrievingInformation" xml:space="preserve">
+    <value>正在检索来自服务器的信息</value>
+  </data>
+  <data name="RollBackChangesTooltip" xml:space="preserve">
+    <value>回滚更改</value>
+  </data>
+  <data name="ScaleBarUnit_feet" xml:space="preserve">
+    <value>ft</value>
+  </data>
+  <data name="ScaleBarUnit_kilometers" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="ScaleBarUnit_meters" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="ScaleBarUnit_miles" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>全选</value>
+  </data>
+  <data name="SelectAllTooltip" xml:space="preserve">
+    <value>全选</value>
+  </data>
+  <data name="SelectedRangePrompt" xml:space="preserve">
+    <value>范围:</value>
+  </data>
+  <data name="SelectedRecordsFormatString" xml:space="preserve">
+    <value>记录数(已选择 {0} 个，共 {1} 个)</value>
+  </data>
+  <data name="SelectRangeTooltip" xml:space="preserve">
+    <value>选择范围进行编辑</value>
+  </data>
+  <data name="ServerPrompt" xml:space="preserve">
+    <value>服务器:</value>
+  </data>
+  <data name="ServiceConnectionError" xml:space="preserve">
+    <value>连接到 {0} 时出错。请检查 URL，确保该服务正在运行，然后重试。</value>
+  </data>
+  <data name="ServiceConnectionErrorCaption" xml:space="preserve">
+    <value>连接错误</value>
+  </data>
+  <data name="ServiceConnectionErrorDuringInit" xml:space="preserve">
+    <value>无法连接到 {0}。</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="ShowHide" xml:space="preserve">
+    <value>显示/隐藏</value>
+  </data>
+  <data name="ShowHideTooltip" xml:space="preserve">
+    <value>显示/隐藏</value>
+  </data>
+  <data name="SimpleSymbolType" xml:space="preserve">
+    <value>简单</value>
+  </data>
+  <data name="SimpleSymbolTypeTooltip" xml:space="preserve">
+    <value>显示包含一个符号的当前数据集</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>源:</value>
+  </data>
+  <data name="Staging" xml:space="preserve">
+    <value>过渡</value>
+  </data>
+  <data name="StatePrompt" xml:space="preserve">
+    <value>状态/细分:</value>
+  </data>
+  <data name="SymbolsTabHeader" xml:space="preserve">
+    <value>符号</value>
+  </data>
+  <data name="SymbolsTabHeaderTooltip" xml:space="preserve">
+    <value>配置当前数据集的显示</value>
+  </data>
+  <data name="SymbolTypePrompt" xml:space="preserve">
+    <value>符号类型:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>至</value>
+  </data>
+  <data name="TokenAuthenticationFailed" xml:space="preserve">
+    <value>Bing 地图身份验证失败。检查您的凭据，然后重试。</value>
+  </data>
+  <data name="TokenConnectionFailed" xml:space="preserve">
+    <value>无法连接到检索令牌。检查与主机服务器的连接，然后重试。</value>
+  </data>
+  <data name="TolerancePrompt" xml:space="preserve">
+    <value>容差:</value>
+  </data>
+  <data name="ToPrompt" xml:space="preserve">
+    <value>至:</value>
+  </data>
+  <data name="TotalDistancePrompt" xml:space="preserve">
+    <value>总距离:</value>
+  </data>
+  <data name="TotalTimePrompt" xml:space="preserve">
+    <value>总时间:</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>透明度</value>
+  </data>
+  <data name="TransparencyPrompt" xml:space="preserve">
+    <value>透明度:</value>
+  </data>
+  <data name="UnhandledSilverlightError" xml:space="preserve">
+    <value>Silverlight 2 应用程序中有未处理的错误</value>
+  </data>
+  <data name="UpdateAddress" xml:space="preserve">
+    <value>更新地址</value>
+  </data>
+  <data name="UpdateLayerError" xml:space="preserve">
+    <value>更新图层时出错: {0}</value>
+  </data>
+  <data name="UpdateListError" xml:space="preserve">
+    <value>应用列表更改时出错: {0}</value>
+  </data>
+  <data name="UrlPrompt" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="UserNamePrompt" xml:space="preserve">
+    <value>用户:</value>
+  </data>
+  <data name="UseStagingServer" xml:space="preserve">
+    <value>使用过渡服务器</value>
+  </data>
+  <data name="ValidAddressError" xml:space="preserve">
+    <value>请输入有效的地址</value>
+  </data>
+  <data name="ValidAddressErrorCaption" xml:space="preserve">
+    <value>地址无效</value>
+  </data>
+  <data name="ValidCoordinatesError" xml:space="preserve">
+    <value>请输入有效的坐标</value>
+  </data>
+  <data name="ValidCoordinatesErrorCaption" xml:space="preserve">
+    <value>坐标无效</value>
+  </data>
+  <data name="ValueRanges" xml:space="preserve">
+    <value>值范围</value>
+  </data>
+  <data name="ValueRangesTooltip" xml:space="preserve">
+    <value>基于值范围显示当前数据集</value>
+  </data>
+  <data name="ViewItem" xml:space="preserve">
+    <value>视图项目</value>
+  </data>
+  <data name="VisibleHeader" xml:space="preserve">
+    <value>可见</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>宽度</value>
+  </data>
+  <data name="XamlRepresentation" xml:space="preserve">
+    <value>当前图层的 XAML 表示</value>
+  </data>
+  <data name="XamlViewTabHeader" xml:space="preserve">
+    <value>Xaml 视图</value>
+  </data>
+  <data name="XamlViewTabHeaderTooltip" xml:space="preserve">
+    <value>查看为图层生成的 Xaml</value>
+  </data>
+  <data name="ZeroPercent" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="Zip4Prompt" xml:space="preserve">
+    <value>Zip4:</value>
+  </data>
+  <data name="ZipPrompt" xml:space="preserve">
+    <value>邮政编码:</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>放大</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>缩小</value>
+  </data>
+  <data name="ZoomOutButton" xml:space="preserve">
+    <value>缩小</value>
+  </data>
+  <data name="ZoomRangeTooltip" xml:space="preserve">
+    <value>基于范围放大</value>
+  </data>
+  <data name="ZoomToAllRecords" xml:space="preserve">
+    <value>转至</value>
+  </data>
+  <data name="ZoomToItem" xml:space="preserve">
+    <value>缩放至项目</value>
+  </data>
+  <data name="ZoomToSelection" xml:space="preserve">
+    <value>缩放至所选项</value>
+  </data>
+  <data name="ConfigFileUrlTextboxTooltip" xml:space="preserve">
+    <value>输入配置文件的 URL</value>
+  </data>
+  <data name="ConnectToSharePointDataSource" xml:space="preserve">
+    <value>&lt;输入 SharePoint 站点的 URL&gt;</value>
+  </data>
+  <data name="ExportToFile" xml:space="preserve">
+    <value>导出至文件</value>
+  </data>
+  <data name="FileNamePrompt" xml:space="preserve">
+    <value>文件名:</value>
+  </data>
+  <data name="MustEnterFileName" xml:space="preserve">
+    <value>请输入文件名</value>
+  </data>
+  <data name="MustEnterFileNameTitle" xml:space="preserve">
+    <value>缺少文件名</value>
+  </data>
+  <data name="OverwriteExistingFile" xml:space="preserve">
+    <value>覆盖现有文件</value>
+  </data>
+  <data name="UrlToSitePrompt" xml:space="preserve">
+    <value>站点 URL:</value>
+  </data>
+  <data name="CustomBaseMap" xml:space="preserve">
+    <value>ArcGIS Server 底图</value>
+  </data>
+  <data name="AGSDataSourceTooltip" xml:space="preserve">
+    <value>输入 ArcGIS Server 端点的 URL</value>
+  </data>
+  <data name="NotUsingBingMapsResource" xml:space="preserve">
+    <value>您的应用程序未使用 Bing 地图的任何资源。此时不需要配置任何帐户信息。</value>
+  </data>
+  <data name="NotUsingBingMapsResourceCaption" xml:space="preserve">
+    <value>无 Bing 地图资源</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="BrowseForBaseMap" xml:space="preserve">
+    <value>浏览底图</value>
+  </data>
+  <data name="EnterUrl" xml:space="preserve">
+    <value>输入 URL</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatch" xml:space="preserve">
+    <value>缓存的地图服务的空间参考与底图的空间参考不匹配。无法添加此地图服务。</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatchCaption" xml:space="preserve">
+    <value>空间参考不匹配</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemoved" xml:space="preserve">
+    <value>您的业务数据集中含有空间参考与所选底图不匹配的地图服务。为了继续操作，需要移除这些地图服务。单击“确定”移除。</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemovedCaption" xml:space="preserve">
+    <value>业务数据集不匹配</value>
+  </data>
+  <data name="AddContentTitle" xml:space="preserve">
+    <value>添加内容</value>
+  </data>
+  <data name="BaseMapGalleryTitle" xml:space="preserve">
+    <value>选择底图</value>
+  </data>
+  <data name="BrowseForBaseMapTitle" xml:space="preserve">
+    <value>浏览底图</value>
+  </data>
+  <data name="EnterUrlDialogTitle" xml:space="preserve">
+    <value>输入底图的 URL</value>
+  </data>
+  <data name="MapContentsTitle" xml:space="preserve">
+    <value>地图内容</value>
+  </data>
+  <data name="CanOnlyUseCachedMapServicesAsBaseMap" xml:space="preserve">
+    <value>只有 ArcGIS 缓存的地图服务可用作底图。</value>
+  </data>
+  <data name="InvalidMapServiceCaption" xml:space="preserve">
+    <value>地图服务无效 </value>
+  </data>
+  <data name="MapTipBorderColorTooltip" xml:space="preserve">
+    <value>更改地图提示的边框颜色</value>
+  </data>
+  <data name="MapTipFillColorTooltip" xml:space="preserve">
+    <value>更改地图提示的填充颜色</value>
+  </data>
+  <data name="MapTipForegroundColorTooltip" xml:space="preserve">
+    <value>更改地图提示的文本颜色</value>
+  </data>
+  <data name="SampleMapTipText" xml:space="preserve">
+    <value>样例文本</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>添加所选图层</value>
+  </data>
+  <data name="AttributePrompt" xml:space="preserve">
+    <value>属性:</value>
+  </data>
+  <data name="ColorScheme" xml:space="preserve">
+    <value>配色方案</value>
+  </data>
+  <data name="MoreOptions" xml:space="preserve">
+    <value>更多选项</value>
+  </data>
+  <data name="RendererPrompt" xml:space="preserve">
+    <value>渲染器:</value>
+  </data>
+  <data name="SymbolOptions" xml:space="preserve">
+    <value>方案选项</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>当前符号:</value>
+  </data>
+  <data name="Basemap" xml:space="preserve">
+    <value>底图</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>上移一层</value>
+  </data>
+  <data name="ClassBreaks" xml:space="preserve">
+    <value>分类间隔</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>颜色</value>
+  </data>
+  <data name="FromServer" xml:space="preserve">
+    <value>浏览...</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>主页</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>地图</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>地图内容</value>
+  </data>
+  <data name="MapTip" xml:space="preserve">
+    <value>地图提示</value>
+  </data>
+  <data name="MoreSymbolOptions" xml:space="preserve">
+    <value>方案选项</value>
+  </data>
+  <data name="Organize" xml:space="preserve">
+    <value>组织</value>
+  </data>
+  <data name="RefreshLayer" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜索...</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>下移一层</value>
+  </data>
+  <data name="SingleSymbol" xml:space="preserve">
+    <value>单一符号</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="UniqueValues" xml:space="preserve">
+    <value>唯一值</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="CategoryPrompt" xml:space="preserve">
+    <value>类别:</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>符号</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>视图</value>
+  </data>
+  <data name="DrawOrder" xml:space="preserve">
+    <value>绘制顺序</value>
+  </data>
+  <data name="Popups" xml:space="preserve">
+    <value>弹出窗口</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>属性表</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>配置弹出窗口</value>
+  </data>
+  <data name="AddUniqueValue" xml:space="preserve">
+    <value>添加值</value>
+  </data>
+  <data name="DeleteUniqueValue" xml:space="preserve">
+    <value>删除所选值</value>
+  </data>
+  <data name="NextUniqueValue" xml:space="preserve">
+    <value>下一个唯一值</value>
+  </data>
+  <data name="PreviousUniqueValue" xml:space="preserve">
+    <value>上一个唯一值</value>
+  </data>
+  <data name="ValuePrompt" xml:space="preserve">
+    <value>值:</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>图层</value>
+  </data>
+  <data name="MapCenterTooltip" xml:space="preserve">
+    <value>ArcGIS.com 地图中心</value>
+  </data>
+  <data name="ClassesPrompt" xml:space="preserve">
+    <value>分类:</value>
+  </data>
+  <data name="InvalidClassBreakValue" xml:space="preserve">
+    <value>无效值</value>
+  </data>
+  <data name="DefaultSymbol" xml:space="preserve">
+    <value>默认符号</value>
+  </data>
+  <data name="MaxPointsPrompt" xml:space="preserve">
+    <value>最大点数:</value>
+  </data>
+  <data name="RadiusPrompt" xml:space="preserve">
+    <value>半径:</value>
+  </data>
+  <data name="UsePointClustering" xml:space="preserve">
+    <value>使用点聚簇</value>
+  </data>
+  <data name="AddContent" xml:space="preserve">
+    <value>添加内容</value>
+  </data>
+  <data name="LayerSymbology" xml:space="preserve">
+    <value>符号系统</value>
+  </data>
+  <data name="AutoUpdates" xml:space="preserve">
+    <value>自动更新</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>间隔</value>
+  </data>
+  <data name="PollForUpdates" xml:space="preserve">
+    <value>轮询更新</value>
+  </data>
+  <data name="UpdateOnExtentChanged" xml:space="preserve">
+    <value>地图范围发生更改时自动更新</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>过滤器</value>
+  </data>
+  <data name="FilterLayerTitle" xml:space="preserve">
+    <value>指定过滤表达式</value>
+  </data>
+  <data name="FilterByMapExtent" xml:space="preserve">
+    <value>按范围过滤</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>全屏</value>
+  </data>
+  <data name="AutoScrollRow" xml:space="preserve">
+    <value>自动滚动行</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>服务详细信息</value>
+  </data>
+  <data name="DatasetPrompt" xml:space="preserve">
+    <value>数据集:</value>
+  </data>
+  <data name="DistancePrompt" xml:space="preserve">
+    <value>距离:</value>
+  </data>
+  <data name="FindNearbyTitle" xml:space="preserve">
+    <value>查找附近地点</value>
+  </data>
+  <data name="InvalidDistance" xml:space="preserve">
+    <value>请输入有效的距离</value>
+  </data>
+  <data name="InvalidDistanceCaption" xml:space="preserve">
+    <value>无效距离</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>公里</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>米</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>英里</value>
+  </data>
+  <data name="SelectionTools" xml:space="preserve">
+    <value>选择工具</value>
+  </data>
+  <data name="BufferDistance" xml:space="preserve">
+    <value>缓冲距离</value>
+  </data>
+  <data name="Feed" xml:space="preserve">
+    <value>GeoRSS...</value>
+  </data>
+  <data name="FindNearbyBufferPrefix" xml:space="preserve">
+    <value>查找邻近缓冲区 - </value>
+  </data>
+  <data name="FindNearbyPrefix" xml:space="preserve">
+    <value>查找邻近要素 - </value>
+  </data>
+  <data name="SelectByDraw" xml:space="preserve">
+    <value>按绘图选择</value>
+  </data>
+  <data name="ColorSchemePrompt" xml:space="preserve">
+    <value>配色方案:</value>
+  </data>
+  <data name="EditValuesPrompt" xml:space="preserve">
+    <value>编辑值:</value>
+  </data>
+  <data name="TypeValueToAdd" xml:space="preserve">
+    <value>输入要添加的值</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>主题</value>
+  </data>
+  <data name="AddGeoRSSTitle" xml:space="preserve">
+    <value>输入 GeoRSS 源的 URL</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>标题:</value>
+  </data>
+  <data name="BrowseDialogGeographicDataNotFound" xml:space="preserve">
+    <value>未找到地理数据</value>
+  </data>
+  <data name="DefaultBasemapLayerDisplayName" xml:space="preserve">
+    <value>底图</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>图层:</value>
+  </data>
+  <data name="AddLayerTooltip" xml:space="preserve">
+    <value>将所选的 ArcGIS Server、SharePoint 或 Spatial Data Service 数据集添加到地图中</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>重命名</value>
+  </data>
+  <data name="ODataFeed" xml:space="preserve">
+    <value>OData...</value>
+  </data>
+  <data name="SignInWithGlobalAccount" xml:space="preserve">
+    <value>使用 Esri 全球帐户登录</value>
+  </data>
+  <data name="ClusterColor" xml:space="preserve">
+    <value>簇背景色</value>
+  </data>
+  <data name="ClusterTextColor" xml:space="preserve">
+    <value>簇前景色</value>
+  </data>
+  <data name="Clustering" xml:space="preserve">
+    <value>聚簇</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>常规</value>
+  </data>
+  <data name="HeatMapAdd" xml:space="preserve">
+    <value>添加热点图</value>
+  </data>
+  <data name="Intensity" xml:space="preserve">
+    <value>强度</value>
+  </data>
+  <data name="OpenItemOnClick" xml:space="preserve">
+    <value>单击时打开项目</value>
+  </data>
+  <data name="Symbology" xml:space="preserve">
+    <value>符号系统</value>
+  </data>
+  <data name="ShowMapContents" xml:space="preserve">
+    <value>返回</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>属性</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>高级</value>
+  </data>
+  <data name="ExtensionLoadFailed" xml:space="preserve">
+    <value>扩展模块加载失败</value>
+  </data>
+  <data name="ToolClassLoadFailed" xml:space="preserve">
+    <value>工具类加载失败</value>
+  </data>
+  <data name="ToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>工具类加载配置失败</value>
+  </data>
+  <data name="ExtensionInitializationFailed" xml:space="preserve">
+    <value>无法实例化自定义命令的实例。</value>
+  </data>
+  <data name="ExtensionInitializationFailedHeader" xml:space="preserve">
+    <value>扩展模块初始化失败</value>
+  </data>
+  <data name="Less" xml:space="preserve">
+    <value>较少</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>较多</value>
+  </data>
+  <data name="ConfiguringLayer" xml:space="preserve">
+    <value>配置:</value>
+  </data>
+  <data name="RemoveLayerCaption" xml:space="preserve">
+    <value>移除图层?</value>
+  </data>
+  <data name="RemoveLayerNameSubstitude" xml:space="preserve">
+    <value>选定</value>
+  </data>
+  <data name="RemoveLayerPrompt" xml:space="preserve">
+    <value>是否要从地图中移除 {0} 图层?</value>
+  </data>
+  <data name="BrowseNoEllipsis" xml:space="preserve">
+    <value>浏览</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>内容</value>
+  </data>
+  <data name="GeoRSS" xml:space="preserve">
+    <value>GeoRSS</value>
+  </data>
+  <data name="SearchNoEllipsis" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="ErrorLoadConfigurationOfExtension" xml:space="preserve">
+    <value>扩展模块的 LoadConfiguration 中有未处理的错误({0})</value>
+  </data>
+  <data name="ErrorNoPrinterContainerFoundInPrintTemplate" xml:space="preserve">
+    <value>在打印模板中未找到打印容器。</value>
+  </data>
+  <data name="ErrorSaveConfigurationOfExtension" xml:space="preserve">
+    <value>扩展模块的 SaveConfiguration 中有未处理的错误({0})</value>
+  </data>
+  <data name="ExceptionCachedMapServiceSpatialReferenceDoesNotMatch" xml:space="preserve">
+    <value>缓存地图服务的空间参考不匹配。</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitialized" xml:space="preserve">
+    <value>不能在初始化地图之前调用 ZoomMapToExtent。使用 MapLayersInitialized 等待此事件。</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitializedMapReferenceNull" xml:space="preserve">
+    <value>不能在初始化地图之前调用 ZoomMapToExtent。地图空间参考为空。</value>
+  </data>
+  <data name="ExceptionConnectionTypeDoesNotCoorespondToDatasourceWhichHasResources" xml:space="preserve">
+    <value>连接类型 {0} 与含有资源的数据源({1})不对应</value>
+  </data>
+  <data name="ExceptionCouldNotFindElementWithName" xml:space="preserve">
+    <value>找不到名称为 {0} 的元素。</value>
+  </data>
+  <data name="ExceptionCouldNotFindToggleButtonWithName" xml:space="preserve">
+    <value>找不到名称为 {0} 的切换按钮。</value>
+  </data>
+  <data name="ExceptionDatasourceNotLoadedForBaseMapType" xml:space="preserve">
+    <value>未加载适用于底图类型 {0} 的数据源。</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>元素</value>
+  </data>
+  <data name="ExceptionMapHasNotBeenInitializedYet" xml:space="preserve">
+    <value>尚未初始化地图</value>
+  </data>
+  <data name="ExceptionMapLayersHaveNotBeenInstantiated" xml:space="preserve">
+    <value>尚未实例化地图图层。只有在触发 MapLayersInitialized 后才能更改底图</value>
+  </data>
+  <data name="ExceptionMapNotSet" xml:space="preserve">
+    <value>未设置地图</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationProvider" xml:space="preserve">
+    <value>必须指定 ConfigurationProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationStoreProvider" xml:space="preserve">
+    <value>必须指定 ConfigurationStoreProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyDataSourceProvider" xml:space="preserve">
+    <value>必须指定 DataSourceProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyLayoutProvider" xml:space="preserve">
+    <value>必须指定 LayoutProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifySpatialReferenceOnEnvelope" xml:space="preserve">
+    <value>必须指定包络矩形的空间参考</value>
+  </data>
+  <data name="ExceptionMustSpecifyThemeProvider" xml:space="preserve">
+    <value>必须指定 ThemeProvider</value>
+  </data>
+  <data name="ExceptionNoBingMapsTokenAvailable" xml:space="preserve">
+    <value>无可用的 Bing 地图令牌</value>
+  </data>
+  <data name="ExceptionNoGeometryServiceUrlSpecifiedLayerZoomedIsDifferentSpatialReference" xml:space="preserve">
+    <value>未指定几何服务 URL。当前缩放到的图层的空间参考与地图的空间参考不同，需要使用几何服务重新投影全图</value>
+  </data>
+  <data name="ExceptionNotSupported" xml:space="preserve">
+    <value>不支持</value>
+  </data>
+  <data name="ExceptionNullBaseMapInfo" xml:space="preserve">
+    <value>baseMapInfo</value>
+  </data>
+  <data name="ExceptionOnlyCachedServicesCanBeUsedAsBaseMaps" xml:space="preserve">
+    <value>只有缓存的地图服务可用作底图</value>
+  </data>
+  <data name="ExceptionUnableToInstantiateDatasourceForBaseMapType" xml:space="preserve">
+    <value>无法实例化底图类型 {0} 的数据源</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>无法检索配置信息。未返回任何信息。</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasource" xml:space="preserve">
+    <value>无法检索 {0} 的数据源</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasourceConnectionType" xml:space="preserve">
+    <value>无法检索适用于连接类型 {0} 的数据源</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>正在加载...</value>
+  </data>
+  <data name="LoadingMapCenter" xml:space="preserve">
+    <value>正在加载地图中心...</value>
+  </data>
+  <data name="LogUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>无法检索配置信息</value>
+  </data>
+  <data name="MsgErrorExecutingBufferOperation" xml:space="preserve">
+    <value>执行缓存区操作时出错。</value>
+  </data>
+  <data name="MsgErrorExecutingRelationAsyncOperation" xml:space="preserve">
+    <value>执行 RelationAsync 操作时出错</value>
+  </data>
+  <data name="MsgErrorOpeningFile" xml:space="preserve">
+    <value>打开文件时出错</value>
+  </data>
+  <data name="MsgErrorRetrievingSubLayersForMapService" xml:space="preserve">
+    <value>检索地图服务的子图层时出错</value>
+  </data>
+  <data name="MsgErrorSavingFile" xml:space="preserve">
+    <value>保存文件时出错</value>
+  </data>
+  <data name="MsgNoFeaturesSelected" xml:space="preserve">
+    <value>未选择任何要素</value>
+  </data>
+  <data name="MsgNoResourcesFound" xml:space="preserve">
+    <value>未找到任何资源</value>
+  </data>
+  <data name="MsgUnableToAccessGeometryService" xml:space="preserve">
+    <value>无法访问几何服务。</value>
+  </data>
+  <data name="MsgUnableToCreateLayer" xml:space="preserve">
+    <value>无法创建图层</value>
+  </data>
+  <data name="MsgUnableToRetrieveResources" xml:space="preserve">
+    <value>无法检索资源。</value>
+  </data>
+  <data name="MsgUnknownError" xml:space="preserve">
+    <value>未知错误</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>未知用户</value>
+  </data>
+  <data name="NotValidMapDocument" xml:space="preserve">
+    <value>地图文档无效。</value>
+  </data>
+  <data name="ErrorRetrievingSymbols" xml:space="preserve">
+    <value>检索符号时出错</value>
+  </data>
+  <data name="ExceptionCacheMapServicesCannotReproject" xml:space="preserve">
+    <value>无法重新投影应用程序中的缓存地图服务</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>打开 ArcGIS.com 中的 Web 地图</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>登出</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>背景文本</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>成员</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>预览</value>
+  </data>
+  <data name="SelectedItem" xml:space="preserve">
+    <value>所选项</value>
+  </data>
+  <data name="RecordOutOfSelected" xml:space="preserve">
+    <value>记录数(已选择 {0} 个，共 {1} 个)</value>
+  </data>
+  <data name="ExtensionInitializationFailedUrl" xml:space="preserve">
+    <value>无法实例化自定义命令的实例。URL: {0}</value>
+  </data>
+  <data name="HeatMapTitle" xml:space="preserve">
+    <value>{0} 热点图</value>
+  </data>
+  <data name="CurrentColor" xml:space="preserve">
+    <value>当前颜色</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>描述:</value>
+  </data>
+  <data name="HeightPrompt" xml:space="preserve">
+    <value>高度:</value>
+  </data>
+  <data name="Moredotdot" xml:space="preserve">
+    <value>详细信息...</value>
+  </data>
+  <data name="NotificationDontShowDialogOnStartup" xml:space="preserve">
+    <value>启动时不显示此对话框</value>
+  </data>
+  <data name="RecordPrompt" xml:space="preserve">
+    <value>记录:</value>
+  </data>
+  <data name="StandardColors" xml:space="preserve">
+    <value>标准颜色</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>主题颜色</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>标题:</value>
+  </data>
+  <data name="WidthPrompt" xml:space="preserve">
+    <value>宽度:</value>
+  </data>
+  <data name="MapBehaviors" xml:space="preserve">
+    <value>地图行为</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>向下</value>
+  </data>
+  <data name="MapBehaviorAdd" xml:space="preserve">
+    <value>添加新的地图行为</value>
+  </data>
+  <data name="MapBehaviorConfigure" xml:space="preserve">
+    <value>配置所选地图行为</value>
+  </data>
+  <data name="MapBehaviorMoveDown" xml:space="preserve">
+    <value>将所选地图行为向下移动一个位置</value>
+  </data>
+  <data name="MapBehaviorMoveUp" xml:space="preserve">
+    <value>将所选地图行为向上移动一个位置</value>
+  </data>
+  <data name="MapBehaviorRemove" xml:space="preserve">
+    <value>移除所选地图行为</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviors" xml:space="preserve">
+    <value>没有与地图关联的行为。</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviorsInEdit" xml:space="preserve">
+    <value>单击“添加”配置新地图行为。</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>移动</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>向上</value>
+  </data>
+  <data name="AddLabel" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="BehaviorClassLoadFailed" xml:space="preserve">
+    <value>行为类加载失败</value>
+  </data>
+  <data name="BehaviorConfigurationFailed" xml:space="preserve">
+    <value>行为配置失败</value>
+  </data>
+  <data name="BehaviorConfigurationFailedDescription" xml:space="preserve">
+    <value>行为配置方法抛出异常。</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>行为类加载配置失败</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailedDescription" xml:space="preserve">
+    <value>加载行为配置时抛出异常。</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>类型:</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>根据当前图层的要素创建热点图图层</value>
+  </data>
+  <data name="ClusterColorDescription" xml:space="preserve">
+    <value>设置当前图层的簇的背景色</value>
+  </data>
+  <data name="ClusterTextColorDescription" xml:space="preserve">
+    <value>设置当前图层的簇的边框和文本颜色</value>
+  </data>
+  <data name="FilterDescription" xml:space="preserve">
+    <value>通过指定属性查询过滤当前图层中包括的要素</value>
+  </data>
+  <data name="HeatMapColorDescription" xml:space="preserve">
+    <value>选择热点图的配色方案</value>
+  </data>
+  <data name="IntensityDescription" xml:space="preserve">
+    <value>调整热点图的密度。较高的密度将对应较大的热点。</value>
+  </data>
+  <data name="MaxPoints" xml:space="preserve">
+    <value>最大点数</value>
+  </data>
+  <data name="MaxPointsDescription" xml:space="preserve">
+    <value>设置可在单个簇内分组的最大要素数量</value>
+  </data>
+  <data name="OpenItemOnClickDescription" xml:space="preserve">
+    <value>单击某个要素时在新浏览器窗口中显示它的详细信息</value>
+  </data>
+  <data name="PollForUpdatesDescription" xml:space="preserve">
+    <value>设置是否以指定时间间隔检索源更新</value>
+  </data>
+  <data name="PopupsDescription" xml:space="preserve">
+    <value>配置当前图层弹出窗口中显示的属性</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>半径</value>
+  </data>
+  <data name="RadiusDescription" xml:space="preserve">
+    <value>指定半径(以像素为单位)，要素在该半径范围内将分组到一个簇中</value>
+  </data>
+  <data name="SymbologyDescription" xml:space="preserve">
+    <value>配置用于显示当前图层的符号</value>
+  </data>
+  <data name="TableDescription" xml:space="preserve">
+    <value>配置当前图层属性表中显示的字段</value>
+  </data>
+  <data name="UpdateOnExtentChangedDescription" xml:space="preserve">
+    <value>设置平移或缩放地图时是否检索源更新</value>
+  </data>
+  <data name="UsePointClusteringDescription" xml:space="preserve">
+    <value>指定是否将多组点显示为一个簇要素</value>
+  </data>
+  <data name="SelectTheLayout" xml:space="preserve">
+    <value>选择布局...</value>
+  </data>
+  <data name="SelectThePrintLayout" xml:space="preserve">
+    <value>选择打印布局</value>
+  </data>
+  <data name="BehaviorPrompt" xml:space="preserve">
+    <value>行为:</value>
+  </data>
+  <data name="Cluster" xml:space="preserve">
+    <value>簇</value>
+  </data>
+  <data name="ClusterFeatures" xml:space="preserve">
+    <value>簇要素</value>
+  </data>
+  <data name="ConfigureRange" xml:space="preserve">
+    <value>配置范围</value>
+  </data>
+  <data name="EnablePrompt" xml:space="preserve">
+    <value>启用:</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>要素</value>
+  </data>
+  <data name="RenderAsHeatMap" xml:space="preserve">
+    <value>渲染为热点图</value>
+  </data>
+  <data name="RenderHeatMapAdvancedProperties" xml:space="preserve">
+    <value>热点图渲染的高级属性</value>
+  </data>
+  <data name="Tolerance" xml:space="preserve">
+    <value>容差</value>
+  </data>
+  <data name="LayoutPrompt" xml:space="preserve">
+    <value>布局:</value>
+  </data>
+  <data name="ConfigurePrint" xml:space="preserve">
+    <value>配置打印</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>打印</value>
+  </data>
+  <data name="LayoutResourceDownloadError" xml:space="preserve">
+    <value>下载布局资源时出错。</value>
+  </data>
+  <data name="ChangeBackground" xml:space="preserve">
+    <value>更改背景</value>
+  </data>
+  <data name="PreviewTheme" xml:space="preserve">
+    <value>预览主题</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>无标题</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>添加行为</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>渐变</value>
+  </data>
+  <data name="Solid" xml:space="preserve">
+    <value>纯色</value>
+  </data>
+  <data name="ToggleRibbonVisibility" xml:space="preserve">
+    <value>切换功能区可见性</value>
+  </data>
+  <data name="ArcGISSilverlightVersion" xml:space="preserve">
+    <value>ArcGIS API for Silverlight:</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>版本:</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>下移</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>上移</value>
+  </data>
+  <data name="ConstrainExtentBehaviorMessage" xml:space="preserve">
+    <value>缩放至要作为约束的地图范围并按“应用”。</value>
+  </data>
+  <data name="ConstrainExtentBehaviorTitle" xml:space="preserve">
+    <value>设置地图范围约束</value>
+  </data>
+  <data name="DeleteBehaviorCaption" xml:space="preserve">
+    <value>确定要删除此行为?</value>
+  </data>
+  <data name="DeleteBehaviorPrompt" xml:space="preserve">
+    <value>确认删除</value>
+  </data>
+  <data name="CurrentConstrainExtentLabel" xml:space="preserve">
+    <value>当前范围约束包络矩形:</value>
+  </data>
+  <data name="ConstrainExtentNotSetMessage" xml:space="preserve">
+    <value>尚未设置地图范围约束。</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>未设置</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>配置底图</value>
+  </data>
+  <data name="ConfigureTheSetOfBaseMaps" xml:space="preserve">
+    <value>配置底图集</value>
+  </data>
+  <data name="AddNewBaseMap" xml:space="preserve">
+    <value>添加新底图</value>
+  </data>
+  <data name="ClickImageToChangeThumbnailIcon" xml:space="preserve">
+    <value>单击图像以更改缩略图图标</value>
+  </data>
+  <data name="RequiresBingAppID" xml:space="preserve">
+    <value>请求 Bing App ID</value>
+  </data>
+  <data name="DeleteCurrentlySelectedBaseMap" xml:space="preserve">
+    <value>删除当前选择的底图</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapDown" xml:space="preserve">
+    <value>向下移动当前选择的底图</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapUp" xml:space="preserve">
+    <value>向上移动当前选择的底图</value>
+  </data>
+  <data name="SubTypePrompt" xml:space="preserve">
+    <value>子类型:</value>
+  </data>
+  <data name="TextPrompt" xml:space="preserve">
+    <value>文本:</value>
+  </data>
+  <data name="ThumbnailPrompt" xml:space="preserve">
+    <value>缩略图:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>下一步</value>
+  </data>
+  <data name="NoBehaviorTitleSpecified" xml:space="preserve">
+    <value>未指定任何行为标题</value>
+  </data>
+  <data name="PleaseProvideValidTitleForNewBehavior" xml:space="preserve">
+    <value>请为新行为提供一个有效标题。</value>
+  </data>
+  <data name="SelectBehaviorToAdd" xml:space="preserve">
+    <value>选择一个行为</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>模式</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>缓存大小: </value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>获取地图区域内的要素</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>一次获取所有要素</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>要素缓存大小</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>图层可包含的最大要素数量。如果在检索到新要素时超出此限制，将从图层中删除最早放入的要素。</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>获取地图区域内的要素</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>加载或刷新图层时只检索当前地图区域内的要素。地图区域发生变化时，可检索更多的要素。</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>获取所有要素</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>加载或刷新图层时，可检索到图层中的所有要素。</value>
+  </data>
+  <data name="BrowseContentUrlWatermark" xml:space="preserve">
+    <value>输入服务器或图层 URL</value>
+  </data>
+  <data name="BrowseDialogNoResourcesFound" xml:space="preserve">
+    <value>未找到任何资源。</value>
+  </data>
+  <data name="BrowseDialogNoServerOrLayerFound" xml:space="preserve">
+    <value>未找到任何服务或图层。</value>
+  </data>
+  <data name="SecureServices" xml:space="preserve">
+    <value>安全服务</value>
+  </data>
+  <data name="AutoUpdateNumericDescription" xml:space="preserve">
+    <value>设置刷新间隔(以秒或分钟为单位)。该图层将自动按照此时间间隔周期性刷新，直到禁用该功能。</value>
+  </data>
+  <data name="AutoUpdateNumericTooltip" xml:space="preserve">
+    <value>自动更新刷新间隔</value>
+  </data>
+  <data name="AutoUpdatePollingDescription" xml:space="preserve">
+    <value>设置要素图层是否将定期自动刷新。</value>
+  </data>
+  <data name="AutoUpdatePollingTooltip" xml:space="preserve">
+    <value>自动更新要素图层</value>
+  </data>
+  <data name="AutoUpdateIntervalText" xml:space="preserve">
+    <value>间隔:</value>
+  </data>
+  <data name="AutoUpdateLayerConfigTitle" xml:space="preserve">
+    <value>自动更新</value>
+  </data>
+  <data name="AvailableLayers" xml:space="preserve">
+    <value>可用图层:</value>
+  </data>
+  <data name="EnablePopups" xml:space="preserve">
+    <value>显示弹出窗口</value>
+  </data>
+  <data name="EnablePopupsForLayer" xml:space="preserve">
+    <value>显示此图层的弹出窗口</value>
+  </data>
+  <data name="OnClick" xml:space="preserve">
+    <value>单击时</value>
+  </data>
+  <data name="OnHover" xml:space="preserve">
+    <value>鼠标悬停时</value>
+  </data>
+  <data name="ConfigureEditorWidget" xml:space="preserve">
+    <value>配置编辑</value>
+  </data>
+  <data name="SnapshotModeNote" xml:space="preserve">
+    <value>注意: 如果数据集中的要素数量超出服务返回的最大要素数量，则图层中将只包含部分要素。</value>
+  </data>
+  <data name="GraphicSymbolsTakePrecedence" xml:space="preserve">
+    <value>如果自定义了符号图形，那么此处所定义的符号将被自定义符号所取代。</value>
+  </data>
+  <data name="SpatialReference" xml:space="preserve">
+    <value>空间参考:</value>
+  </data>
+  <data name="XMax" xml:space="preserve">
+    <value>X 最大值:</value>
+  </data>
+  <data name="XMin" xml:space="preserve">
+    <value>X 最小值:</value>
+  </data>
+  <data name="YMax" xml:space="preserve">
+    <value>Y 最大值</value>
+  </data>
+  <data name="YMin" xml:space="preserve">
+    <value>Y 最小值</value>
+  </data>
+  <data name="NotFoundInLayout" xml:space="preserve">
+    <value>在当前布局中未找到 {0}</value>
+  </data>
+  <data name="ToggleEditFailed" xml:space="preserve">
+    <value>无法切换编辑控件。当前布局可能不支持编辑</value>
+  </data>
+  <data name="PopupFromWebMap" xml:space="preserve">
+    <value>使用 Web 地图中的弹出定义</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>自动缩放至所选项</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>提交</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>记录数(已选择 {0} 个，共 {1} 个)</value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>切换选择</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>要素检索</value>
+  </data>
+  <data name="ConfigureSecuredServices" xml:space="preserve">
+    <value>配置安全服务</value>
+  </data>
+  <data name="ErrorChangingProxies" xml:space="preserve">
+    <value>更改代理时出错</value>
+  </data>
+  <data name="ProxyUrl" xml:space="preserve">
+    <value>代理 Url:</value>
+  </data>
+  <data name="SpecifyUrlToProxyPageUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>指定用于访问此应用程序安全服务的代理页面的 url。此代理将被使用安全服务的应用程序中的所有图层共用。</value>
+  </data>
+  <data name="UsesProxy" xml:space="preserve">
+    <value>使用代理</value>
+  </data>
+  <data name="WhetherThisLayerUsesProxyServiceForaccessingRestrictedService" xml:space="preserve">
+    <value>无论此图层是否使用代理服务访问受限服务。请单击“配置代理”设置代理 url。</value>
+  </data>
+  <data name="LayerHasNoAttributes" xml:space="preserve">
+    <value>所选图层不包含任何可显示的属性。</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>详细信息</value>
+  </data>
+  <data name="ToggleErrorDetails" xml:space="preserve">
+    <value>显示/隐藏错误的详细信息。</value>
+  </data>
+  <data name="LayerIsNotGraphicsLayer" xml:space="preserve">
+    <value>所选图层的属性无法显示，因为该图层属于 ArcGIS Server 动态图层或缓存地图服务图层。有关详细信息，请参见帮助系统中的主题“图层类型”。</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteBasemap" xml:space="preserve">
+    <value>确定要删除此底图吗?</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>确认删除</value>
+  </data>
+  <data name="NewBasemap" xml:space="preserve">
+    <value>新建底图</value>
+  </data>
+  <data name="ConfigureSelectedLayer" xml:space="preserve">
+    <value>配置所选图层</value>
+  </data>
+  <data name="SelectLayerToAdd" xml:space="preserve">
+    <value>选择要添加的图层</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>访问安全服务</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>添加安全服务</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>配置代理</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServices" xml:space="preserve">
+    <value>配置用于访问此应用程序安全服务的代理</value>
+  </data>
+  <data name="BehaviorSaveFailed" xml:space="preserve">
+    <value>保存行为配置参数失败</value>
+  </data>
+  <data name="BehaviorSaveFailedMessage" xml:space="preserve">
+    <value>保存附加地图行为的配置参数时出错。</value>
+  </data>
+  <data name="LayerInitFailure" xml:space="preserve">
+    <value>图层初始化失败</value>
+  </data>
+  <data name="LayerNotInitialized" xml:space="preserve">
+    <value>无法初始化图层。</value>
+  </data>
+  <data name="DeleteGraphicConfirmation" xml:space="preserve">
+    <value>删除要素?</value>
+  </data>
+  <data name="DeleteGraphicConfirmationTitle" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="EditValuesCommandEditorBackButtonContent" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="ConfigureBehavior" xml:space="preserve">
+    <value>配置行为</value>
+  </data>
+  <data name="DisablePopupForLayer" xml:space="preserve">
+    <value>禁用弹出窗口</value>
+  </data>
+  <data name="EnablePopupForLayer" xml:space="preserve">
+    <value>启用弹出窗口</value>
+  </data>
+  <data name="LinkWebMapDialogCaption" xml:space="preserve">
+    <value>链接到 Web 地图</value>
+  </data>
+  <data name="LinkWebMapDialogMessage" xml:space="preserve">
+    <value>将从 web 地图加载地图配置。现有地图配置将会丢失。是否要继续?</value>
+  </data>
+  <data name="UnlinkWebMapDialogCaption" xml:space="preserve">
+    <value>取消与 Web 地图的链接</value>
+  </data>
+  <data name="UnlinkWebMapDialogMessage" xml:space="preserve">
+    <value>地图配置将与 Web 地图断开连接。您将可以添加、移除和配置图层，但是地图中将不再显示 Web 地图的更新。是否要继续?</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>标准</value>
+  </data>
+  <data name="Business" xml:space="preserve">
+    <value>商业</value>
+  </data>
+  <data name="Cartography" xml:space="preserve">
+    <value>制图</value>
+  </data>
+  <data name="Outdoor_Recreation" xml:space="preserve">
+    <value>户外娱乐</value>
+  </data>
+  <data name="People_and_Places" xml:space="preserve">
+    <value>乡土人情</value>
+  </data>
+  <data name="Public_Safety_and_Health" xml:space="preserve">
+    <value>公共安全和健康</value>
+  </data>
+  <data name="Transportation" xml:space="preserve">
+    <value>交通运输</value>
+  </data>
+  <data name="WebMapLoadFailed" xml:space="preserve">
+    <value>无法加载 Id 为 {0} 的 Web 地图。您可能不具有访问此地图的权限或此地图已经不存在。</value>
+  </data>
+  <data name="ClusteringDisallowedCaption" xml:space="preserve">
+    <value>不允许进行聚簇</value>
+  </data>
+  <data name="ClusteringDisallowedMessage" xml:space="preserve">
+    <value>不允许进行聚簇，因为将对所选图层进行编辑。</value>
+  </data>
+  <data name="UnsupportedBasemapType" xml:space="preserve">
+    <value>不支持的底图类型</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>使用代理</value>
+  </data>
+  <data name="AreaNotesLayer" xml:space="preserve">
+    <value>{0} - 面</value>
+  </data>
+  <data name="LineNotesLayer" xml:space="preserve">
+    <value>{0} - 线</value>
+  </data>
+  <data name="PointNotesLayer" xml:space="preserve">
+    <value>{0} - 点</value>
+  </data>
+  <data name="Editing" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>已启用</value>
+  </data>
+  <data name="ArcGISPortalDefaultName" xml:space="preserve">
+    <value>Portal for ArcGIS</value>
+  </data>
+  <data name="SignInToArcGISServer" xml:space="preserve">
+    <value>从 {0} 登录到 ArcGIS Server</value>
+  </data>
+  <data name="InvalidUrlUserPassword" xml:space="preserve">
+    <value>无效的 URL、用户名或密码</value>
+  </data>
+  <data name="SignInTo" xml:space="preserve">
+    <value>登录到 {0}</value>
+  </data>
+  <data name="SignInToServer" xml:space="preserve">
+    <value>登录到 ArcGIS Server</value>
+  </data>
+  <data name="SignInToSecureServices" xml:space="preserve">
+    <value>登录以访问安全服务</value>
+  </data>
+  <data name="OpenStreetMap" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="FeatureLayer" xml:space="preserve">
+    <value>要素图层</value>
+  </data>
+  <data name="MapLayer" xml:space="preserve">
+    <value>地图图层</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>登录失败。</value>
+  </data>
+</root>

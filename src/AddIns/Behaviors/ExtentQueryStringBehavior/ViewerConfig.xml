@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+    <Extension Url="Extensions/Esri.ArcGIS.Client.Application.AddIns.ExtentQueryStringBehavior.xap" InsertPath="//Extensions" />
+    <Behavior xmlns:QueryStringSupport="clr-namespace:Esri.ArcGIS.Client.Application.AddIns;assembly=Esri.ArcGIS.Client.Application.AddIns.ExtentQueryStringBehavior"
+            IsEnabled="True" Title="_ExtentQueryStringBehaviorTitle_"
+            InsertPath="//Behaviors" InsertIndex="0">
+        <Behavior.Class>
+            <QueryStringSupport:GetExtentFromQueryStringBehavior />
+        </Behavior.Class>
+    </Behavior>
+</Config>

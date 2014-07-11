@@ -1,0 +1,690 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl 
+    x:Class="SearchTool.ArcGISLocatorResultsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    xmlns:local="clr-namespace:SearchTool"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:extensibility="http://schemas.esri.com/arcgis/client/extensibility/2010"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:esriFS="clr-namespace:ESRI.ArcGIS.Client.FeatureService.Symbols;assembly=ESRI.ArcGIS.Client">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SearchTool.AddIns;component/AppResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:StringResourcesManager x:Key="Localization" />
+            <local:IntToVisibleConverter x:Key="IntToVisibleConverter" />
+            <extensibility:MapApplicationBindingSource x:Key="MapApplication" />
+            <local:FormatResourceConverter x:Key="FormatResourceConverter" />
+            <local:BoolVisibilityConverter x:Key="BoolVisibilityConverter" />
+
+            <!-- Style for hyperlink to add/remove results to/from the map -->
+            <ControlTemplate x:Key="AddRemoveHyperlink" TargetType="HyperlinkButton">
+                <ContentControl 
+                    x:Name="LinkText"
+                    FontStyle="Italic" 
+                    Opacity="0.7" 
+                    Content="{TemplateBinding Content}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="LinkText"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0.7"
+                                        Duration="00:00:00" />
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetName="LinkText"
+                                        Storyboard.TargetProperty="Opacity"
+                                        To="0.3"
+                                        Duration="00:00:00" />
+                                </Storyboard>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ContentControl>
+            </ControlTemplate>
+            
+            <!-- Graphics layer for results that are zoomed to and temporarily drawn on the map -->
+            <esri:GraphicsLayer 
+                x:Key="TempGraphicsLayer"
+                extensibility:LayerProperties.IsPopupEnabled="False"
+                extensibility:LayerProperties.IsVisibleInMapContents="False">
+                <esri:GraphicsLayer.Renderer>
+                    <esri:SimpleRenderer>
+                        <esri:SimpleRenderer.Symbol>
+                            <esriFS:SimpleMarkerSymbol
+                                Color="#99FFFFFF"
+                                OutlineColor="Red"
+                                Size="21"
+                                OutlineThickness="2">
+                                <esriFS:SimpleMarkerSymbol.ControlTemplate>
+                                    <ControlTemplate>
+                                        <Grid
+                                            RenderTransformOrigin="{Binding Symbol.RenderTransformPoint}">
+                                            <Ellipse x:Name="ellipse"
+                                                     Fill="{Binding Symbol.Color}"
+                                                     Width="{Binding Symbol.Size}"
+                                                     Height="{Binding Symbol.Size}"
+                                                     Stroke="{Binding Symbol.OutlineColor}"
+                                                     StrokeThickness="{Binding Symbol.OutlineThickness}"
+                                                     StrokeDashArray="3,2">
+                                            </Ellipse>
+                                            <Ellipse 
+                                                Fill="{Binding Symbol.Color}"
+                                                Width="3"
+                                                Height="3"
+                                                Stroke="{Binding Symbol.OutlineColor}"
+                                                StrokeThickness="{Binding Symbol.OutlineThickness}">
+                                            </Ellipse>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </esriFS:SimpleMarkerSymbol.ControlTemplate>
+                            </esriFS:SimpleMarkerSymbol>
+                        </esri:SimpleRenderer.Symbol>
+                    </esri:SimpleRenderer>
+                </esri:GraphicsLayer.Renderer>
+            </esri:GraphicsLayer>
+
+            <esri:Graphic x:Key="TempGraphic" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <i:Interaction.Triggers>
+            
+            <!-- On load, add temporary results graphics layer to the map -->
+            <i:EventTrigger EventName="Loaded">
+                <local:AddItemAction
+                    TargetObject="{Binding Map.Layers, Source={StaticResource MapApplication}}"
+                    Item="{StaticResource TempGraphicsLayer}" />
+            </i:EventTrigger>
+            
+            <!-- On unload, remove temporary graphics from graphics layer, remove graphics layer from
+                 the map, and set the selected result to null -->
+            <i:EventTrigger EventName="Unloaded">
+                <ei:CallMethodAction
+                    TargetObject="{Binding Graphics, Source={StaticResource TempGraphicsLayer}}"
+                    MethodName="Clear" />
+                <local:RemoveItemAction
+                    TargetObject="{Binding Map.Layers, Source={StaticResource MapApplication}}"
+                    Item="{StaticResource TempGraphicsLayer}" />
+                <ei:ChangePropertyAction
+                    TargetObject="{Binding ElementName=ResultsListBox}"
+                    PropertyName="SelectedItem"
+                    Value="{x:Null}" />
+            </i:EventTrigger>
+
+            <!-- When configuration is saved, remove temporary graphics from the map -->
+            <i:EventTrigger EventName="Saving" SourceObject="{Binding}">
+                <local:RemoveItemAction
+                    TargetObject="{Binding Map.Layers, Source={StaticResource MapApplication}}"
+                    Item="{StaticResource TempGraphicsLayer}" />
+            </i:EventTrigger>
+            
+            <!-- Once save has completed, add temporary graphics layer back to map -->
+            <i:EventTrigger EventName="Saved" SourceObject="{Binding}">
+                <local:AddItemAction
+                    TargetObject="{Binding Map.Layers, Source={StaticResource MapApplication}}"
+                    Item="{StaticResource TempGraphicsLayer}" />
+            </i:EventTrigger>
+
+            <!-- When the results collection changes, check whether there are zero results.  If so,
+                 clear the temporary results graphics layer -->
+            <i:EventTrigger EventName="CollectionChanged"
+                            SourceObject="{Binding Results}">
+                <i:Interaction.Behaviors>
+                    <ei:ConditionBehavior>
+                        <ei:ConditionalExpression>
+                            <ei:ComparisonCondition LeftOperand="{Binding Results.Count}"
+                                                    Operator="Equal"
+                                                    RightOperand="0" />
+                        </ei:ConditionalExpression>
+                    </ei:ConditionBehavior>
+                </i:Interaction.Behaviors>
+                <ei:CallMethodAction
+                    TargetObject="{Binding Graphics, Source={StaticResource TempGraphicsLayer}}"
+                    MethodName="Clear" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <!-- ListBox for showing results -->
+        <ListBox 
+            x:Name="ResultsListBox"
+            ItemsSource="{Binding PagedResults}"
+            Padding="0"
+            BorderThickness="0"
+            Background="Transparent"
+            Style="{StaticResource ResultsListBoxStyle}"
+            ItemContainerStyle="{StaticResource PlaceResultItemStyle}"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Loaded">
+                    <ei:ChangePropertyAction PropertyName="SelectedIndex"
+                                             Value="-1" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <i:Interaction.Behaviors>
+                <local:AutoSelectFirstItem />
+            </i:Interaction.Behaviors>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    
+                    <!-- Set background to slightly less than transparent to make each item hit-test visible -->
+                    <Grid 
+                        Background="#01FFFFFF"
+                        x:Name="Root"
+                        ToolTipService.ToolTip="{Binding Candidate.Address}"
+                        Cursor="Hand">
+                        <Grid.Resources>
+                            <local:CloneGeometryConverter x:Key="CloneGeometryConverter" />
+                            <local:GuidGenerator x:Key="GuidGenerator" />
+                            <esri:Graphic x:Key="ResultGraphic" />
+                            <esri:GraphicsLayer 
+                                x:Key="ResultGraphicsLayer"
+                                extensibility:MapApplication.LayerName="{Binding Candidate.Address}"
+                                ID="{Binding Converter={StaticResource GuidGenerator}}"/>
+                            <DataObject x:Key="MouseDownObject" />
+                        </Grid.Resources>
+                        <i:Interaction.Triggers>
+                            
+                            <!-- Logic when the result is loaded -->
+                            <i:EventTrigger EventName="Loaded">
+                                
+                                <!-- Set the result graphic's geometry by cloning it from the match candidate -->
+                                <ei:ChangePropertyAction
+                                    TargetObject="{StaticResource ResultGraphic}"
+                                    PropertyName="Geometry"
+                                    Value="{Binding Candidate.Location, 
+                                        Converter={StaticResource CloneGeometryConverter}}" />
+                                
+                                <!-- Add the address to the result graphic's attributes -->
+                                <local:AddDictionaryItemAction
+                                    TargetObject="{Binding Attributes,
+                                        Source={StaticResource ResultGraphic}}"
+                                    Key="{Binding ConverterParameter=Address, 
+                                        Converter={StaticResource Localization}, 
+                                        Source={StaticResource Localization}}"
+                                    Value="{Binding Candidate.Address}" />
+                                
+                                <!-- Set the title of the popup for the result graphic -->
+                                <local:SetPopupTitleAction
+                                    TargetObject="{StaticResource ResultGraphicsLayer}"
+                                    TitleExpression="{Binding ConverterParameter=AddressTitleExpression, 
+                                        Converter={StaticResource Localization}, 
+                                        Source={StaticResource Localization}}" />
+                                
+                                <!-- Add the result graphic to the results layer -->
+                                <local:AddItemAction
+                                    TargetObject="{Binding Graphics,
+                                        Source={StaticResource ResultGraphicsLayer}}"
+                                    Item="{StaticResource ResultGraphic}" />
+                                
+                                <!-- Enable the Add result button -->
+                                <ei:ChangePropertyAction
+                                    TargetObject="{Binding ElementName=AddResultButton}"
+                                    PropertyName="IsEnabled"
+                                    Value="True" />
+                            </i:EventTrigger>
+                            
+                            <!-- Logic triggered when the selected result is changed and the selected item 
+                                 is not null. -->
+                            <i:EventTrigger EventName="SelectionChanged"
+                                            SourceObject="{Binding ElementName=ResultsListBox}">
+                                <i:Interaction.Behaviors>
+                                    <ei:ConditionBehavior>
+                                        <ei:ConditionalExpression>
+                                            <ei:ComparisonCondition
+                                                LeftOperand="{Binding SelectedItem, ElementName=ResultsListBox}"
+                                                Operator="NotEqual"
+                                                RightOperand="{x:Null}" />
+                                        </ei:ConditionalExpression>
+                                    </ei:ConditionBehavior>
+                                </i:Interaction.Behaviors>
+                                
+                                <!-- clear the temporary results graphics layer -->
+                                <ei:CallMethodAction
+                                    TargetObject="{Binding Graphics, Source={StaticResource TempGraphicsLayer}}"
+                                    MethodName="Clear" />
+                                
+                                <!-- Set the temp graphic's geometry by cloning it from the match candidate -->
+                                <ei:ChangePropertyAction
+                                    TargetObject="{StaticResource TempGraphic}"
+                                    PropertyName="Geometry"
+                                    Value="{Binding SelectedItem.Candidate.Location, ElementName=ResultsListBox, 
+                                        Converter={StaticResource CloneGeometryConverter}}" />
+                                
+                                <!-- Add the temp graphic to the temp graphics layer -->
+                                <local:AddItemAction
+                                    TargetObject="{Binding Graphics, 
+                                        Source={StaticResource TempGraphicsLayer}}"
+                                    Item="{StaticResource TempGraphic}"/>
+                            </i:EventTrigger>
+                            
+                            <!-- Logic triggered when a result is selected and the result does not have a defined extent -->
+                            <i:EventTrigger EventName="SelectionChanged"
+                                            SourceObject="{Binding ElementName=ResultsListBox}">
+                                <i:Interaction.Behaviors>
+                                    <ei:ConditionBehavior>
+                                        <ei:ConditionalExpression>
+                                            <ei:ComparisonCondition
+                                                LeftOperand="{Binding SelectedItem, ElementName=ResultsListBox}"
+                                                Operator="NotEqual"
+                                                RightOperand="{x:Null}" />
+                                            <ei:ComparisonCondition
+                                                LeftOperand="{Binding SelectedItem.Extent, ElementName=ResultsListBox}"
+                                                Operator="Equal"
+                                                RightOperand="{x:Null}" />
+                                        </ei:ConditionalExpression>
+                                    </ei:ConditionBehavior>
+                                </i:Interaction.Behaviors>
+                                
+                                <!-- zoom to the result location -->
+                                <esri:ZoomToAction
+                                    Geometry="{Binding SelectedItem.Candidate.Location, ElementName=ResultsListBox}"
+                                    TargetObject="{Binding Map, Source={StaticResource MapApplication}}" />
+                            </i:EventTrigger>
+
+                            <!-- Logic triggered when a result is selected and the result has a defined extent -->
+                            <i:EventTrigger EventName="SelectionChanged"
+                                            SourceObject="{Binding ElementName=ResultsListBox}">
+                                <i:Interaction.Behaviors>
+                                    <ei:ConditionBehavior>
+                                        <ei:ConditionalExpression>
+                                            <ei:ComparisonCondition
+                                                LeftOperand="{Binding SelectedItem, ElementName=ResultsListBox}"
+                                                Operator="NotEqual"
+                                                RightOperand="{x:Null}" />
+                                            <ei:ComparisonCondition
+                                                LeftOperand="{Binding SelectedItem.Extent, ElementName=ResultsListBox}"
+                                                Operator="NotEqual"
+                                                RightOperand="{x:Null}" />
+                                        </ei:ConditionalExpression>
+                                    </ei:ConditionBehavior>
+                                </i:Interaction.Behaviors>
+                                
+                                <!-- zoom to the extent of the result -->
+                                <esri:ZoomToAction
+                                    TargetObject="{Binding Map, Source={StaticResource MapApplication}}"
+                                    Geometry="{Binding SelectedItem.Extent, ElementName=ResultsListBox}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" /> <!-- result address -->
+                                <RowDefinition Height="Auto" /> <!-- Add/remove button -->
+                            </Grid.RowDefinitions>
+                            
+                            <!-- display result address -->
+                            <TextBlock 
+                                x:Name="ResultAddress"
+                                Text="{Binding Candidate.Address}"
+                                TextTrimming="WordEllipsis"
+                                FontWeight="Bold" />
+
+                            <!-- Button to add result to the map -->
+                            <HyperlinkButton
+                                x:Name="AddResultButton"
+                                Content="{Binding ConverterParameter=SearchControlAdd, 
+                                                Converter={StaticResource Localization}, 
+                                                Source={StaticResource Localization}}"
+                                IsEnabled="False"
+                                Template="{StaticResource AddRemoveHyperlink}"
+                                HorizontalAlignment="Right"
+                                Foreground="{Binding Foreground, ElementName=ResultAddress}"
+                                Grid.Row="1"
+                                Margin="0,3,0,0">
+                                <i:Interaction.Behaviors>
+
+                                    <!-- Manage visibility of Add button. Will be set to hidden if 
+                                         the result layer is in the map's layers, visible otherwise -->
+                                    <local:ContainsItemBehavior
+                                        Collection="{Binding Map.Layers, Source={StaticResource MapApplication}}"
+                                        Item="{StaticResource ResultGraphicsLayer}"
+                                        TargetProperty="Visibility"
+                                        TrueValue="Collapsed"
+                                        FalseValue="Visible" />
+                                </i:Interaction.Behaviors>
+                                <i:Interaction.Triggers>
+                                    
+                                    <!-- Logic that's always executed on click -->
+                                    <i:EventTrigger EventName="Click">
+                                        
+                                        <!-- Clear graphics from temp results layer -->
+                                        <ei:CallMethodAction
+                                            TargetObject="{Binding Graphics, Source={StaticResource TempGraphicsLayer}}"
+                                            MethodName="Clear" />
+                                        
+                                        <!-- Add non-temp result graphics layer to the map -->
+                                        <local:AddItemAction
+                                            TargetObject="{Binding Map.Layers,
+                                                Source={StaticResource MapApplication}}"
+                                            Item="{StaticResource ResultGraphicsLayer}" />
+                                        
+                                        <!-- Set current item to be selected.  If the item was not selected when
+                                             add was clicked, this is necessary since the hyperlink button intercepts
+                                             the click. -->
+                                        <ei:ChangePropertyAction
+                                            TargetObject="{Binding ElementName=ResultsListBox}"
+                                            PropertyName="SelectedItem"
+                                            Value="{Binding}" />
+                                    </i:EventTrigger>
+                                    
+                                    <!-- If the result does not have an extent, just zoom to the point location when Add is clicked -->
+                                    <i:EventTrigger EventName="Click">
+                                        <i:Interaction.Behaviors>
+                                            <ei:ConditionBehavior>
+                                                <ei:ConditionalExpression>
+                                                    <ei:ComparisonCondition
+                                                        LeftOperand="{Binding Extent}"
+                                                        Operator="Equal"
+                                                        RightOperand="{x:Null}" />
+                                                </ei:ConditionalExpression>
+                                            </ei:ConditionBehavior>
+                                        </i:Interaction.Behaviors>
+                                        <esri:ZoomToAction
+                                            Geometry="{Binding Candidate.Location}"
+                                            TargetObject="{Binding Map, Source={StaticResource MapApplication}}" />
+                                    </i:EventTrigger>
+                                    
+                                    <!-- If the result has an extent, zoom to the extent when Add is clicked -->
+                                    <i:EventTrigger EventName="Click">
+                                        <i:Interaction.Behaviors>
+                                            <ei:ConditionBehavior>
+                                                <ei:ConditionalExpression>
+                                                    <ei:ComparisonCondition
+                                                        LeftOperand="{Binding Extent}"
+                                                        Operator="NotEqual"
+                                                        RightOperand="{x:Null}" />
+                                                </ei:ConditionalExpression>
+                                            </ei:ConditionBehavior>
+                                        </i:Interaction.Behaviors>
+                                        <esri:ZoomToAction
+                                            TargetObject="{Binding Map, Source={StaticResource MapApplication}}"
+                                            Geometry="{Binding Extent}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </HyperlinkButton>
+
+                            <!-- Button to remove result from the map -->
+                            <HyperlinkButton
+                                x:Name="RemoveResultButton"
+                                Content="{Binding ConverterParameter=Remove, 
+                                            Converter={StaticResource Localization}, 
+                                            Source={StaticResource Localization}}"
+                                Template="{StaticResource AddRemoveHyperlink}"
+                                HorizontalAlignment="Right"
+                                Foreground="{StaticResource BackgroundTextColorBrush}"
+                                Grid.Row="1"
+                                Visibility="Collapsed">
+                                <i:Interaction.Behaviors>
+                                    
+                                    <!-- Manage visibility of Remove button. Will be set to visible if 
+                                         the result layer is in the map's layers, hidden otherwise -->
+                                    <local:ContainsItemBehavior
+                                        Collection="{Binding Map.Layers, Source={StaticResource MapApplication}}"
+                                        Item="{StaticResource ResultGraphicsLayer}"
+                                        TargetProperty="Visibility"
+                                        TrueValue="Visible"
+                                        FalseValue="Collapsed" />
+                                </i:Interaction.Behaviors>
+                                <i:Interaction.Triggers>
+                                    
+                                    <!-- Logic that's always executed when remove is clicked -->
+                                    <i:EventTrigger EventName="Click">
+                                        
+                                        <!-- Remove the result graphics layer from the map -->
+                                        <local:RemoveItemAction
+                                            TargetObject="{Binding Map.Layers,
+                                                Source={StaticResource MapApplication}}"
+                                            Item="{StaticResource ResultGraphicsLayer}" />
+                                    </i:EventTrigger>
+                                    
+                                    <!-- Logic that's only executed if the current item is also the selected result.
+                                         Adds the current result to the map as a temp graphic. -->
+                                    <i:EventTrigger EventName="Click">
+                                        <i:Interaction.Behaviors>
+                                            <ei:ConditionBehavior>
+                                                <ei:ConditionalExpression>
+                                                    <ei:ComparisonCondition
+                                                        LeftOperand="{Binding}"
+                                                        Operator="Equal"
+                                                        RightOperand="{Binding SelectedItem, ElementName=ResultsListBox}" />
+                                                </ei:ConditionalExpression>
+                                            </ei:ConditionBehavior>
+                                        </i:Interaction.Behaviors>
+                                        
+                                        <!-- clear temp result graphics from layer -->
+                                        <ei:CallMethodAction
+                                            TargetObject="{Binding Graphics, Source={StaticResource TempGraphicsLayer}}"
+                                            MethodName="Clear" />
+                                        
+                                        <!-- set the temp result graphic's geometry to be the geometry of this result -->
+                                        <ei:ChangePropertyAction
+                                            TargetObject="{StaticResource TempGraphic}"
+                                            PropertyName="Geometry"
+                                            Value="{Binding SelectedItem.Candidate.Location, ElementName=ResultsListBox, 
+                                        Converter={StaticResource CloneGeometryConverter}}" />
+                                        
+                                        <!-- Add this result as a temp graphic -->
+                                        <local:AddItemAction
+                                            TargetObject="{Binding Graphics, 
+                                                Source={StaticResource TempGraphicsLayer}}"
+                                            Item="{StaticResource TempGraphic}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </HyperlinkButton>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- No results found message -->
+        <TextBlock
+            Text="{Binding ConverterParameter=NoResults,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}"
+            Foreground="Gray"
+            Margin="0,15,0,0"
+            HorizontalAlignment="Center"
+            TextWrapping="Wrap"
+            Visibility="{Binding Results.Count,
+                Converter={StaticResource IntToVisibleConverter}}" />
+
+        <!-- Busy content -->
+        <Grid 
+            Visibility="{Binding IsSearching, 
+                Converter={StaticResource BoolVisibilityConverter}}" 
+            Background="White"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- search executing message -->
+            <TextBlock
+                Margin="0,15,0,0"
+                HorizontalAlignment="Right"
+                Text="{Binding ConverterParameter=Searching,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}"
+                Foreground="Gray"
+                TextWrapping="Wrap"/>
+            
+            <!-- Cancel button -->
+            <Button
+                Cursor="Hand"
+                Command="{Binding Cancel}"
+                Margin="5,15,0,0"
+                HorizontalAlignment="Left"
+                Grid.Column="1">
+                <Button.Content>
+                    <TextBlock
+                        Text="{Binding ConverterParameter=Cancel,
+                            Converter={StaticResource Localization},
+                            Source={StaticResource Localization}}"
+                        Foreground="Blue"
+                        TextWrapping="Wrap"
+                        TextDecorations="Underline"/>
+                </Button.Content>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid
+                            Cursor="{TemplateBinding Cursor}">
+                            <ContentPresenter Content="{TemplateBinding Content}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <!-- notification area for updating locator info -->
+        <Grid 
+            Visibility="{Binding IsUpdatingLocatorInfo, 
+                Converter={StaticResource BoolVisibilityConverter}}" 
+            Background="White"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+
+            <!-- locator info updating message -->
+            <TextBlock
+                Margin="0,15,0,0"
+                HorizontalAlignment="Center"
+                Text="{Binding ConverterParameter=ConnectingToLocatorService,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}"
+                Foreground="Gray"
+                TextWrapping="Wrap"/>
+        </Grid>
+
+        <!-- separator line between results and data pager -->
+        <Rectangle
+            Height="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Grid.Row="1"
+            Fill="DarkGray"
+            Visibility="{Binding Visibility, ElementName=Pager}" />
+        
+        <!-- data pager for navigating pages of results -->
+        <data:DataPager
+            x:Name="Pager"
+            Grid.Row="1"
+            NumericButtonCount="8"
+            AutoEllipsis="True"
+            DisplayMode="FirstLastPreviousNextNumeric"
+            Background="White"
+            BorderThickness="0"
+            Foreground="{StaticResource DataPagerForegroundBrush}"
+            BorderBrush="LightGray"
+            Margin="0,2,0,2"
+            HorizontalAlignment="Center"
+            Source="{Binding ItemsSource, ElementName=ResultsListBox}"
+            Visibility="Collapsed">
+            <i:Interaction.Triggers>
+                
+                <!-- On load, show pager if the number of results is more than the page size -->
+                <i:EventTrigger 
+                    EventName="Loaded"
+                    SourceObject="{Binding Results}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition
+                                    LeftOperand="{Binding Results.Count}"
+                                    Operator="GreaterThan"
+                                    RightOperand="{Binding PagedResults.PageSize}" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction
+                        PropertyName="Visibility"
+                        Value="Visible" />
+                </i:EventTrigger>
+
+                <!-- On load, hide pager if the number of results is more than the page size -->
+                <i:EventTrigger 
+                    EventName="Loaded"
+                    SourceObject="{Binding Results}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition
+                                    LeftOperand="{Binding Results.Count}"
+                                    Operator="LessThanOrEqual"
+                                    RightOperand="{Binding PagedResults.PageSize}" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction
+                        PropertyName="Visibility"
+                        Value="Collapsed" />
+                </i:EventTrigger>
+
+                <!-- When number of results changes, show pager if the number of results is more 
+                     than the page size -->
+                <i:EventTrigger 
+                    EventName="CollectionChanged"
+                    SourceObject="{Binding Results}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition
+                                    LeftOperand="{Binding Results.Count}"
+                                    Operator="GreaterThan"
+                                    RightOperand="{Binding PagedResults.PageSize}" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction
+                        PropertyName="Visibility"
+                        Value="Visible" />
+                </i:EventTrigger>
+
+                <!-- When number of results changes, hide pager if the number of results is more 
+                     than the page size -->
+                <i:EventTrigger 
+                    EventName="CollectionChanged"
+                    SourceObject="{Binding Results}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition
+                                    LeftOperand="{Binding Results.Count}"
+                                    Operator="LessThanOrEqual"
+                                    RightOperand="{Binding PagedResults.PageSize}" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction
+                        PropertyName="Visibility"
+                        Value="Collapsed" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </data:DataPager>
+    </Grid>
+</UserControl>

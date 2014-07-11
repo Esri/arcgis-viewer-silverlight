@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddLabel" xml:space="preserve">
+    <value>Lisää uusi</value>
+  </data>
+  <data name="AliasLabel" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="AutoEnableDataGridLabel" xml:space="preserve">
+    <value>Näytä tulokset ominaisuustietotaulussa</value>
+  </data>
+  <data name="AutoPinResults" xml:space="preserve">
+    <value>Säilytä tulokset kartalla</value>
+  </data>
+  <data name="AutoZoomToResultsLabel" xml:space="preserve">
+    <value>Tarkenna tuloksiin, kun kysely päättyy</value>
+  </data>
+  <data name="BuildQueryExpressionsLabel" xml:space="preserve">
+    <value>Muodosta kysely</value>
+  </data>
+  <data name="CancelLabel" xml:space="preserve">
+    <value>Peruuta</value>
+  </data>
+  <data name="CannotExecuteCommand" xml:space="preserve">
+    <value>Komentoa ei voi suorittaa</value>
+  </data>
+  <data name="ClickConnect" xml:space="preserve">
+    <value>Napsauta Yhdistä-vaihtoehtoa</value>
+  </data>
+  <data name="ClickNext" xml:space="preserve">
+    <value>Jatka napsauttamalla Seuraava</value>
+  </data>
+  <data name="ConfigurationLabel" xml:space="preserve">
+    <value>Kyselytyökalun määritys</value>
+  </data>
+  <data name="ConfigureDialogHeading" xml:space="preserve">
+    <value>Määritä kyselyvalintaikkunan ulkoasu</value>
+  </data>
+  <data name="ConfigureResultLabel" xml:space="preserve">
+    <value>Määritä kyselyn tulosten asetukset</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Yhdistä</value>
+  </data>
+  <data name="ConnectCompleted" xml:space="preserve">
+    <value>Yhteys on muodostettu kohteeseen '{0}'.</value>
+  </data>
+  <data name="ConnectFailed" xml:space="preserve">
+    <value>Yhteyden muodostus epäonnistui.</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>Yhdistetään...</value>
+  </data>
+  <data name="DataTypeMismatch" xml:space="preserve">
+    <value>Arvoa '{0}' ei voi muuntaa tietolajiksi '{1}'.</value>
+  </data>
+  <data name="DefaultValueLabel" xml:space="preserve">
+    <value>Oletusarvo</value>
+  </data>
+  <data name="DeleteExpression" xml:space="preserve">
+    <value>Poista tämä ehtolauseke</value>
+  </data>
+  <data name="DuplicateError" xml:space="preserve">
+    <value>Luettelo ei voi sisältää kaksoiskappaleita</value>
+  </data>
+  <data name="EditLabel" xml:space="preserve">
+    <value>Muokkaa tätä lauseketta</value>
+  </data>
+  <data name="EmptyEntryError" xml:space="preserve">
+    <value>Tyhjiä arvoja ei sallita tässä parametrissa</value>
+  </data>
+  <data name="EnterServiceUrl" xml:space="preserve">
+    <value>Kirjoita ArcGISServerin kartan tai kohdepalvelun URL-osoite.</value>
+  </data>
+  <data name="EnterValue" xml:space="preserve">
+    <value>Syötä arvo</value>
+  </data>
+  <data name="EqualityCheckFailsOnType" xml:space="preserve">
+    <value>Arvoa '{0}' ({1}) ei voi verrata arvoon '{2}' ({3}), koska niiden tyypit eivät vastaa toisiaan.</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>Tiedot:</value>
+  </data>
+  <data name="ExecuteLabel" xml:space="preserve">
+    <value>Suorita</value>
+  </data>
+  <data name="ExecuteQuery" xml:space="preserve">
+    <value>Kysely on meneillään...</value>
+  </data>
+  <data name="ExpressionBuilderLabel" xml:space="preserve">
+    <value>Kyselylausekkeen muodostustoiminto</value>
+  </data>
+  <data name="ExpressionColumnHeader" xml:space="preserve">
+    <value>Kyselylauseke</value>
+  </data>
+  <data name="ExpressionLabel" xml:space="preserve">
+    <value>Lausekkeen tunnusteksti:</value>
+  </data>
+  <data name="FieldAndOperatorLabel" xml:space="preserve">
+    <value>Kenttä ja operaattori:</value>
+  </data>
+  <data name="GroupColumnHeader" xml:space="preserve">
+    <value>Ryhmän tunnus</value>
+  </data>
+  <data name="GroupLabel" xml:space="preserve">
+    <value>Ryhmä on valittu</value>
+  </data>
+  <data name="IncludedValues" xml:space="preserve">
+    <value>Sisältyvät arvot</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>Tunnusteksti</value>
+  </data>
+  <data name="LayerInfoMissing" xml:space="preserve">
+    <value>Karttatason metatiedot eivät ole käytettävissä tällä tasolla.</value>
+  </data>
+  <data name="OkLabel" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OperatorLabel" xml:space="preserve">
+    <value>Operaattori</value>
+  </data>
+  <data name="ParameterLabelsAndVisibility" xml:space="preserve">
+    <value>Määritä kunkin kyselyparametrin tunnusteksti ja näkyvyys</value>
+  </data>
+  <data name="PinToMapLabel" xml:space="preserve">
+    <value>Säilytä tulokset kartalla</value>
+  </data>
+  <data name="QueryCategory" xml:space="preserve">
+    <value>Kysely</value>
+  </data>
+  <data name="QueryDescription" xml:space="preserve">
+    <value>Etsi karttatason kohteita, jotka vastaavat määritettyjä hakuehtoja</value>
+  </data>
+  <data name="QueryExpressions" xml:space="preserve">
+    <value>Kyselylausekkeet</value>
+  </data>
+  <data name="QueryFailed" xml:space="preserve">
+    <value>Kyselyn suoritus epäonnistui.</value>
+  </data>
+  <data name="QueryTitleLabel" xml:space="preserve">
+    <value>Valintaikkunan otsikko</value>
+  </data>
+  <data name="QueryToolName" xml:space="preserve">
+    <value>Kyselytaso</value>
+  </data>
+  <data name="RemoveLabel" xml:space="preserve">
+    <value>Poisto on valittu</value>
+  </data>
+  <data name="ResultOptionsLabel" xml:space="preserve">
+    <value>Muut asennukset</value>
+  </data>
+  <data name="ResultsFound" xml:space="preserve">
+    <value>{0} kohdetta löytynyt</value>
+  </data>
+  <data name="SampleValues" xml:space="preserve">
+    <value>Esimerkkiarvot (noudettu karttatasosta)</value>
+  </data>
+  <data name="SelectExpression" xml:space="preserve">
+    <value>Valitse tämä lauseke tai poista sen valinta</value>
+  </data>
+  <data name="SelectFromList" xml:space="preserve">
+    <value>Poimi arvo luettelosta</value>
+  </data>
+  <data name="ServiceUrl" xml:space="preserve">
+    <value>Palvelun URL</value>
+  </data>
+  <data name="StringExceededMaxLength" xml:space="preserve">
+    <value>'{0}' ei saa ylittää {1} merkkiä.</value>
+  </data>
+  <data name="UnableToAccess" xml:space="preserve">
+    <value>URL-osoitetta '&lt;{0}&gt;' ei voi käyttää.</value>
+  </data>
+  <data name="UngroupLabel" xml:space="preserve">
+    <value>Pura valittujen ryhmittely</value>
+  </data>
+  <data name="UriFormatError" xml:space="preserve">
+    <value>URL-osoite '&lt;{0}&gt;' sisältää virheellisiä merkkejä.</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Käytä välityspalvelinta</value>
+  </data>
+  <data name="UsersTypeValue" xml:space="preserve">
+    <value>Kirjoita arvo</value>
+  </data>
+  <data name="UseServiceRendererLabel" xml:space="preserve">
+    <value>Käytä palvelun määrittämiä symboleja</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>[arvo]</value>
+  </data>
+  <data name="VisibleLabel" xml:space="preserve">
+    <value>Näkyvä</value>
+  </data>
+  <data name="InputMethod" xml:space="preserve">
+    <value>Syöttömetodi:</value>
+  </data>
+  <data name="Fields" xml:space="preserve">
+    <value>Kentät</value>
+  </data>
+  <data name="LabelWatermark" xml:space="preserve">
+    <value>&lt;kirjoita tunnusteksti&gt;</value>
+  </data>
+  <data name="ResultOptionsDescription" xml:space="preserve">
+    <value>Määritä tulosten ulkoasu ja toiminta</value>
+  </data>
+  <data name="SelectField" xml:space="preserve">
+    <value>&lt;valitse kenttä&gt;</value>
+  </data>
+  <data name="SelectFieldsToInclude" xml:space="preserve">
+    <value>Valitse kyselyn tuloksiin sisällytettävät tiedot</value>
+  </data>
+  <data name="AutoEnableDataGridTooltip" xml:space="preserve">
+    <value>Avaa ominaisuustietotaulukko, kun tulosjoukko noudetaan</value>
+  </data>
+  <data name="AutoPinResultsTooltip" xml:space="preserve">
+    <value>Säilytä kyselyn tulokset kartalla, kun kyselyvalintaikkuna suljetaan tai toinen kysely suoritetaan</value>
+  </data>
+  <data name="AutoZoomToResultsTooltip" xml:space="preserve">
+    <value>Lähennä automaattisesti kyselyn tuloksiin, kun ne lisätään karttaan </value>
+  </data>
+  <data name="ConfigureQueryLayer" xml:space="preserve">
+    <value>Määritä karttataso kyselyyn</value>
+  </data>
+  <data name="DefineQueryExpressions" xml:space="preserve">
+    <value>Määritä kyselyyn sisältyvät lausekkeet</value>
+  </data>
+  <data name="SampleServiceUrl" xml:space="preserve">
+    <value>http://server/arcgis/rest/services/service/MapServer/0</value>
+  </data>
+  <data name="ServiceUrlDescription" xml:space="preserve">
+    <value>Määritä sen karttatason URL-osoite, johon kysely kohdistetaan</value>
+  </data>
+  <data name="UseServiceRendererTooltip" xml:space="preserve">
+    <value>Näytä tuloskohteet kartalla käyttämällä palvelun määrittämää symboliikkaa. Jos poistat valinnan, kaikki tulosjoukon kohteet näytetään oletussymbolin kanssa</value>
+  </data>
+  <data name="InvalidValue" xml:space="preserve">
+    <value>Virheellinen arvo tälle kentälle</value>
+  </data>
+  <data name="ParameterAppearance" xml:space="preserve">
+    <value>Parametrin ulkoasu</value>
+  </data>
+</root>

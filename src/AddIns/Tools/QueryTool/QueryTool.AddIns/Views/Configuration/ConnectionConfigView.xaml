@@ -1,0 +1,292 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+             x:Class="QueryTool.AddIns.ConnectionConfigView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:primitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Data"
+             xmlns:local="clr-namespace:QueryTool.AddIns"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/QueryTool.AddIns;component/Themes/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:StringResourcesManager x:Key="Localization" />
+            <local:BoolVisibilityConverter x:Key="BoolVisibilityConverter" />
+            <local:ReverseBoolVisibilityConverter x:Key="ReverseBoolVisibilityConverter" />
+            <local:ReverseBoolConverter x:Key="ReverseBoolConverter" />
+            <local:NullVisibilityConverter x:Key="NullVisibilityConverter" />
+            <local:NotNullVisibilityConverter x:Key="NotNullVisibilityConverter" />
+            <local:EmptyTextVisibilityConverter x:Key="EmptyTextVisibilityConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!-- label for query service URL textbox -->
+            <RowDefinition Height="Auto" /> <!-- description for query service URL textbox -->
+            <RowDefinition Height="Auto" /> <!-- Query service URL textbox -->
+            <RowDefinition Height="Auto" /> <!-- use proxy checkbox, Query service URL help tips -->
+            <RowDefinition Height="Auto" /> <!-- Connect -->
+            <RowDefinition Height="*" /> <!-- Connect status -->            
+            <RowDefinition Height="Auto" /> <!-- Click Next help tip -->
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="ServiceUrlLabel"
+                   Text="{Binding ConverterParameter=ServiceUrl,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}"
+                   FontSize="12"
+                   FontWeight="Bold"/>
+
+        <TextBlock 
+                Text="{Binding ConverterParameter=ServiceUrlDescription, 
+                    Converter={StaticResource Localization}, 
+                    Source={StaticResource Localization}}"
+                Grid.Row="1"
+                FontSize="10"
+                Opacity=".7"
+                Margin="0,1,0,0"
+                TextWrapping="Wrap"/>
+
+        <!-- TextBox for inputting query service URL -->
+        <TextBox Text="{Binding ServiceUrl, Mode=TwoWay}"
+                 Margin="0,4,0,0"
+                 VerticalAlignment="Stretch"
+                 HorizontalAlignment="Stretch"
+                 HorizontalContentAlignment="Stretch"
+                 Grid.Row="2"
+                 IsEnabled="{Binding IsBusy, Converter={StaticResource ReverseBoolConverter}}"
+                 Style="{StaticResource WatermarkTextBoxStyle}"
+                 local:Extensions.WatermarkText="{Binding ConverterParameter=SampleServiceUrl, 
+                    Converter={StaticResource Localization}, 
+                    Source={StaticResource Localization}}">
+            <i:Interaction.Behaviors>
+                <local:UpdateBindingOnTextChanged />
+            </i:Interaction.Behaviors>
+            <i:Interaction.Triggers>
+                <local:KeyPressedTrigger Key="Enter">
+                    <!-- attempt to connect to service on Enter -->
+                    <i:InvokeCommandAction Command="{Binding Connect}" />
+                    <!-- hide connect help tip when connection attempt is made -->
+                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=ConnectHelpTip}"
+                                             PropertyName="Visibility"
+                                             Value="Collapsed" />
+                </local:KeyPressedTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>
+        <!-- Use Proxy checkbox -->
+        <CheckBox IsChecked="{Binding UseProxy, Mode=TwoWay}"
+                  Content="{Binding ConverterParameter=UseProxy,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}"
+                  Cursor="Hand"
+                  Foreground="{Binding Foreground, ElementName=ServiceUrlLabel}"
+                  Grid.Row="3"
+                  Margin="0,3,0,0" />
+        <!-- Connect to service button -->
+        <Grid Margin="0,10,0,0"
+              Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ConnectButton"
+                    Content="{Binding ConverterParameter=Connect,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}"
+                    Padding="10,5,10,5"
+                    HorizontalAlignment="Left"
+                    Command="{Binding Connect}" />
+            <!-- Click connect help tip -->
+            <TextBlock x:Name="ConnectHelpTip"
+                       Text="{Binding ConverterParameter=ClickConnect,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}"
+                       Margin="5,0,0,0"
+                       Grid.Column="1"
+                       Opacity="0.7"
+                       FontSize="10"
+                       VerticalAlignment="Center"
+                       Visibility="Collapsed">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Loaded">
+                        <ei:ChangePropertyAction PropertyName="Visibility"
+                                                 Value="Collapsed" />
+                    </i:EventTrigger>    
+                                    
+                    <!-- Hide connect help tip when connecting -->
+                    <i:EventTrigger EventName="Click"
+                                    SourceObject="{Binding ElementName=ConnectButton}">
+                        <ei:ChangePropertyAction PropertyName="Visibility"
+                                                 Value="Collapsed" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers></TextBlock>
+        </Grid>   
+        <!-- Status -->
+        <ScrollViewer Grid.Row="5"
+                      MinHeight="40"
+                      VerticalAlignment="Stretch"
+                      HorizontalScrollBarVisibility="Disabled"
+                      VerticalScrollBarVisibility="Auto"
+                      BorderBrush="Transparent"
+                      Padding="0"
+                      Margin="0,10,0,0"
+                      Style="{StaticResource ThinBarScrollViewerStyle}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <!-- Operation status/instructions -->                   
+                    <RowDefinition Height="Auto" />
+                    <!-- Busy indicator or error details header -->
+                    <RowDefinition Height="Auto" />
+                    <!-- Error details -->
+                </Grid.RowDefinitions>
+                <!-- ================================ 
+                     ROW 1 - STATUS/INSTRUCTIONS 
+                     ================================ -->
+                <!-- Ordinary status/instructions -->
+                <TextBlock Text="{Binding Status}"
+                           Visibility="{Binding Error, 
+                        Converter={StaticResource NullVisibilityConverter}}"
+                           TextWrapping="Wrap"
+                           FontFamily="Segoe UI"
+                           FontSize="13"
+                           FontStyle="Italic"
+                           Opacity="0.7" />
+                <!-- Failure notification -->
+                <TextBlock Text="{Binding ConverterParameter=ConnectFailed,
+                                                    Converter={StaticResource Localization},
+                                                    Source={StaticResource Localization}}"
+                           Visibility="{Binding Error, 
+                        Converter={StaticResource NotNullVisibilityConverter}}"
+                           TextWrapping="Wrap"
+                           FontFamily="Segoe UI"
+                           FontSize="13"
+                           FontStyle="Italic"
+                           Opacity="0.7" />
+               
+                <!-- ================================================ 
+                     ROW 2 - BUSY INDICATOR / ERROR DETAILS HEADER
+                     ================================================-->
+                <!-- Busy indicator.  Is only visible when Error is null and IsBusy is true. -->
+                <Grid Grid.Row="1"
+                      Visibility="{Binding Error, 
+                        Converter={StaticResource NullVisibilityConverter}}">
+                    <ProgressBar Visibility="{Binding IsBusy,
+                            Converter={StaticResource BoolVisibilityConverter}}"
+                                 Margin="0,5,0,0"
+                                 HorizontalAlignment="Left"
+                                 IsIndeterminate="True"
+                                 Height="16"
+                                 Width="200" />
+                </Grid>
+                <!-- Error details header -->
+                <ToggleButton 
+                    x:Name="ErrorDetailsButton"
+                    Content="{Binding ConverterParameter=ErrorDetails,
+                        Converter={StaticResource Localization},
+                        Source={StaticResource Localization}}"
+                    Visibility="{Binding Error, 
+                        Converter={StaticResource NotNullVisibilityConverter}}"
+                    Margin="0,4,0,0"
+                    Padding="0"
+                    FontFamily="Segoe UI"
+                    FontSize="13"
+                    Grid.Row="1" 
+                    Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                    Style="{StaticResource ExpanderToggleButtonStyle}" 
+                    Opacity="0.7"/>
+                <!-- ========================= 
+                     ROW 3 - ERROR DETAILS 
+                     ========================= -->
+                <TextBlock Text="{Binding Error.Message}"
+                           Visibility="{Binding IsChecked, ElementName=ErrorDetailsButton,
+                        Converter={StaticResource BoolVisibilityConverter}}"
+                           Margin="0,2,0,0"
+                           TextWrapping="Wrap"
+                           FontFamily="Segoe UI"
+                           FontSize="12"
+                           FontStyle="Italic"
+                           Grid.Row="2"
+                           Opacity="0.7">
+                    <i:Interaction.Triggers>
+                        <ei:PropertyChangedTrigger Binding="{Binding Error}">
+                            <i:Interaction.Behaviors>
+                                <ei:ConditionBehavior>
+                                    <ei:ConditionalExpression>
+                                        <ei:ComparisonCondition
+                                            LeftOperand="{Binding Error}"
+                                            Operator="Equal"
+                                            RightOperand="{x:Null}" />
+                                    </ei:ConditionalExpression>
+                                </ei:ConditionBehavior>
+                            </i:Interaction.Behaviors>
+                            <ei:ChangePropertyAction 
+                                PropertyName="Opacity"
+                                Value="0" />
+                        </ei:PropertyChangedTrigger>
+                        <ei:PropertyChangedTrigger Binding="{Binding Error}">
+                            <i:Interaction.Behaviors>
+                                <ei:ConditionBehavior>
+                                    <ei:ConditionalExpression>
+                                        <ei:ComparisonCondition
+                                            LeftOperand="{Binding Error}"
+                                            Operator="NotEqual"
+                                            RightOperand="{x:Null}" />
+                                    </ei:ConditionalExpression>
+                                </ei:ConditionBehavior>
+                            </i:Interaction.Behaviors>
+                            <ei:ChangePropertyAction 
+                                PropertyName="Opacity"
+                                Value="0.7" />
+                        </ei:PropertyChangedTrigger>
+                    </i:Interaction.Triggers>
+                </TextBlock>
+            </Grid>
+        </ScrollViewer>
+        <!-- Click Next to continue help tip -->
+        <Grid Grid.Row="6"
+              Visibility="{Binding Fields, Converter={StaticResource NotNullVisibilityConverter}}"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Bottom">
+            <i:Interaction.Triggers>
+                <!-- Hide help tip when locator URL is changed -->
+                <ei:PropertyChangedTrigger Binding="{Binding ServiceUrl}">
+                    <ei:ChangePropertyAction PropertyName="Visibility"
+                                             Value="Collapsed" />
+                </ei:PropertyChangedTrigger>
+                <!-- Show help tip when fields is retrieved -->
+                <ei:PropertyChangedTrigger Binding="{Binding Fields}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition LeftOperand="{Binding Fields}"
+                                                        Operator="NotEqual"
+                                                        RightOperand="{x:Null}" />
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction PropertyName="Visibility"
+                                             Value="Visible" />
+                </ei:PropertyChangedTrigger>
+            </i:Interaction.Triggers>
+            <TextBlock Text="{Binding ConverterParameter=ClickNext,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}"
+                       Opacity="0.7"
+                       FontSize="10"
+                       Visibility="{Binding IsBusy, Converter={StaticResource ReverseBoolVisibilityConverter}}" />
+        </Grid>
+    </Grid>
+</UserControl>

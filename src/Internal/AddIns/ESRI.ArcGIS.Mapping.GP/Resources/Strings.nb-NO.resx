@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddLayersToMap" xml:space="preserve">
+    <value>Legg {0}kartlag til kart</value>
+  </data>
+  <data name="ApplyChanges" xml:space="preserve">
+    <value>Bruk endringer</value>
+  </data>
+  <data name="BrowseToGP" xml:space="preserve">
+    <value>Bla til en geoprosesseringstjeneste</value>
+  </data>
+  <data name="BrowseToTask" xml:space="preserve">
+    <value>Bla til en oppgave...</value>
+  </data>
+  <data name="BySelectingLayerFromMap" xml:space="preserve">
+    <value>Ved å velge et kartlag fra kartet</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Slett alle felter</value>
+  </data>
+  <data name="ConfigurationError" xml:space="preserve">
+    <value>Konfigurasjonsfeil</value>
+  </data>
+  <data name="ConfigureGeoprocessing" xml:space="preserve">
+    <value>Konfigurer geoprosessering</value>
+  </data>
+  <data name="ConfigureInputHeading" xml:space="preserve">
+    <value>Konfigurer inndataparametere</value>
+  </data>
+  <data name="ConfigureInputParameterForGeoprocessingTask" xml:space="preserve">
+    <value>Konfigurer inndataparameterne for geoprosesseringsoppgaven</value>
+  </data>
+  <data name="ConfigureOutputHeading" xml:space="preserve">
+    <value>Konfigurer utdataparametere</value>
+  </data>
+  <data name="ConfigureOutputParameterForGeoprocessingTask" xml:space="preserve">
+    <value>Konfigurer utdataparameterne for geoprosesseringsoppgaven</value>
+  </data>
+  <data name="ConfigurePopupFieldAliasesAndVisibility" xml:space="preserve">
+    <value>Konfigurer aliaser og synlighet for popupfelter</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>Konfigurer popupfelter</value>
+  </data>
+  <data name="ConfigureRenderer" xml:space="preserve">
+    <value>Konfigurer opptegning</value>
+  </data>
+  <data name="ConfigureSelectedGPTask" xml:space="preserve">
+    <value>Konfigurer den valgte geoprosesseringsoppgaven</value>
+  </data>
+  <data name="ConfigureTitleAndLayerOrder" xml:space="preserve">
+    <value>Konfigurer tittel og rekkefølge for kartlag</value>
+  </data>
+  <data name="Configuring" xml:space="preserve">
+    <value>Konfigurerer</value>
+  </data>
+  <data name="DrawLine" xml:space="preserve">
+    <value>Tegn linje</value>
+  </data>
+  <data name="DrawPoint" xml:space="preserve">
+    <value>Tegn punkt</value>
+  </data>
+  <data name="DrawPolygon" xml:space="preserve">
+    <value>Tegn polygon</value>
+  </data>
+  <data name="EnterUrlForFile" xml:space="preserve">
+    <value>Oppgi URL for filen</value>
+  </data>
+  <data name="EnterUrlForRasterData" xml:space="preserve">
+    <value>Oppgi URL for rasterdata</value>
+  </data>
+  <data name="EnterUrlForRasterDataLayer" xml:space="preserve">
+    <value>Oppgi URL for rasterdatalag</value>
+  </data>
+  <data name="EnterUrlForRecordset" xml:space="preserve">
+    <value>Oppgi URL for postsett</value>
+  </data>
+  <data name="ExceptionAppendPropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>AppendProperty kalt utenfor et objekt</value>
+  </data>
+  <data name="ExceptionBadEscape" xml:space="preserve">
+    <value>Feil escape</value>
+  </data>
+  <data name="ExceptionConverters" xml:space="preserve">
+    <value>konverterere</value>
+  </data>
+  <data name="ExceptionEndArrayCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>EndArray kalt uten matchende StartArray</value>
+  </data>
+  <data name="ExceptionEndArrayIndentedCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>EndArrayIndented kalt uten matchende StartArray</value>
+  </data>
+  <data name="ExceptionEndObjectCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>EndObject kalt uten matchende StartObject</value>
+  </data>
+  <data name="ExceptionEndObjectIndentedCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>EndObjectIndented kalt uten matchende StartObject</value>
+  </data>
+  <data name="ExceptionInput" xml:space="preserve">
+    <value>inndata</value>
+  </data>
+  <data name="ExceptionStartPropertycalledOutsideOfAnObject" xml:space="preserve">
+    <value>StartProperty kalt utenfor et objekt</value>
+  </data>
+  <data name="ExceptionType" xml:space="preserve">
+    <value>type</value>
+  </data>
+  <data name="ExceptionWritePropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>WriteProperty kalt utenfor et objekt</value>
+  </data>
+  <data name="FailedToLoad" xml:space="preserve">
+    <value>Kunne ikke laste inn</value>
+  </data>
+  <data name="FailedToLoadTaskInformation" xml:space="preserve">
+    <value>Kunne ikke laste inn oppgaveinformasjon.</value>
+  </data>
+  <data name="FieldInformationIsNotKnown" xml:space="preserve">
+    <value>Feltinformasjon er ikke kjent.</value>
+  </data>
+  <data name="GeometryTypeIsNotKnown" xml:space="preserve">
+    <value>Geometritype er ikke kjent.</value>
+  </data>
+  <data name="GeoprocessingHasNotBeenconfigured" xml:space="preserve">
+    <value>Geoprosessering er ikke konfigurert.</value>
+  </data>
+  <data name="GettingResults" xml:space="preserve">
+    <value>Henter resultater...</value>
+  </data>
+  <data name="GPBrowseInstructions" xml:space="preserve">
+    <value>Oppgi URLen til en ArcGIS Server, eller velg en server fra nedtrekksmenyen. Velg deretter geoprosesseringsoppgaven som skal konfigureres, og klikk på Neste.</value>
+  </data>
+  <data name="GPBrowseTooltip" xml:space="preserve">
+    <value>Oppgi URLen til en ArcGIS Server som inneholder geoprosesseringstjenester</value>
+  </data>
+  <data name="GPBrowseWatermark" xml:space="preserve">
+    <value>Oppgi URL til server eller GP-oppgave</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>Topptekst:</value>
+  </data>
+  <data name="InformationAboutThisGeoprocessingTool" xml:space="preserve">
+    <value>Informasjon om dette geoprosesseringsverktøyet.</value>
+  </data>
+  <data name="Input" xml:space="preserve">
+    <value>Inndata</value>
+  </data>
+  <data name="Interactively" xml:space="preserve">
+    <value>Interaktivt</value>
+  </data>
+  <data name="LabelDefaultValue" xml:space="preserve">
+    <value>Standardverdi:</value>
+  </data>
+  <data name="LabelError" xml:space="preserve">
+    <value>Feil:</value>
+  </data>
+  <data name="LabelFormat" xml:space="preserve">
+    <value>Format:</value>
+  </data>
+  <data name="LabelFormatTooltip" xml:space="preserve">
+    <value>Formater verktøytips:</value>
+  </data>
+  <data name="LabelInputFeatures" xml:space="preserve">
+    <value>Inndata-geoobjekter:</value>
+  </data>
+  <data name="LabelLabel" xml:space="preserve">
+    <value>Etikett:</value>
+  </data>
+  <data name="LabelLayerName" xml:space="preserve">
+    <value>Navn på kartlag:</value>
+  </data>
+  <data name="LabelPopUps" xml:space="preserve">
+    <value>Popupfelter:</value>
+  </data>
+  <data name="LabelRenderer" xml:space="preserve">
+    <value>Opptegning:</value>
+  </data>
+  <data name="LabelShowParameter" xml:space="preserve">
+    <value>Vis parameter:</value>
+  </data>
+  <data name="LabelTooltip" xml:space="preserve">
+    <value>Verktøytips:</value>
+  </data>
+  <data name="LabelTransparency" xml:space="preserve">
+    <value>Gjennomsiktighet:</value>
+  </data>
+  <data name="LabelType" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="LabelUrl" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="LayerOrder" xml:space="preserve">
+    <value>Rekkefølge for kartlag:</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Laster inn...</value>
+  </data>
+  <data name="NoLayersAvailable" xml:space="preserve">
+    <value>Ingen {0}-kartlag tilgjengelig</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>Ikke tilgjengelig</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OnlyUrlOutputIsSupportedForRecordsets" xml:space="preserve">
+    <value>&lt;Bare url-utdata støttes for postsett&gt;</value>
+  </data>
+  <data name="OrangeStickpin" xml:space="preserve">
+    <value>Oransje markør</value>
+  </data>
+  <data name="OrderLayers" xml:space="preserve">
+    <value>Sorter kartlag</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>Resultat</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Obligatorisk</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Resultater</value>
+  </data>
+  <data name="SaveWebpartByClickingOK" xml:space="preserve">
+    <value>Lagre webdel ved å klikke på OK eller Bruk.</value>
+  </data>
+  <data name="SelectGeoprocessingTask" xml:space="preserve">
+    <value>Velg geoprosesseringsoppgave</value>
+  </data>
+  <data name="SpecifyOrderOfLayersCreatedByGeoprocessingTask" xml:space="preserve">
+    <value>Angi rekkefølgen på kartlagene som skal opprettes av geoprosesseringsoppgaven</value>
+  </data>
+  <data name="TaskPrompt" xml:space="preserve">
+    <value>Valgt GP-oppgave:</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Dialogbokstittel:</value>
+  </data>
+  <data name="UnknownGeometryType" xml:space="preserve">
+    <value>Ukjent geometritype</value>
+  </data>
+  <data name="FromMapExtent" xml:space="preserve">
+    <value>Bruk kartets utstrekning</value>
+  </data>
+  <data name="ZoomToExtentInput" xml:space="preserve">
+    <value>&lt; Zoom til utstrekningen du vil bruke som inndata &gt;</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Velg alle felter</value>
+  </data>
+  <data name="JobFailed" xml:space="preserve">
+    <value>Geoprosessingsjobben mislyktes</value>
+  </data>
+  <data name="Centimeters" xml:space="preserve">
+    <value>Centimeter</value>
+  </data>
+  <data name="DecimalDegrees" xml:space="preserve">
+    <value>Desimalgrader</value>
+  </data>
+  <data name="Decimeters" xml:space="preserve">
+    <value>Desimeter</value>
+  </data>
+  <data name="Feet" xml:space="preserve">
+    <value>Fot</value>
+  </data>
+  <data name="Inches" xml:space="preserve">
+    <value>Tommer</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>Kilometer</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Meter</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>Miles</value>
+  </data>
+  <data name="Millimeters" xml:space="preserve">
+    <value>Millimeter</value>
+  </data>
+  <data name="NauticalMiles" xml:space="preserve">
+    <value>Nautiske mil</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>Punkter</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Ukjent</value>
+  </data>
+  <data name="Yards" xml:space="preserve">
+    <value>Yard</value>
+  </data>
+  <data name="EmptyResponse" xml:space="preserve">
+    <value>Tjenesten returnerte et tomt svar</value>
+  </data>
+  <data name="UnexpectedServiceAccessError" xml:space="preserve">
+    <value>Det oppstod en uventet feil under forsøk på å få tilgang til geoprosesseringstjenesten.</value>
+  </data>
+  <data name="Executing" xml:space="preserve">
+    <value>Utfører...</value>
+  </data>
+  <data name="Execute" xml:space="preserve">
+    <value>Utfør</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Avbrutt</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>Avbryter</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Mislyktes</value>
+  </data>
+  <data name="Submitted" xml:space="preserve">
+    <value>Sendt</value>
+  </data>
+  <data name="Succeeded" xml:space="preserve">
+    <value>Vellykket</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>Venter</value>
+  </data>
+</root>

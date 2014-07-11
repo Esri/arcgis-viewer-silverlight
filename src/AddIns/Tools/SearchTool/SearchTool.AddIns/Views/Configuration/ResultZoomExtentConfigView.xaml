@@ -1,0 +1,474 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl 
+    x:Class="SearchTool.ResultZoomExtentConfigView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:SearchTool;assembly=SearchTool.AddIns"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SearchTool.AddIns;component/AppResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:FormatResourceConverter x:Key="FormatResourceConverter" />
+            <local:StringResourcesManager x:Key="Localization" />
+            <local:BoolVisibilityConverter x:Key="BoolVisibilityConverter" />
+            <local:ReverseBoolVisibilityConverter x:Key="ReverseBoolVisibilityConverter" />
+            <local:ReverseBoolConverter x:Key="ReverseBoolConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <!-- Service connection status area -->
+        <Grid
+            HorizontalAlignment="Right">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- label to show which service is being used -->
+            <TextBlock
+                Text="{Binding LocatorInfo.Title, 
+                    Converter={StaticResource FormatResourceConverter},
+                    ConverterParameter=ConnectedTo}" 
+                VerticalAlignment="Center"
+                Opacity="0.7"
+                Visibility="{Binding IsUpdatingLocatorInfo, Converter={StaticResource ReverseBoolVisibilityConverter}}"/>
+            
+            <!-- hyperlink to view service info -->
+            <HyperlinkButton
+                Margin="5,0,0,0"
+                Grid.Column="1"
+                NavigateUri="{Binding LocatorInfo.Url}"
+                TargetName="_blank"
+                Cursor="Hand"
+                Visibility="{Binding IsUpdatingLocatorInfo, Converter={StaticResource ReverseBoolVisibilityConverter}}">
+                <HyperlinkButton.Content>
+                    <Image Source="/SearchTool.AddIns;component/Images/info.png"
+                           Stretch="None" />
+                </HyperlinkButton.Content>
+                
+                <!-- template to eliminate focus rectangle on click -->
+                <HyperlinkButton.Template>
+                    <ControlTemplate TargetType="HyperlinkButton">
+                        <Grid>
+                            <ContentPresenter Content="{TemplateBinding Content}" />
+                        </Grid>
+                    </ControlTemplate>
+                </HyperlinkButton.Template>
+            </HyperlinkButton>
+        </Grid>
+        
+        <!-- left, bottom, and right side of border around extent field selection -->
+        <Border
+            BorderBrush="{Binding Foreground, ElementName=XMinLabel}"
+            Opacity="0.5"
+            BorderThickness="1,0,1,1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Grid.Row="1"
+            Margin="0,15,0,0" />
+                
+        <!-- Extent field selection grid -->
+        <Grid
+            Margin="15,32,15,15"
+            Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="26" />
+                <RowDefinition Height="34" />
+                <RowDefinition Height="34" />
+                <RowDefinition Height="34" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- X min -->
+            <TextBlock
+                x:Name="XMinLabel"
+                Text="{Binding ConverterParameter=Left,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}"
+                FontSize="12" 
+                VerticalAlignment="Center"/>
+
+            <ComboBox
+                ItemsSource="{Binding LocatorInfo.CandidateFields}"
+                Foreground="Black"
+                DisplayMemberPath="Alias"
+                SelectedValuePath="Name"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                SelectedItem="{Binding ExtentFields.XMinField, Mode=TwoWay}"
+                Margin="3,0,0,0"
+                Grid.Column="1"
+                IsEnabled="{Binding IsUpdatingLocatorInfo, Converter={StaticResource ReverseBoolConverter}}"/>
+
+            <!-- X max -->
+            <TextBlock
+                Text="{Binding ConverterParameter=Right,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}"
+                FontSize="12" 
+                VerticalAlignment="Center"
+                Grid.Row="1"
+                Margin="0,8,0,0"/>
+
+            <ComboBox
+                ItemsSource="{Binding LocatorInfo.CandidateFields}"
+                Foreground="Black"
+                DisplayMemberPath="Alias"
+                SelectedValuePath="Name"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                SelectedItem="{Binding ExtentFields.XMaxField, Mode=TwoWay}"
+                Margin="3,8,0,0"
+                Grid.Column="1"
+                Grid.Row="1"
+                IsEnabled="{Binding IsUpdatingLocatorInfo, Converter={StaticResource ReverseBoolConverter}}"/>
+
+            <!-- Y max -->
+            <TextBlock
+                Text="{Binding ConverterParameter=Top,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}"
+                FontSize="12" 
+                VerticalAlignment="Center"
+                Grid.Row="2"
+                Margin="0,8,0,0"/>
+
+            <ComboBox
+                ItemsSource="{Binding LocatorInfo.CandidateFields}"
+                Foreground="Black"
+                DisplayMemberPath="Alias"
+                SelectedValuePath="Name"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                SelectedItem="{Binding ExtentFields.YMaxField, Mode=TwoWay}"
+                Margin="3,8,0,0"
+                Grid.Column="1"
+                Grid.Row="2"
+                IsEnabled="{Binding IsUpdatingLocatorInfo, Converter={StaticResource ReverseBoolConverter}}"/>
+
+            <!-- Y min -->
+            <TextBlock
+                Text="{Binding ConverterParameter=Bottom,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}"
+                FontSize="12" 
+                VerticalAlignment="Center"
+                Grid.Row="3"
+                Margin="0,8,0,0"/>
+
+            <ComboBox
+                ItemsSource="{Binding LocatorInfo.CandidateFields}"
+                Foreground="Black"
+                DisplayMemberPath="Alias"
+                SelectedValuePath="Name"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                SelectedItem="{Binding ExtentFields.YMinField, Mode=TwoWay}"
+                Margin="3,8,0,0"
+                Grid.Column="1"
+                Grid.Row="3"
+                IsEnabled="{Binding IsUpdatingLocatorInfo, Converter={StaticResource ReverseBoolConverter}}"/>
+        </Grid>
+
+        <!-- Disable overlay for when extent fields are not being used -->
+        <Button            
+            Grid.Row="1"
+            Margin="1,15,1,1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Visibility="{Binding UseExtentFields, 
+                Converter={StaticResource ReverseBoolVisibilityConverter}}"
+            Cursor="Hand"
+            ToolTipService.ToolTip="{Binding ConverterParameter=ExtentFieldsTooltip,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}">
+            <Button.Content>
+                <Rectangle 
+                    Fill="#88000000"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"/>
+            </Button.Content>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <ContentPresenter Content="{TemplateBinding Content}" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <ei:ChangePropertyAction TargetObject="{Binding}"
+                                             PropertyName="UseExtentFields"
+                                             Value="True" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+
+        <!-- top of border around extent field selection -->
+        <Grid
+            Margin="0,6,0,0"
+            Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle
+                Height="1"
+                Width="15"
+                Fill="{Binding Foreground, ElementName=XMinLabel}"
+                Margin="0,8,0,0" 
+                VerticalAlignment="Top"
+                Opacity="0.5"
+                StrokeEndLineCap="Flat"/>
+
+            <CheckBox
+                Margin="5,0,5,0"
+                Grid.Column="1" 
+                IsChecked="{Binding UseExtentFields, Mode=TwoWay}"
+                Cursor="Hand"
+                ToolTipService.ToolTip="{Binding ConverterParameter=ExtentFieldsTooltip,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}">
+                <CheckBox.Content>
+                    <TextBlock
+                        Text="{Binding ConverterParameter=ExtentFields,
+                            Converter={StaticResource Localization},
+                            Source={StaticResource Localization}}"
+                        Foreground="{Binding Foreground, ElementName=XMinLabel}"
+                        FontSize="13" 
+                        Margin="0,-2,0,0"/>
+                </CheckBox.Content>
+            </CheckBox>
+
+            <Rectangle
+                Height="1"
+                HorizontalAlignment="Stretch"
+                Fill="{Binding Foreground, ElementName=XMinLabel}"
+                Margin="0,8,0,0" 
+                Grid.Column="2"
+                VerticalAlignment="Top"
+                Opacity="0.5"
+                StrokeEndLineCap="Flat"/>
+        </Grid>
+
+        <!-- Border around extent width area -->
+        <Border
+            BorderBrush="{Binding Foreground, ElementName=XMinLabel}"
+            Opacity="0.5"
+            BorderThickness="1,0,1,1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Grid.Row="2"
+            Margin="0,25,0,0" />
+
+        <!-- Extent width specification area -->
+        <Grid
+            Margin="15,44,15,17"
+            Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- TextBox for specifying extent width -->
+            <TextBox
+                x:Name="ExtentWidthTextBox"
+                Text="{Binding ExtentWidth, Mode=TwoWay, ValidatesOnExceptions=True, NotifyOnValidationError=True}"
+                Margin="3,0,0,0"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                Width="75"
+                IsEnabled="{Binding IsUpdatingLocatorInfo, Converter={StaticResource ReverseBoolConverter}}"
+                Style="{StaticResource NoValidationTextBox}">
+                <i:Interaction.Behaviors>
+                    <local:UpdateBindingOnTextChanged />
+                </i:Interaction.Behaviors>
+                <i:Interaction.Triggers>
+                    
+                    <!-- If there is a validation error on TextChanged, show red background -->
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:Interaction.Behaviors>
+                            <ei:ConditionBehavior>
+                                <ei:ConditionalExpression>
+                                    <ei:ComparisonCondition 
+                                        LeftOperand="{Binding (Validation.HasError), ElementName=ExtentWidthTextBox}"
+                                        Operator="Equal"
+                                        RightOperand="True" />
+                                </ei:ConditionalExpression>
+                            </ei:ConditionBehavior>
+                        </i:Interaction.Behaviors>
+                        <ei:ChangePropertyAction PropertyName="Background"
+                                                 Value="#FFE54B4B" />
+                        <ei:ChangePropertyAction PropertyName="Foreground"
+                                                 Value="#FFFFFFFF" />
+                    </i:EventTrigger>
+
+                    <!-- If there is not a validation error on TextChanged, show white background -->
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:Interaction.Behaviors>
+                            <ei:ConditionBehavior>
+                                <ei:ConditionalExpression>
+                                    <ei:ComparisonCondition 
+                                        LeftOperand="{Binding (Validation.HasError), ElementName=ExtentWidthTextBox}"
+                                        Operator="Equal"
+                                        RightOperand="False" />
+                                </ei:ConditionalExpression>
+                            </ei:ConditionBehavior>
+                        </i:Interaction.Behaviors>
+                        <ei:ChangePropertyAction PropertyName="Background"
+                                                 Value="#FFFFFFFF" />
+                        <ei:ChangePropertyAction PropertyName="Foreground"
+                                                 Value="#FF000000" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </TextBox>
+
+            <!-- Combobox for specifying extent width units.  Hidden when the extent width is invalid. -->
+            <ComboBox 
+                Cursor="Hand"
+                Margin="3,0,0,0"
+                HorizontalAlignment="Stretch" 
+                Foreground="Black"
+                ItemsSource="{Binding WidthUnits}"
+                SelectedValuePath="Key" 
+                DisplayMemberPath="Value"
+                SelectedValue="{Binding WidthUnit, Mode=TwoWay}"
+                Visibility="{Binding (Validation.HasError), ElementName=ExtentWidthTextBox,
+                    Converter={StaticResource ReverseBoolVisibilityConverter}}"
+                Grid.Column="1" />
+
+            <!-- Error message shown when extent width is invalid -->
+            <TextBlock
+                x:Name="NumberFormatError"
+                Text="{Binding ConverterParameter=ExtentWidthInputError,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}"
+                FontSize="11"
+                Margin="5,0,0,0" 
+                Grid.ColumnSpan="2"
+                Opacity="0.7"
+                FontStyle="Italic"
+                VerticalAlignment="Center"
+                Visibility="{Binding (Validation.HasError), ElementName=ExtentWidthTextBox,
+                    Converter={StaticResource BoolVisibilityConverter}}"
+                Grid.Column="1"/>
+
+        </Grid>
+
+
+        <!-- Disable overlay for when extent width is not being used -->
+        <Button 
+            Grid.Row="2"
+            Margin="1,25,1,1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Visibility="{Binding UseExtentFields, 
+                Converter={StaticResource BoolVisibilityConverter}}"
+            Cursor="Hand"
+            ToolTipService.ToolTip="{Binding ConverterParameter=ExtentWidthTooltip,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}">
+            <Button.Content>
+                <Rectangle 
+                    Fill="#88000000"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"/>
+            </Button.Content>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <ContentPresenter Content="{TemplateBinding Content}" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <ei:ChangePropertyAction TargetObject="{Binding}"
+                                             PropertyName="UseExtentFields"
+                                             Value="False" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+        
+        <!-- Top of border around extent width area -->
+        <Grid
+            Margin="0,16,0,0"
+            Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle
+                Height="1"
+                Width="15"
+                Fill="{Binding Foreground, ElementName=XMinLabel}"
+                Margin="0,8,0,0" 
+                VerticalAlignment="Top"
+                Opacity="0.5"
+                StrokeEndLineCap="Flat"/>
+
+            <CheckBox
+                Margin="5,0,5,0"
+                Grid.Column="1" 
+                IsChecked="{Binding UseExtentFields, Mode=TwoWay,
+                    Converter={StaticResource ReverseBoolConverter}}"
+                Cursor="Hand"
+                ToolTipService.ToolTip="{Binding ConverterParameter=ExtentWidthTooltip,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}">
+                <CheckBox.Content>
+                    <TextBlock
+                        Text="{Binding ConverterParameter=ExtentWidth,
+                            Converter={StaticResource Localization},
+                            Source={StaticResource Localization}}"
+                        Foreground="{Binding Foreground, ElementName=XMinLabel}"
+                        FontSize="13" 
+                        Margin="0,-2,0,0"/>
+                </CheckBox.Content>
+            </CheckBox>
+
+            <Rectangle
+                Height="1"
+                HorizontalAlignment="Stretch"
+                Fill="{Binding Foreground, ElementName=XMinLabel}"
+                Margin="0,8,0,0" 
+                Grid.Column="2"
+                VerticalAlignment="Top"
+                Opacity="0.5"
+                StrokeEndLineCap="Flat"/>
+        </Grid>
+
+
+    </Grid>
+</UserControl>

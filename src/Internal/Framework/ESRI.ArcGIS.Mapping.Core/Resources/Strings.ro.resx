@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ExceptionAdditionConverterDoesNotSupportType" xml:space="preserve">
+    <value>AdditionConverter nu acceptă tipul {0}</value>
+  </data>
+  <data name="ExceptionCannotcallSyncronousMethodGetFileAsText" xml:space="preserve">
+    <value>Nu se poate apela metoda sincronă GetFileAsText în Silverlight. Utilizaţi GetFileAsTextAsync în loc.</value>
+  </data>
+  <data name="ExceptionCannotCompareWith" xml:space="preserve">
+    <value>Nu se poate compara cu {0}</value>
+  </data>
+  <data name="ExceptionCannotDeserializeResponse" xml:space="preserve">
+    <value>Nu se poate deserializa răspunsul</value>
+  </data>
+  <data name="ExceptionClusterer" xml:space="preserve">
+    <value>Autor grupare</value>
+  </data>
+  <data name="ExceptionConfigFileUrlMustBeSpecified" xml:space="preserve">
+    <value>ConfigFileUrl trebuie specificat</value>
+  </data>
+  <data name="ExceptionConfigurationFileEmpty" xml:space="preserve">
+    <value>Fişierul de configurare a fost gol</value>
+  </data>
+  <data name="ExceptionConfigurationXmlIsEmpty" xml:space="preserve">
+    <value>Fişierul de configurare xml este gol</value>
+  </data>
+  <data name="ExceptionDataSource" xml:space="preserve">
+    <value>dataSource</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>element</value>
+  </data>
+  <data name="ExceptionEmptyFile" xml:space="preserve">
+    <value>Fişier gol</value>
+  </data>
+  <data name="ExceptionExtensionUrl" xml:space="preserve">
+    <value>extensionURL</value>
+  </data>
+  <data name="ExceptionFileNotFound" xml:space="preserve">
+    <value>Fişier negăsit</value>
+  </data>
+  <data name="ExceptionGraphicsLayer" xml:space="preserve">
+    <value>graphicsLayer</value>
+  </data>
+  <data name="ExceptionIdforDataSourceMustNotBeEmpty" xml:space="preserve">
+    <value>ID-ul pentru dataSource nu trebuie să fie gol</value>
+  </data>
+  <data name="ExceptionInconsistentTotalNumberOfValues" xml:space="preserve">
+    <value>Număr total de valori inconsecvent</value>
+  </data>
+  <data name="ExceptionInvalidFileMustBeUrlForSilverlightApplication" xml:space="preserve">
+    <value>Fişier nevalid. Trebuie să fie un URL pentru aplicaţii Silverlight</value>
+  </data>
+  <data name="ExceptionInvalidPathForresourceDictionary" xml:space="preserve">
+    <value>Cale nevalidă pentru dicţionarul de resurse {0}</value>
+  </data>
+  <data name="ExceptionLayer" xml:space="preserve">
+    <value>strat tematic</value>
+  </data>
+  <data name="ExceptionMap" xml:space="preserve">
+    <value>hartă</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationFile" xml:space="preserve">
+    <value>Trebuie specificat parametru ConfigurationFile</value>
+  </data>
+  <data name="ExceptionMustSpecifyFile" xml:space="preserve">
+    <value>Trebuie specificat un fişier</value>
+  </data>
+  <data name="ExceptionMustSpecifyFileUrl" xml:space="preserve">
+    <value>Trebuie specificat parametrul FileUrl</value>
+  </data>
+  <data name="ExceptionMustSpecifyLocatorUrl" xml:space="preserve">
+    <value>Trebuie specificat parametrul LocatorUrl</value>
+  </data>
+  <data name="ExceptionMustSpecifyValidFileUrl" xml:space="preserve">
+    <value>Trebuie specificat un parametru FileUrl valid</value>
+  </data>
+  <data name="ExceptionNamespaces" xml:space="preserve">
+    <value>namespaces</value>
+  </data>
+  <data name="ExceptionNoBrushesFound" xml:space="preserve">
+    <value>Nu a fost găsită nicio pensulă</value>
+  </data>
+  <data name="ExceptionNoDefaultSymbolsFoundInDictionaryForGeometryType" xml:space="preserve">
+    <value>Nu a fost găsit niciun simbol implicit în dicţionarul {0} pentru geometrytype = {1}</value>
+  </data>
+  <data name="ExceptionNoResourceDictionaryAvailableForGeometryType" xml:space="preserve">
+    <value>Nu există niciun dicţionar de resurse disponibil pentru geometryType = {0}</value>
+  </data>
+  <data name="ExceptionNoResourceDictionaryfoundForGeometryType" xml:space="preserve">
+    <value>Nu a fost găsit niciun dicţionar de resurse pentru geometrytype = {0}</value>
+  </data>
+  <data name="ExceptionNoResultsFromProjection" xml:space="preserve">
+    <value>Niciun rezultat din proiecţie</value>
+  </data>
+  <data name="ExceptionNoSymbolAvailableInResourceDictionary" xml:space="preserve">
+    <value>Niciun simbol disponibil în dicţionarul de resurse {0}</value>
+  </data>
+  <data name="ExceptionNoThemeFileUrlSpecified" xml:space="preserve">
+    <value>Niciun parametru ThemeFileUrl specificat</value>
+  </data>
+  <data name="ExceptionNumberofGraphicsBeforeAndAfterProjectionAreNotEqual" xml:space="preserve">
+    <value>Numărul de grafice înainte şi după proiecţie nu este egal</value>
+  </data>
+  <data name="ExceptionOutputSpatialReference" xml:space="preserve">
+    <value>outputSpatialReference</value>
+  </data>
+  <data name="ExceptionRequiresPointValue" xml:space="preserve">
+    <value>Necesită o valoare pentru punct</value>
+  </data>
+  <data name="ExceptionResourceDictionaryEmpty" xml:space="preserve">
+    <value>dicţionarul de resurse este gol</value>
+  </data>
+  <data name="ExceptionSymbolConfigXmlEmpty" xml:space="preserve">
+    <value>symbolConfigXml este gol</value>
+  </data>
+  <data name="ExceptionSymbolDescriptionValueNull" xml:space="preserve">
+    <value>Valoarea SymbolDescription este nulă</value>
+  </data>
+  <data name="ExceptionSymbolFolderParentUrlMustBeSpecified" xml:space="preserve">
+    <value>SymbolFolderParentUrl trebuie specificat</value>
+  </data>
+  <data name="ExceptionUnableToLoadconfigurationStoreFromEmbeddedResource" xml:space="preserve">
+    <value>Imposibil de încărcat configuraţia din resursa încorporată</value>
+  </data>
+  <data name="ExceptionUnableToParseFile" xml:space="preserve">
+    <value>Imposibil de analizat fişierul</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConnectionsFromEmbeddedResource" xml:space="preserve">
+    <value>Imposibil de preluat conexiuni din resursa încorporată</value>
+  </data>
+  <data name="ExceptionUnableToretrievedefaultLinearGradientBrushes" xml:space="preserve">
+    <value>Imposibil de preluat pensule implicite de estompare graduală liniară</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveLinearGradientBrushes" xml:space="preserve">
+    <value>Imposibil de preluat pensule de estompare graduală liniară.</value>
+  </data>
+  <data name="ExceptionUnableToretrieveResourceDictionaryContents" xml:space="preserve">
+    <value>Imposibil de preluat conţinuturi din dicţionarul de resurse</value>
+  </data>
+  <data name="ExceptionUnknownError" xml:space="preserve">
+    <value>Eroare necunoscută</value>
+  </data>
+  <data name="Graphics" xml:space="preserve">
+    <value>grafice</value>
+  </data>
+  <data name="NoneInAngleBraces" xml:space="preserve">
+    <value>&lt;niciunul&gt;</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>puncte</value>
+  </data>
+  <data name="FlagCheckered" xml:space="preserve">
+    <value>Steag şah</value>
+  </data>
+  <data name="FlagGreen" xml:space="preserve">
+    <value>Steag verde</value>
+  </data>
+  <data name="FlagRed" xml:space="preserve">
+    <value>Steag roşu</value>
+  </data>
+  <data name="FlagWhite" xml:space="preserve">
+    <value>Steag alb</value>
+  </data>
+  <data name="FlagYellow" xml:space="preserve">
+    <value>Steag galben</value>
+  </data>
+  <data name="Pin2RedShiny" xml:space="preserve">
+    <value>Ac strălucitor roşu 2</value>
+  </data>
+  <data name="PinBlueShiny" xml:space="preserve">
+    <value>Ac strălucitor albastru</value>
+  </data>
+  <data name="PinGoldShiny" xml:space="preserve">
+    <value>Ac strălucitor auriu</value>
+  </data>
+  <data name="PinGreenShiny" xml:space="preserve">
+    <value>Ac strălucitor verde</value>
+  </data>
+  <data name="PinLightBlueShiny" xml:space="preserve">
+    <value>Ac strălucitor albastru deschis</value>
+  </data>
+  <data name="PinLightGreenShiny" xml:space="preserve">
+    <value>Ac lucitor verde deschis</value>
+  </data>
+  <data name="PinPurpleShiny" xml:space="preserve">
+    <value>Ac strălucitor purpuriu</value>
+  </data>
+  <data name="PinShiny" xml:space="preserve">
+    <value>Ac lucitor</value>
+  </data>
+  <data name="RedShinyPin" xml:space="preserve">
+    <value>Ac strălucitor roşu</value>
+  </data>
+  <data name="StickpinBlack" xml:space="preserve">
+    <value>Ac de cravată negru</value>
+  </data>
+  <data name="StickpinBlue" xml:space="preserve">
+    <value>Ac de cravată albastru</value>
+  </data>
+  <data name="StickpinBrown" xml:space="preserve">
+    <value>Ac de cravată maro</value>
+  </data>
+  <data name="StickpinGray" xml:space="preserve">
+    <value>Ac de cravată gri</value>
+  </data>
+  <data name="StickpinGreen" xml:space="preserve">
+    <value>Ac de cravată verde</value>
+  </data>
+  <data name="StickpinLightBlue" xml:space="preserve">
+    <value>Ac de cravată albastru deschis</value>
+  </data>
+  <data name="StickpinOrange" xml:space="preserve">
+    <value>Ac de cravată portocaliu</value>
+  </data>
+  <data name="StickpinPurple" xml:space="preserve">
+    <value>Ac de cravată purpuriu</value>
+  </data>
+  <data name="StickpinRed" xml:space="preserve">
+    <value>Ac de cravată roşu</value>
+  </data>
+  <data name="StickpinSpringGreen" xml:space="preserve">
+    <value>Ac de cravată verde deschis</value>
+  </data>
+  <data name="StickpinWhite" xml:space="preserve">
+    <value>Ac de cravată alb</value>
+  </data>
+  <data name="StickpinYellow" xml:space="preserve">
+    <value>Ac de cravată galben</value>
+  </data>
+  <data name="SymbolAmberBeacon" xml:space="preserve">
+    <value>Far portocaliu</value>
+  </data>
+  <data name="SymbolBlackBeacon" xml:space="preserve">
+    <value>Far negru</value>
+  </data>
+  <data name="SymbolBlackWaypoint" xml:space="preserve">
+    <value>Punct de referinţă negru</value>
+  </data>
+  <data name="SymbolBlueBeacon" xml:space="preserve">
+    <value>Far albastru</value>
+  </data>
+  <data name="SymbolBlueSphere" xml:space="preserve">
+    <value>Sferă albastră</value>
+  </data>
+  <data name="SymbolBlueWaypoint" xml:space="preserve">
+    <value>Punct de referinţă albastru</value>
+  </data>
+  <data name="SymbolCapital1" xml:space="preserve">
+    <value>Capitală 1</value>
+  </data>
+  <data name="SymbolCapital2" xml:space="preserve">
+    <value>Capitală 2</value>
+  </data>
+  <data name="SymbolCircleX" xml:space="preserve">
+    <value>Cerc X</value>
+  </data>
+  <data name="SymbolCrossHair" xml:space="preserve">
+    <value>Reticul în cruce</value>
+  </data>
+  <data name="SymbolGreenBeacon" xml:space="preserve">
+    <value>Far verde</value>
+  </data>
+  <data name="SymbolGreenSphere" xml:space="preserve">
+    <value>Sferă verde</value>
+  </data>
+  <data name="SymbolOrangeBeacon" xml:space="preserve">
+    <value>Far portocaliu</value>
+  </data>
+  <data name="SymbolOrangeSphere" xml:space="preserve">
+    <value>Sferă portocalie</value>
+  </data>
+  <data name="SymbolPopulated1" xml:space="preserve">
+    <value>Populat 1</value>
+  </data>
+  <data name="SymbolPopulated2" xml:space="preserve">
+    <value>Populat 2</value>
+  </data>
+  <data name="SymbolPopulated3" xml:space="preserve">
+    <value>Populat 3</value>
+  </data>
+  <data name="SymbolPopulated4" xml:space="preserve">
+    <value>Populat 4</value>
+  </data>
+  <data name="SymbolPopulated5" xml:space="preserve">
+    <value>Populat 5</value>
+  </data>
+  <data name="SymbolPopulated6" xml:space="preserve">
+    <value>Populat 6</value>
+  </data>
+  <data name="SymbolPopulated7" xml:space="preserve">
+    <value>Populat 7</value>
+  </data>
+  <data name="SymbolPurpleSphere" xml:space="preserve">
+    <value>Sferă purpurie</value>
+  </data>
+  <data name="SymbolRedBeacon" xml:space="preserve">
+    <value>Far roşu</value>
+  </data>
+  <data name="SymbolRedSphere" xml:space="preserve">
+    <value>Sferă roşie</value>
+  </data>
+  <data name="SymbolWhiteWaypoint" xml:space="preserve">
+    <value>Punct de referinţă alb</value>
+  </data>
+  <data name="SymbolYellowArrow" xml:space="preserve">
+    <value>Săgeată galbenă</value>
+  </data>
+  <data name="SymbolYellowSphere" xml:space="preserve">
+    <value>Sferă galbenă</value>
+  </data>
+  <data name="ExceptionRequiresParameter" xml:space="preserve">
+    <value>Necesită specificarea unui parametru</value>
+  </data>
+  <data name="ExceptionAppendPropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>Parametrul AppendProperty a fost apelat în afara unui obiect</value>
+  </data>
+  <data name="ExceptionBadEscape" xml:space="preserve">
+    <value>Părăsire din cauza unei erori</value>
+  </data>
+  <data name="ExceptionConverters" xml:space="preserve">
+    <value>convertoare</value>
+  </data>
+  <data name="ExceptionEndArrayCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>Parametrul EndArray a fost apelat fără niciun parametru StartArray corespunzător</value>
+  </data>
+  <data name="ExceptionEndArrayIndentedCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>Parametrul EndArrayIndented a fost apelat fără niciun parametru StartArray corespunzător</value>
+  </data>
+  <data name="ExceptionEndObjectCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>Parametrul EndObject a fost apelat fără niciun parametru StartObject corespunzător</value>
+  </data>
+  <data name="ExceptionEndObjectIndentedCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>Parametrul EndObjectIndented a fost apelat fără niciun parametru StartObject corespunzător</value>
+  </data>
+  <data name="ExceptionInput" xml:space="preserve">
+    <value>intrare</value>
+  </data>
+  <data name="ExceptionStartPropertycalledOutsideOfAnObject" xml:space="preserve">
+    <value>Parametrul StartProperty a fost apelat în afara unui obiect</value>
+  </data>
+  <data name="ExceptionType" xml:space="preserve">
+    <value>tip</value>
+  </data>
+  <data name="ExceptionWritePropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>Parametrul WriteProperty a fost apelat în afara unui obiect</value>
+  </data>
+  <data name="MoreInfo" xml:space="preserve">
+    <value>Mai multe informaţii</value>
+  </data>
+  <data name="RootVisualError" xml:space="preserve">
+    <value>Imposibil de obţinut vizualizarea rădăcinii</value>
+  </data>
+  <data name="ExceptionNoResult" xml:space="preserve">
+    <value>Solicitarea nu a returnat niciun rezultat</value>
+  </data>
+</root>

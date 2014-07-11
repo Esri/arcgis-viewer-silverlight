@@ -1,0 +1,97 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl x:Class="ESRI.ArcGIS.Mapping.Builder.ConfigureThemeControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400"
+    Loaded="ConfigureThemeControl_Loaded"
+    xmlns:mapping="clr-namespace:ESRI.ArcGIS.Mapping.Controls;assembly=ESRI.ArcGIS.Mapping.Controls">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="8">            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid Margin="0,0,8,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+				<TextBlock Text="{Binding ConverterParameter=ThemeColors, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" FontWeight="Bold" Margin="4" />
+                <ListBox Name="ColorOptionComboBox" SelectionChanged="ColorOptionComboBox_SelectionChanged" VerticalAlignment="Stretch"
+                            VerticalContentAlignment="Stretch" Foreground="Black" 
+                            Grid.Row="1">
+					<ListBoxItem Content="{Binding ConverterParameter=Background, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" Tag="BackgroundColor" />
+					<ListBoxItem Content="{Binding ConverterParameter=BackgroundText, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" Tag="BackgroundTextColor" />
+					<ListBoxItem Content="{Binding ConverterParameter=Accent, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" Tag="AccentColor" />
+					<ListBoxItem Content="{Binding ConverterParameter=AccentText, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" Tag="AccentTextColor" />
+					<ListBoxItem Content="{Binding ConverterParameter=Selection, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" Tag="SelectionColor" />
+					<ListBoxItem Content="{Binding ConverterParameter=SelectionOutline, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" Tag="SelectionOutlineColor" />
+                </ListBox>
+            </Grid>
+
+            <Grid Grid.ColumnSpan="2" Grid.Column="1" Height="287">
+                <mapping:BackgroundColorPicker Name="BackgroundColorPicker" Visibility="Collapsed" 
+                                               ColorChanged="BackgroundColorPicker_ColorChanged" AutomationProperties.AutomationId="BackgroundColorPicker"
+                                               />
+                <Border BorderBrush="#FF617584" BorderThickness="1" VerticalAlignment="Top"
+                        Name="ColorPaletteContainer" Visibility="Collapsed" Width="212">
+                    <mapping:ColorPalette Name="ColorPalette"                                          
+                                          Height="215" 
+                                      ColorPicked="ColorPalette_ColorPicked" AutomationProperties.AutomationId="ColorPalette">
+                        <mapping:ColorPalette.Colors>
+                            <Color>#FFFFFF</Color>
+                            <Color>#000000</Color>
+                            <Color>#EEECE1</Color>
+                            <Color>#1F497D</Color>
+                            <Color>#4F81BD</Color>
+                            <Color>#C0504D</Color>
+                            <Color>#9BBB59</Color>
+                            <Color>#8064A2</Color>
+                            <Color>#4BACC6</Color>
+                            <Color>#F79646</Color>
+                            <Color>#FF0000</Color>
+                            <Color>#FFC000</Color>
+                            <Color>#FFFF00</Color>
+                            <Color>#92D050</Color>
+                            <Color>#00B050</Color>
+                            <Color>#00B0F0</Color>
+                            <Color>#0070C0</Color>
+                            <Color>#002060</Color>
+                            <Color>#7030A0</Color>
+                        </mapping:ColorPalette.Colors>
+                    </mapping:ColorPalette>
+                </Border>                
+            </Grid>            
+            
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="OKButton" Content="{Binding ConverterParameter=OK, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" Height="25" MinWidth="50"  Margin="3" 
+                    Click="OKButton_Click" 
+                            Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                            Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}" AutomationProperties.AutomationId="CfgThemeOKButton"/>
+                <Button x:Name="CancelButton" Content="{Binding ConverterParameter=Cancel, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" Height="25" MinWidth="50"  Margin="3" 
+                    Click="CancelButton_Click" 
+                            Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                            Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}" AutomationProperties.AutomationId="CfgThemeCancelButton"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddLayersToMap" xml:space="preserve">
+    <value>Agregar {0} capas al mapa</value>
+  </data>
+  <data name="ApplyChanges" xml:space="preserve">
+    <value>Aplicar cambios</value>
+  </data>
+  <data name="BrowseToGP" xml:space="preserve">
+    <value>Buscar un servicio de geoprocesamiento</value>
+  </data>
+  <data name="BrowseToTask" xml:space="preserve">
+    <value>Buscar una tarea...</value>
+  </data>
+  <data name="BySelectingLayerFromMap" xml:space="preserve">
+    <value>Seleccionando una capa del mapa</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Borrar todos los campos</value>
+  </data>
+  <data name="ConfigurationError" xml:space="preserve">
+    <value>Error de configuración</value>
+  </data>
+  <data name="ConfigureGeoprocessing" xml:space="preserve">
+    <value>Configurar geoprocesamiento</value>
+  </data>
+  <data name="ConfigureInputHeading" xml:space="preserve">
+    <value>Configurar parámetros de entrada</value>
+  </data>
+  <data name="ConfigureInputParameterForGeoprocessingTask" xml:space="preserve">
+    <value>Configurar los parámetros de entrada para la tarea de geoprocesamiento</value>
+  </data>
+  <data name="ConfigureOutputHeading" xml:space="preserve">
+    <value>Configurar parámetros de salida</value>
+  </data>
+  <data name="ConfigureOutputParameterForGeoprocessingTask" xml:space="preserve">
+    <value>Configurar los parámetros de salida para la tarea de geoprocesamiento</value>
+  </data>
+  <data name="ConfigurePopupFieldAliasesAndVisibility" xml:space="preserve">
+    <value>Configurar los alias de campo y la visibilidad de ventanas emergentes</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>Configurar ventanas emergentes</value>
+  </data>
+  <data name="ConfigureRenderer" xml:space="preserve">
+    <value>Configurar renderizador</value>
+  </data>
+  <data name="ConfigureSelectedGPTask" xml:space="preserve">
+    <value>Configurar la tarea de geoprocesamiento seleccionada</value>
+  </data>
+  <data name="ConfigureTitleAndLayerOrder" xml:space="preserve">
+    <value>Configurar el orden de capas y títulos</value>
+  </data>
+  <data name="Configuring" xml:space="preserve">
+    <value>Configuración</value>
+  </data>
+  <data name="DrawLine" xml:space="preserve">
+    <value>Dibujar línea</value>
+  </data>
+  <data name="DrawPoint" xml:space="preserve">
+    <value>Dibujar punto</value>
+  </data>
+  <data name="DrawPolygon" xml:space="preserve">
+    <value>Dibujar polígono</value>
+  </data>
+  <data name="EnterUrlForFile" xml:space="preserve">
+    <value>Introducir URL para el archivo</value>
+  </data>
+  <data name="EnterUrlForRasterData" xml:space="preserve">
+    <value>Introducir URL para los datos ráster</value>
+  </data>
+  <data name="EnterUrlForRasterDataLayer" xml:space="preserve">
+    <value>Introducir URL para la capa de datos ráster</value>
+  </data>
+  <data name="EnterUrlForRecordset" xml:space="preserve">
+    <value>Introducir URL para el conjunto de registros</value>
+  </data>
+  <data name="ExceptionAppendPropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>Llamada a AppendProperty fuera de un objeto</value>
+  </data>
+  <data name="ExceptionBadEscape" xml:space="preserve">
+    <value>Escape incorrecto</value>
+  </data>
+  <data name="ExceptionConverters" xml:space="preserve">
+    <value>conversores</value>
+  </data>
+  <data name="ExceptionEndArrayCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>Llamada a EndArray sin StartArray coincidente</value>
+  </data>
+  <data name="ExceptionEndArrayIndentedCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>Llamada a EndArrayIndented sin StartArray coincidente</value>
+  </data>
+  <data name="ExceptionEndObjectCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>Llamada a EndObject sin StartObject coincidente</value>
+  </data>
+  <data name="ExceptionEndObjectIndentedCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>Llamada a EndObjectIndented sin StartObject coincidente</value>
+  </data>
+  <data name="ExceptionInput" xml:space="preserve">
+    <value>entrada</value>
+  </data>
+  <data name="ExceptionStartPropertycalledOutsideOfAnObject" xml:space="preserve">
+    <value>Llamada a StartProperty fuera de un objeto</value>
+  </data>
+  <data name="ExceptionType" xml:space="preserve">
+    <value>tipo</value>
+  </data>
+  <data name="ExceptionWritePropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>Llamada a WriteProperty fuera de un objeto</value>
+  </data>
+  <data name="FailedToLoad" xml:space="preserve">
+    <value>No se pudo cargar</value>
+  </data>
+  <data name="FailedToLoadTaskInformation" xml:space="preserve">
+    <value>No se pudo cargar la información de tarea</value>
+  </data>
+  <data name="FieldInformationIsNotKnown" xml:space="preserve">
+    <value>No se conoce la información de campo.</value>
+  </data>
+  <data name="GeometryTypeIsNotKnown" xml:space="preserve">
+    <value>No se conoce el tipo de geometría.</value>
+  </data>
+  <data name="GeoprocessingHasNotBeenconfigured" xml:space="preserve">
+    <value>No se configuró el geoprocesamiento.</value>
+  </data>
+  <data name="GettingResults" xml:space="preserve">
+    <value>Obteniendo resultados...</value>
+  </data>
+  <data name="GPBrowseInstructions" xml:space="preserve">
+    <value>Introduzca la URL de un servidor de ArcGIS o seleccione un servidor del menú desplegable. A continuación, seleccione la tarea de geoprocesamiento que desea configurar y haga clic en Siguiente.</value>
+  </data>
+  <data name="GPBrowseTooltip" xml:space="preserve">
+    <value>Introduzca la URL de un servidor de ArcGIS que contenga servicios de geoprocesamiento</value>
+  </data>
+  <data name="GPBrowseWatermark" xml:space="preserve">
+    <value>Introduzca URL del servidor o de la tarea de GP</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>Encabezado:</value>
+  </data>
+  <data name="InformationAboutThisGeoprocessingTool" xml:space="preserve">
+    <value>Información acerca de esta herramienta de geoprocesamiento.</value>
+  </data>
+  <data name="Input" xml:space="preserve">
+    <value>Entrada</value>
+  </data>
+  <data name="Interactively" xml:space="preserve">
+    <value>Interactivamente</value>
+  </data>
+  <data name="LabelDefaultValue" xml:space="preserve">
+    <value>Valor predeterminado:</value>
+  </data>
+  <data name="LabelError" xml:space="preserve">
+    <value>Error:</value>
+  </data>
+  <data name="LabelFormat" xml:space="preserve">
+    <value>Formato:</value>
+  </data>
+  <data name="LabelFormatTooltip" xml:space="preserve">
+    <value>Formato de información sobre herramientas:</value>
+  </data>
+  <data name="LabelInputFeatures" xml:space="preserve">
+    <value>Entidades de entrada:</value>
+  </data>
+  <data name="LabelLabel" xml:space="preserve">
+    <value>Etiqueta:</value>
+  </data>
+  <data name="LabelLayerName" xml:space="preserve">
+    <value>Nombre de capa:</value>
+  </data>
+  <data name="LabelPopUps" xml:space="preserve">
+    <value>Ventanas emergentes:</value>
+  </data>
+  <data name="LabelRenderer" xml:space="preserve">
+    <value>Renderizador:</value>
+  </data>
+  <data name="LabelShowParameter" xml:space="preserve">
+    <value>Mostrar parámetro:</value>
+  </data>
+  <data name="LabelTooltip" xml:space="preserve">
+    <value>Información sobre herramientas:</value>
+  </data>
+  <data name="LabelTransparency" xml:space="preserve">
+    <value>Transparencia:</value>
+  </data>
+  <data name="LabelType" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
+  <data name="LabelUrl" xml:space="preserve">
+    <value>Url:</value>
+  </data>
+  <data name="LayerOrder" xml:space="preserve">
+    <value>Orden de capas:</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Cargando...</value>
+  </data>
+  <data name="NoLayersAvailable" xml:space="preserve">
+    <value>No hay capas {0} disponibles</value>
+  </data>
+  <data name="NotAvailable" xml:space="preserve">
+    <value>No disponible</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="OnlyUrlOutputIsSupportedForRecordsets" xml:space="preserve">
+    <value>&lt;Solo se acepta la salida de URL para los conjuntos de registros&gt;</value>
+  </data>
+  <data name="OrangeStickpin" xml:space="preserve">
+    <value>Alfiler naranja</value>
+  </data>
+  <data name="OrderLayers" xml:space="preserve">
+    <value>Ordenar capas</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>Salida</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Requerido</value>
+  </data>
+  <data name="Results" xml:space="preserve">
+    <value>Resultados</value>
+  </data>
+  <data name="SaveWebpartByClickingOK" xml:space="preserve">
+    <value>Guarde el elemento Web haciendo clic en Aceptar o Aplicar.</value>
+  </data>
+  <data name="SelectGeoprocessingTask" xml:space="preserve">
+    <value>Seleccionar tarea de geoprocesamiento</value>
+  </data>
+  <data name="SpecifyOrderOfLayersCreatedByGeoprocessingTask" xml:space="preserve">
+    <value>Especifique el orden de las capas que creará la tarea de geoprocesamiento</value>
+  </data>
+  <data name="TaskPrompt" xml:space="preserve">
+    <value>Tarea de GP seleccionada:</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Título del cuadro de diálogo:</value>
+  </data>
+  <data name="UnknownGeometryType" xml:space="preserve">
+    <value>Tipo de geometría desconocido</value>
+  </data>
+  <data name="FromMapExtent" xml:space="preserve">
+    <value>Utilice la extensión del mapa</value>
+  </data>
+  <data name="ZoomToExtentInput" xml:space="preserve">
+    <value>&lt; Acerque a la extensión que le gustaría utilizar como entrada &gt;</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Seleccionar todos los campos</value>
+  </data>
+  <data name="JobFailed" xml:space="preserve">
+    <value>El trabajo de geoprocesamiento ha fallado</value>
+  </data>
+  <data name="Centimeters" xml:space="preserve">
+    <value>Centímetros</value>
+  </data>
+  <data name="DecimalDegrees" xml:space="preserve">
+    <value>Grados decimales</value>
+  </data>
+  <data name="Decimeters" xml:space="preserve">
+    <value>Decímetros</value>
+  </data>
+  <data name="Feet" xml:space="preserve">
+    <value>Pies</value>
+  </data>
+  <data name="Inches" xml:space="preserve">
+    <value>Pulgadas</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>Kilómetros</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Metros</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>Millas</value>
+  </data>
+  <data name="Millimeters" xml:space="preserve">
+    <value>Milímetros</value>
+  </data>
+  <data name="NauticalMiles" xml:space="preserve">
+    <value>Millas náuticas</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>Puntos</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Desconocido</value>
+  </data>
+  <data name="Yards" xml:space="preserve">
+    <value>Yardas</value>
+  </data>
+  <data name="EmptyResponse" xml:space="preserve">
+    <value>El servicio ha devuelto una respuesta vacía</value>
+  </data>
+  <data name="UnexpectedServiceAccessError" xml:space="preserve">
+    <value>Se ha producido un error inesperado al acceder al servicio de geoprocesamiento.</value>
+  </data>
+  <data name="Executing" xml:space="preserve">
+    <value>Ejecutando...</value>
+  </data>
+  <data name="Execute" xml:space="preserve">
+    <value>Ejecutar</value>
+  </data>
+  <data name="Cancelled" xml:space="preserve">
+    <value>Cancelado</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>Cancelando</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Submitted" xml:space="preserve">
+    <value>Enviado</value>
+  </data>
+  <data name="Succeeded" xml:space="preserve">
+    <value>Correcto</value>
+  </data>
+  <data name="Waiting" xml:space="preserve">
+    <value>En espera</value>
+  </data>
+</root>

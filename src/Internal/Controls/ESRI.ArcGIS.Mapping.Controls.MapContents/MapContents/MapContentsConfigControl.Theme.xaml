@@ -1,0 +1,196 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls.MapContents" 
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:ext="clr-namespace:ESRI.ArcGIS.Client.Extensibility;assembly=ESRI.ArcGIS.Client.Extensibility"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity">
+
+    <local:StringResourcesManager x:Key="Localization" />
+    <local:ReverseEnumerationConverter x:Key="ReverseEnumerationConverter"/>
+    <local:VisibilityConverter x:Key="VisibilityConverter" />
+
+    <Style x:Key="GradientButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#FF1F3B53"/>
+        <Setter Property="Foreground" Value="#FF000000"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0" To="#A6FFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                        <ColorAnimation Duration="0" To="#81FFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                        <ColorAnimation Duration="0" To="#31FFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                        <ColorAnimation Duration="0" To="#D7FFFFFF" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0" To="#D8FFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                        <ColorAnimation Duration="0" To="#C6FFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                        <ColorAnimation Duration="0" To="#8CFFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                        <ColorAnimation Duration="0" To="#3FFFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled" >
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="0.4" Storyboard.TargetName="DisabledElement" 
+                                                                    Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="0.7" Storyboard.TargetName="FocusElement" 
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                                                                Background="{TemplateBinding Background}" CornerRadius="4">
+                            <Grid Background="Transparent">
+                                <Rectangle x:Name="BackgroundGradient" RadiusX="3" RadiusY="3">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                            <GradientStop Color="#AAFFFFFF" Offset="0"/>
+                                            <GradientStop Color="#77FFFFFF" Offset="0.375"/>
+                                            <GradientStop Color="#33FFFFFF" Offset="0.625"/>
+                                            <GradientStop Color="Transparent" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Grid>
+                        </Border>
+                        <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <Rectangle x:Name="DisabledElement" Fill="White" RadiusX="3" RadiusY="3" Opacity="0" />
+                        <Rectangle x:Name="FocusElement" Stroke="{TemplateBinding BorderBrush}" 
+                                                                StrokeThickness="2" Fill="#AAAAAAAA" RadiusX="3" RadiusY="3" Opacity="0"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:MapContentsConfigControl">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Margin" Value="15"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:MapContentsConfigControl">
+                    <ContentControl Foreground="{StaticResource DesignHostBackgroundTextBrush}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition MinHeight="120" MaxHeight="250" />
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <!--Row 1-->
+                            <TextBlock Text="{Binding ConverterParameter=LayerDisplayMode, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="3" VerticalAlignment="Center"/>
+                            <ComboBox Grid.Column="1" Margin="3" VerticalAlignment="Center"
+                                      ItemsSource="{Binding MapContentsModes, RelativeSource={RelativeSource TemplatedParent}}"
+                                      SelectedValue="{Binding Path=Mode, Mode=TwoWay}" SelectedValuePath="Mode"
+                                      DisplayMemberPath="DisplayName" Foreground="Black"/>
+                            
+                            <!--Row 2-->
+                            <CheckBox Grid.Row="1" Grid.ColumnSpan="2" Margin="3" Cursor="Hand"
+                                      Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                      Content="{Binding ConverterParameter=HideBaseMaps, Converter={StaticResource Localization}, Source={StaticResource Localization}}" IsChecked="{Binding Path=HideBasemaps, Mode=TwoWay}"/>
+                            <!--Row 3-->
+                            <CheckBox Grid.Row="2" Grid.ColumnSpan="2" Margin="3" Cursor="Hand" 
+                                      Foreground="{StaticResource DesignHostBackgroundTextBrush}" 
+                                      Content="{Binding ConverterParameter=ShowLayersVisibleAtScale, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                      IsChecked="{Binding Path=ShowLayersVisibleAtScale, Mode=TwoWay}"/>
+                            <!--Row 4-->
+                            <CheckBox Grid.Row="3" Grid.ColumnSpan="2" Margin="3" Cursor="Hand" 
+                                      Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                      Content="{Binding ConverterParameter=AllowLayerSelection, Converter={StaticResource Localization}, Source={StaticResource Localization}}" IsChecked="{Binding Path=AllowLayerSelection, Mode=TwoWay}"/>
+                            <!--Row 5-->
+                            <CheckBox Grid.Row="4" Grid.ColumnSpan="2" Margin="3" Cursor="Hand" 
+                                      Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                      Content="{Binding ConverterParameter=ExpandLayersOnAdd, Converter={StaticResource Localization}, Source={StaticResource Localization}}" IsChecked="{Binding Path=ExpandLayersOnAdd, Mode=TwoWay}"/>
+                            <!--Row 6-->
+                            <Grid Grid.Row="5" Grid.ColumnSpan="2" Margin="3" x:Name="panelExcludedLayers">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock  Text="{Binding ConverterParameter=ExcludedLayerList, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="3,6,3,3"></TextBlock>
+                                <ScrollViewer x:Name="SymbolsScrollViewer"
+                                              BorderThickness="1" 
+                                              Grid.Row="1" 
+                                              Padding="0"
+                                              Margin="0"
+                                              HorizontalAlignment="Stretch"
+                                              HorizontalContentAlignment="Stretch"
+                                              VerticalAlignment="Stretch"
+                                              VerticalContentAlignment="Stretch"
+                                              VerticalScrollBarVisibility="Auto" 
+                                              HorizontalScrollBarVisibility="Auto" 
+                                              Style="{StaticResource ThinBarScrollViewerStyle}">
+                                    <ListBox ItemsSource="{Binding Path=LayerInfos, Converter={StaticResource ReverseEnumerationConverter}}"
+											Foreground="Black" BorderThickness="0" Padding="0" Margin="0" >
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <CheckBox IsChecked="{Binding Path=IsExcluded, Mode=TwoWay}" Cursor="Hand"
+                                                      Visibility="{Binding Layer.(ext:LayerProperties.IsVisibleInMapContents), 
+                                                        Converter={StaticResource VisibilityConverter}}"
+                                                      Content="{Binding Path=Layer.(ext:MapApplication.LayerName)}"
+                                                      Margin="2" Foreground="Black">
+                                                    <i:Interaction.Behaviors>
+                                                        <local:IsExcludedLayerStateChanged />
+                                                    </i:Interaction.Behaviors>
+                                                </CheckBox>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                </ScrollViewer>
+                            </Grid>
+                            <!--Row 7-->
+							<Button Grid.Row="6" Grid.Column="1" Margin="3,5,3,3"  HorizontalAlignment="Right" Content="{Binding OkButtonText, RelativeSource={RelativeSource TemplatedParent}}" Height="25" MinWidth="50"
+                                Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                Command="{Binding OkButtonCommand,RelativeSource={RelativeSource TemplatedParent}}"/>
+                        </Grid>
+                    </ContentControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

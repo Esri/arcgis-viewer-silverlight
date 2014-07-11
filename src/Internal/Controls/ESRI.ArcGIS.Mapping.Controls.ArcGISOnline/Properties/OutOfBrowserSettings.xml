@@ -1,0 +1,12 @@
+<OutOfBrowserSettings ShortName="ArcGIS Explorer Online" EnableGPUAcceleration="False" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>ArcGIS Explorer Online - outside the web browser.</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="ArcGIS Explorer Online" Height="800" Width="1050" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="16,16">Images/e3-16.png</Icon>
+    <Icon Size="32,32">Images/e3-32.png</Icon>
+    <Icon Size="48,48">Images/e3-48.png</Icon>
+    <Icon Size="128,128">Images/e3-128.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>

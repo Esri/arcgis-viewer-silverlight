@@ -1,0 +1,2051 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mapping="http://schemas.esri.com/arcgis/mapping/2009"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"        
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Builder"
+    xmlns:localCtr="clr-namespace:ESRI.ArcGIS.Mapping.Builder.Controls"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:ctlPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls"
+    xmlns:esriControls="clr-namespace:ESRI.ArcGIS.Mapping.Controls;assembly=ESRI.ArcGIS.Mapping.Controls"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   xmlns:Layout="clr-namespace:ESRI.ArcGIS.Client.Application.Layout;assembly=ESRI.ArcGIS.Client.Application.Layout"
+    xmlns:search="clr-namespace:SearchTool;assembly=SearchTool.AddIns"
+   mc:Ignorable="d" x:Class="ESRI.ArcGIS.Mapping.Builder.MainPage" 
+    Loaded="MainPage_Loaded">
+    <i:Interaction.Triggers>
+        <!-- Show the loading overlay in the Viewer preview area when the Home page (CatalogScreen) is shown.
+        This hides the previous application's title area, tools, side panel, etc when a new Viewer is created. -->
+        <i:EventTrigger EventName="PropertyChanged" SourceObject="{Binding}">
+            <i:Interaction.Behaviors>
+                <ei:ConditionBehavior>
+                    <ei:ConditionalExpression>
+                        <ei:ComparisonCondition 
+                            LeftOperand="{Binding CatalogScreenVisibility}" 
+                            Operator="Equal" RightOperand="Visible" />
+                    </ei:ConditionalExpression>
+                </ei:ConditionBehavior>
+            </i:Interaction.Behaviors>
+            <ei:ChangePropertyAction TargetObject="{Binding LoadingOverlay}" 
+                                     PropertyName="Visibility" Value="Visible" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+        <Grid.Resources>
+            <mapping:UserManagement x:Key="UserManagement" />
+            <esriControls:ColorToSolidColorBrushConverter x:Key="ColorToSolidColorBrushConverter" />
+            <esriControls:InvertVisibilityConverter x:Key="InvertVisibilityConverter" />
+            <local:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter" />
+            <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+            <mapping:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <mapping:InvertBoolToVisibilityConverter x:Key="InvertBoolToVisibilityConverter" />
+            <mapping:InvertNullableBoolToVisibilityConverter x:Key="InvertNullableBoolToVisibilityConverter" />
+            <local:FindDescendantConverter x:Key="FindDescendantConverter" />
+            <esriControls:StringResourcesManager x:Key="ControlsLocalization" />
+            <local:StringResourcesManager x:Key="BuilderLocalization" />
+
+            <Color x:Key="DarkGradientBackgroundLightColor">#ee76a8d3</Color>
+            <Color x:Key="DarkGradientBackgroundDarkColor">#ee4b7ba7</Color>
+            <Color x:Key="DarkGradientBackgroundMediumColor">#ee5b8cb5</Color>
+
+            <SolidColorBrush x:Key="DarkGradientBackgroundDarkBrush" Color="{StaticResource DarkGradientBackgroundDarkColor}" />
+
+            <LinearGradientBrush x:Key="DarkGradientBackgroundBrush"
+                         EndPoint="0.5,1"
+                         StartPoint="0.5,0">
+                <LinearGradientBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform CenterX="0.5"
+                          CenterY="0.5"
+                          ScaleX="-1"
+                          ScaleY="1" />
+                        <SkewTransform AngleX="0"
+                         AngleY="0"
+                         CenterX="0.5"
+                         CenterY="0.5" />
+                        <RotateTransform CenterX="0.5"
+                           CenterY="0.5" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </LinearGradientBrush.RelativeTransform>
+                <GradientStop Color="{StaticResource DarkGradientBackgroundLightColor}" />
+                <GradientStop Color="{StaticResource DarkGradientBackgroundDarkColor}" Offset="1" />
+                <GradientStop Color="{StaticResource DarkGradientBackgroundMediumColor}" Offset="0.548"/>
+            </LinearGradientBrush>
+            
+            <!-- Style assigned to the SidePanelContainer -->
+            <Style x:Key="SidePanelTabControlStyle" TargetType="sdk:TabControl">
+                <Setter Property="IsTabStop" Value="False"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                            <GradientStop Color="#FFFEFEFE" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                            <GradientStop Color="#FF617584" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="sdk:TabControl">
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualStateGroup.Transitions>
+                                            <VisualTransition GeneratedDuration="0"/>
+                                        </VisualStateGroup.Transitions>
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualTop">
+                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="DisabledVisualBottom">
+                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="DisabledVisualLeft">
+                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="DisabledVisualRight">
+                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Grid x:Name="TemplateTop" Visibility="Collapsed">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <ctlPrimitives:TabPanel x:Name="TabPanelTop" Margin="2,2,2,-1" Canvas.ZIndex="1" Visibility="Collapsed"/>
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="0,0,3,3" MinWidth="10" MinHeight="10" Grid.Row="1">
+                                        <ContentPresenter x:Name="ContentTop" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+                                    </Border>
+                                    <Border x:Name="DisabledVisualTop" Background="#8CFFFFFF" CornerRadius="0,0,3,3" IsHitTestVisible="False" Opacity="0" Grid.Row="1" Grid.RowSpan="2" Canvas.ZIndex="1"/>
+                                </Grid>
+                                <Grid x:Name="TemplateBottom" Visibility="Collapsed">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <ctlPrimitives:TabPanel x:Name="TabPanelBottom" Margin="2,-1,2,2" Grid.Row="1" Canvas.ZIndex="1" Visibility="Collapsed"/>
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="3,3,0,0" MinWidth="10" MinHeight="10">
+                                        <ContentPresenter x:Name="ContentBottom" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+                                    </Border>
+                                    <Border x:Name="DisabledVisualBottom" Background="#8CFFFFFF" CornerRadius="3,3,0,0" IsHitTestVisible="False" Opacity="0" Canvas.ZIndex="1"/>
+                                </Grid>
+                                <Grid x:Name="TemplateLeft" Visibility="Collapsed">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ctlPrimitives:TabPanel x:Name="TabPanelLeft" Margin="2,2,-1,2" Canvas.ZIndex="1" Visibility="Collapsed"/>
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="1" CornerRadius="0,3,3,0" MinWidth="10" MinHeight="10">
+                                        <ContentPresenter x:Name="ContentLeft" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+                                    </Border>
+                                    <Border x:Name="DisabledVisualLeft" Background="#8CFFFFFF" Grid.Column="1" CornerRadius="0,3,3,0" IsHitTestVisible="False" Opacity="0" Canvas.ZIndex="1"/>
+                                </Grid>
+                                <Grid x:Name="TemplateRight" Visibility="Collapsed">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ctlPrimitives:TabPanel x:Name="TabPanelRight" Grid.Column="1" Margin="-1,2,2,2" Canvas.ZIndex="1" Visibility="Collapsed"/>
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="3,0,0,3" MinWidth="10" MinHeight="10">
+                                        <ContentPresenter x:Name="ContentRight" Cursor="{TemplateBinding Cursor}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
+                                    </Border>
+                                    <Border x:Name="DisabledVisualRight" Background="#8CFFFFFF" CornerRadius="3,0,0,3" IsHitTestVisible="False" Margin="0" Opacity="0" Canvas.ZIndex="1"/>
+                                </Grid>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Builder header area, including Builder toolbar, title, settings button, about button, and 
+             toggle button -->
+        <Grid x:Name="RibbonContainerGrid" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+               Visibility="{Binding BuilderScreenVisibility}">
+            <esriControls:Ribbon x:Name="RibbonControl" SelectionChanged="TabControl_SelectionChanged"
+                            View="{Binding View, ElementName=ViewerApplicationControl}" ConfigurationStore="{Binding View.ConfigurationStore, ElementName=ViewerApplicationControl}"                             
+                            InitialSelectedIndex="0"
+                            TitleText="{Binding TitleText}"
+							BackStageButtonToolTip="{Binding ConverterParameter=MoreSiteOptions, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                            BackStageButtonVisibility="Collapsed">
+                <esriControls:Ribbon.Template>
+                    <!-- Control template to specify appearance of the Builder toolbar.  Includes embedded 
+                         template for tab control, which includes positioning of title and buttons in upper
+                         right corner. -->
+                    
+                    <ControlTemplate TargetType="mapping:Ribbon">
+                        <Grid>
+                            <Border Background="{StaticResource BehindTabColorBrush}" />
+                            <sdk:TabControl x:Name="TabControl" Grid.Row="1" Padding="0" Margin="0" 
+                                        FontSize="11" 
+                                        BorderThickness="0"
+                                          ItemsSource="{TemplateBinding RibbonTabs}" 
+                                        SelectedIndex="{TemplateBinding InitialSelectedIndex}">
+                                <sdk:TabControl.Template>
+                                    <ControlTemplate TargetType="sdk:TabControl">
+                                        <Grid>
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualStateGroup.Transitions>
+                                                        <VisualTransition GeneratedDuration="0"/>
+                                                    </VisualStateGroup.Transitions>
+                                                    <VisualState x:Name="Normal"/>
+                                                    <VisualState x:Name="Disabled">
+                                                        <Storyboard>
+                                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualTop">
+                                                                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                            </DoubleAnimationUsingKeyFrames>
+                                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="DisabledVisualBottom">
+                                                                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                            </DoubleAnimationUsingKeyFrames>
+                                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="DisabledVisualLeft">
+                                                                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                            </DoubleAnimationUsingKeyFrames>
+                                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="DisabledVisualRight">
+                                                                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                            </DoubleAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                            <Grid x:Name="TemplateTop" Visibility="Collapsed">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                
+                                                <!-- backround color behind tabs and top row of content -->
+                                                <Border Background="{StaticResource BehindTabColorBrush}"
+                                                        Grid.ColumnSpan="4"/>
+                                                
+                                                <!-- Top left element -->
+                                                <ContentControl Content="{Binding TopLeftElement, 
+                                                    RelativeSource={RelativeSource AncestorType=mapping:Ribbon}}"
+                                                    VerticalAlignment="Center"/>
+
+                                                <toolkit:WrapPanel 
+                                                    Grid.Column="2" 
+                                                    HorizontalAlignment="Right"
+                                                    VerticalAlignment="Center"
+                                                    Margin="5">
+                                                    <toolkit:WrapPanel.Effect>
+                                                        <DropShadowEffect BlurRadius="5" Direction="-45" Color="Black" ShadowDepth="5" Opacity="0.595" />
+                                                    </toolkit:WrapPanel.Effect>
+                                                    
+                                                    <mapping:SignInStatusControl 
+                                                        Name="ViewerPreviewSignIn"
+                                                        Grid.Row="1" Grid.ColumnSpan="2"
+                                                        HorizontalAlignment="Right"
+                                                        VerticalAlignment="Stretch"
+                                                        Foreground="White"
+                                                        BorderBrush="{StaticResource MapCenterHyperlinkForegroundBrush}"
+                                                        Background="{StaticResource MapCenterBackgroundGradientBrush}"
+                                                        PortalUser="{Binding User, 
+                                                            Source={StaticResource UserManagement}}"
+                                                        Credentials="{Binding Credentials, 
+                                                            Source={StaticResource UserManagement}}"
+                                                        PortalName="{Binding PortalName,
+                                                            Source={StaticResource UserManagement}}"/>
+
+                                                    <Rectangle Width="1"
+                                                               VerticalAlignment="Stretch"
+                                                               Fill="White"
+                                                               Margin="6,6,0,6" />
+                                                    
+                                                    <HyperlinkButton  
+                                                        Name="SettingsHyperlink"
+                                                        Foreground="White" Style="{StaticResource NoFocusHyperlinkButton}"
+                                                        Content="{Binding ConverterParameter=Setting, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                        Margin="6,0,0,0"
+                                                        VerticalAlignment="Center"
+                                                        HorizontalAlignment="Right">
+                                                        <HyperlinkButton.Command>
+                                                            <local:ToggleSettingsPageVisibilityCommand />
+                                                        </HyperlinkButton.Command>
+                                                        <ToolTipService.ToolTip>
+                                                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                                <Border BorderBrush="Black"
+                                                                    BorderThickness="1"
+                                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                                    Margin="-8,-3">
+                                                                    <StackPanel Margin="6,8">
+                                                                        <TextBlock Text="{Binding ConverterParameter=ApplicationBuilderSettings, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                            FontWeight="Bold" />
+                                                                        <TextBlock Text="{Binding ConverterParameter=ApplicationBuilderSettingsDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                            Margin="0,3,0,0"
+                                                                            MaxWidth="350"
+                                                                            TextWrapping="Wrap" />
+                                                                    </StackPanel>
+                                                                </Border>
+                                                            </ToolTip>
+                                                        </ToolTipService.ToolTip>
+                                                    </HyperlinkButton>
+
+                                                    <mapping:RibbonButton 
+                                                        ImageSource="/ESRI.ArcGIS.Mapping.Builder;component/images/GettingStartedShow.png"
+                                                        Padding="7,5"
+                                                        Margin="3,0,0,0"
+                                                        Width="Auto"
+                                                        Orientation="Horizontal"
+                                                        HorizontalContentAlignment="Center"
+                                                        HorizontalAlignment="Right"
+                                                        VerticalAlignment="Center"
+                                                        Style="{StaticResource ToolbarButtonStyle}"
+                                                        ToolTipService.Placement="Bottom">
+                                                        <mapping:RibbonButton.Command>
+                                                            <local:ShowAboutInfoCommand />
+                                                        </mapping:RibbonButton.Command>
+                                                        <ToolTipService.ToolTip>
+                                                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                                <Border BorderBrush="Black"
+                                                                    BorderThickness="1"
+                                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                                    Margin="-8,-3">
+                                                                    <TextBlock Text="{Binding ConverterParameter=AboutTitle, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                        FontWeight="Bold"
+                                                                        Margin="6,8" />
+                                                                </Border>
+                                                            </ToolTip>
+                                                        </ToolTipService.ToolTip>
+                                                    </mapping:RibbonButton>
+
+                                                    <!-- top right element -->
+                                                    <!--<ContentControl Content="{Binding TopRightElement, 
+                                                    RelativeSource={RelativeSource AncestorType=mapping:Ribbon}}" 
+                                                    Grid.Column="2" 
+                                                    HorizontalAlignment="Right"/>-->
+
+                                                    <!-- collapse toolbar button -->
+                                                    <mapping:RibbonButton 
+                                                        Orientation="Horizontal"
+                                                        HorizontalContentAlignment="Center"
+                                                        HorizontalAlignment="Center"
+                                                        ImageSource="/Images/Ribbon/pin.png"
+                                                        ToolTipService.Placement="Bottom"
+                                                        VerticalAlignment="Center"
+                                                        Width="Auto"
+                                                        Padding="9,7"
+                                                        Margin="-4,0,0,0"
+                                                        Style="{StaticResource ToolbarButtonStyle}"
+                                                        Visibility="{Binding RibbonVisibility,
+                                                            RelativeSource={RelativeSource AncestorType=mapping:Ribbon}}">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <ei:ChangePropertyAction 
+                                                                TargetObject="{Binding Path=.,
+                                                                    RelativeSource={RelativeSource AncestorType=mapping:Ribbon}}"
+                                                                PropertyName="RibbonVisibility"
+                                                                Value="Collapsed"/>
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                        <ToolTipService.ToolTip>
+                                                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                                <Border BorderBrush="Black"
+                                                                BorderThickness="1"
+                                                                Background="{StaticResource TooltipBackgroundBrush}"
+                                                                Margin="-8,-3">
+                                                                    <StackPanel Margin="6,8">
+                                                                        <TextBlock Text="{Binding ConverterParameter=ToggleToolbar, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                               FontWeight="Bold" />
+                                                                        <TextBlock Text="{Binding ConverterParameter=ToggleToolbarDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                               Margin="0,3,0,0"
+                                                               MaxWidth="350"
+                                                               TextWrapping="Wrap" />
+                                                                    </StackPanel>
+                                                                </Border>
+                                                            </ToolTip>
+                                                        </ToolTipService.ToolTip>
+                                                    </mapping:RibbonButton>
+
+                                                    <!-- Expand toolbar button -->
+                                                    <mapping:RibbonButton 
+                                                    Orientation="Horizontal"
+                                                    HorizontalContentAlignment="Center"
+                                                    HorizontalAlignment="Center"
+                                                    ImageSource="/Images/Ribbon/pinRotated.png"
+                                                    ToolTipService.Placement="Bottom"
+                                                    VerticalAlignment="Center"
+                                                    Width="Auto"
+                                                    Padding="7,9"
+                                                    Margin="-4,0,0,0"
+                                                    Style="{StaticResource ToolbarButtonStyle}"
+                                                    Grid.Column="3"
+                                                    Visibility="{Binding RibbonVisibility,
+                                                        RelativeSource={RelativeSource AncestorType=mapping:Ribbon},
+                                                        Converter={StaticResource InvertVisibilityConverter}}"
+                                                    RenderTransformOrigin="0.5, 0.5">
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="Click">
+                                                                <ei:ChangePropertyAction 
+                                                                TargetObject="{Binding Path=.,
+                                                                    RelativeSource={RelativeSource AncestorType=mapping:Ribbon}}"
+                                                                PropertyName="RibbonVisibility"
+                                                                Value="Visible"/>
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
+                                                        <ToolTipService.ToolTip>
+                                                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                                <Border BorderBrush="Black"
+                                                                BorderThickness="1"
+                                                                Background="{StaticResource TooltipBackgroundBrush}"
+                                                                Margin="-8,-3">
+                                                                    <StackPanel Margin="6,8">
+                                                                        <TextBlock Text="{Binding ConverterParameter=ToggleToolbar, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                               FontWeight="Bold" />
+                                                                        <TextBlock Text="{Binding ConverterParameter=ToggleToolbarDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                               Margin="0,3,0,0"
+                                                               MaxWidth="350"
+                                                               TextWrapping="Wrap" />
+                                                                    </StackPanel>
+                                                                </Border>
+                                                            </ToolTip>
+                                                        </ToolTipService.ToolTip>
+                                                    </mapping:RibbonButton>
+
+                                                </toolkit:WrapPanel>
+
+                                                <!-- tabs -->
+                                                <ctlPrimitives:TabPanel 
+                                                    x:Name="TabPanelTop" Grid.Column="1"
+                                                    Visibility="{Binding RibbonVisibility,
+                                                        RelativeSource={RelativeSource AncestorType=mapping:Ribbon}}"
+                                                    Margin="0" Canvas.ZIndex="1" HorizontalAlignment="Center"
+                                                    VerticalAlignment="Bottom"/>
+                                                
+                                                <!-- tab content -->
+                                                <Border x:Name="TabContent" BorderBrush="{TemplateBinding BorderBrush}" 
+                                                    Visibility="{Binding RibbonVisibility,
+                                                        RelativeSource={RelativeSource AncestorType=mapping:Ribbon}}"
+									                BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" 
+									                CornerRadius="0,0,3,3" 
+									                MinWidth="10" MinHeight="10" 
+									                Grid.Row="1"
+                                                        Grid.ColumnSpan="4">
+                                                    <ContentPresenter x:Name="ContentTop" Cursor="{TemplateBinding Cursor}" 
+                                                  HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
+                                                  Margin="{TemplateBinding Padding}" 
+                                                  VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                                  Height="108"/>
+                                                </Border>
+                                                <Border x:Name="DisabledVisualTop" Background="#8CFFFFFF" CornerRadius="0,0,3,3" IsHitTestVisible="False" Opacity="0" Grid.Row="1" Grid.RowSpan="2" Canvas.ZIndex="1"/>
+                                            </Grid>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </sdk:TabControl.Template>
+                            </sdk:TabControl>
+
+                            <Button x:Name="BackStageButton"
+                                Grid.Row="1"
+                                Visibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BackStageButtonVisibility}"
+                                Width="48"
+                                Height="25"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Margin="0"
+                                Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BackStageButtonContents}"
+                                Command="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BackStageButtonCommand}">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Grid Name="RootGrid"
+                                          Margin="0,1,0,1">
+                                            <Grid.Resources>
+                                                <Color x:Key="MapCenterButtonOutlineColor">#FF204AA2</Color>
+                                                <Color x:Key="BlueGradientNormalColor1">#FF4386E3</Color>
+                                                <Color x:Key="BlueGradientNormalColor2">#FF2A64B6</Color>
+                                                <Color x:Key="BlueGradientNormalColor3">#FF4386E3</Color>
+
+                                                <Color x:Key="BlueGradientMouseOverColor1">#FF4386E3</Color>
+                                                <Color x:Key="BlueGradientMouseOverColor2">#FF2A64B6</Color>
+                                                <Color x:Key="BlueGradientMouseOverColor3">#FF68ABF0</Color>
+
+                                                <Color x:Key="BlueGradientPressedColor1">#FF4386E3</Color>
+                                                <Color x:Key="BlueGradientPressedColor2">#FF2A64B6</Color>
+                                                <Color x:Key="BlueGradientPressedColor3">#FF68ABF0</Color>
+                                            </Grid.Resources>
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="InteractionState">
+                                                    <VisualState x:Name="Normal">
+                                                        <Storyboard>
+                                                            <ColorAnimation Storyboard.TargetName="LeftOuterBorderBrush"
+                                                                        Storyboard.TargetProperty="Color"
+                                                                        To="{StaticResource MapCenterButtonOutlineColor}"
+                                                                        Duration="00:00:00.2" />
+                                                            <ColorAnimation Storyboard.TargetName="RightOuterBorderBrush"
+                                                                        Storyboard.TargetProperty="Color"
+                                                                        To="{StaticResource MapCenterButtonOutlineColor}"
+                                                                        Duration="00:00:00.2" />
+                                                            <ColorAnimation Storyboard.TargetName="MiddleOuterBorderBrush"
+                                                                        Storyboard.TargetProperty="Color"
+                                                                        To="{StaticResource MapCenterButtonOutlineColor}"
+                                                                        Duration="00:00:00.2" />
+                                                            <ColorAnimation Storyboard.TargetName="BackgroundBrush1"
+                                                                        Storyboard.TargetProperty="Color"
+                                                                        To="{StaticResource BlueGradientNormalColor1}"
+                                                                        Duration="00:00:00.2" />
+                                                            <ColorAnimation Storyboard.TargetName="BackgroundBrush2"
+                                                                        Storyboard.TargetProperty="Color"
+                                                                        To="{StaticResource BlueGradientNormalColor2}"
+                                                                        Duration="00:00:00.2" />
+                                                            <ColorAnimation Storyboard.TargetName="BackgroundBrush3"
+                                                                        Storyboard.TargetProperty="Color"
+                                                                        To="{StaticResource BlueGradientNormalColor3}"
+                                                                        Duration="00:00:00.2" />
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                    <VisualState x:Name="MouseOver">
+                                                        <Storyboard>
+                                                            <ColorAnimation Storyboard.TargetName="LeftOuterBorderBrush"
+                                                                        Storyboard.TargetProperty="Color"
+                                                                        To="{StaticResource MapCenterButtonOutlineColor}"
+                                                                        Duration="0" />
+                                                            <ColorAnimation Storyboard.TargetName="RightOuterBorderBrush"
+                                                                        Storyboard.TargetProperty="Color"
+                                                                        To="{StaticResource MapCenterButtonOutlineColor}"
+                                                                        Duration="0" />
+                                                            <ColorAnimation Storyboard.TargetName="MiddleOuterBorderBrush"
+                                                                        Storyboard.TargetProperty="Color"
+                                                                        To="{StaticResource MapCenterButtonOutlineColor}"
+                                                                        Duration="0" />
+                                                            <ColorAnimation Storyboard.TargetName="BackgroundBrush1"
+                                                                        Storyboard.TargetProperty="Color"
+                                                                        To="{StaticResource BlueGradientMouseOverColor1}"
+                                                                        Duration="00:00:00.2" />
+                                                            <ColorAnimation Storyboard.TargetName="BackgroundBrush2"
+                                                                        Storyboard.TargetProperty="Color"
+                                                                        To="{StaticResource BlueGradientMouseOverColor2}"
+                                                                        Duration="00:00:00.2" />
+                                                            <ColorAnimation Storyboard.TargetName="BackgroundBrush3"
+                                                                        Storyboard.TargetProperty="Color"
+                                                                        To="{StaticResource BlueGradientMouseOverColor3}"
+                                                                        Duration="00:00:00.2" />
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="3" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="3" />
+                                            </Grid.ColumnDefinitions>
+                                            <!-- Background -->
+                                            <Rectangle Grid.ColumnSpan="3" Margin="1,1,1,0">
+                                                <Rectangle.Fill>
+                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                        <GradientStop x:Name="BackgroundBrush1" Offset="0" />
+                                                        <GradientStop x:Name="BackgroundBrush2" Offset="0.5" />
+                                                        <GradientStop x:Name="BackgroundBrush3" Offset="1" />
+                                                    </LinearGradientBrush>
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+                                            <!-- Left -->
+                                            <Rectangle Grid.Column="0"
+                                                   Width="1"
+                                                   HorizontalAlignment="Left"
+                                                   Margin="-1,3,0,1"
+                                                   Name="LeftShadow"
+                                                   Visibility="Collapsed">
+                                                <Rectangle.Fill>
+                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                        <GradientStop Offset="0" Color="Transparent" />
+                                                        <GradientStop Offset="0.6" Color="#08000000" />
+                                                    </LinearGradientBrush>
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+                                            <Path Grid.Column="0" Name="LeftOuterBorder" Data="M0.5,22.25 L0.5,21.5 0.5,3.5 3.5,0.5" Margin="0,-0.5,-1,0.75">
+                                                <Path.Stroke>
+                                                    <SolidColorBrush x:Name="LeftOuterBorderBrush" />
+                                                </Path.Stroke>
+                                            </Path>
+                                            <!-- Middle -->
+                                            <Border Grid.Column="1" Name="Middle" BorderThickness="0,1,0,0">
+                                                <Border.BorderBrush>
+                                                    <SolidColorBrush x:Name="MiddleOuterBorderBrush" />
+                                                </Border.BorderBrush>
+                                                <ContentPresenter Content="{TemplateBinding Content}" />
+                                            </Border>
+                                            <!-- Right -->
+                                            <Path Grid.Column="2"
+                                              Name="RightOuterBorder"
+                                              Data="M3.5,22.3125 L3.5,21.5 3.5,3.5 0.5,0.5"
+                                              Margin="-1,-0.5,0,0.688">
+                                                <Path.Stroke>
+                                                    <SolidColorBrush x:Name="RightOuterBorderBrush" />
+                                                </Path.Stroke>
+                                            </Path>
+                                            <Rectangle Grid.Column="2"
+                                                   Width="1"
+                                                   HorizontalAlignment="Right"
+                                                   Margin="0,3,-1,1"
+                                                   Name="RightShadow1"
+                                                   Visibility="Collapsed">
+                                                <Rectangle.Fill>
+                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                        <GradientStop Offset="0" Color="#11000000" />
+                                                        <GradientStop Offset="1" Color="#15000000" />
+                                                    </LinearGradientBrush>
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+                                            <Rectangle Grid.Column="2"
+                                                   Width="1"
+                                                   HorizontalAlignment="Right"
+                                                   Margin="0,3,-2,1"
+                                                   Name="RightShadow2"
+                                                   Visibility="Collapsed">
+                                                <Rectangle.Fill>
+                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                        <GradientStop Offset="0" Color="Transparent" />
+                                                        <GradientStop Offset="0.6" Color="#09000000" />
+                                                    </LinearGradientBrush>
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Button.Template>
+                                <ToolTipService.ToolTip>
+                                    <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}"
+                                         Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BackStageButtonToolTip}" />
+                                </ToolTipService.ToolTip>
+                            </Button>
+                        </Grid>
+                    </ControlTemplate>
+                </esriControls:Ribbon.Template>
+                <mapping:Ribbon.Resources>
+                    <mapping:VisibilityBasedOnLayerContextConverter x:Key="VisibilityBasedOnLayerContextConverter" />
+                    <mapping:VisibilityBasedOnGraphicsLayerContextConverter x:Key="VisibilityBasedOnGraphicsLayerContextConverter" />
+                </mapping:Ribbon.Resources>
+                <esriControls:Ribbon.RibbonTabs>
+                    <esriControls:RibbonTabControl Tag="ESRI.ArcGIS.Mapping.Tabs.Application" 
+                                        Header="{Binding ConverterParameter=Map, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                              Style="{StaticResource LeftTabStyle}">
+                            <ContentControl FontSize="9">
+                            <Grid Opacity="0">
+                                <i:Interaction.Triggers>
+                                    <!-- Show the ribbon area on ViewLoaded -->
+                                    <i:EventTrigger EventName="ViewLoaded" SourceObject="{Binding ElementName=ViewerApplicationControl}">
+                                        <ei:ChangePropertyAction PropertyName="Opacity" Value="1" />
+                                    </i:EventTrigger>
+                                    <!-- Hide the ribbon area when the Home page (CatalogScreen) is shown -->
+                                    <i:EventTrigger EventName="PropertyChanged" SourceObject="{Binding}">
+                                        <i:Interaction.Behaviors>
+                                            <ei:ConditionBehavior>
+                                                <ei:ConditionalExpression>
+                                                    <ei:ComparisonCondition 
+                                                        LeftOperand="{Binding CatalogScreenVisibility}" 
+                                                        Operator="Equal" RightOperand="Visible" />
+                                                </ei:ConditionalExpression>
+                                            </ei:ConditionBehavior>
+                                        </i:Interaction.Behaviors>
+                                        <ei:ChangePropertyAction PropertyName="Opacity" Value="0" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" x:Name="MapTabStackPanel"
+                            Visibility="{Binding ElementName=ViewerApplicationControl, Path=View.Map.(mapping:MapProperties.WebMapSettings).Linked, Converter={StaticResource InvertNullableBoolToVisibilityConverter}}">
+                                    <esriControls:RibbonGroupControl
+                                    Header="{Binding ConverterParameter=Configure, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"                                
+                                    Style="{StaticResource GroupStyle}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <esriControls:RibbonDropDownButton x:Name="BaseMapMenuButton" 
+                                                     MinWidth="60"
+                                                    ImageSource="/Images/ribbon/basemap32.png"
+                                                    LabelText="{Binding ConverterParameter=Basemap, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                    ToolTipService.Placement="Bottom"
+                                                    Style="{StaticResource ToolbarDropDownButtonStyle}">
+                                                <esriControls:RibbonDropDownButton.PopupContent>
+                                                    <Border Background="{StaticResource DesignHostBackgroundBrush}">
+                                                        <ScrollViewer BorderThickness="0"
+                                                                  VerticalScrollBarVisibility="Auto"
+                                                                  HorizontalScrollBarVisibility="Auto"
+                                                                  Padding="0"
+                                                                  Style="{StaticResource DesignHostScrollViewerStyle}">
+                                                            <esriControls:BaseMapGallery BaseMaps="{Binding ConfigurationStore.BaseMaps}"
+                                                                                     FontSize="10"
+                                                                                     Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                                                                     DisallowConfigureMode="True"
+                                                                                     Template="{StaticResource BuilderBasemapGalleryTemplate}"/>
+                                                        </ScrollViewer>
+                                                    </Border>
+                                                </esriControls:RibbonDropDownButton.PopupContent>
+                                                <ToolTipService.ToolTip>
+                                                    <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                        <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                            <StackPanel Margin="6,8">
+                                                                <TextBlock Text="{Binding ConverterParameter=Basemap, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                                                    FontWeight="Bold" />
+                                                                <TextBlock Text="{Binding ConverterParameter=BasemapGalleryDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                    Margin="0,3,0,0" />
+                                                            </StackPanel>
+                                                        </Border>
+                                                    </ToolTip>
+                                                </ToolTipService.ToolTip>
+                                            </esriControls:RibbonDropDownButton>
+
+                                            <esriControls:RibbonButton
+                                                    ImageSource="/Images/Ribbon/ConfigureLayers32.png"
+                                                    LabelText="{Binding ConverterParameter=Layers, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                    MinWidth="60"
+                                                    ToolTipService.Placement="Bottom" 
+                                                    Click="ToggleMapContents_Click"
+                                                    Style="{StaticResource ToolbarButtonStyle}"
+                                                    >
+                                                <ToolTipService.ToolTip>
+                                                    <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                        <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                            <StackPanel Margin="6,8">
+                                                                <TextBlock Text="{Binding ConverterParameter=ConfigureLayers, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   FontWeight="Bold" />
+                                                                <TextBlock Text="{Binding ConverterParameter=ConfigureLayersDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   Margin="0,3,0,0" />
+                                                            </StackPanel>
+                                                        </Border>
+                                                    </ToolTip>
+                                                </ToolTipService.ToolTip>
+                                            </esriControls:RibbonButton>
+                                        </StackPanel>
+                                    </esriControls:RibbonGroupControl>
+
+                                    <esriControls:RibbonGroupControl 
+                                    Header="{Binding ConverterParameter=AddContent, Converter={StaticResource Localization}, Source={StaticResource Localization}}"                                
+                                    Style="{StaticResource GroupStyle}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <esriControls:RibbonButton x:Name="BrowseMenuButton" 
+                                                    ImageSource="/ESRI.ArcGIS.Mapping.Controls;component/Images/toolbar/Server32.png"
+                                                    LabelText="{Binding ConverterParameter=BrowseNoEllipsis, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                    MinWidth="60"
+                                                    ToolTipService.Placement="Bottom" 
+                                                    Click="ToggleAddContent_Click"
+                                                    Style="{StaticResource ToolbarButtonStyle}">
+                                                <ToolTipService.ToolTip>
+                                                    <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                        <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                            <StackPanel Margin="6,8">
+                                                                <TextBlock Text="{Binding ConverterParameter=BrowseNoEllipsis, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                                                   FontWeight="Bold" />
+                                                                <TextBlock Text="{Binding ConverterParameter=ToggleBrowseDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                       Margin="0,3,0,0"
+                                                                       MaxWidth="350"
+                                                                       TextWrapping="Wrap" />
+                                                            </StackPanel>
+                                                        </Border>
+                                                    </ToolTip>
+                                                </ToolTipService.ToolTip>
+                                            </esriControls:RibbonButton>
+
+                                            <esriControls:RibbonButton x:Name="SearchMenuButton" 
+                                                    ImageSource="/ESRI.ArcGIS.Mapping.Controls;component/Images/toolbar/Find32.png"
+                                                    LabelText="{Binding ConverterParameter=SearchNoEllipsis, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                    MinWidth="60"
+                                                    ToolTipService.Placement="Bottom" 
+                                                    Click="ToggleSearch_Click"
+                                                    Style="{StaticResource ToolbarButtonStyle}">
+                                                <ToolTipService.ToolTip>
+                                                    <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                        <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                            <StackPanel Margin="6,8">
+                                                                <TextBlock Text="{Binding ConverterParameter=SearchNoEllipsis, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                                                   FontWeight="Bold" />
+                                                                <TextBlock Text="{Binding ConverterParameter=ToggleSearchDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                       Margin="0,3,0,0"
+                                                                       MaxWidth="350"
+                                                                       TextWrapping="Wrap" />
+                                                            </StackPanel>
+                                                        </Border>
+                                                    </ToolTip>
+                                                </ToolTipService.ToolTip>
+                                            </esriControls:RibbonButton>
+
+                                            <esriControls:RibbonButton x:Name="GeoRSSMenuButton" 
+                                                    ImageSource="/Images/Ribbon/rss32.png"
+                                                    LabelText="{Binding ConverterParameter=GeoRSS, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                    MinWidth="60"
+                                                    ToolTipService.Placement="Bottom" 
+                                                    Style="{StaticResource ToolbarButtonStyle}"
+                                                    >
+                                                <esriControls:RibbonButton.Command>
+                                                    <esriControls:AddGeoRssFeedCommand />
+                                                </esriControls:RibbonButton.Command>
+                                                <ToolTipService.ToolTip>
+                                                    <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                        <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                            <StackPanel Margin="6,8">
+                                                                <TextBlock Text="{Binding ConverterParameter=GeoRSS, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                                                   FontWeight="Bold" />
+                                                                <TextBlock Text="{Binding ConverterParameter=AddGeoRSSDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                       Margin="0,3,0,0"
+                                                                       MaxWidth="350"
+                                                                       TextWrapping="Wrap" />
+                                                            </StackPanel>
+                                                        </Border>
+                                                    </ToolTip>
+                                                </ToolTipService.ToolTip>
+                                            </esriControls:RibbonButton>
+                                        </StackPanel>
+                                    </esriControls:RibbonGroupControl>
+
+                                </StackPanel>
+                                <TextBlock Text="{Binding ConverterParameter=MapConfigurationUnavailable, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                       FontSize="12" Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                        Visibility="{Binding ElementName=ViewerApplicationControl, Path=View.Map.(mapping:MapProperties.WebMapSettings).Linked, Converter={StaticResource BoolToVisibilityConverter}}"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"
+                                           MaxWidth="350"/>
+                            </Grid>                                
+                        </ContentControl>
+                                
+                    </esriControls:RibbonTabControl>
+
+                    <esriControls:RibbonTabControl Tag="ESRI.ArcGIS.Mapping.Tabs.Tools" 
+                                        Header="{Binding ConverterParameter=Tools, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                              Style="{StaticResource TabStyle}">
+                        <ContentControl FontSize="9">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <esriControls:RibbonGroupControl Header="{Binding ConverterParameter=Toolbar, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                            Style="{StaticResource GroupStyle}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <esriControls:RibbonButton x:Name="AddCustomMenuButton"
+                                            ImageSource="/Images/Ribbon/AddTool32.png"
+                                            LabelText="{Binding ConverterParameter=AddTool, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                            ToolTipService.Placement="Bottom" 
+                                            MinWidth="60"
+                                            Style="{StaticResource ToolbarButtonStyle}">
+                                            <esriControls:RibbonButton.Command>
+                                                <local:ShowAddToolDialogCommand />
+                                            </esriControls:RibbonButton.Command>
+                                            <ToolTipService.ToolTip>
+                                                <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                    <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                    <StackPanel Margin="6,8">
+                                                        <TextBlock Text="{Binding ConverterParameter=AddTool, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding ConverterParameter=AddToolDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                       Margin="0,3,0,0"
+                                                                       MaxWidth="350"
+                                                                       TextWrapping="Wrap" />
+                                                    </StackPanel>
+                                                </Border>
+                                                </ToolTip>
+                                            </ToolTipService.ToolTip>
+                                        </esriControls:RibbonButton>
+
+                                        <esriControls:RibbonButton x:Name="AddGPMenuButton"
+                                            ImageSource="/Images/Ribbon/AddGeoprocessing32.png"
+                                            LabelText="{Binding ConverterParameter=AddGP, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                            ToolTipService.Placement="Bottom" 
+                                            MinWidth="60"
+                                            Style="{StaticResource ToolbarButtonStyle}">
+                                            <esriControls:RibbonButton.Command>
+                                                <local:AddGPCommand />
+                                            </esriControls:RibbonButton.Command>
+                                            <ToolTipService.ToolTip>
+                                                <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                    <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                    <StackPanel Margin="6,8">
+                                                        <TextBlock Text="{Binding ConverterParameter=AddGeoprocessing, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding ConverterParameter=AddGeoprocessingDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                       Margin="0,3,0,0"
+                                                                       MaxWidth="350"
+                                                                       TextWrapping="Wrap" />
+                                                    </StackPanel>
+                                                </Border>
+                                                </ToolTip>
+                                            </ToolTipService.ToolTip>
+                                        </esriControls:RibbonButton>
+
+
+                                        <esriControls:RibbonButton x:Name="ToolbarMenuButton"
+                                            ImageSource="/Images/Ribbon/ConfigureRibbon32.png"
+                                            LabelText="{Binding ConverterParameter=Manage, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                            ToolTipService.Placement="Bottom" 
+                                            MinWidth="60"
+                                            Style="{StaticResource ToolbarButtonStyle}">
+                                            <esriControls:RibbonButton.Command>
+                                                <local:ManageToolbarCommand />
+                                            </esriControls:RibbonButton.Command>
+                                            <ToolTipService.ToolTip>
+                                                <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                    <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                    <StackPanel Margin="6,8">
+                                                        <TextBlock Text="{Binding ConverterParameter=ManageToolbars, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding ConverterParameter=ManageToolbarsDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                       Margin="0,3,0,0"
+                                                                       MaxWidth="350"
+                                                                       TextWrapping="Wrap" />
+                                                    </StackPanel>
+                                                </Border>
+                                                </ToolTip>
+                                            </ToolTipService.ToolTip>
+                                        </esriControls:RibbonButton>
+                                    </StackPanel>
+                                </esriControls:RibbonGroupControl>
+                                <esriControls:RibbonGroupControl Header="{Binding ConverterParameter=Controls, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                            Style="{StaticResource GroupStyle}">
+                                    <esriControls:RibbonButton x:Name="ConfigureControlsMenuButton"
+                                            ImageSource="/Images/Ribbon/ConfigureControls32.png"
+                                            LabelText="{Binding ConverterParameter=Configure, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                            ToolTipService.Placement="Bottom"
+                                            Style="{StaticResource ToolbarButtonStyle}"                                             
+                                            MinWidth="60">
+                                        <esriControls:RibbonButton.Command>
+                                            <local:ConfigureControlsCommand />
+                                        </esriControls:RibbonButton.Command>
+                                        <ToolTipService.ToolTip>
+                                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                <Border BorderBrush="Black"
+                                                        BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                <StackPanel Margin="6,8">
+                                                    <TextBlock Text="{Binding ConverterParameter=ConfigureControls, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   FontWeight="Bold" />
+                                                    <TextBlock Text="{Binding ConverterParameter=ConfigureControlsDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   Margin="0,3,0,0"
+                                                                   MaxWidth="350"
+                                                                   TextWrapping="Wrap" />
+                                                </StackPanel>
+                                            </Border>
+                                            </ToolTip>
+                                        </ToolTipService.ToolTip>
+                                    </esriControls:RibbonButton>
+                                </esriControls:RibbonGroupControl>
+
+                                <esriControls:RibbonGroupControl Header="{Binding ConverterParameter=Behaviors, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                            Style="{StaticResource GroupStyle}">
+                                    <StackPanel Orientation="Horizontal">
+
+                                        <esriControls:RibbonButton x:Name="AddBehaviorMenuButton"
+                                            ImageSource="/Images/Ribbon/ConfigurePlus32.png"
+                                                          LabelText="{Binding ConverterParameter=Add, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                            ToolTipService.Placement="Bottom" 
+                                            MinWidth="60"
+                                            Style="{StaticResource ToolbarButtonStyle}">
+                                            <esriControls:RibbonButton.Command>
+                                                <esriControls:AddMapBehaviorCommand />
+                                            </esriControls:RibbonButton.Command>
+                                            <ToolTipService.ToolTip>
+                                                <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                    <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                    <StackPanel Margin="6,8">
+                                                        <TextBlock Text="{Binding ConverterParameter=AddBehavior, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding ConverterParameter=AddBehaviorDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                       Margin="0,3,0,0"
+                                                                       MaxWidth="350"
+                                                                       TextWrapping="Wrap" />
+                                                    </StackPanel>
+                                                </Border>
+                                                </ToolTip>
+                                            </ToolTipService.ToolTip>
+                                        </esriControls:RibbonButton>
+
+                                        <esriControls:RibbonButton x:Name="ManageBehaviorMenuButton"
+                                            ImageSource="/Images/Ribbon/Configure32.png"
+                                            LabelText="{Binding ConverterParameter=Manage, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                            ToolTipService.Placement="Bottom" 
+                                            MinWidth="60"
+                                            Style="{StaticResource ToolbarButtonStyle}">
+                                            <esriControls:RibbonButton.Command>
+                                                <esriControls:ShowMapBehaviorsListCommand IsEdit="True"/>
+                                            </esriControls:RibbonButton.Command>
+                                            <ToolTipService.ToolTip>
+                                                <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                    <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                    <StackPanel Margin="6,8">
+                                                        <TextBlock Text="{Binding ConverterParameter=ManageBehaviors, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding ConverterParameter=ManageBehaviorsDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                       Margin="0,3,0,0"
+                                                                       MaxWidth="350"
+                                                                       TextWrapping="Wrap" />
+                                                    </StackPanel>
+                                                </Border>
+                                                </ToolTip>
+                                            </ToolTipService.ToolTip>
+                                        </esriControls:RibbonButton>
+                                    </StackPanel>
+                                </esriControls:RibbonGroupControl>
+
+                            </StackPanel>
+                        </ContentControl>
+                    </esriControls:RibbonTabControl>
+
+                    <esriControls:RibbonTabControl Tag="ESRI.ArcGIS.Mapping.Tabs.Theme" 
+                                              Header="{Binding ConverterParameter=Layout, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                              Style="{StaticResource RightTabStyle}">
+                        <ContentControl FontSize="9">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                                <esriControls:RibbonGroupControl Header="{Binding ConverterParameter=Branding, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                            Style="{StaticResource GroupStyle}">
+                                    <StackPanel Orientation="Horizontal">
+
+                                        <esriControls:RibbonButton x:Name="ChangeLogoMenuButton"
+                                            ImageSource="/ESRI.ArcGIS.Mapping.Builder;component/images/ChooseLogo32.png"
+                                            LabelText="{Binding ConverterParameter=Logo, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                            ToolTipService.Placement="Bottom" 
+                                            MinWidth="60"
+                                            Style="{StaticResource ToolbarButtonStyle}">
+                                            <esriControls:RibbonButton.Command>
+                                                <local:ChangeLogoIconCommand />
+                                            </esriControls:RibbonButton.Command>
+                                            <ToolTipService.ToolTip>
+                                                <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                    <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                    <StackPanel Margin="6,8">
+                                                        <TextBlock Text="{Binding ConverterParameter=ChangeLogo, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding ConverterParameter=ChangeLogoDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                       Margin="0,3,0,0"
+                                                                       MaxWidth="350"
+                                                                       TextWrapping="Wrap" />
+                                                    </StackPanel>
+                                                </Border>
+                                                </ToolTip>
+                                            </ToolTipService.ToolTip>
+                                        </esriControls:RibbonButton>
+
+                                        <esriControls:RibbonButton x:Name="TitleLinksMenuButton"
+                                            ImageSource="/Images/Ribbon/Rename32.png"
+                                            LabelText="{Binding ConverterParameter=TitleAndLinks, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                            ToolTipService.Placement="Bottom" 
+                                            MinWidth="60"
+                                            Style="{StaticResource ToolbarButtonStyle}">
+                                            <esriControls:RibbonButton.Command>
+                                                <local:ManageApplicationPropertiesCommand />
+                                            </esriControls:RibbonButton.Command>
+                                            <ToolTipService.ToolTip>
+                                                <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                    <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                    <StackPanel Margin="6,8">
+                                                        <TextBlock Text="{Binding ConverterParameter=ChangeTitleAndLinks, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding ConverterParameter=ChangeTitleAndLinksDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                       Margin="0,3,0,0"
+                                                                       MaxWidth="350"
+                                                                       TextWrapping="Wrap" />
+                                                    </StackPanel>
+                                                </Border>
+                                                </ToolTip>
+                                            </ToolTipService.ToolTip>
+                                        </esriControls:RibbonButton>
+                                    </StackPanel>
+                                </esriControls:RibbonGroupControl>
+
+                                <esriControls:RibbonGroupControl Header="{Binding ConverterParameter=Layout, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                            Style="{StaticResource GroupStyle}">
+                                    <esriControls:RibbonButton x:Name="LayoutMenuButton"
+                                            ImageSource="/ESRI.ArcGIS.Mapping.Builder;component/images/Layout32.png"
+                                            LabelText="{Binding ConverterParameter=Change, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                            ToolTipService.Placement="Bottom"
+                                            Style="{StaticResource ToolbarButtonStyle}"                                             
+                                            MinWidth="60">
+                                        <esriControls:RibbonButton.Command>
+                                            <local:ShowLayoutPickerCommand />
+                                        </esriControls:RibbonButton.Command>
+                                        <ToolTipService.ToolTip>
+                                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                <Border BorderBrush="Black"
+                                                        BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                <StackPanel Margin="6,8">
+                                                    <TextBlock Text="{Binding ConverterParameter=ChangeLayout, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   FontWeight="Bold" />
+                                                    <TextBlock Text="{Binding ConverterParameter=ChangeLayoutDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   Margin="0,3,0,0"
+                                                                   MaxWidth="350"
+                                                                   TextWrapping="Wrap" />
+                                                </StackPanel>
+                                            </Border>
+                                            </ToolTip>
+                                        </ToolTipService.ToolTip>
+                                    </esriControls:RibbonButton>
+                                </esriControls:RibbonGroupControl>
+                                <esriControls:RibbonGroupControl 
+                                    Header="{Binding ConverterParameter=Theme, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                    Style="{StaticResource GroupStyle}">
+                                    <StackPanel Orientation="Horizontal">
+
+                                        <esriControls:RibbonButton x:Name="ConfigureThemeMenuButton"
+                                            ImageSource="/Images/Ribbon/ConfigureTheme32.png"
+                                            LabelText="{Binding ConverterParameter=Configure, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                            ToolTipService.Placement="Bottom"
+                                            MinWidth="60"
+                                            Style="{StaticResource ToolbarButtonStyle}">
+                                            <esriControls:RibbonButton.Command>
+                                                <local:ConfigureThemeCommand />
+                                            </esriControls:RibbonButton.Command>
+                                            <ToolTipService.ToolTip>
+                                                <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                    <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                    <StackPanel Margin="6,8">
+                                                        <TextBlock Text="{Binding ConverterParameter=ConfigureTheme, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding ConverterParameter=ConfigureThemeDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                       Margin="0,3,0,0"
+                                                                       MaxWidth="350"
+                                                                       TextWrapping="Wrap" />
+                                                    </StackPanel>
+                                                </Border>
+                                                </ToolTip>
+                                            </ToolTipService.ToolTip>
+                                        </esriControls:RibbonButton>
+
+                                        <esriControls:RibbonButton x:Name="ResetThemeMenuButton"
+                                            ImageSource="/Images/Ribbon/ResetTheme32.png"
+                                            LabelText="{Binding ConverterParameter=Reset, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                            ToolTipService.Placement="Bottom"
+                                            MinWidth="60"
+                                            Style="{StaticResource ToolbarButtonStyle}">
+                                            <esriControls:RibbonButton.Command>
+                                                <esriControls:RestoreDefaultThemeCommand />
+                                            </esriControls:RibbonButton.Command>
+                                            <ToolTipService.ToolTip>
+                                                <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                                    <Border BorderBrush="Black"
+                                                            BorderThickness="1"
+                                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                                    Margin="-8,-3">
+                                                    <StackPanel Margin="6,8">
+                                                        <TextBlock Text="{Binding ConverterParameter=ResetTheme, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                   FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding ConverterParameter=ResetThemeDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                       Margin="0,3,0,0"
+                                                                       MaxWidth="350"
+                                                                       TextWrapping="Wrap" />
+                                                    </StackPanel>
+                                                </Border>
+                                                </ToolTip>
+                                            </ToolTipService.ToolTip>
+                                        </esriControls:RibbonButton>
+
+                                    </StackPanel>
+                                </esriControls:RibbonGroupControl>
+
+                            </StackPanel>
+                        </ContentControl>
+                    </esriControls:RibbonTabControl>
+                </esriControls:Ribbon.RibbonTabs>
+                
+                <!-- Application builder title and title of current app -->
+                <esriControls:Ribbon.TopLeftElement>
+                    <ContentControl FontSize="12" Foreground="White" FontWeight="SemiBold" HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" Margin="6,0,6,5">
+                        <ContentControl.Content>
+                            <Grid>
+                                <TextBlock 
+                                    Text="{Binding ConverterParameter=NewApplication, 
+                                        Converter={StaticResource BuilderLocalization}}"
+                                    Visibility="{Binding CurrentSite, 
+                                        Converter={StaticResource NullToVisibilityConverter}}"
+                                    TextWrapping="Wrap"
+                                    VerticalAlignment="Center"/>
+                                <RichTextBlock
+                                    x:Name="Title"
+                                    Visibility="{Binding CurrentSite, 
+                                        Converter={StaticResource NotNullToVisibilityConverter}}"
+                                    TextWrapping="Wrap"
+                                    VerticalAlignment="Center"
+                                    Foreground="White"/>
+                            </Grid>
+                        </ContentControl.Content>
+                        <ContentControl.Effect>
+                            <DropShadowEffect Direction="300" ShadowDepth="3" />
+                        </ContentControl.Effect>
+                    </ContentControl>
+                </esriControls:Ribbon.TopLeftElement>
+            </esriControls:Ribbon>
+            <Border x:Name="ButtonStripBorder"
+                BorderThickness="0" HorizontalAlignment="Right" Margin="0" Height="108" 
+                VerticalAlignment="Bottom" Background="{StaticResource UnselectedTabBrush}"
+                    Visibility="{Binding RibbonVisibility, ElementName=RibbonControl}">
+                <StackPanel  VerticalAlignment="Center">
+                    <esriControls:RibbonButton
+        		        ImageSource="/Images/Ribbon/HomeSiteList32.png"
+                        LabelText="{Binding ConverterParameter=Home, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+        		        Style="{StaticResource TopButtonStripStyle}" Margin="0"
+                        MinWidth="60" BorderThickness="1,0,0,1" BorderBrush="#FFC0C6E0"
+                        ToolTipService.Placement="Bottom" 
+                        ToolTipService.PlacementTarget="{Binding ElementName=ButtonStripBorder}">
+                        <esriControls:RibbonButton.Command>
+                            <local:OpenApplicationsCommand View="{Binding View, ElementName=ViewerApplicationControl}"  />
+                        </esriControls:RibbonButton.Command>
+                        <ToolTipService.ToolTip>
+                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                <Border BorderBrush="Black"
+                                        BorderThickness="1"
+                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                    Margin="-8,-3">
+                                <StackPanel Margin="6,8">
+                                    <TextBlock Text="{Binding ConverterParameter=Home, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                               FontWeight="Bold" />
+                                    <TextBlock Text="{Binding ConverterParameter=HomeDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                   Margin="0,3,0,0"
+                                                   MaxWidth="350"
+                                                   TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Border>
+                            </ToolTip>
+                        </ToolTipService.ToolTip>
+                    </esriControls:RibbonButton>
+                    <esriControls:RibbonButton
+        		        Visibility="{Binding CurrentSite, Converter={StaticResource NullToVisibilityConverter}}"
+                        ImageSource="/Images/Ribbon/PaleGlobeArrowUp32.png"
+                        LabelText="{Binding ConverterParameter=Publish, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+        		        Style="{StaticResource BottomButtonStripStyle}" Margin="0" 
+                        VerticalAlignment="Center" BorderThickness="1,0,0,0" MinWidth="60" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
+                        BorderBrush="#FFC0C6E0"
+                        ToolTipService.Placement="Bottom" 
+                        ToolTipService.PlacementTarget="{Binding ElementName=ButtonStripBorder}">
+                        <esriControls:RibbonButton.Command>
+                            <local:PublishApplicationCommand  />
+                        </esriControls:RibbonButton.Command>
+                        <ToolTipService.ToolTip>
+                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                <Border BorderBrush="Black"
+                                        BorderThickness="1"
+                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                    Margin="-8,-3">
+                                <StackPanel Margin="6,8">
+                                        <TextBlock Text="{Binding ConverterParameter=Publish, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                   FontWeight="Bold" />
+                                    <TextBlock Text="{Binding ConverterParameter=PublishDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                   Margin="0,3,0,0"
+                                                   MaxWidth="350"
+                                                   TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Border>
+                            </ToolTip>
+                        </ToolTipService.ToolTip>
+                    </esriControls:RibbonButton>
+                    <esriControls:SplitButton 
+        		        Visibility="{Binding CurrentSite, Converter={StaticResource NotNullToVisibilityConverter}}"
+        		        Style="{StaticResource BottomSplitButtonStripStyle}" 
+                        HorizontalAlignment="Stretch" Margin="0"
+                        VerticalAlignment="Center" BorderThickness="1,0,0,0"
+                        BorderBrush="#FFC0C6E0"
+                        ToolTipService.Placement="Bottom" 
+                        ToolTipService.PlacementTarget="{Binding ElementName=ButtonStripBorder}">
+                        <esriControls:SplitButton.Content>
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="/Images/Ribbon/GenericSave32.png" Stretch="None" HorizontalAlignment="Center" />
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding ConverterParameter=Save, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                           FontFamily="Calibri" FontSize="11.5" Foreground="#FFCFD3E7" 
+                                           TextWrapping="Wrap" TextAlignment="Center" />
+                            </StackPanel>
+                        </esriControls:SplitButton.Content>
+                        <ToolTipService.ToolTip>
+                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                <Border BorderBrush="Black"
+                                        BorderThickness="1"
+                                    Background="{StaticResource TooltipBackgroundBrush}"
+                                    Margin="-8,-3">
+                                <StackPanel Margin="6,8">
+                                        <TextBlock Text="{Binding ConverterParameter=Save, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                   FontWeight="Bold" />
+                                    <TextBlock Text="{Binding ConverterParameter=SaveDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                   Margin="0,3,0,0"
+                                                   MaxWidth="350"
+                                                   TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Border>
+                            </ToolTip>
+                        </ToolTipService.ToolTip>
+                        <esriControls:SplitButton.Command>
+                            <local:SaveApplicationCommand  />
+                        </esriControls:SplitButton.Command>
+                        <esriControls:SplitButton.ButtonMenuItemsSource>
+                            <toolkit:MenuItem Foreground="Black" Header="{Binding ConverterParameter=Save, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}">
+                                <toolkit:MenuItem.Command>
+                                    <local:SaveApplicationCommand  />
+                                </toolkit:MenuItem.Command>
+                                <toolkit:MenuItem.Icon>
+                                    <Image Source="/ESRI.ArcGIS.Mapping.Builder;component/images/ribbon/GenericSave16.png" />
+                                </toolkit:MenuItem.Icon>
+                            </toolkit:MenuItem>
+                            <toolkit:MenuItem Click="SaveAs_Click" Foreground="Black" Header="{Binding ConverterParameter=SaveAs, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}">
+                                <toolkit:MenuItem.Icon>
+                                    <Image Source="/ESRI.ArcGIS.Mapping.Builder;component/images/ribbon/GenericSaveAs16.png" />
+                                </toolkit:MenuItem.Icon>
+                            </toolkit:MenuItem>
+                        </esriControls:SplitButton.ButtonMenuItemsSource>
+                    </esriControls:SplitButton>
+                </StackPanel>
+            </Border>
+            
+            <!-- Linked web map info -->
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,5"
+                        Opacity="0"
+                        Visibility="{Binding RibbonVisibility, ElementName=RibbonControl}">
+                <i:Interaction.Triggers>
+                    <!-- Show the web map info on ViewLoaded -->
+                    <i:EventTrigger EventName="ViewLoaded" SourceObject="{Binding ElementName=ViewerApplicationControl}">
+                        <ei:ChangePropertyAction PropertyName="Opacity" Value="1" />
+                    </i:EventTrigger>
+                    <!-- Hide the web map info when the Home page (CatalogScreen) is shown -->
+                    <i:EventTrigger EventName="PropertyChanged" SourceObject="{Binding}">
+                        <i:Interaction.Behaviors>
+                            <ei:ConditionBehavior>
+                                <ei:ConditionalExpression>
+                                    <ei:ComparisonCondition 
+                                                        LeftOperand="{Binding CatalogScreenVisibility}" 
+                                                        Operator="Equal" RightOperand="Visible" />
+                                </ei:ConditionalExpression>
+                            </ei:ConditionBehavior>
+                        </i:Interaction.Behaviors>
+                        <ei:ChangePropertyAction PropertyName="Opacity" Value="0" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <TextBlock Text="{Binding ConverterParameter=LinkedToWebMap, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                           Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                        Visibility="{Binding ElementName=ViewerApplicationControl, Path=View.Map.(mapping:MapProperties.WebMapSettings).Linked, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                <TextBlock Text="{Binding ConverterParameter=BasedOnWebMap, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                           Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                        Visibility="{Binding ElementName=ViewerApplicationControl, Path=View.Map.(mapping:MapProperties.WebMapSettings).Linked, Converter={StaticResource InvertBoolToVisibilityConverter}}"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                    <TextBlock Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                        Text="{Binding ElementName=ViewerApplicationControl, Path=View.Map.(mapping:MapProperties.WebMapSettings).Title}" />
+
+                    <!-- Unlink web map button -->
+                    <Button MaxWidth="275" Margin="8,0,0,0" Cursor="Hand"
+                        Visibility="{Binding ElementName=ViewerApplicationControl, Path=View.Map.(mapping:MapProperties.WebMapSettings).Linked, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <TextBlock Text="{Binding ConverterParameter=UnlinkFromWebMap, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                   FontStyle="Italic" Opacity="0.7" 
+                                   Foreground="{StaticResource DesignHostBackgroundTextBrush}" 
+                               TextTrimming="WordEllipsis">
+			                    <i:Interaction.Triggers>
+				                    <i:EventTrigger EventName="MouseEnter">
+					                    <ei:ChangePropertyAction PropertyName="TextDecorations">
+						                    <ei:ChangePropertyAction.Value>
+							                    <TextDecorationCollection>Underline</TextDecorationCollection>
+						                    </ei:ChangePropertyAction.Value>
+					                    </ei:ChangePropertyAction>
+				                    </i:EventTrigger>
+				                    <i:EventTrigger EventName="MouseLeave">
+					                    <ei:ChangePropertyAction PropertyName="TextDecorations"/>
+				                    </i:EventTrigger>
+			                    </i:Interaction.Triggers>
+                        </TextBlock>
+                        <Button.Command>
+                            <mapping:UnlinkWebMapCommand />
+                        </Button.Command>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}" />
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <!-- Link web map button -->
+                    <Button MaxWidth="275" Margin="8,0,0,0" Cursor="Hand"
+                        Visibility="{Binding ElementName=ViewerApplicationControl, Path=View.Map.(mapping:MapProperties.WebMapSettings).Linked, Converter={StaticResource InvertBoolToVisibilityConverter}}">
+                        <TextBlock Text="{Binding ConverterParameter=LinkToWebMap, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                   FontStyle="Italic" Opacity="0.7" 
+                                   Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                               TextTrimming="WordEllipsis">
+			                    <i:Interaction.Triggers>
+				                    <i:EventTrigger EventName="MouseEnter">
+					                    <ei:ChangePropertyAction PropertyName="TextDecorations">
+						                    <ei:ChangePropertyAction.Value>
+							                    <TextDecorationCollection>Underline</TextDecorationCollection>
+						                    </ei:ChangePropertyAction.Value>
+					                    </ei:ChangePropertyAction>
+				                    </i:EventTrigger>
+				                    <i:EventTrigger EventName="MouseLeave">
+					                    <ei:ChangePropertyAction PropertyName="TextDecorations"/>
+				                    </i:EventTrigger>
+			                    </i:Interaction.Triggers>
+                        </TextBlock>
+                        <Button.Command>
+                            <mapping:LinkWebMapCommand />
+                        </Button.Command>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}" />
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Border Grid.Row="1" Visibility="{Binding BuilderScreenVisibility}"
+                Background="#FF8A93AB"/>
+        <Grid Grid.Row="1"
+              x:Name="SidePanelGrid">
+        	<Grid.ColumnDefinitions>
+                <ColumnDefinition Width="280"
+                                  MinWidth="280"
+                                    MaxWidth="{Binding RibbonVisibility, ConverterParameter=10000\,0, Converter={StaticResource VisibilityToIntConverter}, ElementName=RibbonControl}">
+                    <i:Interaction.Behaviors>
+                        <local:ToggleValueBehavior
+                            TargetProperty="MinWidth"
+                            ToggleValue="0"
+                            ValueTwo="{Binding RibbonVisibility, ElementName=RibbonControl}">
+                            <local:ToggleValueBehavior.ValueOne>
+                                <Visibility>Collapsed</Visibility>
+                            </local:ToggleValueBehavior.ValueOne>
+                        </local:ToggleValueBehavior>
+                    </i:Interaction.Behaviors>
+                </ColumnDefinition>
+                <ColumnDefinition/>
+        	</Grid.ColumnDefinitions>
+            <Border Margin="20" Grid.Row="1" Visibility="{Binding BuilderScreenVisibility}"
+                Grid.Column="{Binding Visibility, Converter={StaticResource VisibilityToIntConverter}, ElementName=SidePanelContainer}" 
+                Grid.ColumnSpan="{Binding Visibility, ConverterParameter=1\,2, Converter={StaticResource VisibilityToIntConverter}, ElementName=SidePanelContainer}">
+                <Border.Effect>
+                    <DropShadowEffect Color="White" Direction="150" ShadowDepth="15" BlurRadius="40" Opacity="0.6" />
+                </Border.Effect>
+                <Border Background="#FF8A93AB" CornerRadius="7">
+                    <Border.Effect>
+                        <DropShadowEffect Color="White" Direction="300" ShadowDepth="15" BlurRadius="40" Opacity="0.6" />
+                    </Border.Effect>
+                </Border>
+            </Border>
+
+            <!-- side panel. different side panel UI elements are contained in tabs. -->
+            <sdk:TabControl 
+                x:Name="SidePanelContainer"
+        		Grid.Column="0"
+                Margin="5,5,0,5"
+        		Width="Auto"
+                TabStripPlacement="Top"
+                BorderBrush="Transparent"
+                Background="Transparent"
+                Style="{StaticResource SidePanelTabControlStyle}"
+                Padding="0"
+                BorderThickness="0"
+                HorizontalAlignment="Stretch" 
+                Visibility="Collapsed">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="LinkedToWebMap" 
+                                SourceObject="{Binding View, ElementName=ViewerApplicationControl}">
+                        <i:Interaction.Behaviors>
+                            <ei:ConditionBehavior>
+                                <ei:ConditionalExpression>
+                                    <ei:ComparisonCondition 
+                            LeftOperand="{Binding ElementName=ViewerApplicationControl, Path=View.Map.(mapping:MapProperties.WebMapSettings).Linked}" 
+							Operator="Equal" RightOperand="true" />
+                                </ei:ConditionalExpression>
+                            </ei:ConditionBehavior>
+                        </i:Interaction.Behaviors>
+                        <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
+                <sdk:TabItem Header="{Binding ConverterParameter=Search, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+        		ToolTipService.ToolTip="{Binding ConverterParameter=Search, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+        		x:Name="SearchTabItem" Cursor="Hand"
+        		Visibility="Visible">
+
+                    <Border BorderThickness="1" BorderBrush="Black" CornerRadius="0">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#FFB1B7C6" />
+                                <GradientStop Color="White" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid Background="{StaticResource MapCenterBackgroundGradientBrush}" Margin="3">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="2" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="{Binding ConverterParameter=Search, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+        					Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+        					Margin="7"
+        					FontSize="14" />
+
+                                <Rectangle Grid.Row="1" >
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0.000,0.5" EndPoint="1,0.5">
+                                            <GradientStop Color="White" Offset="0"/>
+                                            <GradientStop Color="Transparent" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+
+                                <search:SearchView
+                                x:Name="BuilderSearchView"
+                                Grid.Row="2"
+                                Margin="0,5,0,5"
+                                BorderBrush="Gray"
+                                Foreground="White">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="Loaded">
+                                            <local:AdjustMinColumnWidthForTabsAction
+                                            TargetObject="{Binding ElementName=SidePanelGrid}"
+                                            TabControl="{Binding ElementName=BuilderSearchView, 
+                                                Converter={StaticResource FindDescendantConverter}, 
+                                                ConverterParameter=ResultsTabControl}"
+                                            Column="0" />
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                    <search:SearchView.DataContext>
+                                        <search:SearchViewModel />
+                                    </search:SearchView.DataContext>
+                                </search:SearchView>
+                            </Grid>
+                            <Button Content="{Binding ConverterParameter=Button, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" HorizontalAlignment="Right" Height="22" VerticalAlignment="Top" Width="25" Style="{StaticResource BuilderCloseButtonStyle}" Background="{StaticResource MapCenterBackgroundGradientBrush}" BorderBrush="Black" Visibility="{Binding Visibility, ElementName=SidePanelContainer}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Click">
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SidePanelContainer}" PropertyName="Visibility">
+                                            <ei:ChangePropertyAction.Value>
+                                                <Visibility>Collapsed</Visibility>
+                                            </ei:ChangePropertyAction.Value>
+                                        </ei:ChangePropertyAction>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </Button>
+                            <Border BorderBrush="Black" BorderThickness="1" Visibility="{Binding Visibility, ElementName=SidePanelContainer}"/>
+                        </Grid>
+                    </Border>
+                </sdk:TabItem>
+
+                <sdk:TabItem Header="{Binding ConverterParameter=Browse, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+        		ToolTipService.ToolTip="{Binding ConverterParameter=Browse, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+        		x:Name="BrowseTabItem" Cursor="Hand"
+        		Visibility="Visible">
+
+                    <Border BorderThickness="1" BorderBrush="Black" CornerRadius="0">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#FFB1B7C6" />
+                                <GradientStop Color="White" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid Background="{StaticResource MapCenterBackgroundGradientBrush}" Margin="3">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="2" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Text="{Binding ConverterParameter=Browse, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+        					Foreground="White"
+        					Margin="7"
+        					FontSize="14" />
+
+                                <Rectangle Grid.Row="1" >
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint="1,0.5" StartPoint="0.0,0.5">
+                                            <GradientStop Color="White" Offset="0"/>
+                                            <GradientStop Color="Transparent" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+
+                                <esriControls:AddContentDialog 
+        					Loaded="AddContentDialog_Loaded" 
+        					LayerAdded="AddContentDialog_LayerAdded"
+                            LayerAddFailed="AddContentDialog_LayerAddFailed"
+                            ResourceSelected="AddContentDialog_ResourceSelected"
+        					HorizontalContentAlignment="Stretch"
+        					VerticalContentAlignment="Stretch" 
+        					x:Name="AddContentDialog"
+        					Visibility="Visible" 
+        					Grid.Row="2"
+                            Style="{StaticResource BuilderBrowseStyle}"/>
+                            </Grid>
+                            <Button Content="{Binding ConverterParameter=Button, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" HorizontalAlignment="Right" Height="22" VerticalAlignment="Top" Width="25" Style="{StaticResource BuilderCloseButtonStyle}" Background="{StaticResource MapCenterBackgroundGradientBrush}" BorderBrush="Black" Visibility="{Binding Visibility, ElementName=SidePanelContainer}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Click">
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SidePanelContainer}" PropertyName="Visibility">
+                                            <ei:ChangePropertyAction.Value>
+                                                <Visibility>Collapsed</Visibility>
+                                            </ei:ChangePropertyAction.Value>
+                                        </ei:ChangePropertyAction>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </Button>
+                            <Border BorderBrush="Black" BorderThickness="1" Visibility="{Binding Visibility, ElementName=SidePanelContainer}"/>
+                        </Grid>
+                    </Border>
+                </sdk:TabItem>
+
+                <sdk:TabItem Header="{Binding ConverterParameter=Contents, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+        		ToolTipService.ToolTip="{Binding ConverterParameter=Contents, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+        		x:Name="MapContentsTabItem" Cursor="Hand"
+        		Visibility="Visible">
+
+                    <localCtr:MapContentLayerConfigurationHost
+        				HorizontalContentAlignment="Stretch"
+        				VerticalContentAlignment="Stretch" 
+        				x:Name="MapContentsHost" 
+            			Visibility="Visible"
+        				Grid.Row="2"
+                        Padding="10"
+                        BorderThickness="0"
+                        Foreground="White"
+                        Background="{StaticResource MapCenterBackgroundGradientBrush}"/>
+                </sdk:TabItem>
+            </sdk:TabControl>
+            
+            <Border BorderBrush="Black" BorderThickness="1"
+        		Margin="20" Grid.Row="0" Visibility="{Binding BuilderScreenVisibility}" Grid.Column="{Binding Visibility, Converter={StaticResource VisibilityToIntConverter}, ElementName=SidePanelContainer}" Grid.ColumnSpan="{Binding Visibility, ConverterParameter=1\,2, Converter={StaticResource VisibilityToIntConverter}, ElementName=SidePanelContainer}">
+        		<esriControls:ViewerApplicationControl x:Name="ViewerApplicationControl" IsEditMode="True" 
+        			ToolPanelLoaded="ViewerApplicationControl_ToolbarsLoaded" ViewInitialized="ViewerApplicationControl_ViewInitialized"
+                    ViewLoaded="ViewerApplicationControl_ViewLoaded">
+        			<esriControls:ViewerApplicationControl.ConfigurationProvider>
+        				<local:BuilderConfigurationProvider />
+        			</esriControls:ViewerApplicationControl.ConfigurationProvider>
+        			<esriControls:ViewerApplicationControl.ApplicationServices>
+        				<local:ApplicationServices />
+        			</esriControls:ViewerApplicationControl.ApplicationServices>
+        		</esriControls:ViewerApplicationControl>
+        	</Border>
+            <sdk:GridSplitter Style="{StaticResource NoFocusGridSplitterStyle}" Background="Transparent"
+                              Visibility="{Binding Visibility, ElementName=SidePanelContainer}"
+                              HorizontalAlignment="Right" VerticalAlignment="Stretch" />
+        </Grid>
+        
+        <Grid Grid.Row="1" Visibility="{Binding BuilderScreenVisibility}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" d:IsHidden="True">
+                <local:TutorialDialogControl x:Name="TutorialControl" Loaded="TutorialDialogControl_Loaded" 
+                    VerticalAlignment="Bottom"  Visibility="{Binding GettingStartedVisibility}" Margin="0,0,0,20"
+                                             ViewerApplicationControl="{Binding ElementName=ViewerApplicationControl}"/>
+                <Grid VerticalAlignment="Bottom" Margin="0,0,0,20" >
+                    <Button x:Name="HideTutorial" Cursor="Hand" Width="20"
+                        ToolTipService.ToolTip="{Binding ConverterParameter=HideGettingStarted, 
+                            Converter={StaticResource BuilderLocalization}, 
+                            Source={StaticResource BuilderLocalization}}"
+                        Visibility="{Binding Visibility, ElementName=TutorialControl}"
+                        Style="{StaticResource ContentOnlyButtonStyle}">
+                        <Image Source="/ESRI.ArcGIS.Mapping.Builder;component/images/GettingStartedHide.png" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <ei:ChangePropertyAction TargetObject="{Binding ElementName=TutorialControl}" PropertyName="Visibility">
+                                    <ei:ChangePropertyAction.Value>
+                                        <Visibility>Collapsed</Visibility>
+                                    </ei:ChangePropertyAction.Value>
+                                </ei:ChangePropertyAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
+                    <Button x:Name="ShowTutorial" Cursor="Hand" Width="20"
+                        ToolTipService.ToolTip="{Binding ConverterParameter=ShowGettingStarted, 
+                            Converter={StaticResource BuilderLocalization}, 
+                            Source={StaticResource BuilderLocalization}}"
+                        Visibility="{Binding Visibility, ElementName=TutorialControl, Converter={StaticResource InvertVisibilityConverter}}"
+                        Style="{StaticResource ContentOnlyButtonStyle}">
+                        <Image Source="/ESRI.ArcGIS.Mapping.Builder;component/images/GettingStartedShow.png" />
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <ei:ChangePropertyAction TargetObject="{Binding ElementName=TutorialControl}" PropertyName="Visibility">
+                                    <ei:ChangePropertyAction.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </ei:ChangePropertyAction.Value>
+                                </ei:ChangePropertyAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </Grid>
+        
+        <Grid Grid.RowSpan="2" Visibility="{Binding NewappScreenVisibility}" d:IsHidden="True" >
+            <Border Grid.Row="1" 
+                Background="#FF8A93AB">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Rectangle Margin="0" Grid.Row="1" StrokeThickness="0" Grid.RowSpan="3" Fill="Black"/>
+                    <Rectangle Fill="{StaticResource ToolbarTabBackgroundBrush}" Height="600" Margin="0" Grid.Row="1" StrokeThickness="0" VerticalAlignment="Top" Grid.RowSpan="3"/>
+                    <Border Background="{StaticResource BehindTabColorBrush}">
+                        <Grid HorizontalAlignment="Stretch" Margin="0,0,0,3" Height="35"  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Button Margin="8,0,0,0" 
+                                    Cursor="Hand"
+                                    VerticalAlignment="Center"
+                                    Style="{StaticResource ContentOnlyButtonStyle}">
+                                <Image Source="images/Back22.png" Stretch="None"/>
+                                <Button.Command>
+                                    <local:OpenApplicationsCommand View="{Binding View, ElementName=ViewerApplicationControl}"  />
+                                </Button.Command>
+                            </Button>
+
+                            <Grid
+                                Grid.Column="1"
+                                Margin="5,1,0,0">
+                                <TextBlock 
+                                Text="{Binding ConverterParameter=ChooseMap, 
+                                    Converter={StaticResource BuilderLocalization}, 
+                                    Source={StaticResource BuilderLocalization}}" 
+                                FontWeight="Bold" FontSize="16" Foreground="White"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect BlurRadius="5" Direction="-45" Color="Black" ShadowDepth="5" Opacity="0.595" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                                <Grid.Effect>
+                                    <DropShadowEffect BlurRadius="5" Direction="-45" Color="Black" ShadowDepth="5" Opacity="0.595" />
+                                </Grid.Effect>
+                            </Grid>
+                            
+                            <mapping:SignInStatusControl Name="ChooseMapSignIn"
+                                Grid.Column="2"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Stretch"
+                                Foreground="White"
+                                BorderBrush="{StaticResource MapCenterHyperlinkForegroundBrush}"
+                                Background="{StaticResource MapCenterBackgroundGradientBrush}"
+                                PortalUser="{Binding User, Source={StaticResource UserManagement}}"
+                                Credentials="{Binding Credentials, Source={StaticResource UserManagement}}"
+                                PortalName="{Binding PortalName, Source={StaticResource UserManagement}}"
+                                Margin="0,0,8,0">
+                                <mapping:SignInStatusControl.Effect>
+                                    <DropShadowEffect BlurRadius="5" Direction="-45" Color="Black" ShadowDepth="5" Opacity="0.595" />
+                                </mapping:SignInStatusControl.Effect>
+                            </mapping:SignInStatusControl>
+
+                        </Grid>
+                    </Border>
+                    <Rectangle Margin="0" StrokeThickness="0" Fill="Black" Height="1" VerticalAlignment="Bottom"/>
+                    <local:NewApplicationControl Grid.Row="1" Margin="10,0,0,0" MapCenterRequiresRefresh="{Binding MapCenterRequiresRefresh}" />
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Grid Grid.RowSpan="2" Visibility="{Binding CatalogScreenVisibility}" d:IsHidden="True" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Rectangle Margin="0" Grid.Row="1" StrokeThickness="0" Grid.RowSpan="3" Fill="Black"/>
+            <Rectangle Fill="{StaticResource ToolbarTabBackgroundBrush}" Height="600" Margin="0" Grid.Row="1" StrokeThickness="0" VerticalAlignment="Top" Grid.RowSpan="3"/>
+            <Border Background="{StaticResource BehindTabColorBrush}">
+                <Grid HorizontalAlignment="Stretch" Margin="0,0,0,6"  >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" MaxWidth="35" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.Effect>
+                        <DropShadowEffect Direction="-45" Color="Black" Opacity="0.745" />
+                    </Grid.Effect>
+                    <Image Source="{Binding LogoFilePath}" Grid.Row="0" Margin="3,0,0,0" MaxHeight="30" />
+                    <Grid Margin="8,5,0,0" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="0" >
+                        <Grid.Effect>
+                            <DropShadowEffect BlurRadius="5" Direction="-45" Color="Black" ShadowDepth="5" Opacity="0.595" />
+                        </Grid.Effect>
+                        <TextBlock Text="{Binding TitleText}" FontWeight="ExtraBold" FontSize="18" Foreground="White"  />
+                    </Grid>
+
+                    <mapping:SignInStatusControl 
+                        x:Name="StartPageSignIn"
+                        Grid.Column="2"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Stretch"
+                        Foreground="White"
+                        BorderBrush="{StaticResource MapCenterHyperlinkForegroundBrush}"
+                        Background="{StaticResource MapCenterBackgroundGradientBrush}"
+                        PortalUser="{Binding User, Source={StaticResource UserManagement}}"
+                        Credentials="{Binding Credentials, Source={StaticResource UserManagement}}"
+                        PortalName="{Binding PortalName, Source={StaticResource UserManagement}}"/>
+
+                    <Rectangle
+                        Width="1"
+                        Fill="White"
+                        VerticalAlignment="Stretch"
+                        Margin="8,10,0,10"
+                        Grid.Column="3" />
+                    
+                    <HyperlinkButton         
+                        Foreground="White" Style="{StaticResource NoFocusHyperlinkButton}"
+                        Content="{Binding ConverterParameter=Setting, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                        Margin="7,0,0,0"
+                        VerticalAlignment="Center"
+                        Grid.Column="4">
+                        <HyperlinkButton.Command>
+                            <local:ToggleSettingsPageVisibilityCommand />
+                    </HyperlinkButton.Command>
+                        <ToolTipService.ToolTip>
+                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                <Border BorderBrush="Black"
+                                        BorderThickness="1"
+                                                Background="{StaticResource TooltipBackgroundBrush}"
+                                                Margin="-8,-3">
+                                <StackPanel Margin="6,8">
+                                    <TextBlock Text="{Binding ConverterParameter=ApplicationBuilderSettings, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                                FontWeight="Bold" />
+                                    <TextBlock Text="{Binding ConverterParameter=ApplicationBuilderSettingsDescription, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                    Margin="0,3,0,0"
+                                                    MaxWidth="350"
+                                                    TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Border>
+                            </ToolTip>
+                        </ToolTipService.ToolTip>
+                    </HyperlinkButton>
+                    
+                    <mapping:RibbonButton 
+                        ImageSource="/ESRI.ArcGIS.Mapping.Builder;component/images/GettingStartedShow.png"
+                        Padding="6"
+                        Margin="0,0,6,0"
+                        Width="Auto"
+                        Orientation="Horizontal"
+                        HorizontalContentAlignment="Center"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Style="{StaticResource ToolbarButtonStyle}"
+                        ToolTipService.Placement="Bottom"
+                        Grid.Column="5">
+                        <mapping:RibbonButton.Command>
+                            <local:ShowAboutInfoCommand />
+                        </mapping:RibbonButton.Command>
+                        <ToolTipService.ToolTip>
+                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                <Border BorderBrush="Black"
+                                        BorderThickness="1"
+                                                Background="{StaticResource TooltipBackgroundBrush}"
+                                                Margin="-8,-3">
+                                    <TextBlock Text="{Binding ConverterParameter=AboutTitle, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                                FontWeight="Bold"
+                                                Margin="6,8" />
+                            </Border>
+                            </ToolTip>
+                        </ToolTipService.ToolTip>
+                    </mapping:RibbonButton>
+                </Grid>
+            </Border>
+            <Rectangle Margin="0" StrokeThickness="0" Fill="Black" Height="1" VerticalAlignment="Bottom"/>
+            <Rectangle HorizontalAlignment="Center" Margin="0,0,0,8" RadiusY="2" RadiusX="2" Width="100" Grid.Row="1" StrokeThickness="0"/>
+            <ScrollViewer x:Name="WelcomeMessageScrollViewer" Visibility="{Binding WelcomeVisibility}" Width="500" 
+            	ScrollViewer.VerticalScrollBarVisibility="Auto" Background="Transparent" BorderThickness="0"
+            	Margin="150,10" Grid.Row="1">
+                <RichTextBox IsReadOnly="True" Background="Transparent" BorderThickness="0" Foreground="White">
+
+                    <Paragraph TextAlignment="Center"><Run FontWeight="Bold" Text="{Binding ConverterParameter=Welcome, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" FontSize="16" /></Paragraph>
+					<Paragraph FontSize="14" xml:space="preserve"><Run Text="" /></Paragraph>
+					<Paragraph FontSize="14" xml:space="preserve"><Run Text="{Binding ConverterParameter=WelcomeMsgParagraph1, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"/></Paragraph>
+					<Paragraph FontSize="14" xml:space="preserve"><Run Text="" /></Paragraph>
+					<Paragraph FontSize="14" xml:space="preserve"><Run Text="{Binding ConverterParameter=WelcomeMsgParagraph2, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"/></Paragraph>
+
+                </RichTextBox>
+            </ScrollViewer>
+
+            <Button x:Name="CreateButton" Grid.Row="2" Margin="10" HorizontalAlignment="Center" Style="{StaticResource HomePageButtonStyle}" Padding="7,4" BorderBrush="{StaticResource HomePageForegroundBrush}" 
+                    Background="{x:Null}" Click="CreateButton_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Images/Ribbon/NewApp.png" Stretch="None" VerticalAlignment="Center" />
+					<TextBlock Text="{Binding ConverterParameter=CreateNewApplication, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" VerticalAlignment="Center" FontSize="18" Foreground="White" />
+                </StackPanel>
+            </Button>
+
+            <local:SitesCatalog x:Name="SitesCatalog" Visibility="{Binding SitesCatalogVisibility}"
+                                SiteOpened="SitesCatalog_SiteOpened" SiteCopy="SitesCatalog_SiteCopy"
+                                Grid.Row="3" Margin="0"/>
+
+            <!-- Activity indicator for sites list.  Shown when copying, deleting, upgrading, etc. -->
+            <Grid 
+                Background="Black" Opacity="0.4" 
+                Visibility="{Binding Visibility, ElementName=loadingBox}" 
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                Grid.RowSpan="4"/>
+            
+            <Border Padding="20,15,20,15" Background="#99000000" x:Name="loadingBox"
+				HorizontalAlignment="Center" VerticalAlignment="Center"
+				BorderBrush="White" BorderThickness="2" CornerRadius="10" 
+                Visibility="{Binding IsBusy, ElementName=SitesCatalog, 
+                    Converter={StaticResource BoolToVisibilityConverter}}"
+                    Grid.RowSpan="4">
+                <StackPanel>
+                    <TextBlock x:Name="LoadingTextBlock" FontSize="24" Foreground="White" FontWeight="Bold"
+					   Text="{Binding StatusMessage, ElementName=SitesCatalog}" />
+                    <ProgressBar IsIndeterminate="True" Height="16" 
+                             Margin="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <Grid Grid.RowSpan="2" Visibility="{Binding SettingsPageVisibility}" d:IsHidden="True">
+            <Border Grid.Row="1" 
+                Background="#FF8A93AB">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Rectangle Margin="0" Grid.Row="1" StrokeThickness="0" Grid.RowSpan="3" Fill="Black"/>
+                    <Rectangle Fill="{StaticResource ToolbarTabBackgroundBrush}" Height="600" Margin="0" Grid.Row="1" StrokeThickness="0" VerticalAlignment="Top" Grid.RowSpan="3"/>
+                    <Border Background="{StaticResource BehindTabColorBrush}">
+                        <Grid HorizontalAlignment="Stretch" Margin="0,0,0,3"  >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" MaxWidth="35" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid Margin="8,5,0,0" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.Effect>
+                                    <DropShadowEffect Direction="-45" Color="Black" Opacity="0.745" />
+                                </Grid.Effect>
+								<TextBlock Text="{Binding ConverterParameter=ApplicationBuilderDashSettings, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" FontWeight="Bold" FontSize="16" Foreground="White">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect BlurRadius="5" Direction="-45" Color="Black" ShadowDepth="5" Opacity="0.595" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                            </Grid>
+                                <Button Grid.Column="1" HorizontalAlignment="Right" Margin="0,2,5,1" Cursor="Hand"
+                                        Style="{StaticResource ContentOnlyButtonStyle}">
+                                    <Image Source="images/Back22.png" Stretch="None"/>
+                                    <Button.Command>
+                                        <local:ToggleSettingsPageVisibilityCommand />
+                                    </Button.Command>
+                                </Button>
+                        </Grid>
+                    </Border>
+                    <local:Settings Grid.Row="1" ExtensionsCatalogChanged="Settings_ExtensionsCatalogChanged"  Margin="10,0,0,0" />
+                </Grid>
+
+            </Border>
+
+            <Grid Background="{StaticResource DesignHostBackgroundBrush}"
+              Visibility="{Binding UpdatingSettings,
+                Converter={StaticResource BoolToVisibilityConverter}}">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Foreground="{StaticResource DesignHostBackgroundTextBrush}" 
+                           Text="{Binding ConverterParameter=PleaseWait, 
+                                Converter={StaticResource BuilderLocalization}}"                                             
+                           HorizontalAlignment="Center" FontSize="14" Opacity="0.6" />
+                    <ProgressBar IsIndeterminate="True" Width="200" Height="15" HorizontalAlignment="Center"
+                             Margin="10" Opacity="0.8">
+                    </ProgressBar>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+
+        <Grid Background="Black"
+              Grid.RowSpan="2"
+              Visibility="{Binding IsInitialized, Converter={StaticResource InvertBoolToVisibilityConverter}}">
+            <Grid Background="{StaticResource DesignHostBackgroundBrush}" />
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Foreground="{StaticResource DesignHostBackgroundTextBrush}" 
+                           Text="{Binding ConverterParameter=Loading, 
+                                Converter={StaticResource ControlsLocalization}}"                                             
+                           HorizontalAlignment="Center" FontSize="14" Opacity="0.6" />
+                <ProgressBar IsIndeterminate="True" Width="200" Height="15" HorizontalAlignment="Center"
+                             Margin="10" Opacity="0.8">
+                </ProgressBar>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

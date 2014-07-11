@@ -1,0 +1,925 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E9C0A5CA-D749-4205-B41C-E4246B9FDB2E}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ESRI.ArcGIS.Mapping.Controls</RootNamespace>
+    <AssemblyName>ESRI.ArcGIS.Mapping.Controls</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\output\Internal\Controls\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;VIEWER</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\output\Internal\Controls\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;VIEWER</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Q:\esriKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.Client">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-Core.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Behaviors">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-Behaviors.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Bing">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-Bing.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Bing.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Portal">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-Portal.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Portal.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Printing">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-Printing.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Printing.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Toolkit">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-Toolkit.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Toolkit.DataSources">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-ToolkitDataSources.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Toolkit.DataSources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\dependencies\ExpressionBlend\Microsoft.Expression.Interactions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Silverlight">
+      <HintPath>..\..\..\packages\Microsoft.Bcl.Async.1.0.168\lib\sl4\Microsoft.Threading.Tasks.Extensions.Silverlight.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition.Initialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ComponentModel.Composition.Initialization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>..\..\..\packages\Microsoft.Bcl.1.1.9\lib\sl5\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\packages\Microsoft.Bcl.1.1.9\lib\sl5\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Runtime.Serialization.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\..\packages\Microsoft.Bcl.1.1.9\lib\sl5\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="system">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Browser">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\dependencies\SilverlightToolkit\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\dependencies\SilverlightToolkit\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\dependencies\SilverlightToolkit\System.Windows.Controls.Toolkit.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-Behaviors.3.2.0.22\lib\sl50\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\build\include\buildnum.cs">
+      <Link>Properties\buildnum.cs</Link>
+    </Compile>
+    <Compile Include="AboutInfo\AboutInfo.cs" />
+    <Compile Include="AddContentDialog\AddContentDialog.cs" />
+    <Compile Include="AddContentDialog\BrowseContentDialog.cs" />
+    <Compile Include="AddContentDialog\SupportClasses.cs" />
+    <Compile Include="UserManagement.cs" />
+    <Compile Include="AttributeDisplay.cs" />
+    <Compile Include="AttributeDisplayConfig\AttributeDisplayConfig.cs" />
+    <Compile Include="AttributeDisplayConfig\ColumnHeaderClickBehavior.cs" />
+    <Compile Include="AttributeDisplayConfig\CustomDataGridColumn.cs" />
+    <Compile Include="AttributionDisplayControl.cs" />
+    <Compile Include="AutoUpdates\AutoUpdateConfig.cs" />
+    <Compile Include="Behaviors\Configuration\AvailableBehaviorItemsControl.cs" />
+    <Compile Include="Behaviors\Configuration\BehaviorConfigurationCommands.cs" />
+    <Compile Include="BaseMapsConfig\BaseMapItemConfigControl.cs" />
+    <Compile Include="BaseMapsConfig\BaseMapsConfigControl.cs" />
+    <Compile Include="Behaviors\Configuration\BehaviorsConfiguration.cs" />
+    <Compile Include="Behaviors\Configuration\BehaviorConfiguration.cs" />
+    <Compile Include="Behaviors\Configuration\MapBehaviorConfigControl.cs" />
+    <Compile Include="Behaviors\Configuration\MapBehaviorsList.cs" />
+    <Compile Include="Behaviors\NotPublic\ClearEditOnClickBehavior.cs" />
+    <Compile Include="Behaviors\NotPublic\ClosePopupOnClickBehavior.cs" />
+    <Compile Include="Behaviors\NotPublic\ConnectionDeleteBehavior.cs" />
+    <Compile Include="Behaviors\NotPublic\RightAlignPopupBehavior.cs" />
+    <Compile Include="Behaviors\NotPublic\ResolveFieldValueBehavior.cs" />
+    <Compile Include="Behaviors\NotPublic\ShowMoreLessToggleControlBehavior.cs" />
+    <Compile Include="Behaviors\NotPublic\OverrideMouseRightButtonDownBehavior.cs" />
+    <Compile Include="Behaviors\NotPublic\LayerMouseOverBehavior.cs" />
+    <Compile Include="Behaviors\NotPublic\ToggleVisibilityOnClick.cs" />
+    <Compile Include="Behaviors\NotPublic\UpdateColorPropertyBehavior.cs" />
+    <Compile Include="Behaviors\NotPublic\ConstrainExtentBehavior.cs" />
+    <Compile Include="Behaviors\NotPublic\Configs\ConstrainExtentBehaviorConfigControl.cs" />
+    <Compile Include="Behaviors\Public\ShowCoordinatesBehavior.cs" />
+    <Compile Include="Clusterer\ClustererConfigControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Clusterer\ClusterHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ColorPicker\ColorRampControl.cs" />
+    <Compile Include="ColorPicker\ColorSelector.cs" />
+    <Compile Include="ColorPicker\BackgroundColorPicker.cs" />
+    <Compile Include="ColorPicker\GradientStopPick.cs" />
+    <Compile Include="ColorPicker\SolidColorBrushSelector.cs" />
+    <Compile Include="CommandBase\CommandBase.cs" />
+    <Compile Include="CommandBase\LayerCommandBase.cs" />
+    <Compile Include="CommandBase\PopupCommandBase.cs" />
+    <Compile Include="Commands\Not Public\SignOutAllCommand.cs" />
+    <Compile Include="Commands\Not Public\SignInToServerCommand.cs" />
+    <Compile Include="Commands\Not Public\SignInCommand.cs" />
+    <Compile Include="Commands\Not Public\OpenItemCommand.cs" />
+    <Compile Include="Commands\Not Public\LinkWebMapCommand.cs" />
+    <Compile Include="Commands\Not Public\ToggleAttributeDisplayAllCommand.cs" />
+    <Compile Include="Commands\Not Public\ToggleAttributeDisplayNotSelectedCommand.cs" />
+    <Compile Include="Commands\Not Public\ToggleAttributeDisplaySelectedCommand.cs" />
+    <Compile Include="Commands\Not Public\UnlinkWebMapCommand.cs" />
+    <Compile Include="Commands\Public\AddContentCommand.cs" />
+    <Compile Include="Commands\Not Public\CheckIfLayerSupportsPopUpsCommand.cs" />
+    <Compile Include="Commands\Public\ConfigureLayerCommand.cs" />
+    <Compile Include="Commands\Public\AddAttachmentsCommand.cs" />
+    <Compile Include="Commands\Public\EditValuesCommand.cs" />
+    <Compile Include="Commands\Public\EditShapeCommand.cs" />
+    <Compile Include="Commands\Public\DeleteGraphicCommand.cs" />
+    <Compile Include="Commands\Public\MoveLayerDownCommand.cs" />
+    <Compile Include="Commands\Public\MoveLayerUpCommand.cs" />
+    <Compile Include="Converters\IntVisibilityConverter.cs" />
+    <Compile Include="Converters\GreaterThanToVisibilityConverter.cs" />
+    <Compile Include="Converters\RowToFieldValueConverter.cs" />
+    <Compile Include="Converters\IsPopupEnabledToResourceStringConverter.cs" />
+    <Compile Include="Converters\RtlImageConverter.cs" />
+    <Compile Include="ErrorDisplay\ErrorData.cs" />
+    <Compile Include="ErrorDisplay\ErrorDisplay.cs" />
+    <Compile Include="LayerConfiguration\LayerConfiguration.cs" />
+    <Compile Include="LayerConfiguration\LayerConfigurationDialog.cs" />
+    <Compile Include="Commands\Not Public\ToggleContentControlVisibilityCommand.cs" />
+    <Compile Include="Commands\Public\AddGeoRssFeedCommand.cs" />
+    <Compile Include="Commands\Not Public\AddHeatMapCommand.cs" />
+    <Compile Include="Commands\Not Public\CheckIfCustomGraphicsLayerCommand.cs" />
+    <Compile Include="Commands\Not Public\CheckIfGraphicsLayerCommand.cs" />
+    <Compile Include="Commands\Not Public\CheckIfHeatmapLayerCommand.cs" />
+    <Compile Include="Commands\Not Public\ToggleControlVisibilityCommand.cs" />
+    <Compile Include="Commands\Public\ClearSelectionCommand.cs" />
+    <Compile Include="Commands\Not Public\ConfigureLayerRendererCommand.cs" />
+    <Compile Include="Commands\Not Public\ChangeThemeBackgroundCommand.cs" />
+    <Compile Include="Commands\Not Public\CheckIfFeatureLayerCommand.cs" />
+    <Compile Include="Commands\Not Public\CheckIfCanSetRendererCommand.cs" />
+    <Compile Include="Commands\Not Public\ShowLayerConfigurationToolbarCommand.cs" />
+    <Compile Include="Commands\Not Public\SlideFrameworkElementsCommand.cs" />
+    <Compile Include="Commands\Not Public\OpenWebMapCommand.cs" />
+    <Compile Include="Commands\Not Public\ShowMapBehaviorsListCommand.cs" />
+    <Compile Include="Commands\Public\ShowAboutInfoCommand.cs" />
+    <Compile Include="Commands\Public\ToggleFilterFeaturesByMapExtentCommand.cs" />
+    <Compile Include="Commands\Public\ToggleEditCommand.cs" />
+    <Compile Include="Commands\Not Public\ToggleAddContentCommand.cs" />
+    <Compile Include="Commands\Public\ToggleMapContentsCommand.cs" />
+    <Compile Include="Commands\Public\ToggleTableCommand.cs" />
+    <Compile Include="Commands\Not Public\DisplayRichTextDialogCommand.cs" />
+    <Compile Include="Commands\Public\ExportSelectionCommand.cs" />
+    <Compile Include="Commands\Public\FindNearbyCommand.cs" />
+    <Compile Include="Commands\Not Public\FlipFrameworkElementsCommand.cs" />
+    <Compile Include="Commands\Not Public\NavigateToHelpLinkCommand.cs" />
+    <Compile Include="Commands\Not Public\RestoreDefaultThemeCommand.cs" />
+    <Compile Include="Commands\Public\SelectAllCommand.cs" />
+    <Compile Include="Converters\ExtensionDisplayNameConverter.cs" />
+    <Compile Include="Converters\AddIntegerConverter.cs" />
+    <Compile Include="Converters\FeatureLayerModeConverter.cs" />
+    <Compile Include="Converters\IsNotNullOrEmptyConverter.cs" />
+    <Compile Include="Converters\StringToUriConverter.cs" />
+    <Compile Include="Converters\WatermarkColorConverter.cs" />
+    <Compile Include="Converters\WatermarkConverter.cs" />
+    <Compile Include="FeatureLayerMode\FeatureLayerModeConfigControl.cs" />
+    <Compile Include="HeatMap\HeatMapFeatureLayerHelper.cs" />
+    <Compile Include="Commands\Public\SelectByDrawCommand.cs" />
+    <Compile Include="Commands\Public\ServiceDetailsCommand.cs" />
+    <Compile Include="Commands\Not Public\ShowPreviewControlCommand.cs" />
+    <Compile Include="Commands\Not Public\ToggleFullScreenCommand.cs" />
+    <Compile Include="Commands\Public\FilterLayerCommand.cs" />
+    <Compile Include="Commands\Public\DeleteLayerCommand.cs" />
+    <Compile Include="BaseMapGallery.cs" />
+    <Compile Include="Behaviors\NotPublic\ToggleAttributeVisiblityBehavior.cs" />
+    <Compile Include="Behaviors\NotPublic\ToggleMapTipVisiblityBehavior.cs" />
+    <Compile Include="ColorPicker\ColorPalette.cs" />
+    <Compile Include="Commands\Public\RefreshLayerCommand.cs" />
+    <Compile Include="Commands\Not Public\SignInToAGSOLCommand.cs" />
+    <Compile Include="Commands\Not Public\SignOutFromAGSOLCommand.cs" />
+    <Compile Include="Commands\Public\GoToLayerCommand.cs" />
+    <Compile Include="Commands\Public\ZoomToSelectionCommand.cs" />
+    <Compile Include="Converters\TextBlockEnabledDisabledColorConverter.cs" />
+    <Compile Include="Converters\VisibilityBasedOnGraphicsLayerContextConverter.cs" />
+    <Compile Include="FilePersistance\FileSaveCommand.cs" />
+    <Compile Include="FilePersistance\FileOpenCommand.cs" />
+    <Compile Include="FilePersistance\FileSaveAsCommand.cs" />
+    <Compile Include="Converters\ColorToSolidColorBrushConverter.cs" />
+    <Compile Include="Converters\ColumnDefinitionBinder.cs" />
+    <Compile Include="Converters\FontWeightConverter.cs" />
+    <Compile Include="Converters\GridLengthToDoubleConverter.cs" />
+    <Compile Include="Converters\LayerDisplayIconConverter.cs" />
+    <Compile Include="Converters\LayerDisplayNameConverter.cs" />
+    <Compile Include="Converters\RowDefinitionBinder.cs" />
+    <Compile Include="Converters\InvertVisibilityConverter.cs" />
+    <Compile Include="Converters\ThemeColorSetToCollectionConverter.cs" />
+    <Compile Include="Converters\VisibilityBasedOnLayerContextConverter.cs" />
+    <Compile Include="Converters\VisiblityBasedOnIsDynamicLayerConverter.cs" />
+    <Compile Include="Converters\VisiblityBasedOnSelectionContextConverter.cs" />
+    <Compile Include="MapCenter\MapCenter.cs" />
+    <Compile Include="Extensions\FindNearbyDialog.cs" />
+    <Compile Include="MapExtensions\MapExtensions.cs" />
+    <Compile Include="MapTipsConfig\MapServiceFieldInfoHelper.cs" />
+    <Compile Include="MapTipsConfig\MapTipsConfigInfo.cs" />
+    <Compile Include="MapTipsConfig\MapTipsConfig.cs" />
+    <Compile Include="ConnectionsDropDownPopupControl.cs" />
+    <Compile Include="Converters\Converters.cs" />
+    <Compile Include="EnterUrlDialog.cs" />
+    <Compile Include="LayerConfigControl.cs" />
+    <Compile Include="MapTipsConfig\MapTipsLayerConfig.cs" />
+    <Compile Include="MiscControls\RichTextDialogControl.xaml.cs">
+      <DependentUpon>RichTextDialogControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MiscControls\SignInStatusControl.cs" />
+    <Compile Include="MiscControls\SplitButton.cs" />
+    <Compile Include="AboutInfo\AboutInfoControl.cs" />
+    <Compile Include="Notification\Notification.cs" />
+    <Compile Include="Notification\NotificationPanel.cs" />
+    <Compile Include="PopupControls\IdentifyLayoutStyleHelper.cs" />
+    <Compile Include="PopupControls\InfoWindowExtensions.cs" />
+    <Compile Include="PopupControls\OnClickPopupControl.cs" />
+    <Compile Include="Commands\Not Public\CloseWindowCommand.cs" />
+    <Compile Include="SecureServices\CloseWindowAction.cs" />
+    <Compile Include="SecureServices\SecureServicesConfig.cs" />
+    <Compile Include="SecureServices\SecureServicesConfigViewModel.cs" />
+    <Compile Include="SecureServices\SecureServicesHelper.cs" />
+    <Compile Include="SecureServices\SecureServicesLayerConfig.cs" />
+    <Compile Include="SecureServices\SecureServicesLayerConfigViewModel.cs" />
+    <Compile Include="SecureServices\ConfigureProxyCommand.cs" />
+    <Compile Include="SecureServices\SignInView.xaml.cs">
+      <DependentUpon>SignInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Triggers\KeyPressedTrigger.cs" />
+    <Compile Include="Utils\BehaviorUtils.cs" />
+    <Compile Include="Utils\EditorCommandUtility.cs" />
+    <Compile Include="PopupControls\PopupHelper.cs" />
+    <Compile Include="Utils\PopupFeatureDataFormStyleHelper.cs" />
+    <Compile Include="Utils\ThrottleTimer.cs" />
+    <Compile Include="Utils\Transform.cs" />
+    <Compile Include="Utils\WindowSizeHelper.cs" />
+    <Compile Include="Utils\DownloadManager.cs" />
+    <Compile Include="Utils\ApplicationHelper.cs" />
+    <Compile Include="Utils\RequiredTextInTextBoxBehavior.cs" />
+    <Compile Include="Utils\VisualStateManagerHelper.cs" />
+    <Compile Include="Utils\XamlProcessor.cs" />
+    <Compile Include="ProgressGauge.cs" />
+    <Compile Include="ExpandCollapseControls\VerticalExpandCollapseControl.cs" />
+    <Compile Include="Ribbon.cs" />
+    <Compile Include="RibbonButton.cs" />
+    <Compile Include="RibbonDropDownButton.cs" />
+    <Compile Include="RibbonGroupControl.cs" />
+    <Compile Include="RibbonTabControl.cs" />
+    <Compile Include="RibbonTabContentControl.cs" />
+    <Compile Include="ScaleBar.cs" />
+    <Compile Include="ExpandCollapseControls\HorizontalExpandCollapseControl.cs" />
+    <Compile Include="MiscControls\ThicknessUpDownControl.cs" />
+    <Compile Include="Symbol\ClassBreakConfigControl.cs" />
+    <Compile Include="Symbol\ClassBreaksRendererOptionsConfigControl.cs" />
+    <Compile Include="Symbol\ClassBreaksRendererSymbolsConfigControl.cs" />
+    <Compile Include="Symbol\DefaultSymbolConfigControl.cs" />
+    <Compile Include="HeatMap\HeatMapConfigControl.cs" />
+    <Compile Include="Symbol\LayerSymbologyConfigControl.cs" />
+    <Compile Include="Symbol\SwitchRendererControl.cs" />
+    <Compile Include="Symbol\LayerRendererHelper.cs" />
+    <Compile Include="Symbol\LayerSymbologyHelper.cs" />
+    <Compile Include="Symbol\SymbolConfigControl.cs" />
+    <Compile Include="Symbol\SymbolPicker.cs" />
+    <Compile Include="Symbol\SymbolSelector.cs" />
+    <Compile Include="Symbol\SymbolUtils.cs" />
+    <Compile Include="Symbol\UniqueValueConfigControl.cs" />
+    <Compile Include="Symbol\UniqueValueRendererOptionsConfigControl.cs" />
+    <Compile Include="Symbol\UniqueValueRendererSymbolsConfigControl.cs" />
+    <Compile Include="ThemePreviewControl.cs" />
+    <Compile Include="Utils\LayoutStyleManager.cs" />
+    <Compile Include="Triggers\RectangleHoverLeave.cs" />
+    <Compile Include="Triggers\RectangleHoverEnter.cs" />
+    <Compile Include="Triggers\FlipFrameworkElementAction.cs" />
+    <Compile Include="Triggers\FrameworkElementHeightAnimation.cs" />
+    <Compile Include="Utils\ColorPickerUtils.cs" />
+    <Compile Include="Utils\ControlNames.cs" />
+    <Compile Include="Utils\LayerUtils.cs" />
+    <Compile Include="Utils\SidePanelHelper.cs" />
+    <Compile Include="Utils\ThemeColorHelper.cs" />
+    <Compile Include="View.cs" />
+    <Compile Include="Utils\LocalizableStrings.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Utils\ControlTreeHelper.cs" />
+    <Compile Include="Utils\StringResourcesManager.cs" />
+    <Compile Include="ViewerApplicationControl.cs" />
+    <Compile Include="View_SymbologyLogic.cs" />
+    <Compile Include="WatermarkedTextBox\VisualStateHelper.cs" />
+    <Compile Include="WatermarkedTextBox\WatermarkedTextBox.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Extensibility\ESRI.ArcGIS.Client.Application.Controls\ESRI.ArcGIS.Client.Application.Controls.csproj">
+      <Project>{94d632f6-47d0-42a5-9a3a-a3a79a06f07c}</Project>
+      <Name>ESRI.ArcGIS.Client.Application.Controls</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Extensibility\ESRI.ArcGIS.Client.Application.Layout\ESRI.ArcGIS.Client.Application.Layout.csproj">
+      <Project>{641b599d-f3de-444f-b707-7cb44c49818a}</Project>
+      <Name>ESRI.ArcGIS.Client.Application.Layout</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Extensibility\ESRI.ArcGIS.Client.Extensibility\ESRI.ArcGIS.Client.Extensiblity.csproj">
+      <Project>{ff603a2d-885f-4c43-b9ff-703bcfe8a9f1}</Project>
+      <Name>ESRI.ArcGIS.Client.Extensiblity</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ESRI.ArcGIS.Mapping.Controls.MapContents\ESRI.ArcGIS.Mapping.Controls.MapContents.csproj">
+      <Project>{309CF0FF-5C66-4C3E-AFA8-A2856320C956}</Project>
+      <Name>ESRI.ArcGIS.Mapping.Controls.MapContents</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ESRI.ArcGIS.Mapping.Controls.Editor\ESRI.ArcGIS.Mapping.Controls.Editor.csproj">
+      <Project>{A0A3DD01-BAF0-4089-AFBE-7BD6C411C54E}</Project>
+      <Name>ESRI.ArcGIS.Mapping.Controls.Editor</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\ESRI.ArcGIS.Mapping.Controls.ArcGISOnline\ESRI.ArcGIS.Mapping.Controls.ArcGISOnline.csproj">
+      <Project>{99CEDF59-E4F6-4C6E-88D3-57C45F8C506B}</Project>
+      <Name>ESRI.ArcGIS.Mapping.Controls.ArcGISOnline</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\ESRI.ArcGIS.Mapping.Core\ESRI.ArcGIS.Mapping.Core.csproj">
+      <Project>{D4B8CF5C-B2CF-45D1-9FBB-AAA152E44718}</Project>
+      <Name>ESRI.ArcGIS.Mapping.Core</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\ESRI.ArcGIS.Mapping.Windowing\ESRI.ArcGIS.Mapping.Windowing.csproj">
+      <Project>{C3B83892-A7B4-4AC6-A788-269B4641FD1B}</Project>
+      <Name>ESRI.ArcGIS.Mapping.Windowing</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\ESRI.ArcGIS.Mapping.DataSources\ESRI.ArcGIS.Mapping.DataSources.csproj">
+      <Project>{A46B7751-539E-4E2B-80F4-E71F173E97E1}</Project>
+      <Name>ESRI.ArcGIS.Mapping.DataSources</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\ESRI.ArcGIS.Mapping.Behaviors\ESRI.ArcGIS.Mapping.Behaviors.csproj">
+      <Project>{675E6138-EC2B-4554-83B1-023A92DA2272}</Project>
+      <Name>ESRI.ArcGIS.Mapping.Behaviors</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AttributeDisplayConfig\AttributeDisplayConfig.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AutoUpdates\AutoUpdateConfig.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseMapsConfig\BaseMapItemConfigControl.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BaseMapsConfig\BaseMapsConfigControl.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Behaviors\Configuration\MapBehaviorConfigControl.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Behaviors\NotPublic\Configs\ConstrainExtentBehaviorConfigControl.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ErrorDisplay\ErrorDisplay.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FeatureLayerMode\FeatureLayerMode.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MapTipsConfig\MapTipsConfig.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MapTipsConfig\MapTipsLayerConfig.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Clusterer\Clusterer.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HeatMap\HeatMapConfigControl.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MiscControls\RichTextDialogControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SecureServices\SecureServicesConfig.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SecureServices\SecureServicesLayerConfig.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SecureServices\SignInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\AddContentControl.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ApplicationStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\AttributeDisplay.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\AvailableBehaviorItemsControl.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\BaseMapGallery.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ColorPickerControls.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ColorRampControl.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\BrowseContentControl.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\BackgroundColorPicker.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LayerConfiguration\LayerConfigurationDialog.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\EnterUrlDialog.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\GradientStopPick.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Behaviors\Configuration\MapBehaviorsList.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LayerConfiguration\LayerConfiguration.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\MapCenter.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ExpandCollapseControls.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\FindNearbyDialog.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\NotificationPanel.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\OnClickPopupContainerStyle.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\PopupFeatureDataFormStyle.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ProgressGauge.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Ribbon.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ScaleBar.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\SignInStatusControl.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\SplitButton.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Symbols.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ThemePreviewControl.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ThicknessUpDownControl.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\AboutInfoControl.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\WatermarkedTextBox.Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\arcgisServer.png" />
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\databasetable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\layer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\mapService.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\sdsServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\makePointLarger16.png" />
+    <Resource Include="Images\icons\makePointSmaller16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\deleteconnection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\makeLineThicker16.png" />
+    <Resource Include="Images\icons\makeLineThinner16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\TextColor16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\GenericBlueAdd_B_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\GenericDeleteRed16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\editableLayer.png" />
+    <Resource Include="Images\icons\imageService.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\GeoprocessingTool16.png" />
+    <Resource Include="Images\icons\GeoprocessingToolbox16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\caution16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\heatMap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\wms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\graphicsLayer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\line.png" />
+    <Resource Include="Images\icons\point.png" />
+    <Resource Include="Images\icons\poly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\bing16.png" />
+    <Resource Include="Images\icons\OpenStreetMap16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\geoRssFeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\Find32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\exportConfiguration32.png" />
+    <Resource Include="Images\toolbar\FillColor16.png" />
+    <Resource Include="Images\toolbar\importConfiguration32.png" />
+    <Resource Include="Images\toolbar\Layers32.png" />
+    <Resource Include="Images\toolbar\MapContents32.png" />
+    <Resource Include="Images\toolbar\OutlineColor16.png" />
+    <Resource Include="Images\toolbar\SignIn16.png" />
+    <Resource Include="Images\toolbar\SlidesWindow32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\Server32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\TextColor16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\sharepointServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\transparencySlider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\groupLayer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\intensitySlider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\AddHeatMap16.png" />
+    <Resource Include="Images\toolbar\AddHeatMap32.png" />
+    <Resource Include="Images\toolbar\ColorScheme16.png" />
+    <Resource Include="Images\toolbar\ColorScheme32.png" />
+    <Resource Include="Images\toolbar\Filter_C_16.png" />
+    <Resource Include="Images\toolbar\Filter_C_32.png" />
+    <Resource Include="Images\toolbar\HeatMapIntensity16.png" />
+    <Resource Include="Images\toolbar\HeatMapIntensity32.png" />
+    <Resource Include="Images\toolbar\HTMLPopUpTool16.png" />
+    <Resource Include="Images\toolbar\Symbol16.png" />
+    <Resource Include="Images\toolbar\Symbol32.png" />
+    <Resource Include="Images\toolbar\TableSettings16.png" />
+    <Resource Include="Images\toolbar\TableSettings32.png" />
+    <Resource Include="Images\toolbar\Transparency16.png" />
+    <Resource Include="Images\toolbar\Transparency32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\HTMLPopUpTool32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\configure16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\esri_64x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\BingLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\transparencySlider_Horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\intensitySlider_Horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\collapse.png" />
+    <Resource Include="Images\icons\expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon_tools16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\down.png" />
+    <Resource Include="Images\icons\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\LayerLocked16.png" />
+    <Resource Include="Images\toolbar\LayerLocked32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\HeatMap32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\AutoUpdate32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\Clustering32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\Transparency32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\FeatureRetrieval32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\OpenItemOnClick32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\warning_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\CheckMark_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\toolbar\attachment.png" />
+    <Resource Include="Images\toolbar\cursor.png" />
+    <Resource Include="Images\toolbar\Freehand16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\GenericDeleteBlackTiny16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons\GenericInformation16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

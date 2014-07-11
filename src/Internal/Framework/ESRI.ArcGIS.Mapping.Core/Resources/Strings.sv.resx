@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ExceptionAdditionConverterDoesNotSupportType" xml:space="preserve">
+    <value>AdditionConverter saknar stöd för typen {0}</value>
+  </data>
+  <data name="ExceptionCannotcallSyncronousMethodGetFileAsText" xml:space="preserve">
+    <value>Det går inte att anropa den synkrona metoden GetFileAsText i Silverlight. Använd GetFileAsTextAsync i stället.</value>
+  </data>
+  <data name="ExceptionCannotCompareWith" xml:space="preserve">
+    <value>Det går inte att jämföra med {0}</value>
+  </data>
+  <data name="ExceptionCannotDeserializeResponse" xml:space="preserve">
+    <value>Det går inte att deserialisera svaret</value>
+  </data>
+  <data name="ExceptionClusterer" xml:space="preserve">
+    <value>Klustrare</value>
+  </data>
+  <data name="ExceptionConfigFileUrlMustBeSpecified" xml:space="preserve">
+    <value>ConfigFileUrl måste anges</value>
+  </data>
+  <data name="ExceptionConfigurationFileEmpty" xml:space="preserve">
+    <value>Konfigurationsfilen var tom</value>
+  </data>
+  <data name="ExceptionConfigurationXmlIsEmpty" xml:space="preserve">
+    <value>Konfigurationsfilens XML är tom</value>
+  </data>
+  <data name="ExceptionDataSource" xml:space="preserve">
+    <value>dataSource</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>element</value>
+  </data>
+  <data name="ExceptionEmptyFile" xml:space="preserve">
+    <value>Tom fil</value>
+  </data>
+  <data name="ExceptionExtensionUrl" xml:space="preserve">
+    <value>extensionURL</value>
+  </data>
+  <data name="ExceptionFileNotFound" xml:space="preserve">
+    <value>Det gick inte att hitta filen.</value>
+  </data>
+  <data name="ExceptionGraphicsLayer" xml:space="preserve">
+    <value>grafiklager</value>
+  </data>
+  <data name="ExceptionIdforDataSourceMustNotBeEmpty" xml:space="preserve">
+    <value>ID för dataSource får inte vara tomt</value>
+  </data>
+  <data name="ExceptionInconsistentTotalNumberOfValues" xml:space="preserve">
+    <value>Inkonsistent totalt antal värden</value>
+  </data>
+  <data name="ExceptionInvalidFileMustBeUrlForSilverlightApplication" xml:space="preserve">
+    <value>Ogiltig fil. Det måste vara en URL för Silverlight-program</value>
+  </data>
+  <data name="ExceptionInvalidPathForresourceDictionary" xml:space="preserve">
+    <value>Ogiltig sökväg för resurslistan {0}</value>
+  </data>
+  <data name="ExceptionLayer" xml:space="preserve">
+    <value>lager</value>
+  </data>
+  <data name="ExceptionMap" xml:space="preserve">
+    <value>karta</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationFile" xml:space="preserve">
+    <value>ConfigurationFile måste anges</value>
+  </data>
+  <data name="ExceptionMustSpecifyFile" xml:space="preserve">
+    <value>En fil måste anges</value>
+  </data>
+  <data name="ExceptionMustSpecifyFileUrl" xml:space="preserve">
+    <value>FileUrl måste anges</value>
+  </data>
+  <data name="ExceptionMustSpecifyLocatorUrl" xml:space="preserve">
+    <value>LocatorUrl måste anges</value>
+  </data>
+  <data name="ExceptionMustSpecifyValidFileUrl" xml:space="preserve">
+    <value>En giltig FileUrl måste anges</value>
+  </data>
+  <data name="ExceptionNamespaces" xml:space="preserve">
+    <value>namespaces</value>
+  </data>
+  <data name="ExceptionNoBrushesFound" xml:space="preserve">
+    <value>Det gick inte att hitta några penslar</value>
+  </data>
+  <data name="ExceptionNoDefaultSymbolsFoundInDictionaryForGeometryType" xml:space="preserve">
+    <value>Det gick inte att hitta några standardsymboler i listan {0} för geometrityp = {1}</value>
+  </data>
+  <data name="ExceptionNoResourceDictionaryAvailableForGeometryType" xml:space="preserve">
+    <value>Det finns inga resurslistor tillgängliga för geometrityp = {0}</value>
+  </data>
+  <data name="ExceptionNoResourceDictionaryfoundForGeometryType" xml:space="preserve">
+    <value>Det gick inte att hitta någon resurslista för geometrityp = {0}</value>
+  </data>
+  <data name="ExceptionNoResultsFromProjection" xml:space="preserve">
+    <value>Inga resultat från projektion</value>
+  </data>
+  <data name="ExceptionNoSymbolAvailableInResourceDictionary" xml:space="preserve">
+    <value>Det finns inga symboler tillgängliga i resurslistan {0}</value>
+  </data>
+  <data name="ExceptionNoThemeFileUrlSpecified" xml:space="preserve">
+    <value>Ingen ThemeFileUrl har angetts</value>
+  </data>
+  <data name="ExceptionNumberofGraphicsBeforeAndAfterProjectionAreNotEqual" xml:space="preserve">
+    <value>Antalet grafiska objekt före och efter projektion överensstämmer inte</value>
+  </data>
+  <data name="ExceptionOutputSpatialReference" xml:space="preserve">
+    <value>outputSpatialReference</value>
+  </data>
+  <data name="ExceptionRequiresPointValue" xml:space="preserve">
+    <value>Kräver ett punktvärde</value>
+  </data>
+  <data name="ExceptionResourceDictionaryEmpty" xml:space="preserve">
+    <value>resurslistan är tom</value>
+  </data>
+  <data name="ExceptionSymbolConfigXmlEmpty" xml:space="preserve">
+    <value>symbolConfigXml är tom</value>
+  </data>
+  <data name="ExceptionSymbolDescriptionValueNull" xml:space="preserve">
+    <value>Värdet på SymbolDescription är null</value>
+  </data>
+  <data name="ExceptionSymbolFolderParentUrlMustBeSpecified" xml:space="preserve">
+    <value>SymbolFolderParentUrl måste anges</value>
+  </data>
+  <data name="ExceptionUnableToLoadconfigurationStoreFromEmbeddedResource" xml:space="preserve">
+    <value>Det gick inte att läsa in lagrade konfigurationsdata från inbäddad resurs</value>
+  </data>
+  <data name="ExceptionUnableToParseFile" xml:space="preserve">
+    <value>Det gick inte att tolka filen</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConnectionsFromEmbeddedResource" xml:space="preserve">
+    <value>Det gick inte att hämta anslutningar från en inbäddad resurs</value>
+  </data>
+  <data name="ExceptionUnableToretrievedefaultLinearGradientBrushes" xml:space="preserve">
+    <value>Det gick inte att hämta standardpenslar för linjär toning</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveLinearGradientBrushes" xml:space="preserve">
+    <value>Det gick inte att hämta penslar för linjär toning.</value>
+  </data>
+  <data name="ExceptionUnableToretrieveResourceDictionaryContents" xml:space="preserve">
+    <value>Det gick inte att hämta innehåll från resurslista</value>
+  </data>
+  <data name="ExceptionUnknownError" xml:space="preserve">
+    <value>Okänt fel</value>
+  </data>
+  <data name="Graphics" xml:space="preserve">
+    <value>grafik</value>
+  </data>
+  <data name="NoneInAngleBraces" xml:space="preserve">
+    <value>&lt;inga&gt;</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>punkter</value>
+  </data>
+  <data name="FlagCheckered" xml:space="preserve">
+    <value>Rutig flagga</value>
+  </data>
+  <data name="FlagGreen" xml:space="preserve">
+    <value>Grön flagga</value>
+  </data>
+  <data name="FlagRed" xml:space="preserve">
+    <value>Röd flagga</value>
+  </data>
+  <data name="FlagWhite" xml:space="preserve">
+    <value>Vit flagga</value>
+  </data>
+  <data name="FlagYellow" xml:space="preserve">
+    <value>Gul flagga</value>
+  </data>
+  <data name="Pin2RedShiny" xml:space="preserve">
+    <value>Rödglänsande nål 2</value>
+  </data>
+  <data name="PinBlueShiny" xml:space="preserve">
+    <value>Blåglänsande nål</value>
+  </data>
+  <data name="PinGoldShiny" xml:space="preserve">
+    <value>Guldglänsande nål</value>
+  </data>
+  <data name="PinGreenShiny" xml:space="preserve">
+    <value>Grönglänsande nål</value>
+  </data>
+  <data name="PinLightBlueShiny" xml:space="preserve">
+    <value>Ljusblåglänsande nål</value>
+  </data>
+  <data name="PinLightGreenShiny" xml:space="preserve">
+    <value>Ljusgrönglänsande nål</value>
+  </data>
+  <data name="PinPurpleShiny" xml:space="preserve">
+    <value>Lilaglänsande nål</value>
+  </data>
+  <data name="PinShiny" xml:space="preserve">
+    <value>Glänsande nål</value>
+  </data>
+  <data name="RedShinyPin" xml:space="preserve">
+    <value>Rödglänsande nål</value>
+  </data>
+  <data name="StickpinBlack" xml:space="preserve">
+    <value>Svart kartnål</value>
+  </data>
+  <data name="StickpinBlue" xml:space="preserve">
+    <value>Blå kartnål</value>
+  </data>
+  <data name="StickpinBrown" xml:space="preserve">
+    <value>Brun kartnål</value>
+  </data>
+  <data name="StickpinGray" xml:space="preserve">
+    <value>Grå kartnål</value>
+  </data>
+  <data name="StickpinGreen" xml:space="preserve">
+    <value>Grön kartnål</value>
+  </data>
+  <data name="StickpinLightBlue" xml:space="preserve">
+    <value>Ljusblå kartnål</value>
+  </data>
+  <data name="StickpinOrange" xml:space="preserve">
+    <value>Orange kartnål</value>
+  </data>
+  <data name="StickpinPurple" xml:space="preserve">
+    <value>Lila kartnål</value>
+  </data>
+  <data name="StickpinRed" xml:space="preserve">
+    <value>Röd kartnål</value>
+  </data>
+  <data name="StickpinSpringGreen" xml:space="preserve">
+    <value>Vårgrön kartnål</value>
+  </data>
+  <data name="StickpinWhite" xml:space="preserve">
+    <value>Vit kartnål</value>
+  </data>
+  <data name="StickpinYellow" xml:space="preserve">
+    <value>Gul kartnål</value>
+  </data>
+  <data name="SymbolAmberBeacon" xml:space="preserve">
+    <value>Bärnstensfärgad fyrsymbol</value>
+  </data>
+  <data name="SymbolBlackBeacon" xml:space="preserve">
+    <value>Svart fyrsymbol</value>
+  </data>
+  <data name="SymbolBlackWaypoint" xml:space="preserve">
+    <value>Svart kartpunkt</value>
+  </data>
+  <data name="SymbolBlueBeacon" xml:space="preserve">
+    <value>Blå fyrsymbol</value>
+  </data>
+  <data name="SymbolBlueSphere" xml:space="preserve">
+    <value>Blått klot</value>
+  </data>
+  <data name="SymbolBlueWaypoint" xml:space="preserve">
+    <value>Blå kartpunkt</value>
+  </data>
+  <data name="SymbolCapital1" xml:space="preserve">
+    <value>Huvudstad 1</value>
+  </data>
+  <data name="SymbolCapital2" xml:space="preserve">
+    <value>Huvudstad 2</value>
+  </data>
+  <data name="SymbolCircleX" xml:space="preserve">
+    <value>Cirkel-X</value>
+  </data>
+  <data name="SymbolCrossHair" xml:space="preserve">
+    <value>Hårkors</value>
+  </data>
+  <data name="SymbolGreenBeacon" xml:space="preserve">
+    <value>Grön fyrsymbol</value>
+  </data>
+  <data name="SymbolGreenSphere" xml:space="preserve">
+    <value>Grönt klot</value>
+  </data>
+  <data name="SymbolOrangeBeacon" xml:space="preserve">
+    <value>Orange fyrsymbol</value>
+  </data>
+  <data name="SymbolOrangeSphere" xml:space="preserve">
+    <value>Orange klot</value>
+  </data>
+  <data name="SymbolPopulated1" xml:space="preserve">
+    <value>Ifylld 1</value>
+  </data>
+  <data name="SymbolPopulated2" xml:space="preserve">
+    <value>Ifylld 2</value>
+  </data>
+  <data name="SymbolPopulated3" xml:space="preserve">
+    <value>Ifylld 3</value>
+  </data>
+  <data name="SymbolPopulated4" xml:space="preserve">
+    <value>Ifylld 4</value>
+  </data>
+  <data name="SymbolPopulated5" xml:space="preserve">
+    <value>Ifylld 5</value>
+  </data>
+  <data name="SymbolPopulated6" xml:space="preserve">
+    <value>Ifylld 6</value>
+  </data>
+  <data name="SymbolPopulated7" xml:space="preserve">
+    <value>Ifylld 7</value>
+  </data>
+  <data name="SymbolPurpleSphere" xml:space="preserve">
+    <value>Lila klot</value>
+  </data>
+  <data name="SymbolRedBeacon" xml:space="preserve">
+    <value>Röd fyrsymbol</value>
+  </data>
+  <data name="SymbolRedSphere" xml:space="preserve">
+    <value>Rött klot</value>
+  </data>
+  <data name="SymbolWhiteWaypoint" xml:space="preserve">
+    <value>Vit kartpunkt</value>
+  </data>
+  <data name="SymbolYellowArrow" xml:space="preserve">
+    <value>Gul pil</value>
+  </data>
+  <data name="SymbolYellowSphere" xml:space="preserve">
+    <value>Gult klot</value>
+  </data>
+  <data name="ExceptionRequiresParameter" xml:space="preserve">
+    <value>Kräver att det har angetts en parameter</value>
+  </data>
+  <data name="ExceptionAppendPropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>AppendProperty anropades utanför ett objekt</value>
+  </data>
+  <data name="ExceptionBadEscape" xml:space="preserve">
+    <value>Ogiltigt avslut</value>
+  </data>
+  <data name="ExceptionConverters" xml:space="preserve">
+    <value>konverterare</value>
+  </data>
+  <data name="ExceptionEndArrayCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>EndArray anropades utan någon motsvarande StartArray</value>
+  </data>
+  <data name="ExceptionEndArrayIndentedCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>EndArrayIndented anropades utan någon motsvarande StartArray</value>
+  </data>
+  <data name="ExceptionEndObjectCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>EndObject anropades utan något motsvarande StartObject</value>
+  </data>
+  <data name="ExceptionEndObjectIndentedCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>EndObjectIndented anropades utan något motsvarande StartObject</value>
+  </data>
+  <data name="ExceptionInput" xml:space="preserve">
+    <value>indata</value>
+  </data>
+  <data name="ExceptionStartPropertycalledOutsideOfAnObject" xml:space="preserve">
+    <value>StartProperty anropades utanför ett objekt</value>
+  </data>
+  <data name="ExceptionType" xml:space="preserve">
+    <value>typ</value>
+  </data>
+  <data name="ExceptionWritePropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>WriteProperty anropades utanför ett objekt</value>
+  </data>
+  <data name="MoreInfo" xml:space="preserve">
+    <value>Mer information</value>
+  </data>
+  <data name="RootVisualError" xml:space="preserve">
+    <value>Det gick inte att hämta programmets root visual-egenskap</value>
+  </data>
+  <data name="ExceptionNoResult" xml:space="preserve">
+    <value>Inget resultat returnerades av denna begäran</value>
+  </data>
+</root>

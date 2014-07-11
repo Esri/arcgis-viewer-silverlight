@@ -1,0 +1,106 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl x:Class="ESRI.ArcGIS.Mapping.Builder.Controls.EditToolbarItemControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="{Binding ConverterParameter=ToolbarPrompt, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                       VerticalAlignment="Center" Margin="0,0,3,8" Foreground="{StaticResource DesignHostBackgroundTextBrush}" 
+                   Visibility="{Binding ToolbarSelectionVisibility}"
+                       MaxWidth="100"
+                       TextWrapping="Wrap"/>
+            <ComboBox x:Name="cboToolbar" VerticalAlignment="Center" Grid.Column="1" 
+                      HorizontalAlignment="Stretch" Height="24"
+                      Margin="0,0,0,8"
+                  Style="{StaticResource ComboBoxStyle}" Background="White" Foreground="Black"
+                  SelectionChanged="cboToolbar_SelectionChanged" Visibility="{Binding ToolbarSelectionVisibility}"/>
+
+            <TextBlock Text="{Binding ConverterParameter=LabelPrompt, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                       VerticalAlignment="Center" Margin="0,0,3,0"  Grid.Row="1" Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                       MaxWidth="100"
+                       TextWrapping="Wrap" />
+            <TextBox x:Name="txtTitle" VerticalAlignment="Center" Text="{Binding Label, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" 
+                     HorizontalAlignment="Stretch" />
+
+            <TextBlock Text="{Binding ConverterParameter=TooltipPrompt, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                       VerticalAlignment="Center" Grid.Row="2" Margin="0,8,3,0"  Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                       MaxWidth="100"
+                       TextWrapping="Wrap" />
+            <TextBox x:Name="txtDescription" VerticalAlignment="Center" Text="{Binding Description, Mode=TwoWay}" Grid.Column="1" Grid.Row="2" 
+                     Margin="0,8,0,0" HorizontalAlignment="Stretch" />
+
+            <TextBlock Text="{Binding ConverterParameter=IconPrompt, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                       Foreground="{StaticResource DesignHostBackgroundTextBrush}"  VerticalAlignment="Center" Grid.Row="3" Margin="0,8,3,0"
+                       MaxWidth="100"
+                       TextWrapping="Wrap" />
+            <Grid Grid.Column="1" Grid.Row="3" Margin="0,8,0,0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="txtImage" VerticalAlignment="Center" Text="{Binding IconUrl, Mode=TwoWay}" HorizontalAlignment="Stretch" Foreground="Black"/>
+                <Button Content="..." Grid.Column="1" Margin="2,1,0,1" Click="Browse_Click" 
+                Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}" />
+            </Grid>
+
+        <Grid HorizontalAlignment="Stretch" Grid.Row="4" Grid.ColumnSpan="2"
+              Margin="0,12,0,0"
+              Visibility="{Binding OkCancelButtonVisibility}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" /> 
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnConfigure" Click="btnConfigure_Click" Padding="6,0,6,0" Height="26" HorizontalAlignment="Left"
+                    IsEnabled="{Binding SupportsConfiguration}"
+                        ToolTipService.ToolTip="{Binding ConverterParameter=Configure, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}" >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <ToolTipService.ToolTip>
+                        <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}"
+                                 Content="{Binding ConverterParameter=Configure, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+                    </ToolTipService.ToolTip>
+                    <Image Source="../images/configure16.png" Margin="0,5,0,5" />
+                    <TextBlock Text="{Binding ConverterParameter=Configure, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                               VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" >
+                <Button x:Name="OkButton" Content="{Binding ConverterParameter=OK, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"  
+                    Margin="0,0,3,0"  Height="26" MinWidth="54" Click="OkButton_Click"
+                    HorizontalAlignment="Right" Grid.Row="1"
+                    Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                    Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                    IsEnabled="{Binding InputValid}"/>
+                <Button Content="{Binding ConverterParameter=Cancel, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                            Click="btnCancel_Click"  Height="26" MinWidth="54" HorizontalAlignment="Right" 
+                    Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                    Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC756BDF-710A-438D-8B25-3C5C76903467}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ESRI.ArcGIS.Mapping.Builder.Server</RootNamespace>
+    <AssemblyName>ESRI.ArcGIS.Mapping.Builder.Server</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;VIEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release\</OutputPath>
+    <DefineConstants>VIEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Q:\esriKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\build\include\buildnum.cs">
+      <Link>Properties\buildnum.cs</Link>
+    </Compile>
+    <Compile Include="UpgradeSiteHandlerBase.cs" />
+    <Compile Include="GetSettingsXmlHandlerBase.cs" />
+    <Compile Include="SaveSettingsRequestHandlerBase.cs" />
+    <Compile Include="CopySiteRequestHandlerBase.cs" />
+    <Compile Include="CreateSiteFromTemplateRequestHandlerBase.cs" />
+    <Compile Include="DeleteExtensionRequestHandlerBase.cs" />
+    <Compile Include="DeleteSiteHandlerBase.cs" />
+    <Compile Include="GetConfigurationStoreXmlHandlerBase.cs" />
+    <Compile Include="GetFilesRequestHandlerBase.cs" />
+    <Compile Include="GetSitesHandlerBase.cs" />
+    <Compile Include="ServiceRequestHandlerBase.cs" />
+    <Compile Include="GetExtensionsHandlerBase.cs" />
+    <Compile Include="GetTemplatesHandlerBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveSiteRequestHandlerBase.cs" />
+    <Compile Include="SaveConfigurationStoreXmlHandlerBase.cs" />
+    <Compile Include="UploadExtensionRequestHandlerBase.cs" />
+    <Compile Include="UploadFileRequestHandlerBase.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ESRI.ArcGIS.Mapping.Builder.Common\ESRI.ArcGIS.Mapping.Builder.Common.csproj">
+      <Project>{2CCCA8B6-1DC9-411A-93A3-FD69933B6895}</Project>
+      <Name>ESRI.ArcGIS.Mapping.Builder.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

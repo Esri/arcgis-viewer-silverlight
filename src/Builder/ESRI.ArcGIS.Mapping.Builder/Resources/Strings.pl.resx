@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Dodaj zachowanie</value>
+  </data>
+  <data name="AddBehaviorDescription" xml:space="preserve">
+    <value>Dodaj zachowanie do przeglądarki</value>
+  </data>
+  <data name="AddGeoprocessing" xml:space="preserve">
+    <value>Dodaj geoprzetwarzanie</value>
+  </data>
+  <data name="AddGeoprocessingDescription" xml:space="preserve">
+    <value>Dodaj narzędzie geoprzetwarzania do przeglądarki. Narzędzie geoprzetwarzania umożliwia użytkownikom przeglądarki korzystanie z usługi geoprzetwarzania ArcGIS Server.</value>
+  </data>
+  <data name="AddGeoRSSDescription" xml:space="preserve">
+    <value>Dodaj do mapy kanał GeoRSS obsługujący dane geograficzne</value>
+  </data>
+  <data name="AddGP" xml:space="preserve">
+    <value>Dodaj GP</value>
+  </data>
+  <data name="AddTool" xml:space="preserve">
+    <value>Dodaj narzędzie</value>
+  </data>
+  <data name="AddToolDescription" xml:space="preserve">
+    <value>Dodaje narzędzie do przeglądarki</value>
+  </data>
+  <data name="ApplicationBuilderSettings" xml:space="preserve">
+    <value>Ustawienia Kreatora aplikacji</value>
+  </data>
+  <data name="ApplicationBuilderSettingsDescription" xml:space="preserve">
+    <value>Wyświetl i zmodyfikuj ustawienia Kreatora aplikacji łącznie z zarządzaniem dodatkami i mapami bazowymi.</value>
+  </data>
+  <data name="AttributeTable" xml:space="preserve">
+    <value>Tabela atrybutów</value>
+  </data>
+  <data name="BasemapGalleryDescription" xml:space="preserve">
+    <value>Wybierz inną warstwę bazową dla mapy</value>
+  </data>
+  <data name="Behaviors" xml:space="preserve">
+    <value>Zachowania</value>
+  </data>
+  <data name="Branding" xml:space="preserve">
+    <value>Znakowanie</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Zmień</value>
+  </data>
+  <data name="ChangeLayout" xml:space="preserve">
+    <value>Zmień układ</value>
+  </data>
+  <data name="ChangeLayoutDescription" xml:space="preserve">
+    <value>Wybierz nowy układ dla przeglądarki</value>
+  </data>
+  <data name="ChangeLogo" xml:space="preserve">
+    <value>Zmień logo</value>
+  </data>
+  <data name="ChangeLogoDescription" xml:space="preserve">
+    <value>Wybierz logo dla przeglądarki</value>
+  </data>
+  <data name="ChangeTitleAndLinks" xml:space="preserve">
+    <value>Zmień tytuł i łącza</value>
+  </data>
+  <data name="ChangeTitleAndLinksDescription" xml:space="preserve">
+    <value>Edytuj tytuł przeglądarki i hiperłącza</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Konfiguruj</value>
+  </data>
+  <data name="ConfigureTheme" xml:space="preserve">
+    <value>Konfiguruj motyw</value>
+  </data>
+  <data name="ConfigureThemeDescription" xml:space="preserve">
+    <value>Edytuj kolory motywu przeglądarki</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Pełny ekran</value>
+  </data>
+  <data name="FullScreenDescription" xml:space="preserve">
+    <value>Ustaw Kreator aplikacji w trybie pełnoekranowym</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Strona główna</value>
+  </data>
+  <data name="HomeDescription" xml:space="preserve">
+    <value>Wróć do strony początkowej Kreatora aplikacji</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>Układ</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Logo</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Zarządzaj</value>
+  </data>
+  <data name="ManageBehaviors" xml:space="preserve">
+    <value>Zarządzaj zachowaniami</value>
+  </data>
+  <data name="ManageBehaviorsDescription" xml:space="preserve">
+    <value>Włącz, wyłącz, zmień kolejność, dodaj lub usuń zachowania przeglądarki</value>
+  </data>
+  <data name="ManageToolbars" xml:space="preserve">
+    <value>Zarządzaj paskami narzędzi</value>
+  </data>
+  <data name="ManageToolbarsDescription" xml:space="preserve">
+    <value>Dodaj, usuń, przenieś i skonfiguruj narzędzia na paskach narzędzi przeglądarki</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Utwórz</value>
+  </data>
+  <data name="PublishDescription" xml:space="preserve">
+    <value>Utwórz bieżącą przeglądarkę w nowej witrynie internetowej</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Resetuj</value>
+  </data>
+  <data name="ResetTheme" xml:space="preserve">
+    <value>Resetuj motyw</value>
+  </data>
+  <data name="ResetThemeDescription" xml:space="preserve">
+    <value>Przywróć domyślne kolory motywu przeglądarki</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="SaveDescription" xml:space="preserve">
+    <value>Zapisz bieżącą przeglądarkę</value>
+  </data>
+  <data name="SelectTheTool" xml:space="preserve">
+    <value>Wybierz narzędzie...</value>
+  </data>
+  <data name="TitleAndLinks" xml:space="preserve">
+    <value>Tytuł i łącza</value>
+  </data>
+  <data name="ToggleBrowseDescription" xml:space="preserve">
+    <value>Pokaż lub ukryj panel przeglądania. Przeglądanie umożliwia wyświetlenie zawartości ArcGIS Server lub punktu końcowego usługi danych przestrzennych oraz dodanie warstw do mapy.</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>Pokaż lub ukryj listę zawartości mapy</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>Pokaż lub ukryj panel wyszukiwania. Wyszukiwanie umożliwia znalezienie miejsc, przeszukanie zawartości witryny ArcGIS.com lub znalezienie w Internecie usług ArcGIS Server.</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>Pokaż lub ukryj tabelę atrybutów dla aktualnie wybranej warstwy</value>
+  </data>
+  <data name="ToggleToolbar" xml:space="preserve">
+    <value>Przełącz pasek narzędzi</value>
+  </data>
+  <data name="ToggleToolbarDescription" xml:space="preserve">
+    <value>Pokaż lub ukryj pasek narzędzi Kreatora aplikacji</value>
+  </data>
+  <data name="Toolbar" xml:space="preserve">
+    <value>Pasek narzędzi</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Narzędzia</value>
+  </data>
+  <data name="Accent" xml:space="preserve">
+    <value>Akcent</value>
+  </data>
+  <data name="AccentText" xml:space="preserve">
+    <value>Tekst akcentu</value>
+  </data>
+  <data name="AddNewGroupOrControl" xml:space="preserve">
+    <value>Dodaj nową grupę lub element sterujący</value>
+  </data>
+  <data name="AddOns" xml:space="preserve">
+    <value>Dodatki</value>
+  </data>
+  <data name="ApplicationProperties" xml:space="preserve">
+    <value>Właściwości aplikacji</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Zastosuj</value>
+  </data>
+  <data name="ArcGISApplicationBuilder" xml:space="preserve">
+    <value>Kreator aplikacji — {0}</value>
+  </data>
+  <data name="ArcGISViewerForMicrosoftSilverlight" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Tło</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Tekst tła</value>
+  </data>
+  <data name="BaseMaps" xml:space="preserve">
+    <value>Mapy bazowe</value>
+  </data>
+  <data name="BrowseForFile" xml:space="preserve">
+    <value>Znajdź plik</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>Znajdź zasoby</value>
+  </data>
+  <data name="BuilderTutorial" xml:space="preserve">
+    <value>Przewodnik Kreatora aplikacji</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="ChangesSavedSuccessfully" xml:space="preserve">
+    <value>Pomyślnie zapisano zmiany.</value>
+  </data>
+  <data name="ChooseExistingProject" xml:space="preserve">
+    <value>Wybierz istniejący projekt</value>
+  </data>
+  <data name="ChooseLayout" xml:space="preserve">
+    <value>Wybierz układ</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>Konfiguracja</value>
+  </data>
+  <data name="ConfigureExtensions" xml:space="preserve">
+    <value>Konfiguruj rozszerzenia</value>
+  </data>
+  <data name="ConfigureOptionsThatApplyToCurrentUser" xml:space="preserve">
+    <value>Konfiguruj opcje mające zastosowanie do bieżącego użytkownika</value>
+  </data>
+  <data name="ConfigureSelectedGroupOrControl" xml:space="preserve">
+    <value>Konfiguruj wybraną grupę lub element sterujący</value>
+  </data>
+  <data name="ConfigureSetOfBaseMapsUsedByBuilder" xml:space="preserve">
+    <value>Konfiguruj zestaw map bazowych dostępnych w Kreatorze aplikacji</value>
+  </data>
+  <data name="CopySite" xml:space="preserve">
+    <value>Kopiuj witrynę</value>
+  </data>
+  <data name="CreateApplicationUsingDefaultMap" xml:space="preserve">
+    <value>Nowa mapa</value>
+  </data>
+  <data name="CreateApplicationUsingWebMapFromArcGISCom" xml:space="preserve">
+    <value>Mapy internetowe</value>
+  </data>
+  <data name="CreateNewApplication" xml:space="preserve">
+    <value>Utwórz nową aplikację</value>
+  </data>
+  <data name="CurrentToolbars" xml:space="preserve">
+    <value>Bieżące paski narzędzi</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="DeleteSite" xml:space="preserve">
+    <value>Usuń witrynę</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Opis:</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Szczegóły</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>W dół</value>
+  </data>
+  <data name="EditSelectedGroupOrControl" xml:space="preserve">
+    <value>Edytuj wybraną grupę lub element sterujący</value>
+  </data>
+  <data name="EditSite" xml:space="preserve">
+    <value>Edytuj witrynę</value>
+  </data>
+  <data name="ExceptionUnhandledError" xml:space="preserve">
+    <value>Nieobsługiwany błąd {0}</value>
+  </data>
+  <data name="ExtensionNotifications" xml:space="preserve">
+    <value>Powiadomienia rozszerzenia</value>
+  </data>
+  <data name="Extensions" xml:space="preserve">
+    <value>Rozszerzenia</value>
+  </data>
+  <data name="HelpLinks" xml:space="preserve">
+    <value>Łącza</value>
+  </data>
+  <data name="IconPrompt" xml:space="preserve">
+    <value>Ikona:</value>
+  </data>
+  <data name="LabelPrompt" xml:space="preserve">
+    <value>Etykieta:</value>
+  </data>
+  <data name="LoadingSites" xml:space="preserve">
+    <value>Wczytywanie witryn...</value>
+  </data>
+  <data name="ManageExtensions" xml:space="preserve">
+    <value>Zarządzaj rozszerzeniami</value>
+  </data>
+  <data name="MoreSiteOptions" xml:space="preserve">
+    <value>Więcej opcji witryny</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Przesuń</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Przenieś w dół</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Przenieś w górę</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="NamePrompt" xml:space="preserve">
+    <value>Nazwa:</value>
+  </data>
+  <data name="NewMap" xml:space="preserve">
+    <value>Nowa mapa</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Otwórz</value>
+  </data>
+  <data name="PersonalSettings" xml:space="preserve">
+    <value>Ustawienia osobiste</value>
+  </data>
+  <data name="PublishApplication" xml:space="preserve">
+    <value>Utwórz aplikację</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="RemoveSelectedGroupOrControl" xml:space="preserve">
+    <value>Usuń wybraną grupę lub element sterujący</value>
+  </data>
+  <data name="ReturnToPreviousScreen" xml:space="preserve">
+    <value>Wróć do poprzedniego ekranu</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>Selekcja</value>
+  </data>
+  <data name="SelectionOutline" xml:space="preserve">
+    <value>Ramka selekcji</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
+  <data name="StartWithExistingMap" xml:space="preserve">
+    <value>Zacznij od istniejącej</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Sukces</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Konfiguruj motyw</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Kolory motywu</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Tytuł:</value>
+  </data>
+  <data name="ToolbarPrompt" xml:space="preserve">
+    <value>Pasek narzędzi:</value>
+  </data>
+  <data name="TooltipPrompt" xml:space="preserve">
+    <value>Etykieta:</value>
+  </data>
+  <data name="TypePrompt" xml:space="preserve">
+    <value>Typ:</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>W górę</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Przekaż</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Witamy</value>
+  </data>
+  <data name="WelcomeMsgParagraph1" xml:space="preserve">
+    <value>ArcGIS Application Builder to aplikacja internetowa umożliwiająca tworzenie i edytowanie aplikacji przeglądarki w czasie rzeczywistym i w całkowicie interaktywny sposób. Aplikacje przeglądarki i Kreatora aplikacji zostały utworzone w środowisku ArcGIS API for Silverlight.</value>
+  </data>
+  <data name="WelcomeMsgParagraph2" xml:space="preserve">
+    <value>Aby rozpocząć tworzenie przeglądarki, kliknij poniższy przycisk Utwórz nową aplikację. Konfigurowana przeglądarka zostanie pokazana pod paskiem narzędzi Kreatora aplikacji. Za pomocą narzędzi na pasku narzędzi można skonfigurować mapę bazową, warstwy, narzędzia, tytuł, logo, kolory itd. przeglądarki. Po zakończeniu konfigurowania przeglądarki kliknij przycisk Wdróż, aby wdrożyć ją w nowej witrynie internetowej.</value>
+  </data>
+  <data name="AvailableTools" xml:space="preserve">
+    <value>Dostępne narzędzia</value>
+  </data>
+  <data name="BrowseForImage" xml:space="preserve">
+    <value>Znajdź obraz</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edytuj</value>
+  </data>
+  <data name="ErrorUnableToRetrieveDetailsForExtension" xml:space="preserve">
+    <value>Nie można pobrać szczegółów pakietu dodatków.</value>
+  </data>
+  <data name="ExtensionContainsTheFollowingAddOns" xml:space="preserve">
+    <value>Pakiet dodatków '{0}' zawiera następujące dodatki:</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteButton" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć ten przycisk?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteGroup" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć tę grupę?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteWebSite" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć tę witrynę internetową?</value>
+  </data>
+  <data name="AssemblyAlreadyIncludeInTheApplication" xml:space="preserve">
+    <value>{1}Zestaw '{0}' został już dołączony do środowiska uruchamiania aplikacji.{1}Rozważ optymalizację wielkości i szybkości pobierania danego rozszerzenia, zaznaczając w odwołaniu zestawu opcję CopyLocal=false w celu wykluczenia zestawu z pakietu .xap</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Potwierdź usunięcie</value>
+  </data>
+  <data name="DeletingExtensionWillMakeItUnavailableForFurtherUse" xml:space="preserve">
+    <value>Usunięcie rozszerzenia spowoduje jego niedostępność do przyszłego zastosowania w nowych aplikacjach i edycji istniejących aplikacji. {0}Czy na pewno chcesz usunąć?</value>
+  </data>
+  <data name="DeletingSite" xml:space="preserve">
+    <value>Usuwanie witryny...</value>
+  </data>
+  <data name="EditTool" xml:space="preserve">
+    <value>Narzędzie edycji</value>
+  </data>
+  <data name="EnterNameForApplication" xml:space="preserve">
+    <value>Podaj nazwę aplikacji</value>
+  </data>
+  <data name="ErrorDetailsNotKnown" xml:space="preserve">
+    <value>Nieznane szczegóły błędu</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>Wystąpił błąd</value>
+  </data>
+  <data name="ErrorRetrievingMapDocumentForSite" xml:space="preserve">
+    <value>Błąd podczas pobierania dokumentu mapy dla witryny</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Błędy</value>
+  </data>
+  <data name="ExtensionAlreadyExists" xml:space="preserve">
+    <value>Dodatek już istnieje</value>
+  </data>
+  <data name="ExtensionDetails" xml:space="preserve">
+    <value>Szczegóły dodatku: {0}</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsErrors" xml:space="preserve">
+    <value>Pakiet dodatków, który próbujesz wdrożyć, zawiera błędy. Należy je usunąć przed kontynuacją.</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsWarnings" xml:space="preserve">
+    <value>Pakiet dodatków, który próbujesz wdrożyć, zawiera błędy. Należy je sprawdzić przed kontynuacją.</value>
+  </data>
+  <data name="ExtensionWithSameNameAlreadyExist" xml:space="preserve">
+    <value>Pakiet dodatków o tej samej nazwie już istnieje. Czy chcesz go zastąpić?</value>
+  </data>
+  <data name="FailedToCreateAndPublishApplication" xml:space="preserve">
+    <value>Nie można utworzyć ani wdrożyć aplikacji</value>
+  </data>
+  <data name="FollowingErrorsFound" xml:space="preserve">
+    <value>Znaleziono następujące błędy.</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>Niepoprawna nazwa</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Otwórz mapę internetową z ArcGIS.com</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Proszę czekać...</value>
+  </data>
+  <data name="TutorialModeDisable" xml:space="preserve">
+    <value>Wyłącz wprowadzenie</value>
+  </data>
+  <data name="TutorialModeEnable" xml:space="preserve">
+    <value>Włącz uruchomienie aplikacji</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Informacje o Kreatorze aplikacji</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Wyświetl okno dialogowe Informacje o Kreatorze aplikacji</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Informacje o</value>
+  </data>
+  <data name="GettingStartedAddGPDescription" xml:space="preserve">
+    <value>Wykorzystaj analizę przestrzenną usług geoprzetwarzania ArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddGPTitle" xml:space="preserve">
+    <value>Dodaj usługi geoprzetwarzania</value>
+  </data>
+  <data name="GettingStartedAddLayersDescription" xml:space="preserve">
+    <value>Dodaj dane z produktu ArcGIS Online i ArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddLayersTitle" xml:space="preserve">
+    <value>Dodaj warstwy operacyjne</value>
+  </data>
+  <data name="GettingStartedAddToolsDescription" xml:space="preserve">
+    <value>Skonfiguruj funkcje aplikacji</value>
+  </data>
+  <data name="GettingStartedAddToolsTitle" xml:space="preserve">
+    <value>Dodaj narzędzia</value>
+  </data>
+  <data name="GettingStartedBasemapDescription" xml:space="preserve">
+    <value>Wybierz mapę bazową z produktu ArcGIS Online, Map Bing lub OpenStreetMap.</value>
+  </data>
+  <data name="GettingStartedBasemapTitle" xml:space="preserve">
+    <value>Wybierz mapę bazową</value>
+  </data>
+  <data name="GettingStartedChooseLogoDescription" xml:space="preserve">
+    <value>Oznacz przeglądarkę logiem swojej instytucji</value>
+  </data>
+  <data name="GettingStartedChooseLogoTitle" xml:space="preserve">
+    <value>Wybierz logo</value>
+  </data>
+  <data name="GettingStartedSelectLayoutDescription" xml:space="preserve">
+    <value>Zdefiniuj wygląd i działanie przeglądarki.</value>
+  </data>
+  <data name="GettingStartedSelectLayoutTitle" xml:space="preserve">
+    <value>Wybierz układ</value>
+  </data>
+  <data name="GettingStartedSetTitleDescription" xml:space="preserve">
+    <value>Ustaw tytuł aplikacji.</value>
+  </data>
+  <data name="GettingStartedSetTitleTitle" xml:space="preserve">
+    <value>Ustaw tytuł</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailable" xml:space="preserve">
+    <value>Dostępne są następujące dodatki. Kliknij</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableHere" xml:space="preserve">
+    <value>tutaj</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableToUploadANewOne" xml:space="preserve">
+    <value>aby pobrać nowe z dysku.</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlDownToolbarTree" xml:space="preserve">
+    <value>Przenieś wybraną grupę lub element sterujący w dół drzewa paska narzędzi</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlUpToolbarTree" xml:space="preserve">
+    <value>Przenieś wybraną grupę lub element sterujący w górę drzewa paska narzędzi</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Powrót</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Następny</value>
+  </data>
+  <data name="SelectAToolToAdd" xml:space="preserve">
+    <value>Wybierz narzędzie do dodania:</value>
+  </data>
+  <data name="ChooseMap" xml:space="preserve">
+    <value>Kreator aplikacji - Wybierz mapę</value>
+  </data>
+  <data name="AddInPackagesContain" xml:space="preserve">
+    <value>Pakiety dodatków zawierają dodatki: narzędzia, zachowania i elementy sterujące użyte w układach</value>
+  </data>
+  <data name="AvailableAddInPackages" xml:space="preserve">
+    <value>Dostępne pakiety dodatków:</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>Przycisk</value>
+  </data>
+  <data name="ConfigureElementsRelatedToMap" xml:space="preserve">
+    <value>Konfiguruj elementy związane z mapą</value>
+  </data>
+  <data name="ConfigureToolsOfYourApplication" xml:space="preserve">
+    <value>Konfiguruj narzędzia aplikacji</value>
+  </data>
+  <data name="DisableGettingStarted" xml:space="preserve">
+    <value>Wyłącz wprowadzenie</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>Uruchomienie aplikacji</value>
+  </data>
+  <data name="ShowMe" xml:space="preserve">
+    <value>Pokaż mi</value>
+  </data>
+  <data name="SpecifyLayoutOfYourApplication" xml:space="preserve">
+    <value>Określ układ aplikacji</value>
+  </data>
+  <data name="UploadAddInPackages" xml:space="preserve">
+    <value>Prześlij pakiety dodatków</value>
+  </data>
+  <data name="UploadAddIns" xml:space="preserve">
+    <value>Prześlij dodatki</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Mapa</value>
+  </data>
+  <data name="AreYouSureYouWantToLeavePageUnsavedChangesLost" xml:space="preserve">
+    <value>Czy na pewno chcesz opuścić tę stronę? Wszelkie niezapisane zmiany mogą zostać utracone.</value>
+  </data>
+  <data name="ConfirmPageChange" xml:space="preserve">
+    <value>Potwierdź zmianę strony</value>
+  </data>
+  <data name="SpecifyToolProperties" xml:space="preserve">
+    <value>Określ właściwości narzędzia</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>Zapisz jako...</value>
+  </data>
+  <data name="AddGroupButton" xml:space="preserve">
+    <value>Dodaj grupę</value>
+  </data>
+  <data name="CannotAddElement" xml:space="preserve">
+    <value>Nie można dodać elementu</value>
+  </data>
+  <data name="CannotAddGroupButton" xml:space="preserve">
+    <value>Nie można dodać grupy</value>
+  </data>
+  <data name="CannotAddTool" xml:space="preserve">
+    <value>Nie można dodać narzędzia</value>
+  </data>
+  <data name="ChooseAvailableTool" xml:space="preserve">
+    <value>Musisz wybrać oddzielne narzędzie z drzewa dostępnych narzędzi.</value>
+  </data>
+  <data name="DefaultGroupButtonDescription" xml:space="preserve">
+    <value>Nowa grupa</value>
+  </data>
+  <data name="DefaultGroupButtonLabel" xml:space="preserve">
+    <value>Nowa grupa</value>
+  </data>
+  <data name="RootLevelToAddGroup" xml:space="preserve">
+    <value>Aby dodać grupę, musisz wybrać pasek narzędzi lub węzeł na poziomie głównym paska narzędzi.</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>&lt;Separator&gt;</value>
+  </data>
+  <data name="MoveIntoGroup" xml:space="preserve">
+    <value>Przenieś do grupy '{0}'</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>Edytuj grupę</value>
+  </data>
+  <data name="ConfigureControls" xml:space="preserve">
+    <value>Konfiguruj elementy sterujące</value>
+  </data>
+  <data name="ConfigureControlsDescription" xml:space="preserve">
+    <value>Edytuj konfigurację elementów sterujących przeglądarki</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Tryb</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Wielkość pamięci podręcznej:</value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>OnDemand</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>Migawka</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Wielkość bufora warstwy obiektu OnDemand</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Ustawia wielkość bufora warstwy obiektu trybu OnDemand (domyślnie = 1000)</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>Tryb OnDemand warstwy obiektu</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Wybiera tryb zapytania dla warstwy, która ma działać w trybie migawki (tylko warstwy obiektów)</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>Tryb migawki warstwy obiektów</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Wybiera tryb zapytania dla warstwy, która ma działać w trybie migawki (tylko warstwy obiektów)</value>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>Dodaj łącze</value>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Usuń łącze</value>
+  </data>
+  <data name="ConfigureControlsBanner" xml:space="preserve">
+    <value>Elementy sterujące do skonfigurowania</value>
+  </data>
+  <data name="Controls" xml:space="preserve">
+    <value>Elementy sterujące</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Pobieranie obiektów</value>
+  </data>
+  <data name="AddGroupDotDot" xml:space="preserve">
+    <value>Dodaj grupę...</value>
+  </data>
+  <data name="AddSeparator" xml:space="preserve">
+    <value>Dodaj separator</value>
+  </data>
+  <data name="ApplicationBuilderDashSettings" xml:space="preserve">
+    <value>Kreator aplikacji - Ustawienia</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Przeglądaj</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Zasoby</value>
+  </data>
+  <data name="CurrentViewerApplications" xml:space="preserve">
+    <value>Bieżące aplikacje przeglądarki</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Zawartość mapy</value>
+  </data>
+  <data name="NoFilesFound" xml:space="preserve">
+    <value>Nie znaleziono plików.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Wyszukaj</value>
+  </data>
+  <data name="ViewerProject" xml:space="preserve">
+    <value>Projekt przeglądarki</value>
+  </data>
+  <data name="WebMap" xml:space="preserve">
+    <value>Mapa internetowa</value>
+  </data>
+  <data name="AddLayerFailed" xml:space="preserve">
+    <value>Nie powiodło się dodawanie warstwy</value>
+  </data>
+  <data name="AddLayerFailedExplanation" xml:space="preserve">
+    <value>Nie można dodać warstwy. Przyczyna błędu: {0}.</value>
+  </data>
+  <data name="AddLayerFailedNoDetails" xml:space="preserve">
+    <value>[Nie można wyodrębnić szczegółów]</value>
+  </data>
+  <data name="ConfigureLayers" xml:space="preserve">
+    <value>Konfiguruj warstwy</value>
+  </data>
+  <data name="ConfigureLayersDescription" xml:space="preserve">
+    <value>Modyfikuj wygląd i zachowanie warstw na mapie</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Warstwy tematyczne</value>
+  </data>
+  <data name="SiteCopyFailed" xml:space="preserve">
+    <value>Nie powiodło się kopiowanie witryny</value>
+  </data>
+  <data name="SiteDeploymentFailed" xml:space="preserve">
+    <value>Nie powiodło się wdrożenie witryny</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Przenieś w górę</value>
+  </data>
+  <data name="BringsCurrentlySelectedLayerForward" xml:space="preserve">
+    <value>Przenosi kolejność wyświetlania warstwy o jedną pozycję bliżej dołu</value>
+  </data>
+  <data name="ConfigureCurrentlySelectedLayer" xml:space="preserve">
+    <value>Konfiguruj aktualnie wybraną warstwę</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Konfiguruj serwer proxy używany do uzyskiwania dostępu do zabezpieczonych usług dla tej aplikacji</value>
+  </data>
+  <data name="ConfigureSecureServices" xml:space="preserve">
+    <value>Konfiguruj zabezpieczone usługi</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>Przejdź do</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Odśwież</value>
+  </data>
+  <data name="RefreshCurrentlySelectedLayer" xml:space="preserve">
+    <value>Odśwież aktualnie wybraną warstwę</value>
+  </data>
+  <data name="RemovesCurrentlySelectedLayer" xml:space="preserve">
+    <value>Usuwa aktualnie wybraną warstwę</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Zmień nazwę</value>
+  </data>
+  <data name="RenameCurrentlySelectedLayer" xml:space="preserve">
+    <value>Zmienia nazwę aktualnie wybranej warstwy</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Przenieś w dół</value>
+  </data>
+  <data name="SendsCurrentlySelectedLayerBackward" xml:space="preserve">
+    <value>Przenosi kolejność wyświetlania warstwy o jedną pozycję w górę</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Szczegóły usługi</value>
+  </data>
+  <data name="ViewInformationAboutSelectedLayerDatasource" xml:space="preserve">
+    <value>Wyświetl informacje o źródle danych wybranej warstwy</value>
+  </data>
+  <data name="ZoomToCurrentlySelectedLayer" xml:space="preserve">
+    <value>Powiększ do aktualnie wybranej warstwy</value>
+  </data>
+  <data name="CannotAddDropdownCommandsToAGroup" xml:space="preserve">
+    <value>Nie można dodać poleceń rozwijanych do grupy.</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Konfiguruj mapy bazowe</value>
+  </data>
+  <data name="FlashAnimationIsNotDefinedOnTargetBuilderToolbarButton" xml:space="preserve">
+    <value>Animacja Flash nie została zdefiniowana dla docelowego przycisku paska narzędzi Kreator aplikacji</value>
+  </data>
+  <data name="ManageAddInsToolsBehaviorsControls" xml:space="preserve">
+    <value>Zarządzaj dodatkami: narzędziami, zachowaniami, elementami sterującymi</value>
+  </data>
+  <data name="ManagePersonalSettings" xml:space="preserve">
+    <value>Zarządzaj ustawieniami osobistymi</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Uzyskaj dostęp do usług zabezpieczonych</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Dodaj usługi zabezpieczone</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Konfiguruj serwer proxy</value>
+  </data>
+  <data name="NewApplication" xml:space="preserve">
+    <value>Kreator aplikacji — Nowa aplikacja (niewdrożona)</value>
+  </data>
+  <data name="NotDeployed" xml:space="preserve">
+    <value>(nie wdrożone)</value>
+  </data>
+  <data name="DeployingApplication" xml:space="preserve">
+    <value>Wdrażanie aplikacji...</value>
+  </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>Ustawienia aplikacji</value>
+  </data>
+  <data name="ArcGISOnlineSecure" xml:space="preserve">
+    <value>Bezpieczeństwo ArcGIS Online:</value>
+  </data>
+  <data name="ArcGISOnlineSharing" xml:space="preserve">
+    <value>Udostępnianie ArcGIS Online:</value>
+  </data>
+  <data name="BingAppId" xml:space="preserve">
+    <value>ID aplikacji Bing:</value>
+  </data>
+  <data name="CurrentApplicationSettings" xml:space="preserve">
+    <value>Ustawienia bieżącej aplikacji</value>
+  </data>
+  <data name="DefaultSettings" xml:space="preserve">
+    <value>Ustawienia domyślne</value>
+  </data>
+  <data name="GeometryService" xml:space="preserve">
+    <value>Usługa geometrii:</value>
+  </data>
+  <data name="ManageApplicationSettings" xml:space="preserve">
+    <value>Zarządzaj ustawieniami aplikacji</value>
+  </data>
+  <data name="BasedOnWebMap" xml:space="preserve">
+    <value>Oparte na mapie internetowej:</value>
+  </data>
+  <data name="LinkedToWebMap" xml:space="preserve">
+    <value>Połączone z mapą internetową:</value>
+  </data>
+  <data name="LinkToWebMap" xml:space="preserve">
+    <value>Połącz</value>
+  </data>
+  <data name="MapConfigurationUnavailable" xml:space="preserve">
+    <value>Konfiguracja mapy dla tej aplikacji jest połączona z mapą internetową. Aby edytować konfigurację mapy, odłącz aplikację od mapy internetowej.</value>
+  </data>
+  <data name="UnlinkFromWebMap" xml:space="preserve">
+    <value>Odłącz</value>
+  </data>
+  <data name="UnableToDeployApplication" xml:space="preserve">
+    <value>Nie można wdrożyć aplikacji.</value>
+  </data>
+  <data name="UnableToSaveApplicationChanges" xml:space="preserve">
+    <value>Nie można zapisać zmian w aplikacji.</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Proxy:</value>
+  </data>
+  <data name="HideGettingStarted" xml:space="preserve">
+    <value>Ukryj element pomocy Wprowadzenie</value>
+  </data>
+  <data name="ShowGettingStarted" xml:space="preserve">
+    <value>Pokaż element pomocy Wprowadzenie</value>
+  </data>
+  <data name="DisplayText" xml:space="preserve">
+    <value>Wyświetl tekst</value>
+  </data>
+  <data name="UpgradeSite" xml:space="preserve">
+    <value>Zaktualizuj do bieżącej wersji tę aplikację do przeglądania</value>
+  </data>
+  <data name="UpgradingApplication" xml:space="preserve">
+    <value>Aktualizowanie aplikacji...</value>
+  </data>
+  <data name="NewLink" xml:space="preserve">
+    <value>Nowe łącze</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Zachowanie</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>Element sterujący</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Warstwa</value>
+  </data>
+  <data name="Tool" xml:space="preserve">
+    <value>Narzędzie</value>
+  </data>
+</root>

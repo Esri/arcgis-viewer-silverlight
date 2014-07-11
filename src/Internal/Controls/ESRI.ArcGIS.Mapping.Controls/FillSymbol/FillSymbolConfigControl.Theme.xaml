@@ -1,0 +1,65 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls"        
+    >
+	<local:StringResourcesManager x:Key="Localization" />
+	<Style TargetType="local:FillSymbolConfigControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:FillSymbolConfigControl">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Border Padding="3" BorderBrush="Black" BorderThickness="1" CornerRadius="4" VerticalAlignment="Center" Margin="0">
+                            <StackPanel VerticalAlignment="Center">
+								<RadioButton x:Name="FillRadioButton" Content="{Binding ConverterParameter=Fill, Converter={StaticResource Localization}, Source={StaticResource Localization}}" IsChecked="True" FontSize="11" />
+								<RadioButton x:Name="BorderRadioButton" Content="{Binding ConverterParameter=Border, Converter={StaticResource Localization}, Source={StaticResource Localization}}" FontSize="11" />
+                            </StackPanel>
+                        </Border>
+                        <Grid x:Name="colorPickerSection" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
+                            <local:ColorPicker x:Name="FillColorPicker" Visibility="Collapsed" />
+                            <local:PreDefinedColorRampControl x:Name="PreDefinedColorRampsControl" Margin="8,0,8,8" 
+                                    VerticalAlignment="Stretch" Visibility="Collapsed" />
+                        </Grid>
+                        <local:ColorPicker x:Name="BorderColorPicker" Visibility="Collapsed"
+                                    Grid.Row="0" Grid.Column="1" Grid.RowSpan="3"/>
+                        <StackPanel x:Name="FillOpacityPanel" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"
+                                    HorizontalAlignment="Left" Margin="1,5,1,1">
+							<TextBlock Text="{Binding ConverterParameter=TransparencyPrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}" FontSize="11" FontFamily="Verdana" Foreground="Black" Margin="0,0,0,5"/>
+                            <Slider x:Name="FillOpacitySlider" Orientation="Horizontal" Width="Auto" IsDirectionReversed="True" Minimum="0" Maximum="1" 
+                                    Margin="5,-2,0,0" />
+                        </StackPanel>
+                        <StackPanel x:Name="BorderOpacityPanel" Grid.Row="1" Grid.Column="0" Visibility="Collapsed" 
+                                 VerticalAlignment="Center"  HorizontalAlignment="Left" Margin="1,5,1,1">
+							<TextBlock Text="{Binding ConverterParameter=TransparencyPrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}" FontSize="11" FontFamily="Verdana" Foreground="Black" Margin="0,0,0,5"/>
+                            <Slider x:Name="BorderOpacitySlider" Orientation="Horizontal" Width="Auto" IsDirectionReversed="True" Minimum="0" Maximum="1" 
+                                    Margin="5,-2,0,0" />
+                        </StackPanel>
+                        <StackPanel x:Name="BorderWidthPanel" Grid.Row="2" Grid.Column="0" Opacity="0" 
+                                HorizontalAlignment="Left" Margin="1">
+							<TextBlock Text="{Binding ConverterParameter=Width, Converter={StaticResource Localization}, Source={StaticResource Localization}}" FontSize="11" FontFamily="Verdana" Foreground="Black"/>
+                            <TextBox x:Name="BorderWidthTextBox" FontSize="10" FontFamily="Verdana" Height="19" Width="35" VerticalAlignment="Top" 
+                                Margin="5" />
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

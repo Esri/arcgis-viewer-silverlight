@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFeatureLayer" xml:space="preserve">
+    <value>Add Feature Layers</value>
+  </data>
+  <data name="AddFeatureLayerWindowCheckAll" xml:space="preserve">
+    <value>Check All</value>
+  </data>
+  <data name="AddFeatureLayerWindowUnCheckAll" xml:space="preserve">
+    <value>Uncheck All</value>
+  </data>
+  <data name="ArcGIS" xml:space="preserve">
+    <value>ArcGIS</value>
+  </data>
+  <data name="BackStageControlFeatureMaps" xml:space="preserve">
+    <value>Featured Maps</value>
+  </data>
+  <data name="BackStageControlGroups" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="BackStageControlMyGroups" xml:space="preserve">
+    <value>My Groups</value>
+  </data>
+  <data name="BackStageControlMyOrgGroups" xml:space="preserve">
+    <value>My Organization's Groups</value>
+  </data>
+  <data name="BackStageControlMyOrgPublicGroups" xml:space="preserve">
+    <value>My Organization's Public Groups</value>
+  </data>
+  <data name="BackStageControlMyMaps" xml:space="preserve">
+    <value>My Maps</value>
+  </data>
+  <data name="BackStageControlSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>Click here to view the description in a separate browser window</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>Close Details</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="ContentEveryone" xml:space="preserve">
+    <value>everyone</value>
+  </data>
+  <data name="ContentGroups" xml:space="preserve">
+    <value>groups</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="DefineQueryWindowAlias" xml:space="preserve">
+    <value>Alias:</value>
+  </data>
+  <data name="DefineQueryWindowAnd" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="DefineQueryWindowApply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="DefineQueryWindowClickPickDate" xml:space="preserve">
+    <value>Click to pick a date that is formatted for use in the expression.</value>
+  </data>
+  <data name="DefineQueryWindowData" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="DefineQueryWindowExpression" xml:space="preserve">
+    <value>Expression:</value>
+  </data>
+  <data name="DefineQueryWindowFailedToRetrieveSampleFeaturesForLayer" xml:space="preserve">
+    <value>Failed to retrieve sample features for layer.</value>
+  </data>
+  <data name="DefineQueryWindowFields" xml:space="preserve">
+    <value>Fields:</value>
+  </data>
+  <data name="DefineQueryWindowLike" xml:space="preserve">
+    <value>like</value>
+  </data>
+  <data name="DefineQueryWindowName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="DefineQueryWindowNot" xml:space="preserve">
+    <value>not</value>
+  </data>
+  <data name="DefineQueryWindowOr" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="DefineQueryWindowQuery" xml:space="preserve">
+    <value>Query</value>
+  </data>
+  <data name="DefineQueryWindowTableIsSampleOfFeatureLayer" xml:space="preserve">
+    <value>The following table is a sample of features in the layer.</value>
+  </data>
+  <data name="DefineQueryWindowType" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="DescriptionForMapCanotBeDisplayed" xml:space="preserve">
+    <value>The description for this map can't be displayed in this window.</value>
+  </data>
+  <data name="EnterPlaceNameAddressLatLongitutePair" xml:space="preserve">
+    <value>Enter place name; address; or latitude, longitude pair</value>
+  </data>
+  <data name="ExceptionDeleteFailed" xml:space="preserve">
+    <value>Delete failed</value>
+  </data>
+  <data name="ExceptionDeleteFailedUserSignIn" xml:space="preserve">
+    <value>Delete failed. User is not signed in.</value>
+  </data>
+  <data name="ExceptionFaileAcceptApplicateForGroup" xml:space="preserve">
+    <value>Failed to accept applicant {0} for group {1}</value>
+  </data>
+  <data name="ExceptionFaileDeclineApplicateForGroup" xml:space="preserve">
+    <value>Failed to decline applicant {0} for group {1}</value>
+  </data>
+  <data name="ExceptionFailedInviteUserToGroup" xml:space="preserve">
+    <value>Failed to invite users {0} to group {1}</value>
+  </data>
+  <data name="ExceptionFailedLeaveRequestForGroup" xml:space="preserve">
+    <value>Failed to send leave request for user {0} from group {1}</value>
+  </data>
+  <data name="ExceptionFailedSendJoinRequestToGroup" xml:space="preserve">
+    <value>Failed to send join request for user {0} to group {1}</value>
+  </data>
+  <data name="ExceptionFailedToAcceptGroupInvitationForGroup" xml:space="preserve">
+    <value>Failed to accept group invitation for group {0} by {1}</value>
+  </data>
+  <data name="ExceptionFailedToCreateGroup" xml:space="preserve">
+    <value>Failed to create group.</value>
+  </data>
+  <data name="ExceptionFailedToDeclineGroupInvitationForGroup" xml:space="preserve">
+    <value>Failed to decline group invitation for group {0} by {1}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteGroup" xml:space="preserve">
+    <value>Failed to Delete group {0}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteNoitification" xml:space="preserve">
+    <value>Failed to delete notification {0} by {1}</value>
+  </data>
+  <data name="ExceptionFailedToGetGroupApplicationsForGroup" xml:space="preserve">
+    <value>Failed to get group applications for group {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveTagForUser" xml:space="preserve">
+    <value>Failed to retrieve tags for user {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveOrgGroups" xml:space="preserve">
+    <value>Failed to retrieve organizational groups</value>
+  </data>
+  <data name="ExceptionFailedToShareItem" xml:space="preserve">
+    <value>Failed to share item {0}</value>
+  </data>
+  <data name="ExceptionFailedToUpdateGroup" xml:space="preserve">
+    <value>Failed to update group {0}</value>
+  </data>
+  <data name="ExceptionGetCommentsFailed" xml:space="preserve">
+    <value>Get comments failed.</value>
+  </data>
+  <data name="ExceptionGetFolderFailedUserSignedIn" xml:space="preserve">
+    <value>GetFolder failed. User is not signed in.</value>
+  </data>
+  <data name="ExceptionNoUserSignedIn" xml:space="preserve">
+    <value>No user signed in.</value>
+  </data>
+  <data name="ExceptionSignInFailed" xml:space="preserve">
+    <value>Sign in failed.</value>
+  </data>
+  <data name="FeatureMapsControlCloseParenthesis" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="FeatureMapsControlDetails" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="FeatureMapsControlLastModified" xml:space="preserve">
+    <value>(last modified: </value>
+  </data>
+  <data name="FeatureMapsControlOpen" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="GroupControlClickHereToViewInSeparateBrowser" xml:space="preserve">
+    <value>Click here to view the description in a separate browser window</value>
+  </data>
+  <data name="GroupControlCloseGroup" xml:space="preserve">
+    <value>Close this Group</value>
+  </data>
+  <data name="GroupControlDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="GroupControlFeaturedMaps" xml:space="preserve">
+    <value>Featured Maps</value>
+  </data>
+  <data name="GroupControlNoFeaturedMapsFound" xml:space="preserve">
+    <value>No featured maps found.</value>
+  </data>
+  <data name="GroupControlNoMapsFound" xml:space="preserve">
+    <value>No maps found.</value>
+  </data>
+  <data name="GroupControlOwner" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="GroupControlPrivateUserCannotFindGroup" xml:space="preserve">
+    <value>Private (Users cannot find the group and can join by invitation only)</value>
+  </data>
+  <data name="GroupControlPublicUserCanSearchAndFindGroup" xml:space="preserve">
+    <value>Public (Users can search for and find the group)</value>
+  </data>
+  <data name="GroupControlSearchOwner" xml:space="preserve">
+    <value>owner: {0}</value>
+  </data>
+  <data name="GroupControlTags" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="HighestRated" xml:space="preserve">
+    <value>Highest Rated</value>
+  </data>
+  <data name="HintTextBoxToolTip" xml:space="preserve">
+    <value>Enter place name; address; or latitude,longitude pair</value>
+  </data>
+  <data name="ItemNotFound" xml:space="preserve">
+    <value>Item not found: {0}</value>
+  </data>
+  <data name="LastModified" xml:space="preserve">
+    <value>Last Modified</value>
+  </data>
+  <data name="MapDetailsRating" xml:space="preserve">
+    <value>({0} ratings)</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Maps</value>
+  </data>
+  <data name="MapServiceReferenceInvalid" xml:space="preserve">
+    <value>The map service reference is invalid. The service could not be added to the map.</value>
+  </data>
+  <data name="MapServiceReferenceNoDetails" xml:space="preserve">
+    <value>The map service reference is invalid. No details can be displayed.</value>
+  </data>
+  <data name="MostComments" xml:space="preserve">
+    <value>Most Comments</value>
+  </data>
+  <data name="MostPopular" xml:space="preserve">
+    <value>Most Popular</value>
+  </data>
+  <data name="MostRecentlyAdded" xml:space="preserve">
+    <value>Most Recently Added</value>
+  </data>
+  <data name="MostRelevant" xml:space="preserve">
+    <value>Most Relevant</value>
+  </data>
+  <data name="MyGroupControlGroups" xml:space="preserve">
+    <value>{0} groups</value>
+  </data>
+  <data name="MyGroupControlOn" xml:space="preserve">
+    <value>on</value>
+  </data>
+  <data name="MyGroupControlOpenGroup" xml:space="preserve">
+    <value>Open this group</value>
+  </data>
+  <data name="MyGroupControlZeroGroups" xml:space="preserve">
+    <value>0 groups</value>
+  </data>
+  <data name="MyMapControlMaps" xml:space="preserve">
+    <value>{0} maps</value>
+  </data>
+  <data name="MyMapControlZeroMaps" xml:space="preserve">
+    <value>0 maps</value>
+  </data>
+  <data name="Places" xml:space="preserve">
+    <value>Places</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="RecentMaps" xml:space="preserve">
+    <value>Recent Maps</value>
+  </data>
+  <data name="SearchArcGISCom" xml:space="preserve">
+    <value>Search ArcGIS.com</value>
+  </data>
+  <data name="SearchControlAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="SearchControlMapServiceFound" xml:space="preserve">
+    <value>Map service found.</value>
+  </data>
+  <data name="SearchControlResultsFound" xml:space="preserve">
+    <value>{0} results found.</value>
+  </data>
+  <data name="SearchControlServiceCouldNotBeAccessed" xml:space="preserve">
+    <value>The service could not be accessed.</value>
+  </data>
+  <data name="SearchControlZeroResultsFound" xml:space="preserve">
+    <value>0 results found.</value>
+  </data>
+  <data name="SearchDetailsBy" xml:space="preserve">
+    <value>by</value>
+  </data>
+  <data name="SearchDetailsRating" xml:space="preserve">
+    <value>Rating: </value>
+  </data>
+  <data name="SearchMapResultsFor" xml:space="preserve">
+    <value>{0} results for {1}</value>
+  </data>
+  <data name="SearchTextBoxToolTip" xml:space="preserve">
+    <value>Enter place name; address; or latitude, longitude pair</value>
+  </data>
+  <data name="SearchTheWeb" xml:space="preserve">
+    <value>Search the web"</value>
+  </data>
+  <data name="SearchWebDetailsAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="SearchWebDetailsCopyright" xml:space="preserve">
+    <value>Copyright: </value>
+  </data>
+  <data name="SearchWebDetailsDescription" xml:space="preserve">
+    <value>Description: </value>
+  </data>
+  <data name="SearchWebDetailsExploreGISServer" xml:space="preserve">
+    <value>Explore this GIS server</value>
+  </data>
+  <data name="SearchWebDetailsName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="SortResults" xml:space="preserve">
+    <value>Sort Results</value>
+  </data>
+  <data name="SortSearchResults" xml:space="preserve">
+    <value>Sort the search results.</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="TheWeb" xml:space="preserve">
+    <value>The Web</value>
+  </data>
+  <data name="TitleAZ" xml:space="preserve">
+    <value>Title A-Z</value>
+  </data>
+  <data name="TitleZA" xml:space="preserve">
+    <value>Title Z-A</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="UserSearchFailed" xml:space="preserve">
+    <value>User search failed.</value>
+  </data>
+  <data name="BackStageControlRecent" xml:space="preserve">
+    <value>Recent</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="SignInForgotYourPassword" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="SignInSignUp" xml:space="preserve">
+    <value>Sign up</value>
+  </data>
+  <data name="InvalidIDOrPassword" xml:space="preserve">
+    <value>Invalid ID or password.</value>
+  </data>
+  <data name="NewHere" xml:space="preserve">
+    <value>New here?</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="UsernamePrompt" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="DescriptionForGroupCanotBeDisplayed" xml:space="preserve">
+    <value>The description for this group can't be displayed in this window.</value>
+  </data>
+  <data name="GroupControlOwnerParenthesis" xml:space="preserve">
+    <value>(Owner)</value>
+  </data>
+  <data name="LastModifiedPrompt" xml:space="preserve">
+    <value>(last modified:</value>
+  </data>
+  <data name="LastModifiedPromptEnd" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="MapDetailsControlAverageRating" xml:space="preserve">
+    <value>Average rating</value>
+  </data>
+  <data name="MapDetailsControlType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="OnWithSpace" xml:space="preserve">
+    <value> on </value>
+  </data>
+  <data name="SearchR" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="LoadingMaps" xml:space="preserve">
+    <value>Loading Maps...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="NoFeaturedMaps" xml:space="preserve">
+    <value>No featured maps currently available</value>
+  </data>
+  <data name="SigningIn" xml:space="preserve">
+    <value>Signing in...</value>
+  </data>
+  <data name="SignInLabel" xml:space="preserve">
+    <value>Sign in to {0}</value>
+  </data>
+  <data name="CreatedByOwnerOnDate" xml:space="preserve">
+    <value>Created by {0} on {1}</value>
+  </data>
+  <data name="WebMapOwnerDateFormat" xml:space="preserve">
+    <value>Web Map by {0} (last modified: {1})</value>
+  </data>
+  <data name="WebMapBy" xml:space="preserve">
+    <value>Web Map by {0}</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>Sign-in failed.</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Members</value>
+  </data>
+</root>

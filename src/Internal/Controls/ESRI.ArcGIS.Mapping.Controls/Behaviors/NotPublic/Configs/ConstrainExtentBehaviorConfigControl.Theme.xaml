@@ -1,0 +1,83 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls">
+
+    <local:InvertVisibilityConverter x:Key="InvertVisibilityConverter"/>
+    
+    <Style TargetType="local:ConstrainExtentBehaviorConfigControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ConstrainExtentBehaviorConfigControl">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+
+                        <Grid Background="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Margin="30,20,30,0"
+                                        Text="{Binding ConverterParameter=ConstrainExtentBehaviorMessage, Converter={StaticResource Localization}, Source={StaticResource Localization}}" />
+
+                            <StackPanel x:Name="ConstrainedExtentDisplay" Height="110" Grid.Row="1" Margin="30,10,30,20" >
+                                <TextBlock Margin="0,0,0,10"
+                                        Text="{Binding ConverterParameter=CurrentConstrainExtentLabel, Converter={StaticResource Localization}, Source={StaticResource Localization}}" />
+
+                                <Grid HorizontalAlignment="Center" Width="300" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+
+									<TextBlock Text="{Binding ConverterParameter=XMin, Converter={StaticResource Localization}, Source={StaticResource Localization}}" FontWeight="Bold" />
+                                    <TextBlock Text="{Binding ConstrainedExtent.XMin, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=N/A}" HorizontalAlignment="Center" Grid.Column="1" />
+									<TextBlock Text="{Binding ConverterParameter=YMin, Converter={StaticResource Localization}, Source={StaticResource Localization}}" FontWeight="Bold" Grid.Row="1" />
+                                    <TextBlock Text="{Binding ConstrainedExtent.YMin, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=N/A}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+									<TextBlock Text="{Binding ConverterParameter=XMax, Converter={StaticResource Localization}, Source={StaticResource Localization}}" FontWeight="Bold" Grid.Row="2" />
+                                    <TextBlock Text="{Binding ConstrainedExtent.XMax, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=N/A}" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+									<TextBlock Text="{Binding ConverterParameter=YMax, Converter={StaticResource Localization}, Source={StaticResource Localization}}" FontWeight="Bold" Grid.Row="3" />
+                                    <TextBlock Text="{Binding ConstrainedExtent.YMax, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=N/A}" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+									<TextBlock Text="{Binding ConverterParameter=SpatialReference, Converter={StaticResource Localization}, Source={StaticResource Localization}}" FontWeight="Bold" Grid.Row="4" />
+                                    <TextBlock Text="{Binding ConstrainedExtent.SpatialReference.WKID, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=N/A}" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1"/>
+
+                                </Grid>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+                                <Button x:Name="ApplyButton" Margin="0,0,5,5" Content="{Binding ConverterParameter=Apply, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                            Command="{Binding ApplyCommand, RelativeSource={RelativeSource TemplatedParent}}" Padding="10,5"
+                                            Foreground="{StaticResource AccentTextColorBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                            Background="{StaticResource AccentColorBrush}" BorderBrush="{StaticResource AccentTextColorBrush}"/>
+
+                                <Button x:Name="DoneButton" Margin="0,0,5,5" Content="{Binding ConverterParameter=Close, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                            Command="{Binding CloseCommand, RelativeSource={RelativeSource TemplatedParent}}" Padding="10,5"
+                                            Foreground="{StaticResource AccentTextColorBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                            Background="{StaticResource AccentColorBrush}" BorderBrush="{StaticResource AccentTextColorBrush}"/>
+                            </StackPanel>
+
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

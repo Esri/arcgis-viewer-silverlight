@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddPointInstructions" xml:space="preserve">
+    <value>Paspaudę ant žemėlapio, sukursite objektą {0}.</value>
+  </data>
+  <data name="AddSelect" xml:space="preserve">
+    <value>Papildyti išrinkimą</value>
+  </data>
+  <data name="AddSelectDescription" xml:space="preserve">
+    <value>Atlikto išrinkimo papildymas naujais kriterijais</value>
+  </data>
+  <data name="AddShapeInstructions" xml:space="preserve">
+    <value>Spragtelėję žemėlapyje, įvesite naujas viršūnes, dvigubu spragtelėjimu sukursite {0} objektą.</value>
+  </data>
+  <data name="AttributesOf" xml:space="preserve">
+    <value>{0} atributai</value>
+  </data>
+  <data name="AutoCompleteDescription" xml:space="preserve">
+    <value>Automatiškai užbaigiami poligonai</value>
+  </data>
+  <data name="AutoComplete" xml:space="preserve">
+    <value>Automatinis užbaigimas</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>Automatinis pažymėtų priartinimas</value>
+  </data>
+  <data name="BrowseTabHeader" xml:space="preserve">
+    <value>Parinkti</value>
+  </data>
+  <data name="BtnBack" xml:space="preserve">
+    <value>Grįžti</value>
+  </data>
+  <data name="BtnCancel" xml:space="preserve">
+    <value>Atisakyti</value>
+  </data>
+  <data name="BtnNext" xml:space="preserve">
+    <value>Kitas</value>
+  </data>
+  <data name="BtnOk" xml:space="preserve">
+    <value>Gerai</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>Mygtukas</value>
+  </data>
+  <data name="CancelTool" xml:space="preserve">
+    <value>Atšaukimo įrankis</value>
+  </data>
+  <data name="ClearSelect" xml:space="preserve">
+    <value>Išvalyti išrinkimą</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>Paspaudę pastumsite į rytus</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>Paspaudę pastumsite į šiaurę</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>Paspaudę pastumsite į pietus</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>Paspaudę pastumsite į vakarus</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Nusiųsti</value>
+  </data>
+  <data name="ContentsTabHeader" xml:space="preserve">
+    <value>Turinys</value>
+  </data>
+  <data name="ContentTypeColon" xml:space="preserve">
+    <value>Turinio tipas: </value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Iškirpti</value>
+  </data>
+  <data name="CutDescription" xml:space="preserve">
+    <value>Objekto iškirpimas</value>
+  </data>
+  <data name="DeleteAttachment" xml:space="preserve">
+    <value>Pašalinti prisegtą failą</value>
+  </data>
+  <data name="DeleteSelect" xml:space="preserve">
+    <value>Panaikinti išrinkimą</value>
+  </data>
+  <data name="DeleteSelectDescription" xml:space="preserve">
+    <value>Pažymėtų objektų pašalinimas</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>Tempdami pasuksite</value>
+  </data>
+  <data name="DragToZoomInOrOut" xml:space="preserve">
+    <value>Tempdami priartinsite arba atitolinsite</value>
+  </data>
+  <data name="DrawingDotDot" xml:space="preserve">
+    <value>Piešiama...</value>
+  </data>
+  <data name="EditGeometry" xml:space="preserve">
+    <value>Redaguoti geometriją</value>
+  </data>
+  <data name="EditShapeDescription" xml:space="preserve">
+    <value>Objekto geometrijos, vietos, pasukimo arba mastelio redagavimas</value>
+  </data>
+  <data name="EditTabHeader" xml:space="preserve">
+    <value>Pridėti elementus</value>
+  </data>
+  <data name="EditValues" xml:space="preserve">
+    <value>Redaguoti reikšmes</value>
+  </data>
+  <data name="EditValuesDescription" xml:space="preserve">
+    <value>Objekto reikšmių redagavimas</value>
+  </data>
+  <data name="Freehand" xml:space="preserve">
+    <value>Laisvai piešiamas</value>
+  </data>
+  <data name="FreehandDescription" xml:space="preserve">
+    <value>Linijų arba plotų įvedimas laisvo piešimo būdu</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>Visa aprėptis</value>
+  </data>
+  <data name="MapContentsTabHeader" xml:space="preserve">
+    <value>Žemėlapio turinys</value>
+  </data>
+  <data name="MoveBarUpZoomInMoveDownToZoomOut" xml:space="preserve">
+    <value>Perkėlę juostelę aukštyn - priartinsite, žemyn - atitolinsite</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>Perkelti pirmą</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>Perkelti paskutinį</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>Perkelti kitą</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>Perkelti ankstesnį</value>
+  </data>
+  <data name="NameColon" xml:space="preserve">
+    <value>Vardas: </value>
+  </data>
+  <data name="NewSelect" xml:space="preserve">
+    <value>Naujas išrinkimas</value>
+  </data>
+  <data name="NewSelectDescription" xml:space="preserve">
+    <value>Pradedamas naujas išrinkimas</value>
+  </data>
+  <data name="OpenItem" xml:space="preserve">
+    <value>Atverti elementą</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Parametrai</value>
+  </data>
+  <data name="OptionsDotDot" xml:space="preserve">
+    <value>Savybės ...</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Spausdinti</value>
+  </data>
+  <data name="PrintPreviewColon" xml:space="preserve">
+    <value>Spaudinio peržiūra:</value>
+  </data>
+  <data name="RecordColon" xml:space="preserve">
+    <value>Įrašas:</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>Įrašų ({0} iš {1} pažymėtų)</value>
+  </data>
+  <data name="RemoveSelect" xml:space="preserve">
+    <value>Pašalinti iš išrinkimo</value>
+  </data>
+  <data name="RemoveSelectDescription" xml:space="preserve">
+    <value>Atlikto išrinkimo kriterijų pašalinimas</value>
+  </data>
+  <data name="ResetNorth" xml:space="preserve">
+    <value>Gražinti Šiaurę</value>
+  </data>
+  <data name="Reshape" xml:space="preserve">
+    <value>Performuoti</value>
+  </data>
+  <data name="ReshapeDescription" xml:space="preserve">
+    <value>Objekto performavimas</value>
+  </data>
+  <data name="SaveEdit" xml:space="preserve">
+    <value>Išsaugoti pakeitimus</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Ieškoti</value>
+  </data>
+  <data name="SearchTabHeader" xml:space="preserve">
+    <value>Ieškoti</value>
+  </data>
+  <data name="SizeColon" xml:space="preserve">
+    <value>Dydis: </value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>Pereiti prie kito išrinkimo</value>
+  </data>
+  <data name="Union" xml:space="preserve">
+    <value>Sąjunga</value>
+  </data>
+  <data name="UnionDescription" xml:space="preserve">
+    <value>Atliekamas pažymėtų objektų apjungimas</value>
+  </data>
+  <data name="UriColon" xml:space="preserve">
+    <value>Uri: </value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versija</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Mastelis</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Priartinti</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Atitolinti</value>
+  </data>
+  <data name="CouldNotLoadViewer" xml:space="preserve">
+    <value>Negalima paleisti Viewer aplikacijos. Daugiau informacijos gausite patikrinę interneto naršyklės pultą.</value>
+  </data>
+  <data name="InitializingViewer" xml:space="preserve">
+    <value>Aktyvuojama Viewer aplikacija...</value>
+  </data>
+</root>

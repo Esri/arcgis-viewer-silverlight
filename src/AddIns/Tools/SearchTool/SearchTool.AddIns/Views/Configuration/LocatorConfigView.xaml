@@ -1,0 +1,507 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl 
+    x:Class="SearchTool.LocatorConfigView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:SearchTool;assembly=SearchTool.AddIns"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SearchTool.AddIns;component/AppResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:FormatResourceConverter x:Key="FormatResourceConverter" />
+            <local:StringResourcesManager x:Key="Localization" />
+            <local:BoolVisibilityConverter x:Key="BoolVisibilityConverter" />
+            <local:ReverseBoolVisibilityConverter x:Key="ReverseBoolVisibilityConverter" />
+            <local:ReverseBoolConverter x:Key="ReverseBoolConverter" />
+            <local:NotNullVisibilityConverter x:Key="NotNullVisibilityConverter" />
+            <local:NotEmptyTextVisibilityConverter x:Key="NotEmptyTextVisibilityConverter" />
+            <local:EmptyTextVisibilityConverter x:Key="EmptyTextVisibilityConverter" />
+            <local:EndsWithConverter x:Key="EndsWithConverter" />
+            <local:LocatorSearchProxyUrlConverter x:Key="LocatorSearchProxyUrlConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!-- label for locator URL textbox -->
+            <RowDefinition Height="Auto" /> <!-- Locator URL textbox -->
+            <RowDefinition Height="Auto" /> <!-- use proxy checkbox, locator URL help tips -->
+            <RowDefinition Height="Auto" /> <!-- Connect button and help tip -->
+            <RowDefinition Height="Auto" /> <!-- Connection info or failure message -->
+            <RowDefinition Height="*" />    <!-- Click Next help tip -->
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            x:Name="LocatorUrlLabel"
+            Text="{Binding ConverterParameter=LocatorUrl,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}"
+            FontSize="12"/>
+
+        <!-- TextBox for inputting locator service URL -->
+        <TextBox
+            Text="{Binding LocatorServiceUrl, Mode=TwoWay}"
+            Margin="0,4,0,0"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            Grid.Row="1"
+            IsEnabled="{Binding IsUpdatingLocatorInfo, Converter={StaticResource ReverseBoolConverter}}">
+            <i:Interaction.Behaviors>
+                <local:UpdateBindingOnTextChanged />
+            </i:Interaction.Behaviors>
+            <i:Interaction.Triggers>
+                <local:KeyPressedTrigger Key="Enter">
+                    <!-- attempt to connect to service on Enter -->
+                    <i:InvokeCommandAction Command="{Binding UpdateLocatorInfo}" />
+                    
+                    <!-- hide connect help tip when connection attempt is made -->
+                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=ConnectHelpTip}"
+                                             PropertyName="Visibility"
+                                             Value="Collapsed" />
+                </local:KeyPressedTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>
+
+        <Grid Grid.Row="2"
+              HorizontalAlignment="Stretch"
+              Margin="0,3,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- Help tip for typing locator URL -->
+            <TextBlock
+                Text="{Binding ConverterParameter=EnterLocatorUrl,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}"
+                TextWrapping="Wrap"
+                Opacity="0.7"
+                FontSize="10"
+                Grid.Column="1"
+                Margin="10,0,0,0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Visibility="{Binding LocatorServiceUrl, 
+                    Converter={StaticResource NotEmptyTextVisibilityConverter}}"/>
+
+            <!-- Help tip for requirement that URL end with "GeocodeServer" -->
+            <TextBlock
+                Text="{Binding ConverterParameter=LocatorUrlMustEndWith,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}"
+                TextWrapping="Wrap"
+                Opacity="0.7"
+                FontSize="10"
+                Grid.Column="1"
+                Margin="10,0,0,0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Visibility="Collapsed">
+            <i:Interaction.Triggers>
+                
+                <!-- Show help tip when locator service URL is specified but does not end with "GeocodeServer" -->
+                <ei:PropertyChangedTrigger Binding="{Binding LocatorServiceUrl}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding LocatorServiceUrl,
+                                        Converter={StaticResource EndsWithConverter},
+                                        ConverterParameter=GeocodeServer}"
+                                    Operator="Equal"
+                                    RightOperand="False"/>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding LocatorServiceUrl,
+                                        Converter={StaticResource EmptyTextVisibilityConverter}}"
+                                    Operator="Equal"
+                                    RightOperand="Visible"/>
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Visible" />
+                </ei:PropertyChangedTrigger>
+
+                <!-- Hide help tip when locator service URL is not specified or ends with "GeocodeServer" -->
+                <ei:PropertyChangedTrigger Binding="{Binding LocatorServiceUrl}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression ForwardChaining="Or">
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding LocatorServiceUrl,
+                                        Converter={StaticResource EndsWithConverter},
+                                        ConverterParameter=GeocodeServer}"
+                                    Operator="Equal"
+                                    RightOperand="True"/>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding LocatorServiceUrl,
+                                        Converter={StaticResource EmptyTextVisibilityConverter}}"
+                                    Operator="Equal"
+                                    RightOperand="Collapsed"/>
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                </ei:PropertyChangedTrigger>
+            </i:Interaction.Triggers>
+            </TextBlock>
+
+            <!-- Use Proxy checkbox -->
+            <CheckBox
+                IsChecked="{Binding UseProxy, Mode=TwoWay}"
+                Content="{Binding ConverterParameter=UseProxy,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}"
+                Cursor="Hand"
+                Foreground="{Binding Foreground, ElementName=LocatorUrlLabel}"/>
+
+        </Grid>
+        <!-- Connect to service button -->
+        <Grid
+            Margin="0,10,0,0"
+            Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button
+                x:Name="ConnectButton"
+                Content="{Binding ConverterParameter=Connect,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}"
+                Padding="10,5,10,5"
+                HorizontalAlignment="Left"
+                Command="{Binding UpdateLocatorInfo}"
+                IsEnabled="{Binding LocatorServiceUrl, 
+                    Converter={StaticResource EndsWithConverter},
+                    ConverterParameter=GeocodeServer}"/>
+
+            <!-- Click connect help tip -->
+            <TextBlock
+                x:Name="ConnectHelpTip"
+                Text="{Binding ConverterParameter=ClickConnect,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}"
+                Margin="5,0,0,0"
+                Grid.Column="1"
+                Opacity="0.7"
+                FontSize="10"
+                VerticalAlignment="Center"
+                Visibility="Collapsed">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Loaded">
+                        <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                    </i:EventTrigger>    
+                
+                    <!-- Show connect help tip when locator URL is changed and ends with "GeocodeServer" -->
+                    <ei:PropertyChangedTrigger Binding="{Binding LocatorServiceUrl}">
+                        <i:Interaction.Behaviors>
+                            <ei:ConditionBehavior>
+                                <ei:ConditionalExpression>
+                                    <ei:ComparisonCondition 
+                                        LeftOperand="{Binding LocatorServiceUrl, 
+                                            Converter={StaticResource EndsWithConverter},
+                                            ConverterParameter=GeocodeServer}"
+                                        Operator="Equal"
+                                        RightOperand="True"/>
+                                </ei:ConditionalExpression>
+                            </ei:ConditionBehavior>
+                        </i:Interaction.Behaviors>
+                        <ei:ChangePropertyAction PropertyName="Visibility" Value="Visible" />
+                    </ei:PropertyChangedTrigger>
+                
+                    <!-- Show connect help tip when whether to use proxy is changed and locator URL ends with "GeocodeServer" -->
+                    <ei:PropertyChangedTrigger Binding="{Binding UseProxy}">
+                        <i:Interaction.Behaviors>
+                            <ei:ConditionBehavior>
+                                <ei:ConditionalExpression>
+                                    <ei:ComparisonCondition 
+                                        LeftOperand="{Binding LocatorServiceUrl, 
+                                            Converter={StaticResource EndsWithConverter},
+                                            ConverterParameter=GeocodeServer}"
+                                        Operator="Equal"
+                                        RightOperand="True"/>
+                                </ei:ConditionalExpression>
+                            </ei:ConditionBehavior>
+                        </i:Interaction.Behaviors>
+                        <ei:ChangePropertyAction PropertyName="Visibility" Value="Visible" />
+                    </ei:PropertyChangedTrigger>
+                
+                    <!-- Hide connect help tip when locator URL is changed and does not end with "GeocodeServer" -->
+                    <ei:PropertyChangedTrigger Binding="{Binding LocatorServiceUrl}">
+                        <i:Interaction.Behaviors>
+                            <ei:ConditionBehavior>
+                                <ei:ConditionalExpression>
+                                    <ei:ComparisonCondition 
+                                        LeftOperand="{Binding LocatorServiceUrl, 
+                                            Converter={StaticResource EndsWithConverter},
+                                            ConverterParameter=GeocodeServer}"
+                                        Operator="Equal"
+                                        RightOperand="False"/>
+                                </ei:ConditionalExpression>
+                            </ei:ConditionBehavior>
+                        </i:Interaction.Behaviors>
+                        <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                    </ei:PropertyChangedTrigger>
+                    
+                    <!-- Hide connect help tip when connecting -->
+                    <i:EventTrigger EventName="Click" SourceObject="{Binding ElementName=ConnectButton}">
+                        <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </TextBlock>
+
+        </Grid>
+        
+        <!-- Connected service info -->
+        <Grid
+            Grid.Row="4"
+            Margin="0,7,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Visibility="Collapsed">
+            <i:Interaction.Triggers>
+                <!-- Show on load if LocatorInfo is present -->
+                <i:EventTrigger EventName="Loaded">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding LocatorInfo}"
+                                    Operator="NotEqual"
+                                    RightOperand="{x:Null}"/>
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Visible" />
+                </i:EventTrigger>
+                
+                <!-- Show connection info when LocatorInfo is populated -->
+                <ei:PropertyChangedTrigger Binding="{Binding LocatorInfo}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding LocatorInfo}"
+                                    Operator="NotEqual"
+                                    RightOperand="{x:Null}"/>
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Visible" />
+                </ei:PropertyChangedTrigger>
+
+                <!-- Hide connection info when locator URL is changed -->
+                <ei:PropertyChangedTrigger Binding="{Binding LocatorServiceUrl}">
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                </ei:PropertyChangedTrigger>
+
+                <!-- Hide connection info when whether to use proxy is changed -->
+                <ei:PropertyChangedTrigger Binding="{Binding UseProxy}">
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                </ei:PropertyChangedTrigger>
+                
+                <!-- Hide connection info when a connection attempt is made -->
+                <ei:PropertyChangedTrigger Binding="{Binding IsUpdatingLocatorInfo}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding IsUpdatingLocatorInfo}"
+                                    Operator="Equal"
+                                    RightOperand="True"/>
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                </ei:PropertyChangedTrigger>
+            </i:Interaction.Triggers>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- label for currently connected service -->
+            <TextBlock
+                Text="{Binding LocatorInfo.Title, 
+                    Converter={StaticResource FormatResourceConverter},
+                    ConverterParameter=ConnectedTo}" 
+                VerticalAlignment="Center"
+                Opacity="0.7"/>
+
+            <!-- Hyperlink to view service info -->
+            <Grid 
+                Margin="5,0,0,0"
+                Grid.Column="1">
+                
+                <!-- KNOWN ISSUE - UpdateSourceTrigger will have no effect until source is moved to Silveright 5 -->
+                <HyperlinkButton
+                    NavigateUri="{Binding Converter={StaticResource LocatorSearchProxyUrlConverter}, 
+                        UpdateSourceTrigger=PropertyChanged}"
+                    TargetName="_blank"
+                    Cursor="Hand">
+                    <HyperlinkButton.Content>
+                        <Image Source="/SearchTool.AddIns;component/Images/info.png"
+                           Stretch="None" />
+                    </HyperlinkButton.Content>
+
+                    <!-- Declare template to eliminate focus rectangle on click -->
+                    <HyperlinkButton.Template>
+                        <ControlTemplate TargetType="HyperlinkButton">
+                            <Grid>
+                                <ContentPresenter Content="{TemplateBinding Content}" />
+                            </Grid>
+                        </ControlTemplate>
+                    </HyperlinkButton.Template>
+                </HyperlinkButton>
+            </Grid>
+
+        </Grid>
+
+        <!-- Busy indicator -->
+        <Grid
+            Grid.Row="4"
+            Margin="0,7,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Visibility="{Binding IsUpdatingLocatorInfo, Converter={StaticResource BoolVisibilityConverter}}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <ProgressBar
+                Height="16"
+                Width="80"
+                IsIndeterminate="True"/>
+
+            <TextBlock
+                Text="{Binding ConverterParameter=Connecting,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}" 
+                VerticalAlignment="Center" 
+                Margin="5,0,0,0"
+                Grid.Column="1"/>
+
+        </Grid>
+
+        <!-- Connection failed message -->
+        <TextBlock
+            Text="{Binding ConverterParameter=LocatorConnectionFailed,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}"
+            FontSize="11"
+            Grid.Row="4"
+            Margin="0,7,0,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Visibility="Collapsed"
+            Opacity="0.7">
+            <i:Interaction.Triggers>
+                
+                <!-- Show connection failed message when is busy becomes false (i.e. connection attempt completed)
+                     and LocatorInfo is null. -->
+                <ei:PropertyChangedTrigger Binding="{Binding IsUpdatingLocatorInfo}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding IsUpdatingLocatorInfo}"
+                                    Operator="Equal"
+                                    RightOperand="False"/>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding LocatorInfo}"
+                                    Operator="Equal"
+                                    RightOperand="{x:Null}"/>
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Visible" />
+                </ei:PropertyChangedTrigger>
+
+                <!-- Hide connection failed message on load -->
+                <i:EventTrigger EventName="Loaded">
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                </i:EventTrigger>
+
+                <!-- Hide connection failed message when locator url is changed -->
+                <ei:PropertyChangedTrigger Binding="{Binding LocatorServiceUrl}">
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                </ei:PropertyChangedTrigger>
+
+                <!-- Hide connection failed message when whether to use proxy is changed -->
+                <ei:PropertyChangedTrigger Binding="{Binding UseProxy}">
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                </ei:PropertyChangedTrigger>
+                
+                <!-- Hide connection failed message when is busy becomes true (i.e. connection attempt made) -->
+                <ei:PropertyChangedTrigger Binding="{Binding IsUpdatingLocatorInfo}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding IsUpdatingLocatorInfo}"
+                                    Operator="Equal"
+                                    RightOperand="True"/>
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                </ei:PropertyChangedTrigger>
+            </i:Interaction.Triggers>
+        </TextBlock>
+        
+        <!-- Click Next to continue help tip -->
+        <Grid
+            Grid.Row="5"            
+            Visibility="{Binding LocatorInfo, Converter={StaticResource NotNullVisibilityConverter}}"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom">
+            <i:Interaction.Triggers>
+                <!-- Hide help tip when locator URL is changed -->
+                <ei:PropertyChangedTrigger Binding="{Binding LocatorServiceUrl}">
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Collapsed" />
+                </ei:PropertyChangedTrigger>
+            
+                <!-- Show help tip when locator info is retrieved -->
+                <ei:PropertyChangedTrigger Binding="{Binding LocatorInfo}">
+                    <i:Interaction.Behaviors>
+                        <ei:ConditionBehavior>
+                            <ei:ConditionalExpression>
+                                <ei:ComparisonCondition 
+                                    LeftOperand="{Binding LocatorInfo}"
+                                    Operator="NotEqual"
+                                    RightOperand="{x:Null}"/>
+                            </ei:ConditionalExpression>
+                        </ei:ConditionBehavior>
+                    </i:Interaction.Behaviors>
+                    <ei:ChangePropertyAction PropertyName="Visibility" Value="Visible" />
+                </ei:PropertyChangedTrigger>
+            </i:Interaction.Triggers>
+            <TextBlock
+                Text="{Binding ConverterParameter=ClickNext,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}"
+                Opacity="0.7"
+                FontSize="10"
+                Visibility="{Binding IsUpdatingLocatorInfo, Converter={StaticResource ReverseBoolVisibilityConverter}}" />
+        </Grid>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Extensions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Extension Name="Esri.ArcGIS.Client.Application.AddIns.ExtentQueryStringBehavior" Required="true">
+    <Assemblies>
+      <Assembly Name="Esri.ArcGIS.Client.Application.AddIns.ExtentQueryStringBehavior" />
+      <Assembly Name="Microsoft.Threading.Tasks" />
+      <Assembly Name="Microsoft.Threading.Tasks.Extensions" />
+      <Assembly Name="Microsoft.Threading.Tasks.Extensions.Silverlight" />
+      <Assembly Name="System.Runtime" />
+      <Assembly Name="System.Threading.Tasks" />
+    </Assemblies>
+  </Extension>
+</Extensions>

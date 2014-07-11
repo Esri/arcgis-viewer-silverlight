@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddLabel" xml:space="preserve">
+    <value>Nieuwe toevoegen</value>
+  </data>
+  <data name="AliasLabel" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="AutoEnableDataGridLabel" xml:space="preserve">
+    <value>Resultaten weergeven in de attribuuttabel</value>
+  </data>
+  <data name="AutoPinResults" xml:space="preserve">
+    <value>Resultaten op de kaart laten staan</value>
+  </data>
+  <data name="AutoZoomToResultsLabel" xml:space="preserve">
+    <value>Zoomen naar resultaten wanneer een query is voltooid</value>
+  </data>
+  <data name="BuildQueryExpressionsLabel" xml:space="preserve">
+    <value>De query samenstellen</value>
+  </data>
+  <data name="CancelLabel" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="CannotExecuteCommand" xml:space="preserve">
+    <value>Kan de opdracht niet uitvoeren</value>
+  </data>
+  <data name="ClickConnect" xml:space="preserve">
+    <value>Klik op Verbinding maken</value>
+  </data>
+  <data name="ClickNext" xml:space="preserve">
+    <value>Klik op Volgende om door te gaan</value>
+  </data>
+  <data name="ConfigurationLabel" xml:space="preserve">
+    <value>Configuratie van querytool</value>
+  </data>
+  <data name="ConfigureDialogHeading" xml:space="preserve">
+    <value>Het uiterlijk van het querydialoogvenster configureren</value>
+  </data>
+  <data name="ConfigureResultLabel" xml:space="preserve">
+    <value>Instellingen voor queryresultaten opgeven</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Verbinding maken</value>
+  </data>
+  <data name="ConnectCompleted" xml:space="preserve">
+    <value>Verbinding met \'{0}\' is met succes voltooid.</value>
+  </data>
+  <data name="ConnectFailed" xml:space="preserve">
+    <value>Verbinding is mislukt.</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>Verbinding maken...</value>
+  </data>
+  <data name="DataTypeMismatch" xml:space="preserve">
+    <value>Waarde \'{0}\' kan niet worden omgezet naar gegevenstype \'{1}\'.</value>
+  </data>
+  <data name="DefaultValueLabel" xml:space="preserve">
+    <value>Standaardwaarde</value>
+  </data>
+  <data name="DeleteExpression" xml:space="preserve">
+    <value>Deze expressie verwijderen</value>
+  </data>
+  <data name="DuplicateError" xml:space="preserve">
+    <value>Lijst mag geen dubbele invoergegevens bevatten</value>
+  </data>
+  <data name="EditLabel" xml:space="preserve">
+    <value>Deze expressie bewerken</value>
+  </data>
+  <data name="EmptyEntryError" xml:space="preserve">
+    <value>Lege waarden zijn niet toegestaan voor deze parameter</value>
+  </data>
+  <data name="EnterServiceUrl" xml:space="preserve">
+    <value>Voer een URL naar een ArcGISServer-mapservice of -featureservice in.</value>
+  </data>
+  <data name="EnterValue" xml:space="preserve">
+    <value>Voer een waarde in</value>
+  </data>
+  <data name="EqualityCheckFailsOnType" xml:space="preserve">
+    <value>Waarde \'{0}\' ({1}) kan niet worden vergeleken voor gelijkheid met \'{2}\' ({3}) omdat hun typen niet overeenkomen.</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>Details:</value>
+  </data>
+  <data name="ExecuteLabel" xml:space="preserve">
+    <value>Uitvoeren</value>
+  </data>
+  <data name="ExecuteQuery" xml:space="preserve">
+    <value>Uitvoeren van query...</value>
+  </data>
+  <data name="ExpressionBuilderLabel" xml:space="preserve">
+    <value>Builder van query-expressies</value>
+  </data>
+  <data name="ExpressionColumnHeader" xml:space="preserve">
+    <value>Query-expressies</value>
+  </data>
+  <data name="ExpressionLabel" xml:space="preserve">
+    <value>Expressielabel:</value>
+  </data>
+  <data name="FieldAndOperatorLabel" xml:space="preserve">
+    <value>Veld en operator:</value>
+  </data>
+  <data name="GroupColumnHeader" xml:space="preserve">
+    <value>Groep-id</value>
+  </data>
+  <data name="GroupLabel" xml:space="preserve">
+    <value>Geselecteerde groep</value>
+  </data>
+  <data name="IncludedValues" xml:space="preserve">
+    <value>Opgenomen waarden</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="LayerInfoMissing" xml:space="preserve">
+    <value>De metadata van de laag zijn niet beschikbaar op dit niveau.</value>
+  </data>
+  <data name="OkLabel" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OperatorLabel" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="ParameterLabelsAndVisibility" xml:space="preserve">
+    <value>Het label en de zichtbaarheid van elke queryparameter instellen</value>
+  </data>
+  <data name="PinToMapLabel" xml:space="preserve">
+    <value>Resultaten op de kaart laten staan</value>
+  </data>
+  <data name="QueryCategory" xml:space="preserve">
+    <value>Query</value>
+  </data>
+  <data name="QueryDescription" xml:space="preserve">
+    <value>Zoeken naar objecten in een laag die overeenkomen met de opgegeven zoekcriteria</value>
+  </data>
+  <data name="QueryExpressions" xml:space="preserve">
+    <value>Query-expressies</value>
+  </data>
+  <data name="QueryFailed" xml:space="preserve">
+    <value>Query kan niet worden uitgevoerd.</value>
+  </data>
+  <data name="QueryTitleLabel" xml:space="preserve">
+    <value>Titel van dialoogvenster</value>
+  </data>
+  <data name="QueryToolName" xml:space="preserve">
+    <value>Querylaag</value>
+  </data>
+  <data name="RemoveLabel" xml:space="preserve">
+    <value>Geselecteerde items verwijderen</value>
+  </data>
+  <data name="ResultOptionsLabel" xml:space="preserve">
+    <value>Overige opties</value>
+  </data>
+  <data name="ResultsFound" xml:space="preserve">
+    <value>{0} objecten gevonden</value>
+  </data>
+  <data name="SampleValues" xml:space="preserve">
+    <value>Voorbeeldwaarden (opgehaald van laag)</value>
+  </data>
+  <data name="SelectExpression" xml:space="preserve">
+    <value>Deze expressie selecteren of deselecteren</value>
+  </data>
+  <data name="SelectFromList" xml:space="preserve">
+    <value>Waarde kiezen uit lijst</value>
+  </data>
+  <data name="ServiceUrl" xml:space="preserve">
+    <value>Service-URL</value>
+  </data>
+  <data name="StringExceededMaxLength" xml:space="preserve">
+    <value>\'{0}\' mag niet meer zijn dan {1} tekens.</value>
+  </data>
+  <data name="UnableToAccess" xml:space="preserve">
+    <value>Kan geen toegang krijgen tot URL '&lt;{0}&gt;'.</value>
+  </data>
+  <data name="UngroupLabel" xml:space="preserve">
+    <value>Groepering van geselecteerde items opheffen</value>
+  </data>
+  <data name="UriFormatError" xml:space="preserve">
+    <value>URL \'&lt;{0}&gt;\' bevat ongeldige tekens.</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Proxy gebruiken</value>
+  </data>
+  <data name="UsersTypeValue" xml:space="preserve">
+    <value>Type in waarde</value>
+  </data>
+  <data name="UseServiceRendererLabel" xml:space="preserve">
+    <value>gebruik de symbolen die door de service zijn gedefinieerd</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>[waarde]</value>
+  </data>
+  <data name="VisibleLabel" xml:space="preserve">
+    <value>Zichtbaar</value>
+  </data>
+  <data name="InputMethod" xml:space="preserve">
+    <value>Invoermethode:</value>
+  </data>
+  <data name="Fields" xml:space="preserve">
+    <value>Velden</value>
+  </data>
+  <data name="LabelWatermark" xml:space="preserve">
+    <value>&lt;type een label&gt;</value>
+  </data>
+  <data name="ResultOptionsDescription" xml:space="preserve">
+    <value>Geef het uiterlijk en het gedrag van de resultaten op</value>
+  </data>
+  <data name="SelectField" xml:space="preserve">
+    <value>&lt;selecteer een veld&gt;</value>
+  </data>
+  <data name="SelectFieldsToInclude" xml:space="preserve">
+    <value>Kies de gegevens die in de queryresultaten worden opgenomen</value>
+  </data>
+  <data name="AutoEnableDataGridTooltip" xml:space="preserve">
+    <value>De attribuuttabel automatisch openen wanneer een set met resultaten is opgehaald</value>
+  </data>
+  <data name="AutoPinResultsTooltip" xml:space="preserve">
+    <value>Queryresultaten op de kaart laten staan wanneer het querydialoogvenster gesloten is of een andere query wordt uitgevoerd</value>
+  </data>
+  <data name="AutoZoomToResultsTooltip" xml:space="preserve">
+    <value>Automatisch zoomen naar de queryresultaten wanneer deze aan de kaart worden toegevoegd </value>
+  </data>
+  <data name="ConfigureQueryLayer" xml:space="preserve">
+    <value>De laag waarop een query wordt uitgevoerd, configureren</value>
+  </data>
+  <data name="DefineQueryExpressions" xml:space="preserve">
+    <value>De expressies in de query definiëren</value>
+  </data>
+  <data name="SampleServiceUrl" xml:space="preserve">
+    <value>http://server/arcgis/rest/services/service/MapServer/0</value>
+  </data>
+  <data name="ServiceUrlDescription" xml:space="preserve">
+    <value>De URL opgeven van de laag waarop een query moet worden uitgevoerd</value>
+  </data>
+  <data name="UseServiceRendererTooltip" xml:space="preserve">
+    <value>Resultaten weergeven op de kaart met behulp van de symbolen die door de service zijn gedefinieerd. Indien niet aangevinkt, worden alle objecten in een set met resultaten weergegeven met een standaardsymbool</value>
+  </data>
+  <data name="InvalidValue" xml:space="preserve">
+    <value>Ongeldige waarde voor dit veld</value>
+  </data>
+  <data name="ParameterAppearance" xml:space="preserve">
+    <value>Parameterweergave</value>
+  </data>
+</root>

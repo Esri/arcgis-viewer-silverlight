@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFeatureLayer" xml:space="preserve">
+    <value>Добавить векторные слои</value>
+  </data>
+  <data name="AddFeatureLayerWindowCheckAll" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="AddFeatureLayerWindowUnCheckAll" xml:space="preserve">
+    <value>Снять выделение</value>
+  </data>
+  <data name="ArcGIS" xml:space="preserve">
+    <value>ArcGIS</value>
+  </data>
+  <data name="BackStageControlFeatureMaps" xml:space="preserve">
+    <value>Рекомендуемые карты</value>
+  </data>
+  <data name="BackStageControlGroups" xml:space="preserve">
+    <value>Группы</value>
+  </data>
+  <data name="BackStageControlMyGroups" xml:space="preserve">
+    <value>Мои группы</value>
+  </data>
+  <data name="BackStageControlMyOrgGroups" xml:space="preserve">
+    <value>Группы моей организации</value>
+  </data>
+  <data name="BackStageControlMyOrgPublicGroups" xml:space="preserve">
+    <value>Публичные группы моей организации</value>
+  </data>
+  <data name="BackStageControlMyMaps" xml:space="preserve">
+    <value>Мои карты</value>
+  </data>
+  <data name="BackStageControlSearch" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>Щелкните, чтобы посмотреть описание в отдельном окне браузера</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>Закрыть детали</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Комментарии</value>
+  </data>
+  <data name="ContentEveryone" xml:space="preserve">
+    <value>каждый</value>
+  </data>
+  <data name="ContentGroups" xml:space="preserve">
+    <value>группы</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Создано</value>
+  </data>
+  <data name="DefineQueryWindowAlias" xml:space="preserve">
+    <value>Псевдоним:</value>
+  </data>
+  <data name="DefineQueryWindowAnd" xml:space="preserve">
+    <value>и</value>
+  </data>
+  <data name="DefineQueryWindowApply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="DefineQueryWindowClickPickDate" xml:space="preserve">
+    <value>Щелкните, чтобы выбрать отформатированную для использования в выражении дату.</value>
+  </data>
+  <data name="DefineQueryWindowData" xml:space="preserve">
+    <value>Данные</value>
+  </data>
+  <data name="DefineQueryWindowExpression" xml:space="preserve">
+    <value>Выражение:</value>
+  </data>
+  <data name="DefineQueryWindowFailedToRetrieveSampleFeaturesForLayer" xml:space="preserve">
+    <value>Не удалось получить объекты для слоя.</value>
+  </data>
+  <data name="DefineQueryWindowFields" xml:space="preserve">
+    <value>Поля:</value>
+  </data>
+  <data name="DefineQueryWindowLike" xml:space="preserve">
+    <value>like</value>
+  </data>
+  <data name="DefineQueryWindowName" xml:space="preserve">
+    <value>Имя:</value>
+  </data>
+  <data name="DefineQueryWindowNot" xml:space="preserve">
+    <value>не</value>
+  </data>
+  <data name="DefineQueryWindowOr" xml:space="preserve">
+    <value>или</value>
+  </data>
+  <data name="DefineQueryWindowQuery" xml:space="preserve">
+    <value>Запрос</value>
+  </data>
+  <data name="DefineQueryWindowTableIsSampleOfFeatureLayer" xml:space="preserve">
+    <value>Представленная таблица является примером объектов в слое.</value>
+  </data>
+  <data name="DefineQueryWindowType" xml:space="preserve">
+    <value>Тип:</value>
+  </data>
+  <data name="DescriptionForMapCanotBeDisplayed" xml:space="preserve">
+    <value>Описание этой карты не может быть отображено в данном окне.</value>
+  </data>
+  <data name="ExceptionDeleteFailed" xml:space="preserve">
+    <value>Не удалось удалить</value>
+  </data>
+  <data name="ExceptionDeleteFailedUserSignIn" xml:space="preserve">
+    <value>Не удалось удалить. Пользователь не авторизован.</value>
+  </data>
+  <data name="ExceptionFaileAcceptApplicateForGroup" xml:space="preserve">
+    <value>Не удалось подтвердить заявителя {0} для группы {1}</value>
+  </data>
+  <data name="ExceptionFaileDeclineApplicateForGroup" xml:space="preserve">
+    <value>Не удалось отклонить заявителя {0} для группы {1}</value>
+  </data>
+  <data name="ExceptionFailedInviteUserToGroup" xml:space="preserve">
+    <value>Не удалось пригласить пользователей {0} в группу {1}</value>
+  </data>
+  <data name="ExceptionFailedLeaveRequestForGroup" xml:space="preserve">
+    <value>Не удалось послать запрос "покинуть" группу {1} пользователю {0}</value>
+  </data>
+  <data name="ExceptionFailedSendJoinRequestToGroup" xml:space="preserve">
+    <value>Не удалось послать запрос "присоединиться" пользователю {0} к группе {1}</value>
+  </data>
+  <data name="ExceptionFailedToAcceptGroupInvitationForGroup" xml:space="preserve">
+    <value>Не удалось подтвердить приглашение группы в группу {0} со стороны {1}</value>
+  </data>
+  <data name="ExceptionFailedToCreateGroup" xml:space="preserve">
+    <value>Не удалось создать группу.</value>
+  </data>
+  <data name="ExceptionFailedToDeclineGroupInvitationForGroup" xml:space="preserve">
+    <value>Не удалось отклонить приглашение группы в группу {0} со стороны {1}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteGroup" xml:space="preserve">
+    <value>Не удалось удалить группу {0}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteNoitification" xml:space="preserve">
+    <value>Не удалось удалить уведомление {0} со стороны {1}</value>
+  </data>
+  <data name="ExceptionFailedToGetGroupApplicationsForGroup" xml:space="preserve">
+    <value>Не удалось получить групповые приложения для группы {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveTagForUser" xml:space="preserve">
+    <value>Не удалось получить тэги для пользователя {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveOrgGroups" xml:space="preserve">
+    <value>Не удалось найти группы организации</value>
+  </data>
+  <data name="ExceptionFailedToShareItem" xml:space="preserve">
+    <value>не удалось сделать общим объект {0}</value>
+  </data>
+  <data name="ExceptionFailedToUpdateGroup" xml:space="preserve">
+    <value>Не удалось обновить группу {0}</value>
+  </data>
+  <data name="ExceptionGetCommentsFailed" xml:space="preserve">
+    <value>Не удалось получить комментарии.</value>
+  </data>
+  <data name="ExceptionGetFolderFailedUserSignedIn" xml:space="preserve">
+    <value>Не удался доступ к папке. Пользователь не авторизован.</value>
+  </data>
+  <data name="ExceptionNoUserSignedIn" xml:space="preserve">
+    <value>Нет авторизованных пользователей.</value>
+  </data>
+  <data name="ExceptionSignInFailed" xml:space="preserve">
+    <value>Подключение не удалось.</value>
+  </data>
+  <data name="FeatureMapsControlCloseParenthesis" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="FeatureMapsControlDetails" xml:space="preserve">
+    <value>Подробнее</value>
+  </data>
+  <data name="FeatureMapsControlLastModified" xml:space="preserve">
+    <value>(последнее изменение: </value>
+  </data>
+  <data name="FeatureMapsControlOpen" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="GroupControlClickHereToViewInSeparateBrowser" xml:space="preserve">
+    <value>Щелкните, чтобы посмотреть описание в отдельном окне браузера</value>
+  </data>
+  <data name="GroupControlCloseGroup" xml:space="preserve">
+    <value>Закрыть группу</value>
+  </data>
+  <data name="GroupControlDescription" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="GroupControlFeaturedMaps" xml:space="preserve">
+    <value>Рекомендуемые карты</value>
+  </data>
+  <data name="GroupControlNoFeaturedMapsFound" xml:space="preserve">
+    <value>Рекомендуемые карты не найдены.</value>
+  </data>
+  <data name="GroupControlNoMapsFound" xml:space="preserve">
+    <value>Карты не найдены.</value>
+  </data>
+  <data name="GroupControlOwner" xml:space="preserve">
+    <value>Владелец</value>
+  </data>
+  <data name="GroupControlPrivateUserCannotFindGroup" xml:space="preserve">
+    <value>Закрытая (Пользователи не могут найти группу и могут присоединиться к ней только по приглашению)</value>
+  </data>
+  <data name="GroupControlPublicUserCanSearchAndFindGroup" xml:space="preserve">
+    <value>Публичные (Пользователи могут искать и находить группу)</value>
+  </data>
+  <data name="GroupControlSearchOwner" xml:space="preserve">
+    <value>владелец: {0}</value>
+  </data>
+  <data name="GroupControlTags" xml:space="preserve">
+    <value>Тэги</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Группы</value>
+  </data>
+  <data name="HighestRated" xml:space="preserve">
+    <value>Лидеры рейтинга</value>
+  </data>
+  <data name="ItemNotFound" xml:space="preserve">
+    <value>Объект не найден: {0}</value>
+  </data>
+  <data name="LastModified" xml:space="preserve">
+    <value>Последние изменения</value>
+  </data>
+  <data name="MapDetailsRating" xml:space="preserve">
+    <value>({0} оценок)</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Карты</value>
+  </data>
+  <data name="MapServiceReferenceInvalid" xml:space="preserve">
+    <value>Неверная ссылка на картографический сервис. Невозможно добавить сервис к карте.</value>
+  </data>
+  <data name="MapServiceReferenceNoDetails" xml:space="preserve">
+    <value>Неверная ссылка на картографический сервис. Невозможно отобразить детали.</value>
+  </data>
+  <data name="MostComments" xml:space="preserve">
+    <value>Обсуждаемые</value>
+  </data>
+  <data name="MostPopular" xml:space="preserve">
+    <value>Популярные</value>
+  </data>
+  <data name="MostRecentlyAdded" xml:space="preserve">
+    <value>Последние</value>
+  </data>
+  <data name="MostRelevant" xml:space="preserve">
+    <value>Подходящие</value>
+  </data>
+  <data name="MyGroupControlGroups" xml:space="preserve">
+    <value>{0} группы</value>
+  </data>
+  <data name="MyGroupControlOn" xml:space="preserve">
+    <value>на</value>
+  </data>
+  <data name="MyGroupControlOpenGroup" xml:space="preserve">
+    <value>Открыть данную группу</value>
+  </data>
+  <data name="MyGroupControlZeroGroups" xml:space="preserve">
+    <value>0 групп</value>
+  </data>
+  <data name="MyMapControlMaps" xml:space="preserve">
+    <value>{0} карты</value>
+  </data>
+  <data name="MyMapControlZeroMaps" xml:space="preserve">
+    <value>0 карт</value>
+  </data>
+  <data name="Places" xml:space="preserve">
+    <value>Места</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Свойства</value>
+  </data>
+  <data name="RecentMaps" xml:space="preserve">
+    <value>Последние карты</value>
+  </data>
+  <data name="SearchArcGISCom" xml:space="preserve">
+    <value>Поиск карты, изображения и сервиса объектов на ArcGIS Online</value>
+  </data>
+  <data name="SearchControlAdd" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="SearchControlMapServiceFound" xml:space="preserve">
+    <value>Найден картографический сервис</value>
+  </data>
+  <data name="SearchControlResultsFound" xml:space="preserve">
+    <value>{0} результатов</value>
+  </data>
+  <data name="SearchControlServiceCouldNotBeAccessed" xml:space="preserve">
+    <value>Нет доступа к сервису.</value>
+  </data>
+  <data name="SearchControlZeroResultsFound" xml:space="preserve">
+    <value>0 результатов найдено.</value>
+  </data>
+  <data name="SearchDetailsBy" xml:space="preserve">
+    <value>по</value>
+  </data>
+  <data name="SearchDetailsRating" xml:space="preserve">
+    <value>Рейтинг: </value>
+  </data>
+  <data name="SearchMapResultsFor" xml:space="preserve">
+    <value>{0} результатов для {1}</value>
+  </data>
+  <data name="SearchTheWeb" xml:space="preserve">
+    <value>Поиск картографических сервисов в Интернете</value>
+  </data>
+  <data name="SearchWebDetailsAdd" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="SearchWebDetailsCopyright" xml:space="preserve">
+    <value>Авторское право: </value>
+  </data>
+  <data name="SearchWebDetailsDescription" xml:space="preserve">
+    <value>Описание: </value>
+  </data>
+  <data name="SearchWebDetailsExploreGISServer" xml:space="preserve">
+    <value>Изучить содержимое этого ГИС-сервера</value>
+  </data>
+  <data name="SearchWebDetailsName" xml:space="preserve">
+    <value>Имя:</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Сортировать по</value>
+  </data>
+  <data name="SortResults" xml:space="preserve">
+    <value>Результаты упорядочивания</value>
+  </data>
+  <data name="SortSearchResults" xml:space="preserve">
+    <value>Упорядочить результаты поиска.</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Общий обзор</value>
+  </data>
+  <data name="TheWeb" xml:space="preserve">
+    <value>Сеть</value>
+  </data>
+  <data name="TitleAZ" xml:space="preserve">
+    <value>Название A-Z</value>
+  </data>
+  <data name="TitleZA" xml:space="preserve">
+    <value>Название Z-A</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="UserSearchFailed" xml:space="preserve">
+    <value>Не удалось осуществить пользовательский поиск.</value>
+  </data>
+  <data name="BackStageControlRecent" xml:space="preserve">
+    <value>Последние</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Подключиться</value>
+  </data>
+  <data name="SignInForgotYourPassword" xml:space="preserve">
+    <value>Забыли ваш пароль?</value>
+  </data>
+  <data name="SignInSignUp" xml:space="preserve">
+    <value>Авторизация</value>
+  </data>
+  <data name="InvalidIDOrPassword" xml:space="preserve">
+    <value>Неверный идентификатор или пароль.</value>
+  </data>
+  <data name="NewHere" xml:space="preserve">
+    <value>Впервые здесь?</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="UsernamePrompt" xml:space="preserve">
+    <value>Имя пользователя:</value>
+  </data>
+  <data name="DescriptionForGroupCanotBeDisplayed" xml:space="preserve">
+    <value>Описание этой группы не может быть отображено в данном окне.</value>
+  </data>
+  <data name="GroupControlOwnerParenthesis" xml:space="preserve">
+    <value>(Владелец)</value>
+  </data>
+  <data name="LastModifiedPrompt" xml:space="preserve">
+    <value>(последнее изменение:</value>
+  </data>
+  <data name="LastModifiedPromptEnd" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="MapDetailsControlAverageRating" xml:space="preserve">
+    <value>Средняя оценка</value>
+  </data>
+  <data name="MapDetailsControlType" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="OnWithSpace" xml:space="preserve">
+    <value> на </value>
+  </data>
+  <data name="SearchR" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="LoadingMaps" xml:space="preserve">
+    <value>Загрузка карт...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="NoFeaturedMaps" xml:space="preserve">
+    <value>В настоящий момент нет доступных рекомендуемых карт</value>
+  </data>
+  <data name="SigningIn" xml:space="preserve">
+    <value>Подключение...</value>
+  </data>
+  <data name="SignInLabel" xml:space="preserve">
+    <value>Подключиться к {0}</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Детали сервиса</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="NumberResults" xml:space="preserve">
+    <value>(Результатов {0})</value>
+  </data>
+  <data name="ProjectInputsNotValid" xml:space="preserve">
+    <value>Необходимо указать целевую геометрию, выходную пространственную привязку и URL-адрес сервиса геометрии</value>
+  </data>
+  <data name="AGOL" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="NoResults" xml:space="preserve">
+    <value>Нет результатов для отображения</value>
+  </data>
+  <data name="SearchPlaces" xml:space="preserve">
+    <value>Поиск адресов, городов и других мест</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="AddressTitleExpression" xml:space="preserve">
+    <value>{Адрес}</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="SearchCategory" xml:space="preserve">
+    <value>Запрос</value>
+  </data>
+  <data name="SearchDescription" xml:space="preserve">
+    <value>Поиск местоположений или ресурсов для добавления к карте</value>
+  </data>
+  <data name="SearchToolName" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="ServiceConnectionFailed" xml:space="preserve">
+    <value>Не удалось подключиться к сервису.  Он не может быть добавлен к карте.</value>
+  </data>
+  <data name="CannotConvertBack" xml:space="preserve">
+    <value>Не удалось выполнить обратное преобразование</value>
+  </data>
+  <data name="EmptyGeometryServiceUrl" xml:space="preserve">
+    <value>URL-адрес сервиса геометрии не может быть нулевым или пустым</value>
+  </data>
+  <data name="EmptyLocatorUrl" xml:space="preserve">
+    <value>URL-адрес сервиса локатора адресов не может быть нулевым или пустым</value>
+  </data>
+  <data name="InvalidSearchResultType" xml:space="preserve">
+    <value>Результат поиска должен быть типа ArcGISPortalItem, WebSearchResultItem или ArcGISService</value>
+  </data>
+  <data name="MustSpecifyExtentFields" xml:space="preserve">
+    <value>Все поля экстента должны быть заполнены</value>
+  </data>
+  <data name="NullExtentSpatialRef" xml:space="preserve">
+    <value>Экстент пространственной привязки не может быть пустым</value>
+  </data>
+  <data name="CommandNotExecutable" xml:space="preserve">
+    <value>Команда не находится в исполняемом режиме</value>
+  </data>
+  <data name="ZeroExtentWidthError" xml:space="preserve">
+    <value>Ширина экстента должна быть больше нуля</value>
+  </data>
+  <data name="Searching" xml:space="preserve">
+    <value>Поиск...</value>
+  </data>
+  <data name="IncludedSearches" xml:space="preserve">
+    <value>Включены поиски:</value>
+  </data>
+  <data name="SearchType" xml:space="preserve">
+    <value>Тип поиска:</value>
+  </data>
+  <data name="SelectSearchTypes" xml:space="preserve">
+    <value>Выберите используемые типы поиска</value>
+  </data>
+  <data name="LocatorUrl" xml:space="preserve">
+    <value>URL-адрес сервиса:</value>
+  </data>
+  <data name="Bottom" xml:space="preserve">
+    <value>Снизу:</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Подключить</value>
+  </data>
+  <data name="ConnectedTo" xml:space="preserve">
+    <value>Подключено к сервису локатора адресов {0}</value>
+  </data>
+  <data name="ExtentFields" xml:space="preserve">
+    <value>Использовать поля экстента</value>
+  </data>
+  <data name="Left" xml:space="preserve">
+    <value>Слева:</value>
+  </data>
+  <data name="Right" xml:space="preserve">
+    <value>Справа:</value>
+  </data>
+  <data name="Top" xml:space="preserve">
+    <value>Сверху:</value>
+  </data>
+  <data name="ConfigureLocatorService" xml:space="preserve">
+    <value>{0} Поиск: Укажите сервис локатора адресов</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>Подключение...</value>
+  </data>
+  <data name="ExtentFieldsTooltip" xml:space="preserve">
+    <value>Используйте поля для задания экстента результатов поиска.  Экстент используется для приближения к результатам.</value>
+  </data>
+  <data name="ExtentWidth" xml:space="preserve">
+    <value>Использовать ширину экстента</value>
+  </data>
+  <data name="ExtentWidthInputError" xml:space="preserve">
+    <value>Ширина экстента должна быть больше нуля</value>
+  </data>
+  <data name="ExtentWidthTooltip" xml:space="preserve">
+    <value>Используйте поле ширины для задания экстента результатов поиска.  Экстент используется для приближения к результатам.</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Метры</value>
+  </data>
+  <data name="AddSearchError" xml:space="preserve">
+    <value>Не удалось добавить тип поиска.  Команда в настоящее время не в исполняемом режиме.</value>
+  </data>
+  <data name="ClickConnect" xml:space="preserve">
+    <value>Щелкните, чтобы проверить URL-адрес</value>
+  </data>
+  <data name="ClickNext" xml:space="preserve">
+    <value>Щелкните Далее, чтобы продолжить</value>
+  </data>
+  <data name="ConfigureResultExtent" xml:space="preserve">
+    <value>{0} Поиск: выбор способа приближения к каждому результату</value>
+  </data>
+  <data name="EnterLocatorUrl" xml:space="preserve">
+    <value>Введите URL-адрес сервиса локатора адресов ArcGIS Server</value>
+  </data>
+  <data name="LocatorConnectionFailed" xml:space="preserve">
+    <value>Сбой подключения.  Проверьте URL-адрес и повторите попытку.</value>
+  </data>
+  <data name="LocatorUrlMustEndWith" xml:space="preserve">
+    <value>URL-адрес должен заканчиваться словом "GeocodeServer"</value>
+  </data>
+  <data name="UnitsCentimeters" xml:space="preserve">
+    <value>Сантиметры</value>
+  </data>
+  <data name="UnitsFeet" xml:space="preserve">
+    <value>Футы</value>
+  </data>
+  <data name="UnitsInches" xml:space="preserve">
+    <value>Дюймы</value>
+  </data>
+  <data name="UnitsKilometers" xml:space="preserve">
+    <value>Километры</value>
+  </data>
+  <data name="UnitsMeters" xml:space="preserve">
+    <value>Метры</value>
+  </data>
+  <data name="UnitsMiles" xml:space="preserve">
+    <value>Мили</value>
+  </data>
+  <data name="UnitsNauticalMiles" xml:space="preserve">
+    <value>Морские мили</value>
+  </data>
+  <data name="UnitsYards" xml:space="preserve">
+    <value>Ярды</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Использовать прокси-сервер</value>
+  </data>
+  <data name="ConnectingToLocatorService" xml:space="preserve">
+    <value>Подключение к службе локатора адресов...</value>
+  </data>
+  <data name="ContainsErrorMessage" xml:space="preserve">
+    <value>Коллекция должна использовать метод Contains для одного параметра с возвращаемым значением типа Булево</value>
+  </data>
+  <data name="ExpectedItemTypeMismatch" xml:space="preserve">
+    <value>{0}.Содержит метод, ожидающий в качестве входного объект типа {1}.  Передан параметр типа {2}.</value>
+  </data>
+</root>

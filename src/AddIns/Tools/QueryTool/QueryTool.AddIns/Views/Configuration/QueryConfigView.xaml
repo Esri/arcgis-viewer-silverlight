@@ -1,0 +1,602 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl 
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    x:Class="QueryTool.AddIns.QueryConfigView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:primitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Data"
+    xmlns:local="clr-namespace:QueryTool.AddIns"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/QueryTool.AddIns;component/Themes/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:StringResourcesManager x:Key="Localization" />
+            <local:BoolVisibilityConverter x:Key="BoolVisibilityConverter" />
+            <local:ReverseBoolVisibilityConverter x:Key="ReverseBoolVisibilityConverter" />
+            <local:ReverseBoolConverter x:Key="ReverseBoolConverter" />
+            <local:NotNullVisibilityConverter x:Key="NotNullVisibilityConverter" />
+            <local:NotEmptyTextVisibilityConverter x:Key="NotEmptyTextVisibilityConverter" />
+            <local:EmptyTextVisibilityConverter x:Key="EmptyTextVisibilityConverter" />
+
+            <Storyboard x:Key="EditExpressionStoryboard">
+                <DoubleAnimation 
+                Storyboard.TargetName="ExpressionListGrid" 
+                Storyboard.TargetProperty="Opacity" Duration="00:00:00.3" To="0"/>
+                <ObjectAnimationUsingKeyFrames 
+                Duration="00:00:00" 
+                Storyboard.TargetName="ExpressionListGrid" 
+                Storyboard.TargetProperty="IsHitTestVisible">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="False" />
+                </ObjectAnimationUsingKeyFrames>
+
+                <DoubleAnimation 
+                Storyboard.TargetName="ExpressionEditingGrid" 
+                Storyboard.TargetProperty="Opacity" Duration="00:00:00.3" To="1"/>
+                <ObjectAnimationUsingKeyFrames 
+                Duration="00:00:00.3" 
+                Storyboard.TargetName="ExpressionEditingGrid" 
+                Storyboard.TargetProperty="IsHitTestVisible">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00.3" Value="True" />
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="ShowExpressionListStoryboard">
+                <DoubleAnimation 
+                Storyboard.TargetName="ExpressionListGrid" 
+                Storyboard.TargetProperty="Opacity" Duration="00:00:00.3" To="1"/>
+                <ObjectAnimationUsingKeyFrames 
+                Duration="00:00:00.3" 
+                Storyboard.TargetName="ExpressionListGrid" 
+                Storyboard.TargetProperty="IsHitTestVisible">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00.3" Value="True" />
+                </ObjectAnimationUsingKeyFrames>
+
+                <DoubleAnimation 
+                Storyboard.TargetName="ExpressionEditingGrid" 
+                Storyboard.TargetProperty="Opacity" Duration="00:00:00.3" To="0"/>
+                <ObjectAnimationUsingKeyFrames 
+                Duration="00:00:00" 
+                Storyboard.TargetName="ExpressionEditingGrid" 
+                Storyboard.TargetProperty="IsHitTestVisible">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="False" />
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot"
+          HorizontalAlignment="Stretch">
+        <i:Interaction.Triggers>
+            <!-- Show query expression builder on load if no expressions have been defined -->
+            <i:EventTrigger EventName="Loaded">
+                <i:Interaction.Behaviors>
+                    <ei:ConditionBehavior>
+                        <ei:ConditionalExpression>
+                            <ei:ComparisonCondition
+                                LeftOperand="{Binding QueryExpressions.Count}"
+                                Operator="Equal"
+                                RightOperand="0" />
+                        </ei:ConditionalExpression>
+                    </ei:ConditionBehavior>
+                </i:Interaction.Behaviors>
+                <i:InvokeCommandAction Command="{Binding Add}" />
+            </i:EventTrigger>
+            
+            <!-- Show query expression builder when the query expression collection is changed
+                 if there are no query expressions left.  -->
+            <i:EventTrigger 
+                SourceObject="{Binding QueryExpressions}"
+                EventName="CollectionChanged">
+                <i:Interaction.Behaviors>
+                    <ei:ConditionBehavior>
+                        <ei:ConditionalExpression>
+                            <ei:ComparisonCondition
+                                LeftOperand="{Binding QueryExpressions.Count}"
+                                Operator="Equal"
+                                RightOperand="0" />
+                        </ei:ConditionalExpression>
+                    </ei:ConditionBehavior>
+                </i:Interaction.Behaviors>
+                <i:InvokeCommandAction Command="{Binding Add}" />
+            </i:EventTrigger>
+            
+            <!-- Show the query expression builder when IsEditingExpression is set to true -->
+            <ei:PropertyChangedTrigger Binding="{Binding IsEditingExpression}">
+                <i:Interaction.Behaviors>
+                    <ei:ConditionBehavior>
+                        <ei:ConditionalExpression>
+                            <ei:ComparisonCondition
+                                LeftOperand="{Binding IsEditingExpression}"
+                                Operator="Equal"
+                                RightOperand="True" />
+                        </ei:ConditionalExpression>
+                    </ei:ConditionBehavior>
+                </i:Interaction.Behaviors>
+                <ei:ControlStoryboardAction 
+                    Storyboard="{StaticResource EditExpressionStoryboard}"
+                    ControlStoryboardOption="Play" />
+            </ei:PropertyChangedTrigger>
+
+            <!-- Show the query expression list when IsEditingExpression is set to false -->
+            <ei:PropertyChangedTrigger Binding="{Binding IsEditingExpression}">
+                <i:Interaction.Behaviors>
+                    <ei:ConditionBehavior>
+                        <ei:ConditionalExpression>
+                            <ei:ComparisonCondition
+                                LeftOperand="{Binding IsEditingExpression}"
+                                Operator="Equal"
+                                RightOperand="False" />
+                        </ei:ConditionalExpression>
+                    </ei:ConditionBehavior>
+                </i:Interaction.Behaviors>
+                <ei:ControlStoryboardAction 
+                    Storyboard="{StaticResource ShowExpressionListStoryboard}"
+                    ControlStoryboardOption="Play" />
+            </ei:PropertyChangedTrigger>
+        </i:Interaction.Triggers>
+        
+        <!-- Grid containing query exprssion list -->
+        <Grid x:Name="ExpressionListGrid"
+              VerticalAlignment="Top">
+            <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="QueryExpressionsHeading" 
+                   Text="{Binding ConverterParameter=QueryExpressions,
+                        Converter={StaticResource Localization},
+                        Source={StaticResource Localization}}" 
+                   FontSize="12"
+                   FontWeight="Bold"
+                   VerticalAlignment="Center"/>
+
+            <TextBlock 
+                Text="{Binding ConverterParameter=DefineQueryExpressions, 
+                    Converter={StaticResource Localization}, 
+                    Source={StaticResource Localization}}"
+                Grid.Row="1"
+                FontSize="10"
+                Opacity=".7"
+                Margin="0,1,0,0"
+                TextWrapping="Wrap"/>
+
+            <!-- Query expressions -->
+            <ListBox 
+                x:Name="ExpressionsListBox"
+                SelectionMode="Extended"
+                Background="Transparent"
+                ItemsSource="{Binding QueryExpressions}"
+                Foreground="{Binding Foreground, ElementName=QueryExpressionsHeading}"
+                BorderThickness="0"
+                Grid.Row="2"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="0,5,0,0">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding Select}"
+                            CommandParameter="{Binding ElementName=ExpressionsListBox, Path=SelectedItems}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Grid Background="{TemplateBinding Background}"
+                                          HorizontalAlignment="Left">
+                                        <Grid.Resources>
+                                            <Storyboard x:Key="ShowMouseOverHighlight">
+                                                <DoubleAnimation Storyboard.TargetName="MouseOverHighlight" 
+                                                                 Storyboard.TargetProperty="Opacity" Duration="0" To=".35"/>
+                                            </Storyboard>
+                                            <Storyboard x:Key="ShowSelectedHighlight">
+                                                <DoubleAnimation Storyboard.TargetName="SelectedHighlight" Storyboard.TargetProperty="Opacity" Duration="0" To=".75"/>
+                                            </Storyboard>
+                                            <Storyboard x:Key="ClearMouseOverHighlight">
+                                                <DoubleAnimation Storyboard.TargetName="MouseOverHighlight" Storyboard.TargetProperty="Opacity" Duration="0" To="0"/>
+                                            </Storyboard>
+                                            <Storyboard x:Key="ClearSelectedHighlight">
+                                                <DoubleAnimation Storyboard.TargetName="SelectedHighlight" Storyboard.TargetProperty="Opacity" Duration="0" To="0"/>
+                                            </Storyboard>
+                                        </Grid.Resources>
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal" />
+                                                <VisualState x:Name="MouseOver" />
+                                                <VisualState x:Name="Disabled" />
+                                            </VisualStateGroup>
+                                            <VisualStateGroup x:Name="SelectionStates">
+                                                <VisualState x:Name="Unselected" />
+                                                <VisualState x:Name="Selected" />
+                                            </VisualStateGroup>
+                                            <VisualStateGroup x:Name="FocusStates">
+                                                <VisualState x:Name="Focused" />
+                                                <VisualState x:Name="Unfocused"/>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="20" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Rectangle 
+                                                    StrokeThickness="2"
+                                                    Fill="{TemplateBinding Foreground}" 
+                                                    VerticalAlignment="Stretch"
+                                                    HorizontalAlignment="Center" 
+                                                    Width="2"
+                                                    Visibility="{Binding DataContext.InMiddleOfGroup,
+                                                        Converter={StaticResource BoolVisibilityConverter},
+                                                        RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                            <Rectangle 
+                                                    StrokeThickness="2"
+                                                    Fill="{TemplateBinding Foreground}" 
+                                                    VerticalAlignment="Stretch"
+                                                    HorizontalAlignment="Center" 
+                                                    Width="2"
+                                                    Visibility="{Binding DataContext.LastInGroup,
+                                                        Converter={StaticResource BoolVisibilityConverter},
+                                                        RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                            <Rectangle 
+                                                    StrokeThickness="2"
+                                                    Fill="{TemplateBinding Foreground}" 
+                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Right"
+                                                    Width="11"
+                                                    Height="2"
+                                                    Grid.Row="1"
+                                                    Visibility="{Binding DataContext.FirstInGroup,
+                                                        Converter={StaticResource BoolVisibilityConverter},
+                                                        RelativeSource={RelativeSource TemplatedParent}}"/>
+                                            <Rectangle 
+                                                    StrokeThickness="2"
+                                                    Fill="{TemplateBinding Foreground}" 
+                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Right"
+                                                    Width="11"
+                                                    Height="2"
+                                                    Grid.Row="1"
+                                                    Visibility="{Binding DataContext.LastInGroup,
+                                                        Converter={StaticResource BoolVisibilityConverter},
+                                                        RelativeSource={RelativeSource TemplatedParent}}"/>
+                                            <Rectangle 
+                                                    StrokeThickness="2"
+                                                    Fill="{TemplateBinding Foreground}" 
+                                                    VerticalAlignment="Stretch"
+                                                    HorizontalAlignment="Center" 
+                                                    Width="2"
+                                                    Grid.Row="1"
+                                                    Visibility="{Binding DataContext.InMiddleOfGroup,
+                                                        Converter={StaticResource BoolVisibilityConverter},
+                                                        RelativeSource={RelativeSource TemplatedParent}}"/>
+                                            <Rectangle 
+                                                StrokeThickness="2"
+                                                Fill="{TemplateBinding Foreground}" 
+                                                VerticalAlignment="Bottom"
+                                                HorizontalAlignment="Center" 
+                                                Width="2"
+                                                Height="10"
+                                                Grid.Row="1"
+                                                Visibility="{Binding DataContext.FirstInGroup,
+                                                    Converter={StaticResource BoolVisibilityConverter},
+                                                    RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                            <Rectangle 
+                                                    StrokeThickness="2"
+                                                    Fill="{TemplateBinding Foreground}" 
+                                                    VerticalAlignment="Top"
+                                                    HorizontalAlignment="Center" 
+                                                    Width="2"
+                                                    Height="10"
+                                                Grid.Row="1"
+                                                    Visibility="{Binding DataContext.LastInGroup,
+                                                        Converter={StaticResource BoolVisibilityConverter},
+                                                        RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                            <!-- Dummy button to intercept clicks in group indicator column
+                                                 without selecting item -->
+                                            <Button
+                                                    VerticalAlignment="Stretch"
+                                                    HorizontalAlignment="Stretch"
+                                                    Content="."
+                                                    Opacity="0.01"
+                                                    Visibility="{Binding DataContext.IsFirst, Converter={StaticResource ReverseBoolVisibilityConverter}, 
+                                                        RelativeSource={RelativeSource TemplatedParent}}"
+                                                    Grid.RowSpan="3" />
+
+                                            <!-- Dummy button to intercept clicks to either side of combo box
+                                                 without selecting item -->
+                                            <Button
+                                                    VerticalAlignment="Stretch"
+                                                    Content="."
+                                                    Opacity="0.01"
+                                                    Visibility="{Binding DataContext.IsFirst, Converter={StaticResource ReverseBoolVisibilityConverter}, 
+                                                        RelativeSource={RelativeSource TemplatedParent}}"
+                                                    Grid.Column="1"
+                                                    Grid.ColumnSpan="4"
+                                                Height="{Binding Height, ElementName=OperatorComboBox}"/>
+                                            <ComboBox 
+                                                x:Name="OperatorComboBox"
+                                                Foreground="#99FFFFFF"
+                                                Background="{StaticResource DesignHostBackgroundBrush}"
+                                                BorderBrush="Transparent"
+                                                Height="18"
+                                                Style="{StaticResource ComboBoxStyle}"
+                                                ItemsSource="{Binding DataContext.LogicalOperators, 
+                                                    RelativeSource={RelativeSource TemplatedParent}}"
+                                                SelectedItem="{Binding DataContext.JoinedBy, Mode=TwoWay, 
+                                                    RelativeSource={RelativeSource TemplatedParent}}"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                Grid.Column="1"
+                                                Margin="0,-1,0,-1"
+                                                    Visibility="{Binding DataContext.IsFirst, Converter={StaticResource ReverseBoolVisibilityConverter}, 
+                                                        RelativeSource={RelativeSource TemplatedParent}}"
+                                                    Cursor="Hand"/>
+
+                                            <Rectangle 
+                                                x:Name="MouseOverHighlight" 
+                                                Opacity="0" 
+                                                Fill="#FF919AA4" 
+                                                IsHitTestVisible="False" 
+                                                RadiusX="1" 
+                                                RadiusY="1"
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                Grid.ColumnSpan="4"/>
+
+                                            <Rectangle 
+                                                x:Name="SelectedHighlight" 
+                                                Opacity="0" 
+                                                Fill="#FF919AA4" 
+                                                IsHitTestVisible="False" 
+                                                RadiusX="1" 
+                                                RadiusY="1"
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                Grid.ColumnSpan="4"/>
+
+                                            <!-- Dummy button to intercept errant clicks around edit/delete buttons and
+                                                 selection checkbox without selecting item -->
+                                            <Button
+                                                    VerticalAlignment="Stretch"
+                                                    Content="."
+                                                    Opacity="0.01"
+                                                    Grid.Row="1"
+                                                    Grid.Column="1"
+                                                    Grid.ColumnSpan="4" />
+                                            <ToggleButton
+                                                    Content="{Binding DataContext.DefaultExpressionLabel,
+                                                        RelativeSource={RelativeSource TemplatedParent}}"
+                                                    MaxWidth="300"
+                                                    Foreground="{Binding Foreground, ElementName=QueryExpressionsHeading}" 
+                                                Background="#01000000"
+                                                    Grid.Row="1"
+                                                    Grid.Column="1"
+                                                    Cursor="Hand"
+                                                    IsChecked="{Binding IsChecked, Mode=TwoWay, ElementName=SelectedCheckBox}"
+                                                    Padding="4,3,5,0"
+                                                ToolTipService.ToolTip="{Binding ConverterParameter=SelectExpression,
+                                                        Converter={StaticResource Localization},
+                                                        Source={StaticResource Localization}}">
+                                                <ToggleButton.Template>
+                                                    <ControlTemplate TargetType="ToggleButton">
+                                                        <Grid Background="{TemplateBinding Background}">
+                                                            <TextBlock                 
+                                                                FontSize="12"
+                                                                Text="{TemplateBinding Content}"
+                                                                TextTrimming="WordEllipsis"
+                                                                HorizontalAlignment="Stretch"
+                                                                VerticalAlignment="Stretch"
+                                                                Margin="{TemplateBinding Padding}"/>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </ToggleButton.Template>
+                                                <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="MouseEnter">
+                                                        <ei:ControlStoryboardAction 
+                                                            Storyboard="{StaticResource ShowMouseOverHighlight}"
+                                                            ControlStoryboardOption="Play" />
+                                                    </i:EventTrigger>
+                                                    <i:EventTrigger EventName="MouseLeave">
+                                                        <ei:ControlStoryboardAction 
+                                                            Storyboard="{StaticResource ClearMouseOverHighlight}"
+                                                            ControlStoryboardOption="Play" />
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </ToggleButton>
+                                            <Button 
+                                                    Grid.Column="2"
+                                                    Grid.Row="1"        
+                                                Background="#01000000"
+                                                    Command="{Binding DataContext.Edit, 
+                                                        RelativeSource={RelativeSource TemplatedParent}}"
+                                                    ToolTipService.ToolTip="{Binding ConverterParameter=EditLabel,
+                                                        Converter={StaticResource Localization},
+                                                        Source={StaticResource Localization}}"
+                                                    Cursor="Hand"
+                                                    VerticalAlignment="Center"
+                                                    Padding="0,0,2,0">
+                                                <Button.Content>
+                                                    <Image Source="/QueryTool.AddIns;component/Images/edit.png"
+                                               Stretch="None" />
+                                                </Button.Content>
+                                                <Button.Template>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Grid Background="{TemplateBinding Background}">
+                                                            <ContentPresenter 
+                                                                Content="{TemplateBinding Content}" 
+                                                                Margin="{TemplateBinding Padding}"/>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                                <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="MouseEnter">
+                                                        <ei:ControlStoryboardAction 
+                                                            Storyboard="{StaticResource ShowMouseOverHighlight}"
+                                                            ControlStoryboardOption="Play" />
+                                                    </i:EventTrigger>
+                                                    <i:EventTrigger EventName="MouseLeave">
+                                                        <ei:ControlStoryboardAction 
+                                                            Storyboard="{StaticResource ClearMouseOverHighlight}"
+                                                            ControlStoryboardOption="Play" />
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </Button>
+                                            <Button 
+                                                    Grid.Column="3"
+                                                    Grid.Row="1"
+                                                Background="#01000000"
+                                                    Command="{Binding DataContext.RemoveExpression, 
+                                                        RelativeSource={RelativeSource TemplatedParent}}"
+                                                    ToolTipService.ToolTip="{Binding ConverterParameter=DeleteExpression,
+                                                        Converter={StaticResource Localization},
+                                                        Source={StaticResource Localization}}"
+                                                    Cursor="Hand"
+                                                    VerticalAlignment="Center"
+                                                    Padding="2,0,3,0">
+                                                <Button.Content>
+                                                    <Image Source="/QueryTool.AddIns;component/Images/delete.png"
+                                               Stretch="None" />
+                                                </Button.Content>
+                                                <Button.Template>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Grid Background="{TemplateBinding Background}">
+                                                            <ContentPresenter 
+                                                                Content="{TemplateBinding Content}" 
+                                                                Margin="{TemplateBinding Padding}"/>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                                <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="MouseEnter">
+                                                        <ei:ControlStoryboardAction 
+                                                            Storyboard="{StaticResource ShowMouseOverHighlight}"
+                                                            ControlStoryboardOption="Play" />
+                                                    </i:EventTrigger>
+                                                    <i:EventTrigger EventName="MouseLeave">
+                                                        <ei:ControlStoryboardAction 
+                                                            Storyboard="{StaticResource ClearMouseOverHighlight}"
+                                                            ControlStoryboardOption="Play" />
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </Button>
+                                            <CheckBox
+                                                    x:Name="SelectedCheckBox"
+                                                    Grid.Column="4" 
+                                                    Grid.Row="2"
+                                                    VerticalAlignment="Center"
+                                                    Padding="5,0,0,0"
+                                                    IsChecked="{Binding IsSelected, Mode=TwoWay, 
+                                                        RelativeSource={RelativeSource TemplatedParent}}"
+                                                    Cursor="Hand"
+                                                ToolTipService.ToolTip="{Binding ConverterParameter=SelectExpression,
+                                                        Converter={StaticResource Localization},
+                                                        Source={StaticResource Localization}}">
+                                                <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="Checked">
+                                                        <ei:ControlStoryboardAction 
+                                                            Storyboard="{StaticResource ShowSelectedHighlight}"
+                                                            ControlStoryboardOption="Play" />
+                                                    </i:EventTrigger>
+                                                    <i:EventTrigger EventName="Unchecked">
+                                                        <ei:ControlStoryboardAction 
+                                                            Storyboard="{StaticResource ClearSelectedHighlight}"
+                                                            ControlStoryboardOption="Play" />
+                                                    </i:EventTrigger>
+                                                    <i:EventTrigger EventName="MouseEnter">
+                                                        <ei:ControlStoryboardAction 
+                                                            Storyboard="{StaticResource ShowMouseOverHighlight}"
+                                                            ControlStoryboardOption="Play" />
+                                                    </i:EventTrigger>
+                                                    <i:EventTrigger EventName="MouseLeave">
+                                                        <ei:ControlStoryboardAction 
+                                                            Storyboard="{StaticResource ClearMouseOverHighlight}"
+                                                            ControlStoryboardOption="Play" />
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </CheckBox>
+                                        </Grid>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+
+            <Grid Margin="10,20,0,0"
+              Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <!--<Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>-->
+                <Button Content="{Binding ConverterParameter=AddLabel,
+                        Converter={StaticResource Localization},
+                        Source={StaticResource Localization}}"
+                        Foreground="{Binding Foreground, ElementName=QueryExpressionsHeading}"
+                        Template="{StaticResource HyperlinkButtonTemplate}"
+                    Command="{Binding Add}" />
+                <Button Content="{Binding ConverterParameter=RemoveLabel,
+                        Converter={StaticResource Localization},
+                        Source={StaticResource Localization}}"
+                        Foreground="{Binding Foreground, ElementName=QueryExpressionsHeading}"
+                        Template="{StaticResource HyperlinkButtonTemplate}"
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Margin="8,0,0,0"
+                    Command="{Binding Remove}" />
+                <Button Content="{Binding GroupLabel}"
+                        Grid.Column="2"
+                        Grid.Row="2"
+                        Foreground="{Binding Foreground, ElementName=QueryExpressionsHeading}"
+                        Template="{StaticResource HyperlinkButtonTemplate}"
+                        Margin="8,0,0,0"
+                    Command="{Binding Group}" />
+            </Grid>
+        </Grid>
+        
+        <!-- Grid containing query expression builder -->
+        <Grid x:Name="ExpressionEditingGrid" Opacity="0" IsHitTestVisible="False">
+            <local:QueryExpressionView DataContext="{Binding CurrentExpression}" />
+        </Grid>
+    </Grid>
+</UserControl>

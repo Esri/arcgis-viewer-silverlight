@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfConnection xmlns="http://schemas.datacontract.org/2004/07/ESRI.ArcGIS.Mapping.Core">
+  <Connection>
+    <Name>ArcGIS Online</Name>
+    <Url>http://services.arcgisonline.com/arcgis/rest/services</Url>
+    <ConnectionType>ArcGISServer</ConnectionType>
+  </Connection>
+  <Connection>
+    <Name>sampleserver1.arcgisonline.com</Name>
+    <Url>http://sampleserver1.arcgisonline.com/arcgis/rest/services</Url>
+    <ConnectionType>ArcGISServer</ConnectionType>
+  </Connection>
+  <Connection>
+    <Name>sampleserver3.arcgisonline.com</Name>
+    <Url>http://sampleserver3.arcgisonline.com/arcgis/rest/services</Url>
+    <ConnectionType>ArcGISServer</ConnectionType>
+  </Connection>
+</ArrayOfConnection>

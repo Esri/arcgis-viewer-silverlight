@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Viser dialogboksen Om</value>
+  </data>
+  <data name="AboutDisplayName" xml:space="preserve">
+    <value>Om</value>
+  </data>
+  <data name="AddGeoRssFeedDescription" xml:space="preserve">
+    <value>Føj et GeoRSS-feed til kortet</value>
+  </data>
+  <data name="AddGeoRssFeedDisplayName" xml:space="preserve">
+    <value>Tilføj GeoRSS</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Føj et varmekort til kortet</value>
+  </data>
+  <data name="AddHeatMapDisplayName" xml:space="preserve">
+    <value>Tilføj varmekort</value>
+  </data>
+  <data name="BaseMapGalleryDescription" xml:space="preserve">
+    <value>Vælg et baggrundskort til dit kort</value>
+  </data>
+  <data name="BaseMapGalleryDisplayName" xml:space="preserve">
+    <value>Vælg baggrundskort</value>
+  </data>
+  <data name="BrowseDescription" xml:space="preserve">
+    <value>Føj data til kortet ved at browse til et ArcGIS Server-slutpunkt </value>
+  </data>
+  <data name="BrowseDisplayName" xml:space="preserve">
+    <value>Gennemse</value>
+  </data>
+  <data name="CategoryApplication" xml:space="preserve">
+    <value>Applikation</value>
+  </data>
+  <data name="CategoryAttributeTable" xml:space="preserve">
+    <value>Attributtabel</value>
+  </data>
+  <data name="CategoryConfigure" xml:space="preserve">
+    <value>Konfigurér</value>
+  </data>
+  <data name="CategoryEditing" xml:space="preserve">
+    <value>Redigering</value>
+  </data>
+  <data name="CategoryGeoprocessing" xml:space="preserve">
+    <value>Geoprocessering</value>
+  </data>
+  <data name="CategoryLayer" xml:space="preserve">
+    <value>Lag</value>
+  </data>
+  <data name="CategoryMap" xml:space="preserve">
+    <value>Kort</value>
+  </data>
+  <data name="CategoryMouseEvents" xml:space="preserve">
+    <value>Musehandlinger</value>
+  </data>
+  <data name="CategoryPopup" xml:space="preserve">
+    <value>Pop-up</value>
+  </data>
+  <data name="CategorySelection" xml:space="preserve">
+    <value>Markering</value>
+  </data>
+  <data name="CategorySymbology" xml:space="preserve">
+    <value>Symbologi</value>
+  </data>
+  <data name="CategoryTheme" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="ChangeThemeBackgroundDescription" xml:space="preserve">
+    <value>Skift baggrund for et tema</value>
+  </data>
+  <data name="ChangeThemeBackgroundDisplayName" xml:space="preserve">
+    <value>Skift temabaggrund</value>
+  </data>
+  <data name="ClearSelectionDescription" xml:space="preserve">
+    <value>Rydder markeringen fra det aktuelle lag</value>
+  </data>
+  <data name="ClearSelectionDisplayName" xml:space="preserve">
+    <value>Ryd markering</value>
+  </data>
+  <data name="ConfigureLayerDescription" xml:space="preserve">
+    <value>Angiv udseende og adfærd for det valgte lag</value>
+  </data>
+  <data name="ConfigureLayerDisplayName" xml:space="preserve">
+    <value>Konfigurér lag</value>
+  </data>
+  <data name="ConfigureLayerRendererDescription" xml:space="preserve">
+    <value>Tillader konfiguration af gengivelsesværktøj for det aktuelle lag</value>
+  </data>
+  <data name="ConfigureLayerRendererDisplayName" xml:space="preserve">
+    <value>Konfigurér symbologi</value>
+  </data>
+  <data name="ConfigureSelectedLayerDescription" xml:space="preserve">
+    <value>Tillader konfiguration af det valgte lag</value>
+  </data>
+  <data name="ConfigureSelectedLayerDisplayName" xml:space="preserve">
+    <value>Konfigurér lag</value>
+  </data>
+  <data name="DeleteGraphicToolDescription" xml:space="preserve">
+    <value>Fjern objektet fra laget</value>
+  </data>
+  <data name="DeleteGraphicToolDisplayName" xml:space="preserve">
+    <value>Slet objekter</value>
+  </data>
+  <data name="DeleteLayerDescription" xml:space="preserve">
+    <value>Fjern det valgte lag fra kortet</value>
+  </data>
+  <data name="DeleteLayerDisplayName" xml:space="preserve">
+    <value>Fjern lag</value>
+  </data>
+  <data name="EditShapeToolDescription" xml:space="preserve">
+    <value>Redigér objektets geometri</value>
+  </data>
+  <data name="EditShapeToolDisplayName" xml:space="preserve">
+    <value>Redigér form</value>
+  </data>
+  <data name="EditValuesToolDescription" xml:space="preserve">
+    <value>Redigér objektets attributværdier</value>
+  </data>
+  <data name="EditValuesToolDisplayName" xml:space="preserve">
+    <value>Redigér værdier</value>
+  </data>
+  <data name="AddAttachmentsToolDescription" xml:space="preserve">
+    <value>Føj en vedhæftning til objektet</value>
+  </data>
+  <data name="AddAttachmentsToolDisplayName" xml:space="preserve">
+    <value>Tilføj vedhæftning</value>
+  </data>
+  <data name="ExceptionNoValidApplicationContextForApplication" xml:space="preserve">
+    <value>Ingen gyldig applikationskontekst for denne applikation</value>
+  </data>
+  <data name="ExportSelectionDescription" xml:space="preserve">
+    <value>Eksportér attrbutterne for de valgte objekter i det aktuelle lag til en CSV-fil</value>
+  </data>
+  <data name="ExportSelectionDisplayName" xml:space="preserve">
+    <value>Eksportér markering</value>
+  </data>
+  <data name="FilterByMapExtentDescription" xml:space="preserve">
+    <value>Vis kun poster for objekterne inden for den aktuelle kortudstrækning</value>
+  </data>
+  <data name="FilterByMapExtentName" xml:space="preserve">
+    <value>Filtrér efter kortudstrækning</value>
+  </data>
+  <data name="FilterBySelectionAll" xml:space="preserve">
+    <value>Tabellen Vis alle</value>
+  </data>
+  <data name="FilterBySelectionAllDescription" xml:space="preserve">
+    <value>Tabellen vil vise valgte og ikke-valgte objekter</value>
+  </data>
+  <data name="FilterBySelectionNotSelected" xml:space="preserve">
+    <value>Tabellen Vis ikke valgte</value>
+  </data>
+  <data name="FilterBySelectionNotSelectedDescription" xml:space="preserve">
+    <value>Filtrerer tabellen til kun at vise objekter, der ikke er valgt på nuværende tidspunkt.</value>
+  </data>
+  <data name="FilterBySelectionSelected" xml:space="preserve">
+    <value>Tabellen Vis valgte</value>
+  </data>
+  <data name="FilterBySelectionSelectedDescription" xml:space="preserve">
+    <value>Filtrerer tabellen til kun at vise objekter, der er valgt.</value>
+  </data>
+  <data name="FilterLayerDescription" xml:space="preserve">
+    <value>Filtrerer objekterne i det valgte lag baseret på en attributforespørgsel</value>
+  </data>
+  <data name="FilterLayerDisplayName" xml:space="preserve">
+    <value>Filtrér lag</value>
+  </data>
+  <data name="FindNearbyDescription" xml:space="preserve">
+    <value>Find objekter i nærheden af den aktuelle markering</value>
+  </data>
+  <data name="FindNearbyDisplayName" xml:space="preserve">
+    <value>Find nærved</value>
+  </data>
+  <data name="GeoprocessingDescription" xml:space="preserve">
+    <value>Et værktøj, der benytter en ArcGIS Server-geoprocesseringstjeneste</value>
+  </data>
+  <data name="GeoprocessingDisplayName" xml:space="preserve">
+    <value>Geoprocessering</value>
+  </data>
+  <data name="GoToLayerDescription" xml:space="preserve">
+    <value>Zoom til det valgte lag</value>
+  </data>
+  <data name="GoToLayerDisplayName" xml:space="preserve">
+    <value>Gå til lag</value>
+  </data>
+  <data name="IdentifyBehaviorDisplayName" xml:space="preserve">
+    <value>Identificér adfærd</value>
+  </data>
+  <data name="MoveLayerDownDescription" xml:space="preserve">
+    <value>Flytter lagets visningsrækkefølge én position tættere på toppen af kortet</value>
+  </data>
+  <data name="MoveLayerDownDisplayName" xml:space="preserve">
+    <value>Flyt op</value>
+  </data>
+  <data name="MoveLayerUpDescription" xml:space="preserve">
+    <value>Flytter lagets visningsrækkefølge én position tættere på bunden af kortet</value>
+  </data>
+  <data name="MoveLayerUpDisplayName" xml:space="preserve">
+    <value>Flyt ned</value>
+  </data>
+  <data name="NavigateToHelpLinkDescription" xml:space="preserve">
+    <value>Navigerer til Hjælp-systemet</value>
+  </data>
+  <data name="NavigateToHelpLinkDisplayName" xml:space="preserve">
+    <value>Navigér til Hjælp-link</value>
+  </data>
+  <data name="PrintDescription" xml:space="preserve">
+    <value>Udskriv kortet</value>
+  </data>
+  <data name="PrintDisplayName" xml:space="preserve">
+    <value>Udskriv</value>
+  </data>
+  <data name="RefreshLayerDescription" xml:space="preserve">
+    <value>Opdaterer det valgte lag</value>
+  </data>
+  <data name="RefreshLayerDisplayName" xml:space="preserve">
+    <value>Opdatér lag</value>
+  </data>
+  <data name="RenameLayerDescription" xml:space="preserve">
+    <value>Omdøb det valgte lag</value>
+  </data>
+  <data name="RenameLayerDisplayName" xml:space="preserve">
+    <value>Omdøb lag</value>
+  </data>
+  <data name="RestoreDefaultThemeDescription" xml:space="preserve">
+    <value>Gendanner de farver, der benyttes af kortet, til standardfarverne</value>
+  </data>
+  <data name="RestoreDefaultThemeDisplayName" xml:space="preserve">
+    <value>Nulstil tema</value>
+  </data>
+  <data name="SelectAllDescription" xml:space="preserve">
+    <value>Vælg alle objekter i det aktuelle lag</value>
+  </data>
+  <data name="SelectAllDisplayName" xml:space="preserve">
+    <value>Vælg alle</value>
+  </data>
+  <data name="SelectByDrawDescription" xml:space="preserve">
+    <value>Vælg objekter ved at tegne en boks rundt om dem i kortet</value>
+  </data>
+  <data name="SelectByDrawDisplayName" xml:space="preserve">
+    <value>Vælg</value>
+  </data>
+  <data name="SelectedIndexOfTotal" xml:space="preserve">
+    <value>{0} af {1}</value>
+  </data>
+  <data name="ServiceDetailsDescription" xml:space="preserve">
+    <value>Åbn tjenesteslutpunktet for det valgte lag</value>
+  </data>
+  <data name="ServiceDetailsDisplayName" xml:space="preserve">
+    <value>Tjenesteoplysninger</value>
+  </data>
+  <data name="ShowMapCoordinatesDescription" xml:space="preserve">
+    <value>Vis koordinater, når musen bevæges over kortet</value>
+  </data>
+  <data name="ShowMapCoordinatesDisplayName" xml:space="preserve">
+    <value>Vis kortkoordinater</value>
+  </data>
+  <data name="ShowPreviewControlDescription" xml:space="preserve">
+    <value>Få vist en dialogboks, der demonstrerer, hvordan temafarver vises, når de anvendes på forskellige komponenter i kortet</value>
+  </data>
+  <data name="ShowPreviewControlDisplayName" xml:space="preserve">
+    <value>Vis tema på forhånd</value>
+  </data>
+  <data name="ToggleAddContentDescription" xml:space="preserve">
+    <value>Føj ArcGIS Server-, SharePoint-, Spatial Data Server- eller GeoRSS-data til kortet</value>
+  </data>
+  <data name="ToggleAddContentDisplayName" xml:space="preserve">
+    <value>Tilføj indhold</value>
+  </data>
+  <data name="ToggleEditDescription" xml:space="preserve">
+    <value>Vis eller skjul redigeringsværktøjerne</value>
+  </data>
+  <data name="ToggleEditDisplayName" xml:space="preserve">
+    <value>Redigering</value>
+  </data>
+  <data name="ToggleFullScreenDescription" xml:space="preserve">
+    <value>Viser kortet i fuldskærmstilstand</value>
+  </data>
+  <data name="ToggleFullScreenDisplayName" xml:space="preserve">
+    <value>Fuld skærm</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>Åbn panelet Kortindhold for at få vist kortets lag</value>
+  </data>
+  <data name="ToggleMapContentsDisplayName" xml:space="preserve">
+    <value>Kortindhold</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>Søg efter steder eller ArcGIS Server-tjenester</value>
+  </data>
+  <data name="ToggleSearchDisplayName" xml:space="preserve">
+    <value>Søg</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>Åbner attributtabellen for det valgte lag</value>
+  </data>
+  <data name="ToggleTableDisplayName" xml:space="preserve">
+    <value>Vis tabel</value>
+  </data>
+  <data name="ZoomToSelectionDescription" xml:space="preserve">
+    <value>Zoom til de valgte objekter i det aktuelle lag</value>
+  </data>
+  <data name="ZoomToSelectionDisplayName" xml:space="preserve">
+    <value>Zoom til</value>
+  </data>
+</root>

@@ -1,0 +1,94 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls.Editor">
+
+    <local:StringResourcesManager x:Key="Localization" />
+
+    <Style TargetType="local:AttachmentEditorConfigControl">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource DesignHostBackgroundTextBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:AttachmentEditorConfigControl">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="{Binding ConverterParameter=AttachmentEditorFilterPrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                      Margin="2"  
+                                      FontWeight="Bold"
+                                      VerticalAlignment="Center" />
+                            <TextBox Text="{Binding Configuration.Filter, Mode=TwoWay}" VerticalAlignment="Center" 
+                                      Grid.Column="1" 
+                                      Margin="2"/>
+
+                            <TextBlock Text="{Binding ConverterParameter=AttachmentEditorFilterIndexPrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                      Grid.Row="1"
+                                      Margin="2"  
+                                      FontWeight="Bold"
+                                      VerticalAlignment="Center" />
+                            <TextBox Text="{Binding Configuration.FilterIndex, Mode=TwoWay}" VerticalAlignment="Center" 
+                                      Grid.Row="1"
+                                      Grid.Column="1" 
+                                      Margin="2"/>
+
+                            <CheckBox Content="{Binding ConverterParameter=AttachmentEditorMultiSelectPrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                      IsChecked="{Binding Configuration.MultiSelect, Mode=TwoWay}"
+                                      VerticalAlignment="Center" 
+                                      Grid.Row="2"
+                                      Grid.ColumnSpan="2" 
+                                      Foreground="{TemplateBinding Foreground}"
+                                      Margin="2"/>
+
+                            <TextBlock Text="{Binding ConverterParameter=AttachmentEditorWidthPrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                      Grid.Row="3"
+                                      Margin="2"  
+                                      FontWeight="Bold"
+                                      VerticalAlignment="Center" />
+                            <TextBox Text="{Binding Configuration.Width, Mode=TwoWay}" VerticalAlignment="Center" 
+                                      Grid.Row="3"
+                                      Grid.Column="1" 
+                                      Margin="2"/>
+
+                            <TextBlock Text="{Binding ConverterParameter=AttachmentEditorHeightPrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                      Grid.Row="4"
+                                      Margin="2"  
+                                      FontWeight="Bold"
+                                      VerticalAlignment="Center" />
+                            <TextBox Text="{Binding Configuration.Height, Mode=TwoWay}" VerticalAlignment="Center" 
+                                      Grid.Row="4"
+                                      Grid.Column="1" 
+                                      Margin="2"/>
+
+                            <Button x:Name="OKButton" Content="{Binding ConverterParameter=AttachmentEditorClose, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                    Command="{Binding Execute}" 
+                                    Grid.Row="5" Grid.Column="1"
+                                    HorizontalAlignment="Right" Padding="10,5,10,5" Margin="0,4,0,0"
+                                    Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                    Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"/>
+                        </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

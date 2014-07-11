@@ -1,0 +1,642 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary 
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;assembly=ESRI.ArcGIS.Mapping.Controls.ArcGISOnline"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:localprimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Data"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data">
+    
+	<ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/AppResources.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/ControlStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+	<local:StringResourcesManager x:Key="Localization" />
+
+    <Style x:Key="ThinScrollListBoxItemStyle" TargetType="ListBoxItem">
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="TabNavigation" Value="Local" />
+        <Setter Property="Foreground" Value="{StaticResource DesignHostBackgroundTextBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Grid Background="{TemplateBinding Background}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="fillColor" Storyboard.TargetProperty="Opacity" Duration="0" To="0.35"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="Opacity" Duration="0" To=".55" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected" />
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="fillColor2" Storyboard.TargetProperty="Opacity" Duration="0" To="0.75"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="fillColor" Opacity="0" Fill="{StaticResource DesignHostSelectionBrush}" Stroke="{StaticResource DesignHostSelectionOutlineBrush}"
+                                   IsHitTestVisible="False" RadiusX="1" RadiusY="1" StrokeThickness="1"/>
+                        <Rectangle x:Name="fillColor2" Opacity="0" Fill="{StaticResource DesignHostSelectionBrush}" Stroke="{StaticResource DesignHostSelectionOutlineBrush}" 
+                                   IsHitTestVisible="False" RadiusX="1" RadiusY="1" StrokeThickness="1"/>
+                        <ContentControl
+                              x:Name="contentPresenter"
+                              Content="{TemplateBinding Content}"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"                            
+                              Margin="{TemplateBinding Padding}" Foreground="{TemplateBinding Foreground}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Name="ThinScrollListBoxStyle" TargetType="ListBox" >
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="Foreground" Value="#FF000000" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="TabNavigation" Value="Once" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0" />
+                    <GradientStop Color="#FF8399A9" Offset="0.375" />
+                    <GradientStop Color="#FF718597" Offset="0.375" />
+                    <GradientStop Color="#FF617584" Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox" xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+                    <Grid>
+                        <Border CornerRadius="2" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer x:Name="ScrollViewer" Padding="{TemplateBinding Padding}" BorderThickness="0" TabNavigation="{TemplateBinding TabNavigation}" Style="{StaticResource ThinBarScrollViewerStyle}" 
+                                Foreground="#FF444444"
+                                BorderBrush="#FF444444"
+                                Background="White" >
+                                <ItemsPresenter />
+                            </ScrollViewer>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Name="DataWindowDataGridStyle" TargetType="data:DataGrid">
+        <Setter Property="RowBackground" Value="#AAEAEFF4" />
+        <Setter Property="AlternatingRowBackground" Value="#00FFFFFF" />
+        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="HeadersVisibility" Value="Column" />
+        <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="SelectionMode" Value="Extended" />
+        <Setter Property="CanUserReorderColumns" Value="True" />
+        <Setter Property="CanUserResizeColumns" Value="True" />
+        <Setter Property="CanUserSortColumns" Value="True" />
+        <Setter Property="AutoGenerateColumns" Value="True" />
+        <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected" />
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="DragIndicatorStyle">
+            <Setter.Value>
+                <!-- TODO: Change the TargetType to Control when the fix Jolt bugs 18719 is verified -->
+                <Style TargetType="ContentControl">
+                    <Setter Property="Foreground" Value="#7FFFFFFF" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <!-- TODO: Change the TargetType to Control when the fix Jolt bugs 18719 is verified -->
+                            <ControlTemplate TargetType="ContentControl">
+                                <Grid>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="SortStates">
+                                            <VisualState x:Name="Unsorted" />
+                                            <VisualState x:Name="SortAscending">
+                                                <Storyboard>
+                                                    <DoubleAnimation Storyboard.TargetName="SortIcon" Storyboard.TargetProperty="Opacity" Duration="0" To="1.0"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="SortDescending">
+                                                <Storyboard>
+                                                    <DoubleAnimation Storyboard.TargetName="SortIcon" Storyboard.TargetProperty="Opacity" Duration="0" To="1.0"/>
+                                                    <DoubleAnimation Storyboard.TargetName="SortIcon" Storyboard.TargetProperty="(RenderTransform).ScaleY" Duration="0" To="-.9"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+
+                                    <Rectangle x:Name="BackgroundRectangle" Stretch="Fill" Fill="#66808080" Grid.ColumnSpan="2" />
+
+                                    <Rectangle x:Name="BackgroundGradient" Stretch="Fill" Grid.ColumnSpan="2" Opacity="0" >
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush StartPoint=".7,0" EndPoint=".7,1">
+                                                <GradientStop Color="#FFFFFFFF" Offset="0.015" />
+                                                <GradientStop Color="#F9FFFFFF" Offset="0.375" />
+                                                <GradientStop Color="#E5FFFFFF" Offset="0.6" />
+                                                <GradientStop Color="#C6FFFFFF" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+
+                                    <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <ContentPresenter Content="{TemplateBinding Content}"/>
+
+                                        <Path Grid.Column="1" Name="SortIcon" Fill="#7FFFFFFF" RenderTransformOrigin=".5,.5" HorizontalAlignment="Left" VerticalAlignment="Center" Opacity="0" Stretch="Uniform" Width="8" Margin="4,0,0,0" Data="F1 M -5.215,6.099L 5.215,6.099L 0,0L -5.215,6.099 Z ">
+                                            <Path.RenderTransform>
+                                                <ScaleTransform ScaleX=".9" ScaleY=".9" />
+                                            </Path.RenderTransform>
+                                        </Path>
+                                    </Grid>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="DropLocationIndicatorStyle">
+            <Setter.Value>
+                <Style TargetType="ContentControl">
+                    <Setter Property="Background" Value="#FF3F4346"/>
+                    <Setter Property="Width" Value="2"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ContentControl">
+                                <Rectangle Fill="{TemplateBinding Background}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="GridLinesVisibility" Value="Vertical" />
+        <Setter Property="HorizontalGridLinesBrush" Value="#FFC9CACA" />
+        <Setter Property="IsTabStop" Value="True" />
+        <Setter Property="VerticalGridLinesBrush" Value="#FFC9CACA" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="data:DataGrid">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="DisabledVisualElement" Storyboard.TargetProperty="Opacity" Duration="0" To="1"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="2">
+                            <Grid Name="Root" Background="{TemplateBinding Background}">
+                                <Grid.Resources>
+                                    <!--Start: TopLeftHeaderTemplate-->
+                                    <ControlTemplate x:Key="TopLeftHeaderTemplate" TargetType="localprimitives:DataGridColumnHeader">
+                                        <Grid Name="Root">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Border BorderThickness="0,0,1,0" BorderBrush="#FFC9CACA" Background="#FF1F3B53" Grid.RowSpan="2">
+                                                <Rectangle Stretch="Fill" StrokeThickness="1">
+                                                    <Rectangle.Fill>
+                                                        <LinearGradientBrush StartPoint=".7,0" EndPoint=".7,1">
+                                                            <GradientStop Color="#FCFFFFFF" Offset="0.015" />
+                                                            <GradientStop Color="#F7FFFFFF" Offset="0.375" />
+                                                            <GradientStop Color="#E5FFFFFF" Offset="0.6" />
+                                                            <GradientStop Color="#D1FFFFFF" Offset="1" />
+                                                        </LinearGradientBrush>
+                                                    </Rectangle.Fill>
+                                                </Rectangle>
+                                            </Border>
+                                            <Rectangle VerticalAlignment="Bottom" Width="Auto" StrokeThickness="1" Height="1" Fill="#FFDBDCDC" Grid.RowSpan="2"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                    <!--End: TopLeftHeaderTemplate-->
+
+                                    <!--Start: TopRightHeaderTemplate-->
+                                    <ControlTemplate x:Key="TopRightHeaderTemplate" TargetType="localprimitives:DataGridColumnHeader">
+                                        <Grid Name="RootElement">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Border BorderThickness="1,0,0,0" BorderBrush="#FFC9CACA" Background="#FF1F3B53" Grid.RowSpan="2">
+                                                <Rectangle Stretch="Fill">
+                                                    <Rectangle.Fill>
+                                                        <LinearGradientBrush StartPoint=".7,0" EndPoint=".7,1">
+                                                            <GradientStop Color="#FCFFFFFF" Offset="0.015" />
+                                                            <GradientStop Color="#F7FFFFFF" Offset="0.375" />
+                                                            <GradientStop Color="#E5FFFFFF" Offset="0.6" />
+                                                            <GradientStop Color="#D1FFFFFF" Offset="1" />
+                                                        </LinearGradientBrush>
+                                                    </Rectangle.Fill>
+                                                </Rectangle>
+                                            </Border>
+                                        </Grid>
+                                    </ControlTemplate>
+                                    <!--End: TopRightHeaderTemplate-->
+                                </Grid.Resources>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <localprimitives:DataGridColumnHeader Name="TopLeftCornerHeader" Template="{StaticResource TopLeftHeaderTemplate}" Width="22" />
+                                <localprimitives:DataGridColumnHeadersPresenter Name="ColumnHeadersPresenter" Grid.Column="1"/>
+                                <localprimitives:DataGridColumnHeader Name="TopRightCornerHeader" Grid.Column="2" Template="{StaticResource TopRightHeaderTemplate}" />
+                                <Rectangle Name="ColumnHeadersAndRowsSeparator" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Width="Auto" StrokeThickness="1" Height="1" Fill="#FFC9CACA"/>
+
+                                <localprimitives:DataGridRowsPresenter Name="RowsPresenter" Grid.ColumnSpan="2" Grid.Row="1" />
+                                <Rectangle Name="BottomRightCorner" Fill="#FFE9EEF4" Grid.Column="2" Grid.Row="2" />
+                                <Rectangle Name="BottomLeftCorner" Fill="#FFE9EEF4" Grid.Row="2" Grid.ColumnSpan="2" />
+                                <ScrollBar Name="VerticalScrollbar" Orientation="Vertical" Grid.Column="2" Grid.Row="1" Width="11" Margin="0,-1,-1,-1" Style="{StaticResource ThinScrollBarStyle}"
+                                        Foreground="{StaticResource DesignHostAccentBrush}"
+                                        BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                        Background="{StaticResource DesignHostBackgroundBrush}" />
+
+                                <Grid Grid.Column="1" Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Name="FrozenColumnScrollBarSpacer" />
+                                    <ScrollBar Name="HorizontalScrollbar" Grid.Column="1" Orientation="Horizontal" Height="11" Margin="-1,0,-1,-1" Style="{StaticResource ThinScrollBarStyle}"
+                                        Foreground="{StaticResource DesignHostAccentBrush}"
+                                        BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                        Background="{StaticResource DesignHostBackgroundBrush}" />
+                                </Grid>
+
+                            </Grid>
+                        </Border>
+                        <Border x:Name="DisabledVisualElement" IsHitTestVisible="False" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" CornerRadius="2" Background="#8CFFFFFF" Opacity="0"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:DefineQueryControl">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:DefineQueryControl">
+                    <Grid x:Name="LayoutRoot" Width="440" Height="420" Margin="2">
+                        <Grid.Resources>
+                                 <local:RemoveStringConverter x:Key="RemoveStringConverter" />
+                            <local:InvertVisibilityConverter x:Key="InvertVisibilityConverter" />
+                            <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+                            <Style x:Key="FieldToolTipStyle"
+                                                                TargetType="ToolTip">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToolTip">
+                                            <Border Background="White"
+                                                                BorderThickness="1"
+                                                                BorderBrush="Gray">
+                                                <Grid Margin="5">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+													<TextBlock Text="{Binding ConverterParameter=DefineQueryWindowName, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                                Foreground="Gray"
+                                                                HorizontalAlignment="Right" />
+                                                    <TextBlock Text="{Binding Name}"
+                                                                Grid.Column="1"
+                                                                Margin="5,0,0,0" />
+													<TextBlock Text="{Binding ConverterParameter=DefineQueryWindowAlias, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                                Foreground="Gray"
+                                                                HorizontalAlignment="Right"
+                                                                Grid.Row="1" />
+                                                    <TextBlock Text="{Binding Alias}"
+                                                                Grid.Row="1"
+                                                                Grid.Column="1"
+                                                                Margin="5,0,0,0" />
+													<TextBlock Text="{Binding ConverterParameter=DefineQueryWindowType, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                                Foreground="Gray"
+                                                                HorizontalAlignment="Right"
+                                                                Grid.Row="2" />
+                                                    <TextBlock Text="{Binding Type, Converter={StaticResource RemoveStringConverter}, ConverterParameter=esriFieldType}"
+                                                                Grid.Row="2"
+                                                                Grid.Column="1"
+                                                                Margin="5,0,0,0" />
+                                                </Grid>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Grid.Resources>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <controls:TabControl x:Name="Tab" Background="Transparent"
+                                                                BorderBrush="{StaticResource DarkBlueFillBrush}"
+                                                                BorderThickness="0,1,0,0"
+                                                                Margin="0,-3,0,0">
+
+                            <controls:TabItem x:Name="QueryTab"
+                                                                Header="{Binding ConverterParameter=DefineQueryWindowQuery, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                                Template="{StaticResource BlueTabHeaderControlTemplate}"
+                                              Foreground="{TemplateBinding Foreground}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+
+									<TextBlock Text="{Binding ConverterParameter=DefineQueryWindowFields, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                                Margin="5" />
+
+                                    <ListBox Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource ThinScrollListBoxStyle}" Background="White" Foreground="Gray"
+                                                                x:Name="FieldListBox" ItemContainerStyle="{StaticResource ThinScrollListBoxItemStyle}"
+                                                                Margin="5"
+                                                                Height="180">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding Name}" Foreground="#FF000000"  />
+                                                    <TextBlock Text="{Binding Type, Converter={StaticResource RemoveStringConverter}, ConverterParameter=esriFieldType}"
+                                                                Margin="10,0,0,0"
+                                                                Foreground="Gray" />
+                                                    <ToolTipService.ToolTip>
+                                                        <ToolTip Style="{StaticResource FieldToolTipStyle}" />
+                                                    </ToolTipService.ToolTip>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+
+                                    <StackPanel Orientation="Horizontal"
+                                                                Grid.Row="2"
+                                                                Grid.ColumnSpan="2"
+                                                                Margin="5">
+                                        <Button x:Name="EqualsOperatorButton"
+                                                                Content="="
+                                                                Template="{StaticResource QueryButtonControlTemplate}"
+                                                                Foreground="{TemplateBinding Foreground}"
+                                                                Width="22"
+                                                                Height="22"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                Command="{Binding OperatorClickCommand, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="="
+                                                                Margin="5" />
+                                        <Button x:Name="LikeOperatorButton"
+                                                                Content="like"
+                                                                Template="{StaticResource QueryButtonControlTemplate}"
+                                                                Foreground="{TemplateBinding Foreground}"
+                                                                Width="28"
+                                                                Height="22"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                Command="{Binding OperatorClickCommand, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="like"
+                                                                Margin="5" />
+                                        <Button x:Name="GreaterThanOperatorButton"
+                                                                Content="&gt;"
+                                                                Template="{StaticResource QueryButtonControlTemplate}"
+                                                                Foreground="{TemplateBinding Foreground}"
+                                                                Width="22"
+                                                                Height="22"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                Command="{Binding OperatorClickCommand, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="&gt;"
+                                                                Margin="5" />
+                                        <Button x:Name="LessThanOperatorButton"
+                                                                Content="&lt;"
+                                                                Template="{StaticResource QueryButtonControlTemplate}"
+                                                                Foreground="{TemplateBinding Foreground}"
+                                                                Width="22"
+                                                                Height="22"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                Command="{Binding OperatorClickCommand, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="&lt;"
+                                                                Margin="5" />
+                                        <Button x:Name="GreaterThanOrEqualsOperatorButton"
+                                                                Content="&gt;="
+                                                                Template="{StaticResource QueryButtonControlTemplate}"
+                                                                Foreground="{TemplateBinding Foreground}"
+                                                                Width="22"
+                                                                Height="22"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                Command="{Binding OperatorClickCommand, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="&gt;="
+                                                                Margin="5" />
+                                        <Button x:Name="LessThanOrEqualsOperatorButton"
+                                                                Content="&lt;="
+                                                                Template="{StaticResource QueryButtonControlTemplate}"
+                                                                Foreground="{TemplateBinding Foreground}"
+                                                                Width="22"
+                                                                Height="22"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                Command="{Binding OperatorClickCommand, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="&lt;="
+                                                                Margin="5" />
+                                        <Button x:Name="NotEqualsOperatorButton"
+                                                                Content="&lt;&gt;"
+                                                                Template="{StaticResource QueryButtonControlTemplate}"
+                                                                Foreground="{TemplateBinding Foreground}"
+                                                                Width="22"
+                                                                Height="22"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                Command="{Binding OperatorClickCommand, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="&lt;&gt;"
+                                                                Margin="5" />
+                                        <Button x:Name="AndOperatorButton"
+                                                                Content="and"
+                                                                Template="{StaticResource QueryButtonControlTemplate}"
+                                                                Foreground="{TemplateBinding Foreground}"
+                                                                Width="28"
+                                                                Height="22"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                Command="{Binding OperatorClickCommand, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="and"
+                                                                Margin="4" />
+                                        <Button x:Name="OrOperatorButton"
+                                                                Content="or"
+                                                                Template="{StaticResource QueryButtonControlTemplate}"
+                                                                Foreground="{TemplateBinding Foreground}"
+                                                                Width="28"
+                                                                Height="22"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                Command="{Binding OperatorClickCommand, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="or"
+                                                                Margin="4" />
+                                        <Button x:Name="NotOperatorButton"
+                                                                Content="not"
+                                                                Template="{StaticResource QueryButtonControlTemplate}"
+                                                                Foreground="{TemplateBinding Foreground}"
+                                                                Width="28"
+                                                                Height="22"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                Command="{Binding OperatorClickCommand, RelativeSource={RelativeSource TemplatedParent}}" CommandParameter="not"
+                                                                Margin="4" />
+                                        <Button Template="{StaticResource QueryButtonNonTextContentControlTemplate}"
+                                                                Foreground="Black"
+                                                                Width="26"
+                                                                Height="22"
+                                                                Margin="4"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                x:Name="ExpressionDatePickerButton"
+                                                                IsEnabled="False">
+
+                                            <controls:DatePicker 
+                                                                Width="27" 
+                                                                Margin="0,0,4,0"
+                                                                VerticalAlignment="Center"
+                                                                HorizontalAlignment="Center"
+                                                                x:Name="ExpressionDatePicker">
+                                                <ToolTipService.ToolTip>
+                                                    <ToolTip Width="200">
+														<TextBlock Text="{Binding ConverterParameter=DefineQueryWindowClickPickDate, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                                TextWrapping="Wrap"/>
+                                                    </ToolTip>
+                                                </ToolTipService.ToolTip>
+
+                                            </controls:DatePicker>
+
+                                        </Button>
+                                    </StackPanel>
+
+                                    <TextBlock Text="{Binding ConverterParameter=DefineQueryWindowExpression, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                                Foreground="{TemplateBinding Foreground}"
+                                                                Margin="5"
+                                                                Grid.Row="3" />
+                                    <TextBox  
+                                        Margin="5"
+                                        Grid.Row="4"
+                                        TextWrapping="Wrap"
+                                        Height="60"
+                                        Grid.ColumnSpan="2"
+                                        x:Name="WhereClauseTextBox"
+                                        FlowDirection="LeftToRight"/> <!-- Query should always flow left to right -->
+
+
+                                </Grid>
+                            </controls:TabItem>
+
+                            <controls:TabItem x:Name="DataTab"
+                                                                Header="{Binding ConverterParameter=DefineQueryWindowData, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                                Template="{StaticResource BlueTabHeaderControlTemplate}"
+                                              Foreground="{TemplateBinding Foreground}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Margin="5,10,5,10">
+										<TextBlock Text="{Binding ConverterParameter=DefineQueryWindowTableIsSampleOfFeatureLayer, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                                TextWrapping="Wrap"
+                                                                Visibility="{Binding Visibility, ElementName=FailedPreviewTextBlock, Converter={StaticResource InvertVisibilityConverter}}"
+                                                                x:Name="PreviewTextBlock"/>
+										<TextBlock Text="{Binding ConverterParameter=DefineQueryWindowFailedToRetrieveSampleFeaturesForLayer, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                                TextWrapping="Wrap"
+                                                                x:Name="FailedPreviewTextBlock"
+                                                                Visibility="Collapsed"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <local:ProgressIndicator x:Name="DataPreviewProgressIndicator"
+                                                                HorizontalAlignment="Center"
+                                                                VerticalAlignment="Center"/>
+                                        <data:DataGrid x:Name="PreviewDataGrid" Style="{StaticResource DataWindowDataGridStyle}"
+                                                                AutoGenerateColumns="False"
+                                                                ItemsSource="{Binding Rows}"
+                                                       Foreground="Black"
+                                                                Visibility="{Binding Visibility, ElementName=DataPreviewProgressIndicator, Converter={StaticResource InvertVisibilityConverter}}"/>
+                                    </Grid>
+                                </Grid>
+                            </controls:TabItem>
+
+                        </controls:TabControl>
+
+                        <Button x:Name="OKButton"
+                                                                Content="{Binding ConverterParameter=DefineQueryWindowApply, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                                MinWidth="75"
+                                                                Height="23"
+                                                                HorizontalAlignment="Right"
+                                                                Margin="0,5,5,0"
+                                                                Grid.Row="1"
+                                                                Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                        Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

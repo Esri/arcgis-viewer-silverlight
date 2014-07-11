@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>添加行为</value>
+  </data>
+  <data name="AddBehaviorDescription" xml:space="preserve">
+    <value>向查看器添加行为</value>
+  </data>
+  <data name="AddGeoprocessing" xml:space="preserve">
+    <value>添加地理处理</value>
+  </data>
+  <data name="AddGeoprocessingDescription" xml:space="preserve">
+    <value>向查看器添加地理处理工具。地理处理工具允许查看器的用户使用 ArcGIS Server 地理处理服务。</value>
+  </data>
+  <data name="AddGeoRSSDescription" xml:space="preserve">
+    <value>向该地图添加启用了地理服务的 RSS 源</value>
+  </data>
+  <data name="AddGP" xml:space="preserve">
+    <value>添加地理处理服务</value>
+  </data>
+  <data name="AddTool" xml:space="preserve">
+    <value>添加工具</value>
+  </data>
+  <data name="AddToolDescription" xml:space="preserve">
+    <value>向查看器添加工具</value>
+  </data>
+  <data name="ApplicationBuilderSettings" xml:space="preserve">
+    <value>应用程序构建器设置</value>
+  </data>
+  <data name="ApplicationBuilderSettingsDescription" xml:space="preserve">
+    <value>查看和修改应用程序构建器的设置(包括对加载项和底图的管理)。</value>
+  </data>
+  <data name="AttributeTable" xml:space="preserve">
+    <value>属性表</value>
+  </data>
+  <data name="BasemapGalleryDescription" xml:space="preserve">
+    <value>为地图选择其他底图图层</value>
+  </data>
+  <data name="Behaviors" xml:space="preserve">
+    <value>行为</value>
+  </data>
+  <data name="Branding" xml:space="preserve">
+    <value>标识</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>更改</value>
+  </data>
+  <data name="ChangeLayout" xml:space="preserve">
+    <value>更改布局</value>
+  </data>
+  <data name="ChangeLayoutDescription" xml:space="preserve">
+    <value>为查看器选择新布局</value>
+  </data>
+  <data name="ChangeLogo" xml:space="preserve">
+    <value>更改徽标</value>
+  </data>
+  <data name="ChangeLogoDescription" xml:space="preserve">
+    <value>选择查看器的徽标</value>
+  </data>
+  <data name="ChangeTitleAndLinks" xml:space="preserve">
+    <value>更改标题和链接</value>
+  </data>
+  <data name="ChangeTitleAndLinksDescription" xml:space="preserve">
+    <value>编辑查看器的标题和超链接</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="ConfigureTheme" xml:space="preserve">
+    <value>配置主题</value>
+  </data>
+  <data name="ConfigureThemeDescription" xml:space="preserve">
+    <value>编辑查看器的主题颜色</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>全屏</value>
+  </data>
+  <data name="FullScreenDescription" xml:space="preserve">
+    <value>将应用程序构建器切换至全屏模式</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>主页</value>
+  </data>
+  <data name="HomeDescription" xml:space="preserve">
+    <value>返回到应用程序构建器的起始页面。</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>布局</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>徽标</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>管理</value>
+  </data>
+  <data name="ManageBehaviors" xml:space="preserve">
+    <value>管理行为</value>
+  </data>
+  <data name="ManageBehaviorsDescription" xml:space="preserve">
+    <value>启用、禁用、重新排序、添加或删除查看器的特性</value>
+  </data>
+  <data name="ManageToolbars" xml:space="preserve">
+    <value>管理工具条</value>
+  </data>
+  <data name="ManageToolbarsDescription" xml:space="preserve">
+    <value>添加、移除、移动和配置查看器工具条上的工具</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>部署</value>
+  </data>
+  <data name="PublishDescription" xml:space="preserve">
+    <value>将当前查看器部署到新网站</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="ResetTheme" xml:space="preserve">
+    <value>重置主题</value>
+  </data>
+  <data name="ResetThemeDescription" xml:space="preserve">
+    <value>将查看器的主题颜色重置为默认值</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="SaveDescription" xml:space="preserve">
+    <value>保存当前查看器</value>
+  </data>
+  <data name="SelectTheTool" xml:space="preserve">
+    <value>选择工具...</value>
+  </data>
+  <data name="TitleAndLinks" xml:space="preserve">
+    <value>标题和链接</value>
+  </data>
+  <data name="ToggleBrowseDescription" xml:space="preserve">
+    <value>显示或隐藏浏览面板。浏览面板用于查看 ArcGIS Server 或 Spatial Data Service 端点的内容并向地图添加图层。</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>显示或隐藏地图内容的列表</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>显示或隐藏搜索面板。搜索面板用于搜索地点、搜索 ArcGIS.com 中的内容或搜索 web 中的 ArcGIS Server 服务。</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>显示或隐藏当前所选图层的属性表</value>
+  </data>
+  <data name="ToggleToolbar" xml:space="preserve">
+    <value>切换工具条</value>
+  </data>
+  <data name="ToggleToolbarDescription" xml:space="preserve">
+    <value>显示或隐藏应用程序构建器的工具条</value>
+  </data>
+  <data name="Toolbar" xml:space="preserve">
+    <value>工具条</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="Accent" xml:space="preserve">
+    <value>强调</value>
+  </data>
+  <data name="AccentText" xml:space="preserve">
+    <value>强调文本</value>
+  </data>
+  <data name="AddNewGroupOrControl" xml:space="preserve">
+    <value>添加新组或控件</value>
+  </data>
+  <data name="AddOns" xml:space="preserve">
+    <value>加载项</value>
+  </data>
+  <data name="ApplicationProperties" xml:space="preserve">
+    <value>应用程序属性</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="ArcGISApplicationBuilder" xml:space="preserve">
+    <value>应用程序构建器 - {0}</value>
+  </data>
+  <data name="ArcGISViewerForMicrosoftSilverlight" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>背景</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>背景文本</value>
+  </data>
+  <data name="BaseMaps" xml:space="preserve">
+    <value>地理底图</value>
+  </data>
+  <data name="BrowseForFile" xml:space="preserve">
+    <value>浏览查找文件</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>浏览查找资源</value>
+  </data>
+  <data name="BuilderTutorial" xml:space="preserve">
+    <value>构建器教程</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="ChangesSavedSuccessfully" xml:space="preserve">
+    <value>已成功保存更改。</value>
+  </data>
+  <data name="ChooseExistingProject" xml:space="preserve">
+    <value>选择现有项目</value>
+  </data>
+  <data name="ChooseLayout" xml:space="preserve">
+    <value>选择布局</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="ConfigureExtensions" xml:space="preserve">
+    <value>配置扩展模块</value>
+  </data>
+  <data name="ConfigureOptionsThatApplyToCurrentUser" xml:space="preserve">
+    <value>配置应用于当前用户的选项</value>
+  </data>
+  <data name="ConfigureSelectedGroupOrControl" xml:space="preserve">
+    <value>配置所选组或控件</value>
+  </data>
+  <data name="ConfigureSetOfBaseMapsUsedByBuilder" xml:space="preserve">
+    <value>配置应用程序构建器中可用的底图集</value>
+  </data>
+  <data name="CopySite" xml:space="preserve">
+    <value>复制站点</value>
+  </data>
+  <data name="CreateApplicationUsingDefaultMap" xml:space="preserve">
+    <value>新建地图</value>
+  </data>
+  <data name="CreateApplicationUsingWebMapFromArcGISCom" xml:space="preserve">
+    <value>Web 地图</value>
+  </data>
+  <data name="CreateNewApplication" xml:space="preserve">
+    <value>创建新的应用程序</value>
+  </data>
+  <data name="CurrentToolbars" xml:space="preserve">
+    <value>当前工具条</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="DeleteSite" xml:space="preserve">
+    <value>删除站点</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>描述:</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>详细信息</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>向下</value>
+  </data>
+  <data name="EditSelectedGroupOrControl" xml:space="preserve">
+    <value>编辑所选组或控件</value>
+  </data>
+  <data name="EditSite" xml:space="preserve">
+    <value>编辑站点</value>
+  </data>
+  <data name="ExceptionUnhandledError" xml:space="preserve">
+    <value>未处理的错误 {0}</value>
+  </data>
+  <data name="ExtensionNotifications" xml:space="preserve">
+    <value>扩展通知</value>
+  </data>
+  <data name="Extensions" xml:space="preserve">
+    <value>扩展模块</value>
+  </data>
+  <data name="HelpLinks" xml:space="preserve">
+    <value>链接</value>
+  </data>
+  <data name="IconPrompt" xml:space="preserve">
+    <value>图标:</value>
+  </data>
+  <data name="LabelPrompt" xml:space="preserve">
+    <value>标注:</value>
+  </data>
+  <data name="LoadingSites" xml:space="preserve">
+    <value>正在加载站点...</value>
+  </data>
+  <data name="ManageExtensions" xml:space="preserve">
+    <value>管理扩展</value>
+  </data>
+  <data name="MoreSiteOptions" xml:space="preserve">
+    <value>更多站点选项</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>移动</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>下移</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>上移</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="NamePrompt" xml:space="preserve">
+    <value>名称:</value>
+  </data>
+  <data name="NewMap" xml:space="preserve">
+    <value>新建地图</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="PersonalSettings" xml:space="preserve">
+    <value>个人设置</value>
+  </data>
+  <data name="PublishApplication" xml:space="preserve">
+    <value>部署应用程序</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="RemoveSelectedGroupOrControl" xml:space="preserve">
+    <value>删除所选组或控件</value>
+  </data>
+  <data name="ReturnToPreviousScreen" xml:space="preserve">
+    <value>返回至上一画面</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="SelectionOutline" xml:space="preserve">
+    <value>选择区轮廓</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="StartWithExistingMap" xml:space="preserve">
+    <value>始于现有项</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>配置主题</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>主题颜色</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>标题:</value>
+  </data>
+  <data name="ToolbarPrompt" xml:space="preserve">
+    <value>工具条:</value>
+  </data>
+  <data name="TooltipPrompt" xml:space="preserve">
+    <value>工具提示:</value>
+  </data>
+  <data name="TypePrompt" xml:space="preserve">
+    <value>类型:</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>向上</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>上传</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>欢迎使用</value>
+  </data>
+  <data name="WelcomeMsgParagraph1" xml:space="preserve">
+    <value>ArcGIS 应用程序构建器是一个 Web 应用程序，用于在实时模式下以完全交互的方式创建并编辑查看器应用程序。“应用程序构建器和查看器”应用程序是使用 ArcGIS API for Silverlight 构建而成的。</value>
+  </data>
+  <data name="WelcomeMsgParagraph2" xml:space="preserve">
+    <value>要开始创建查看器，请单击下面的“创建新的应用程序”按钮。待配置的查看器将显示在应用程序构建器工具条的下方。可使用工具条上的各种工具来配置查看器的底图、图层、工具、标题、徽标、颜色及其他项目。配置好查看器后，单击“部署”按钮将其部署到新的网站。</value>
+  </data>
+  <data name="AvailableTools" xml:space="preserve">
+    <value>可用的工具</value>
+  </data>
+  <data name="BrowseForImage" xml:space="preserve">
+    <value>浏览查找图像</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="ErrorUnableToRetrieveDetailsForExtension" xml:space="preserve">
+    <value>无法检索加载项工具包的详细信息。</value>
+  </data>
+  <data name="ExtensionContainsTheFollowingAddOns" xml:space="preserve">
+    <value>加载项工具包“{0}”包含以下加载项:</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteButton" xml:space="preserve">
+    <value>确定要删除该按钮?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteGroup" xml:space="preserve">
+    <value>确定要删除该组?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteWebSite" xml:space="preserve">
+    <value>确定要删除此网站?</value>
+  </data>
+  <data name="AssemblyAlreadyIncludeInTheApplication" xml:space="preserve">
+    <value>{1} 程序集“{0}”已包括在应用程序运行时中。{1}为了优化扩展模块的大小和下载速度，可以将程序集参考标记为 CopyLocal=false，以便 .xap 打包中不包括程序集。</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>确认删除</value>
+  </data>
+  <data name="DeletingExtensionWillMakeItUnavailableForFurtherUse" xml:space="preserve">
+    <value>删除扩展模块后无法再将其应用于新的应用程序，也无法对现有应用程序的内容进行编辑。{0}确定要删除?</value>
+  </data>
+  <data name="DeletingSite" xml:space="preserve">
+    <value>删除站点...</value>
+  </data>
+  <data name="EditTool" xml:space="preserve">
+    <value>编辑工具</value>
+  </data>
+  <data name="EnterNameForApplication" xml:space="preserve">
+    <value>请输入应用程序的名称</value>
+  </data>
+  <data name="ErrorDetailsNotKnown" xml:space="preserve">
+    <value>错误详细信息未知</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>发生错误</value>
+  </data>
+  <data name="ErrorRetrievingMapDocumentForSite" xml:space="preserve">
+    <value>检索站点的地图文档时出错</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="ExtensionAlreadyExists" xml:space="preserve">
+    <value>加载项已存在</value>
+  </data>
+  <data name="ExtensionDetails" xml:space="preserve">
+    <value>加载项详细信息: {0}</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsErrors" xml:space="preserve">
+    <value>您尝试部署的加载项工具包包含错误。必须解决这些错误才能继续。</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsWarnings" xml:space="preserve">
+    <value>您尝试部署的加载项工具包包含警告。建议检查之后再继续。</value>
+  </data>
+  <data name="ExtensionWithSameNameAlreadyExist" xml:space="preserve">
+    <value>存在同名的加载项工具包。是否覆盖?</value>
+  </data>
+  <data name="FailedToCreateAndPublishApplication" xml:space="preserve">
+    <value>无法创建和部署应用程序</value>
+  </data>
+  <data name="FollowingErrorsFound" xml:space="preserve">
+    <value>找到以下错误。</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>无效名称</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>打开 ArcGIS.com 中的 Web 地图</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>请稍候...</value>
+  </data>
+  <data name="TutorialModeDisable" xml:space="preserve">
+    <value>禁用“准备开始”窗口</value>
+  </data>
+  <data name="TutorialModeEnable" xml:space="preserve">
+    <value>启用“准备开始”窗口</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>关于应用程序构建器</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>查看应用程序构建器的“关于”对话框</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="GettingStartedAddGPDescription" xml:space="preserve">
+    <value>利用 ArcGIS Server 地理处理服务的空间分析功能。</value>
+  </data>
+  <data name="GettingStartedAddGPTitle" xml:space="preserve">
+    <value>添加地理处理服务</value>
+  </data>
+  <data name="GettingStartedAddLayersDescription" xml:space="preserve">
+    <value>添加来自 ArcGIS Online 和 ArcGIS Server 的数据。</value>
+  </data>
+  <data name="GettingStartedAddLayersTitle" xml:space="preserve">
+    <value>添加业务图层</value>
+  </data>
+  <data name="GettingStartedAddToolsDescription" xml:space="preserve">
+    <value>配置应用程序的功能</value>
+  </data>
+  <data name="GettingStartedAddToolsTitle" xml:space="preserve">
+    <value>添加工具</value>
+  </data>
+  <data name="GettingStartedBasemapDescription" xml:space="preserve">
+    <value>从 ArcGIS Online、Bing 地图或开放维基世界地图中选择底图。</value>
+  </data>
+  <data name="GettingStartedBasemapTitle" xml:space="preserve">
+    <value>选择底图</value>
+  </data>
+  <data name="GettingStartedChooseLogoDescription" xml:space="preserve">
+    <value>为查看器贴上您的组织徽标</value>
+  </data>
+  <data name="GettingStartedChooseLogoTitle" xml:space="preserve">
+    <value>选择徽标</value>
+  </data>
+  <data name="GettingStartedSelectLayoutDescription" xml:space="preserve">
+    <value>定义查看器的外观。</value>
+  </data>
+  <data name="GettingStartedSelectLayoutTitle" xml:space="preserve">
+    <value>选择布局</value>
+  </data>
+  <data name="GettingStartedSetTitleDescription" xml:space="preserve">
+    <value>设置应用程序的标题。</value>
+  </data>
+  <data name="GettingStartedSetTitleTitle" xml:space="preserve">
+    <value>设置标题</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailable" xml:space="preserve">
+    <value>以下附加组件可用。单击</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableHere" xml:space="preserve">
+    <value>此处</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableToUploadANewOne" xml:space="preserve">
+    <value>从磁盘上传一个新的。</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlDownToolbarTree" xml:space="preserve">
+    <value>将所选组或控件在工具条树中下移</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlUpToolbarTree" xml:space="preserve">
+    <value>将所选组或控件在工具条树中上移</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>上一步</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>下一步</value>
+  </data>
+  <data name="SelectAToolToAdd" xml:space="preserve">
+    <value>选择要添加的工具:</value>
+  </data>
+  <data name="ChooseMap" xml:space="preserve">
+    <value>应用程序构建器 - 选择地图</value>
+  </data>
+  <data name="AddInPackagesContain" xml:space="preserve">
+    <value>加载项工具包中可包含各种加载项类型: 工具、行为和布局中所使用的控件</value>
+  </data>
+  <data name="AvailableAddInPackages" xml:space="preserve">
+    <value>可用的加载项工具包:</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>按钮</value>
+  </data>
+  <data name="ConfigureElementsRelatedToMap" xml:space="preserve">
+    <value>配置与地图相关的元素</value>
+  </data>
+  <data name="ConfigureToolsOfYourApplication" xml:space="preserve">
+    <value>配置应用程序的工具</value>
+  </data>
+  <data name="DisableGettingStarted" xml:space="preserve">
+    <value>禁用“准备开始”窗口</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>准备开始</value>
+  </data>
+  <data name="ShowMe" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="SpecifyLayoutOfYourApplication" xml:space="preserve">
+    <value>指定应用程序的布局</value>
+  </data>
+  <data name="UploadAddInPackages" xml:space="preserve">
+    <value>上传加载项工具包</value>
+  </data>
+  <data name="UploadAddIns" xml:space="preserve">
+    <value>上传加载项</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>地图</value>
+  </data>
+  <data name="AreYouSureYouWantToLeavePageUnsavedChangesLost" xml:space="preserve">
+    <value>确定要离开此页面? 未保存的更改可能会丢失。</value>
+  </data>
+  <data name="ConfirmPageChange" xml:space="preserve">
+    <value>确认页面更改</value>
+  </data>
+  <data name="SpecifyToolProperties" xml:space="preserve">
+    <value>指定工具属性</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>另存为...</value>
+  </data>
+  <data name="AddGroupButton" xml:space="preserve">
+    <value>添加组</value>
+  </data>
+  <data name="CannotAddElement" xml:space="preserve">
+    <value>不能添加元素</value>
+  </data>
+  <data name="CannotAddGroupButton" xml:space="preserve">
+    <value>不能添加组</value>
+  </data>
+  <data name="CannotAddTool" xml:space="preserve">
+    <value>不能添加工具</value>
+  </data>
+  <data name="ChooseAvailableTool" xml:space="preserve">
+    <value>您必须从可用工具树中选择单个工具。</value>
+  </data>
+  <data name="DefaultGroupButtonDescription" xml:space="preserve">
+    <value>新建组</value>
+  </data>
+  <data name="DefaultGroupButtonLabel" xml:space="preserve">
+    <value>新建组</value>
+  </data>
+  <data name="RootLevelToAddGroup" xml:space="preserve">
+    <value>您必须选择工具条或工具条的根节点来添加组。</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>&lt;分隔符&gt;</value>
+  </data>
+  <data name="MoveIntoGroup" xml:space="preserve">
+    <value>移动到“{0}”组</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>编辑组</value>
+  </data>
+  <data name="ConfigureControls" xml:space="preserve">
+    <value>配置控件</value>
+  </data>
+  <data name="ConfigureControlsDescription" xml:space="preserve">
+    <value>编辑查看器控件的配置</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>模式</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>缓存大小:</value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>按需</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>快照</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>要素图层按需缓存大小</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>设置要素图层按需模式缓存大小(默认值 = 1000)</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>要素图层按需模式</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>选择要进行按需缓存操作的图层的查询模式(仅限要素图层)</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>要素图层快照模式</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>选择要进行快照的图层的查询模式(仅限要素图层)</value>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>添加链接</value>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>移除链接</value>
+  </data>
+  <data name="ConfigureControlsBanner" xml:space="preserve">
+    <value>要配置的控件</value>
+  </data>
+  <data name="Controls" xml:space="preserve">
+    <value>控件</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>要素检索</value>
+  </data>
+  <data name="AddGroupDotDot" xml:space="preserve">
+    <value>添加组...</value>
+  </data>
+  <data name="AddSeparator" xml:space="preserve">
+    <value>添加分隔符</value>
+  </data>
+  <data name="ApplicationBuilderDashSettings" xml:space="preserve">
+    <value>应用程序构建器 - 设置</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>浏览</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>内容</value>
+  </data>
+  <data name="CurrentViewerApplications" xml:space="preserve">
+    <value>当前查看器应用程序</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>地图内容</value>
+  </data>
+  <data name="NoFilesFound" xml:space="preserve">
+    <value>未找到任何文件。</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="ViewerProject" xml:space="preserve">
+    <value>查看器项目</value>
+  </data>
+  <data name="WebMap" xml:space="preserve">
+    <value>Web 地图</value>
+  </data>
+  <data name="AddLayerFailed" xml:space="preserve">
+    <value>添加图层失败</value>
+  </data>
+  <data name="AddLayerFailedExplanation" xml:space="preserve">
+    <value>无法添加图层。失败原因: {0}。</value>
+  </data>
+  <data name="AddLayerFailedNoDetails" xml:space="preserve">
+    <value>[无法提取任何详细信息]</value>
+  </data>
+  <data name="ConfigureLayers" xml:space="preserve">
+    <value>配置图层</value>
+  </data>
+  <data name="ConfigureLayersDescription" xml:space="preserve">
+    <value>修改地图中图层的外观和行为</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>图层</value>
+  </data>
+  <data name="SiteCopyFailed" xml:space="preserve">
+    <value>站点复制失败</value>
+  </data>
+  <data name="SiteDeploymentFailed" xml:space="preserve">
+    <value>站点部署失败</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>上移</value>
+  </data>
+  <data name="BringsCurrentlySelectedLayerForward" xml:space="preserve">
+    <value>将图层的显示顺序在地图中上移一位</value>
+  </data>
+  <data name="ConfigureCurrentlySelectedLayer" xml:space="preserve">
+    <value>配置当前所选图层</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>配置用于访问此应用程序安全服务的代理</value>
+  </data>
+  <data name="ConfigureSecureServices" xml:space="preserve">
+    <value>配置安全服务</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>转至</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="RefreshCurrentlySelectedLayer" xml:space="preserve">
+    <value>刷新当前所选图层</value>
+  </data>
+  <data name="RemovesCurrentlySelectedLayer" xml:space="preserve">
+    <value>删除当前所选图层</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>重命名</value>
+  </data>
+  <data name="RenameCurrentlySelectedLayer" xml:space="preserve">
+    <value>重命名当前所选图层</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>下移</value>
+  </data>
+  <data name="SendsCurrentlySelectedLayerBackward" xml:space="preserve">
+    <value>将图层的显示顺序在地图中下移一位</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>服务详细信息</value>
+  </data>
+  <data name="ViewInformationAboutSelectedLayerDatasource" xml:space="preserve">
+    <value>查看有关所选图层数据源的信息</value>
+  </data>
+  <data name="ZoomToCurrentlySelectedLayer" xml:space="preserve">
+    <value>缩放至当前所选图层</value>
+  </data>
+  <data name="CannotAddDropdownCommandsToAGroup" xml:space="preserve">
+    <value>无法向组添加下拉命令。</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>配置底图</value>
+  </data>
+  <data name="FlashAnimationIsNotDefinedOnTargetBuilderToolbarButton" xml:space="preserve">
+    <value>目标构建器工具条按钮上未定义 Flash 动画</value>
+  </data>
+  <data name="ManageAddInsToolsBehaviorsControls" xml:space="preserve">
+    <value>管理加载项: 工具、行为、控件</value>
+  </data>
+  <data name="ManagePersonalSettings" xml:space="preserve">
+    <value>管理个人设置</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>访问安全服务</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>添加安全服务</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>配置代理</value>
+  </data>
+  <data name="NewApplication" xml:space="preserve">
+    <value>应用程序构建器 - 新建应用程序(未部署)</value>
+  </data>
+  <data name="NotDeployed" xml:space="preserve">
+    <value>(未部署)</value>
+  </data>
+  <data name="DeployingApplication" xml:space="preserve">
+    <value>正在部署应用程序...</value>
+  </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>应用程序设置</value>
+  </data>
+  <data name="ArcGISOnlineSecure" xml:space="preserve">
+    <value>ArcGIS Online 安全性:</value>
+  </data>
+  <data name="ArcGISOnlineSharing" xml:space="preserve">
+    <value>ArcGIS Online 共享:</value>
+  </data>
+  <data name="BingAppId" xml:space="preserve">
+    <value>Bing AppID:</value>
+  </data>
+  <data name="CurrentApplicationSettings" xml:space="preserve">
+    <value>当前应用程序设置</value>
+  </data>
+  <data name="DefaultSettings" xml:space="preserve">
+    <value>默认设置</value>
+  </data>
+  <data name="GeometryService" xml:space="preserve">
+    <value>几何服务:</value>
+  </data>
+  <data name="ManageApplicationSettings" xml:space="preserve">
+    <value>管理应用程序设置</value>
+  </data>
+  <data name="BasedOnWebMap" xml:space="preserve">
+    <value>基于 Web 地图:</value>
+  </data>
+  <data name="LinkedToWebMap" xml:space="preserve">
+    <value>链接到 Web 地图:</value>
+  </data>
+  <data name="LinkToWebMap" xml:space="preserve">
+    <value>链接</value>
+  </data>
+  <data name="MapConfigurationUnavailable" xml:space="preserve">
+    <value>此应用程序的地图配置已链接到 Web 地图。要编辑地图配置，请取消应用程序与 Web 地图的链接。</value>
+  </data>
+  <data name="UnlinkFromWebMap" xml:space="preserve">
+    <value>取消链接</value>
+  </data>
+  <data name="UnableToDeployApplication" xml:space="preserve">
+    <value>无法部署应用程序。</value>
+  </data>
+  <data name="UnableToSaveApplicationChanges" xml:space="preserve">
+    <value>无法保存对应用程序所做的更改。</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>代理:</value>
+  </data>
+  <data name="HideGettingStarted" xml:space="preserve">
+    <value>隐藏入门帮助</value>
+  </data>
+  <data name="ShowGettingStarted" xml:space="preserve">
+    <value>显示入门帮助</value>
+  </data>
+  <data name="DisplayText" xml:space="preserve">
+    <value>显示文本</value>
+  </data>
+  <data name="UpgradeSite" xml:space="preserve">
+    <value>将此查看器应用程序升级到最新版本</value>
+  </data>
+  <data name="UpgradingApplication" xml:space="preserve">
+    <value>正在升级应用程序...</value>
+  </data>
+  <data name="NewLink" xml:space="preserve">
+    <value>新建链接</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>行为</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>控件</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>图层</value>
+  </data>
+  <data name="Tool" xml:space="preserve">
+    <value>工具</value>
+  </data>
+</root>

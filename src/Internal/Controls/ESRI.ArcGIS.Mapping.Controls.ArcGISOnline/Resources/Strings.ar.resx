@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFeatureLayer" xml:space="preserve">
+    <value>إضافة طبقات المعالم</value>
+  </data>
+  <data name="AddFeatureLayerWindowCheckAll" xml:space="preserve">
+    <value>تحديد الكل</value>
+  </data>
+  <data name="AddFeatureLayerWindowUnCheckAll" xml:space="preserve">
+    <value>عدم تحديد الكل</value>
+  </data>
+  <data name="ArcGIS" xml:space="preserve">
+    <value>ArcGIS</value>
+  </data>
+  <data name="BackStageControlFeatureMaps" xml:space="preserve">
+    <value>خرائط المعالم</value>
+  </data>
+  <data name="BackStageControlGroups" xml:space="preserve">
+    <value>مجموعات</value>
+  </data>
+  <data name="BackStageControlMyGroups" xml:space="preserve">
+    <value>المجموعات الخاصة بي</value>
+  </data>
+  <data name="BackStageControlMyOrgGroups" xml:space="preserve">
+    <value>مجموعات المنظمة</value>
+  </data>
+  <data name="BackStageControlMyOrgPublicGroups" xml:space="preserve">
+    <value>المجموعات العامة في المنظمة</value>
+  </data>
+  <data name="BackStageControlMyMaps" xml:space="preserve">
+    <value>الخرائط الخاصة بي</value>
+  </data>
+  <data name="BackStageControlSearch" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>النقر هنا لعرض الوصف في نافذة مستعرض منفصلة</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>إغلاق التفاصيل</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>تعليقات</value>
+  </data>
+  <data name="ContentEveryone" xml:space="preserve">
+    <value>الكل</value>
+  </data>
+  <data name="ContentGroups" xml:space="preserve">
+    <value>مجموعات</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>إنشاء بواسطة</value>
+  </data>
+  <data name="DefineQueryWindowAlias" xml:space="preserve">
+    <value>الاسم المستعار:</value>
+  </data>
+  <data name="DefineQueryWindowAnd" xml:space="preserve">
+    <value>و</value>
+  </data>
+  <data name="DefineQueryWindowApply" xml:space="preserve">
+    <value>تطبيق</value>
+  </data>
+  <data name="DefineQueryWindowClickPickDate" xml:space="preserve">
+    <value>انقر لاختيار التاريخ الذي تم تنسيقه بغرض الاستخدام في التعبير.</value>
+  </data>
+  <data name="DefineQueryWindowData" xml:space="preserve">
+    <value>بيانات</value>
+  </data>
+  <data name="DefineQueryWindowExpression" xml:space="preserve">
+    <value>التعبير:</value>
+  </data>
+  <data name="DefineQueryWindowFailedToRetrieveSampleFeaturesForLayer" xml:space="preserve">
+    <value>فشل استرداد معالم العينة للطبقة.</value>
+  </data>
+  <data name="DefineQueryWindowFields" xml:space="preserve">
+    <value>حقول:</value>
+  </data>
+  <data name="DefineQueryWindowLike" xml:space="preserve">
+    <value>مثل</value>
+  </data>
+  <data name="DefineQueryWindowName" xml:space="preserve">
+    <value>الاسم:</value>
+  </data>
+  <data name="DefineQueryWindowNot" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="DefineQueryWindowOr" xml:space="preserve">
+    <value>أو</value>
+  </data>
+  <data name="DefineQueryWindowQuery" xml:space="preserve">
+    <value>استعلام</value>
+  </data>
+  <data name="DefineQueryWindowTableIsSampleOfFeatureLayer" xml:space="preserve">
+    <value>الجدول التالي هو عينة للمعالم الموجودة في الطبقة.</value>
+  </data>
+  <data name="DefineQueryWindowType" xml:space="preserve">
+    <value>النوع:</value>
+  </data>
+  <data name="DescriptionForMapCanotBeDisplayed" xml:space="preserve">
+    <value>يتعذر  عرض وصف هذه الخريطة في هذه النافذة.</value>
+  </data>
+  <data name="EnterPlaceNameAddressLatLongitutePair" xml:space="preserve">
+    <value>إدخال اسم المكان أوالعنوان أو زوج خطوط الطول ودوائر العرض</value>
+  </data>
+  <data name="ExceptionDeleteFailed" xml:space="preserve">
+    <value>فشل الحذف</value>
+  </data>
+  <data name="ExceptionDeleteFailedUserSignIn" xml:space="preserve">
+    <value>فشل الحذف. لم يقم المستخدم بتسجيل الدخول.</value>
+  </data>
+  <data name="ExceptionFaileAcceptApplicateForGroup" xml:space="preserve">
+    <value>فشل قبول مقدم الطلب {0} للمجموعة {1}</value>
+  </data>
+  <data name="ExceptionFaileDeclineApplicateForGroup" xml:space="preserve">
+    <value>فشل رفض مقدم الطلب {0} للمجموعة {1}</value>
+  </data>
+  <data name="ExceptionFailedInviteUserToGroup" xml:space="preserve">
+    <value>فشل دعوة المستخدمين {0} للمجموعة {1}</value>
+  </data>
+  <data name="ExceptionFailedLeaveRequestForGroup" xml:space="preserve">
+    <value>فشل إرسال طلب مغادرة للمستخدم {0} من المجموعة {1}</value>
+  </data>
+  <data name="ExceptionFailedSendJoinRequestToGroup" xml:space="preserve">
+    <value>فشل إرسال طلب ضم للمستخدم {0} للمجموعة {1}</value>
+  </data>
+  <data name="ExceptionFailedToAcceptGroupInvitationForGroup" xml:space="preserve">
+    <value>فشل قبول دعوة المجموعة للمجموعة {0} من قبل المجموعة {1}</value>
+  </data>
+  <data name="ExceptionFailedToCreateGroup" xml:space="preserve">
+    <value>فشل إنشاء المجموعة</value>
+  </data>
+  <data name="ExceptionFailedToDeclineGroupInvitationForGroup" xml:space="preserve">
+    <value>فشل رفض دعوة المجموعة للمجموعة {0} من قبل المجموعة {1}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteGroup" xml:space="preserve">
+    <value>فشل حذف المجموعة {0}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteNoitification" xml:space="preserve">
+    <value>فشل حذف الإعلام للمجموعة {0} من قبل المجموعة {1}</value>
+  </data>
+  <data name="ExceptionFailedToGetGroupApplicationsForGroup" xml:space="preserve">
+    <value>فشل الحصول على تطبيقات المجموعة للمجموعة {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveTagForUser" xml:space="preserve">
+    <value>فشل استرداد العلامات للمستخدم {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveOrgGroups" xml:space="preserve">
+    <value>فشل استرداد المجموعات التنظيمية</value>
+  </data>
+  <data name="ExceptionFailedToShareItem" xml:space="preserve">
+    <value>فشل مشاركة العنصر {0}</value>
+  </data>
+  <data name="ExceptionFailedToUpdateGroup" xml:space="preserve">
+    <value>فشل تحديث المجموعة {0}</value>
+  </data>
+  <data name="ExceptionGetCommentsFailed" xml:space="preserve">
+    <value>فشل الحصول على التعليقات.</value>
+  </data>
+  <data name="ExceptionGetFolderFailedUserSignedIn" xml:space="preserve">
+    <value>فشل الحصول على المجلد. لم يقم المستخدم بتسجيل الدخول.</value>
+  </data>
+  <data name="ExceptionNoUserSignedIn" xml:space="preserve">
+    <value>لم يقم المستخدم بتسجيل الدخول.</value>
+  </data>
+  <data name="ExceptionSignInFailed" xml:space="preserve">
+    <value>فشل تسجيل الدخول.</value>
+  </data>
+  <data name="FeatureMapsControlCloseParenthesis" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="FeatureMapsControlDetails" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="FeatureMapsControlLastModified" xml:space="preserve">
+    <value>(التعديل الأخير : </value>
+  </data>
+  <data name="FeatureMapsControlOpen" xml:space="preserve">
+    <value>فتح</value>
+  </data>
+  <data name="GroupControlClickHereToViewInSeparateBrowser" xml:space="preserve">
+    <value>النقر هنا لعرض الوصف في نافذة مستعرض منفصلة</value>
+  </data>
+  <data name="GroupControlCloseGroup" xml:space="preserve">
+    <value>إغلاق هذه المجموعة</value>
+  </data>
+  <data name="GroupControlDescription" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="GroupControlFeaturedMaps" xml:space="preserve">
+    <value>خرائط المعالم</value>
+  </data>
+  <data name="GroupControlNoFeaturedMapsFound" xml:space="preserve">
+    <value>لم يتم العثور على خرائط المعالم.</value>
+  </data>
+  <data name="GroupControlNoMapsFound" xml:space="preserve">
+    <value>لم يتم العثور على خرائط.</value>
+  </data>
+  <data name="GroupControlOwner" xml:space="preserve">
+    <value>المالك</value>
+  </data>
+  <data name="GroupControlPrivateUserCannotFindGroup" xml:space="preserve">
+    <value>خاص (لم يتمكن المستخدمين من العثور على المجموعة والانضمام إليها من خلال الدعوة فقط)</value>
+  </data>
+  <data name="GroupControlPublicUserCanSearchAndFindGroup" xml:space="preserve">
+    <value>عام (يستطيع المستخدمين البحث عن المجموعة والعثور عليها)</value>
+  </data>
+  <data name="GroupControlSearchOwner" xml:space="preserve">
+    <value>المالك: {0}</value>
+  </data>
+  <data name="GroupControlTags" xml:space="preserve">
+    <value>علامات</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>مجموعات</value>
+  </data>
+  <data name="HighestRated" xml:space="preserve">
+    <value>الأعلى تصنيفًا</value>
+  </data>
+  <data name="HintTextBoxToolTip" xml:space="preserve">
+    <value>إدخال اسم المكان؛ أو العنوان؛ أو زوج خطوط الطول، ودوائر العرض</value>
+  </data>
+  <data name="ItemNotFound" xml:space="preserve">
+    <value>لم يتم العثور على العنصر: {0}</value>
+  </data>
+  <data name="LastModified" xml:space="preserve">
+    <value>التعديل الأخير</value>
+  </data>
+  <data name="MapDetailsRating" xml:space="preserve">
+    <value>({0} من التصنيفات)</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>خرائط</value>
+  </data>
+  <data name="MapServiceReferenceInvalid" xml:space="preserve">
+    <value>الرقم المرجعي لخدمة الخريطة غير صحيح. تعذرت إضافة الخدمة إلى لخريطة.</value>
+  </data>
+  <data name="MapServiceReferenceNoDetails" xml:space="preserve">
+    <value>الرقم المرجعي لخدمة الخريطة غير صحيح. تعذر عرض التفاصيل.</value>
+  </data>
+  <data name="MostComments" xml:space="preserve">
+    <value>أكثر التعليقات</value>
+  </data>
+  <data name="MostPopular" xml:space="preserve">
+    <value>الأكثر شيوعًا</value>
+  </data>
+  <data name="MostRecentlyAdded" xml:space="preserve">
+    <value>أكثر المجموعات التي تم إضافتها مؤخرًا</value>
+  </data>
+  <data name="MostRelevant" xml:space="preserve">
+    <value>المجموعات ذات الصلة</value>
+  </data>
+  <data name="MyGroupControlGroups" xml:space="preserve">
+    <value>مجموعات {0}</value>
+  </data>
+  <data name="MyGroupControlOn" xml:space="preserve">
+    <value>على</value>
+  </data>
+  <data name="MyGroupControlOpenGroup" xml:space="preserve">
+    <value>فتح هذه المجموعة</value>
+  </data>
+  <data name="MyGroupControlZeroGroups" xml:space="preserve">
+    <value>0 مجموعات</value>
+  </data>
+  <data name="MyMapControlMaps" xml:space="preserve">
+    <value>خرائط {0}</value>
+  </data>
+  <data name="MyMapControlZeroMaps" xml:space="preserve">
+    <value>0 خرائط</value>
+  </data>
+  <data name="Places" xml:space="preserve">
+    <value>أماكن</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>خصائص</value>
+  </data>
+  <data name="RecentMaps" xml:space="preserve">
+    <value>الخرائط الحديثة</value>
+  </data>
+  <data name="SearchArcGISCom" xml:space="preserve">
+    <value>البحث على موقع ArcGIS.com</value>
+  </data>
+  <data name="SearchControlAdd" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="SearchControlMapServiceFound" xml:space="preserve">
+    <value>تم العثور على خدمة الخريطة</value>
+  </data>
+  <data name="SearchControlResultsFound" xml:space="preserve">
+    <value>لم يتم العثور على نتائج للمجموعة {0}.</value>
+  </data>
+  <data name="SearchControlServiceCouldNotBeAccessed" xml:space="preserve">
+    <value>تعذر الوصول إلى الخدمة.</value>
+  </data>
+  <data name="SearchControlZeroResultsFound" xml:space="preserve">
+    <value>تم العثور على 0 نتائج.</value>
+  </data>
+  <data name="SearchDetailsBy" xml:space="preserve">
+    <value>بواسطة</value>
+  </data>
+  <data name="SearchDetailsRating" xml:space="preserve">
+    <value>التصنيف: </value>
+  </data>
+  <data name="SearchMapResultsFor" xml:space="preserve">
+    <value>{0} من النتائج لـ {1}</value>
+  </data>
+  <data name="SearchTextBoxToolTip" xml:space="preserve">
+    <value>إدخال اسم المكان أوالعنوان أو زوج خطوط الطول ودوائر العرض</value>
+  </data>
+  <data name="SearchTheWeb" xml:space="preserve">
+    <value>البحث على الويب"</value>
+  </data>
+  <data name="SearchWebDetailsAdd" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="SearchWebDetailsCopyright" xml:space="preserve">
+    <value>حقوق النشر: </value>
+  </data>
+  <data name="SearchWebDetailsDescription" xml:space="preserve">
+    <value>الوصف: </value>
+  </data>
+  <data name="SearchWebDetailsExploreGISServer" xml:space="preserve">
+    <value>استكشاف خادم GIS</value>
+  </data>
+  <data name="SearchWebDetailsName" xml:space="preserve">
+    <value>الاسم:</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>فرز بواسطة</value>
+  </data>
+  <data name="SortResults" xml:space="preserve">
+    <value>فرز النتائج</value>
+  </data>
+  <data name="SortSearchResults" xml:space="preserve">
+    <value>فرز نتائج البحث.</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>الملخص</value>
+  </data>
+  <data name="TheWeb" xml:space="preserve">
+    <value>الويب</value>
+  </data>
+  <data name="TitleAZ" xml:space="preserve">
+    <value>العنوان من الألف إلى الياء</value>
+  </data>
+  <data name="TitleZA" xml:space="preserve">
+    <value>العنوان من الياء إلى الألف</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="UserSearchFailed" xml:space="preserve">
+    <value>فشل بحث المستخدم.</value>
+  </data>
+  <data name="BackStageControlRecent" xml:space="preserve">
+    <value>حديث</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء الأمر</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="SignInForgotYourPassword" xml:space="preserve">
+    <value>هل نسيت كلمة المرور؟</value>
+  </data>
+  <data name="SignInSignUp" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+  <data name="InvalidIDOrPassword" xml:space="preserve">
+    <value>المعرف وكلمة المرور غير صحيحة.</value>
+  </data>
+  <data name="NewHere" xml:space="preserve">
+    <value>الجديد هنا؟</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>كلمة المرور:</value>
+  </data>
+  <data name="UsernamePrompt" xml:space="preserve">
+    <value>اسم المستخدم:</value>
+  </data>
+  <data name="DescriptionForGroupCanotBeDisplayed" xml:space="preserve">
+    <value>يتعذر عرض وصف هذه المجموعة في هذه النافذة.</value>
+  </data>
+  <data name="GroupControlOwnerParenthesis" xml:space="preserve">
+    <value>(المالك)</value>
+  </data>
+  <data name="LastModifiedPrompt" xml:space="preserve">
+    <value>(التعديل الأخير:</value>
+  </data>
+  <data name="LastModifiedPromptEnd" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="MapDetailsControlAverageRating" xml:space="preserve">
+    <value>متوسط التصنيف</value>
+  </data>
+  <data name="MapDetailsControlType" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="OnWithSpace" xml:space="preserve">
+    <value> على </value>
+  </data>
+  <data name="SearchR" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="LoadingMaps" xml:space="preserve">
+    <value>جارِ تحميل الخرائط...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>إزالة</value>
+  </data>
+  <data name="NoFeaturedMaps" xml:space="preserve">
+    <value>لا توجد خرائط مميزة متاحة في الوقت الحالي</value>
+  </data>
+  <data name="SigningIn" xml:space="preserve">
+    <value>جار تسجيل الدخول...</value>
+  </data>
+  <data name="SignInLabel" xml:space="preserve">
+    <value>تسجيل الدخول إلى {0}</value>
+  </data>
+  <data name="CreatedByOwnerOnDate" xml:space="preserve">
+    <value>تم الإنشاء عن طريق {0} في {1}</value>
+  </data>
+  <data name="WebMapOwnerDateFormat" xml:space="preserve">
+    <value>خريطة الويب بواسطة {0} (التعديل الأخير: {1})</value>
+  </data>
+  <data name="WebMapBy" xml:space="preserve">
+    <value>خريطة الويب عن طريق {0}</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>فشل تسجيل الدخول</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>الأعضاء</value>
+  </data>
+</root>

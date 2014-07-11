@@ -1,0 +1,359 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:esriMapping="http://schemas.esri.com/arcgis/mapping/2009"
+	xmlns:esriConverters="clr-namespace:ESRI.ArcGIS.Client.ValueConverters;assembly=ESRI.ArcGIS.Client">
+
+    <esriConverters:DoubleCollectionCloner x:Key="doubleCollectionCloner"/>
+    <esriMapping:GeometryConverter x:Key="GeometryConverter"/>
+    <esriMapping:AdditionConverter x:Key="AdditionConverter"/>
+    <esriMapping:MarginConverter x:Key="MarginConverter"/>
+    <esriMapping:RenderTransformOriginConverter x:Key="RenderTransformOriginConverter" />
+    <!-- Fill Symbol-->
+    <ControlTemplate x:Key="FillSymbol">
+        <Path x:Name="Element"
+			Stroke="{Binding Symbol.BorderBrush}"
+			StrokeStartLineCap="Round"
+			StrokeThickness="{Binding Symbol.BorderThickness}"
+			StrokeLineJoin="Round"
+			StrokeEndLineCap="Round"
+			Fill="{Binding Symbol.Fill}" >
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Unselected" />
+                    <VisualState x:Name="Selected">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Element"
+								Storyboard.TargetProperty="Fill">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{Binding Symbol.SelectionColor}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Path>
+    </ControlTemplate>
+    
+    <!--Line Symbols-->
+    <ControlTemplate x:Key="LineSymbol">
+        <Path x:Name="Element"
+			Stroke="{Binding Symbol.Color}"
+			StrokeThickness="{Binding Symbol.Width}"
+			StrokeDashCap="Round"
+			StrokeStartLineCap="Round"
+			StrokeLineJoin="Round"
+			StrokeEndLineCap="Round">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Unselected"/>
+                    <VisualState x:Name="Selected">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Element" 
+								Storyboard.TargetProperty="Stroke">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{Binding Symbol.SelectionColor}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Path>
+    </ControlTemplate>
+
+    <!--CartographicLineSymbol-->
+    <ControlTemplate x:Key="CartographicLineSymbol">
+        <Path x:Name="Element"
+			Stroke="{Binding Symbol.Color}"
+			StrokeThickness="{Binding Symbol.Width}"
+			StrokeDashCap="{Binding Symbol.DashCap}"
+			StrokeStartLineCap="{Binding Symbol.StartLineCap}"
+			StrokeLineJoin="{Binding Symbol.LineJoin}"
+			StrokeEndLineCap="{Binding Symbol.EndLineCap}"
+			StrokeDashOffset="{Binding Symbol.DashOffset}"
+			StrokeDashArray="{Binding Path=Symbol.DashArray, Converter={StaticResource doubleCollectionCloner}}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Unselected"/>
+                    <VisualState x:Name="Selected">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Element" 
+								Storyboard.TargetProperty="Stroke">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{Binding Symbol.SelectionColor}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Path>
+    </ControlTemplate>
+
+    <!--ImageFillSymbol-->
+    <ControlTemplate x:Key="ImageFillSymbol" >
+        <Grid Margin="{Binding Path=Symbol.Offset, Converter={StaticResource MarginConverter}}" 
+              RenderTransformOrigin="{Binding Symbol, Converter={StaticResource RenderTransformOriginConverter}}">
+            <!-- Grow on hover -->
+            <Grid.RenderTransform >
+                <ScaleTransform x:Name="HoverScaleTransform" />
+            </Grid.RenderTransform>
+            <!-- Selection flare -->
+            <Grid Margin="-25" 
+                    x:Name="BackgroundElement" IsHitTestVisible="False">
+                <Grid.Background>
+                    <RadialGradientBrush Opacity="0">
+                        <GradientStop Color="#FFE7FF00"/>
+                        <GradientStop Color="#FFE7FF00" Offset="0.362"/>
+                        <GradientStop Color="#FFFF5B00" Offset="0.655"/>
+                        <GradientStop Color="#00FF5B00" Offset="0.805"/>
+                    </RadialGradientBrush>
+                </Grid.Background>
+            </Grid>
+            <!--Image as rectangle fill-->
+            <Rectangle
+                Width="{Binding Symbol.Size}" Height="{Binding Symbol.Size}" Fill="{Binding Symbol.Fill}"
+                Opacity="{Binding Symbol.Opacity}" Cursor="{Binding Symbol.CursorName}"
+                />
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <Storyboard>
+                            <DoubleAnimation BeginTime="00:00:00"
+                             Storyboard.TargetName="HoverScaleTransform"
+                             Storyboard.TargetProperty="ScaleX"
+                             To="1"
+                             Duration="0:0:0.2" />
+                            <DoubleAnimation BeginTime="00:00:00"
+                             Storyboard.TargetName="HoverScaleTransform"
+                             Storyboard.TargetProperty="ScaleY"
+                             To="1"
+                             Duration="0:0:0.2" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation BeginTime="00:00:00"
+                             Storyboard.TargetName="HoverScaleTransform"
+                             Storyboard.TargetProperty="ScaleX"
+                             To="1.25"
+                             Duration="0:0:0.2" />
+                            <DoubleAnimation BeginTime="00:00:00"
+                             Storyboard.TargetName="HoverScaleTransform"
+                             Storyboard.TargetProperty="ScaleY"
+                             To="1.25"
+                             Duration="0:0:0.2" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Selected">
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="BackgroundElement" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <QuarticEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value=".85">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <QuarticEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.7500000" Value="0.6">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseIn"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="BackgroundElement" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Offset)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.121">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <QuarticEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.754">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <QuarticEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.7500000" Value="0.362">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseIn"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="BackgroundElement" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[2].(GradientStop.Offset)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.263">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <QuarticEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0.7630000114440918">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <QuarticEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.7500000" Value="0.655">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseIn"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="BackgroundElement" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[3].(GradientStop.Offset)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0.453">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <QuarticEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.4000000" Value="1">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <QuarticEase EasingMode="EaseOut"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                                <EasingDoubleKeyFrame KeyTime="00:00:00.7500000" Value="0.805">
+                                    <EasingDoubleKeyFrame.EasingFunction>
+                                        <ExponentialEase EasingMode="EaseIn"/>
+                                    </EasingDoubleKeyFrame.EasingFunction>
+                                </EasingDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="BackgroundElement" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+                                <EasingColorKeyFrame KeyTime="00:00:00" Value="#FFE7FF00"/>
+                                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="#FFFFFFFF"/>
+                                <EasingColorKeyFrame KeyTime="00:00:00.7500000" Value="#FFE7FF00"/>
+                            </ColorAnimationUsingKeyFrames>
+                            <ColorAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="BackgroundElement" Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+                                <EasingColorKeyFrame KeyTime="00:00:00" Value="#FFE7FF00"/>
+                                <EasingColorKeyFrame KeyTime="00:00:00.4000000" Value="#FFFFFFFF"/>
+                                <EasingColorKeyFrame KeyTime="00:00:00.7500000" Value="#FFE7FF00"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unselected">
+                        <Storyboard>
+                            <DoubleAnimation BeginTime="00:00:00"
+										Storyboard.TargetName="BackgroundElement"
+										Storyboard.TargetProperty="(Grid.Background).(RadialGradientBrush.Opacity)" 
+										To="0" Duration="00:00:00" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <!--MultiplePathMarkerSymbol-->
+    <ControlTemplate x:Key="MultiplePathMarkerSymbol">
+        <Grid x:Name="RootLayout">
+            <Grid.RenderTransform>
+                <CompositeTransform 
+                    TranslateX="{Binding Symbol.Offset.X}"
+                    TranslateY="{Binding Symbol.Offset.Y}"
+                    ScaleX="{Binding Symbol.(esriMapping:SymbolExtensions.SymbolScaleX)}"
+                    ScaleY="{Binding Symbol.(esriMapping:SymbolExtensions.SymbolScaleY)}"
+                    />
+            </Grid.RenderTransform>
+            <Grid RenderTransformOrigin="{Binding Symbol, Converter={StaticResource RenderTransformOriginConverter}}">
+                <Grid.RenderTransform>
+                    <ScaleTransform x:Name="pictureSymbolScale"/>
+                </Grid.RenderTransform>
+                <Path x:Name="SelectedColorPath" Opacity="{Binding Symbol.Opacity}"
+                        Data="{Binding Path=Symbol.PathData, Converter={StaticResource GeometryConverter}}">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{Binding Symbol.Color.Color}" />
+                    </Path.Fill>
+                </Path>
+                <Path Fill="#00FFFFFF"
+                        Data="{Binding Symbol.PathData1}" />
+                <Path x:Name="SelectedColorPath1" Opacity="{Binding Symbol.Opacity}"
+                        Data="{Binding Symbol.PathData2}">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{Binding Symbol.Color.Color}" />
+                    </Path.Fill>
+                </Path>
+            </Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation BeginTime="00:00:00"
+                                   Storyboard.TargetName="pictureSymbolScale"
+                                   Storyboard.TargetProperty="ScaleX"
+                                   To="1.25"
+                                   Duration="0:0:0.2" />
+                            <DoubleAnimation BeginTime="00:00:00"
+                                   Storyboard.TargetName="pictureSymbolScale"
+                                   Storyboard.TargetProperty="ScaleY"
+                                   To="1.25"
+                                   Duration="0:0:0.2" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Selected">
+                        <Storyboard>
+                            <ColorAnimation BeginTime="00:00:00" Storyboard.TargetName="SelectedColorPath" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" To="Aqua" Duration="0:0:0.2" />
+                            <ColorAnimation BeginTime="00:00:00" Storyboard.TargetName="SelectedColorPath1" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" To="Aqua" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unselected" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+    
+    <!--PathMarkerSymbol-->
+    <ControlTemplate x:Key="PathMarkerSymbol">
+        <Grid x:Name="RootLayout">
+            <Grid.RenderTransform>
+                <CompositeTransform  
+                    TranslateX="{Binding Symbol.Offset.X}"
+                    TranslateY="{Binding Symbol.Offset.Y}"
+                    ScaleX="{Binding Symbol.(esriMapping:SymbolExtensions.SymbolScaleX)}"
+                    ScaleY="{Binding Symbol.(esriMapping:SymbolExtensions.SymbolScaleY)}"/>
+            </Grid.RenderTransform>
+            <Grid RenderTransformOrigin="{Binding Symbol, Converter={StaticResource RenderTransformOriginConverter}}">
+                <Grid.RenderTransform>
+                    <ScaleTransform x:Name="pictureSymbolScale" />
+                </Grid.RenderTransform>
+                <Path x:Name="SelectedColorPath" Opacity="{Binding Symbol.Opacity}" VerticalAlignment="Center"
+                    Data="{Binding Path=Symbol.PathData, Converter={StaticResource GeometryConverter}}">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{Binding Symbol.Color.Color}" />
+                    </Path.Fill>
+                </Path>
+            </Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation BeginTime="00:00:00"
+                                   Storyboard.TargetName="pictureSymbolScale"
+                                   Storyboard.TargetProperty="ScaleX"
+                                   To="1.25"
+                                   Duration="0:0:0.2" />
+                            <DoubleAnimation BeginTime="00:00:00"
+                                   Storyboard.TargetName="pictureSymbolScale"
+                                   Storyboard.TargetProperty="ScaleY"
+                                   To="1.25"
+                                   Duration="0:0:0.2" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="SelectionStates">
+                    <VisualState x:Name="Selected">
+                        <Storyboard>
+                            <ColorAnimation BeginTime="00:00:00" Storyboard.TargetName="SelectedColorPath" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" To="Aqua" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unselected" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>

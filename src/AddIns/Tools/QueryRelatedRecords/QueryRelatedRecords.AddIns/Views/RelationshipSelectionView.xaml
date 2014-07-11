@@ -1,0 +1,218 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="QueryRelatedRecords.AddIns.RelationshipSelectionView"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:esriFS="clr-namespace:ESRI.ArcGIS.Client.FeatureService.Symbols;assembly=ESRI.ArcGIS.Client"
+    xmlns:local="clr-namespace:QueryRelatedRecords.AddIns;assembly=QueryRelatedRecords.AddIns"
+    mc:Ignorable="d" >
+
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <local:StringResourcesManager x:Key="Localization" />            
+            
+            <!-- Style for the Close (X) button displayed in the upper right when viewing the relationship list-->
+            <Style x:Key="CloseButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="Width" Value="20"/>
+                <Setter Property="Height" Value="20"/>
+                <Setter Property="IsTabStop" Value="False"/>
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border
+                                                Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="2">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal">
+                                            <Storyboard>
+                                                <DoubleAnimation BeginTime="00:00:00" 
+                                                        					Storyboard.TargetName="path" 
+                                                        					Storyboard.TargetProperty="Opacity" 
+                                                        					To="1" 
+                                                        					Duration="0:0:0.5" />
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimation BeginTime="00:00:00" 
+                                                        					Storyboard.TargetName="path" 
+                                                        					Storyboard.TargetProperty="Opacity" 
+                                                        					To="0.6" 
+                                                        					Duration="0:0:0.5" >
+                                                    <DoubleAnimation.EasingFunction>
+                                                        <QuarticEase EasingMode="EaseOut"/>
+                                                    </DoubleAnimation.EasingFunction>
+                                                </DoubleAnimation>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To="0.6" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="path" d:IsOptimized="True"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Path x:Name="path" Fill="{TemplateBinding Foreground}"
+                                    Stroke="{TemplateBinding Foreground}" StrokeThickness="2"
+                                                    Width="10"
+                                                    Height="10"
+                                                    Stretch="Fill"
+                                                   >
+                                    <Path.Data>
+                                        <GeometryGroup>
+                                            <LineGeometry StartPoint="2,2" EndPoint="8,8"></LineGeometry>
+                                            <LineGeometry StartPoint="2,8" EndPoint="8,2"></LineGeometry>
+                                        </GeometryGroup>
+                                    </Path.Data>
+                                </Path>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Style for the ListBox. Sets custom colors/opacities for the hovered and selected states of the ListBox -->
+            <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="VerticalContentAlignment" Value="Top"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="TabNavigation" Value="Local"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ListBoxItem">
+                            <Grid Background="{TemplateBinding Background}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To=".25" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="fillColor"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To=".35" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="contentPresenter"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="SelectionStates">
+                                        <VisualState x:Name="Unselected"/>
+                                        <VisualState x:Name="Selected">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To=".45" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="fillColor2"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="FocusVisualElement">
+                                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                                        <DiscreteObjectKeyFrame.Value>
+                                                            <Visibility>Visible</Visibility>
+                                                        </DiscreteObjectKeyFrame.Value>
+                                                    </DiscreteObjectKeyFrame>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Rectangle x:Name="fillColor" Fill="{StaticResource AccentColorBrush}" IsHitTestVisible="False" Opacity="0" RadiusY="1" RadiusX="1"/>
+                                <Rectangle x:Name="fillColor2" Fill="{StaticResource AccentColorBrush}" IsHitTestVisible="False" Opacity="0" RadiusY="1" RadiusX="1"/>
+                                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}"/>
+                                <Rectangle x:Name="FocusVisualElement" RadiusY="1" RadiusX="1" Stroke="{StaticResource AccentColorBrush}" StrokeThickness="1" Visibility="Collapsed"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource BackgroundGradientBrush}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MaxHeight="300" MaxWidth="300">
+        <Grid.Resources>
+            <LinearGradientBrush x:Name="OpacityGradient" StartPoint="0,0.5" EndPoint="1,0.5">
+                <GradientStop Color="White" Offset="0" />
+                <GradientStop Color="#22FFFFFF" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="23"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="60"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Grid.ColumnSpan="3" Height="1" OpacityMask="{StaticResource OpacityGradient}" Fill="Black"/>
+
+        <!-- Heading and number of relationships found -->
+        <TextBlock 
+            Text="{Binding ConverterParameter=SelectRelationship,
+                Converter={StaticResource Localization}}" 
+            Grid.Row="0" FontSize="13" FontWeight="Bold" Grid.ColumnSpan="2"
+            HorizontalAlignment="Left" Padding="3,7,0,0" Grid.RowSpan="2"/>
+        <TextBlock Text="{Binding NumberOfRelationships}" FontSize="11" HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" Grid.Row="1" Margin="11,3,0,0" Padding="2,2,2,2" 
+                   VerticalAlignment="Top" MaxWidth="300" Grid.RowSpan="3"/>
+
+        <!-- Listbox for displaying the list of relationships for a layer. Bound to the RelationshipList variable on the ViewModel-->
+        <ListBox HorizontalAlignment="Stretch" x:Name="RelationshipsListBox" Background="Transparent" BorderBrush="Transparent" Margin="5,2,6,0" ItemsSource="{Binding RelationshipList, Mode=TwoWay}"
+        	VerticalAlignment="Stretch" DisplayMemberPath="Name" MaxWidth="300" FontFamily="SegoeUI" Grid.Row="3" Grid.ColumnSpan="3" ItemContainerStyle="{StaticResource ListBoxItemStyle}">
+        </ListBox>
+
+        <!-- OK button on the list of relationships. Bound to the QueryRelated command on the ViewModel.-->
+        <Button Content="{Binding ConverterParameter=OK,
+                    Converter={StaticResource Localization}}" 
+                Grid.Column="2" Grid.Row="3" HorizontalAlignment="Right" 
+                VerticalAlignment="Bottom" MinWidth="50" Margin="0,0,6,6"
+                Style="{StaticResource GradientButtonStyle}" 
+                Background="{StaticResource AccentColorBrush}" 
+                BorderBrush="{StaticResource AccentTextColorBrush}" 
+                Foreground="{StaticResource AccentTextColorBrush}"
+                Command="{Binding QueryRelated}" CommandParameter="{Binding SelectedItem, ElementName=RelationshipsListBox}" Padding="10,5"/>
+
+        <!-- Back button on the list of relationships. Allows the user to return to the original pop-up window with attributes. Bound to the GoBack command on the ViewModel.-->
+        <Button Content="{Binding ConverterParameter=Back,
+                    Converter={StaticResource Localization}}" 
+                Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" 
+                VerticalAlignment="Bottom"  MinWidth="60" Margin="0,0,0,6"
+                 Style="{StaticResource GradientButtonStyle}" 
+                Background="{StaticResource AccentColorBrush}" 
+                BorderBrush="{StaticResource AccentTextColorBrush}" 
+                Foreground="{StaticResource AccentTextColorBrush}" Command="{Binding GoBack}" Padding="10,5"></Button>
+
+        <!-- Close button on the list of relationships. Allows the user to dismiss the popup window completely. Bound to the CloseRelationshipView command on the ViewModel.-->
+        <Button Style="{StaticResource CloseButtonStyle}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,7,3,0"
+                Command="{Binding CloseRelationshipView}" Grid.RowSpan="2"/>
+    </Grid>
+</UserControl>

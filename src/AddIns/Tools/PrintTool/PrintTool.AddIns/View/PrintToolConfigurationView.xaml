@@ -1,0 +1,519 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl x:Class="PrintTool.AddIns.PrintToolConfigurationView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+			 xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+			 xmlns:local="clr-namespace:PrintTool.AddIns"
+			 mc:Ignorable="d"
+			 d:DesignHeight="480"
+			 d:DesignWidth="500"
+			 FontFamily="Segoe UI"
+			 FontSize="13">
+	<!--================================================
+        RESOURCES
+        Styles, converters, etc used within the view
+        ================================================-->
+	<UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/PrintTool.AddIns;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <!-- object for accessing localized string resources -->
+            <local:ResourceHelper x:Key="Strings" />
+            <!-- converters for manipulating bound values -->
+            <local:ReverseBoolToVisibilityConverter x:Key="ReverseBoolToVisibilityConverter" />
+            <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <local:NotNullToVisibilityConverter x:Key="NotNullToVisibilityConverter" />
+            <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+            <!-- implicit style to allow controls to be visible in dark background -->
+            <Style TargetType="CheckBox">
+                <Setter Property="Foreground"
+					Value="White" />
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="Foreground"
+					Value="Black" />
+            </Style>
+            <sys:Double x:Key="AccentOpacity">0.4</sys:Double>
+        </ResourceDictionary>
+    </UserControl.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" /> <!-- ArcGIS Server Print Service checkbox -->
+			<RowDefinition Height="Auto" /> <!-- Input Parameter Config -->
+			<RowDefinition Height="*" /> <!-- Status -->
+		</Grid.RowDefinitions>
+        
+        <!-- Toggle use of ArcGIS Server print service -->
+        <CheckBox IsChecked="{Binding PrintWithArcGISServer, Mode=TwoWay}"
+                  Cursor="Hand"
+                  Margin="0,0,0,0" >
+            <TextBlock Text="{Binding LocalizedStrings.PrintWithArcGISServerLabel, Source={StaticResource Strings}}"
+					   Margin="0,-2,0,0" />
+        </CheckBox>
+        
+        <!-- Client-Side Printing -->
+		<Grid  Grid.Row="1"
+			   Visibility="{Binding PrintWithArcGISServer, Converter={StaticResource ReverseBoolToVisibilityConverter}}">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <!-- Visible heading -->
+            <TextBlock Text="{Binding LocalizedStrings.VisibleLabel, Source={StaticResource Strings}}"
+					   Margin="3,0,0,0"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"/>
+            
+            <!-- To specify layout default title and its visiblity in the user-end PrintTool-->
+			<TextBlock Text="{Binding LocalizedStrings.TitleLabel, Source={StaticResource Strings}}"
+					   Margin="0,2,0,0"
+					   Grid.Row="1"
+                       VerticalAlignment="Center"/>
+			<TextBox Text="{Binding Title, Mode=TwoWay}"
+                     Grid.Row="1"
+                     Grid.Column="1"
+                     Margin="3,2,0,0"
+					VerticalAlignment="Center"/>
+            <CheckBox IsChecked="{Binding IsTitleVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      Grid.Row="1"
+                      Grid.Column="2"
+                      Margin="3,2,0,0"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"/>
+            
+            <!-- To specify layout default description when ArcGIS 10.1 Server printing is not used -->
+			<TextBlock Text="{Binding LocalizedStrings.DescriptionLabel, Source={StaticResource Strings}}"
+					   Margin="0,5,0,0"
+                       VerticalAlignment="Center"
+					   Grid.Row="2" />
+			<TextBox Text="{Binding Description, Mode=TwoWay}"
+                     Grid.Row="2"
+                     Grid.Column="1"
+                     Margin="3,5,0,0"
+                     VerticalAlignment="Center"/>
+            <CheckBox IsChecked="{Binding IsDescriptionVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      Grid.Row="2"
+                      Grid.Column="2"
+                      Margin="3,5,0,0"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"/>
+
+            <!-- To specify layout copyright -->
+			<TextBlock Text="{Binding LocalizedStrings.CopyrightLabel, Source={StaticResource Strings}}"
+					   Margin="0,5,0,0"
+                       VerticalAlignment="Center"
+					   Grid.Row="3" />
+			<TextBox Text="{Binding CopyrightText, Mode=TwoWay}"
+                     Grid.Row="3"
+                     Grid.Column="1"
+                     Margin="3,5,0,0"
+                     VerticalAlignment="Center" />
+            <CheckBox IsChecked="{Binding IsCopyrightTextVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      Grid.Row="3"
+                      Grid.Column="2"
+                      Margin="3,5,0,0"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"/>
+            
+            <!-- To specify layout default width when ArcGIS 10.1 Server printing is not used -->
+			<TextBlock Text="{Binding LocalizedStrings.WidthLabel, Source={StaticResource Strings}}"
+					   Margin="0,5,0,0"
+                       VerticalAlignment="Center"
+					   Grid.Row="4" />
+			<TextBox Text="{Binding PrintWidthString, Mode=TwoWay, ValidatesOnExceptions=True, NotifyOnValidationError=True}"
+                     Grid.Row="4"
+                     Grid.Column="1"
+                     Margin="3,5,0,0"
+                     VerticalAlignment="Center">
+				<i:Interaction.Behaviors>
+					<local:UpdateBindingOnTextChanged />
+				</i:Interaction.Behaviors>
+			</TextBox>
+            <CheckBox IsChecked="{Binding IsWidthVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      Grid.Row="4"
+                      Grid.Column="2"
+                      Margin="3,5,0,0"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"/>
+            
+            <!-- To specify layout default height when ArcGIS 10.1 Server printing is not used -->
+			<TextBlock Text="{Binding LocalizedStrings.HeightLabel, Source={StaticResource Strings}}"
+					   Margin="0,5,0,0"
+                       VerticalAlignment="Center"
+					   Grid.Row="5" />
+			<TextBox Text="{Binding PrintHeightString, Mode=TwoWay, ValidatesOnExceptions=True, NotifyOnValidationError=True}"
+                     Grid.Row="5"
+                     Grid.Column="1"
+                     Margin="3,5,0,0"
+                     VerticalAlignment="Center">
+				<i:Interaction.Behaviors>
+					<local:UpdateBindingOnTextChanged />
+				</i:Interaction.Behaviors>
+			</TextBox>
+            <CheckBox IsChecked="{Binding IsHeightVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Margin="3,5,0,0"
+                      Grid.Row="5"
+                      Grid.Column="2"/>
+            
+            <!-- To specify the default layout when ArcGIS 10.1 Server printing is not used -->
+			<TextBlock Text="{Binding LocalizedStrings.LayoutLabel, Source={StaticResource Strings}}"
+					   Margin="0,5,0,0"
+                       VerticalAlignment="Center"
+					   Grid.Row="6" />
+			<Grid Grid.Row="6"
+				  Grid.Column="1"
+                  Margin="3,5,0,0">
+				<Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<TextBox Text="{Binding PrintLayout.DisplayName}"
+						 IsEnabled="False"
+                         VerticalAlignment="Center"/>
+				<Button Content="{Binding LocalizedStrings.LoadLabel, Source={StaticResource Strings}}"
+						Command="{Binding Load}"
+						Grid.Column="1"
+                        Margin="3,0,0,0"
+                        VerticalAlignment="Stretch"
+                        Style="{StaticResource GradientButtonStyle}"
+                        Foreground="{StaticResource DesignHostAccentTextBrush}" 
+                        Background="{StaticResource DesignHostAccentBrush}" 
+                        BorderBrush="{StaticResource DesignHostAccentTextBrush}"/>
+            </Grid>
+            <CheckBox IsChecked="{Binding IsPrintLayoutVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center"
+                      Margin="3,5,0,0"
+                      Grid.Row="6"
+                      Grid.Column="2"/>
+        </Grid>
+
+        <!-- Printing with ArcGIS Server -->
+        <Grid Grid.Row="1"
+			  Visibility="{Binding PrintWithArcGISServer, Converter={StaticResource BoolToVisibilityConverter}}"
+              Margin="0,8,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- To specify ArcGIS 10.1 Server Task URL REST endpoint -->
+            <Grid Grid.ColumnSpan="3"
+				  Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" /> <!-- label for Task URL textbox -->
+                    <RowDefinition Height="Auto" /> <!-- Task URL textbox and Connect button -->
+                    <RowDefinition Height="Auto" /> <!-- use proxy checkbox -->
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="TaskUrlLabel"
+						   Text="{Binding LocalizedStrings.TaskUrlLabel, Source={StaticResource Strings}}"
+						   Grid.Row="0" />
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Text="{Binding PrintTaskURL, Mode=TwoWay}"
+						 VerticalAlignment="Stretch"
+						 HorizontalAlignment="Stretch">
+                        <i:Interaction.Behaviors>
+                            <local:UpdateBindingOnTextChanged />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                    <Button Content="{Binding LocalizedStrings.ConnectLabel, Source={StaticResource Strings}}"
+                            Margin="3,0,0,0"
+						    Command="{Binding Load}"
+						    Padding="10,5,10,5"
+                            VerticalAlignment="Stretch"
+						    Grid.Column="1"
+                            Style="{StaticResource GradientButtonStyle}"
+                            Foreground="{StaticResource DesignHostAccentTextBrush}" 
+                            Background="{StaticResource DesignHostAccentBrush}" 
+                            BorderBrush="{StaticResource DesignHostAccentTextBrush}"/>
+                </Grid>
+                <CheckBox IsChecked="{Binding UseProxy, Mode=TwoWay}"
+                          Content="{Binding LocalizedStrings.UseProxy, Source={StaticResource Strings}}"
+						  Cursor="Hand"
+						  Foreground="{Binding Foreground, ElementName=TaskUrlLabel}"
+						  Grid.Row="2"
+						  Margin="0,3,0,0" />
+            </Grid>
+
+            <!-- Visible heading -->
+            <TextBlock Text="{Binding LocalizedStrings.VisibleLabel, Source={StaticResource Strings}}"
+					   Margin="3,5,0,0"
+                       Grid.Row="1"
+                       Grid.Column="2"
+                       VerticalAlignment="Center"/>
+
+            <!-- To specify layout default title and its visiblity in the user-end PrintTool-->
+            <TextBlock Text="{Binding LocalizedStrings.TitleLabel, Source={StaticResource Strings}}"
+                       VerticalAlignment="Center"
+					   Margin="0,2,0,0"
+					   Grid.Row="2" />
+            <TextBox Text="{Binding Title, Mode=TwoWay}"                         
+                     Margin="3,2,0,0"
+                     VerticalAlignment="Center"
+                     Grid.Row="2"
+                     Grid.Column="1" />
+            <CheckBox IsChecked="{Binding IsTitleVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      Margin="3,2,0,0" 
+                      Grid.Row="2"
+                      Grid.Column="2"/>
+
+            <!-- To specify layout default author and its visibility in the user-end PrintTool -->
+            <TextBlock Text="{Binding LocalizedStrings.AuthorLabel, Source={StaticResource Strings}}"
+					   Margin="0,5,0,0"
+                       VerticalAlignment="Center"
+					   Grid.Row="3" />
+            <TextBox Text="{Binding Author, Mode=TwoWay}"
+                     Margin="3,5,0,0"
+                     VerticalAlignment="Center"
+                     Grid.Column="1" 
+                     Grid.Row="3"/>
+            <CheckBox IsChecked="{Binding IsAuthorVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      Margin="3,5,0,0"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      Grid.Row="3"
+                      Grid.Column="2"/>
+
+            <!-- To specify layout copyright -->
+            <TextBlock Text="{Binding LocalizedStrings.CopyrightLabel, Source={StaticResource Strings}}"
+					   Margin="0,5,0,0"
+                       VerticalAlignment="Center"
+					   Grid.Row="4" />
+            <TextBox Text="{Binding CopyrightText, Mode=TwoWay}"
+                     Margin="3,5,0,0"
+                     VerticalAlignment="Center"
+                     Grid.Row="4"
+                     Grid.Column="1" />
+            <CheckBox IsChecked="{Binding IsCopyrightTextVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      Margin="3,5,0,0"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      Grid.Row="4"
+                      Grid.Column="2"/>
+
+            <!-- To specify DPI -->
+            <TextBlock Text="{Binding LocalizedStrings.DpiLabel, Source={StaticResource Strings}}"
+					   Margin="0,5,0,0"
+                       VerticalAlignment="Center"
+					   Grid.Row="5" />
+            <TextBox Text="{Binding DpiString, Mode=TwoWay, ValidatesOnExceptions=True, NotifyOnValidationError=True}"
+                     Margin="3,5,0,0"
+                     VerticalAlignment="Center"
+                     Grid.Row="5"
+                     Grid.Column="1">
+                <i:Interaction.Behaviors>
+                    <local:UpdateBindingOnTextChanged />
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <CheckBox IsChecked="{Binding IsDpiVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      Margin="3,5,0,0"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      Grid.Row="5"
+                      Grid.Column="2"/>
+
+            <!-- To contain ArcGIS 10.1 server pre-defined choice list for LayoutTemplates, default selection and its visibility in the user-end PrintTool -->
+            <TextBlock Text="{Binding LocalizedStrings.LayoutTemplatesLabel, Source={StaticResource Strings}}"
+					   Margin="0,5,0,0"
+                       VerticalAlignment="Center"
+					   Grid.Row="6" />
+            <ComboBox  ItemsSource="{Binding LayoutTemplates}"
+                       SelectedItem="{Binding LayoutTemplate, Mode=TwoWay}"
+                       Margin="3,5,0,0"
+                       VerticalAlignment="Center"
+                       Grid.Row="6"
+                       Grid.Column="1" />
+            <CheckBox IsChecked="{Binding IsLayoutTemplatesVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      Margin="3,5,0,0"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      Grid.Row="6"
+                      Grid.Column="2"/>
+
+            <!-- To contain ArcGIS 10.1 server pre-defined choice list for Formats, default selection and its visibility in the user-end PrintTool -->
+            <TextBlock Text="{Binding LocalizedStrings.FormatsLabel, Source={StaticResource Strings}}"
+					   Margin="0,5,0,0"
+                       VerticalAlignment="Center"
+					   Grid.Row="7" />
+            <ComboBox  ItemsSource="{Binding Formats}"
+                       SelectedItem="{Binding Format, Mode=TwoWay}"
+                       Margin="3,5,0,0"
+                       VerticalAlignment="Center"
+                       Grid.Row="7"
+                       Grid.Column="1" />
+            <CheckBox IsChecked="{Binding IsFormatsVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      Margin="3,5,0,0"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      Grid.Row="7"
+                      Grid.Column="2"/>
+
+            <!-- To enable use of current or a specified map scale and its visibility in the user-end PrintTool -->
+            <CheckBox Margin="0,5,0,0"
+                      Cursor="Hand"
+					  IsChecked="{Binding UseScale, Mode=TwoWay}"
+                      VerticalAlignment="Center"
+					  Grid.Row="8">
+                <TextBlock Text="{Binding LocalizedStrings.UseScaleLabel, Source={StaticResource Strings}}"
+                           Margin="0,-2,0,0"/>
+            </CheckBox>
+
+            <TextBox IsEnabled="{Binding UseScale}"
+                     Text="{Binding MapScaleString, Mode=TwoWay, ValidatesOnExceptions=True, NotifyOnValidationError=True}"
+                     Margin="3,5,0,0"
+                     VerticalAlignment="Center"
+                     Grid.Row="8"
+                     Grid.Column="1">
+                <i:Interaction.Behaviors>
+                    <local:UpdateBindingOnTextChanged />
+                </i:Interaction.Behaviors>
+            </TextBox>
+            <CheckBox IsChecked="{Binding IsUseScaleVisible, Mode=TwoWay}"
+                      Cursor="Hand"
+                      Margin="3,5,0,0"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center"
+                      Grid.Row="8"
+                      Grid.Column="2"/>
+        </Grid>
+
+        <!-- Status -->
+        <ScrollViewer
+            Margin="0,10,0,0"
+			Visibility="{Binding PrintWithArcGISServer, Converter={StaticResource BoolToVisibilityConverter}}"
+			Grid.Row="2"
+			VerticalAlignment="Top"
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollBarVisibility="Auto"
+            Style="{StaticResource ThinBarScrollViewerStyle}">
+            <Grid >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <!-- Operation status/instructions -->
+                    <RowDefinition Height="Auto" />
+                    <!-- Busy indicator or error details header -->
+                    <RowDefinition Height="Auto" />
+                    <!-- Error details -->
+                </Grid.RowDefinitions>
+                <!-- ================================ 
+                     ROW 1 - STATUS/INSTRUCTIONS 
+                     ================================ -->
+                <!-- Ordinary status/instructions -->
+                <TextBlock Text="{Binding Status}"
+					       Visibility="{Binding Error, 
+                        Converter={StaticResource NullToVisibilityConverter}}"
+					       TextWrapping="Wrap"
+					       FontFamily="Segoe UI"
+					       FontSize="13"
+					       FontStyle="Italic"
+					       Opacity="0.7" />
+                <!-- Failure notification -->
+                <TextBlock Text="{Binding LocalizedStrings.LoadFailed,
+                        Source={StaticResource Strings}}"
+					       Visibility="{Binding Error, 
+                        Converter={StaticResource NotNullToVisibilityConverter}}"
+					       TextWrapping="Wrap"
+					       FontFamily="Segoe UI"
+					       FontSize="13"
+					       FontStyle="Italic"
+					       Opacity="0.7" />
+                <!-- ================================================ 
+                     ROW 2 - BUSY INDICATOR / ERROR DETAILS HEADER
+                     ================================================-->
+                <!-- Busy indicator.  Is only visible when Error is null and IsBusy is true. -->
+                <Grid Grid.Row="1"
+				      Visibility="{Binding Error, 
+                        Converter={StaticResource NullToVisibilityConverter}}">
+                    <ProgressBar Visibility="{Binding IsBusy,
+                            Converter={StaticResource BoolToVisibilityConverter}}"
+							     Margin="0,5,0,0"
+							     HorizontalAlignment="Left"
+							     IsIndeterminate="True"
+							     Height="18"
+							     Width="200" />
+                </Grid>
+                <!-- Error details header -->
+                <ToggleButton x:Name="ErrorDetailsButton"
+						      Content="{Binding LocalizedStrings.ErrorDetails,
+                        Source={StaticResource Strings}}"
+						      Visibility="{Binding Error, 
+                        Converter={StaticResource NotNullToVisibilityConverter}}"
+						      Margin="0,4,0,0"
+						      Padding="0"
+						      Style="{StaticResource ExpanderToggleButtonStyle}"
+						      FontFamily="Segoe UI"
+						      FontSize="13"
+						      Foreground="White"
+						      Opacity="{StaticResource AccentOpacity}"
+						      Grid.Row="1" />
+                <!-- ========================= 
+                     ROW 3 - ERROR DETAILS 
+                     ========================= -->
+                <TextBlock Text="{Binding Error.Message}"
+					       Visibility="{Binding IsChecked, ElementName=ErrorDetailsButton,
+                        Converter={StaticResource BoolToVisibilityConverter}}"
+					       Margin="0,2,0,0"
+					       TextWrapping="Wrap"
+					       FontFamily="Segoe UI"
+					       FontSize="12"
+					       FontStyle="Italic"
+					       Opacity="{StaticResource AccentOpacity}"
+					       Grid.Row="2" />
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

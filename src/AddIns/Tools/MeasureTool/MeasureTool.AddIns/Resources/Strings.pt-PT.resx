@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AreaLabelFormat" xml:space="preserve">
+    <value>Área: {0}</value>
+  </data>
+  <data name="DrawClickContinue" xml:space="preserve">
+    <value>Clique para colocar outro ponto</value>
+  </data>
+  <data name="LengthLabelFormat" xml:space="preserve">
+    <value>Comprimento: {0}</value>
+  </data>
+  <data name="MeasureLabelArea" xml:space="preserve">
+    <value>Área:</value>
+  </data>
+  <data name="MeasureLabelClickFeature" xml:space="preserve">
+    <value>Clique num elemento da camada {0}</value>
+  </data>
+  <data name="MeasureLabelFeaturesMap" xml:space="preserve">
+    <value>Selecione elementos a medir</value>
+  </data>
+  <data name="MeasureLabelLatitude" xml:space="preserve">
+    <value>Latitude:</value>
+  </data>
+  <data name="MeasureLabelLength" xml:space="preserve">
+    <value>Comprimento:</value>
+  </data>
+  <data name="MeasureLabelLongitude" xml:space="preserve">
+    <value>Longitude:</value>
+  </data>
+  <data name="MeasureLabelMeasurements" xml:space="preserve">
+    <value>Medições</value>
+  </data>
+  <data name="MeasureLabelPerimeter" xml:space="preserve">
+    <value>Perímetro:</value>
+  </data>
+  <data name="MeasureLabelShapesDraw" xml:space="preserve">
+    <value>Desenhe formas para medir</value>
+  </data>
+  <data name="MeasurementFormat" xml:space="preserve">
+    <value>{0:0,0.0000} {1}</value>
+  </data>
+  <data name="MeasureTitle" xml:space="preserve">
+    <value>Medir</value>
+  </data>
+  <data name="MeasureToolCategory" xml:space="preserve">
+    <value>Análise</value>
+  </data>
+  <data name="MeasureToolDescription" xml:space="preserve">
+    <value>Obter medições a partir de elementos existentes ou desenhando no mapa</value>
+  </data>
+  <data name="NoFeaturesFound" xml:space="preserve">
+    <value>Nenhum elemento encontrado.  Tente novamente ou escolha uma camada diferente.</value>
+  </data>
+  <data name="PerimeterLabelFormat" xml:space="preserve">
+    <value>Perímetro: {0}</value>
+  </data>
+  <data name="ProjectInputsNotValid" xml:space="preserve">
+    <value>A geometria de destino, referência espacial de output e o URL para um serviço de geometria devem ser definidos</value>
+  </data>
+  <data name="QueryFailed" xml:space="preserve">
+    <value>Falha na Consulta: {0}</value>
+  </data>
+  <data name="RadiusLabelFormat" xml:space="preserve">
+    <value>Raio: {0}</value>
+  </data>
+  <data name="SegmentLengthLabelFormat" xml:space="preserve">
+    <value>Segmento: {0}</value>
+  </data>
+  <data name="SimplifyFailed" xml:space="preserve">
+    <value>Falha ao simplificar a geometria utilizando {0}.  Erro:
+{1}</value>
+  </data>
+  <data name="SimplifyInputsNotValid" xml:space="preserve">
+    <value>A geometria de destino e o URL para um serviço de geometria devem ser definidos</value>
+  </data>
+  <data name="TooltipCircle" xml:space="preserve">
+    <value>Círculo</value>
+  </data>
+  <data name="TooltipEllipse" xml:space="preserve">
+    <value>Elipse</value>
+  </data>
+  <data name="TooltipFreehandLine" xml:space="preserve">
+    <value>Linha À Mão Livre</value>
+  </data>
+  <data name="TooltipFreehandPolygon" xml:space="preserve">
+    <value>Polígono À Mão Livre</value>
+  </data>
+  <data name="TooltipPoint" xml:space="preserve">
+    <value>Ponto</value>
+  </data>
+  <data name="TooltipPolygon" xml:space="preserve">
+    <value>Polígono</value>
+  </data>
+  <data name="TooltipPolyline" xml:space="preserve">
+    <value>Linha</value>
+  </data>
+  <data name="TooltipRectangle" xml:space="preserve">
+    <value>Retângulo</value>
+  </data>
+  <data name="TotalLengthLabelFormat" xml:space="preserve">
+    <value>Total: {0}</value>
+  </data>
+  <data name="UnitsAcres" xml:space="preserve">
+    <value>Acres</value>
+  </data>
+  <data name="UnitsCentimeters" xml:space="preserve">
+    <value>Centímetros</value>
+  </data>
+  <data name="UnitsFeet" xml:space="preserve">
+    <value>Pés</value>
+  </data>
+  <data name="UnitsHectares" xml:space="preserve">
+    <value>Hectares</value>
+  </data>
+  <data name="UnitsInches" xml:space="preserve">
+    <value>Polegadas</value>
+  </data>
+  <data name="UnitsKilometers" xml:space="preserve">
+    <value>Quilómetros</value>
+  </data>
+  <data name="UnitsMeters" xml:space="preserve">
+    <value>Metros</value>
+  </data>
+  <data name="UnitsMiles" xml:space="preserve">
+    <value>Milhas</value>
+  </data>
+  <data name="UnitsNauticalMiles" xml:space="preserve">
+    <value>Milhas Náuticas</value>
+  </data>
+  <data name="UnitsSquareFeet" xml:space="preserve">
+    <value>Pés Quadrados</value>
+  </data>
+  <data name="UnitsSquareKilometers" xml:space="preserve">
+    <value>Quilómetros Quadrados</value>
+  </data>
+  <data name="UnitsSquareMeters" xml:space="preserve">
+    <value>Metros Quadrados</value>
+  </data>
+  <data name="UnitsSquareMiles" xml:space="preserve">
+    <value>Milhas Quadradas</value>
+  </data>
+  <data name="UnitsYards" xml:space="preserve">
+    <value>Jardas</value>
+  </data>
+  <data name="DrawClickContinueDoubleClickFinish" xml:space="preserve">
+    <value>Clique para colocar outro ponto ou clique duas vezes para finalizar</value>
+  </data>
+  <data name="DrawClickDrag" xml:space="preserve">
+    <value>Clique e arraste para iniciar o desenho</value>
+  </data>
+  <data name="DrawClickStart" xml:space="preserve">
+    <value>Clique para colocar o primeiro ponto</value>
+  </data>
+  <data name="DrawReleaseFinish" xml:space="preserve">
+    <value>Solte o botão do rato para finalizar o desenho</value>
+  </data>
+  <data name="DrawShapePoint" xml:space="preserve">
+    <value>Clique para desenhar um ponto</value>
+  </data>
+  <data name="StatusCalculateCompleteDrawAgain" xml:space="preserve">
+    <value>Cálculo completo.  Desenhe para medir novamente.</value>
+  </data>
+  <data name="StatusCalculating" xml:space="preserve">
+    <value>A calcular...</value>
+  </data>
+  <data name="StatusClickShapeButton" xml:space="preserve">
+    <value>Selecione uma forma para desenhar</value>
+  </data>
+  <data name="StatusDrawing" xml:space="preserve">
+    <value>A desenhar...</value>
+  </data>
+  <data name="StatusDrawShape" xml:space="preserve">
+    <value>Desenhe uma forma no mapa</value>
+  </data>
+  <data name="MeasureLabelClickAnotherFeature" xml:space="preserve">
+    <value>Clique noutro elemento para novas medições</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>Camada:</value>
+  </data>
+  <data name="SubLayerPrompt" xml:space="preserve">
+    <value>Subcamadas:</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>Detalhes</value>
+  </data>
+  <data name="MeasureFailed" xml:space="preserve">
+    <value>Falha na operação Medir</value>
+  </data>
+  <data name="UnsupportedLayerType" xml:space="preserve">
+    <value>Tipo de camada não suportada para selecionar elementos</value>
+  </data>
+  <data name="GeometryServiceNotSpecified" xml:space="preserve">
+    <value>Um URL para um serviço de geometria deve ser definido para medir geometrias que exigem reprojeção</value>
+  </data>
+  <data name="NoProjectionResults" xml:space="preserve">
+    <value>Falha ao projetar a geometria para WGS 84. Nenhum resultado retornado de {0}.</value>
+  </data>
+  <data name="ProjectFailure" xml:space="preserve">
+    <value>Falha ao projetar a geometria para WGS 84 utilizando {0}.  Erro:
+{1}</value>
+  </data>
+  <data name="ConverterCannotConvertBack" xml:space="preserve">
+    <value>A conversão não pode ser revertida</value>
+  </data>
+  <data name="DrawPopupBehaviorNoMap" xml:space="preserve">
+    <value>DrawPopupBehavior pode ser anexado apenas para Desenhar objetos que estão associados a um Mapa</value>
+  </data>
+  <data name="MeasureUnsupportedGeometryType" xml:space="preserve">
+    <value>Tipo de geometria não suportado para a operação Medir</value>
+  </data>
+  <data name="NonClientSpatialRef" xml:space="preserve">
+    <value>Cálculo suportado apenas em geometrias com a referência espacial Web Mercator ou WGS84</value>
+  </data>
+</root>

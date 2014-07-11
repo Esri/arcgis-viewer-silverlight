@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFeatureLayer" xml:space="preserve">
+    <value>Lisa objektikihid</value>
+  </data>
+  <data name="AddFeatureLayerWindowCheckAll" xml:space="preserve">
+    <value>Märgi kõik sisse</value>
+  </data>
+  <data name="AddFeatureLayerWindowUnCheckAll" xml:space="preserve">
+    <value>Märgi kõik välja</value>
+  </data>
+  <data name="ArcGIS" xml:space="preserve">
+    <value>ArcGIS</value>
+  </data>
+  <data name="BackStageControlFeatureMaps" xml:space="preserve">
+    <value>Esiletoodud kaardid</value>
+  </data>
+  <data name="BackStageControlGroups" xml:space="preserve">
+    <value>Grupid</value>
+  </data>
+  <data name="BackStageControlMyGroups" xml:space="preserve">
+    <value>Minu grupid</value>
+  </data>
+  <data name="BackStageControlMyOrgGroups" xml:space="preserve">
+    <value>Minu organisatsiooni grupid</value>
+  </data>
+  <data name="BackStageControlMyOrgPublicGroups" xml:space="preserve">
+    <value>Minu organisatsiooni avalikud grupid</value>
+  </data>
+  <data name="BackStageControlMyMaps" xml:space="preserve">
+    <value>Minu kaardid</value>
+  </data>
+  <data name="BackStageControlSearch" xml:space="preserve">
+    <value>Otsi</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>Klikka siia, et vaadata kirjeldust eraldi brauseriaknas</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>Sulge detailid</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Kommentaarid</value>
+  </data>
+  <data name="ContentEveryone" xml:space="preserve">
+    <value>igaühele</value>
+  </data>
+  <data name="ContentGroups" xml:space="preserve">
+    <value>grupile</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Loodud</value>
+  </data>
+  <data name="DefineQueryWindowAlias" xml:space="preserve">
+    <value>Alias:</value>
+  </data>
+  <data name="DefineQueryWindowAnd" xml:space="preserve">
+    <value>ja</value>
+  </data>
+  <data name="DefineQueryWindowApply" xml:space="preserve">
+    <value>Kehtesta</value>
+  </data>
+  <data name="DefineQueryWindowClickPickDate" xml:space="preserve">
+    <value>Klikka formatitud andmete valimiseks, et kasutada neid avaldises.</value>
+  </data>
+  <data name="DefineQueryWindowData" xml:space="preserve">
+    <value>Andmed</value>
+  </data>
+  <data name="DefineQueryWindowExpression" xml:space="preserve">
+    <value>Avaldis:</value>
+  </data>
+  <data name="DefineQueryWindowFailedToRetrieveSampleFeaturesForLayer" xml:space="preserve">
+    <value>Kihist näidisobjektide hankimine ebaõnnestus.</value>
+  </data>
+  <data name="DefineQueryWindowFields" xml:space="preserve">
+    <value>Väljad:</value>
+  </data>
+  <data name="DefineQueryWindowLike" xml:space="preserve">
+    <value>like</value>
+  </data>
+  <data name="DefineQueryWindowName" xml:space="preserve">
+    <value>Nimi:</value>
+  </data>
+  <data name="DefineQueryWindowNot" xml:space="preserve">
+    <value>not</value>
+  </data>
+  <data name="DefineQueryWindowOr" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="DefineQueryWindowQuery" xml:space="preserve">
+    <value>Päring</value>
+  </data>
+  <data name="DefineQueryWindowTableIsSampleOfFeatureLayer" xml:space="preserve">
+    <value>Järgnev tabel on näidis objektidest vastavas kihis.</value>
+  </data>
+  <data name="DefineQueryWindowType" xml:space="preserve">
+    <value>Tüüp:</value>
+  </data>
+  <data name="DescriptionForMapCanotBeDisplayed" xml:space="preserve">
+    <value>Antud kaardi kohta käivat kirjeldust ei saa selles aknas kuvada.</value>
+  </data>
+  <data name="ExceptionDeleteFailed" xml:space="preserve">
+    <value>Kustutamine nurjus</value>
+  </data>
+  <data name="ExceptionDeleteFailedUserSignIn" xml:space="preserve">
+    <value>Kustutamine nurjus. Kasutaja ei ole sisse logitud.</value>
+  </data>
+  <data name="ExceptionFaileAcceptApplicateForGroup" xml:space="preserve">
+    <value>Ebaõnnestunud taotluse kinnitamine {0} grupile {1}</value>
+  </data>
+  <data name="ExceptionFaileDeclineApplicateForGroup" xml:space="preserve">
+    <value>Ebaõnnestunud taotluse tagasilükkamine {0} grupile {1}</value>
+  </data>
+  <data name="ExceptionFailedInviteUserToGroup" xml:space="preserve">
+    <value>Ebaõnnestunud kasutajate {0} kutsumine gruppi {1}</value>
+  </data>
+  <data name="ExceptionFailedLeaveRequestForGroup" xml:space="preserve">
+    <value>Ebaõnnestunud taotluse jätmine kasutajale {0} grupist {1}</value>
+  </data>
+  <data name="ExceptionFailedSendJoinRequestToGroup" xml:space="preserve">
+    <value>Ebaõnnestunud ühinemise saatmine kasutajale {0} grupis {1}</value>
+  </data>
+  <data name="ExceptionFailedToAcceptGroupInvitationForGroup" xml:space="preserve">
+    <value>Ebaõnnestunud grupi kutsumise kinnitamine gruppi {0} : {1}</value>
+  </data>
+  <data name="ExceptionFailedToCreateGroup" xml:space="preserve">
+    <value>Grupi loomine ei õnnestu.</value>
+  </data>
+  <data name="ExceptionFailedToDeclineGroupInvitationForGroup" xml:space="preserve">
+    <value>Ebaõnnestunud grupi kutsumine gruppi {0} grupi {1} poolt</value>
+  </data>
+  <data name="ExceptionFailedToDeleteGroup" xml:space="preserve">
+    <value>Grupi {0} kustutamine ei õnnestu.</value>
+  </data>
+  <data name="ExceptionFailedToDeleteNoitification" xml:space="preserve">
+    <value>Märkuse kustutamine {0} : {1} poolt ei õnnestu</value>
+  </data>
+  <data name="ExceptionFailedToGetGroupApplicationsForGroup" xml:space="preserve">
+    <value>Grupi rakenduste hankimine grupile {0} nurjus</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveTagForUser" xml:space="preserve">
+    <value>Märksõnade hankimine kasutajale {0} nurjus</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveOrgGroups" xml:space="preserve">
+    <value>Organisatsiooni gruppide hankimine nurjus</value>
+  </data>
+  <data name="ExceptionFailedToShareItem" xml:space="preserve">
+    <value>Sisu {0} jagamine nurjus</value>
+  </data>
+  <data name="ExceptionFailedToUpdateGroup" xml:space="preserve">
+    <value>Võimetu uuendama gruppi {0}</value>
+  </data>
+  <data name="ExceptionGetCommentsFailed" xml:space="preserve">
+    <value>Kommentaaride saamine nurjus.</value>
+  </data>
+  <data name="ExceptionGetFolderFailedUserSignedIn" xml:space="preserve">
+    <value>GetFolder nurjus. Kasutaja ei ole sisse logitud.</value>
+  </data>
+  <data name="ExceptionNoUserSignedIn" xml:space="preserve">
+    <value>Kasutaja ei ole sisse logitud.</value>
+  </data>
+  <data name="ExceptionSignInFailed" xml:space="preserve">
+    <value>Sisse logimine nurjus.</value>
+  </data>
+  <data name="FeatureMapsControlCloseParenthesis" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="FeatureMapsControlDetails" xml:space="preserve">
+    <value>Detailid</value>
+  </data>
+  <data name="FeatureMapsControlLastModified" xml:space="preserve">
+    <value>(viimati muudetud: </value>
+  </data>
+  <data name="FeatureMapsControlOpen" xml:space="preserve">
+    <value>Ava</value>
+  </data>
+  <data name="GroupControlClickHereToViewInSeparateBrowser" xml:space="preserve">
+    <value>Klikka siia, et vaadata kirjeldust eraldi brauseriaknas</value>
+  </data>
+  <data name="GroupControlCloseGroup" xml:space="preserve">
+    <value>Sulge see grupp</value>
+  </data>
+  <data name="GroupControlDescription" xml:space="preserve">
+    <value>Kirjeldus</value>
+  </data>
+  <data name="GroupControlFeaturedMaps" xml:space="preserve">
+    <value>Esiletoodud kaardid</value>
+  </data>
+  <data name="GroupControlNoFeaturedMapsFound" xml:space="preserve">
+    <value>Esiletoodud kaarte ei leitud</value>
+  </data>
+  <data name="GroupControlNoMapsFound" xml:space="preserve">
+    <value>Kaarte ei leitud.</value>
+  </data>
+  <data name="GroupControlOwner" xml:space="preserve">
+    <value>Omanik</value>
+  </data>
+  <data name="GroupControlPrivateUserCannotFindGroup" xml:space="preserve">
+    <value>Privaatne (kasutajad ei saa otsida gruppi ning saavad ühineda vaid kutse alusel)</value>
+  </data>
+  <data name="GroupControlPublicUserCanSearchAndFindGroup" xml:space="preserve">
+    <value>Avalik (kasutajad saavad otsida gruppi)</value>
+  </data>
+  <data name="GroupControlSearchOwner" xml:space="preserve">
+    <value>omanik: {0}</value>
+  </data>
+  <data name="GroupControlTags" xml:space="preserve">
+    <value>Märksõnad</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Grupid</value>
+  </data>
+  <data name="HighestRated" xml:space="preserve">
+    <value>Kõrgeimalt hinnatud</value>
+  </data>
+  <data name="ItemNotFound" xml:space="preserve">
+    <value>Sisu ei leitud: {0}</value>
+  </data>
+  <data name="LastModified" xml:space="preserve">
+    <value>Viimati muudetud</value>
+  </data>
+  <data name="MapDetailsRating" xml:space="preserve">
+    <value>({0} hinnangut)</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Kaardid</value>
+  </data>
+  <data name="MapServiceReferenceInvalid" xml:space="preserve">
+    <value>Kaarditeenuse referents on vigane. Teenust ei saa kaardile lisada.</value>
+  </data>
+  <data name="MapServiceReferenceNoDetails" xml:space="preserve">
+    <value>Kaarditeenuse referents on vigane. Detaile ei saa kuvada.</value>
+  </data>
+  <data name="MostComments" xml:space="preserve">
+    <value>Enim kommentaare</value>
+  </data>
+  <data name="MostPopular" xml:space="preserve">
+    <value>Kõige populaarsem</value>
+  </data>
+  <data name="MostRecentlyAdded" xml:space="preserve">
+    <value>Kõige hiljem lisatud</value>
+  </data>
+  <data name="MostRelevant" xml:space="preserve">
+    <value>Kõige asjakohasem</value>
+  </data>
+  <data name="MyGroupControlGroups" xml:space="preserve">
+    <value>{0} gruppi</value>
+  </data>
+  <data name="MyGroupControlOn" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="MyGroupControlOpenGroup" xml:space="preserve">
+    <value>Ava see grupp</value>
+  </data>
+  <data name="MyGroupControlZeroGroups" xml:space="preserve">
+    <value>0 gruppi</value>
+  </data>
+  <data name="MyMapControlMaps" xml:space="preserve">
+    <value>{0} kaarti</value>
+  </data>
+  <data name="MyMapControlZeroMaps" xml:space="preserve">
+    <value>0 kaarti</value>
+  </data>
+  <data name="Places" xml:space="preserve">
+    <value>Paigad</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Omadused</value>
+  </data>
+  <data name="RecentMaps" xml:space="preserve">
+    <value>Hiljutised kaardid</value>
+  </data>
+  <data name="SearchArcGISCom" xml:space="preserve">
+    <value>Otsi ArcGIS Online kaarte, pilte ja objektiteenuseid</value>
+  </data>
+  <data name="SearchControlAdd" xml:space="preserve">
+    <value>Lisa</value>
+  </data>
+  <data name="SearchControlMapServiceFound" xml:space="preserve">
+    <value>Leiti kaarditeenus.</value>
+  </data>
+  <data name="SearchControlResultsFound" xml:space="preserve">
+    <value>{0} tulemust</value>
+  </data>
+  <data name="SearchControlServiceCouldNotBeAccessed" xml:space="preserve">
+    <value>Teenusele ei saa ligi.</value>
+  </data>
+  <data name="SearchControlZeroResultsFound" xml:space="preserve">
+    <value>Leiti 0 tulemust.</value>
+  </data>
+  <data name="SearchDetailsBy" xml:space="preserve">
+    <value>autor:</value>
+  </data>
+  <data name="SearchDetailsRating" xml:space="preserve">
+    <value>Hinnang: </value>
+  </data>
+  <data name="SearchMapResultsFor" xml:space="preserve">
+    <value>{0} tulemust {1}</value>
+  </data>
+  <data name="SearchTheWeb" xml:space="preserve">
+    <value>Otsi kaarditeenuseid veebist</value>
+  </data>
+  <data name="SearchWebDetailsAdd" xml:space="preserve">
+    <value>Lisa</value>
+  </data>
+  <data name="SearchWebDetailsCopyright" xml:space="preserve">
+    <value>Õigused: </value>
+  </data>
+  <data name="SearchWebDetailsDescription" xml:space="preserve">
+    <value>Kirjeldus: </value>
+  </data>
+  <data name="SearchWebDetailsExploreGISServer" xml:space="preserve">
+    <value>Uuri seda GIS serverit</value>
+  </data>
+  <data name="SearchWebDetailsName" xml:space="preserve">
+    <value>Nimi:</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Sorteeri</value>
+  </data>
+  <data name="SortResults" xml:space="preserve">
+    <value>Sorteeri tulemusi</value>
+  </data>
+  <data name="SortSearchResults" xml:space="preserve">
+    <value>Sorteeri otsingutulemusi.</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Kokkuvõte</value>
+  </data>
+  <data name="TheWeb" xml:space="preserve">
+    <value>Veeb</value>
+  </data>
+  <data name="TitleAZ" xml:space="preserve">
+    <value>Pealkiri A-Z</value>
+  </data>
+  <data name="TitleZA" xml:space="preserve">
+    <value>Pealkiri Z-A</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="UserSearchFailed" xml:space="preserve">
+    <value>Kasutaja otsing ebaõnnestus.</value>
+  </data>
+  <data name="BackStageControlRecent" xml:space="preserve">
+    <value>Hiljutine</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Tühista</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Logi sisse</value>
+  </data>
+  <data name="SignInForgotYourPassword" xml:space="preserve">
+    <value>Unustasid parooli?</value>
+  </data>
+  <data name="SignInSignUp" xml:space="preserve">
+    <value>Logi sisse</value>
+  </data>
+  <data name="InvalidIDOrPassword" xml:space="preserve">
+    <value>Vale ID või parool.</value>
+  </data>
+  <data name="NewHere" xml:space="preserve">
+    <value>Oled uus?</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Parool:</value>
+  </data>
+  <data name="UsernamePrompt" xml:space="preserve">
+    <value>Kasutajanimi:</value>
+  </data>
+  <data name="DescriptionForGroupCanotBeDisplayed" xml:space="preserve">
+    <value>Grupi kirjeldust ei saa selles aknas kuvada.</value>
+  </data>
+  <data name="GroupControlOwnerParenthesis" xml:space="preserve">
+    <value>(Omanik)</value>
+  </data>
+  <data name="LastModifiedPrompt" xml:space="preserve">
+    <value>(viimati muudetud:</value>
+  </data>
+  <data name="LastModifiedPromptEnd" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="MapDetailsControlAverageRating" xml:space="preserve">
+    <value>Keskmine hinnang</value>
+  </data>
+  <data name="MapDetailsControlType" xml:space="preserve">
+    <value>Tüüp</value>
+  </data>
+  <data name="OnWithSpace" xml:space="preserve">
+    <value> on </value>
+  </data>
+  <data name="SearchR" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="LoadingMaps" xml:space="preserve">
+    <value>Laadin kaarte...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Eemalda</value>
+  </data>
+  <data name="NoFeaturedMaps" xml:space="preserve">
+    <value>Esiletoodud kaarte ei ole hetkel saadaval</value>
+  </data>
+  <data name="SigningIn" xml:space="preserve">
+    <value>Sisse logimine...</value>
+  </data>
+  <data name="SignInLabel" xml:space="preserve">
+    <value>Logi sisse {0}</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Teenuse detailid</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="NumberResults" xml:space="preserve">
+    <value>({0} tulemust)</value>
+  </data>
+  <data name="ProjectInputsNotValid" xml:space="preserve">
+    <value>Sisendi geomeetria, väljundi koordinaatsüsteem ja URL peavad geomeetriateenuse juures olema määratud</value>
+  </data>
+  <data name="AGOL" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="NoResults" xml:space="preserve">
+    <value>Ühtegi tulemust ei kuvata</value>
+  </data>
+  <data name="SearchPlaces" xml:space="preserve">
+    <value>Otsi aadresse, linnu või teisi paiku</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Aadress</value>
+  </data>
+  <data name="AddressTitleExpression" xml:space="preserve">
+    <value>{Address}</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nimi</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Otsi</value>
+  </data>
+  <data name="SearchCategory" xml:space="preserve">
+    <value>Päring</value>
+  </data>
+  <data name="SearchDescription" xml:space="preserve">
+    <value>Otsi kaardile lisamiseks paiku või sisu</value>
+  </data>
+  <data name="SearchToolName" xml:space="preserve">
+    <value>Otsi</value>
+  </data>
+  <data name="ServiceConnectionFailed" xml:space="preserve">
+    <value>Ühendus teenusega nurjus.  Seda ei saa kaardile lisada.</value>
+  </data>
+  <data name="CannotConvertBack" xml:space="preserve">
+    <value>Ei saa tagasi konverteerida</value>
+  </data>
+  <data name="EmptyGeometryServiceUrl" xml:space="preserve">
+    <value>Geomeetriateenuse URL ei saa olla null või tühi väärtus</value>
+  </data>
+  <data name="EmptyLocatorUrl" xml:space="preserve">
+    <value>Lokaatorteenuse URL ei saa olla null või tühi väärtus</value>
+  </data>
+  <data name="InvalidSearchResultType" xml:space="preserve">
+    <value>Otsingu tulemused peavad olema ArcGISPortalItem, WebSearchResultItem või ArcGISService tüüpi</value>
+  </data>
+  <data name="MustSpecifyExtentFields" xml:space="preserve">
+    <value>Kõik laiendatud väljad peavad olema määratud</value>
+  </data>
+  <data name="NullExtentSpatialRef" xml:space="preserve">
+    <value>Ruumilise viitamise ulatus ei saa olla null</value>
+  </data>
+  <data name="CommandNotExecutable" xml:space="preserve">
+    <value>Käsklus ei ole aktiveeritav</value>
+  </data>
+  <data name="ZeroExtentWidthError" xml:space="preserve">
+    <value>Ulatuse laius peab olema suurem kui null</value>
+  </data>
+  <data name="Searching" xml:space="preserve">
+    <value>Otsin...</value>
+  </data>
+  <data name="IncludedSearches" xml:space="preserve">
+    <value>Kaasa otsinguid:</value>
+  </data>
+  <data name="SearchType" xml:space="preserve">
+    <value>Otsingu tüüp:</value>
+  </data>
+  <data name="SelectSearchTypes" xml:space="preserve">
+    <value>Vali otsingu tüübid, mis hõlmavad</value>
+  </data>
+  <data name="LocatorUrl" xml:space="preserve">
+    <value>Teenuse URL:</value>
+  </data>
+  <data name="Bottom" xml:space="preserve">
+    <value>All:</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Ühenda</value>
+  </data>
+  <data name="ConnectedTo" xml:space="preserve">
+    <value>Ühendatud {0} lokaatorteenusega</value>
+  </data>
+  <data name="ExtentFields" xml:space="preserve">
+    <value>Kasuta ulatuse välju</value>
+  </data>
+  <data name="Left" xml:space="preserve">
+    <value>Vasakul:</value>
+  </data>
+  <data name="Right" xml:space="preserve">
+    <value>Paremal:</value>
+  </data>
+  <data name="Top" xml:space="preserve">
+    <value>Üleval:</value>
+  </data>
+  <data name="ConfigureLocatorService" xml:space="preserve">
+    <value>{0} Otsing: määra lokaatorteenus</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>Ühendan...</value>
+  </data>
+  <data name="ExtentFieldsTooltip" xml:space="preserve">
+    <value>Kasuta välju, et määrata otsinug tulemuste ulatus.  Ulatust kasutatakse tulemusele suumimiseks.</value>
+  </data>
+  <data name="ExtentWidth" xml:space="preserve">
+    <value>Kasuta ulatuse laiust</value>
+  </data>
+  <data name="ExtentWidthInputError" xml:space="preserve">
+    <value>Ulatus peab olema suurem number kui null</value>
+  </data>
+  <data name="ExtentWidthTooltip" xml:space="preserve">
+    <value>Kasuta otsingu tulemuste määramiseks laiust.  Ulatust kasutatakse tulemusele suumimiseks.</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Meetrid</value>
+  </data>
+  <data name="AddSearchError" xml:space="preserve">
+    <value>Otsingu tüüpi ei saa lisada.  Käsklus ei ole aktiveeritav.</value>
+  </data>
+  <data name="ClickConnect" xml:space="preserve">
+    <value>Klikka URL-i kontrollimiseks</value>
+  </data>
+  <data name="ClickNext" xml:space="preserve">
+    <value>Jätkamiseks kliki Next</value>
+  </data>
+  <data name="ConfigureResultExtent" xml:space="preserve">
+    <value>{0} Otsing: vali kuidas suumida igale tulemusele</value>
+  </data>
+  <data name="EnterLocatorUrl" xml:space="preserve">
+    <value>Sisesta URL ArcGIS Server lokaatorteenuse tarbeks</value>
+  </data>
+  <data name="LocatorConnectionFailed" xml:space="preserve">
+    <value>Ühendus nurjus.  Kontrolli URL-i ja proovi seejärel uuesti.</value>
+  </data>
+  <data name="LocatorUrlMustEndWith" xml:space="preserve">
+    <value>URL peab lõppema kirjeldusega "GeocodeServer"</value>
+  </data>
+  <data name="UnitsCentimeters" xml:space="preserve">
+    <value>Sentimeetrid</value>
+  </data>
+  <data name="UnitsFeet" xml:space="preserve">
+    <value>Jalad</value>
+  </data>
+  <data name="UnitsInches" xml:space="preserve">
+    <value>Tollid</value>
+  </data>
+  <data name="UnitsKilometers" xml:space="preserve">
+    <value>Kilomeetrid</value>
+  </data>
+  <data name="UnitsMeters" xml:space="preserve">
+    <value>Meetrid</value>
+  </data>
+  <data name="UnitsMiles" xml:space="preserve">
+    <value>Miilid</value>
+  </data>
+  <data name="UnitsNauticalMiles" xml:space="preserve">
+    <value>Meremiilid</value>
+  </data>
+  <data name="UnitsYards" xml:space="preserve">
+    <value>Jardid</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Kasuta proksit</value>
+  </data>
+  <data name="ConnectingToLocatorService" xml:space="preserve">
+    <value>Ühendan lokaatorteenusega...</value>
+  </data>
+  <data name="ContainsErrorMessage" xml:space="preserve">
+    <value>Kogum peab olema implementeeriud meetodiga Contains, aktsepteerides ühte parameetrit, mis tagastab boole`i tüüpi</value>
+  </data>
+  <data name="ExpectedItemTypeMismatch" xml:space="preserve">
+    <value>{0}.Sisaldab meetodit, mis eeldab sisendi objektitüübina {1}.  Tüübi parameeter {2} on esitatud.</value>
+  </data>
+</root>

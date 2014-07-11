@@ -1,0 +1,59 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl x:Class="ESRI.ArcGIS.Mapping.Builder.MoveIntoGroupDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="UserControl_Loaded">
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <StackPanel Margin="10">
+            <RadioButton x:Name="rbMoveDown" GroupName="Choices" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
+                <RadioButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../images/Down Arrow 16.png" VerticalAlignment="Center"/>
+                        <TextBlock Padding="3,0,0,0" 
+                                   Text="{Binding ConverterParameter=MoveDown, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                   VerticalAlignment="Center" Foreground="{StaticResource DesignHostBackgroundTextBrush}"/>
+                    </StackPanel>
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton x:Name="rbMoveUp" GroupName="Choices" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
+                <RadioButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../images/Up Arrow 16.png" VerticalAlignment="Center"/>
+                        <TextBlock Padding="3,0,0,0" 
+                                   Text="{Binding ConverterParameter=MoveUp, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                                   VerticalAlignment="Center" Foreground="{StaticResource DesignHostBackgroundTextBrush}"/>
+                    </StackPanel>
+                </RadioButton.Content>
+            </RadioButton>
+            <RadioButton x:Name="rbMoveIntoGroup" GroupName="Choices" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
+                <RadioButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../images/Right Arrow 16.png" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="rbMoveIntoText" Padding="3,0,0,0" VerticalAlignment="Center"
+                                    Foreground="{StaticResource DesignHostBackgroundTextBrush}"/>
+                    </StackPanel>
+                </RadioButton.Content>
+            </RadioButton>
+        </StackPanel>
+        
+        <Button Grid.Row="1" x:Name="btnOk" Content="{Binding ConverterParameter=OK, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+            HorizontalAlignment="Right" Margin="5" Click="Ok_Click" Padding="10,5,10,5" 
+            Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+            Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"></Button>
+    </Grid>
+</UserControl>

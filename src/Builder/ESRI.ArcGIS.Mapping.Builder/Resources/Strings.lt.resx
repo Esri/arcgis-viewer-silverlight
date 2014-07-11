@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Pridėti</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Pridėti veikimo taisyklę</value>
+  </data>
+  <data name="AddBehaviorDescription" xml:space="preserve">
+    <value>Pridėti veikimo taisyklę į Viewer</value>
+  </data>
+  <data name="AddGeoprocessing" xml:space="preserve">
+    <value>Pridėti geoduomenų apdorojimą</value>
+  </data>
+  <data name="AddGeoprocessingDescription" xml:space="preserve">
+    <value>Pridėti geoduomenų apdorojimo įrankį į Viewer.  Šis įrankis leidžia Viewer vartotojams naudoti ArcGIS Server geoduomenų apdorojimo servisą.</value>
+  </data>
+  <data name="AddGeoRSSDescription" xml:space="preserve">
+    <value>Pridėti RSS giją</value>
+  </data>
+  <data name="AddGP" xml:space="preserve">
+    <value>Pridėti GP</value>
+  </data>
+  <data name="AddTool" xml:space="preserve">
+    <value>Pridėti įrankį</value>
+  </data>
+  <data name="AddToolDescription" xml:space="preserve">
+    <value>Pridėt įrankį į Viewer</value>
+  </data>
+  <data name="ApplicationBuilderSettings" xml:space="preserve">
+    <value>Aplikacijos kūrimo įrankio nustatymai</value>
+  </data>
+  <data name="ApplicationBuilderSettingsDescription" xml:space="preserve">
+    <value>Peržiūrėti ir pakeisti aplikacijos kūrimo įrankio nustatymus, įskaitant papildinių ir pagrindo žemėlapių tvarkymą.</value>
+  </data>
+  <data name="AttributeTable" xml:space="preserve">
+    <value>Atributinė lentelė</value>
+  </data>
+  <data name="BasemapGalleryDescription" xml:space="preserve">
+    <value>Pasirinkti kitą pagrindo žemėlapį</value>
+  </data>
+  <data name="Behaviors" xml:space="preserve">
+    <value>Veikimo taisyklės</value>
+  </data>
+  <data name="Branding" xml:space="preserve">
+    <value>Prekės ženklo įtvirtinimas</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Pakeisti</value>
+  </data>
+  <data name="ChangeLayout" xml:space="preserve">
+    <value>Pakeisti maketą</value>
+  </data>
+  <data name="ChangeLayoutDescription" xml:space="preserve">
+    <value>Pasirinkti naują išdėstymą, skirtą Viewer</value>
+  </data>
+  <data name="ChangeLogo" xml:space="preserve">
+    <value>Keisti logotipą</value>
+  </data>
+  <data name="ChangeLogoDescription" xml:space="preserve">
+    <value>Pasirinkti logotipą, skirtą Viewer</value>
+  </data>
+  <data name="ChangeTitleAndLinks" xml:space="preserve">
+    <value>Keisti antraštę ir nuorodas</value>
+  </data>
+  <data name="ChangeTitleAndLinksDescription" xml:space="preserve">
+    <value>Redaguoti Viewer antraštę ir hipersaitus</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Konfigūruoti</value>
+  </data>
+  <data name="ConfigureTheme" xml:space="preserve">
+    <value>Konfigūruoti temą</value>
+  </data>
+  <data name="ConfigureThemeDescription" xml:space="preserve">
+    <value>Redaguoti Viewer temos spalvas</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Visas ekranas</value>
+  </data>
+  <data name="FullScreenDescription" xml:space="preserve">
+    <value>Rodyti aplikacijos kūrimo įrankį per visą ekraną</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Pradžia</value>
+  </data>
+  <data name="HomeDescription" xml:space="preserve">
+    <value>Grįžti į aplikacijos kūrimo įrankio pradinį puslapį</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>Maketas</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Logotipas</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Valdyti</value>
+  </data>
+  <data name="ManageBehaviors" xml:space="preserve">
+    <value>Tvarkyti veikimo taisykles</value>
+  </data>
+  <data name="ManageBehaviorsDescription" xml:space="preserve">
+    <value>Įjungiamos, išjungiamos, pertvarkomos, pridedamos arba pašalinamos Viewer veikimo taisyklės</value>
+  </data>
+  <data name="ManageToolbars" xml:space="preserve">
+    <value>Tvarkyti įrankių juostas</value>
+  </data>
+  <data name="ManageToolbarsDescription" xml:space="preserve">
+    <value>Pridedami, pašalinami, perkeliami arba konfigūruojami įrankiai Viewer įrankių juostose</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Patalpinti</value>
+  </data>
+  <data name="PublishDescription" xml:space="preserve">
+    <value>Esamo Viewer patalpinimas į naują svetainę</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Atkurti</value>
+  </data>
+  <data name="ResetTheme" xml:space="preserve">
+    <value>Atkurti temą</value>
+  </data>
+  <data name="ResetThemeDescription" xml:space="preserve">
+    <value>Viewer temos numatytųjų spalvų atkūrimas</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Įrašyti</value>
+  </data>
+  <data name="SaveDescription" xml:space="preserve">
+    <value>Esamo Vierwer įrašymas</value>
+  </data>
+  <data name="SelectTheTool" xml:space="preserve">
+    <value>Pasirinkti įrankį...</value>
+  </data>
+  <data name="TitleAndLinks" xml:space="preserve">
+    <value>Antraštė ir nuorodos</value>
+  </data>
+  <data name="ToggleBrowseDescription" xml:space="preserve">
+    <value>Naršyklės skydelio parodymas arba paslėpimas.  Naršyklė jums leidžia peržiūrėti ArcGIS Server turinį arba Erdvinių duomenų serviso galinį tašką ir pridėti sluoksnius į žemėlapį.</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>Parodyti arba paslėpti žemėlapio turinio sąrašą</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>Paieškos skydelio parodymas arba paslėpimas. Paieškoje galima ieškoti vietovardžių, naršyti ArcGIS.com turinyje arba ieškoti ArcGIS Server servisų žiniatinklyje.</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>Pasirinkto sluoksnio atributinės lentelės parodymas arba paslėpimas</value>
+  </data>
+  <data name="ToggleToolbar" xml:space="preserve">
+    <value>Įjungti įrankių juostą</value>
+  </data>
+  <data name="ToggleToolbarDescription" xml:space="preserve">
+    <value>Aplikacijos kūrimo įrankių juostos parodymas arba paslėpimas</value>
+  </data>
+  <data name="Toolbar" xml:space="preserve">
+    <value>Įrankių juosta</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Įrankiai</value>
+  </data>
+  <data name="Accent" xml:space="preserve">
+    <value>Paryškinimas</value>
+  </data>
+  <data name="AccentText" xml:space="preserve">
+    <value>Paryškintas tekstas</value>
+  </data>
+  <data name="AddNewGroupOrControl" xml:space="preserve">
+    <value>Pridėti naują grupę arba valdiklį</value>
+  </data>
+  <data name="AddOns" xml:space="preserve">
+    <value>Papildiniai</value>
+  </data>
+  <data name="ApplicationProperties" xml:space="preserve">
+    <value>Aplikacijos savybės</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Vykdyti</value>
+  </data>
+  <data name="ArcGISApplicationBuilder" xml:space="preserve">
+    <value>Aplikacijos kūrimo įrankis - {0}</value>
+  </data>
+  <data name="ArcGISViewerForMicrosoftSilverlight" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Fonas</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Fono tekstas</value>
+  </data>
+  <data name="BaseMaps" xml:space="preserve">
+    <value>Pagrindo žemėlapiai</value>
+  </data>
+  <data name="BrowseForFile" xml:space="preserve">
+    <value>Parinkti failą</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>Parinkti šaltinį</value>
+  </data>
+  <data name="BuilderTutorial" xml:space="preserve">
+    <value>Kūrimo įrankio vadovas</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Atisakyti</value>
+  </data>
+  <data name="ChangesSavedSuccessfully" xml:space="preserve">
+    <value>Pakeitimai išsaugoti.</value>
+  </data>
+  <data name="ChooseExistingProject" xml:space="preserve">
+    <value>Pasirinkite norimą projektą</value>
+  </data>
+  <data name="ChooseLayout" xml:space="preserve">
+    <value>Pasirinkite maketą</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Užverti</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>Konfigūracija</value>
+  </data>
+  <data name="ConfigureExtensions" xml:space="preserve">
+    <value>Konfigūruoti plėtinius</value>
+  </data>
+  <data name="ConfigureOptionsThatApplyToCurrentUser" xml:space="preserve">
+    <value>Konfigūruoti šiam vartotojui taikomas parinktis</value>
+  </data>
+  <data name="ConfigureSelectedGroupOrControl" xml:space="preserve">
+    <value>Konfigūruoti pasirinktą grupę arba valdiklį</value>
+  </data>
+  <data name="ConfigureSetOfBaseMapsUsedByBuilder" xml:space="preserve">
+    <value>Konfigūruoti pagrindo žemėlapių rinkinį, taikomą aplikacijos kūrimo įrankyje</value>
+  </data>
+  <data name="CopySite" xml:space="preserve">
+    <value>Kopijuoti svetainę</value>
+  </data>
+  <data name="CreateApplicationUsingDefaultMap" xml:space="preserve">
+    <value>Naujas žemėlapis</value>
+  </data>
+  <data name="CreateApplicationUsingWebMapFromArcGISCom" xml:space="preserve">
+    <value>Internetiniai žemėlapiai</value>
+  </data>
+  <data name="CreateNewApplication" xml:space="preserve">
+    <value>Sukurti naują aplikaciją</value>
+  </data>
+  <data name="CurrentToolbars" xml:space="preserve">
+    <value>Esamos įrankių juostos</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Pašalinti</value>
+  </data>
+  <data name="DeleteSite" xml:space="preserve">
+    <value>Šalinti svetainę</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Aprašas:</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Išsami informacija</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Žemyn</value>
+  </data>
+  <data name="EditSelectedGroupOrControl" xml:space="preserve">
+    <value>Redaguoti pasirinktą grupę arba valdiklį</value>
+  </data>
+  <data name="EditSite" xml:space="preserve">
+    <value>Redaguoti svetainę</value>
+  </data>
+  <data name="ExceptionUnhandledError" xml:space="preserve">
+    <value>Neapdorota klaida {0}</value>
+  </data>
+  <data name="ExtensionNotifications" xml:space="preserve">
+    <value>Plėtinio pranešimai</value>
+  </data>
+  <data name="Extensions" xml:space="preserve">
+    <value>Plėtiniai</value>
+  </data>
+  <data name="HelpLinks" xml:space="preserve">
+    <value>Nuorodos</value>
+  </data>
+  <data name="IconPrompt" xml:space="preserve">
+    <value>Piktograma:</value>
+  </data>
+  <data name="LabelPrompt" xml:space="preserve">
+    <value>Žymė:</value>
+  </data>
+  <data name="LoadingSites" xml:space="preserve">
+    <value>Įkeliamos svetainės...</value>
+  </data>
+  <data name="ManageExtensions" xml:space="preserve">
+    <value>Tvarkyti plėtinius</value>
+  </data>
+  <data name="MoreSiteOptions" xml:space="preserve">
+    <value>Daugiau svetainės parinkčių</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Perkelti</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Žemyn</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Aukštyn</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Pavadinimas</value>
+  </data>
+  <data name="NamePrompt" xml:space="preserve">
+    <value>Pavadinimas:</value>
+  </data>
+  <data name="NewMap" xml:space="preserve">
+    <value>Naujas žemėlapis</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Gerai</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Atverti</value>
+  </data>
+  <data name="PersonalSettings" xml:space="preserve">
+    <value>Asmeniniai parametrai</value>
+  </data>
+  <data name="PublishApplication" xml:space="preserve">
+    <value>Išskleisti aplikaciją</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Pašalinti</value>
+  </data>
+  <data name="RemoveSelectedGroupOrControl" xml:space="preserve">
+    <value>Pašalinti pasirinktą grupę arba valdiklį</value>
+  </data>
+  <data name="ReturnToPreviousScreen" xml:space="preserve">
+    <value>Grįžti į ankstesnį vaizdą</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>Pasirinkimas</value>
+  </data>
+  <data name="SelectionOutline" xml:space="preserve">
+    <value>Pasirinkimo metmenys</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Nustatymai</value>
+  </data>
+  <data name="StartWithExistingMap" xml:space="preserve">
+    <value>Pradėti nuo egzistuojančio</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Pavyko</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Konfigūruoti temą</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Temos spalvos</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Antraštė:</value>
+  </data>
+  <data name="ToolbarPrompt" xml:space="preserve">
+    <value>Įrankių juosta:</value>
+  </data>
+  <data name="TooltipPrompt" xml:space="preserve">
+    <value>Įrankių užuomina:</value>
+  </data>
+  <data name="TypePrompt" xml:space="preserve">
+    <value>Tipas:</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Aukštyn</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Įkelti</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Sveiki</value>
+  </data>
+  <data name="WelcomeMsgParagraph1" xml:space="preserve">
+    <value>ArcGIS aplikacijos kūrimo įrankis yra žiniatinklio aplikacija, kuri leidžia sukurti ir redaguoti Viewer aplikacijas realiu laiku ir interaktyviai.  Aplikacijos kūrimo įrankis ir Viewer aplikacijos yra sukurtos naudojant ArcGIS API for Silverlight.</value>
+  </data>
+  <data name="WelcomeMsgParagraph2" xml:space="preserve">
+    <value>Pradėdami dirbti su Viewer, spauskite žemiau esantį mygtuką Sukurti naują aplikaciją. Konfigūruojama Viewer aplikacija bus rodomas žemiau aplikacijos kūrimo įrankio įrankių juostos. Jūs galite konfigūruoti Viewer pagrindo žemėlapius, sluoksnius, įrankius, antraštę, logotipą, spalvas ir kt. naudodami įrankių juostos įrankius.  Atlikus pirmus keitimus savo Viewer aplikacijoje, paspauskite Išskleisti mygtuką, kuris leis peržiūrėti savo aplikaciją naujai atvertame naršyklės lange.</value>
+  </data>
+  <data name="AvailableTools" xml:space="preserve">
+    <value>Galimi įrankiai</value>
+  </data>
+  <data name="BrowseForImage" xml:space="preserve">
+    <value>Parinkti paveikslą</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Redaguoti</value>
+  </data>
+  <data name="ErrorUnableToRetrieveDetailsForExtension" xml:space="preserve">
+    <value>Negalima atkurti išsamesnės informacijos apie papildinių paketą.</value>
+  </data>
+  <data name="ExtensionContainsTheFollowingAddOns" xml:space="preserve">
+    <value>Papildinių paketas '{0}' apima:</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteButton" xml:space="preserve">
+    <value>Ar tikrai norite pašalinti šį mygtuką?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteGroup" xml:space="preserve">
+    <value>Ar tikrai norite pašalinti šią grupę?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteWebSite" xml:space="preserve">
+    <value>Ar tikrai norite pašalinti šią žiniatinklio svetainę?</value>
+  </data>
+  <data name="AssemblyAlreadyIncludeInTheApplication" xml:space="preserve">
+    <value>{1}Objektas '{0}' jau įtrauktas į vykdymo aplinką.{1}Consider optimizing the size and download speed of your extension by marking the Assembly Reference with CopyLocal=false to exclude the assembly in the .xap packaging</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Patvirtinti pašalinimą</value>
+  </data>
+  <data name="DeletingExtensionWillMakeItUnavailableForFurtherUse" xml:space="preserve">
+    <value>Pašalinus plėtinį, jo nebus galima naudoti kuriant naujas ir redaguojant anksčiau sukurtas aplikacijas. {0}Ar tikrai norite pašalinti?</value>
+  </data>
+  <data name="DeletingSite" xml:space="preserve">
+    <value>Svetainė trinama...</value>
+  </data>
+  <data name="EditTool" xml:space="preserve">
+    <value>Redagavimo įrankis</value>
+  </data>
+  <data name="EnterNameForApplication" xml:space="preserve">
+    <value>Įveskite aplikacijos pavadinimą</value>
+  </data>
+  <data name="ErrorDetailsNotKnown" xml:space="preserve">
+    <value>Išsamesnė klaidos informacija nežinoma</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>Įvyko klaida</value>
+  </data>
+  <data name="ErrorRetrievingMapDocumentForSite" xml:space="preserve">
+    <value>Klaida atkuriant žemėlapio dokumentą svetainėje</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Klaidos</value>
+  </data>
+  <data name="ExtensionAlreadyExists" xml:space="preserve">
+    <value>Papildinys jau sukurtas</value>
+  </data>
+  <data name="ExtensionDetails" xml:space="preserve">
+    <value>Išsamesnė informacija apie papildinį: {0}</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsErrors" xml:space="preserve">
+    <value>Papildinių paketas, kurį bandote išskleisti, turi klaidų. Prieš tęsiant klaidos turi būti pašalintos.</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsWarnings" xml:space="preserve">
+    <value>Papildinių paketas, kurį bandote išskleisti, turi įspėjimų. Prieš tęsdami peržiūrėkite įspėjimus.</value>
+  </data>
+  <data name="ExtensionWithSameNameAlreadyExist" xml:space="preserve">
+    <value>Papildinių paketas su tokiu pačiu pavadinimu jau sukurtas. Ar norite jį perrašyti?</value>
+  </data>
+  <data name="FailedToCreateAndPublishApplication" xml:space="preserve">
+    <value>Nepavyko sukurti ir išskleisti aplikacijos</value>
+  </data>
+  <data name="FollowingErrorsFound" xml:space="preserve">
+    <value>Rastos šios klaidos.</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>Netinkamas pavadinimas</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Atverti žiniatinklio žemėlapį iš ArcGIS.com</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Prašome palaukti...</value>
+  </data>
+  <data name="TutorialModeDisable" xml:space="preserve">
+    <value>Išjungti pradžios langą</value>
+  </data>
+  <data name="TutorialModeEnable" xml:space="preserve">
+    <value>Įjungti pradžios langą</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Apie aplikacijos kūrimo įrankį</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Peržiūrėti aplikacijos kūrimo įrankio langą Apie</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Apie</value>
+  </data>
+  <data name="GettingStartedAddGPDescription" xml:space="preserve">
+    <value>Erdvinė analizė naudojant ArcGIS Server Geoduomenų apdorojimo paslaugas.</value>
+  </data>
+  <data name="GettingStartedAddGPTitle" xml:space="preserve">
+    <value>Pridėti geoduomenų apdorojimo servisus</value>
+  </data>
+  <data name="GettingStartedAddLayersDescription" xml:space="preserve">
+    <value>Pridėti duomenis iš ArcGIS Online ir ArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddLayersTitle" xml:space="preserve">
+    <value>Pridėti darbinius sluoksnius</value>
+  </data>
+  <data name="GettingStartedAddToolsDescription" xml:space="preserve">
+    <value>Konfigūruoti aplikacijos funkcionalumą</value>
+  </data>
+  <data name="GettingStartedAddToolsTitle" xml:space="preserve">
+    <value>Pridėti įrankius</value>
+  </data>
+  <data name="GettingStartedBasemapDescription" xml:space="preserve">
+    <value>Pasirinkti pagrindo žemėlapį iš ArcGIS Online, Bing Maps arba OpenStreetMap.</value>
+  </data>
+  <data name="GettingStartedBasemapTitle" xml:space="preserve">
+    <value>Pasirinkti pagrindo žemėlapį</value>
+  </data>
+  <data name="GettingStartedChooseLogoDescription" xml:space="preserve">
+    <value>Pažymėkite Viewer su savo organizacijos logotipu.</value>
+  </data>
+  <data name="GettingStartedChooseLogoTitle" xml:space="preserve">
+    <value>Pasirinkti logotipą</value>
+  </data>
+  <data name="GettingStartedSelectLayoutDescription" xml:space="preserve">
+    <value>Nustatykite savo Viewer išvaizdą ir atmosferą</value>
+  </data>
+  <data name="GettingStartedSelectLayoutTitle" xml:space="preserve">
+    <value>Pasirinkti maketą</value>
+  </data>
+  <data name="GettingStartedSetTitleDescription" xml:space="preserve">
+    <value>Nustatyti aplikacijos antraštę</value>
+  </data>
+  <data name="GettingStartedSetTitleTitle" xml:space="preserve">
+    <value>Nustatyti antraštę</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailable" xml:space="preserve">
+    <value>Šie plėtiniai yra prieinami. Spauskite</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableHere" xml:space="preserve">
+    <value>čia</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableToUploadANewOne" xml:space="preserve">
+    <value>įkelti naują iš disko.</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlDownToolbarTree" xml:space="preserve">
+    <value>Pasirinktą grupę arba valdiklį įrankių juostos medyje perkelti žemyn</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlUpToolbarTree" xml:space="preserve">
+    <value>Pasirinktą grupę arba valdiklį įrankių juostos medyje perkelti aukštyn</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Grįžti</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Kitas</value>
+  </data>
+  <data name="SelectAToolToAdd" xml:space="preserve">
+    <value>Pasirinkite įrankį, kurį pridėti:</value>
+  </data>
+  <data name="ChooseMap" xml:space="preserve">
+    <value>Aplikacijos kūrimo įrankis - Pasirinkti žemėlapį</value>
+  </data>
+  <data name="AddInPackagesContain" xml:space="preserve">
+    <value>Papildinių paketas apima: makete naudojamus įrankius, taisykles ir valdiklius</value>
+  </data>
+  <data name="AvailableAddInPackages" xml:space="preserve">
+    <value>Galimi papildinių paketai:</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>Mygtukas</value>
+  </data>
+  <data name="ConfigureElementsRelatedToMap" xml:space="preserve">
+    <value>Konfigūruoti su žemėlapiu susietus elementus</value>
+  </data>
+  <data name="ConfigureToolsOfYourApplication" xml:space="preserve">
+    <value>Konfigūruoti jūsų aplikacijos įrankius</value>
+  </data>
+  <data name="DisableGettingStarted" xml:space="preserve">
+    <value>Išjungti pradžios puslapį</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>Darbo pradžia</value>
+  </data>
+  <data name="ShowMe" xml:space="preserve">
+    <value>Parodyti</value>
+  </data>
+  <data name="SpecifyLayoutOfYourApplication" xml:space="preserve">
+    <value>Nurodyti aplikacijos maketą</value>
+  </data>
+  <data name="UploadAddInPackages" xml:space="preserve">
+    <value>Įkelti papildinio paketą</value>
+  </data>
+  <data name="UploadAddIns" xml:space="preserve">
+    <value>Įkelti papildinį</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Žemėlapis</value>
+  </data>
+  <data name="AreYouSureYouWantToLeavePageUnsavedChangesLost" xml:space="preserve">
+    <value>Ar tikrai norite palikti šį puslapį? Visi neišsaugoti pakeitimai bus prarasti.</value>
+  </data>
+  <data name="ConfirmPageChange" xml:space="preserve">
+    <value>Patvirtinti puslapio pakeitimą</value>
+  </data>
+  <data name="SpecifyToolProperties" xml:space="preserve">
+    <value>Nustatyti įrankio savybes</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>Išsaugoti kaip...</value>
+  </data>
+  <data name="AddGroupButton" xml:space="preserve">
+    <value>Pridėti grupę</value>
+  </data>
+  <data name="CannotAddElement" xml:space="preserve">
+    <value>Negalima pridėti elemento</value>
+  </data>
+  <data name="CannotAddGroupButton" xml:space="preserve">
+    <value>Negalima pridėti grupės</value>
+  </data>
+  <data name="CannotAddTool" xml:space="preserve">
+    <value>Negalima pridėti įrankio</value>
+  </data>
+  <data name="ChooseAvailableTool" xml:space="preserve">
+    <value>Privalote pasirinkti norimą įrankį iš galimų įrankių medžio.</value>
+  </data>
+  <data name="DefaultGroupButtonDescription" xml:space="preserve">
+    <value>Nauja grupė</value>
+  </data>
+  <data name="DefaultGroupButtonLabel" xml:space="preserve">
+    <value>Nauja grupė</value>
+  </data>
+  <data name="RootLevelToAddGroup" xml:space="preserve">
+    <value>Grupei pridėti turite nurodyti įrankių juostą arba įrankių juostos pradinį lygmenį.</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>&lt;Skyriklis&gt;</value>
+  </data>
+  <data name="MoveIntoGroup" xml:space="preserve">
+    <value>Perkelti į '{0}' grupę</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>Redaguoti grupę</value>
+  </data>
+  <data name="ConfigureControls" xml:space="preserve">
+    <value>Konfigūruoti valdiklius</value>
+  </data>
+  <data name="ConfigureControlsDescription" xml:space="preserve">
+    <value>Redaguoti Viewer valdiklių konfigūraciją</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Režimas</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Podėlio dydis:</value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>OnDemand</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>SnapShot</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Objektų sluoksnio OnDemand podėlio dydis</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Nurodomas FeatureLayer OnDemand būdo podėlio dydis (numatytas= 1000)</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>FeatureLayer OnDemand būdas</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Sluoksnio užklausos būdas pakeičiamas į OnDemand (tik FeatureLayers)</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>FeatureLayer SnapShot būdas</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Ssluoksnio užklausos būdas pakeičiamas į SnapShot (tik FeatureLayers)</value>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>Pridėti nuorodą</value>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Pašalinti nuorodą</value>
+  </data>
+  <data name="ConfigureControlsBanner" xml:space="preserve">
+    <value>Konfigūruojami įrankiai</value>
+  </data>
+  <data name="Controls" xml:space="preserve">
+    <value>Įrankiai</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Objektų atkūrimas</value>
+  </data>
+  <data name="AddGroupDotDot" xml:space="preserve">
+    <value>Pridėti grupę...</value>
+  </data>
+  <data name="AddSeparator" xml:space="preserve">
+    <value>Pridėti skyriklį</value>
+  </data>
+  <data name="ApplicationBuilderDashSettings" xml:space="preserve">
+    <value>Aplikacijos kūrimo įrankis - nustatymai</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Parinkti</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Turinys</value>
+  </data>
+  <data name="CurrentViewerApplications" xml:space="preserve">
+    <value>Esamos Viewer aplikacijos</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Žemėlapio turinys</value>
+  </data>
+  <data name="NoFilesFound" xml:space="preserve">
+    <value>Nerasta failų.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Ieškoti</value>
+  </data>
+  <data name="ViewerProject" xml:space="preserve">
+    <value>Viewer projektas</value>
+  </data>
+  <data name="WebMap" xml:space="preserve">
+    <value>Pagrindo žemėlapis</value>
+  </data>
+  <data name="AddLayerFailed" xml:space="preserve">
+    <value>Nepavyko pridėti sluoksnio</value>
+  </data>
+  <data name="AddLayerFailedExplanation" xml:space="preserve">
+    <value>Sluoksnio pridėti negalima. Priežastis: {0}.</value>
+  </data>
+  <data name="AddLayerFailedNoDetails" xml:space="preserve">
+    <value>[Negalima išskleisti išsamios informacijos]</value>
+  </data>
+  <data name="ConfigureLayers" xml:space="preserve">
+    <value>Konfigūruoti sluoksnius</value>
+  </data>
+  <data name="ConfigureLayersDescription" xml:space="preserve">
+    <value>Keisti žemėlapio sluoksnių išvaizdą ir veikimą</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Sluoksniai</value>
+  </data>
+  <data name="SiteCopyFailed" xml:space="preserve">
+    <value>Nepavyko nukopijuoti svetainės</value>
+  </data>
+  <data name="SiteDeploymentFailed" xml:space="preserve">
+    <value>Nepavyko išskleisti svetainės</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Aukštyn</value>
+  </data>
+  <data name="BringsCurrentlySelectedLayerForward" xml:space="preserve">
+    <value>Perkelia sluoksnį viena pozicija aukštyn rodomų sluoksnių eilėje arčiau žemėlapio viršaus</value>
+  </data>
+  <data name="ConfigureCurrentlySelectedLayer" xml:space="preserve">
+    <value>Konfigūruoti pažymėtą sluoksnį</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Konfigūruoti proxy, naudojamą aplikacijoje taikant  apsaugotus servisus</value>
+  </data>
+  <data name="ConfigureSecureServices" xml:space="preserve">
+    <value>Konfigūruoti apsaugotas servisus</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>Eiti į</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Atnaujinti</value>
+  </data>
+  <data name="RefreshCurrentlySelectedLayer" xml:space="preserve">
+    <value>Atnaujinti pažymėtą sluoksnį</value>
+  </data>
+  <data name="RemovesCurrentlySelectedLayer" xml:space="preserve">
+    <value>Pašalinti pažymėtą sluoksnį</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Pervadinti</value>
+  </data>
+  <data name="RenameCurrentlySelectedLayer" xml:space="preserve">
+    <value>Pervadinti pažymėtą sluoksnį</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Žemyn</value>
+  </data>
+  <data name="SendsCurrentlySelectedLayerBackward" xml:space="preserve">
+    <value>Perkelia sluoksnį viena pozicija žemyn rodomų sluoksnių eilėje arčiau žemėlapio apačios</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Serviso apibūdinimas</value>
+  </data>
+  <data name="ViewInformationAboutSelectedLayerDatasource" xml:space="preserve">
+    <value>Peržiūrėti informaciją apie pasirinkto sluoksnio duomenų rinkinį</value>
+  </data>
+  <data name="ZoomToCurrentlySelectedLayer" xml:space="preserve">
+    <value>Priartinti pasirinktą sluoksnį</value>
+  </data>
+  <data name="CannotAddDropdownCommandsToAGroup" xml:space="preserve">
+    <value>Į grupę negalima pridėti išskleidžiamų komandų.</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Konfigūruoti pagrindo žemėlapius</value>
+  </data>
+  <data name="FlashAnimationIsNotDefinedOnTargetBuilderToolbarButton" xml:space="preserve">
+    <value>Flash animacijos mygtuko nėra kūrimo įrankio įrankių juostoje</value>
+  </data>
+  <data name="ManageAddInsToolsBehaviorsControls" xml:space="preserve">
+    <value>Tvarkyti papildinius: įrankius, veikimą, valdiklius</value>
+  </data>
+  <data name="ManagePersonalSettings" xml:space="preserve">
+    <value>Tvarkyti specialius nustatymus</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Taikyti apsaugotus servisus</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Pridėti apsaugotus servisus</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Konfigūruoti Proxy</value>
+  </data>
+  <data name="NewApplication" xml:space="preserve">
+    <value>Aplikacijos kūrimo įrankis - Nauja aplikacija (neišskleista)</value>
+  </data>
+  <data name="NotDeployed" xml:space="preserve">
+    <value>(neišskleista)</value>
+  </data>
+  <data name="DeployingApplication" xml:space="preserve">
+    <value>Aplikacija išskleidžiama...</value>
+  </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>Aplikacijos nustatymai</value>
+  </data>
+  <data name="ArcGISOnlineSecure" xml:space="preserve">
+    <value>ArcGIS Online apsauga:</value>
+  </data>
+  <data name="ArcGISOnlineSharing" xml:space="preserve">
+    <value>ArcGIS Online bendrinimas:</value>
+  </data>
+  <data name="BingAppId" xml:space="preserve">
+    <value>Bing AppID:</value>
+  </data>
+  <data name="CurrentApplicationSettings" xml:space="preserve">
+    <value>Aplikacijos nustatymai</value>
+  </data>
+  <data name="DefaultSettings" xml:space="preserve">
+    <value>Numatytieji nustatymai</value>
+  </data>
+  <data name="GeometryService" xml:space="preserve">
+    <value>Geometrijos servisas:</value>
+  </data>
+  <data name="ManageApplicationSettings" xml:space="preserve">
+    <value>Tvarkyti aplikacijos nustatymus</value>
+  </data>
+  <data name="BasedOnWebMap" xml:space="preserve">
+    <value>Pagrįstas žiniatinklio žemėlapiu:</value>
+  </data>
+  <data name="LinkedToWebMap" xml:space="preserve">
+    <value>Susietus su žiniatinklio žemėlapiu:</value>
+  </data>
+  <data name="LinkToWebMap" xml:space="preserve">
+    <value>Nuoroda</value>
+  </data>
+  <data name="MapConfigurationUnavailable" xml:space="preserve">
+    <value>Žemėlapio konfigūracija šiai aplikacijai yra susieta su žiniatinklio žemėlapiu.  Norėdami redaguoti žemėlapio konfigūraciją, atsiekite aplikaciją nuo žiniatinklio žemėlapio.</value>
+  </data>
+  <data name="UnlinkFromWebMap" xml:space="preserve">
+    <value>Atsieti</value>
+  </data>
+  <data name="UnableToDeployApplication" xml:space="preserve">
+    <value>Negalima išskleisti aplikacijos.</value>
+  </data>
+  <data name="UnableToSaveApplicationChanges" xml:space="preserve">
+    <value>Negalima išsaugoti aplikacijos pakeitimų.</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Proxy:</value>
+  </data>
+  <data name="HideGettingStarted" xml:space="preserve">
+    <value>Slėpti pradžios pagalbą</value>
+  </data>
+  <data name="ShowGettingStarted" xml:space="preserve">
+    <value>Rodyti pradžios pagalbą</value>
+  </data>
+  <data name="DisplayText" xml:space="preserve">
+    <value>Rodyti tekstą</value>
+  </data>
+  <data name="UpgradeSite" xml:space="preserve">
+    <value>Atnaujinti šią Viewer aplikaciją į esamą versiją</value>
+  </data>
+  <data name="UpgradingApplication" xml:space="preserve">
+    <value>Aplikacija atnaujinama...</value>
+  </data>
+  <data name="NewLink" xml:space="preserve">
+    <value>Nauja nuoroda</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Veikimas</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>Valdiklis</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Sluoksnis</value>
+  </data>
+  <data name="Tool" xml:space="preserve">
+    <value>Įrankis</value>
+  </data>
+</root>

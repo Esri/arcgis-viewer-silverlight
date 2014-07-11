@@ -1,0 +1,2079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptChangesTooltip" xml:space="preserve">
+    <value>קבל שינויים</value>
+  </data>
+  <data name="AddCoordsToListFailedCaption" xml:space="preserve">
+    <value>כשלון בשמירת תוצאות מיקום</value>
+  </data>
+  <data name="AddCoordsToListFailedPrompt" xml:space="preserve">
+    <value>הוספת קואורדינטות של הכתובות שאותרו  לרשימה נכשל. לנסות שנית?</value>
+  </data>
+  <data name="AddData" xml:space="preserve">
+    <value>הוסף נתונים</value>
+  </data>
+  <data name="AddDataSetTooltip" xml:space="preserve">
+    <value>הוסף סט נתונים</value>
+  </data>
+  <data name="AddDataTooltip" xml:space="preserve">
+    <value>הוסף למפה נתונים נוספים</value>
+  </data>
+  <data name="AddRange" xml:space="preserve">
+    <value>הוסף טווח</value>
+  </data>
+  <data name="AddressMatchError" xml:space="preserve">
+    <value>שגיאה באיתור כתובת: {0}</value>
+  </data>
+  <data name="AddressMatchingServicePrompt" xml:space="preserve">
+    <value>שירות:</value>
+  </data>
+  <data name="AdvancedClusterProperties" xml:space="preserve">
+    <value>תכונות אשכול מתקדמות</value>
+  </data>
+  <data name="AGSOImagery" xml:space="preserve">
+    <value>דימויים</value>
+  </data>
+  <data name="AGSOStreets" xml:space="preserve">
+    <value>רחובות</value>
+  </data>
+  <data name="AGSOTopo" xml:space="preserve">
+    <value>Topo</value>
+  </data>
+  <data name="AliasHeader" xml:space="preserve">
+    <value>שם נוסף</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>בצע</value>
+  </data>
+  <data name="ArcGISOnline" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="ArcGISServer" xml:space="preserve">
+    <value>ArcGIS Server</value>
+  </data>
+  <data name="AssociatedMapPrompt" xml:space="preserve">
+    <value>מפה:</value>
+  </data>
+  <data name="AutoScroll" xml:space="preserve">
+    <value>גלילה אוטומטית:</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>רקע</value>
+  </data>
+  <data name="BaseMapConfigurationSectionHeader" xml:space="preserve">
+    <value>מפת בסיס</value>
+  </data>
+  <data name="BaseMapPrompt" xml:space="preserve">
+    <value>מפת בסיס:</value>
+  </data>
+  <data name="BingMaps" xml:space="preserve">
+    <value>Bing Maps</value>
+  </data>
+  <data name="BingMapsAccountInfo" xml:space="preserve">
+    <value>מידע על חשבון Bing Maps</value>
+  </data>
+  <data name="BingMapsAerial" xml:space="preserve">
+    <value>אווירי</value>
+  </data>
+  <data name="BingMapsAerialWithLabels" xml:space="preserve">
+    <value>תוויות - אווירי</value>
+  </data>
+  <data name="BingMapsInitializeFailed" xml:space="preserve">
+    <value>אימות Bing Maps נכשל. במקומן יעשה שימוש במפות בסיס של ArcGIS באינטרנט. פנה למנהל לעזרה נוספת.</value>
+  </data>
+  <data name="BingMapsRoads" xml:space="preserve">
+    <value>כבישים</value>
+  </data>
+  <data name="Border" xml:space="preserve">
+    <value>גבול</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>נתב...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>מבטל</value>
+  </data>
+  <data name="ChangeBaseMapTooltip" xml:space="preserve">
+    <value>החלף מפת בסיס</value>
+  </data>
+  <data name="ChangeColorRampTooltip" xml:space="preserve">
+    <value>בחר צבע נושאי</value>
+  </data>
+  <data name="ChangeGradientStopsTooltip" xml:space="preserve">
+    <value>לחץ לבחירת ההפסקות במדרג  של מפת הצפיפויות</value>
+  </data>
+  <data name="CheckForUpdatesPrompt" xml:space="preserve">
+    <value>בדוק עדכונים:</value>
+  </data>
+  <data name="CheckForUpdateTooltip" xml:space="preserve">
+    <value>הבא רשימת נתונים מעודכנת כאשר זזים או מתמקדים במפה</value>
+  </data>
+  <data name="ChooseBaseMapLayer" xml:space="preserve">
+    <value>בחר מפת בסיס</value>
+  </data>
+  <data name="ChooseLayerHeader" xml:space="preserve">
+    <value>בחר סט נתוני ישויות</value>
+  </data>
+  <data name="CityPrompt" xml:space="preserve">
+    <value>עיר:</value>
+  </data>
+  <data name="ClassifyBy" xml:space="preserve">
+    <value>בחר שדה עבור טווח ערכים</value>
+  </data>
+  <data name="ClassifyByPrompt" xml:space="preserve">
+    <value>סווג לפי:</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>נקה הכל</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>נקה בחירה</value>
+  </data>
+  <data name="ClickSeqmentToZoom" xml:space="preserve">
+    <value>הקלק על סגמנט כדי להתמד אליו.</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>לחץ לתזוזה מזרחה</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>לחץ לתזוזה צפונה</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>לחץ לתזוזה דרומה</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>לחץ לתזוזה מערבה</value>
+  </data>
+  <data name="ClusterAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>תכונות מתקדמות</value>
+  </data>
+  <data name="ClusterFeaturesTooltipFirstBit" xml:space="preserve">
+    <value>אשכול</value>
+  </data>
+  <data name="ClusterFeaturesTooltipSecondBit" xml:space="preserve">
+    <value>ישויות</value>
+  </data>
+  <data name="ClusterTooltip" xml:space="preserve">
+    <value>צייר אשכולות של ישויות ביחד</value>
+  </data>
+  <data name="ColorsPrompt" xml:space="preserve">
+    <value>צבעים:</value>
+  </data>
+  <data name="ConfigurationTooltip" xml:space="preserve">
+    <value>תצורה</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>קבע תצורה</value>
+  </data>
+  <data name="ConfigureBingMapsCredentials" xml:space="preserve">
+    <value>לחץ להגדרת מידע של חשבון של Bing Maps</value>
+  </data>
+  <data name="ConfigureSettings" xml:space="preserve">
+    <value>קבע תצורת ההגדרות</value>
+  </data>
+  <data name="ConfigureTooltip" xml:space="preserve">
+    <value>קבע תצורה</value>
+  </data>
+  <data name="CountryPrompt" xml:space="preserve">
+    <value>ארץ:</value>
+  </data>
+  <data name="CurrentSymbolPrompt" xml:space="preserve">
+    <value>סימבול נוכחי:</value>
+  </data>
+  <data name="CustomColorRamp" xml:space="preserve">
+    <value>מותאם</value>
+  </data>
+  <data name="CustomColorRampToolTip" xml:space="preserve">
+    <value>בחר צבעים עבור כל טווח ערכים</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>מקור נתונים:</value>
+  </data>
+  <data name="DataSourceTooltip" xml:space="preserve">
+    <value>הכנס את ה-URL לתוך  SharePoint, שרות מידע מיוחד או  ArcGIS Server endpoint</value>
+  </data>
+  <data name="DefinitionTabHeader" xml:space="preserve">
+    <value>הגדרה</value>
+  </data>
+  <data name="DefinitionTabHeaderTooltip" xml:space="preserve">
+    <value>הגדר מאפינים לסט הנתונים הנוכחי</value>
+  </data>
+  <data name="DeleteConnectionCaption" xml:space="preserve">
+    <value>אשר מחיקה</value>
+  </data>
+  <data name="DeleteConnectionPrompt" xml:space="preserve">
+    <value>האם הנך בטוח כי ברצונך למחוק קישור זהו?</value>
+  </data>
+  <data name="DeleteLayerMessageCaption" xml:space="preserve">
+    <value>אשר מחיקה</value>
+  </data>
+  <data name="DeleteLayerPrompt" xml:space="preserve">
+    <value>האם הנך בטוח כי ברצונך למחוק  סט נתונים זה מהמפה?</value>
+  </data>
+  <data name="DeleteRange" xml:space="preserve">
+    <value>מחק טווח</value>
+  </data>
+  <data name="DisplayNamePrompt" xml:space="preserve">
+    <value>הצג שם:</value>
+  </data>
+  <data name="DisplayNameTooltip" xml:space="preserve">
+    <value>הגדר את שם התצוגה עבור סט הנתונים הנוכחי</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>גרור כדי לסובב</value>
+  </data>
+  <data name="DuplicateDataSource" xml:space="preserve">
+    <value>{0} כבר נוסף כמקור נתונים</value>
+  </data>
+  <data name="DuplicateMapServiceLayer" xml:space="preserve">
+    <value>שרות מפה כבר הוסף</value>
+  </data>
+  <data name="DuplicateMapServiceLayerCaption" xml:space="preserve">
+    <value>אותרו כפילויות</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>עריכה</value>
+  </data>
+  <data name="EnterCredentials" xml:space="preserve">
+    <value>אנא הקלד שם משתמש וסיסמה</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>שגיאה</value>
+  </data>
+  <data name="Europe" xml:space="preserve">
+    <value>אירופה</value>
+  </data>
+  <data name="Every" xml:space="preserve">
+    <value>כל</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>הרחב/צמצם</value>
+  </data>
+  <data name="ExportSelection" xml:space="preserve">
+    <value>יצוא בחירה</value>
+  </data>
+  <data name="FieldHeader" xml:space="preserve">
+    <value>שדה</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>מילוי</value>
+  </data>
+  <data name="FilterByMapView" xml:space="preserve">
+    <value>סינון לפי תצוגת מפה</value>
+  </data>
+  <data name="FilterExpressionPrompt" xml:space="preserve">
+    <value>סינון ביטוי:</value>
+  </data>
+  <data name="FilterExpressionTooltip" xml:space="preserve">
+    <value>השתמש בפילטר לסט הנתונים הנוכחי</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>מצא</value>
+  </data>
+  <data name="FindDirections" xml:space="preserve">
+    <value>חפש כיוונים</value>
+  </data>
+  <data name="FindLocation" xml:space="preserve">
+    <value>מצא מיקום</value>
+  </data>
+  <data name="FindNearby" xml:space="preserve">
+    <value>מצא בסמוך</value>
+  </data>
+  <data name="FixLocation" xml:space="preserve">
+    <value>תקן מיקום</value>
+  </data>
+  <data name="Foreground" xml:space="preserve">
+    <value>רקע קידמי</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>מידע נוסף</value>
+  </data>
+  <data name="FromPrompt" xml:space="preserve">
+    <value>מ:</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>תיחום מלא</value>
+  </data>
+  <data name="GetListItemsFailed" xml:space="preserve">
+    <value>נכשל באחזור פריטים מתוך {0} באתר {1}</value>
+  </data>
+  <data name="GetListItemsFailedPromptRemove" xml:space="preserve">
+    <value>נכשל בהבאת נתונים {0} מהאתר {1}. להסיר את המבט מהמפה?</value>
+  </data>
+  <data name="GetListsFailed" xml:space="preserve">
+    <value>אחזור רשימה נכשל: {0}</value>
+  </data>
+  <data name="HeatMap" xml:space="preserve">
+    <value>מפת צפיפויות</value>
+  </data>
+  <data name="HeatMapAdvancedProperties" xml:space="preserve">
+    <value>מאפייני מפת צפיפות</value>
+  </data>
+  <data name="HeatMapAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>תכונות ל-rendering של מפת צפיפויות</value>
+  </data>
+  <data name="HeatMapTooltip" xml:space="preserve">
+    <value>הצג נתונים כמפת צפיפות</value>
+  </data>
+  <data name="HundredPercent" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="InitializationError" xml:space="preserve">
+    <value>שגיאת אתחול: {0}</value>
+  </data>
+  <data name="IntensityPrompt" xml:space="preserve">
+    <value>אינטנסיביות:</value>
+  </data>
+  <data name="InvalidUrlCaption" xml:space="preserve">
+    <value>Url לא חוקי</value>
+  </data>
+  <data name="InvalidUrlPrompt" xml:space="preserve">
+    <value>אנא הזן Url תקין</value>
+  </data>
+  <data name="LatitudePrompt" xml:space="preserve">
+    <value>קו רוחב (Y)</value>
+  </data>
+  <data name="LayerInfoRetrievalError" xml:space="preserve">
+    <value>שגיאה באחזור מידע על השכבה: {0}</value>
+  </data>
+  <data name="LayersTabHeader" xml:space="preserve">
+    <value>ניראות שכבה</value>
+  </data>
+  <data name="LayersTabHeaderTooltip" xml:space="preserve">
+    <value>קבע תצורה של ניראות השכבות</value>
+  </data>
+  <data name="ListViewHeader" xml:space="preserve">
+    <value>תצוגת רשימה</value>
+  </data>
+  <data name="LoadDataSourceTooltip" xml:space="preserve">
+    <value>טען מקור נתונים</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>מקם</value>
+  </data>
+  <data name="LocateByAddress" xml:space="preserve">
+    <value>כתובת</value>
+  </data>
+  <data name="LocateByAddressTooltip" xml:space="preserve">
+    <value>השתמש באיתור כתובת כדי לצייר את רשימת הנתונים הנוכחית</value>
+  </data>
+  <data name="LocateByCoordinates" xml:space="preserve">
+    <value>קואורדינטות</value>
+  </data>
+  <data name="LocateByCoordinatesTooltip" xml:space="preserve">
+    <value>השתמש בקואורדינטות כדי לצייר את רשימת המידע הנוכחית</value>
+  </data>
+  <data name="LocateByPrompt" xml:space="preserve">
+    <value>אתר לפי:</value>
+  </data>
+  <data name="LocateTooltip" xml:space="preserve">
+    <value>איתר הכתובות מהרשימה הנוכחית</value>
+  </data>
+  <data name="LocateUpdateTooltip" xml:space="preserve">
+    <value>צייר את הרשימה הנוכחית בהתבסס על שדות הקואורדינטות הנבחרות</value>
+  </data>
+  <data name="LocationFieldsTabHeader" xml:space="preserve">
+    <value>שדות  מיקום</value>
+  </data>
+  <data name="LocationFieldsTabHeaderTooltip" xml:space="preserve">
+    <value>בחר את שדה הכתובת או השדה הגיאוגרפי של סט הנתונים הנוכחי</value>
+  </data>
+  <data name="LongitudePrompt" xml:space="preserve">
+    <value>קו אורך (X)</value>
+  </data>
+  <data name="MapContentsTooltip" xml:space="preserve">
+    <value>תכולת המפה</value>
+  </data>
+  <data name="MapXaml" xml:space="preserve">
+    <value>מפת XAML</value>
+  </data>
+  <data name="MapXamlRepresentation" xml:space="preserve">
+    <value>XAML של הצגה גיאוגרפית של המפה</value>
+  </data>
+  <data name="MaxPrompt" xml:space="preserve">
+    <value>מקס:</value>
+  </data>
+  <data name="MinPrompt" xml:space="preserve">
+    <value>מינ:</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>דקות</value>
+  </data>
+  <data name="ModifyRangeTooltip" xml:space="preserve">
+    <value>שנה טווח</value>
+  </data>
+  <data name="MoveBarUpDown" xml:space="preserve">
+    <value>הזז את הסרגל מעלה להתמקדות פנימה, ולמטה להתמקדות החוצה</value>
+  </data>
+  <data name="MoveDownTooltip" xml:space="preserve">
+    <value>הזז למטה</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>הזז לראשון</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>הזז לאחרון</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>הזז להבא</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>הזז לקודם</value>
+  </data>
+  <data name="MoveRangeTooltip" xml:space="preserve">
+    <value>הזז טווח</value>
+  </data>
+  <data name="MoveUpTooltip" xml:space="preserve">
+    <value>הזז למעלה</value>
+  </data>
+  <data name="MultiLayerCacheNotSupported" xml:space="preserve">
+    <value>שרות מפות  Cache Tiled המורכב משכבות רבות לא נתמך. צור single fused cache במקום זאת.</value>
+  </data>
+  <data name="MultiLayerCacheNotSupportedCaption" xml:space="preserve">
+    <value>שרות מרובה שכבות Cache Tiled אינו נתמך</value>
+  </data>
+  <data name="MultipleViewsNotAllowed" xml:space="preserve">
+    <value>לא ניתן להוסיף רשימת מבטים של SharePoint מספר פעמים</value>
+  </data>
+  <data name="NewDataSourceHelpText" xml:space="preserve">
+    <value>&lt;הזן שם שרת או http endpoint&gt;</value>
+  </data>
+  <data name="NextRange" xml:space="preserve">
+    <value>הטווח הבא</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefined" xml:space="preserve">
+    <value>שדה מיקום ברשימה לא מופה. מפה עמודות מהרשימה לשדות המתאימים.</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefinedCaption" xml:space="preserve">
+    <value>הגדר שדה מיקום למיפוי</value>
+  </data>
+  <data name="NoAssociatedMapWebPart" xml:space="preserve">
+    <value>לא נמצאו מפות web parts.</value>
+  </data>
+  <data name="NoDistinctNumericFields" xml:space="preserve">
+    <value>לכל השדות הנומריים בסט נתונים זה אותם ערכי מינימום ומקסימום. כדי לקבוע תצורה לטווח ערכים, המנימום והמקסימום חייבים להיות שונים.</value>
+  </data>
+  <data name="NoGeographicListsFound" xml:space="preserve">
+    <value>לא נמצאו רשימות המכילות מידע גיאוגרפי ב- {0}</value>
+  </data>
+  <data name="NoLayersAdded" xml:space="preserve">
+    <value>לחץ על כפתור 'הוסף נתונים' להוספת נתונים למפה</value>
+  </data>
+  <data name="NoGPServicesFound" xml:space="preserve">
+    <value>לא נמצא שרות geoprocessing ב- {0}</value>
+  </data>
+  <data name="NoMapServicesFound" xml:space="preserve">
+    <value>לא נמצאו שירותי מפה ב- {0}</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>ללא</value>
+  </data>
+  <data name="NoNumericFieldsFound" xml:space="preserve">
+    <value>סט הנתונים הזה אינו כולל שדה מספרי. ניתן להגדיר טווח נתונים רק לסט נתונים המכיל לפחות שדה מספרי אחד.</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>אין רשומות</value>
+  </data>
+  <data name="NoRecordsForVisibleLayer" xml:space="preserve">
+    <value>פריטי הרשימה לא אוחזרו על ידי המפה. הדלק את ניראות הרשימה כדי לצפות בפריטים.</value>
+  </data>
+  <data name="NoResultsCaption" xml:space="preserve">
+    <value>לא נמצאו תוצרות</value>
+  </data>
+  <data name="NoResultsLayerNotVisible" xml:space="preserve">
+    <value>לא נמצאו רשומות בגלל שהרשימה אינה מוצגת במפה</value>
+  </data>
+  <data name="NorthAmerica" xml:space="preserve">
+    <value>אמריקה הצפונית</value>
+  </data>
+  <data name="NoSpatialTablesFound" xml:space="preserve">
+    <value>לא נמצאו טבלאות המכילות מידע מרחבי ב- {0}</value>
+  </data>
+  <data name="NumericFieldNotDistinct" xml:space="preserve">
+    <value>שדה {0} מכיל ערכים זהים של מינימום ומכסימום. ניתן להגדיר את התצורה של טווח ערכים רק על שדה עם ערכי מינימום ומכסימום שונים.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>אישור</value>
+  </data>
+  <data name="OnPanAndZoom" xml:space="preserve">
+    <value>בהזזה ובהתמקדות</value>
+  </data>
+  <data name="OperationalDataSectionHeader" xml:space="preserve">
+    <value>נתונים</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>סיסמה:</value>
+  </data>
+  <data name="PleaseSpecifyDataSourceMessage" xml:space="preserve">
+    <value>הגדר בבקשה מקור נתונים</value>
+  </data>
+  <data name="PollForUpdatesTooltip" xml:space="preserve">
+    <value>הגדר מרווח להבאת רשימת נתונים מעודכנת</value>
+  </data>
+  <data name="PopUpTabHeader" xml:space="preserve">
+    <value>Pop-Up</value>
+  </data>
+  <data name="PopUpTabHeaderTooltip" xml:space="preserve">
+    <value>הגדר תצורת ה- pop-up של המידע של המפה עבור סט הנתונים הנוכחי</value>
+  </data>
+  <data name="PreDefinedColorRamp" xml:space="preserve">
+    <value>מוגדר מראש</value>
+  </data>
+  <data name="PreDefinedColorRampTooltip" xml:space="preserve">
+    <value>השתמש בסט צבעים מוגדר מראש</value>
+  </data>
+  <data name="PreviousRange" xml:space="preserve">
+    <value>טווח קודם</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>הפקה</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>מאפינים - {0}</value>
+  </data>
+  <data name="RecordsPrompt" xml:space="preserve">
+    <value>רשומות:</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>רענן</value>
+  </data>
+  <data name="RefreshError" xml:space="preserve">
+    <value>ארעה שגיאה בריענון שכבה {0}</value>
+  </data>
+  <data name="RefreshMapXamlTooltip" xml:space="preserve">
+    <value>רענן את ה-XAML של המפה</value>
+  </data>
+  <data name="RefreshTooltip" xml:space="preserve">
+    <value>רענן</value>
+  </data>
+  <data name="RemoveTooltip" xml:space="preserve">
+    <value>הסר</value>
+  </data>
+  <data name="ResetExtent" xml:space="preserve">
+    <value>אפס תיחום</value>
+  </data>
+  <data name="ResetExtentTooltip" xml:space="preserve">
+    <value>שחזר את תיחום המפה לתיחום המקורי שהוגדר בשרות ה-ArcGIS server.</value>
+  </data>
+  <data name="ResetMapRotation" xml:space="preserve">
+    <value>איפוס סיבוב המפה</value>
+  </data>
+  <data name="ResolutionPrompt" xml:space="preserve">
+    <value>הפרדה:</value>
+  </data>
+  <data name="ResultsViewHeader" xml:space="preserve">
+    <value>תצוגת תוצאות</value>
+  </data>
+  <data name="RetrievingBaseMaps" xml:space="preserve">
+    <value>אחזור מפות בסיס זמינות</value>
+  </data>
+  <data name="RetrievingGeometryType" xml:space="preserve">
+    <value>מאחזר סוג גיאומטריה</value>
+  </data>
+  <data name="RetrievingInformation" xml:space="preserve">
+    <value>אחזור מידע מהשרת</value>
+  </data>
+  <data name="RollBackChangesTooltip" xml:space="preserve">
+    <value>בטל שינויים</value>
+  </data>
+  <data name="ScaleBarUnit_feet" xml:space="preserve">
+    <value>רגל</value>
+  </data>
+  <data name="ScaleBarUnit_kilometers" xml:space="preserve">
+    <value>ק"מ</value>
+  </data>
+  <data name="ScaleBarUnit_meters" xml:space="preserve">
+    <value>מ'</value>
+  </data>
+  <data name="ScaleBarUnit_miles" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>שניות</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>בחר הכל</value>
+  </data>
+  <data name="SelectAllTooltip" xml:space="preserve">
+    <value>בחר הכל</value>
+  </data>
+  <data name="SelectedRangePrompt" xml:space="preserve">
+    <value>טווח:</value>
+  </data>
+  <data name="SelectedRecordsFormatString" xml:space="preserve">
+    <value>נבחרו {0} מתוך {1} רשומות</value>
+  </data>
+  <data name="SelectRangeTooltip" xml:space="preserve">
+    <value>בחר טווח לעריכה</value>
+  </data>
+  <data name="ServerPrompt" xml:space="preserve">
+    <value>שרת:</value>
+  </data>
+  <data name="ServiceConnectionError" xml:space="preserve">
+    <value>אירעה שגיאה בהתקשרות אל {0}. בדוק בבקשה את ה-URL, וודא שהשרות רץ ונסה שנית.</value>
+  </data>
+  <data name="ServiceConnectionErrorCaption" xml:space="preserve">
+    <value>שגיאת קישור</value>
+  </data>
+  <data name="ServiceConnectionErrorDuringInit" xml:space="preserve">
+    <value>לא ניתן להתחבר אל {0}.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>הגדרות</value>
+  </data>
+  <data name="ShowHide" xml:space="preserve">
+    <value>הצג/הסתר</value>
+  </data>
+  <data name="ShowHideTooltip" xml:space="preserve">
+    <value>הצג/הסתר</value>
+  </data>
+  <data name="SimpleSymbolType" xml:space="preserve">
+    <value>פשוט</value>
+  </data>
+  <data name="SimpleSymbolTypeTooltip" xml:space="preserve">
+    <value>הצג את סט הנתונים הנוכחי עם סימבול אחד</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>מקור:</value>
+  </data>
+  <data name="Staging" xml:space="preserve">
+    <value>סביבת בדיקות</value>
+  </data>
+  <data name="StatePrompt" xml:space="preserve">
+    <value>מדינה/תת חלוקה:</value>
+  </data>
+  <data name="SymbolsTabHeader" xml:space="preserve">
+    <value>סמלים</value>
+  </data>
+  <data name="SymbolsTabHeaderTooltip" xml:space="preserve">
+    <value>קבע תצורת התצוגה של קבוצת הישויות הנוכחית</value>
+  </data>
+  <data name="SymbolTypePrompt" xml:space="preserve">
+    <value>סוג סמל:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>עד</value>
+  </data>
+  <data name="TokenAuthenticationFailed" xml:space="preserve">
+    <value>אימות Bing Maps נכשל. בדוק את ה Credentials ונסה שנית.</value>
+  </data>
+  <data name="TokenConnectionFailed" xml:space="preserve">
+    <value>הקישור להחזרת ה-token נכשל. בדוק את הקישור לשרת המארח ונסה שנית.</value>
+  </data>
+  <data name="TolerancePrompt" xml:space="preserve">
+    <value>סטייה מותרת:</value>
+  </data>
+  <data name="ToPrompt" xml:space="preserve">
+    <value>עד:</value>
+  </data>
+  <data name="TotalDistancePrompt" xml:space="preserve">
+    <value>מרחק כללי:</value>
+  </data>
+  <data name="TotalTimePrompt" xml:space="preserve">
+    <value>זמן כולל:</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>שקיפות</value>
+  </data>
+  <data name="TransparencyPrompt" xml:space="preserve">
+    <value>שקיפות:</value>
+  </data>
+  <data name="UnhandledSilverlightError" xml:space="preserve">
+    <value>שגיאה לא צפויה באפליקצית Silverlight 2</value>
+  </data>
+  <data name="UpdateAddress" xml:space="preserve">
+    <value>עדכון כתובת</value>
+  </data>
+  <data name="UpdateLayerError" xml:space="preserve">
+    <value>שגיאה בעדכון שכבה: {0}</value>
+  </data>
+  <data name="UpdateListError" xml:space="preserve">
+    <value>שגיאה ביישום השינויים ברשימה: {0}</value>
+  </data>
+  <data name="UrlPrompt" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="UserNamePrompt" xml:space="preserve">
+    <value>משתמש:</value>
+  </data>
+  <data name="UseStagingServer" xml:space="preserve">
+    <value>שימוש בשרת בדיקות</value>
+  </data>
+  <data name="ValidAddressError" xml:space="preserve">
+    <value>אנא הזן כתובת תקינה</value>
+  </data>
+  <data name="ValidAddressErrorCaption" xml:space="preserve">
+    <value>כתובת לא חוקית</value>
+  </data>
+  <data name="ValidCoordinatesError" xml:space="preserve">
+    <value>הכנס בבקשה קואורדינטות תקינות</value>
+  </data>
+  <data name="ValidCoordinatesErrorCaption" xml:space="preserve">
+    <value>קואורדינטות לא חוקיות</value>
+  </data>
+  <data name="ValueRanges" xml:space="preserve">
+    <value>טווח ערכים</value>
+  </data>
+  <data name="ValueRangesTooltip" xml:space="preserve">
+    <value>הצג את סט הנתונים הנוכחי לפי טווח ערכים</value>
+  </data>
+  <data name="ViewItem" xml:space="preserve">
+    <value>הצג פריט</value>
+  </data>
+  <data name="VisibleHeader" xml:space="preserve">
+    <value>ניראה</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>רוחב</value>
+  </data>
+  <data name="XamlRepresentation" xml:space="preserve">
+    <value>XAML של הצגה קרטוגרפית עבור המפה הנוכחית</value>
+  </data>
+  <data name="XamlViewTabHeader" xml:space="preserve">
+    <value>תצוגת Xaml</value>
+  </data>
+  <data name="XamlViewTabHeaderTooltip" xml:space="preserve">
+    <value>הצג את ה Xaml שנוצר עבור השכבה</value>
+  </data>
+  <data name="ZeroPercent" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="Zip4Prompt" xml:space="preserve">
+    <value>Zip4:</value>
+  </data>
+  <data name="ZipPrompt" xml:space="preserve">
+    <value>מיקוד:</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>הגדלה</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>הקטנה</value>
+  </data>
+  <data name="ZoomOutButton" xml:space="preserve">
+    <value>הקטנה</value>
+  </data>
+  <data name="ZoomRangeTooltip" xml:space="preserve">
+    <value>הגדלה בטווח</value>
+  </data>
+  <data name="ZoomToAllRecords" xml:space="preserve">
+    <value>עבור אל</value>
+  </data>
+  <data name="ZoomToItem" xml:space="preserve">
+    <value>התמקדות לפריט</value>
+  </data>
+  <data name="ZoomToSelection" xml:space="preserve">
+    <value>התמקד לנבחרים</value>
+  </data>
+  <data name="ConfigFileUrlTextboxTooltip" xml:space="preserve">
+    <value>הכנס URL להגדרת תצורת הקובץ</value>
+  </data>
+  <data name="ConnectToSharePointDataSource" xml:space="preserve">
+    <value>&lt;הזן url לאתר SharePoint&gt;</value>
+  </data>
+  <data name="ExportToFile" xml:space="preserve">
+    <value>יצוא לקובץ</value>
+  </data>
+  <data name="FileNamePrompt" xml:space="preserve">
+    <value>שם קובץ:</value>
+  </data>
+  <data name="MustEnterFileName" xml:space="preserve">
+    <value>אנא הכנס שם קובץ.</value>
+  </data>
+  <data name="MustEnterFileNameTitle" xml:space="preserve">
+    <value>שם קובץ חסר</value>
+  </data>
+  <data name="OverwriteExistingFile" xml:space="preserve">
+    <value>דורס קובץ קיים</value>
+  </data>
+  <data name="UrlToSitePrompt" xml:space="preserve">
+    <value>Url לאתר:</value>
+  </data>
+  <data name="CustomBaseMap" xml:space="preserve">
+    <value>מפת בסיס של ArcGIS Server</value>
+  </data>
+  <data name="AGSDataSourceTooltip" xml:space="preserve">
+    <value>הוסף את ה- URL ל- ArcGIS Server endpoint</value>
+  </data>
+  <data name="NotUsingBingMapsResource" xml:space="preserve">
+    <value>האפליקציה לא משתמשת במקור נתונים מתוך Bing Maps. אין צורך כרגע להגדיר את התצורה של מידע החשבון.</value>
+  </data>
+  <data name="NotUsingBingMapsResourceCaption" xml:space="preserve">
+    <value>אין מקור נתוני Maps Bing</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>סגור</value>
+  </data>
+  <data name="BrowseForBaseMap" xml:space="preserve">
+    <value>דפדף כדי ללמצא מפות בסיס</value>
+  </data>
+  <data name="EnterUrl" xml:space="preserve">
+    <value>הכנס URL</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatch" xml:space="preserve">
+    <value>היחוס המרחבי של שירות המפה שהיא cached אינו תואם את היחוס המרחבי של מפת הבסיס. לא ניתן להוסיף את שירות המפה.</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatchCaption" xml:space="preserve">
+    <value>היחוס המרחבי אינו מתאים</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemoved" xml:space="preserve">
+    <value>סט הנתונים הפעיל כולל שירותי מפה שהיחוס הגיאוגרפי שלהם אינו תואם לזה של מפת הבסיס שבחרת. כדי להמשיך, שרותי המפה יוסרו. לחץ על אישור כדי להסירם.</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemovedCaption" xml:space="preserve">
+    <value>סט הנתונים הפעיל אינו תואם</value>
+  </data>
+  <data name="AddContentTitle" xml:space="preserve">
+    <value>הוסף תכולה</value>
+  </data>
+  <data name="BaseMapGalleryTitle" xml:space="preserve">
+    <value>בחר מפת בסיס</value>
+  </data>
+  <data name="BrowseForBaseMapTitle" xml:space="preserve">
+    <value>דפדף כדי ללמצא מפות בסיס</value>
+  </data>
+  <data name="EnterUrlDialogTitle" xml:space="preserve">
+    <value>הזן url עבור מפות הבסיס</value>
+  </data>
+  <data name="MapContentsTitle" xml:space="preserve">
+    <value>תכולת המפה</value>
+  </data>
+  <data name="CanOnlyUseCachedMapServicesAsBaseMap" xml:space="preserve">
+    <value>רק שירותי מפה של  ArcGIS שהם cached יכולים לשמש כמפות בסיס.</value>
+  </data>
+  <data name="InvalidMapServiceCaption" xml:space="preserve">
+    <value>שרות מפה לא תקין </value>
+  </data>
+  <data name="MapTipBorderColorTooltip" xml:space="preserve">
+    <value>שנה צבע גבול עבור MapTip</value>
+  </data>
+  <data name="MapTipFillColorTooltip" xml:space="preserve">
+    <value>שנה צבע מילוי עבור MapTip</value>
+  </data>
+  <data name="MapTipForegroundColorTooltip" xml:space="preserve">
+    <value>שנה צבע טקסט עבור MapTip</value>
+  </data>
+  <data name="SampleMapTipText" xml:space="preserve">
+    <value>טקסט לדוגמה</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>הוסף שכבה נבחרת</value>
+  </data>
+  <data name="AttributePrompt" xml:space="preserve">
+    <value>מאפיין:</value>
+  </data>
+  <data name="ColorScheme" xml:space="preserve">
+    <value>סכימת צבעים</value>
+  </data>
+  <data name="MoreOptions" xml:space="preserve">
+    <value>עוד אפשרויות</value>
+  </data>
+  <data name="RendererPrompt" xml:space="preserve">
+    <value>Renderers:</value>
+  </data>
+  <data name="SymbolOptions" xml:space="preserve">
+    <value>אפשרויות סכימה</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>סימבול נוכחי:</value>
+  </data>
+  <data name="Basemap" xml:space="preserve">
+    <value>מפת בסיס</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>הבא קדימה</value>
+  </data>
+  <data name="ClassBreaks" xml:space="preserve">
+    <value>מעברי קבוצה</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>צבע</value>
+  </data>
+  <data name="FromServer" xml:space="preserve">
+    <value>נתב...</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>מפה</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>תכולת המפה</value>
+  </data>
+  <data name="MapTip" xml:space="preserve">
+    <value>Map Tip</value>
+  </data>
+  <data name="MoreSymbolOptions" xml:space="preserve">
+    <value>אפשרויות סכימה</value>
+  </data>
+  <data name="Organize" xml:space="preserve">
+    <value>ארגן</value>
+  </data>
+  <data name="RefreshLayer" xml:space="preserve">
+    <value>רענן</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>הסר</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>חיפוש...</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>העבר לאחור</value>
+  </data>
+  <data name="SingleSymbol" xml:space="preserve">
+    <value>סמל יחיד</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>גודל</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>כלים</value>
+  </data>
+  <data name="UniqueValues" xml:space="preserve">
+    <value>ערכים יחודיים</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="CategoryPrompt" xml:space="preserve">
+    <value>קטגוריה:</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>סמל</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>תצוגה</value>
+  </data>
+  <data name="DrawOrder" xml:space="preserve">
+    <value>סדר השרטוט</value>
+  </data>
+  <data name="Popups" xml:space="preserve">
+    <value>Pop-Ups</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>טבלה</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>הגדרת  Pop-Ups</value>
+  </data>
+  <data name="AddUniqueValue" xml:space="preserve">
+    <value>הוסף ערך</value>
+  </data>
+  <data name="DeleteUniqueValue" xml:space="preserve">
+    <value>מחק ערך נבחר</value>
+  </data>
+  <data name="NextUniqueValue" xml:space="preserve">
+    <value>הערך היחודי הבא</value>
+  </data>
+  <data name="PreviousUniqueValue" xml:space="preserve">
+    <value>ערך יחודי קודם</value>
+  </data>
+  <data name="ValuePrompt" xml:space="preserve">
+    <value>ערך:</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>שכבה</value>
+  </data>
+  <data name="MapCenterTooltip" xml:space="preserve">
+    <value>ArcGIS.com Map Center</value>
+  </data>
+  <data name="ClassesPrompt" xml:space="preserve">
+    <value>קבוצות:</value>
+  </data>
+  <data name="InvalidClassBreakValue" xml:space="preserve">
+    <value>ערך לא חוקי</value>
+  </data>
+  <data name="DefaultSymbol" xml:space="preserve">
+    <value>סימבול ברירת מחדל</value>
+  </data>
+  <data name="MaxPointsPrompt" xml:space="preserve">
+    <value>מקסימום נקודות:</value>
+  </data>
+  <data name="RadiusPrompt" xml:space="preserve">
+    <value>רדיוס:</value>
+  </data>
+  <data name="UsePointClustering" xml:space="preserve">
+    <value>השתמש באשכול נקודות</value>
+  </data>
+  <data name="AddContent" xml:space="preserve">
+    <value>הוסף תכולה</value>
+  </data>
+  <data name="LayerSymbology" xml:space="preserve">
+    <value>סימבולוגיה</value>
+  </data>
+  <data name="AutoUpdates" xml:space="preserve">
+    <value>עדכונים אוטומטיים</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>מרווח</value>
+  </data>
+  <data name="PollForUpdates" xml:space="preserve">
+    <value>מדגם לצורך עדכונים</value>
+  </data>
+  <data name="UpdateOnExtentChanged" xml:space="preserve">
+    <value>עדכן בשינוי התיחום</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>פילטר</value>
+  </data>
+  <data name="FilterLayerTitle" xml:space="preserve">
+    <value>הגדר ביטוי לסינון</value>
+  </data>
+  <data name="FilterByMapExtent" xml:space="preserve">
+    <value>סינון לפי תיחום</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>מסך מלא</value>
+  </data>
+  <data name="AutoScrollRow" xml:space="preserve">
+    <value>שורת גלילה אוטומטית</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>פרטי השירות</value>
+  </data>
+  <data name="DatasetPrompt" xml:space="preserve">
+    <value>קבוצת ישויות:</value>
+  </data>
+  <data name="DistancePrompt" xml:space="preserve">
+    <value>מרחק:</value>
+  </data>
+  <data name="FindNearbyTitle" xml:space="preserve">
+    <value>מצא בסמוך</value>
+  </data>
+  <data name="InvalidDistance" xml:space="preserve">
+    <value>הכנס בבקשה מרחק חוקי</value>
+  </data>
+  <data name="InvalidDistanceCaption" xml:space="preserve">
+    <value>מרחק שגוי</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>קילומטרים</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>מטרים</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>מיילים</value>
+  </data>
+  <data name="SelectionTools" xml:space="preserve">
+    <value>כלי בחירה</value>
+  </data>
+  <data name="BufferDistance" xml:space="preserve">
+    <value>מרחק חיץ</value>
+  </data>
+  <data name="Feed" xml:space="preserve">
+    <value>GeoRSS...</value>
+  </data>
+  <data name="FindNearbyBufferPrefix" xml:space="preserve">
+    <value>מצא חיץ בקרבת מקום </value>
+  </data>
+  <data name="FindNearbyPrefix" xml:space="preserve">
+    <value>מצא בקרבת מקום - </value>
+  </data>
+  <data name="SelectByDraw" xml:space="preserve">
+    <value>בחר לפי ציור</value>
+  </data>
+  <data name="ColorSchemePrompt" xml:space="preserve">
+    <value>סכימת צבעים:</value>
+  </data>
+  <data name="EditValuesPrompt" xml:space="preserve">
+    <value>ערוך ערכים:</value>
+  </data>
+  <data name="TypeValueToAdd" xml:space="preserve">
+    <value>הקלד ערך להוספה</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>נושא</value>
+  </data>
+  <data name="AddGeoRSSTitle" xml:space="preserve">
+    <value>הזן Url עבור GeoRSS Feed</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>כותרת עליונה:</value>
+  </data>
+  <data name="BrowseDialogGeographicDataNotFound" xml:space="preserve">
+    <value>לא נמצא מידע גיאוגרפי</value>
+  </data>
+  <data name="DefaultBasemapLayerDisplayName" xml:space="preserve">
+    <value>מפת בסיס</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>שכבה:</value>
+  </data>
+  <data name="AddLayerTooltip" xml:space="preserve">
+    <value>הוסף את ArcGIS Server הנבחר, SharePoint או שרות סט נתוני מידע מסוג Spatial למפה</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>שנה שם</value>
+  </data>
+  <data name="ODataFeed" xml:space="preserve">
+    <value>OData...</value>
+  </data>
+  <data name="SignInWithGlobalAccount" xml:space="preserve">
+    <value>הרשם עם ESRI Global Account שלך</value>
+  </data>
+  <data name="ClusterColor" xml:space="preserve">
+    <value>צבע רקע של אשכול</value>
+  </data>
+  <data name="ClusterTextColor" xml:space="preserve">
+    <value>צבע קדמי של אשכול</value>
+  </data>
+  <data name="Clustering" xml:space="preserve">
+    <value>שימוש באשכול</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>כללי</value>
+  </data>
+  <data name="HeatMapAdd" xml:space="preserve">
+    <value>הוסף מפת צפיפויות</value>
+  </data>
+  <data name="Intensity" xml:space="preserve">
+    <value>אינטנסיביות</value>
+  </data>
+  <data name="OpenItemOnClick" xml:space="preserve">
+    <value>פתח פריט בקליק</value>
+  </data>
+  <data name="Symbology" xml:space="preserve">
+    <value>סימבולוגיה</value>
+  </data>
+  <data name="ShowMapContents" xml:space="preserve">
+    <value>חזור</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>מאפיינים</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>שונות</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>מתקדם</value>
+  </data>
+  <data name="ExtensionLoadFailed" xml:space="preserve">
+    <value>נכשלה טעינת ההרחבה</value>
+  </data>
+  <data name="ToolClassLoadFailed" xml:space="preserve">
+    <value>נכשלה טעינת ה- Tool Class</value>
+  </data>
+  <data name="ToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>נכשלה טעינת התצורה של Tool Class</value>
+  </data>
+  <data name="ExtensionInitializationFailed" xml:space="preserve">
+    <value>נכשל ביצירת מופע לפקודה מותאמת.</value>
+  </data>
+  <data name="ExtensionInitializationFailedHeader" xml:space="preserve">
+    <value>כשל באיתחול הרחבה</value>
+  </data>
+  <data name="Less" xml:space="preserve">
+    <value>פחות</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>עוד</value>
+  </data>
+  <data name="ConfiguringLayer" xml:space="preserve">
+    <value>קובע תצורה:</value>
+  </data>
+  <data name="RemoveLayerCaption" xml:space="preserve">
+    <value>האם להסיר את השכבה?</value>
+  </data>
+  <data name="RemoveLayerNameSubstitude" xml:space="preserve">
+    <value>נבחרים</value>
+  </data>
+  <data name="RemoveLayerPrompt" xml:space="preserve">
+    <value>האם ברצונך להזיז את {0} שכבה מהמפה?</value>
+  </data>
+  <data name="BrowseNoEllipsis" xml:space="preserve">
+    <value>דפדף</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>תכולה</value>
+  </data>
+  <data name="GeoRSS" xml:space="preserve">
+    <value>GeoRSS</value>
+  </data>
+  <data name="SearchNoEllipsis" xml:space="preserve">
+    <value>חפש</value>
+  </data>
+  <data name="ErrorLoadConfigurationOfExtension" xml:space="preserve">
+    <value>שגיאה לא צפויה בLoadConfiguration של הרחבה  ({0})</value>
+  </data>
+  <data name="ErrorNoPrinterContainerFoundInPrintTemplate" xml:space="preserve">
+    <value>לא נימצא קונטיינר להדפסה בתבנית ההדפסה.</value>
+  </data>
+  <data name="ErrorSaveConfigurationOfExtension" xml:space="preserve">
+    <value>שגיאה לא צפויה בשמירת התצורה של ההרחבה  ({0})</value>
+  </data>
+  <data name="ExceptionCachedMapServiceSpatialReferenceDoesNotMatch" xml:space="preserve">
+    <value>היחוס המרחבי של שרות מפות ה-Cache אינו תואם.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitialized" xml:space="preserve">
+    <value>Cannot called ZoomMapToExtent before map has initialized. Use MapLayersInitialized to wait for this event.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitializedMapReferenceNull" xml:space="preserve">
+    <value>לא ניתן לקרוא ל ZoomMapToExtent לפני שהמפה אותחלה. היחוס המרחבי של המפה הוא null.</value>
+  </data>
+  <data name="ExceptionConnectionTypeDoesNotCoorespondToDatasourceWhichHasResources" xml:space="preserve">
+    <value>סוג הקישור {0} לא מתאים למקור נתונים ({1}) שיש לו מקור</value>
+  </data>
+  <data name="ExceptionCouldNotFindElementWithName" xml:space="preserve">
+    <value>לא ניתן למצוא אלנט בשם {0}.</value>
+  </data>
+  <data name="ExceptionCouldNotFindToggleButtonWithName" xml:space="preserve">
+    <value>לא ניתן למצוא כפתור toggle בשם {0}.</value>
+  </data>
+  <data name="ExceptionDatasourceNotLoadedForBaseMapType" xml:space="preserve">
+    <value>מקור הנתונים עבור סוג מפת בסיס {0} לא נטען</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>אלמנט</value>
+  </data>
+  <data name="ExceptionMapHasNotBeenInitializedYet" xml:space="preserve">
+    <value>המפה לא אותחלה עדיין</value>
+  </data>
+  <data name="ExceptionMapLayersHaveNotBeenInstantiated" xml:space="preserve">
+    <value>לא ניתן ליצור מופע לשכבות המפה. ניתן לשנות מפת בסיס רק אחרי שבוצע MapLayersInitialized</value>
+  </data>
+  <data name="ExceptionMapNotSet" xml:space="preserve">
+    <value>לא נקבעה מפה</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationProvider" xml:space="preserve">
+    <value>יש להגדיר ConfigurationStoreProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationStoreProvider" xml:space="preserve">
+    <value>יש להגדיר ConfigurationStoreProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyDataSourceProvider" xml:space="preserve">
+    <value>חובה להגדיר DataSourceProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyLayoutProvider" xml:space="preserve">
+    <value>יש להגדיר LayoutProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifySpatialReferenceOnEnvelope" xml:space="preserve">
+    <value>יש להגדיר יחוס מרחבי לאזור התיחום</value>
+  </data>
+  <data name="ExceptionMustSpecifyThemeProvider" xml:space="preserve">
+    <value>חובה להגדיר ThemeProvider</value>
+  </data>
+  <data name="ExceptionNoBingMapsTokenAvailable" xml:space="preserve">
+    <value>לא קיים Token עבור Bing Maps</value>
+  </data>
+  <data name="ExceptionNoGeometryServiceUrlSpecifiedLayerZoomedIsDifferentSpatialReference" xml:space="preserve">
+    <value>לא מוגדר URL של שרות גיאומטריה. מערכת היחוס של השכבה אליה מתמקדים שונה מזו של המפה ויש לבצע המרה של התיחום המלא לפי שרות הגיאומטריה</value>
+  </data>
+  <data name="ExceptionNotSupported" xml:space="preserve">
+    <value>אינו נתמך</value>
+  </data>
+  <data name="ExceptionNullBaseMapInfo" xml:space="preserve">
+    <value>baseMapInfo</value>
+  </data>
+  <data name="ExceptionOnlyCachedServicesCanBeUsedAsBaseMaps" xml:space="preserve">
+    <value>רק שרותים המכילים מפות cache  יכולים לשמש כמפות בסיס.</value>
+  </data>
+  <data name="ExceptionUnableToInstantiateDatasourceForBaseMapType" xml:space="preserve">
+    <value>לא ניתן ליצור מופע למקור נתונים עבור מפת בסיס  מסוג זה {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>לא ניתן לאחזר מידע על התצורה. לא חזר מידע.</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasource" xml:space="preserve">
+    <value>לא ניתן לאחזר מקור נתונים ל- {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasourceConnectionType" xml:space="preserve">
+    <value>לא ניתן לאחזר מקור נתונים לסוג קישור {0}</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>טוען...</value>
+  </data>
+  <data name="LoadingMapCenter" xml:space="preserve">
+    <value>טוען מרכז המפה...</value>
+  </data>
+  <data name="LogUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>לא ניתן לאחזר את תצורת המידע</value>
+  </data>
+  <data name="MsgErrorExecutingBufferOperation" xml:space="preserve">
+    <value>שגיאה בפעולת יצירת חיץ.</value>
+  </data>
+  <data name="MsgErrorExecutingRelationAsyncOperation" xml:space="preserve">
+    <value>שגיאה בביצוע תהליך RelationAsync</value>
+  </data>
+  <data name="MsgErrorOpeningFile" xml:space="preserve">
+    <value>שגיאה בפתיחת קובץ</value>
+  </data>
+  <data name="MsgErrorRetrievingSubLayersForMapService" xml:space="preserve">
+    <value>שגיאה באחזור תת שכבות עבור שרות המפה</value>
+  </data>
+  <data name="MsgErrorSavingFile" xml:space="preserve">
+    <value>שגיאה בשמירת הקובץ</value>
+  </data>
+  <data name="MsgNoFeaturesSelected" xml:space="preserve">
+    <value>לא נבחרו ישויות</value>
+  </data>
+  <data name="MsgNoResourcesFound" xml:space="preserve">
+    <value>לא נמצאו משאבים</value>
+  </data>
+  <data name="MsgUnableToAccessGeometryService" xml:space="preserve">
+    <value>לא ניתן לגשת לשרות גאומטריה</value>
+  </data>
+  <data name="MsgUnableToCreateLayer" xml:space="preserve">
+    <value>לא ניתן ליצור שכבה.</value>
+  </data>
+  <data name="MsgUnableToRetrieveResources" xml:space="preserve">
+    <value>לא ניתן לאחזר מקורות.</value>
+  </data>
+  <data name="MsgUnknownError" xml:space="preserve">
+    <value>שגיאה לא ידועה</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>שם</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>משתמש לא ידוע</value>
+  </data>
+  <data name="NotValidMapDocument" xml:space="preserve">
+    <value>לא מסמך מפה תקף.</value>
+  </data>
+  <data name="ErrorRetrievingSymbols" xml:space="preserve">
+    <value>שגיאה באחזור סימבולים</value>
+  </data>
+  <data name="ExceptionCacheMapServicesCannotReproject" xml:space="preserve">
+    <value>לא ניתן להמיר שרות מפות cache  באפליקציה</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>פתיחת מפת אינטרנט מתוך  ArcGIS.com</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>התחבר</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>התנתק</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>טקסט רקע</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>חברים</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>תצוגה מקדימה</value>
+  </data>
+  <data name="SelectedItem" xml:space="preserve">
+    <value>פריטים נבחרים</value>
+  </data>
+  <data name="RecordOutOfSelected" xml:space="preserve">
+    <value>נבחרו {0} מתוך {1} רשומות</value>
+  </data>
+  <data name="ExtensionInitializationFailedUrl" xml:space="preserve">
+    <value>נכשל ביצירת מופע לפקודה מותאמת. Url: {0}</value>
+  </data>
+  <data name="HeatMapTitle" xml:space="preserve">
+    <value>{0} מפת צפיפויות</value>
+  </data>
+  <data name="CurrentColor" xml:space="preserve">
+    <value>צבע נוכחי</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>תיאור:</value>
+  </data>
+  <data name="HeightPrompt" xml:space="preserve">
+    <value>גובה:</value>
+  </data>
+  <data name="Moredotdot" xml:space="preserve">
+    <value>עוד...</value>
+  </data>
+  <data name="NotificationDontShowDialogOnStartup" xml:space="preserve">
+    <value>אל תציג דיאלוג זה באיתחול</value>
+  </data>
+  <data name="RecordPrompt" xml:space="preserve">
+    <value>רשומה:</value>
+  </data>
+  <data name="StandardColors" xml:space="preserve">
+    <value>צבעים סטנדרטיים</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>צבעי נושא</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>כותרת:</value>
+  </data>
+  <data name="WidthPrompt" xml:space="preserve">
+    <value>רוחב:</value>
+  </data>
+  <data name="MapBehaviors" xml:space="preserve">
+    <value>התנהגויות מפה</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>למטה</value>
+  </data>
+  <data name="MapBehaviorAdd" xml:space="preserve">
+    <value>הוסף התנהגות מפה חדשה</value>
+  </data>
+  <data name="MapBehaviorConfigure" xml:space="preserve">
+    <value>קבע תצורה להתנהגות מפה נבחרת</value>
+  </data>
+  <data name="MapBehaviorMoveDown" xml:space="preserve">
+    <value>הזז את ההתנהגות הנבחרת מיקום אחד כלפי מטה</value>
+  </data>
+  <data name="MapBehaviorMoveUp" xml:space="preserve">
+    <value>הזז את התנהגות המפה הנבחרת מיקום אחד כלפי מעלה</value>
+  </data>
+  <data name="MapBehaviorRemove" xml:space="preserve">
+    <value>הסר התנהגות מפה נבחרת</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviors" xml:space="preserve">
+    <value>לא שויכו התנהגויות למפה.</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviorsInEdit" xml:space="preserve">
+    <value>לחץ הוספה כדי לקבוע תצורה חדשה להתנהגות מפה.</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>הזז</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>למעלה</value>
+  </data>
+  <data name="AddLabel" xml:space="preserve">
+    <value>הוסף</value>
+  </data>
+  <data name="BehaviorClassLoadFailed" xml:space="preserve">
+    <value>נכשלה טעינה ה- Behavior Class</value>
+  </data>
+  <data name="BehaviorConfigurationFailed" xml:space="preserve">
+    <value>כשל בתצורת התנהגות</value>
+  </data>
+  <data name="BehaviorConfigurationFailedDescription" xml:space="preserve">
+    <value>נזרקה שגיאה בהגדרת התצורה של התנהגות המתודה.</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>טעינת התצורה של Behavior Class נכשלה</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailedDescription" xml:space="preserve">
+    <value>שגיאה בטעינת הגדרת ההתנהגות.</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>סוג:</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>צור שכבת צפיפויות המבוססת על ישויות מהשכבה הנוכחית</value>
+  </data>
+  <data name="ClusterColorDescription" xml:space="preserve">
+    <value>הגדר את צבע הרקע עבור אשכול השכבה הנוכחית</value>
+  </data>
+  <data name="ClusterTextColorDescription" xml:space="preserve">
+    <value>הגדר את צבע הגבול והטקסט של אשכול השכבה הנוכחית</value>
+  </data>
+  <data name="FilterDescription" xml:space="preserve">
+    <value>סנן את הישויות הכלולות בשכבה הנוכחית על ידי הגדרת שאילתת מאפיינים</value>
+  </data>
+  <data name="HeatMapColorDescription" xml:space="preserve">
+    <value>בחר את הסכימה עבור מפת הצפיפויות</value>
+  </data>
+  <data name="IntensityDescription" xml:space="preserve">
+    <value>התאם את העוצמה של מפת הצפיפויות. עוצמה גבוהה יותר תיצור מוקדי צפיפות גדולים יותר.</value>
+  </data>
+  <data name="MaxPoints" xml:space="preserve">
+    <value>מקסימום נקודות</value>
+  </data>
+  <data name="MaxPointsDescription" xml:space="preserve">
+    <value>המספר המקסימלי של ישויות שניתנות לקיבוץ באשכול בודד</value>
+  </data>
+  <data name="OpenItemOnClickDescription" xml:space="preserve">
+    <value>בלחיצה, הצג פרטי ישות בחלון דפדפן חדש</value>
+  </data>
+  <data name="PollForUpdatesDescription" xml:space="preserve">
+    <value>הגדר האם לאחזר עדכוני feed במרווח המוגדר</value>
+  </data>
+  <data name="PopupsDescription" xml:space="preserve">
+    <value>הגדר את תצורת המאפיינים המוצגים ב-pop-ups של השכבה הנוכחית</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>רדיוס</value>
+  </data>
+  <data name="RadiusDescription" xml:space="preserve">
+    <value>ציין את הרדיוס בפיקסלים שבתוכו הישויות יקובצו באשכול בודד</value>
+  </data>
+  <data name="SymbologyDescription" xml:space="preserve">
+    <value>הגדר את תצורת הסימבולים שבשימוש השכבה הנוכחית</value>
+  </data>
+  <data name="TableDescription" xml:space="preserve">
+    <value>הגדרת תצורת השדות המוצגים בטבלת המאפיינים של השכבה הנוכחית</value>
+  </data>
+  <data name="UpdateOnExtentChangedDescription" xml:space="preserve">
+    <value>הגדר אם לאחזר עדכונים או לא כאשר מזיזים או מתמקדים במפה</value>
+  </data>
+  <data name="UsePointClusteringDescription" xml:space="preserve">
+    <value>הגדר האם להציג קבוצות של נקודות כאשכול ישויות</value>
+  </data>
+  <data name="SelectTheLayout" xml:space="preserve">
+    <value>בוחר את המפה...</value>
+  </data>
+  <data name="SelectThePrintLayout" xml:space="preserve">
+    <value>בחר את תבנית ההדפסה</value>
+  </data>
+  <data name="BehaviorPrompt" xml:space="preserve">
+    <value>התנהגויות:</value>
+  </data>
+  <data name="Cluster" xml:space="preserve">
+    <value>אשכול</value>
+  </data>
+  <data name="ClusterFeatures" xml:space="preserve">
+    <value>אשכול ישויות</value>
+  </data>
+  <data name="ConfigureRange" xml:space="preserve">
+    <value>קבע תצורה לטווח</value>
+  </data>
+  <data name="EnablePrompt" xml:space="preserve">
+    <value>פעיל:</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>ישויות</value>
+  </data>
+  <data name="RenderAsHeatMap" xml:space="preserve">
+    <value>Render כמפת צפיפות</value>
+  </data>
+  <data name="RenderHeatMapAdvancedProperties" xml:space="preserve">
+    <value>תכונות מתקדמות עבור Rendering של מפת צפיפויות</value>
+  </data>
+  <data name="Tolerance" xml:space="preserve">
+    <value>טולרנס</value>
+  </data>
+  <data name="LayoutPrompt" xml:space="preserve">
+    <value>מפה:</value>
+  </data>
+  <data name="ConfigurePrint" xml:space="preserve">
+    <value>קבע תצורה לעריכה</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>הדפסה</value>
+  </data>
+  <data name="LayoutResourceDownloadError" xml:space="preserve">
+    <value>שגיאה בהורדת מקורות המפה.</value>
+  </data>
+  <data name="ChangeBackground" xml:space="preserve">
+    <value>שנה רקע</value>
+  </data>
+  <data name="PreviewTheme" xml:space="preserve">
+    <value>תצוגה מקדימה של הנושא</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>ללא כותרת</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>הוסף התנהגות</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>מדרג</value>
+  </data>
+  <data name="Solid" xml:space="preserve">
+    <value>מוצק</value>
+  </data>
+  <data name="ToggleRibbonVisibility" xml:space="preserve">
+    <value>Toggle Ribbon של נראות</value>
+  </data>
+  <data name="ArcGISSilverlightVersion" xml:space="preserve">
+    <value>ArcGIS API for Silverlight:</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>ורסיה:</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>אודות</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>הזז למטה</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>הזז למעלה</value>
+  </data>
+  <data name="ConstrainExtentBehaviorMessage" xml:space="preserve">
+    <value>התמקד לתיחום המפה בה אתה רוצה להשתמש כאילוץ ולחץ בצע.</value>
+  </data>
+  <data name="ConstrainExtentBehaviorTitle" xml:space="preserve">
+    <value>הגדר אילוצים לתיחום המפה</value>
+  </data>
+  <data name="DeleteBehaviorCaption" xml:space="preserve">
+    <value>האם הנך בטוח כי ברצונך למחוק התנהגות זו?</value>
+  </data>
+  <data name="DeleteBehaviorPrompt" xml:space="preserve">
+    <value>אשר מחיקה</value>
+  </data>
+  <data name="CurrentConstrainExtentLabel" xml:space="preserve">
+    <value>אילוץ אזור התיחום של התיחום הנוכחי</value>
+  </data>
+  <data name="ConstrainExtentNotSetMessage" xml:space="preserve">
+    <value>אילוץ תיחום המפה אינו מוגדר עדיין.</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>לא מוגדר</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>קבע תצורה ל- Basemaps</value>
+  </data>
+  <data name="ConfigureTheSetOfBaseMaps" xml:space="preserve">
+    <value>קבע תצורה לסט מפות בסיס</value>
+  </data>
+  <data name="AddNewBaseMap" xml:space="preserve">
+    <value>הוסף מפת בסיס חדשה</value>
+  </data>
+  <data name="ClickImageToChangeThumbnailIcon" xml:space="preserve">
+    <value>לחץ על התמונה כדי לשנות תמונה ממוזערת</value>
+  </data>
+  <data name="RequiresBingAppID" xml:space="preserve">
+    <value>דורש מזהה של Maps Bing</value>
+  </data>
+  <data name="DeleteCurrentlySelectedBaseMap" xml:space="preserve">
+    <value>מחק את מפת הבסיס הנבחרת</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapDown" xml:space="preserve">
+    <value>הזז למטה את מפת הבסיס הנבחרת הנוכחית</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapUp" xml:space="preserve">
+    <value>הזז למעלה את מפת הבסיס הנבחרת הנוכחית</value>
+  </data>
+  <data name="SubTypePrompt" xml:space="preserve">
+    <value>Sub Type:</value>
+  </data>
+  <data name="TextPrompt" xml:space="preserve">
+    <value>טקסט:</value>
+  </data>
+  <data name="ThumbnailPrompt" xml:space="preserve">
+    <value>תמונה ממוזערות:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>הבא</value>
+  </data>
+  <data name="NoBehaviorTitleSpecified" xml:space="preserve">
+    <value>לא צויינה התנהגות כותרת</value>
+  </data>
+  <data name="PleaseProvideValidTitleForNewBehavior" xml:space="preserve">
+    <value>ספק בבקשה כותרת תקינה להתנהגות החדשה.</value>
+  </data>
+  <data name="SelectBehaviorToAdd" xml:space="preserve">
+    <value>בחר התנהגות</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>מצב</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>גודל Cache: </value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>הבאת ישויות מתוך שטח המפה</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>הבא את כל הישויות בבת אחת</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>גודל  cache  הישויות</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>המספר המכסימלי של ישויות שהשכבה יכולה להכיל. אם יש חריגה ממספר זה באחזור ישויות, הישויות הוותיקות ביותר יוסרו מהשכבה.</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>הבה ישויות מאזור המפה</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>בטעינת או ריענון שכבה יש אחזור רק של הישויות באזור המפה. ישויות נוספות מאוחזרות כשאזור המפה משתנה.</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>הבא כל הישויות</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>כל הישויות בשכבה  מאוחזרות כאשר השכבה נטענת או מרועננת.</value>
+  </data>
+  <data name="BrowseContentUrlWatermark" xml:space="preserve">
+    <value>הזן URL של שרת או שכבה</value>
+  </data>
+  <data name="BrowseDialogNoResourcesFound" xml:space="preserve">
+    <value>לא נמצאו משאבים</value>
+  </data>
+  <data name="BrowseDialogNoServerOrLayerFound" xml:space="preserve">
+    <value>לא נמצא שרות או שכבה</value>
+  </data>
+  <data name="SecureServices" xml:space="preserve">
+    <value>שירותים מאובטחים</value>
+  </data>
+  <data name="AutoUpdateNumericDescription" xml:space="preserve">
+    <value>הגדר את מרווח הריענון בשניות או דקות. השכבה תרוענן אוטומטית במרווח זה עד שיבוטל.</value>
+  </data>
+  <data name="AutoUpdateNumericTooltip" xml:space="preserve">
+    <value>עדכון אוטומטי לריענון המרווח</value>
+  </data>
+  <data name="AutoUpdatePollingDescription" xml:space="preserve">
+    <value>הגדר האם לרענן את שכבת הישויות אוטומטית במרווח קבוע.</value>
+  </data>
+  <data name="AutoUpdatePollingTooltip" xml:space="preserve">
+    <value>עדכון אוטומטי לשכבות ישויות</value>
+  </data>
+  <data name="AutoUpdateIntervalText" xml:space="preserve">
+    <value>מרווח:</value>
+  </data>
+  <data name="AutoUpdateLayerConfigTitle" xml:space="preserve">
+    <value>עדכונים אוטומטיים</value>
+  </data>
+  <data name="AvailableLayers" xml:space="preserve">
+    <value>שכבות זמינות:</value>
+  </data>
+  <data name="EnablePopups" xml:space="preserve">
+    <value>הצג pop-ups</value>
+  </data>
+  <data name="EnablePopupsForLayer" xml:space="preserve">
+    <value>הצג לשכבה זו  pop-ups</value>
+  </data>
+  <data name="OnClick" xml:space="preserve">
+    <value>בקליק</value>
+  </data>
+  <data name="OnHover" xml:space="preserve">
+    <value>בריחוף</value>
+  </data>
+  <data name="ConfigureEditorWidget" xml:space="preserve">
+    <value>קבע תצורה לעריכה</value>
+  </data>
+  <data name="SnapshotModeNote" xml:space="preserve">
+    <value>הערה: אם מספר הישויות בסט הנתונים עולה על המספר המכסימלי של ישויות שמוחזרות מהשרות, לא כל הישויות יכללו בשכבה.</value>
+  </data>
+  <data name="GraphicSymbolsTakePrecedence" xml:space="preserve">
+    <value>הסימבול המוגדר כאן יוחלף על ידי סימבולים מהגרפיקה האישית, אם מוגדרת.</value>
+  </data>
+  <data name="SpatialReference" xml:space="preserve">
+    <value>ייחוס מרחבי:</value>
+  </data>
+  <data name="XMax" xml:space="preserve">
+    <value>XMax:</value>
+  </data>
+  <data name="XMin" xml:space="preserve">
+    <value>XMin:</value>
+  </data>
+  <data name="YMax" xml:space="preserve">
+    <value>YMax</value>
+  </data>
+  <data name="YMin" xml:space="preserve">
+    <value>YMin</value>
+  </data>
+  <data name="NotFoundInLayout" xml:space="preserve">
+    <value>{0} לא נמצא במפה הנוכחית</value>
+  </data>
+  <data name="ToggleEditFailed" xml:space="preserve">
+    <value>כישלון בשינוי מצב פקדי העריכה. יתכן שהמפה הנוכחית לא תומכת בעריכה.</value>
+  </data>
+  <data name="PopupFromWebMap" xml:space="preserve">
+    <value>השתמש בהגדרת pop-up ממפת האינטרנט</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>התמקד אוטומטית לנבחרים</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>בצע</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>אפשרויות</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>נבחרו {0} מתוך {1} רשומות</value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>החלף בחירה</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>אחזור ישויות</value>
+  </data>
+  <data name="ConfigureSecuredServices" xml:space="preserve">
+    <value>קבע תצורה לשירותים מאובטחים</value>
+  </data>
+  <data name="ErrorChangingProxies" xml:space="preserve">
+    <value>שגיאה בשינוי ה- proxies</value>
+  </data>
+  <data name="ProxyUrl" xml:space="preserve">
+    <value>Proxy Url:</value>
+  </data>
+  <data name="SpecifyUrlToProxyPageUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>הגדר URL לדף ה- proxy המשמש כשרות גישה מאובטחת לאפליקציה. ה- proxy יהיה בשיתוף עם כל השכבות באפליקציה המשתמשות בשרות מאובטח.</value>
+  </data>
+  <data name="UsesProxy" xml:space="preserve">
+    <value>השתמש ב- Proxy</value>
+  </data>
+  <data name="WhetherThisLayerUsesProxyServiceForaccessingRestrictedService" xml:space="preserve">
+    <value>במידה והשכבה משתמשת בשרות proxy לצורך גישה לשרותים מאובטחים, לחץ על כפתור הגדרת התצורה של ה-proxy כדי להגדיר את ה-URL שלו.</value>
+  </data>
+  <data name="LayerHasNoAttributes" xml:space="preserve">
+    <value>לשכבה הנבחרת אין מאפיינים שניתן להציגם.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>פרטים</value>
+  </data>
+  <data name="ToggleErrorDetails" xml:space="preserve">
+    <value>הצג או הסתר את פרטי השגיאה.</value>
+  </data>
+  <data name="LayerIsNotGraphicsLayer" xml:space="preserve">
+    <value>לא ניתן להציג את מאפייני השכבה הנבחרת בגלל שהשכבה היא מסוג  ArcGIS Server dynamic  או cached map service layer. לפרטים נוספים, קרא בעזרה אודות סוגי שכבות.</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteBasemap" xml:space="preserve">
+    <value>האם הנך בטוח כי ברצונך למחוק מפת בסיס זו?</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>אשר מחיקה</value>
+  </data>
+  <data name="NewBasemap" xml:space="preserve">
+    <value>מפת בסיס חדשה</value>
+  </data>
+  <data name="ConfigureSelectedLayer" xml:space="preserve">
+    <value>קבע תצורה לשכבה הנבחרת</value>
+  </data>
+  <data name="SelectLayerToAdd" xml:space="preserve">
+    <value>בחר שכבה להוספה</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>גישה לשירותים מאובטחים</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>הוסף שירותים מאובטחים</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>קבע תצורה ל-Proxy</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServices" xml:space="preserve">
+    <value>הגדר תצורה ל- proxy המשמש לגישה לשרותים מאובטחים לאפליקציה זו</value>
+  </data>
+  <data name="BehaviorSaveFailed" xml:space="preserve">
+    <value>נכשל בשמירת התצורה של ההתנהגות</value>
+  </data>
+  <data name="BehaviorSaveFailedMessage" xml:space="preserve">
+    <value>אירעה שגיאה בזמן שמירת התצורה של התנהגויות המפה.</value>
+  </data>
+  <data name="LayerInitFailure" xml:space="preserve">
+    <value>כשל באתחול שכבה</value>
+  </data>
+  <data name="LayerNotInitialized" xml:space="preserve">
+    <value>השכבה לא אותחלה</value>
+  </data>
+  <data name="DeleteGraphicConfirmation" xml:space="preserve">
+    <value>האם להסיר ישות?</value>
+  </data>
+  <data name="DeleteGraphicConfirmationTitle" xml:space="preserve">
+    <value>אישור</value>
+  </data>
+  <data name="EditValuesCommandEditorBackButtonContent" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="ConfigureBehavior" xml:space="preserve">
+    <value>תצורת ההתנהגות</value>
+  </data>
+  <data name="DisablePopupForLayer" xml:space="preserve">
+    <value>מנע pop-ups</value>
+  </data>
+  <data name="EnablePopupForLayer" xml:space="preserve">
+    <value>אפשר pop-ups</value>
+  </data>
+  <data name="LinkWebMapDialogCaption" xml:space="preserve">
+    <value>קישור למפת אינטרנט:</value>
+  </data>
+  <data name="LinkWebMapDialogMessage" xml:space="preserve">
+    <value>הגדרת התצורה של המפה תטען ממפת האינטרנט. תצורה קיימת של המפה תאבד. האם להמשיך?</value>
+  </data>
+  <data name="UnlinkWebMapDialogCaption" xml:space="preserve">
+    <value>התנתק ממפת אינטרנט</value>
+  </data>
+  <data name="UnlinkWebMapDialogMessage" xml:space="preserve">
+    <value>תצורת המפה תתנתק ממפת האינטרנט. ניתן יהיה להוסיף, להסיר ולקבוע את תצורת השכבה אולם, לא יוצגו עידכונים שיבוצעו על מפת האינטרנט. להמשיך?</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>סטנדרטי</value>
+  </data>
+  <data name="Business" xml:space="preserve">
+    <value>עסק</value>
+  </data>
+  <data name="Cartography" xml:space="preserve">
+    <value>קרטוגרפיה</value>
+  </data>
+  <data name="Outdoor_Recreation" xml:space="preserve">
+    <value>יצירה מבחוץ</value>
+  </data>
+  <data name="People_and_Places" xml:space="preserve">
+    <value>אנשים ומקומות</value>
+  </data>
+  <data name="Public_Safety_and_Health" xml:space="preserve">
+    <value>בריאות וביטחון ציבוריים</value>
+  </data>
+  <data name="Transportation" xml:space="preserve">
+    <value>תחבורה</value>
+  </data>
+  <data name="WebMapLoadFailed" xml:space="preserve">
+    <value>לא ניתן להטעין מפת אינטרנט בעלת מזהה {0}. יתכן שאין לך הרשאות גישה למפה או שהיא לא קיימת יותר.</value>
+  </data>
+  <data name="ClusteringDisallowedCaption" xml:space="preserve">
+    <value>יצירת אשכול אינה מותרת</value>
+  </data>
+  <data name="ClusteringDisallowedMessage" xml:space="preserve">
+    <value>לא ניתן ליצור אשכול בזמן שהשכבה נבחרה לעריכה.</value>
+  </data>
+  <data name="UnsupportedBasemapType" xml:space="preserve">
+    <value>סוג לא נתמך של מפת בסיס</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>השתמש ב- Proxy</value>
+  </data>
+  <data name="AreaNotesLayer" xml:space="preserve">
+    <value>{0} - שטחים</value>
+  </data>
+  <data name="LineNotesLayer" xml:space="preserve">
+    <value>{0} - קווים</value>
+  </data>
+  <data name="PointNotesLayer" xml:space="preserve">
+    <value>{0} - נקודות</value>
+  </data>
+  <data name="Editing" xml:space="preserve">
+    <value>עריכה</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>מורשה</value>
+  </data>
+  <data name="ArcGISPortalDefaultName" xml:space="preserve">
+    <value>פורטל ל- ArcGIS</value>
+  </data>
+  <data name="SignInToArcGISServer" xml:space="preserve">
+    <value>היכנס לשרת ArcGIS ב- {0}</value>
+  </data>
+  <data name="InvalidUrlUserPassword" xml:space="preserve">
+    <value>כתובת URL, שם משתמש, או סיסמה שגויים</value>
+  </data>
+  <data name="SignInTo" xml:space="preserve">
+    <value>היכנס ל- {0}</value>
+  </data>
+  <data name="SignInToServer" xml:space="preserve">
+    <value>היכנס לשרת ArcGIS</value>
+  </data>
+  <data name="SignInToSecureServices" xml:space="preserve">
+    <value>היכנס לשירותים מאובטחים</value>
+  </data>
+  <data name="OpenStreetMap" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="FeatureLayer" xml:space="preserve">
+    <value>שכבת ישויות</value>
+  </data>
+  <data name="MapLayer" xml:space="preserve">
+    <value>שכבת מפה</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>הכניסה נכשלה.</value>
+  </data>
+</root>

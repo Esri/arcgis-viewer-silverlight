@@ -1,0 +1,30 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity">
+    <local:StringResourcesManager x:Key="Localization" />
+
+    <Style TargetType="local:AddContentDialog">        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:AddContentDialog">
+                    <local:BrowseContentDialog x:Name="BrowseContentDialog" Map="{Binding Map,RelativeSource={RelativeSource TemplatedParent}}"
+                                                   ConnectionsProvider="{Binding ConnectionsProvider,RelativeSource={RelativeSource TemplatedParent}}"
+                                                   DataSourceProvider="{Binding DataSourceProvider,RelativeSource={RelativeSource TemplatedParent}}"
+                                                   Filter="{Binding Filter,RelativeSource={RelativeSource TemplatedParent}}"
+                                                   OKButtonText="{Binding ConverterParameter=Add, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                   ></local:BrowseContentDialog>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

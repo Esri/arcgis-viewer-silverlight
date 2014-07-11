@@ -1,0 +1,29 @@
+<Builder LogoFilePath="Images/Logo.png">
+  <TitleText>_ArcGISApplicationBuilderForMicrosoftSilverlight_</TitleText>
+  <HelpLinks>
+    <HelpLink>
+      <Url>http://www.arcgis.com</Url>
+      <DisplayText>_Help_</DisplayText>
+    </HelpLink>
+    <HelpLink>
+      <Url>http://www.arcgis.com</Url>
+      <DisplayText>_Forums_</DisplayText>
+    </HelpLink>
+    <HelpLink>
+      <Url>http://www.arcgis.com</Url>
+      <DisplayText>_Blog_</DisplayText>
+    </HelpLink>
+  </HelpLinks>
+  <Extensions />
+  <AboutXaml>
+    <Paragraph TextAlignment="Center">
+      <Run FontWeight="Bold">Powered by ArcGIS</Run>
+    </Paragraph>
+  </AboutXaml>
+  <ArcGISOnlineSharing>http://www.arcgis.com/sharing/</ArcGISOnlineSharing>
+  <ArcGISOnlineSharingSecure>https://www.arcgis.com/sharing/</ArcGISOnlineSharingSecure>
+  <ArcGISOnlineProxy></ArcGISOnlineProxy>
+  <GeometryService>http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer</GeometryService>
+  <Proxy></Proxy>
+  <BingMapsAppId></BingMapsAppId>
+</Builder>

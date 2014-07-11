@@ -1,0 +1,2079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptChangesTooltip" xml:space="preserve">
+    <value>Akceptēt izmaiņas</value>
+  </data>
+  <data name="AddCoordsToListFailedCaption" xml:space="preserve">
+    <value>Neizdevās saglabāt izvietotos rezultātus</value>
+  </data>
+  <data name="AddCoordsToListFailedPrompt" xml:space="preserve">
+    <value>Neizdevās pievienot sarakstam ar adresi saskaņotas koordinātas. Atkārtot?</value>
+  </data>
+  <data name="AddData" xml:space="preserve">
+    <value>Pievienot datus</value>
+  </data>
+  <data name="AddDataSetTooltip" xml:space="preserve">
+    <value>Pievienot datukopu</value>
+  </data>
+  <data name="AddDataTooltip" xml:space="preserve">
+    <value>Pievienot kartei vairāk datu</value>
+  </data>
+  <data name="AddRange" xml:space="preserve">
+    <value>Pievienot diapazonu</value>
+  </data>
+  <data name="AddressMatchError" xml:space="preserve">
+    <value>Adrešu saskaņošanas kļūda: {0}</value>
+  </data>
+  <data name="AddressMatchingServicePrompt" xml:space="preserve">
+    <value>Serviss:</value>
+  </data>
+  <data name="AdvancedClusterProperties" xml:space="preserve">
+    <value>Uzlabotas klasteru īpašības</value>
+  </data>
+  <data name="AGSOImagery" xml:space="preserve">
+    <value>Attēli</value>
+  </data>
+  <data name="AGSOStreets" xml:space="preserve">
+    <value>Ielas</value>
+  </data>
+  <data name="AGSOTopo" xml:space="preserve">
+    <value>Topo</value>
+  </data>
+  <data name="AliasHeader" xml:space="preserve">
+    <value>Aizstājvārds</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Lietot</value>
+  </data>
+  <data name="ArcGISOnline" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="ArcGISServer" xml:space="preserve">
+    <value>ArcGIS Server</value>
+  </data>
+  <data name="AssociatedMapPrompt" xml:space="preserve">
+    <value>Karte:</value>
+  </data>
+  <data name="AutoScroll" xml:space="preserve">
+    <value>Auto ritināt:</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Fons</value>
+  </data>
+  <data name="BaseMapConfigurationSectionHeader" xml:space="preserve">
+    <value>Pamatkarte</value>
+  </data>
+  <data name="BaseMapPrompt" xml:space="preserve">
+    <value>Pamatkarte:</value>
+  </data>
+  <data name="BingMaps" xml:space="preserve">
+    <value>Bing Maps</value>
+  </data>
+  <data name="BingMapsAccountInfo" xml:space="preserve">
+    <value>Bing Maps konta informācija</value>
+  </data>
+  <data name="BingMapsAerial" xml:space="preserve">
+    <value>Atmosfēras</value>
+  </data>
+  <data name="BingMapsAerialWithLabels" xml:space="preserve">
+    <value>Atmosfēras - Etiķetes</value>
+  </data>
+  <data name="BingMapsInitializeFailed" xml:space="preserve">
+    <value>Bing Maps autentifikācija neizdevās. Vietā tiks izmantota ArcGIS Online pamatkarte. Sazinieties ar administratoru, lai saņemtu palīdzību.</value>
+  </data>
+  <data name="BingMapsRoads" xml:space="preserve">
+    <value>Ceļi</value>
+  </data>
+  <data name="Border" xml:space="preserve">
+    <value>Robeža</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Pārlūko...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Atcelt</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>Atceļ</value>
+  </data>
+  <data name="ChangeBaseMapTooltip" xml:space="preserve">
+    <value>Mainīt pamatkarti</value>
+  </data>
+  <data name="ChangeColorRampTooltip" xml:space="preserve">
+    <value>Izvēlēties krāsu shēmu</value>
+  </data>
+  <data name="ChangeGradientStopsTooltip" xml:space="preserve">
+    <value>Klikšķiniet, lai izvēlētos gradienta pieturas siltuma kartei</value>
+  </data>
+  <data name="CheckForUpdatesPrompt" xml:space="preserve">
+    <value>Pārbaudīt atjauninājumus:</value>
+  </data>
+  <data name="CheckForUpdateTooltip" xml:space="preserve">
+    <value>Kad karte tiek pārbīdīta vai mērogmainīta, darbojas atjaunotais datu saraksts</value>
+  </data>
+  <data name="ChooseBaseMapLayer" xml:space="preserve">
+    <value>Izvēlēties pamatkarti</value>
+  </data>
+  <data name="ChooseLayerHeader" xml:space="preserve">
+    <value>Izvēlēties datukopu</value>
+  </data>
+  <data name="CityPrompt" xml:space="preserve">
+    <value>Lielpilsēta:</value>
+  </data>
+  <data name="ClassifyBy" xml:space="preserve">
+    <value>Izvēlēties lauku, uz ko balstīt vērtību diapazonus</value>
+  </data>
+  <data name="ClassifyByPrompt" xml:space="preserve">
+    <value>Klasificēt pēc:</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Notīrīt visu</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Notīrīt izvēlēto</value>
+  </data>
+  <data name="ClickSeqmentToZoom" xml:space="preserve">
+    <value>Noklikšķiniet uz individuālu segmentu, lai pietuvinātu šim segmentam.</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>Noklikšķiniet, lai pārvietotos uz austrumiem</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>Noklikšķiniet, lai pārvietotos uz ziemeļiem</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>Noklikšķiniet, lai pārvietotos uz dienvidiem</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>Noklikšķiniet, lai pārvietotos uz rietumiem</value>
+  </data>
+  <data name="ClusterAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Uzlabotas īpašības</value>
+  </data>
+  <data name="ClusterFeaturesTooltipFirstBit" xml:space="preserve">
+    <value>Klasteris</value>
+  </data>
+  <data name="ClusterFeaturesTooltipSecondBit" xml:space="preserve">
+    <value>Elementi</value>
+  </data>
+  <data name="ClusterTooltip" xml:space="preserve">
+    <value>Zīmēt elementu klasterus kopā</value>
+  </data>
+  <data name="ColorsPrompt" xml:space="preserve">
+    <value>Krāsas:</value>
+  </data>
+  <data name="ConfigurationTooltip" xml:space="preserve">
+    <value>Konfigurācija</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Konfigurēt</value>
+  </data>
+  <data name="ConfigureBingMapsCredentials" xml:space="preserve">
+    <value>Klikšķiniet, lai konfigurētu Bing Maps konta informāciju</value>
+  </data>
+  <data name="ConfigureSettings" xml:space="preserve">
+    <value>Konfigurēt Iestatījumus</value>
+  </data>
+  <data name="ConfigureTooltip" xml:space="preserve">
+    <value>Konfigurēt</value>
+  </data>
+  <data name="CountryPrompt" xml:space="preserve">
+    <value>Valsts:</value>
+  </data>
+  <data name="CurrentSymbolPrompt" xml:space="preserve">
+    <value>Pašreizējais simbols:</value>
+  </data>
+  <data name="CustomColorRamp" xml:space="preserve">
+    <value>Pielāgots</value>
+  </data>
+  <data name="CustomColorRampToolTip" xml:space="preserve">
+    <value>Izvēlēties krāsas katrai vērtībai diapazonā</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Datu avots:</value>
+  </data>
+  <data name="DataSourceTooltip" xml:space="preserve">
+    <value>Ievadīt URL uz SharePoint, Spatial Data Service vai ArcGIS Server galapunktu</value>
+  </data>
+  <data name="DefinitionTabHeader" xml:space="preserve">
+    <value>Definīcija</value>
+  </data>
+  <data name="DefinitionTabHeaderTooltip" xml:space="preserve">
+    <value>Definēt pašreizējā datu kopas īpašības</value>
+  </data>
+  <data name="DeleteConnectionCaption" xml:space="preserve">
+    <value>Apstiprināt Izdzēšanu</value>
+  </data>
+  <data name="DeleteConnectionPrompt" xml:space="preserve">
+    <value>Vai tiešām vēlaties izdzēst šo savienojumu?</value>
+  </data>
+  <data name="DeleteLayerMessageCaption" xml:space="preserve">
+    <value>Apstiprināt izdzēšanu</value>
+  </data>
+  <data name="DeleteLayerPrompt" xml:space="preserve">
+    <value>Vai tiešām vēlaties dzēst šo datukopu no kartes?</value>
+  </data>
+  <data name="DeleteRange" xml:space="preserve">
+    <value>Izdzēst diapazonu</value>
+  </data>
+  <data name="DisplayNamePrompt" xml:space="preserve">
+    <value>Parādīt nosaukumu:</value>
+  </data>
+  <data name="DisplayNameTooltip" xml:space="preserve">
+    <value>Definēt pašreizējās datu kopas parādīšanas nosaukumu</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>Velciet, lai rotētu</value>
+  </data>
+  <data name="DuplicateDataSource" xml:space="preserve">
+    <value>{0} jau ir pievienots kā datu avots</value>
+  </data>
+  <data name="DuplicateMapServiceLayer" xml:space="preserve">
+    <value>Kartes serviss jau ir pievienots</value>
+  </data>
+  <data name="DuplicateMapServiceLayerCaption" xml:space="preserve">
+    <value>Dublēt konstatēto</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Rediģēt</value>
+  </data>
+  <data name="EnterCredentials" xml:space="preserve">
+    <value>Lūdzu ievadiet lietotāja vārdu un paroli</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>Kļūda</value>
+  </data>
+  <data name="Europe" xml:space="preserve">
+    <value>Eiropa</value>
+  </data>
+  <data name="Every" xml:space="preserve">
+    <value>Ikviens</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>Izvērst/sakļaut</value>
+  </data>
+  <data name="ExportSelection" xml:space="preserve">
+    <value>Eksportēt izvēlēto</value>
+  </data>
+  <data name="FieldHeader" xml:space="preserve">
+    <value>Lauks</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>Pildījums</value>
+  </data>
+  <data name="FilterByMapView" xml:space="preserve">
+    <value>Filtrē pēc kartes skata</value>
+  </data>
+  <data name="FilterExpressionPrompt" xml:space="preserve">
+    <value>Filtra izteiksme:</value>
+  </data>
+  <data name="FilterExpressionTooltip" xml:space="preserve">
+    <value>Lietot filtru pašreizējai datu kopai</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Atrast</value>
+  </data>
+  <data name="FindDirections" xml:space="preserve">
+    <value>Atrast virzienus</value>
+  </data>
+  <data name="FindLocation" xml:space="preserve">
+    <value>Atrast izvietojumu</value>
+  </data>
+  <data name="FindNearby" xml:space="preserve">
+    <value>Atrast tuvēju</value>
+  </data>
+  <data name="FixLocation" xml:space="preserve">
+    <value>Fiksēt izvietojumu</value>
+  </data>
+  <data name="Foreground" xml:space="preserve">
+    <value>Priekšplāns</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>Vairāk informācijas</value>
+  </data>
+  <data name="FromPrompt" xml:space="preserve">
+    <value>No:</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>Pilns pārklājums</value>
+  </data>
+  <data name="GetListItemsFailed" xml:space="preserve">
+    <value>Neizdevās atgūt vienības no {0} vietnē {1}</value>
+  </data>
+  <data name="GetListItemsFailedPromptRemove" xml:space="preserve">
+    <value>Neizdevās atgūt vienības no {0} vietnē {1}.  Izņemt šo skatu no kartes?</value>
+  </data>
+  <data name="GetListsFailed" xml:space="preserve">
+    <value>Sarakstu atjaunošana neizdevās: {0}</value>
+  </data>
+  <data name="HeatMap" xml:space="preserve">
+    <value>Siltuma karte</value>
+  </data>
+  <data name="HeatMapAdvancedProperties" xml:space="preserve">
+    <value>Siltuma kartes īpašības</value>
+  </data>
+  <data name="HeatMapAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Īpašības siltuma kartes renderēšanai</value>
+  </data>
+  <data name="HeatMapTooltip" xml:space="preserve">
+    <value>Parādīt datus kā siltuma karti</value>
+  </data>
+  <data name="HundredPercent" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="InitializationError" xml:space="preserve">
+    <value>Inicializēšanas kļūda: {0}</value>
+  </data>
+  <data name="IntensityPrompt" xml:space="preserve">
+    <value>Intensitāte:</value>
+  </data>
+  <data name="InvalidUrlCaption" xml:space="preserve">
+    <value>Nederīgs Url</value>
+  </data>
+  <data name="InvalidUrlPrompt" xml:space="preserve">
+    <value>Lūdzu, ievadiet derīgu Url</value>
+  </data>
+  <data name="LatitudePrompt" xml:space="preserve">
+    <value>Platums (Y):</value>
+  </data>
+  <data name="LayerInfoRetrievalError" xml:space="preserve">
+    <value>Kļūda, ielādējot slāņu informāciju: {0}</value>
+  </data>
+  <data name="LayersTabHeader" xml:space="preserve">
+    <value>Slāņa redzamība</value>
+  </data>
+  <data name="LayersTabHeaderTooltip" xml:space="preserve">
+    <value>Konfigurēt slāņu redzamību</value>
+  </data>
+  <data name="ListViewHeader" xml:space="preserve">
+    <value>Saraksta skats</value>
+  </data>
+  <data name="LoadDataSourceTooltip" xml:space="preserve">
+    <value>Ielādē datu avotu</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>Izvietot</value>
+  </data>
+  <data name="LocateByAddress" xml:space="preserve">
+    <value>Adreses</value>
+  </data>
+  <data name="LocateByAddressTooltip" xml:space="preserve">
+    <value>Lietot adrešu saskaņu, lai zīmētu pašreizējā saraksta datus</value>
+  </data>
+  <data name="LocateByCoordinates" xml:space="preserve">
+    <value>Koordinātes</value>
+  </data>
+  <data name="LocateByCoordinatesTooltip" xml:space="preserve">
+    <value>Lietot koordinātes, lai zīmētu pašreizējā saraksta datus</value>
+  </data>
+  <data name="LocateByPrompt" xml:space="preserve">
+    <value>Izvietot pēc:</value>
+  </data>
+  <data name="LocateTooltip" xml:space="preserve">
+    <value>Ar adresi saskaņo pašreizējo sarakstu</value>
+  </data>
+  <data name="LocateUpdateTooltip" xml:space="preserve">
+    <value>Zīmēt pašreizējo sarakstu, balstoties uz izvēlētajiem koordinātu laukiem</value>
+  </data>
+  <data name="LocationFieldsTabHeader" xml:space="preserve">
+    <value>Izvietojuma lauki</value>
+  </data>
+  <data name="LocationFieldsTabHeaderTooltip" xml:space="preserve">
+    <value>Izvēlieties pašreizējās datukopas adresi vai ģeogrāfisku laukus</value>
+  </data>
+  <data name="LongitudePrompt" xml:space="preserve">
+    <value>Garums (X):</value>
+  </data>
+  <data name="MapContentsTooltip" xml:space="preserve">
+    <value>Kartes saturs</value>
+  </data>
+  <data name="MapXaml" xml:space="preserve">
+    <value>Kartes XAML</value>
+  </data>
+  <data name="MapXamlRepresentation" xml:space="preserve">
+    <value>XAML reprezentācija kartei</value>
+  </data>
+  <data name="MaxPrompt" xml:space="preserve">
+    <value>Max:</value>
+  </data>
+  <data name="MinPrompt" xml:space="preserve">
+    <value>Min:</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minūtes</value>
+  </data>
+  <data name="ModifyRangeTooltip" xml:space="preserve">
+    <value>Modificēt diapazonu</value>
+  </data>
+  <data name="MoveBarUpDown" xml:space="preserve">
+    <value>Pārvietot joslu uz augšu, lai pietuvinātu, uz leju, lai attālinātu</value>
+  </data>
+  <data name="MoveDownTooltip" xml:space="preserve">
+    <value>Pārvietot uz leju</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>Pārvietot pirmo</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>Pārvietot pēdējo</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>Pārvietot nākošo</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>Pārvietot iepriekšējo</value>
+  </data>
+  <data name="MoveRangeTooltip" xml:space="preserve">
+    <value>Pārvietot diapazonu</value>
+  </data>
+  <data name="MoveUpTooltip" xml:space="preserve">
+    <value>Pārvietot uz augšu</value>
+  </data>
+  <data name="MultiLayerCacheNotSupported" xml:space="preserve">
+    <value>Multislāņiem kešatmiņas mozaikas karšu servisi netiek atbalstīti. Vietā izmantojiet vai izveidojiet vienu kausēto kešatmiņu.</value>
+  </data>
+  <data name="MultiLayerCacheNotSupportedCaption" xml:space="preserve">
+    <value>Multislāņiem kešatmiņas mozaikas servisi netiek atbalstīti.</value>
+  </data>
+  <data name="MultipleViewsNotAllowed" xml:space="preserve">
+    <value>SharePoint sarakstu skatus nevar pievienot vairākas reizes</value>
+  </data>
+  <data name="NewDataSourceHelpText" xml:space="preserve">
+    <value>&lt;Ievadiet servera nosaukumu vai http rezultātu&gt;</value>
+  </data>
+  <data name="NextRange" xml:space="preserve">
+    <value>Nākamais diapazons</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefined" xml:space="preserve">
+    <value>Izvietošanas lauki sarakstā nav kartēti. Lūdzu kartēt piemēroto lauku saraksta kolonnas.</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefinedCaption" xml:space="preserve">
+    <value>Definēt izvietojuma lauka kartēšanu</value>
+  </data>
+  <data name="NoAssociatedMapWebPart" xml:space="preserve">
+    <value>Nav atrastas kartes web daļas.</value>
+  </data>
+  <data name="NoDistinctNumericFields" xml:space="preserve">
+    <value>Visiem skaitliskajiem laukiem šajā datu komplektā ir tādas pašas minimālās un maksimālās vērtības. Lai konfigurētu vērtību diapazonu, minimālajam un maksimālajam jābūt atšķirīgiem.</value>
+  </data>
+  <data name="NoGeographicListsFound" xml:space="preserve">
+    <value>Nav atrasti saraksti, kas satur ģeogrāfiskos datus {0}</value>
+  </data>
+  <data name="NoLayersAdded" xml:space="preserve">
+    <value>Noklikšķiniet uz pogas "Pievienot datus', lai pievienotu kartei datus</value>
+  </data>
+  <data name="NoGPServicesFound" xml:space="preserve">
+    <value>Nav atrasti ģeodatu apstrādes servisi {0}</value>
+  </data>
+  <data name="NoMapServicesFound" xml:space="preserve">
+    <value>Nav atrasti karšu servisi {0}</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Neviens</value>
+  </data>
+  <data name="NoNumericFieldsFound" xml:space="preserve">
+    <value>Šī datukopa nesatur skaitliskus laukus. Vērtību diapazonus var iestatīt tikai uz datukopām, kas satur vismaz vienu skaitlisku lauku.</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>Nav ierakstu</value>
+  </data>
+  <data name="NoRecordsForVisibleLayer" xml:space="preserve">
+    <value>Šī saraksta vienības kartē nav atjaunotas. Lai apskatītu vienības, ieslēdziet sarakstam redzamību.</value>
+  </data>
+  <data name="NoResultsCaption" xml:space="preserve">
+    <value>Nav rezultātu</value>
+  </data>
+  <data name="NoResultsLayerNotVisible" xml:space="preserve">
+    <value>Nav atrasti ieraksti, jo kartē saraksts nav redzams</value>
+  </data>
+  <data name="NorthAmerica" xml:space="preserve">
+    <value>Ziemeļamerika</value>
+  </data>
+  <data name="NoSpatialTablesFound" xml:space="preserve">
+    <value>Nav atrastas tabulas ar telpiskajiem datiem {0}</value>
+  </data>
+  <data name="NumericFieldNotDistinct" xml:space="preserve">
+    <value>Lauks {0} satur to pašu minimālo un maksimālo vērtību. Vērtību diapazonus var konfigurēt tikai uz laukiem, kam ir atšķirīgas minimālās un maksimālās vērtības.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Labi</value>
+  </data>
+  <data name="OnPanAndZoom" xml:space="preserve">
+    <value>Uz pārbīdi un mērogmaiņu</value>
+  </data>
+  <data name="OperationalDataSectionHeader" xml:space="preserve">
+    <value>Dati</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Parole:</value>
+  </data>
+  <data name="PleaseSpecifyDataSourceMessage" xml:space="preserve">
+    <value>Lūdzu, norādiet datu avotu</value>
+  </data>
+  <data name="PollForUpdatesTooltip" xml:space="preserve">
+    <value>Definēt intervālu, lai iegūtu atjauninātu sarakstu datus</value>
+  </data>
+  <data name="PopUpTabHeader" xml:space="preserve">
+    <value>Uznirstošais logs</value>
+  </data>
+  <data name="PopUpTabHeaderTooltip" xml:space="preserve">
+    <value>Konfigurēt kartes info uznirstošo logu par pašreizējo datukopu</value>
+  </data>
+  <data name="PreDefinedColorRamp" xml:space="preserve">
+    <value>Iepriekš definēta</value>
+  </data>
+  <data name="PreDefinedColorRampTooltip" xml:space="preserve">
+    <value>Lietot iepriekš definētu krāsu kopumu</value>
+  </data>
+  <data name="PreviousRange" xml:space="preserve">
+    <value>Iepriekšējais diapazons</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>Produkcija</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Īpašības - {0}</value>
+  </data>
+  <data name="RecordsPrompt" xml:space="preserve">
+    <value>Ieraksts:</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Atjaunot</value>
+  </data>
+  <data name="RefreshError" xml:space="preserve">
+    <value>Kļūda, atjaunojot {0} slāni</value>
+  </data>
+  <data name="RefreshMapXamlTooltip" xml:space="preserve">
+    <value>Atjaunot karti XAML</value>
+  </data>
+  <data name="RefreshTooltip" xml:space="preserve">
+    <value>Atjaunot</value>
+  </data>
+  <data name="RemoveTooltip" xml:space="preserve">
+    <value>Izņemt</value>
+  </data>
+  <data name="ResetExtent" xml:space="preserve">
+    <value>Atiestatīt pārklājumu</value>
+  </data>
+  <data name="ResetExtentTooltip" xml:space="preserve">
+    <value>Atiestatīt kartes pārklājumu uz ArcGIS servera servisa definēto sākotnējo pārklājumu.</value>
+  </data>
+  <data name="ResetMapRotation" xml:space="preserve">
+    <value>Atiestatīt kartes rotāciju</value>
+  </data>
+  <data name="ResolutionPrompt" xml:space="preserve">
+    <value>Rezolūcija:</value>
+  </data>
+  <data name="ResultsViewHeader" xml:space="preserve">
+    <value>Rezultāta skats</value>
+  </data>
+  <data name="RetrievingBaseMaps" xml:space="preserve">
+    <value>Atjauno pieejamās pamatkartes</value>
+  </data>
+  <data name="RetrievingGeometryType" xml:space="preserve">
+    <value>Atjauno ģeometrijas tipu</value>
+  </data>
+  <data name="RetrievingInformation" xml:space="preserve">
+    <value>Atjauno informāciju no servera</value>
+  </data>
+  <data name="RollBackChangesTooltip" xml:space="preserve">
+    <value>Atritināt izmaiņas</value>
+  </data>
+  <data name="ScaleBarUnit_feet" xml:space="preserve">
+    <value>pēdas</value>
+  </data>
+  <data name="ScaleBarUnit_kilometers" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="ScaleBarUnit_meters" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="ScaleBarUnit_miles" xml:space="preserve">
+    <value>jūdzes</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>Sekundes</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Izvēlēties visu</value>
+  </data>
+  <data name="SelectAllTooltip" xml:space="preserve">
+    <value>Izvēlēties visu</value>
+  </data>
+  <data name="SelectedRangePrompt" xml:space="preserve">
+    <value>Diapazons:</value>
+  </data>
+  <data name="SelectedRecordsFormatString" xml:space="preserve">
+    <value>Ieraksts ({0} no {1} izvēlēts)</value>
+  </data>
+  <data name="SelectRangeTooltip" xml:space="preserve">
+    <value>Izvēlēties rediģēšanas diapazonu</value>
+  </data>
+  <data name="ServerPrompt" xml:space="preserve">
+    <value>Serveris:</value>
+  </data>
+  <data name="ServiceConnectionError" xml:space="preserve">
+    <value>Kļūda pieslēdzoties {0}.  Lūdzu, pārbaudiet URL, pārliecinieties, ka serviss darbojas un mēģiniet vēlreiz.</value>
+  </data>
+  <data name="ServiceConnectionErrorCaption" xml:space="preserve">
+    <value>Savienojuma kļūda</value>
+  </data>
+  <data name="ServiceConnectionErrorDuringInit" xml:space="preserve">
+    <value>Nevar izveidot savienojumu ar {0}.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Iestatījumi</value>
+  </data>
+  <data name="ShowHide" xml:space="preserve">
+    <value>Rādīt/paslēpt</value>
+  </data>
+  <data name="ShowHideTooltip" xml:space="preserve">
+    <value>Rādīt/paslēpt</value>
+  </data>
+  <data name="SimpleSymbolType" xml:space="preserve">
+    <value>Vienkāršs</value>
+  </data>
+  <data name="SimpleSymbolTypeTooltip" xml:space="preserve">
+    <value>Parādīt pašreizējo datukopu ar vienu simbolu</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Avots:</value>
+  </data>
+  <data name="Staging" xml:space="preserve">
+    <value>Pakāpju</value>
+  </data>
+  <data name="StatePrompt" xml:space="preserve">
+    <value>Pavalsts/Apakšdalījums:</value>
+  </data>
+  <data name="SymbolsTabHeader" xml:space="preserve">
+    <value>Simboli</value>
+  </data>
+  <data name="SymbolsTabHeaderTooltip" xml:space="preserve">
+    <value>Konfigurēt pašreizējās datu kopas attēlojumu</value>
+  </data>
+  <data name="SymbolTypePrompt" xml:space="preserve">
+    <value>Simbolu tipi:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>uz</value>
+  </data>
+  <data name="TokenAuthenticationFailed" xml:space="preserve">
+    <value>Bing Maps autentifikācija neizdevās. Pārbaudiet jūsu akreditācijas datus un mēģiniet vēlreiz.</value>
+  </data>
+  <data name="TokenConnectionFailed" xml:space="preserve">
+    <value>Savienojums, lai atjaunotu pilnvaru, neizdevās. Pārbaudiet savienojumu ar host serveri un mēģiniet vēlreiz.</value>
+  </data>
+  <data name="TolerancePrompt" xml:space="preserve">
+    <value>Tolerance:</value>
+  </data>
+  <data name="ToPrompt" xml:space="preserve">
+    <value>Uz:</value>
+  </data>
+  <data name="TotalDistancePrompt" xml:space="preserve">
+    <value>Totālā distance:</value>
+  </data>
+  <data name="TotalTimePrompt" xml:space="preserve">
+    <value>Totālais laiks:</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>Caurspīdīgums</value>
+  </data>
+  <data name="TransparencyPrompt" xml:space="preserve">
+    <value>Caurspīdīgums:</value>
+  </data>
+  <data name="UnhandledSilverlightError" xml:space="preserve">
+    <value>Kļūda Silverlight 2 aplikācijā</value>
+  </data>
+  <data name="UpdateAddress" xml:space="preserve">
+    <value>Atjaunināt adresi</value>
+  </data>
+  <data name="UpdateLayerError" xml:space="preserve">
+    <value>Kļūda, atjauninot slāni: {0}</value>
+  </data>
+  <data name="UpdateListError" xml:space="preserve">
+    <value>Sarakstu izmaiņu lietošanas kļūda: {0}</value>
+  </data>
+  <data name="UrlPrompt" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="UserNamePrompt" xml:space="preserve">
+    <value>Lietotājs:</value>
+  </data>
+  <data name="UseStagingServer" xml:space="preserve">
+    <value>Lietot pakāpju serveri</value>
+  </data>
+  <data name="ValidAddressError" xml:space="preserve">
+    <value>Lūdzu, ievadiet derīgu adresi</value>
+  </data>
+  <data name="ValidAddressErrorCaption" xml:space="preserve">
+    <value>Nederīga adrese</value>
+  </data>
+  <data name="ValidCoordinatesError" xml:space="preserve">
+    <value>Lūdzu, ievadiet derīgu koordinātes</value>
+  </data>
+  <data name="ValidCoordinatesErrorCaption" xml:space="preserve">
+    <value>Nederīgas koordinātes</value>
+  </data>
+  <data name="ValueRanges" xml:space="preserve">
+    <value>Vērtību diapazoni</value>
+  </data>
+  <data name="ValueRangesTooltip" xml:space="preserve">
+    <value>Parādīt pašreizējo datukopu, kas balstīta uz vērtību diapazoniem</value>
+  </data>
+  <data name="ViewItem" xml:space="preserve">
+    <value>Skatīt vienības</value>
+  </data>
+  <data name="VisibleHeader" xml:space="preserve">
+    <value>Redzams</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Platums</value>
+  </data>
+  <data name="XamlRepresentation" xml:space="preserve">
+    <value>XAML reprezentācija pašreizējam slānim</value>
+  </data>
+  <data name="XamlViewTabHeader" xml:space="preserve">
+    <value>Xaml skats</value>
+  </data>
+  <data name="XamlViewTabHeaderTooltip" xml:space="preserve">
+    <value>Skatīt radīto XAML par slāni</value>
+  </data>
+  <data name="ZeroPercent" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="Zip4Prompt" xml:space="preserve">
+    <value>Zip4:</value>
+  </data>
+  <data name="ZipPrompt" xml:space="preserve">
+    <value>Zip/Pasta kods:</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Pietuvināt</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Attālināt</value>
+  </data>
+  <data name="ZoomOutButton" xml:space="preserve">
+    <value>Attālināt</value>
+  </data>
+  <data name="ZoomRangeTooltip" xml:space="preserve">
+    <value>Pietuvināt uz diapazonu</value>
+  </data>
+  <data name="ZoomToAllRecords" xml:space="preserve">
+    <value>Iet uz</value>
+  </data>
+  <data name="ZoomToItem" xml:space="preserve">
+    <value>Pietuvināt vienībai</value>
+  </data>
+  <data name="ZoomToSelection" xml:space="preserve">
+    <value>Pietuvināt izvēlētajam</value>
+  </data>
+  <data name="ConfigFileUrlTextboxTooltip" xml:space="preserve">
+    <value>Ievadiet URL uz konfigurācijas failu</value>
+  </data>
+  <data name="ConnectToSharePointDataSource" xml:space="preserve">
+    <value>&lt;Ievadiet url uz SharePoint vietni&gt;</value>
+  </data>
+  <data name="ExportToFile" xml:space="preserve">
+    <value>Eksportēt uz failu</value>
+  </data>
+  <data name="FileNamePrompt" xml:space="preserve">
+    <value>FailaNosaukums:</value>
+  </data>
+  <data name="MustEnterFileName" xml:space="preserve">
+    <value>Lūdzu, ievadiet faila nosaukumu</value>
+  </data>
+  <data name="MustEnterFileNameTitle" xml:space="preserve">
+    <value>Trūkst faila nosaukums</value>
+  </data>
+  <data name="OverwriteExistingFile" xml:space="preserve">
+    <value>Pārrakstīt esošo failu</value>
+  </data>
+  <data name="UrlToSitePrompt" xml:space="preserve">
+    <value>Vietnes Url:</value>
+  </data>
+  <data name="CustomBaseMap" xml:space="preserve">
+    <value>ArcGIS Server pamatkarte</value>
+  </data>
+  <data name="AGSDataSourceTooltip" xml:space="preserve">
+    <value>Ievadīt URL uz ArcGIS Server galapunktu</value>
+  </data>
+  <data name="NotUsingBingMapsResource" xml:space="preserve">
+    <value>Jūsu aplikācija neizmanto nekādus resursus no Bing Maps. Nav Konta informācijas, kas ir jākonfigurē šajā brīdī.</value>
+  </data>
+  <data name="NotUsingBingMapsResourceCaption" xml:space="preserve">
+    <value>Nav Bings Maps resursu</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Aizvērt</value>
+  </data>
+  <data name="BrowseForBaseMap" xml:space="preserve">
+    <value>Pārlūks uz pamatkarti</value>
+  </data>
+  <data name="EnterUrl" xml:space="preserve">
+    <value>Ievadīt URL</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatch" xml:space="preserve">
+    <value>Kešatmiņas kartes servisa telpiskā atsauce  neatbilst pamatkartes telpiskajai atsaucei. Šo kartes servisu nevar pievienot.</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatchCaption" xml:space="preserve">
+    <value>Telpiskās atskaites nesaskaņa</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemoved" xml:space="preserve">
+    <value>Jūsu operatīvās datukopas ietver kartes servisus, kuru telpiskās atskaites nesaskan ar jūsu izvēlēto pamatkarti. Lai turpinātu, šie kartes servisi būs jāizņem. Klikšķiniet uz Labi, lai izņemtu.</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemovedCaption" xml:space="preserve">
+    <value>Operatīvā datukopa nesaskan</value>
+  </data>
+  <data name="AddContentTitle" xml:space="preserve">
+    <value>Pievienot saturu</value>
+  </data>
+  <data name="BaseMapGalleryTitle" xml:space="preserve">
+    <value>Izvēlēties pamatkarti</value>
+  </data>
+  <data name="BrowseForBaseMapTitle" xml:space="preserve">
+    <value>Pārlūks uz pamatkarti</value>
+  </data>
+  <data name="EnterUrlDialogTitle" xml:space="preserve">
+    <value>Ievadīt Url uz pamatkarti</value>
+  </data>
+  <data name="MapContentsTitle" xml:space="preserve">
+    <value>Kartes saturs</value>
+  </data>
+  <data name="CanOnlyUseCachedMapServicesAsBaseMap" xml:space="preserve">
+    <value>Tikai ArcGIS kešatmiņas kartes servisus var izmantot kā pamatkarti.</value>
+  </data>
+  <data name="InvalidMapServiceCaption" xml:space="preserve">
+    <value>Nederīgs kartes serviss </value>
+  </data>
+  <data name="MapTipBorderColorTooltip" xml:space="preserve">
+    <value>Mainīt robežu krāsu priekš kartes padoma</value>
+  </data>
+  <data name="MapTipFillColorTooltip" xml:space="preserve">
+    <value>Mainīt aizpildījuma krāsu priekš kartes padoma</value>
+  </data>
+  <data name="MapTipForegroundColorTooltip" xml:space="preserve">
+    <value>Mainīt teksta krāsu priekš kartes padoma</value>
+  </data>
+  <data name="SampleMapTipText" xml:space="preserve">
+    <value>Piemēra teksts</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Pievienot izvēlētus slāņus</value>
+  </data>
+  <data name="AttributePrompt" xml:space="preserve">
+    <value>Atribūts:</value>
+  </data>
+  <data name="ColorScheme" xml:space="preserve">
+    <value>Krāsu shēma</value>
+  </data>
+  <data name="MoreOptions" xml:space="preserve">
+    <value>Vairāk opciju</value>
+  </data>
+  <data name="RendererPrompt" xml:space="preserve">
+    <value>Renderētājs:</value>
+  </data>
+  <data name="SymbolOptions" xml:space="preserve">
+    <value>Shēmas opcijas</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Pašreizējais simbols:</value>
+  </data>
+  <data name="Basemap" xml:space="preserve">
+    <value>Pamatkarte</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Nest uz priekšu</value>
+  </data>
+  <data name="ClassBreaks" xml:space="preserve">
+    <value>Klašu lauzumi</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Krāsa</value>
+  </data>
+  <data name="FromServer" xml:space="preserve">
+    <value>Pārlūko...</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Mājas</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Karte</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Kartes saturs</value>
+  </data>
+  <data name="MapTip" xml:space="preserve">
+    <value>Kartes padoms</value>
+  </data>
+  <data name="MoreSymbolOptions" xml:space="preserve">
+    <value>Shēmas opcijas</value>
+  </data>
+  <data name="Organize" xml:space="preserve">
+    <value>Organizēt</value>
+  </data>
+  <data name="RefreshLayer" xml:space="preserve">
+    <value>Atjaunot</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Izņemt</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Meklēt...</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Sūtīt uz aizmuguri</value>
+  </data>
+  <data name="SingleSymbol" xml:space="preserve">
+    <value>Vienkāršs simbols</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Lielums</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Rīki</value>
+  </data>
+  <data name="UniqueValues" xml:space="preserve">
+    <value>Unikālas vērtības</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="CategoryPrompt" xml:space="preserve">
+    <value>Kategorija:</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>Simbols</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Skats</value>
+  </data>
+  <data name="DrawOrder" xml:space="preserve">
+    <value>Zīmēšanas kārtība</value>
+  </data>
+  <data name="Popups" xml:space="preserve">
+    <value>Uznirstošie logi</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Tabula</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>Konfigurēt Uznirstošos logus</value>
+  </data>
+  <data name="AddUniqueValue" xml:space="preserve">
+    <value>Pievienot vērtību</value>
+  </data>
+  <data name="DeleteUniqueValue" xml:space="preserve">
+    <value>Izdzēst izvēlēto vērtību</value>
+  </data>
+  <data name="NextUniqueValue" xml:space="preserve">
+    <value>Nākamais unikālā vērtība</value>
+  </data>
+  <data name="PreviousUniqueValue" xml:space="preserve">
+    <value>Iepriekšējā Unikālā vērtība</value>
+  </data>
+  <data name="ValuePrompt" xml:space="preserve">
+    <value>Vērtība:</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Slānis</value>
+  </data>
+  <data name="MapCenterTooltip" xml:space="preserve">
+    <value>ArcGIS.com Map Center</value>
+  </data>
+  <data name="ClassesPrompt" xml:space="preserve">
+    <value>Klases:</value>
+  </data>
+  <data name="InvalidClassBreakValue" xml:space="preserve">
+    <value>Nederīga vērtība</value>
+  </data>
+  <data name="DefaultSymbol" xml:space="preserve">
+    <value>Noklusējuma simbols</value>
+  </data>
+  <data name="MaxPointsPrompt" xml:space="preserve">
+    <value>Punktu maksimums:</value>
+  </data>
+  <data name="RadiusPrompt" xml:space="preserve">
+    <value>Rādiuss:</value>
+  </data>
+  <data name="UsePointClustering" xml:space="preserve">
+    <value>Lietot punktu klasterus</value>
+  </data>
+  <data name="AddContent" xml:space="preserve">
+    <value>Pievienot saturu</value>
+  </data>
+  <data name="LayerSymbology" xml:space="preserve">
+    <value>Simbolizācija</value>
+  </data>
+  <data name="AutoUpdates" xml:space="preserve">
+    <value>Auto atjaunošanas</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>Intervāls</value>
+  </data>
+  <data name="PollForUpdates" xml:space="preserve">
+    <value>Balsot par atjaunošanu</value>
+  </data>
+  <data name="UpdateOnExtentChanged" xml:space="preserve">
+    <value>Atjaunināt pārklājuma izmaiņas</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtrs</value>
+  </data>
+  <data name="FilterLayerTitle" xml:space="preserve">
+    <value>Norādiet filtra izteiksmi</value>
+  </data>
+  <data name="FilterByMapExtent" xml:space="preserve">
+    <value>Filtrē pēc pārklājuma</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Pilns ekrāns</value>
+  </data>
+  <data name="AutoScrollRow" xml:space="preserve">
+    <value>Auto ritināt rinda</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Servisa detaļas</value>
+  </data>
+  <data name="DatasetPrompt" xml:space="preserve">
+    <value>Datukopa:</value>
+  </data>
+  <data name="DistancePrompt" xml:space="preserve">
+    <value>Distance:</value>
+  </data>
+  <data name="FindNearbyTitle" xml:space="preserve">
+    <value>Atrast tuvēju</value>
+  </data>
+  <data name="InvalidDistance" xml:space="preserve">
+    <value>Lūdzu, ievadiet derīgu distanci</value>
+  </data>
+  <data name="InvalidDistanceCaption" xml:space="preserve">
+    <value>Nederīga distance</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>Kilometri</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Metri</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>Jūdzes</value>
+  </data>
+  <data name="SelectionTools" xml:space="preserve">
+    <value>Izvēlēšanās rīki</value>
+  </data>
+  <data name="BufferDistance" xml:space="preserve">
+    <value>Bufera distance</value>
+  </data>
+  <data name="Feed" xml:space="preserve">
+    <value>GeoRSS...</value>
+  </data>
+  <data name="FindNearbyBufferPrefix" xml:space="preserve">
+    <value>Atrast tuvēju buferi - </value>
+  </data>
+  <data name="FindNearbyPrefix" xml:space="preserve">
+    <value>Atrast tuvēju - </value>
+  </data>
+  <data name="SelectByDraw" xml:space="preserve">
+    <value>Izvēlēties ar zīmēšanu</value>
+  </data>
+  <data name="ColorSchemePrompt" xml:space="preserve">
+    <value>Krāsu shēma:</value>
+  </data>
+  <data name="EditValuesPrompt" xml:space="preserve">
+    <value>Rediģēt vērtības:</value>
+  </data>
+  <data name="TypeValueToAdd" xml:space="preserve">
+    <value>Ierakstiet vērtību, lai pievienotu</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Tēma</value>
+  </data>
+  <data name="AddGeoRSSTitle" xml:space="preserve">
+    <value>Ievadīt Url uz GeoRSS padevi</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>Galvene:</value>
+  </data>
+  <data name="BrowseDialogGeographicDataNotFound" xml:space="preserve">
+    <value>Ģeogrāfiskie dati nav atrasti</value>
+  </data>
+  <data name="DefaultBasemapLayerDisplayName" xml:space="preserve">
+    <value>Pamatkarte</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>Slānis:</value>
+  </data>
+  <data name="AddLayerTooltip" xml:space="preserve">
+    <value>Pievienot kartei izvēlētu ArcGIS Server, SharePoint vai Spatial Data Service datukopu</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Pārsaukt</value>
+  </data>
+  <data name="ODataFeed" xml:space="preserve">
+    <value>OData...</value>
+  </data>
+  <data name="SignInWithGlobalAccount" xml:space="preserve">
+    <value>Pierakstieties ar jūsu ESRI Global Account</value>
+  </data>
+  <data name="ClusterColor" xml:space="preserve">
+    <value>Klastera fona krāsa</value>
+  </data>
+  <data name="ClusterTextColor" xml:space="preserve">
+    <value>Klastera priekšplāna krāsa</value>
+  </data>
+  <data name="Clustering" xml:space="preserve">
+    <value>Klasteris</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Vispārējs</value>
+  </data>
+  <data name="HeatMapAdd" xml:space="preserve">
+    <value>Pievienot Siltuma karti</value>
+  </data>
+  <data name="Intensity" xml:space="preserve">
+    <value>Intensitāte</value>
+  </data>
+  <data name="OpenItemOnClick" xml:space="preserve">
+    <value>Atvērt vienību uz klikšķi</value>
+  </data>
+  <data name="Symbology" xml:space="preserve">
+    <value>Simbolizācija</value>
+  </data>
+  <data name="ShowMapContents" xml:space="preserve">
+    <value>Atpakaļ</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>Atribūti</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Dažādi</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Uzlabots</value>
+  </data>
+  <data name="ExtensionLoadFailed" xml:space="preserve">
+    <value>Paplašinājuma ielādēšana neizdevās</value>
+  </data>
+  <data name="ToolClassLoadFailed" xml:space="preserve">
+    <value>Rīku klases ielādēšana neizdevās</value>
+  </data>
+  <data name="ToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Rīku klases ielādēšanas konfigurācija neizdevās</value>
+  </data>
+  <data name="ExtensionInitializationFailed" xml:space="preserve">
+    <value>Neizdevās instance instancē no pielāgotās komandas.</value>
+  </data>
+  <data name="ExtensionInitializationFailedHeader" xml:space="preserve">
+    <value>Paplašinājuma inicializācija neizdevās</value>
+  </data>
+  <data name="Less" xml:space="preserve">
+    <value>Mazāk</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Vairāk</value>
+  </data>
+  <data name="ConfiguringLayer" xml:space="preserve">
+    <value>Konfigurē:</value>
+  </data>
+  <data name="RemoveLayerCaption" xml:space="preserve">
+    <value>Izņemt slāni?</value>
+  </data>
+  <data name="RemoveLayerNameSubstitude" xml:space="preserve">
+    <value>izvēlētais</value>
+  </data>
+  <data name="RemoveLayerPrompt" xml:space="preserve">
+    <value>Vai jūs vēlaties izņemt {0} slāni no kartes?</value>
+  </data>
+  <data name="BrowseNoEllipsis" xml:space="preserve">
+    <value>Pārlūkot</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Saturs</value>
+  </data>
+  <data name="GeoRSS" xml:space="preserve">
+    <value>GeoRSS</value>
+  </data>
+  <data name="SearchNoEllipsis" xml:space="preserve">
+    <value>Meklēt</value>
+  </data>
+  <data name="ErrorLoadConfigurationOfExtension" xml:space="preserve">
+    <value>Kļūda LoadConfiguration paplašinājumam ({0})</value>
+  </data>
+  <data name="ErrorNoPrinterContainerFoundInPrintTemplate" xml:space="preserve">
+    <value>Drukas šablonā nav atrasts drukas konteiners.</value>
+  </data>
+  <data name="ErrorSaveConfigurationOfExtension" xml:space="preserve">
+    <value>Kļūda SaveConfiguration paplašinājumam ({0})</value>
+  </data>
+  <data name="ExceptionCachedMapServiceSpatialReferenceDoesNotMatch" xml:space="preserve">
+    <value>Kešatmiņā kartes servisa telpiskā atskaite neatbilst.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitialized" xml:space="preserve">
+    <value>Nevar Mērogmainīt karti uz pārklājumu, pirms karte ir inicializēta. Lietojiet MapLayersInitialized šim notikumam.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitializedMapReferenceNull" xml:space="preserve">
+    <value>Nevar Mērogmainīt karti uz pārklājumu, pirms karte ir inicializēta. Kartes Telpiskā atskaites ir nulle.</value>
+  </data>
+  <data name="ExceptionConnectionTypeDoesNotCoorespondToDatasourceWhichHasResources" xml:space="preserve">
+    <value>Savienojuma tips {0} neatbilst datu avotam ({1}) kam ir resursi</value>
+  </data>
+  <data name="ExceptionCouldNotFindElementWithName" xml:space="preserve">
+    <value>Nevarēja atrast elementu ar nosaukumu {0}.</value>
+  </data>
+  <data name="ExceptionCouldNotFindToggleButtonWithName" xml:space="preserve">
+    <value>Nevarēja atrast pārslēgšanas pogu ar nosaukumu {0}.</value>
+  </data>
+  <data name="ExceptionDatasourceNotLoadedForBaseMapType" xml:space="preserve">
+    <value>Datu avots nav ielādēts priekš bāzes kartes tipa {0}</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>elements</value>
+  </data>
+  <data name="ExceptionMapHasNotBeenInitializedYet" xml:space="preserve">
+    <value>Karte vēl nav inicializēta</value>
+  </data>
+  <data name="ExceptionMapLayersHaveNotBeenInstantiated" xml:space="preserve">
+    <value>Karte slāņi nav speciāli apstrādāti. Pamatkarti var mainīt tikai pēc tam, kad MapLayersInitialized ir atlaists</value>
+  </data>
+  <data name="ExceptionMapNotSet" xml:space="preserve">
+    <value>Karte vēl nav iestatīta</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationProvider" xml:space="preserve">
+    <value>Jānorāda ConfigurationProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationStoreProvider" xml:space="preserve">
+    <value>Jānorāda ConfigurationStoreProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyDataSourceProvider" xml:space="preserve">
+    <value>Jānorāda DataSourceProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyLayoutProvider" xml:space="preserve">
+    <value>Jānorāda LayoutProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifySpatialReferenceOnEnvelope" xml:space="preserve">
+    <value>Jānorāda telpisko atskaiti uz apvalka</value>
+  </data>
+  <data name="ExceptionMustSpecifyThemeProvider" xml:space="preserve">
+    <value>Jānorāda ThemeProvider</value>
+  </data>
+  <data name="ExceptionNoBingMapsTokenAvailable" xml:space="preserve">
+    <value>Nav pieejams Bing Maps talons</value>
+  </data>
+  <data name="ExceptionNoGeometryServiceUrlSpecifiedLayerZoomedIsDifferentSpatialReference" xml:space="preserve">
+    <value>Nav norādīts ģeometrijas servisa Url. Pietuvinātais slānis ir citā telpiskajā atskaitē kā karte  un pilnam pārklājumam nepieciešams atkārtoti projektēt, izmantojot ģeometrijas servisu</value>
+  </data>
+  <data name="ExceptionNotSupported" xml:space="preserve">
+    <value>Nav atbalstīts</value>
+  </data>
+  <data name="ExceptionNullBaseMapInfo" xml:space="preserve">
+    <value>baseMapInfo</value>
+  </data>
+  <data name="ExceptionOnlyCachedServicesCanBeUsedAsBaseMaps" xml:space="preserve">
+    <value>Tikai kešatmiņas kartes servisus var izmantot kā pamatkarti</value>
+  </data>
+  <data name="ExceptionUnableToInstantiateDatasourceForBaseMapType" xml:space="preserve">
+    <value>Nevar speciāli apstrādāt datu avotu priekš bāzeskartes tipa {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Nevar atgūt konfigurācijas informāciju. Informācija neatgriezās.</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasource" xml:space="preserve">
+    <value>Nevar atgūt datu avotu priekš {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasourceConnectionType" xml:space="preserve">
+    <value>Nevar atgūt datu avotu priekš savienojuma tipa {0}</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Ielādē...</value>
+  </data>
+  <data name="LoadingMapCenter" xml:space="preserve">
+    <value>Kartes centra ielādēšana...</value>
+  </data>
+  <data name="LogUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Nevar atgūt konfigurācijas informāciju</value>
+  </data>
+  <data name="MsgErrorExecutingBufferOperation" xml:space="preserve">
+    <value>Kļūda, izpildot bufera darbību.</value>
+  </data>
+  <data name="MsgErrorExecutingRelationAsyncOperation" xml:space="preserve">
+    <value>Kļūda, izpildot RelationAsync darbību</value>
+  </data>
+  <data name="MsgErrorOpeningFile" xml:space="preserve">
+    <value>Kļūda, atverot failu</value>
+  </data>
+  <data name="MsgErrorRetrievingSubLayersForMapService" xml:space="preserve">
+    <value>Kļūda, ielādējot kartes apakš slāņu servisu</value>
+  </data>
+  <data name="MsgErrorSavingFile" xml:space="preserve">
+    <value>Kļūda, saglabājot failu</value>
+  </data>
+  <data name="MsgNoFeaturesSelected" xml:space="preserve">
+    <value>Nav izvēlētu elementu</value>
+  </data>
+  <data name="MsgNoResourcesFound" xml:space="preserve">
+    <value>Nav atrasti resursi</value>
+  </data>
+  <data name="MsgUnableToAccessGeometryService" xml:space="preserve">
+    <value>Nevar piekļūt ģeometrijas servisam.</value>
+  </data>
+  <data name="MsgUnableToCreateLayer" xml:space="preserve">
+    <value>Nevar izveidot slāni</value>
+  </data>
+  <data name="MsgUnableToRetrieveResources" xml:space="preserve">
+    <value>Nevar atgūt resursus.</value>
+  </data>
+  <data name="MsgUnknownError" xml:space="preserve">
+    <value>Nezināma kļūda</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nosaukums</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>Nezināms lietotājs</value>
+  </data>
+  <data name="NotValidMapDocument" xml:space="preserve">
+    <value>Kartes dokuments nav derīgs.</value>
+  </data>
+  <data name="ErrorRetrievingSymbols" xml:space="preserve">
+    <value>Kļūda, atjaunojot simbolus</value>
+  </data>
+  <data name="ExceptionCacheMapServicesCannotReproject" xml:space="preserve">
+    <value>Aplikācijā kešatmiņas kartes servisu nevar pārprojicēt</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Atvērt web karti no ArcGIS.com</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Pierakstīties</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Izrakstīties</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Fona teksts</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Biedri</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Priekšskatījums</value>
+  </data>
+  <data name="SelectedItem" xml:space="preserve">
+    <value>Izvēlētā vienība</value>
+  </data>
+  <data name="RecordOutOfSelected" xml:space="preserve">
+    <value>Ieraksts ({0} no {1} izvēlēts)</value>
+  </data>
+  <data name="ExtensionInitializationFailedUrl" xml:space="preserve">
+    <value>Neizdevās instance instancē no pielāgotās komandas. Url: {0}</value>
+  </data>
+  <data name="HeatMapTitle" xml:space="preserve">
+    <value>{0} Siltuma karte</value>
+  </data>
+  <data name="CurrentColor" xml:space="preserve">
+    <value>Pašreizējā krāsa</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Apraksts:</value>
+  </data>
+  <data name="HeightPrompt" xml:space="preserve">
+    <value>Augstums:</value>
+  </data>
+  <data name="Moredotdot" xml:space="preserve">
+    <value>Vairāk...</value>
+  </data>
+  <data name="NotificationDontShowDialogOnStartup" xml:space="preserve">
+    <value>Vairāk nerādīt startējot šo dialogu</value>
+  </data>
+  <data name="RecordPrompt" xml:space="preserve">
+    <value>Ieraksts:</value>
+  </data>
+  <data name="StandardColors" xml:space="preserve">
+    <value>Standarta krāsas</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Tēmas krāsas</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Virsraksts:</value>
+  </data>
+  <data name="WidthPrompt" xml:space="preserve">
+    <value>Platums:</value>
+  </data>
+  <data name="MapBehaviors" xml:space="preserve">
+    <value>Kartes uzvedība</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Lejup</value>
+  </data>
+  <data name="MapBehaviorAdd" xml:space="preserve">
+    <value>Pievienot jaunu kartes darba režīmu</value>
+  </data>
+  <data name="MapBehaviorConfigure" xml:space="preserve">
+    <value>Konfigurēt izvēlētās kartes uzvedību</value>
+  </data>
+  <data name="MapBehaviorMoveDown" xml:space="preserve">
+    <value>Pārvietot izvēlētās kartes uzvedību vienu pozīciju uz leju</value>
+  </data>
+  <data name="MapBehaviorMoveUp" xml:space="preserve">
+    <value>Pārvietot izvēlētās kartes uzvedību vienu pozīciju uz augšu</value>
+  </data>
+  <data name="MapBehaviorRemove" xml:space="preserve">
+    <value>Izņemt izvēlētās kartes uzvedību</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviors" xml:space="preserve">
+    <value>Neviena uzvedība nav saistīta ar karti.</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviorsInEdit" xml:space="preserve">
+    <value>Noklikšķiniet uz Pievienot, lai konfigurētu jaunu karti uzvedību.</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Pārvietot</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Uz</value>
+  </data>
+  <data name="AddLabel" xml:space="preserve">
+    <value>Pievienot</value>
+  </data>
+  <data name="BehaviorClassLoadFailed" xml:space="preserve">
+    <value>Uzvedības klases ielādēšana neizdevās</value>
+  </data>
+  <data name="BehaviorConfigurationFailed" xml:space="preserve">
+    <value>Uzvedības konfigurācija neizdevās</value>
+  </data>
+  <data name="BehaviorConfigurationFailedDescription" xml:space="preserve">
+    <value>Uzvedības konfigurēšanas metodei ir izņēmums.</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Uzvedības klases ielādēšanas konfigurācija neizdevās</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailedDescription" xml:space="preserve">
+    <value>Uzvedības konfigurēšanas ielādēšana izmeta izņēmumu.</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>Tips:</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Izveidojiet siltuma kartes slāni, kura pamatā ir pašreizējā slāņa elementi</value>
+  </data>
+  <data name="ClusterColorDescription" xml:space="preserve">
+    <value>Iestatīt fona krāsu pašreizējā slāņa klasteriem</value>
+  </data>
+  <data name="ClusterTextColorDescription" xml:space="preserve">
+    <value>Iestatīt robežu un teksta krāsu pašreizējā slāņa klasteriem</value>
+  </data>
+  <data name="FilterDescription" xml:space="preserve">
+    <value>Filtrē elementus, kas ir iekļauti pašreizējā slāni, norādot atribūtu vaicājumu</value>
+  </data>
+  <data name="HeatMapColorDescription" xml:space="preserve">
+    <value>Izvēlēties krāsu shēmu siltuma kartei</value>
+  </data>
+  <data name="IntensityDescription" xml:space="preserve">
+    <value>Pielāgot intensitāti siltuma kartei. Lielāka intensitāte radīs lielākus karstos punktus.</value>
+  </data>
+  <data name="MaxPoints" xml:space="preserve">
+    <value>Maksimālie punkti</value>
+  </data>
+  <data name="MaxPointsDescription" xml:space="preserve">
+    <value>Iestatīt maksimālo elementu skaitu, ko var sagrupēt vienā klasterī</value>
+  </data>
+  <data name="OpenItemOnClickDescription" xml:space="preserve">
+    <value>Rādīt detaļas par elementu jaunā pārlūka logā, kad tas ir noklikšķināts</value>
+  </data>
+  <data name="PollForUpdatesDescription" xml:space="preserve">
+    <value>Iestatīt, vai atgūt,vai nē apgādātos atjauninājumus noteiktā intervālā</value>
+  </data>
+  <data name="PopupsDescription" xml:space="preserve">
+    <value>Konfigurēt atribūtus, kas ir redzami pašreizējā slāņa uznirstošajā logā</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>Rādiuss</value>
+  </data>
+  <data name="RadiusDescription" xml:space="preserve">
+    <value>Norādiet rādiusu pikseļos, kur elementi tiks sagrupēti vienā klasterī</value>
+  </data>
+  <data name="SymbologyDescription" xml:space="preserve">
+    <value>Konfigurēt simbolus, ko izmanto, lai parādītu pašreizējo slāni</value>
+  </data>
+  <data name="TableDescription" xml:space="preserve">
+    <value>Konfigurēt laukus, kas ir redzami pašreizējā slāņa atribūtu tabulā</value>
+  </data>
+  <data name="UpdateOnExtentChangedDescription" xml:space="preserve">
+    <value>Iestatīt, vai atgūt,vai nē apgādātos atjauninājumus karti pabīdot vai mērogmainot</value>
+  </data>
+  <data name="UsePointClusteringDescription" xml:space="preserve">
+    <value>Norādīt, vai rādīt, vai nerādīt punktu grupu kā vienu elementu klasteri</value>
+  </data>
+  <data name="SelectTheLayout" xml:space="preserve">
+    <value>Izvēlieties izkārtojumu...</value>
+  </data>
+  <data name="SelectThePrintLayout" xml:space="preserve">
+    <value>Izvēlieties drukas izkārtojumu</value>
+  </data>
+  <data name="BehaviorPrompt" xml:space="preserve">
+    <value>Uzvedība:</value>
+  </data>
+  <data name="Cluster" xml:space="preserve">
+    <value>Klasteris</value>
+  </data>
+  <data name="ClusterFeatures" xml:space="preserve">
+    <value>Klastera elementi</value>
+  </data>
+  <data name="ConfigureRange" xml:space="preserve">
+    <value>Proxy diapazonu</value>
+  </data>
+  <data name="EnablePrompt" xml:space="preserve">
+    <value>Iespējot:</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Elementi</value>
+  </data>
+  <data name="RenderAsHeatMap" xml:space="preserve">
+    <value>Renderē kā siltuma karti</value>
+  </data>
+  <data name="RenderHeatMapAdvancedProperties" xml:space="preserve">
+    <value>Siltuma kartes renderēšanas uzlabotas īpašības</value>
+  </data>
+  <data name="Tolerance" xml:space="preserve">
+    <value>Tolerance</value>
+  </data>
+  <data name="LayoutPrompt" xml:space="preserve">
+    <value>Izkārtojums:</value>
+  </data>
+  <data name="ConfigurePrint" xml:space="preserve">
+    <value>Konfigurēt Drukāšanu</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Drukāt</value>
+  </data>
+  <data name="LayoutResourceDownloadError" xml:space="preserve">
+    <value>Kļūda, lejupielādējot izkārtojuma resursus.</value>
+  </data>
+  <data name="ChangeBackground" xml:space="preserve">
+    <value>Mainīt fonu</value>
+  </data>
+  <data name="PreviewTheme" xml:space="preserve">
+    <value>Tēmas priekšskatījums</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>Bez virsraksta</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Pievienot darba režīmu</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>Gradients</value>
+  </data>
+  <data name="Solid" xml:space="preserve">
+    <value>Vienkrāsains</value>
+  </data>
+  <data name="ToggleRibbonVisibility" xml:space="preserve">
+    <value>Pārslēgt lentas redzamību</value>
+  </data>
+  <data name="ArcGISSilverlightVersion" xml:space="preserve">
+    <value>ArcGIS API for Silverlight:</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versija:</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Par</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Pārvietot uz leju</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Pārvietot uz augšu</value>
+  </data>
+  <data name="ConstrainExtentBehaviorMessage" xml:space="preserve">
+    <value>Pietuvināt kartes pārklājumam, ko jūs vēlaties izmantot kā ierobežojums un nospiediet Lietot.</value>
+  </data>
+  <data name="ConstrainExtentBehaviorTitle" xml:space="preserve">
+    <value>Ierobežojumi kartes pārklājuma iestatīšanai</value>
+  </data>
+  <data name="DeleteBehaviorCaption" xml:space="preserve">
+    <value>Vai tiešām vēlaties izdzēst šo uzvedību?</value>
+  </data>
+  <data name="DeleteBehaviorPrompt" xml:space="preserve">
+    <value>Apstiprināt Izdzēšanu</value>
+  </data>
+  <data name="CurrentConstrainExtentLabel" xml:space="preserve">
+    <value>Pašreizējā pārklājuma ierobežojums aploksne:</value>
+  </data>
+  <data name="ConstrainExtentNotSetMessage" xml:space="preserve">
+    <value>Karte pārklājuma ierobežojums vēl nav noteikts.</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>Nav iestatīts</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Konfigurēt pamatkartes</value>
+  </data>
+  <data name="ConfigureTheSetOfBaseMaps" xml:space="preserve">
+    <value>Konfigurēt pamatkaršu kopumu</value>
+  </data>
+  <data name="AddNewBaseMap" xml:space="preserve">
+    <value>Pievienot jaunu Pamatkarti</value>
+  </data>
+  <data name="ClickImageToChangeThumbnailIcon" xml:space="preserve">
+    <value>Klikšķiniet uz attēla, lai mainītu sīktēlu ikonas</value>
+  </data>
+  <data name="RequiresBingAppID" xml:space="preserve">
+    <value>Nepieciešams Bing lietotnes ID</value>
+  </data>
+  <data name="DeleteCurrentlySelectedBaseMap" xml:space="preserve">
+    <value>Izdzēst pašreiz izvēlēto pamatkarti</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapDown" xml:space="preserve">
+    <value>Pārvietot izvēlēto pamatkarti uz leju</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapUp" xml:space="preserve">
+    <value>Pārvietot izvēlēto pamatkarti uz augšu</value>
+  </data>
+  <data name="SubTypePrompt" xml:space="preserve">
+    <value>Apakštips:</value>
+  </data>
+  <data name="TextPrompt" xml:space="preserve">
+    <value>Teksts:</value>
+  </data>
+  <data name="ThumbnailPrompt" xml:space="preserve">
+    <value>Sīktēls:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Nākošais</value>
+  </data>
+  <data name="NoBehaviorTitleSpecified" xml:space="preserve">
+    <value>Nav norādīts uzvedības nosaukums</value>
+  </data>
+  <data name="PleaseProvideValidTitleForNewBehavior" xml:space="preserve">
+    <value>Lūdzu, norādiet derīgu virsrakstu jaunajai uzvedībai.</value>
+  </data>
+  <data name="SelectBehaviorToAdd" xml:space="preserve">
+    <value>Izvēlēties uzvedību</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Veids</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Kešatmiņas lielums: </value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>Darbojas elementi kartes laukumā</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>Darbojas uzreiz visi elementi</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Elementu kešatmiņas lielums</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Maksimālais elementu skaits, ko slānis var saturēt. Ja, atgūstot jaunu elementu, šis limits ir pārsniegts, vecākie elementi tiks izņemti no slāņa.</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>Darbojas elementi kartes laukumā</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Elementi tikai pašreizējā kartes laukumā tiek atgūti, kad slānis ir ielādēts vai atjaunots. Vairāk elementu tiek atgūti, kad kartes laukums mainās.</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>Darbojas visi elementi</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Visi slāņa elementi tiek atgūti, ja slānis ir ielādēts vai atjaunots.</value>
+  </data>
+  <data name="BrowseContentUrlWatermark" xml:space="preserve">
+    <value>Ievadīt servera vai slāņa URL</value>
+  </data>
+  <data name="BrowseDialogNoResourcesFound" xml:space="preserve">
+    <value>Nav atrasti resursi.</value>
+  </data>
+  <data name="BrowseDialogNoServerOrLayerFound" xml:space="preserve">
+    <value>Nav atrasti servisi vai slāņi.</value>
+  </data>
+  <data name="SecureServices" xml:space="preserve">
+    <value>Drošības servisi</value>
+  </data>
+  <data name="AutoUpdateNumericDescription" xml:space="preserve">
+    <value>Iestata atjaunošanas intervālu sekundēs vai minūtēs. Šis slānis tiks atjaunots automātiski šinī intervālā, kamēr tiks atspējots.</value>
+  </data>
+  <data name="AutoUpdateNumericTooltip" xml:space="preserve">
+    <value>Auto atjaunot atjaunošanas intervālu</value>
+  </data>
+  <data name="AutoUpdatePollingDescription" xml:space="preserve">
+    <value>Iestata, vai FeatureLayer tiks automātiski atjaunots ar regulāru intervālu.</value>
+  </data>
+  <data name="AutoUpdatePollingTooltip" xml:space="preserve">
+    <value>Auto atjaunot elementu slāņus</value>
+  </data>
+  <data name="AutoUpdateIntervalText" xml:space="preserve">
+    <value>Intervāls:</value>
+  </data>
+  <data name="AutoUpdateLayerConfigTitle" xml:space="preserve">
+    <value>Auto atjaunot</value>
+  </data>
+  <data name="AvailableLayers" xml:space="preserve">
+    <value>Pieejamie slāņi:</value>
+  </data>
+  <data name="EnablePopups" xml:space="preserve">
+    <value>Rādīt uznirstošos logus</value>
+  </data>
+  <data name="EnablePopupsForLayer" xml:space="preserve">
+    <value>Rādīt uznirstošos logus šim slānim</value>
+  </data>
+  <data name="OnClick" xml:space="preserve">
+    <value>uz klikšķi</value>
+  </data>
+  <data name="OnHover" xml:space="preserve">
+    <value>uz uzkavēšanos</value>
+  </data>
+  <data name="ConfigureEditorWidget" xml:space="preserve">
+    <value>Konfigurēt Rediģēšanu</value>
+  </data>
+  <data name="SnapshotModeNote" xml:space="preserve">
+    <value>Piezīme: Ja elementu skaits datukopā  pārsniedz maksimālo servisa atgriezto elementu skaitu, slānī netiks iekļauti visi elementi.</value>
+  </data>
+  <data name="GraphicSymbolsTakePrecedence" xml:space="preserve">
+    <value>Šeit definētie simboli ir aizstāti ar atsevišķiem grafikas simboliem, ja ir definēts.</value>
+  </data>
+  <data name="SpatialReference" xml:space="preserve">
+    <value>Telpiskā atskaite:</value>
+  </data>
+  <data name="XMax" xml:space="preserve">
+    <value>XMax:</value>
+  </data>
+  <data name="XMin" xml:space="preserve">
+    <value>XMin:</value>
+  </data>
+  <data name="YMax" xml:space="preserve">
+    <value>YMax</value>
+  </data>
+  <data name="YMin" xml:space="preserve">
+    <value>YMin</value>
+  </data>
+  <data name="NotFoundInLayout" xml:space="preserve">
+    <value>{0} netika atrasts pašreizējā izkārtojumā</value>
+  </data>
+  <data name="ToggleEditFailed" xml:space="preserve">
+    <value>Neizdevās pārslēgt rediģēšanas kontroles. Pašreizējais izkārtojums var neatbalstīt rediģēšanu</value>
+  </data>
+  <data name="PopupFromWebMap" xml:space="preserve">
+    <value>Lietot web kartes uznirstošā loga definīciju</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>Auto pietuvināt uz izvēlētajiem</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Atdot</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opcijas</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>Ieraksts ({0} no {1} izvēlēts)</value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>Pārslēgt izvēli</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Elementu atjaunošana</value>
+  </data>
+  <data name="ConfigureSecuredServices" xml:space="preserve">
+    <value>Konfigurēt Nodrošinātos servisus</value>
+  </data>
+  <data name="ErrorChangingProxies" xml:space="preserve">
+    <value>Starpniekserveru maiņas kļūda</value>
+  </data>
+  <data name="ProxyUrl" xml:space="preserve">
+    <value>Starpniekservera Url:</value>
+  </data>
+  <data name="SpecifyUrlToProxyPageUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Norādiet url uz proxy lapu, ko izmanto, lai piekļūtu šīs aplikācijas drošības servisam. Šis proxy tiks koplietots visiem aplikācijas slāņiem, kas izmanto drošības servisu.</value>
+  </data>
+  <data name="UsesProxy" xml:space="preserve">
+    <value>Lietot Proxy</value>
+  </data>
+  <data name="WhetherThisLayerUsesProxyServiceForaccessingRestrictedService" xml:space="preserve">
+    <value>Vai šis slānis izmanto proxy servisu, lai piekļūtu ierobežotam servisam. Noklikšķiniet uz Configure Proxy, lai iestatītu proxy url.</value>
+  </data>
+  <data name="LayerHasNoAttributes" xml:space="preserve">
+    <value>Izvēlētajā slānī nav neviena atribūta, ko var attēlot.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detaļas</value>
+  </data>
+  <data name="ToggleErrorDetails" xml:space="preserve">
+    <value>Rādīt vai paslēpt detaļas par kļūdu.</value>
+  </data>
+  <data name="LayerIsNotGraphicsLayer" xml:space="preserve">
+    <value>Izvēlētā slāņa atribūtus nevar parādīt, jo slānis ir ArcGIS Servera dinamiskais vai kešatmiņas kartes servisa slānis. Lai iegūtu detalizētu informāciju, lūdzu, izlasiet Layer Types tēmu palīdzības sistēmā.</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteBasemap" xml:space="preserve">
+    <value>Vai tiešām vēlaties izdzēst šo pamatkarti?</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Apstiprināt izdzēšanu</value>
+  </data>
+  <data name="NewBasemap" xml:space="preserve">
+    <value>Jauna pamatkarte</value>
+  </data>
+  <data name="ConfigureSelectedLayer" xml:space="preserve">
+    <value>Konfigurēt izvēlētos slāņus</value>
+  </data>
+  <data name="SelectLayerToAdd" xml:space="preserve">
+    <value>Izvēlēties slāni, ko pievienot</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Piekļuve nodrošinātiem servisiem</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Pievienot  nodrošinātus servisus</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Konfigurēt Proxy</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServices" xml:space="preserve">
+    <value>Konfigurēt proxy, ko izmanto šīs aplikācijas nodrošinātiem servisiem</value>
+  </data>
+  <data name="BehaviorSaveFailed" xml:space="preserve">
+    <value>Neizdevās saglabāt uzvedības konfigurāciju</value>
+  </data>
+  <data name="BehaviorSaveFailedMessage" xml:space="preserve">
+    <value>Kļūda, saglabājot piesaistīto karšu uzvedības konfigurāciju.</value>
+  </data>
+  <data name="LayerInitFailure" xml:space="preserve">
+    <value>Slāņa inicializācijas neveiksme</value>
+  </data>
+  <data name="LayerNotInitialized" xml:space="preserve">
+    <value>Slāni nevarēja inicializēt.</value>
+  </data>
+  <data name="DeleteGraphicConfirmation" xml:space="preserve">
+    <value>Izņemt elementu?</value>
+  </data>
+  <data name="DeleteGraphicConfirmationTitle" xml:space="preserve">
+    <value>Apstiprinājums</value>
+  </data>
+  <data name="EditValuesCommandEditorBackButtonContent" xml:space="preserve">
+    <value>Atcelt</value>
+  </data>
+  <data name="ConfigureBehavior" xml:space="preserve">
+    <value>Konfigurēt uzvedību</value>
+  </data>
+  <data name="DisablePopupForLayer" xml:space="preserve">
+    <value>Atspējot uznirstošos logus</value>
+  </data>
+  <data name="EnablePopupForLayer" xml:space="preserve">
+    <value>Iespējot uznirstošos logus</value>
+  </data>
+  <data name="LinkWebMapDialogCaption" xml:space="preserve">
+    <value>Saite uz web karti</value>
+  </data>
+  <data name="LinkWebMapDialogMessage" xml:space="preserve">
+    <value>Karte konfigurācija tiks ielādēta no web kartes. Esošās karte konfigurācija tiks zaudēta. Turpināt?</value>
+  </data>
+  <data name="UnlinkWebMapDialogCaption" xml:space="preserve">
+    <value>Atvienot no web kartes</value>
+  </data>
+  <data name="UnlinkWebMapDialogMessage" xml:space="preserve">
+    <value>Karte konfigurācija tiks atslēgta no web kartes. Jums būs iespēja pievienot, izņemt un konfigurēt slāņus, bet web kartes atjauninājumi vairs netiks parādīts kartē. Turpināt?</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standarts</value>
+  </data>
+  <data name="Business" xml:space="preserve">
+    <value>Bizness</value>
+  </data>
+  <data name="Cartography" xml:space="preserve">
+    <value>Kartogrāfija</value>
+  </data>
+  <data name="Outdoor_Recreation" xml:space="preserve">
+    <value>Āra atpūta</value>
+  </data>
+  <data name="People_and_Places" xml:space="preserve">
+    <value>Cilvēki un vietas</value>
+  </data>
+  <data name="Public_Safety_and_Health" xml:space="preserve">
+    <value>Sabiedriskā drošība un veselība</value>
+  </data>
+  <data name="Transportation" xml:space="preserve">
+    <value>Transports</value>
+  </data>
+  <data name="WebMapLoadFailed" xml:space="preserve">
+    <value>Web karti ar id {0} nevarēja ielādēt. Jums nav atļaujas piekļūt šai kartei, vai arī tā vairs neeksistē.</value>
+  </data>
+  <data name="ClusteringDisallowedCaption" xml:space="preserve">
+    <value>Klasterošana nav atļauta</value>
+  </data>
+  <data name="ClusteringDisallowedMessage" xml:space="preserve">
+    <value>Klasterošana nav atļauta, jo slānis ir izvēlēts rediģēšanai.</value>
+  </data>
+  <data name="UnsupportedBasemapType" xml:space="preserve">
+    <value>Neatbalstīts pamatkartes veids</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Lietot Proxy</value>
+  </data>
+  <data name="AreaNotesLayer" xml:space="preserve">
+    <value>{0} - Laukumi</value>
+  </data>
+  <data name="LineNotesLayer" xml:space="preserve">
+    <value>{0} - Līnijas</value>
+  </data>
+  <data name="PointNotesLayer" xml:space="preserve">
+    <value>{0} - Punkti</value>
+  </data>
+  <data name="Editing" xml:space="preserve">
+    <value>Rediģēšana</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Iespējots</value>
+  </data>
+  <data name="ArcGISPortalDefaultName" xml:space="preserve">
+    <value>Portal for ArcGIS</value>
+  </data>
+  <data name="SignInToArcGISServer" xml:space="preserve">
+    <value>Pierakstieties uz ArcGIS Serveri {0}</value>
+  </data>
+  <data name="InvalidUrlUserPassword" xml:space="preserve">
+    <value>Nederīgs URL, lietotājvārds vai parole</value>
+  </data>
+  <data name="SignInTo" xml:space="preserve">
+    <value>Pierakstīties {0}</value>
+  </data>
+  <data name="SignInToServer" xml:space="preserve">
+    <value>Pierakstieties uz ArcGIS Serveri</value>
+  </data>
+  <data name="SignInToSecureServices" xml:space="preserve">
+    <value>Pierakstieties, lai piekļūtu drošības servisiem</value>
+  </data>
+  <data name="OpenStreetMap" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="FeatureLayer" xml:space="preserve">
+    <value>Elementu slānis</value>
+  </data>
+  <data name="MapLayer" xml:space="preserve">
+    <value>Kartes slānis</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>Pierakstīšanās neveiksme.</value>
+  </data>
+</root>

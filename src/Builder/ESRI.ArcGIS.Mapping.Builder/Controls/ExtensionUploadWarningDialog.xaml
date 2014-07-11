@@ -1,0 +1,172 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl x:Class="ESRI.ArcGIS.Mapping.Builder.ExtensionUploadWarningDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:mapping="http://schemas.esri.com/arcgis/mapping/2009"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400" Margin="10">
+    <UserControl.Resources>
+        <mapping:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <mapping:InvertBoolToVisibilityConverter x:Key="InvertBoolToVisibilityConverter" />
+        
+        <!-- ListBoxItem with no selection or mouseover state -->
+        <Style x:Key="NoSelectionListBoxItem" TargetType="ListBoxItem">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="TabNavigation" Value="Local"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Grid Background="{TemplateBinding Background}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver" />
+                                    <VisualState x:Name="Disabled" />
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected" />
+                                    <VisualState x:Name="Selected" />
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Focused" />
+                                    <VisualState x:Name="Unfocused"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
+                                              Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <ControlTemplate x:Key="TextOnlyTextBoxTemplate" TargetType="TextBox">
+            <Grid x:Name="RootElement">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver"/>
+                        <VisualState x:Name="Disabled"/>
+                        <VisualState x:Name="ReadOnly"/>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="FocusStates">
+                        <VisualState x:Name="Focused"/>
+                        <VisualState x:Name="Unfocused"/>
+                    </VisualStateGroup>
+                    <VisualStateGroup x:Name="ValidationStates">
+                        <VisualState x:Name="Valid"/>
+                        <VisualState x:Name="InvalidUnfocused"/>
+                        <VisualState x:Name="InvalidFocused"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        Background="{TemplateBinding Background}" CornerRadius="1" Opacity="1">
+                    <Grid>
+                        <ScrollViewer x:Name="ContentElement" BorderThickness="0" IsTabStop="False" Padding="{TemplateBinding Padding}"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="SquareListBoxTemplate" TargetType="ListBox">
+            <Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="ValidationStates">
+                        <VisualState x:Name="Valid"/>
+                        <VisualState x:Name="InvalidUnfocused" />
+                        <VisualState x:Name="InvalidFocused" />
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                    <ScrollViewer x:Name="ScrollViewer" BorderBrush="Transparent" BorderThickness="0" 
+                                  Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" 
+                                  TabNavigation="{TemplateBinding TabNavigation}" 
+                                  Style="{StaticResource DesignHostScrollViewerStyle}">
+                        <ItemsPresenter Margin="0" />
+                    </ScrollViewer>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <ListBox BorderThickness="1" Background="Transparent" Padding="0"
+                             BorderBrush="{StaticResource DesignHostAccentBrush}"
+                             ItemsSource="{Binding Messages}" Template="{StaticResource SquareListBoxTemplate}"
+                             ItemContainerStyle="{StaticResource NoSelectionListBoxItem}"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                             ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                         Height="250" Width="430">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Grid Width="30" VerticalAlignment="Stretch">
+                                        <Image Stretch="Uniform" Source="{Binding [image]}" 
+                                                   Width="16" Height="16" 
+                                               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Grid>
+                                    <Rectangle Width="1" VerticalAlignment="Stretch" Opacity="0.5"
+                                                   Fill="{StaticResource DesignHostAccentBrush}" />
+                                    <TextBox IsReadOnly="True" Background="Transparent" BorderBrush="Transparent"
+                                             Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                             Template="{StaticResource TextOnlyTextBoxTemplate}"
+                                             Text="{Binding [message]}" Margin="3"
+                                            TextWrapping="Wrap" Width="380" 
+                                             SelectionForeground="{StaticResource DesignHostBackgroundBrush}"
+                                             SelectionBackground="{StaticResource DesignHostBackgroundTextBrush}"/>
+                                </StackPanel>
+                                <Rectangle Height="1" HorizontalAlignment="Stretch" Opacity="0.5"
+                                                   Fill="{StaticResource DesignHostAccentBrush}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,5,0,0">
+                <Button Content="{Binding ConverterParameter=Close, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                        Visibility="{Binding HasErrors, Converter={StaticResource BoolToVisibilityConverter}}"
+                        HorizontalAlignment="Right" Click="Cancel_Click" Padding="10,5" 
+                        Foreground="{StaticResource DesignHostAccentTextBrush}" 
+                        Style="{StaticResource GradientButtonStyle}" 
+                        Background="{StaticResource DesignHostAccentBrush}" 
+                        BorderBrush="{StaticResource DesignHostAccentTextBrush}"></Button>
+
+                <Button Name="btnOk" Content="{Binding ConverterParameter=OK, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                        Visibility="{Binding HasErrors, Converter={StaticResource InvertBoolToVisibilityConverter}}"
+                        HorizontalAlignment="Right" Margin="3,0,0,0" Click="Ok_Click" Padding="10,5,10,5" 
+                        Foreground="{StaticResource DesignHostAccentTextBrush}" 
+                        Style="{StaticResource GradientButtonStyle}" 
+                        Background="{StaticResource DesignHostAccentBrush}" 
+                        BorderBrush="{StaticResource DesignHostAccentTextBrush}"></Button>
+
+				<Button Name="btnCancel" Content="{Binding ConverterParameter=Cancel, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" 
+                        Visibility="{Binding HasErrors, Converter={StaticResource InvertBoolToVisibilityConverter}}"
+                        HorizontalAlignment="Right" Margin="3,0,0,0" Click="Cancel_Click" Padding="10,5,10,5" 
+                        Foreground="{StaticResource DesignHostAccentTextBrush}" 
+                        Style="{StaticResource GradientButtonStyle}" 
+                        Background="{StaticResource DesignHostAccentBrush}" 
+                        BorderBrush="{StaticResource DesignHostAccentTextBrush}"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

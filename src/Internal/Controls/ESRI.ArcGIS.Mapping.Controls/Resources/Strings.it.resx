@@ -1,0 +1,2079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptChangesTooltip" xml:space="preserve">
+    <value>Accetta modifiche</value>
+  </data>
+  <data name="AddCoordsToListFailedCaption" xml:space="preserve">
+    <value>Salvataggio dei risultati di localizzazione non riuscito</value>
+  </data>
+  <data name="AddCoordsToListFailedPrompt" xml:space="preserve">
+    <value>Aggiunta all'elenco delle coordinate corrispondenti all'indirizzo non riuscita. Riprovare?</value>
+  </data>
+  <data name="AddData" xml:space="preserve">
+    <value>Aggiungi dati</value>
+  </data>
+  <data name="AddDataSetTooltip" xml:space="preserve">
+    <value>Aggiungi dataset</value>
+  </data>
+  <data name="AddDataTooltip" xml:space="preserve">
+    <value>Aggiungi altri dati alla mappa</value>
+  </data>
+  <data name="AddRange" xml:space="preserve">
+    <value>Aggiungi intervallo</value>
+  </data>
+  <data name="AddressMatchError" xml:space="preserve">
+    <value>Errore corrispondenza indirizzo: {0}</value>
+  </data>
+  <data name="AddressMatchingServicePrompt" xml:space="preserve">
+    <value>Servizio:</value>
+  </data>
+  <data name="AdvancedClusterProperties" xml:space="preserve">
+    <value>Proprietà cluster avanzate</value>
+  </data>
+  <data name="AGSOImagery" xml:space="preserve">
+    <value>Immagini</value>
+  </data>
+  <data name="AGSOStreets" xml:space="preserve">
+    <value>Strade</value>
+  </data>
+  <data name="AGSOTopo" xml:space="preserve">
+    <value>Dati topografici</value>
+  </data>
+  <data name="AliasHeader" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Applica</value>
+  </data>
+  <data name="ArcGISOnline" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="ArcGISServer" xml:space="preserve">
+    <value>ArcGIS Server</value>
+  </data>
+  <data name="AssociatedMapPrompt" xml:space="preserve">
+    <value>Mappa:</value>
+  </data>
+  <data name="AutoScroll" xml:space="preserve">
+    <value>Scorrimento automatico:</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Sfondo</value>
+  </data>
+  <data name="BaseMapConfigurationSectionHeader" xml:space="preserve">
+    <value>Mappa di base</value>
+  </data>
+  <data name="BaseMapPrompt" xml:space="preserve">
+    <value>Mappa di base:</value>
+  </data>
+  <data name="BingMaps" xml:space="preserve">
+    <value>Bing Maps</value>
+  </data>
+  <data name="BingMapsAccountInfo" xml:space="preserve">
+    <value>Informazioni account Bing Maps</value>
+  </data>
+  <data name="BingMapsAerial" xml:space="preserve">
+    <value>Aereo</value>
+  </data>
+  <data name="BingMapsAerialWithLabels" xml:space="preserve">
+    <value>Vista aerea - Etichette</value>
+  </data>
+  <data name="BingMapsInitializeFailed" xml:space="preserve">
+    <value>Autenticazione di Bing Maps non riuscita. Verrà invece utilizzata una mappa di base di ArcGIS Online. Per ottenere ulteriore assistenza, contattare l'amministratore.</value>
+  </data>
+  <data name="BingMapsRoads" xml:space="preserve">
+    <value>Indicazioni stradali</value>
+  </data>
+  <data name="Border" xml:space="preserve">
+    <value>Bordo</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>Cancellazione</value>
+  </data>
+  <data name="ChangeBaseMapTooltip" xml:space="preserve">
+    <value>Cambia mappa di base</value>
+  </data>
+  <data name="ChangeColorRampTooltip" xml:space="preserve">
+    <value>Selezionare uno schema di colori</value>
+  </data>
+  <data name="ChangeGradientStopsTooltip" xml:space="preserve">
+    <value>Fare clic per selezionare i cursori sfumatura per la mappa termica</value>
+  </data>
+  <data name="CheckForUpdatesPrompt" xml:space="preserve">
+    <value>Verifica disponibilità aggiornamenti:</value>
+  </data>
+  <data name="CheckForUpdateTooltip" xml:space="preserve">
+    <value>Recupera dati di elenco aggiornati in caso di pan o zoom sulla mappa</value>
+  </data>
+  <data name="ChooseBaseMapLayer" xml:space="preserve">
+    <value>Scegli mappa di base</value>
+  </data>
+  <data name="ChooseLayerHeader" xml:space="preserve">
+    <value>Scegli dataset</value>
+  </data>
+  <data name="CityPrompt" xml:space="preserve">
+    <value>Città:</value>
+  </data>
+  <data name="ClassifyBy" xml:space="preserve">
+    <value>Scegliere il campo su cui basare gli intervalli di valori</value>
+  </data>
+  <data name="ClassifyByPrompt" xml:space="preserve">
+    <value>Classifica per:</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Annulla tutto</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Cancella selezione</value>
+  </data>
+  <data name="ClickSeqmentToZoom" xml:space="preserve">
+    <value>Fare clic su un singolo segmento per eseguire lo zoom su di esso.</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>Fare clic per spostarsi a est</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>Fare clic per spostarsi a nord</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>Fare clic per spostarsi a sud</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>Fare clic per spostarsi a ovest</value>
+  </data>
+  <data name="ClusterAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Proprietà avanzate</value>
+  </data>
+  <data name="ClusterFeaturesTooltipFirstBit" xml:space="preserve">
+    <value>Cluster</value>
+  </data>
+  <data name="ClusterFeaturesTooltipSecondBit" xml:space="preserve">
+    <value>Feature</value>
+  </data>
+  <data name="ClusterTooltip" xml:space="preserve">
+    <value>Disegna cluster di feature insieme</value>
+  </data>
+  <data name="ColorsPrompt" xml:space="preserve">
+    <value>Colori:</value>
+  </data>
+  <data name="ConfigurationTooltip" xml:space="preserve">
+    <value>Configurazione</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Configura</value>
+  </data>
+  <data name="ConfigureBingMapsCredentials" xml:space="preserve">
+    <value>Fare clic per configurare le informazioni sull'account Bing Maps</value>
+  </data>
+  <data name="ConfigureSettings" xml:space="preserve">
+    <value>Configura impostazioni</value>
+  </data>
+  <data name="ConfigureTooltip" xml:space="preserve">
+    <value>Configura</value>
+  </data>
+  <data name="CountryPrompt" xml:space="preserve">
+    <value>Paese:</value>
+  </data>
+  <data name="CurrentSymbolPrompt" xml:space="preserve">
+    <value>Simbolo Corrente:</value>
+  </data>
+  <data name="CustomColorRamp" xml:space="preserve">
+    <value>Personalizzata</value>
+  </data>
+  <data name="CustomColorRampToolTip" xml:space="preserve">
+    <value>Selezionare i colori per ogni intervallo di valori</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Origine dati:</value>
+  </data>
+  <data name="DataSourceTooltip" xml:space="preserve">
+    <value>Immettere l'URL di un endpoint di SharePoint, di Spatial Data Service o di ArcGIS Server</value>
+  </data>
+  <data name="DefinitionTabHeader" xml:space="preserve">
+    <value>Definizione</value>
+  </data>
+  <data name="DefinitionTabHeaderTooltip" xml:space="preserve">
+    <value>Definire le proprietà per il dataset corrente</value>
+  </data>
+  <data name="DeleteConnectionCaption" xml:space="preserve">
+    <value>Conferma eliminazione</value>
+  </data>
+  <data name="DeleteConnectionPrompt" xml:space="preserve">
+    <value>Eliminare la connessione?</value>
+  </data>
+  <data name="DeleteLayerMessageCaption" xml:space="preserve">
+    <value>Conferma eliminazione</value>
+  </data>
+  <data name="DeleteLayerPrompt" xml:space="preserve">
+    <value>Eliminare il dataset dalla mappa?</value>
+  </data>
+  <data name="DeleteRange" xml:space="preserve">
+    <value>Elimina intervallo</value>
+  </data>
+  <data name="DisplayNamePrompt" xml:space="preserve">
+    <value>Nome visualizzato:</value>
+  </data>
+  <data name="DisplayNameTooltip" xml:space="preserve">
+    <value>Definire il nome visualizzato del dataset corrente</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>Trascinare per ruotare</value>
+  </data>
+  <data name="DuplicateDataSource" xml:space="preserve">
+    <value>{0} già aggiunto come origine dati</value>
+  </data>
+  <data name="DuplicateMapServiceLayer" xml:space="preserve">
+    <value>Servizio mappe già aggiunto</value>
+  </data>
+  <data name="DuplicateMapServiceLayerCaption" xml:space="preserve">
+    <value>Rilevato duplicato</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="EnterCredentials" xml:space="preserve">
+    <value>Immettere nome utente e password</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>Errore</value>
+  </data>
+  <data name="Europe" xml:space="preserve">
+    <value>Europa</value>
+  </data>
+  <data name="Every" xml:space="preserve">
+    <value>Ogni</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>Espandi/Comprimi</value>
+  </data>
+  <data name="ExportSelection" xml:space="preserve">
+    <value>Esporta selezione</value>
+  </data>
+  <data name="FieldHeader" xml:space="preserve">
+    <value>Campo</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>Riempimento</value>
+  </data>
+  <data name="FilterByMapView" xml:space="preserve">
+    <value>Visualizzazione mappa con filtro:</value>
+  </data>
+  <data name="FilterExpressionPrompt" xml:space="preserve">
+    <value>Espressione di filtro:</value>
+  </data>
+  <data name="FilterExpressionTooltip" xml:space="preserve">
+    <value>Applica un filtro al dataset corrente</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Trova</value>
+  </data>
+  <data name="FindDirections" xml:space="preserve">
+    <value>Trova direzioni</value>
+  </data>
+  <data name="FindLocation" xml:space="preserve">
+    <value>Trova località</value>
+  </data>
+  <data name="FindNearby" xml:space="preserve">
+    <value>Trova località più vicina</value>
+  </data>
+  <data name="FixLocation" xml:space="preserve">
+    <value>Correggi posizione</value>
+  </data>
+  <data name="Foreground" xml:space="preserve">
+    <value>Primo piano</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>Ulteriori informazioni</value>
+  </data>
+  <data name="FromPrompt" xml:space="preserve">
+    <value>Da:</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>Estensione completa</value>
+  </data>
+  <data name="GetListItemsFailed" xml:space="preserve">
+    <value>Impossibile recuperare elementi da {0} nel sito {1}</value>
+  </data>
+  <data name="GetListItemsFailedPromptRemove" xml:space="preserve">
+    <value>Impossibile recuperare elementi da {0} nel sito {1}. Rimuovere la visualizzazione dalla mappa?</value>
+  </data>
+  <data name="GetListsFailed" xml:space="preserve">
+    <value>Recupero elenchi non riuscito: {0}</value>
+  </data>
+  <data name="HeatMap" xml:space="preserve">
+    <value>Mappa termica</value>
+  </data>
+  <data name="HeatMapAdvancedProperties" xml:space="preserve">
+    <value>Proprietà mappa termica</value>
+  </data>
+  <data name="HeatMapAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Proprietà per il rendering della mappa termica</value>
+  </data>
+  <data name="HeatMapTooltip" xml:space="preserve">
+    <value>Visualizza dati come mappa termica</value>
+  </data>
+  <data name="HundredPercent" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="InitializationError" xml:space="preserve">
+    <value>Errore di inizializzazione: {0}</value>
+  </data>
+  <data name="IntensityPrompt" xml:space="preserve">
+    <value>Intensità:</value>
+  </data>
+  <data name="InvalidUrlCaption" xml:space="preserve">
+    <value>URL non valido</value>
+  </data>
+  <data name="InvalidUrlPrompt" xml:space="preserve">
+    <value>Immettere un URL valido</value>
+  </data>
+  <data name="LatitudePrompt" xml:space="preserve">
+    <value>Latitudine (Y):</value>
+  </data>
+  <data name="LayerInfoRetrievalError" xml:space="preserve">
+    <value>Errore durante il recupero di informazioni sul layer: {0}</value>
+  </data>
+  <data name="LayersTabHeader" xml:space="preserve">
+    <value>Visibilità layer</value>
+  </data>
+  <data name="LayersTabHeaderTooltip" xml:space="preserve">
+    <value>Configura visibilità dei layer</value>
+  </data>
+  <data name="ListViewHeader" xml:space="preserve">
+    <value>Visualizzazione elenco</value>
+  </data>
+  <data name="LoadDataSourceTooltip" xml:space="preserve">
+    <value>Carica origine dati</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>Trova</value>
+  </data>
+  <data name="LocateByAddress" xml:space="preserve">
+    <value>Indirizzo</value>
+  </data>
+  <data name="LocateByAddressTooltip" xml:space="preserve">
+    <value>Usa corrispondenza indirizzi per disegnare i dati dell'elenco corrente</value>
+  </data>
+  <data name="LocateByCoordinates" xml:space="preserve">
+    <value>Coordinate</value>
+  </data>
+  <data name="LocateByCoordinatesTooltip" xml:space="preserve">
+    <value>Usa coordinate per disegnare i dati dell'elenco corrente</value>
+  </data>
+  <data name="LocateByPrompt" xml:space="preserve">
+    <value>Individua per:</value>
+  </data>
+  <data name="LocateTooltip" xml:space="preserve">
+    <value>Corrispondenza indirizzi per elenco corrente</value>
+  </data>
+  <data name="LocateUpdateTooltip" xml:space="preserve">
+    <value>Disegna l'elenco corrente in base ai campi coordinate selezionati</value>
+  </data>
+  <data name="LocationFieldsTabHeader" xml:space="preserve">
+    <value>Campi posizione</value>
+  </data>
+  <data name="LocationFieldsTabHeaderTooltip" xml:space="preserve">
+    <value>Selezionare i campi geografici o di indirizzo del dataset corrente</value>
+  </data>
+  <data name="LongitudePrompt" xml:space="preserve">
+    <value>Longitudine (X):</value>
+  </data>
+  <data name="MapContentsTooltip" xml:space="preserve">
+    <value>Contenuti mappa</value>
+  </data>
+  <data name="MapXaml" xml:space="preserve">
+    <value>XAML mappa</value>
+  </data>
+  <data name="MapXamlRepresentation" xml:space="preserve">
+    <value>Rappresentazione XAML della mappa</value>
+  </data>
+  <data name="MaxPrompt" xml:space="preserve">
+    <value>Max:</value>
+  </data>
+  <data name="MinPrompt" xml:space="preserve">
+    <value>Minimo:</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minuti</value>
+  </data>
+  <data name="ModifyRangeTooltip" xml:space="preserve">
+    <value>Modifica intervallo</value>
+  </data>
+  <data name="MoveBarUpDown" xml:space="preserve">
+    <value>Spostare la barra verso l'alto per lo zoom in avanti, verso il basso per lo zoom indietro</value>
+  </data>
+  <data name="MoveDownTooltip" xml:space="preserve">
+    <value>Sposta giù</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>Sposta in prima posizione</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>Sposta in ultima posizione</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>Sposta in posizione successiva</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>Sposta in posizione precedente</value>
+  </data>
+  <data name="MoveRangeTooltip" xml:space="preserve">
+    <value>Intervallo di spostamento</value>
+  </data>
+  <data name="MoveUpTooltip" xml:space="preserve">
+    <value>Sposta su</value>
+  </data>
+  <data name="MultiLayerCacheNotSupported" xml:space="preserve">
+    <value>Servizi mappe con tile di cache multilayer non supportati. Utilizzare o creare una singola cache fusa.</value>
+  </data>
+  <data name="MultiLayerCacheNotSupportedCaption" xml:space="preserve">
+    <value>Servizi con tile di cache multilayer non supportati</value>
+  </data>
+  <data name="MultipleViewsNotAllowed" xml:space="preserve">
+    <value>Impossibile aggiungere più volte visualizzazioni di elenchi di SharePoint</value>
+  </data>
+  <data name="NewDataSourceHelpText" xml:space="preserve">
+    <value>&lt;Immettere un nome di server o un endpoint http&gt;</value>
+  </data>
+  <data name="NextRange" xml:space="preserve">
+    <value>Intervallo successivo</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefined" xml:space="preserve">
+    <value>Campi relativi alla posizione per l'elenco non mappati. Mappare le colonne nell'elenco ai campi appropriati.</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefinedCaption" xml:space="preserve">
+    <value>Definire la mappatura dei campi posizione</value>
+  </data>
+  <data name="NoAssociatedMapWebPart" xml:space="preserve">
+    <value>Nessuna web part di mappe trovata.</value>
+  </data>
+  <data name="NoDistinctNumericFields" xml:space="preserve">
+    <value>Il valore minimo e il valore massimo per tutti i campi numerici del dataset sono uguali. Per configurare intervalli di valori, il valore minimo e quello massimo devono essere distinti.</value>
+  </data>
+  <data name="NoGeographicListsFound" xml:space="preserve">
+    <value>Nessun elenco contenente dati geografici trovato in {0}</value>
+  </data>
+  <data name="NoLayersAdded" xml:space="preserve">
+    <value>Fare clic sul pulsante 'Aggiungi dati' per aggiungere dati alla mappa</value>
+  </data>
+  <data name="NoGPServicesFound" xml:space="preserve">
+    <value>Nessun servizio di geoprocessing trovato in {0}</value>
+  </data>
+  <data name="NoMapServicesFound" xml:space="preserve">
+    <value>Nessun servizio mappe trovato in {0}</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Nessuno</value>
+  </data>
+  <data name="NoNumericFieldsFound" xml:space="preserve">
+    <value>Il dataset non contiene campi numerici. È possibile impostare intervalli di valori solo per dataset contenenti almeno un campo numerico.</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>Nessun record</value>
+  </data>
+  <data name="NoRecordsForVisibleLayer" xml:space="preserve">
+    <value>Voci dell'elenco non recuperati dalla mappa. Abilitare la visibilità per l'elenco in modo da visualizzare le voci.</value>
+  </data>
+  <data name="NoResultsCaption" xml:space="preserve">
+    <value>Nessun risultato</value>
+  </data>
+  <data name="NoResultsLayerNotVisible" xml:space="preserve">
+    <value>Nessun record trovato perché l'elenco non è visibile sulla mappa</value>
+  </data>
+  <data name="NorthAmerica" xml:space="preserve">
+    <value>America del nord</value>
+  </data>
+  <data name="NoSpatialTablesFound" xml:space="preserve">
+    <value>Nessuna tabella contenente dati spaziali trovata in {0}</value>
+  </data>
+  <data name="NumericFieldNotDistinct" xml:space="preserve">
+    <value>Il valore minimo e il valore massimo per il campo {0} sono uguali. È possibile configurare intervalli di valori solo per campi con valori minimi e massimi distinti.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OnPanAndZoom" xml:space="preserve">
+    <value>In caso di pan e zoom</value>
+  </data>
+  <data name="OperationalDataSectionHeader" xml:space="preserve">
+    <value>Dati</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="PleaseSpecifyDataSourceMessage" xml:space="preserve">
+    <value>Specificare un'origine dati</value>
+  </data>
+  <data name="PollForUpdatesTooltip" xml:space="preserve">
+    <value>Definire un intervallo per il recupero dei dati di elenco aggiornati</value>
+  </data>
+  <data name="PopUpTabHeader" xml:space="preserve">
+    <value>Popup</value>
+  </data>
+  <data name="PopUpTabHeaderTooltip" xml:space="preserve">
+    <value>Configurare la finestra popup delle informazioni sulla mappa per il dataset corrente</value>
+  </data>
+  <data name="PreDefinedColorRamp" xml:space="preserve">
+    <value>Predefinita</value>
+  </data>
+  <data name="PreDefinedColorRampTooltip" xml:space="preserve">
+    <value>Applica un set di colori predefiniti</value>
+  </data>
+  <data name="PreviousRange" xml:space="preserve">
+    <value>Intervallo precedente</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>Produzione</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Proprietà - {0}</value>
+  </data>
+  <data name="RecordsPrompt" xml:space="preserve">
+    <value>Record:</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="RefreshError" xml:space="preserve">
+    <value>Errore durante l'aggiornamento del layer {0}</value>
+  </data>
+  <data name="RefreshMapXamlTooltip" xml:space="preserve">
+    <value>Aggiorna XAML mappa</value>
+  </data>
+  <data name="RefreshTooltip" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="RemoveTooltip" xml:space="preserve">
+    <value>Rimuovi</value>
+  </data>
+  <data name="ResetExtent" xml:space="preserve">
+    <value>Reimposta estensione</value>
+  </data>
+  <data name="ResetExtentTooltip" xml:space="preserve">
+    <value>Reimposta l'estensione iniziale della mappa in base alla definizione del servizio ArcGIS Server.</value>
+  </data>
+  <data name="ResetMapRotation" xml:space="preserve">
+    <value>Reimposta rotazione mappa</value>
+  </data>
+  <data name="ResolutionPrompt" xml:space="preserve">
+    <value>Risoluzione:</value>
+  </data>
+  <data name="ResultsViewHeader" xml:space="preserve">
+    <value>Visualizzazione risultati</value>
+  </data>
+  <data name="RetrievingBaseMaps" xml:space="preserve">
+    <value>Recupero delle mappe di base disponibili</value>
+  </data>
+  <data name="RetrievingGeometryType" xml:space="preserve">
+    <value>Recupero del tipo di geometria</value>
+  </data>
+  <data name="RetrievingInformation" xml:space="preserve">
+    <value>Recupero delle informazioni dal server</value>
+  </data>
+  <data name="RollBackChangesTooltip" xml:space="preserve">
+    <value>Esegui il rollback delle modifiche</value>
+  </data>
+  <data name="ScaleBarUnit_feet" xml:space="preserve">
+    <value>piedi</value>
+  </data>
+  <data name="ScaleBarUnit_kilometers" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="ScaleBarUnit_meters" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="ScaleBarUnit_miles" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>Secondi</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Seleziona tutto</value>
+  </data>
+  <data name="SelectAllTooltip" xml:space="preserve">
+    <value>Seleziona tutto</value>
+  </data>
+  <data name="SelectedRangePrompt" xml:space="preserve">
+    <value>Intervallo:</value>
+  </data>
+  <data name="SelectedRecordsFormatString" xml:space="preserve">
+    <value>Record ({0} di {1} selezionati)</value>
+  </data>
+  <data name="SelectRangeTooltip" xml:space="preserve">
+    <value>Seleziona intervallo per la modifica</value>
+  </data>
+  <data name="ServerPrompt" xml:space="preserve">
+    <value>Server:</value>
+  </data>
+  <data name="ServiceConnectionError" xml:space="preserve">
+    <value>Errore di connessione a {0}. Verificare l'URL, assicurarsi che il servizio sia in esecuzione e riprovare.</value>
+  </data>
+  <data name="ServiceConnectionErrorCaption" xml:space="preserve">
+    <value>Errore di Connessione</value>
+  </data>
+  <data name="ServiceConnectionErrorDuringInit" xml:space="preserve">
+    <value>Impossibile connettersi a {0}.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Impostazioni</value>
+  </data>
+  <data name="ShowHide" xml:space="preserve">
+    <value>Mostra/Nascondi</value>
+  </data>
+  <data name="ShowHideTooltip" xml:space="preserve">
+    <value>Mostra/Nascondi</value>
+  </data>
+  <data name="SimpleSymbolType" xml:space="preserve">
+    <value>Semplice</value>
+  </data>
+  <data name="SimpleSymbolTypeTooltip" xml:space="preserve">
+    <value>Visualizza il dataset corrente con un simbolo</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Sorgente:</value>
+  </data>
+  <data name="Staging" xml:space="preserve">
+    <value>Staging</value>
+  </data>
+  <data name="StatePrompt" xml:space="preserve">
+    <value>Stato/sottodivisione:</value>
+  </data>
+  <data name="SymbolsTabHeader" xml:space="preserve">
+    <value>Simboli</value>
+  </data>
+  <data name="SymbolsTabHeaderTooltip" xml:space="preserve">
+    <value>Configura la visualizzazione del dataset corrente</value>
+  </data>
+  <data name="SymbolTypePrompt" xml:space="preserve">
+    <value>Tipo di Simbolo:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>a</value>
+  </data>
+  <data name="TokenAuthenticationFailed" xml:space="preserve">
+    <value>Autenticazione di Bing Maps non riuscita. Verificare le credenziali e riprovare.</value>
+  </data>
+  <data name="TokenConnectionFailed" xml:space="preserve">
+    <value>Connessione per il recupero del token non riuscita. Verificare la connessione al server host e riprovare.</value>
+  </data>
+  <data name="TolerancePrompt" xml:space="preserve">
+    <value>Tolleranza:</value>
+  </data>
+  <data name="ToPrompt" xml:space="preserve">
+    <value>A:</value>
+  </data>
+  <data name="TotalDistancePrompt" xml:space="preserve">
+    <value>Distanza totale:</value>
+  </data>
+  <data name="TotalTimePrompt" xml:space="preserve">
+    <value>Tempo totale:</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>Trasparenza</value>
+  </data>
+  <data name="TransparencyPrompt" xml:space="preserve">
+    <value>Trasparenza:</value>
+  </data>
+  <data name="UnhandledSilverlightError" xml:space="preserve">
+    <value>Errore non gestito nell'applicazione Silverlight 2</value>
+  </data>
+  <data name="UpdateAddress" xml:space="preserve">
+    <value>Aggiorna indirizzo</value>
+  </data>
+  <data name="UpdateLayerError" xml:space="preserve">
+    <value>Errore durante l'aggiornamento del layer: {0}</value>
+  </data>
+  <data name="UpdateListError" xml:space="preserve">
+    <value>Errore durante l'applicazione delle modifiche all'elenco: {0}</value>
+  </data>
+  <data name="UrlPrompt" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="UserNamePrompt" xml:space="preserve">
+    <value>Utente:</value>
+  </data>
+  <data name="UseStagingServer" xml:space="preserve">
+    <value>Usa server di staging</value>
+  </data>
+  <data name="ValidAddressError" xml:space="preserve">
+    <value>Immettere un indirizzo valido</value>
+  </data>
+  <data name="ValidAddressErrorCaption" xml:space="preserve">
+    <value>Indirizzo non valido</value>
+  </data>
+  <data name="ValidCoordinatesError" xml:space="preserve">
+    <value>Immettere coordinate valide</value>
+  </data>
+  <data name="ValidCoordinatesErrorCaption" xml:space="preserve">
+    <value>Coordinate non valide</value>
+  </data>
+  <data name="ValueRanges" xml:space="preserve">
+    <value>Intervalli di valori</value>
+  </data>
+  <data name="ValueRangesTooltip" xml:space="preserve">
+    <value>Visualizza il dataset corrente in base a intervalli di valori</value>
+  </data>
+  <data name="ViewItem" xml:space="preserve">
+    <value>Visualizza elemento</value>
+  </data>
+  <data name="VisibleHeader" xml:space="preserve">
+    <value>Visibile</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Larghezza</value>
+  </data>
+  <data name="XamlRepresentation" xml:space="preserve">
+    <value>Rappresentazione XAML del layer corrente</value>
+  </data>
+  <data name="XamlViewTabHeader" xml:space="preserve">
+    <value>Visualizzazione XAML</value>
+  </data>
+  <data name="XamlViewTabHeaderTooltip" xml:space="preserve">
+    <value>Visualizza l'XAML generato per il layer</value>
+  </data>
+  <data name="ZeroPercent" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="Zip4Prompt" xml:space="preserve">
+    <value>Zip4:</value>
+  </data>
+  <data name="ZipPrompt" xml:space="preserve">
+    <value>ZIP/Codice postale:</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Zoom avanti</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Zoom indietro</value>
+  </data>
+  <data name="ZoomOutButton" xml:space="preserve">
+    <value>Zoom indietro</value>
+  </data>
+  <data name="ZoomRangeTooltip" xml:space="preserve">
+    <value>Zoom avanti su intervallo</value>
+  </data>
+  <data name="ZoomToAllRecords" xml:space="preserve">
+    <value>Vai a</value>
+  </data>
+  <data name="ZoomToItem" xml:space="preserve">
+    <value>Zoom su elemento</value>
+  </data>
+  <data name="ZoomToSelection" xml:space="preserve">
+    <value>Zoom su selezione</value>
+  </data>
+  <data name="ConfigFileUrlTextboxTooltip" xml:space="preserve">
+    <value>Immettere l'URL del file di configurazione</value>
+  </data>
+  <data name="ConnectToSharePointDataSource" xml:space="preserve">
+    <value>&lt;Immettere l'URL di un sito di SharePoint&gt;</value>
+  </data>
+  <data name="ExportToFile" xml:space="preserve">
+    <value>Esporta su file</value>
+  </data>
+  <data name="FileNamePrompt" xml:space="preserve">
+    <value>Nome file:</value>
+  </data>
+  <data name="MustEnterFileName" xml:space="preserve">
+    <value>Immettere un nome di file</value>
+  </data>
+  <data name="MustEnterFileNameTitle" xml:space="preserve">
+    <value>Nome file mancante</value>
+  </data>
+  <data name="OverwriteExistingFile" xml:space="preserve">
+    <value>Sovrascrivi file esistente</value>
+  </data>
+  <data name="UrlToSitePrompt" xml:space="preserve">
+    <value>URL sito:</value>
+  </data>
+  <data name="CustomBaseMap" xml:space="preserve">
+    <value>Mappa di base ArcGIS Server</value>
+  </data>
+  <data name="AGSDataSourceTooltip" xml:space="preserve">
+    <value>Immettere l'URL di un endpoint di ArcGIS Server</value>
+  </data>
+  <data name="NotUsingBingMapsResource" xml:space="preserve">
+    <value>L'applicazione non utilizza risorse di Bing Maps. Non è al momento necessario configurare informazioni sull'account.</value>
+  </data>
+  <data name="NotUsingBingMapsResourceCaption" xml:space="preserve">
+    <value>Nessuna risorsa Bing Maps</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="BrowseForBaseMap" xml:space="preserve">
+    <value>Cerca mappa di base</value>
+  </data>
+  <data name="EnterUrl" xml:space="preserve">
+    <value>Immettere l'URL</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatch" xml:space="preserve">
+    <value>Il riferimento spaziale del servizio mappe memorizzato nella cache non corrisponde a quello della mappa di base. Impossibile aggiungere il servizio mappe.</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatchCaption" xml:space="preserve">
+    <value>Riferimento spaziale non corrispondente</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemoved" xml:space="preserve">
+    <value>I dataset operativi in uso includono servizi mappe i cui riferimenti spaziali non corrispondono alla mappa di base selezionata. Per procedere, è necessario rimuovere tali servizi. Fare clic su OK per rimuoverli.</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemovedCaption" xml:space="preserve">
+    <value>Set di dati operativi non corrispondenti</value>
+  </data>
+  <data name="AddContentTitle" xml:space="preserve">
+    <value>Aggiungi contenuto</value>
+  </data>
+  <data name="BaseMapGalleryTitle" xml:space="preserve">
+    <value>Scegli mappa di base</value>
+  </data>
+  <data name="BrowseForBaseMapTitle" xml:space="preserve">
+    <value>Cerca mappa di base</value>
+  </data>
+  <data name="EnterUrlDialogTitle" xml:space="preserve">
+    <value>Immettere l'URL della mappa di base</value>
+  </data>
+  <data name="MapContentsTitle" xml:space="preserve">
+    <value>Contenuti mappa</value>
+  </data>
+  <data name="CanOnlyUseCachedMapServicesAsBaseMap" xml:space="preserve">
+    <value>È possibile utilizzare come mappa di base solo i servizi mappe memorizzati nella cache di ArcGIS.</value>
+  </data>
+  <data name="InvalidMapServiceCaption" xml:space="preserve">
+    <value>Servizio mappe non valido </value>
+  </data>
+  <data name="MapTipBorderColorTooltip" xml:space="preserve">
+    <value>Cambia colore bordo per MapTip</value>
+  </data>
+  <data name="MapTipFillColorTooltip" xml:space="preserve">
+    <value>Cambia colore di riempimento per MapTip</value>
+  </data>
+  <data name="MapTipForegroundColorTooltip" xml:space="preserve">
+    <value>Cambia colore del testo per MapTip</value>
+  </data>
+  <data name="SampleMapTipText" xml:space="preserve">
+    <value>Testo di esempio</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Aggiungi layer selezionato</value>
+  </data>
+  <data name="AttributePrompt" xml:space="preserve">
+    <value>Attributo:</value>
+  </data>
+  <data name="ColorScheme" xml:space="preserve">
+    <value>Schema colori</value>
+  </data>
+  <data name="MoreOptions" xml:space="preserve">
+    <value>Altre opzioni</value>
+  </data>
+  <data name="RendererPrompt" xml:space="preserve">
+    <value>Renderer:</value>
+  </data>
+  <data name="SymbolOptions" xml:space="preserve">
+    <value>Opzioni schema</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Simbolo Corrente:</value>
+  </data>
+  <data name="Basemap" xml:space="preserve">
+    <value>Mappa di base</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Porta avanti</value>
+  </data>
+  <data name="ClassBreaks" xml:space="preserve">
+    <value>Interruzioni classe</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Colore</value>
+  </data>
+  <data name="FromServer" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Mappa</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Contenuti mappa</value>
+  </data>
+  <data name="MapTip" xml:space="preserve">
+    <value>Suggerimento mappa</value>
+  </data>
+  <data name="MoreSymbolOptions" xml:space="preserve">
+    <value>Opzioni schema</value>
+  </data>
+  <data name="Organize" xml:space="preserve">
+    <value>Organizza</value>
+  </data>
+  <data name="RefreshLayer" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Rimuovi</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Cerca...</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Invia indietro</value>
+  </data>
+  <data name="SingleSymbol" xml:space="preserve">
+    <value>Singolo simbolo</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Dimensioni</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Strumenti</value>
+  </data>
+  <data name="UniqueValues" xml:space="preserve">
+    <value>Valori Unici</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="CategoryPrompt" xml:space="preserve">
+    <value>Categoria:</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>Simbolo</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Vista</value>
+  </data>
+  <data name="DrawOrder" xml:space="preserve">
+    <value>Ordine disegno</value>
+  </data>
+  <data name="Popups" xml:space="preserve">
+    <value>Popup</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Tabella</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>Configura popup</value>
+  </data>
+  <data name="AddUniqueValue" xml:space="preserve">
+    <value>Aggiungi Valore</value>
+  </data>
+  <data name="DeleteUniqueValue" xml:space="preserve">
+    <value>Elimina valore selezionato</value>
+  </data>
+  <data name="NextUniqueValue" xml:space="preserve">
+    <value>Valore univoco successivo</value>
+  </data>
+  <data name="PreviousUniqueValue" xml:space="preserve">
+    <value>Valore univoco precedente</value>
+  </data>
+  <data name="ValuePrompt" xml:space="preserve">
+    <value>Valore:</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Layer</value>
+  </data>
+  <data name="MapCenterTooltip" xml:space="preserve">
+    <value>Centro mappe ArcGIS.com</value>
+  </data>
+  <data name="ClassesPrompt" xml:space="preserve">
+    <value>Classi:</value>
+  </data>
+  <data name="InvalidClassBreakValue" xml:space="preserve">
+    <value>Valore non valido</value>
+  </data>
+  <data name="DefaultSymbol" xml:space="preserve">
+    <value>Simbolo di default</value>
+  </data>
+  <data name="MaxPointsPrompt" xml:space="preserve">
+    <value>N. massimo punti:</value>
+  </data>
+  <data name="RadiusPrompt" xml:space="preserve">
+    <value>Raggio:</value>
+  </data>
+  <data name="UsePointClustering" xml:space="preserve">
+    <value>Usa clustering punti</value>
+  </data>
+  <data name="AddContent" xml:space="preserve">
+    <value>Aggiungi contenuto</value>
+  </data>
+  <data name="LayerSymbology" xml:space="preserve">
+    <value>Simbologia</value>
+  </data>
+  <data name="AutoUpdates" xml:space="preserve">
+    <value>Aggiornamenti automatici</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>Intervallo</value>
+  </data>
+  <data name="PollForUpdates" xml:space="preserve">
+    <value>Ottieni aggiornamenti</value>
+  </data>
+  <data name="UpdateOnExtentChanged" xml:space="preserve">
+    <value>Aggiornamento su estensione modificato</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtro</value>
+  </data>
+  <data name="FilterLayerTitle" xml:space="preserve">
+    <value>Specificare l'espressione di filtro</value>
+  </data>
+  <data name="FilterByMapExtent" xml:space="preserve">
+    <value>Filtra per estensione</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Schermo intero</value>
+  </data>
+  <data name="AutoScrollRow" xml:space="preserve">
+    <value>Scorrimento automatico - Riga</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Dettagli servizio</value>
+  </data>
+  <data name="DatasetPrompt" xml:space="preserve">
+    <value>Set di dati:</value>
+  </data>
+  <data name="DistancePrompt" xml:space="preserve">
+    <value>Distanza:</value>
+  </data>
+  <data name="FindNearbyTitle" xml:space="preserve">
+    <value>Trova località più vicina</value>
+  </data>
+  <data name="InvalidDistance" xml:space="preserve">
+    <value>Immettere una distanza valida</value>
+  </data>
+  <data name="InvalidDistanceCaption" xml:space="preserve">
+    <value>Distanza non valida</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>Chilometri</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Metri</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>Miglia</value>
+  </data>
+  <data name="SelectionTools" xml:space="preserve">
+    <value>Strumenti di selezione</value>
+  </data>
+  <data name="BufferDistance" xml:space="preserve">
+    <value>Distanza di Buffer</value>
+  </data>
+  <data name="Feed" xml:space="preserve">
+    <value>GeoRSS...</value>
+  </data>
+  <data name="FindNearbyBufferPrefix" xml:space="preserve">
+    <value>Buffer ricerca località più vicina - </value>
+  </data>
+  <data name="FindNearbyPrefix" xml:space="preserve">
+    <value>Trova località più vicina - </value>
+  </data>
+  <data name="SelectByDraw" xml:space="preserve">
+    <value>Seleziona in base a disegno</value>
+  </data>
+  <data name="ColorSchemePrompt" xml:space="preserve">
+    <value>Schema colori:</value>
+  </data>
+  <data name="EditValuesPrompt" xml:space="preserve">
+    <value>Modifica valori:</value>
+  </data>
+  <data name="TypeValueToAdd" xml:space="preserve">
+    <value>Digitare un valore da aggiungere</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="AddGeoRSSTitle" xml:space="preserve">
+    <value>Immettere l'URL del feed GeoRSS</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>Intestazione:</value>
+  </data>
+  <data name="BrowseDialogGeographicDataNotFound" xml:space="preserve">
+    <value>Dati geografici non trovati</value>
+  </data>
+  <data name="DefaultBasemapLayerDisplayName" xml:space="preserve">
+    <value>Mappa di base</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>Layer:</value>
+  </data>
+  <data name="AddLayerTooltip" xml:space="preserve">
+    <value>Aggiungere il dataset di ArcGIS Server, di SharePoint o di Spatial Data Service alla mappa</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Rinomina</value>
+  </data>
+  <data name="ODataFeed" xml:space="preserve">
+    <value>OData...</value>
+  </data>
+  <data name="SignInWithGlobalAccount" xml:space="preserve">
+    <value>Accedi con account ESRI Global</value>
+  </data>
+  <data name="ClusterColor" xml:space="preserve">
+    <value>Colore sfondo cluster</value>
+  </data>
+  <data name="ClusterTextColor" xml:space="preserve">
+    <value>Colore primo piano cluster</value>
+  </data>
+  <data name="Clustering" xml:space="preserve">
+    <value>Clustering</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Generale</value>
+  </data>
+  <data name="HeatMapAdd" xml:space="preserve">
+    <value>Aggiungi mappa termica</value>
+  </data>
+  <data name="Intensity" xml:space="preserve">
+    <value>Intensità</value>
+  </data>
+  <data name="OpenItemOnClick" xml:space="preserve">
+    <value>Apri elemento al clic del mouse</value>
+  </data>
+  <data name="Symbology" xml:space="preserve">
+    <value>Simbologia</value>
+  </data>
+  <data name="ShowMapContents" xml:space="preserve">
+    <value>Indietro</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>Attributi</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Varie</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avanzate</value>
+  </data>
+  <data name="ExtensionLoadFailed" xml:space="preserve">
+    <value>Caricamento estensione non riuscito</value>
+  </data>
+  <data name="ToolClassLoadFailed" xml:space="preserve">
+    <value>Caricamento classe strumento non riuscito</value>
+  </data>
+  <data name="ToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Caricamento configurazione classe strumento non riuscito</value>
+  </data>
+  <data name="ExtensionInitializationFailed" xml:space="preserve">
+    <value>Impossibile creare un'istanza di un comando personalizzato.</value>
+  </data>
+  <data name="ExtensionInitializationFailedHeader" xml:space="preserve">
+    <value>Inizializzazione estensione non riuscita</value>
+  </data>
+  <data name="Less" xml:space="preserve">
+    <value>Meno</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Altro</value>
+  </data>
+  <data name="ConfiguringLayer" xml:space="preserve">
+    <value>Configurazione:</value>
+  </data>
+  <data name="RemoveLayerCaption" xml:space="preserve">
+    <value>Rimuovere il layer?</value>
+  </data>
+  <data name="RemoveLayerNameSubstitude" xml:space="preserve">
+    <value>selezionate</value>
+  </data>
+  <data name="RemoveLayerPrompt" xml:space="preserve">
+    <value>Rimuovere il layer {0} dalla mappa?</value>
+  </data>
+  <data name="BrowseNoEllipsis" xml:space="preserve">
+    <value>Sfoglia</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Contenuti</value>
+  </data>
+  <data name="GeoRSS" xml:space="preserve">
+    <value>GeoRSS</value>
+  </data>
+  <data name="SearchNoEllipsis" xml:space="preserve">
+    <value>Cerca</value>
+  </data>
+  <data name="ErrorLoadConfigurationOfExtension" xml:space="preserve">
+    <value>Errore non gestito in LoadConfiguration dell'estensione ({0})</value>
+  </data>
+  <data name="ErrorNoPrinterContainerFoundInPrintTemplate" xml:space="preserve">
+    <value>Nessun contenitore di stampa trovato nel modello di stampa.</value>
+  </data>
+  <data name="ErrorSaveConfigurationOfExtension" xml:space="preserve">
+    <value>Errore non gestito in SaveConfiguration dell'estensione ({0})</value>
+  </data>
+  <data name="ExceptionCachedMapServiceSpatialReferenceDoesNotMatch" xml:space="preserve">
+    <value>Il riferimento spaziale del Map Service nella cache non corrisponde.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitialized" xml:space="preserve">
+    <value>Impossibile chiamare ZoomMapToExtent prima dell'inizializzazione della mappa. Utilizzare MapLayersInitialized per attendere tale evento.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitializedMapReferenceNull" xml:space="preserve">
+    <value>Impossibile chiamare ZoomMapToExtent prima dell'inizializzazione della mappa. Riferimento spaziale della mappa null.</value>
+  </data>
+  <data name="ExceptionConnectionTypeDoesNotCoorespondToDatasourceWhichHasResources" xml:space="preserve">
+    <value>Il tipo di connessione {0} non corrisponde a un origine dati ({1}) con risorse</value>
+  </data>
+  <data name="ExceptionCouldNotFindElementWithName" xml:space="preserve">
+    <value>Impossibile trovare un elemento con nome {0}.</value>
+  </data>
+  <data name="ExceptionCouldNotFindToggleButtonWithName" xml:space="preserve">
+    <value>Impossibile trovare un pulsante di attivazione/disattivazione con nome {0}.</value>
+  </data>
+  <data name="ExceptionDatasourceNotLoadedForBaseMapType" xml:space="preserve">
+    <value>DataSource non caricato per tipo mappa di base {0}</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>elemento</value>
+  </data>
+  <data name="ExceptionMapHasNotBeenInitializedYet" xml:space="preserve">
+    <value>Mappa non ancora inizializzata</value>
+  </data>
+  <data name="ExceptionMapLayersHaveNotBeenInstantiated" xml:space="preserve">
+    <value>Istanze dei layer della mappa non create. È possibile modificare BaseMap solo dopo l'attivazione di MapLayersInitialized</value>
+  </data>
+  <data name="ExceptionMapNotSet" xml:space="preserve">
+    <value>Mappa non impostata</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationProvider" xml:space="preserve">
+    <value>Impostazione di ConfigurationProvider necessaria</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationStoreProvider" xml:space="preserve">
+    <value>Impostazione di ConfigurationStoreProvider necessaria</value>
+  </data>
+  <data name="ExceptionMustSpecifyDataSourceProvider" xml:space="preserve">
+    <value>Impostazione di DataSourceProvider necessaria</value>
+  </data>
+  <data name="ExceptionMustSpecifyLayoutProvider" xml:space="preserve">
+    <value>Impostazione di LayoutProvider necessaria</value>
+  </data>
+  <data name="ExceptionMustSpecifySpatialReferenceOnEnvelope" xml:space="preserve">
+    <value>Impostazione del riferimento spaziale per l'envelope necessaria</value>
+  </data>
+  <data name="ExceptionMustSpecifyThemeProvider" xml:space="preserve">
+    <value>Impostazione di ThemeProvider necessaria</value>
+  </data>
+  <data name="ExceptionNoBingMapsTokenAvailable" xml:space="preserve">
+    <value>Nessun token di Bing Maps disponibile</value>
+  </data>
+  <data name="ExceptionNoGeometryServiceUrlSpecifiedLayerZoomedIsDifferentSpatialReference" xml:space="preserve">
+    <value>Nessun URL di servizio geometria specificato. Il layer su cui si esegue lo zoom si trova in un riferimento spaziale diverso della mappa ed è necessario proiettare di nuovo l'intera estensione mediante un servizio geometria</value>
+  </data>
+  <data name="ExceptionNotSupported" xml:space="preserve">
+    <value>Non supportato</value>
+  </data>
+  <data name="ExceptionNullBaseMapInfo" xml:space="preserve">
+    <value>baseMapInfo</value>
+  </data>
+  <data name="ExceptionOnlyCachedServicesCanBeUsedAsBaseMaps" xml:space="preserve">
+    <value>È possibile utilizzare come mappe di base solo i servizi mappe memorizzati nella cache</value>
+  </data>
+  <data name="ExceptionUnableToInstantiateDatasourceForBaseMapType" xml:space="preserve">
+    <value>Impossibile creare un'istanza di origine dati per il tipo di mappa di base {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Impossibile recuperare informazioni sulla configurazione. Nessuna informazione restituita.</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasource" xml:space="preserve">
+    <value>Impossibile recuperare l'origine dati per {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasourceConnectionType" xml:space="preserve">
+    <value>Impossibile recuperare l'origine dati per il tipo di connessione {0}</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Caricamento in corso...</value>
+  </data>
+  <data name="LoadingMapCenter" xml:space="preserve">
+    <value>Caricamento Centro mappe in corso...</value>
+  </data>
+  <data name="LogUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Impossibile recuperare informazioni sulla configurazione</value>
+  </data>
+  <data name="MsgErrorExecutingBufferOperation" xml:space="preserve">
+    <value>Errore durante l'esecuzione dell'operazione di buffer.</value>
+  </data>
+  <data name="MsgErrorExecutingRelationAsyncOperation" xml:space="preserve">
+    <value>Errore durante l'esecuzione dell'operazione RelationAsync</value>
+  </data>
+  <data name="MsgErrorOpeningFile" xml:space="preserve">
+    <value>Errore durante l'apertura del file</value>
+  </data>
+  <data name="MsgErrorRetrievingSubLayersForMapService" xml:space="preserve">
+    <value>Errore durante il recupero di sottolayer per il servizio mappe</value>
+  </data>
+  <data name="MsgErrorSavingFile" xml:space="preserve">
+    <value>Errore durante il salvataggio del file</value>
+  </data>
+  <data name="MsgNoFeaturesSelected" xml:space="preserve">
+    <value>Nessuna feature selezionata</value>
+  </data>
+  <data name="MsgNoResourcesFound" xml:space="preserve">
+    <value>Nessuna risorsa trovata</value>
+  </data>
+  <data name="MsgUnableToAccessGeometryService" xml:space="preserve">
+    <value>Impossibile accedere al servizio geometria.</value>
+  </data>
+  <data name="MsgUnableToCreateLayer" xml:space="preserve">
+    <value>Impossibile creare il layer</value>
+  </data>
+  <data name="MsgUnableToRetrieveResources" xml:space="preserve">
+    <value>Impossibile recuperare le risorse.</value>
+  </data>
+  <data name="MsgUnknownError" xml:space="preserve">
+    <value>Errore sconosciuto</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>Utente sconosciuto</value>
+  </data>
+  <data name="NotValidMapDocument" xml:space="preserve">
+    <value>Documento mappa non valido.</value>
+  </data>
+  <data name="ErrorRetrievingSymbols" xml:space="preserve">
+    <value>Errore durante il recupero dei simboli</value>
+  </data>
+  <data name="ExceptionCacheMapServicesCannotReproject" xml:space="preserve">
+    <value>Impossibile ripetere la proiezione con i servizi mappe memorizzati nella cache nell'applicazione</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Apri una mappa Web da ArcGIS.com</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Accedi</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Disconnetti</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Testo di sfondo</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Membri</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Anteprima</value>
+  </data>
+  <data name="SelectedItem" xml:space="preserve">
+    <value>Elemento selezionato</value>
+  </data>
+  <data name="RecordOutOfSelected" xml:space="preserve">
+    <value>Record ({0} di {1} selezionati)</value>
+  </data>
+  <data name="ExtensionInitializationFailedUrl" xml:space="preserve">
+    <value>Impossibile creare un'istanza di un comando personalizzato. URL: {0}</value>
+  </data>
+  <data name="HeatMapTitle" xml:space="preserve">
+    <value>{0} - Mappa termica</value>
+  </data>
+  <data name="CurrentColor" xml:space="preserve">
+    <value>Colore corrente</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Descrizione:</value>
+  </data>
+  <data name="HeightPrompt" xml:space="preserve">
+    <value>Altezza:</value>
+  </data>
+  <data name="Moredotdot" xml:space="preserve">
+    <value>Altro...</value>
+  </data>
+  <data name="NotificationDontShowDialogOnStartup" xml:space="preserve">
+    <value>Non visualizzare questa finestra di dialogo all'avvio</value>
+  </data>
+  <data name="RecordPrompt" xml:space="preserve">
+    <value>Record:</value>
+  </data>
+  <data name="StandardColors" xml:space="preserve">
+    <value>Colori standard</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Colori tema</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Titolo:</value>
+  </data>
+  <data name="WidthPrompt" xml:space="preserve">
+    <value>Larghezza:</value>
+  </data>
+  <data name="MapBehaviors" xml:space="preserve">
+    <value>Comportamenti mappa</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Giù</value>
+  </data>
+  <data name="MapBehaviorAdd" xml:space="preserve">
+    <value>Aggiungi nuovo comportamento mappa</value>
+  </data>
+  <data name="MapBehaviorConfigure" xml:space="preserve">
+    <value>Configura il comportamento mappa selezionato</value>
+  </data>
+  <data name="MapBehaviorMoveDown" xml:space="preserve">
+    <value>Sposta il comportamento mappa selezionato di una posizione verso il basso</value>
+  </data>
+  <data name="MapBehaviorMoveUp" xml:space="preserve">
+    <value>Sposta il comportamento mappa selezionato di una posizione verso l'alto</value>
+  </data>
+  <data name="MapBehaviorRemove" xml:space="preserve">
+    <value>Rimuovi il comportamento mappa selezionato</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviors" xml:space="preserve">
+    <value>Nessun comportamento associato alla mappa.</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviorsInEdit" xml:space="preserve">
+    <value>Fare clic su Aggiungi per configurare un nuovo comportamento mappa.</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Sposta</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Su</value>
+  </data>
+  <data name="AddLabel" xml:space="preserve">
+    <value>Aggiungi</value>
+  </data>
+  <data name="BehaviorClassLoadFailed" xml:space="preserve">
+    <value>Caricamento classe comportamento non riuscito</value>
+  </data>
+  <data name="BehaviorConfigurationFailed" xml:space="preserve">
+    <value>Configurazione comportamento non riuscita</value>
+  </data>
+  <data name="BehaviorConfigurationFailedDescription" xml:space="preserve">
+    <value>Il metodo di configurazione del comportamento ha generato un'eccezione.</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Caricamento configurazione classe comportamento non riuscito</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailedDescription" xml:space="preserve">
+    <value>Il caricamento della configurazione del comportamento ha generato un'eccezione.</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>Tipo:</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Crea un layer di mappa termica in base a feature del layer corrente</value>
+  </data>
+  <data name="ClusterColorDescription" xml:space="preserve">
+    <value>Imposta il colore di sfondo per i cluster del layer corrente</value>
+  </data>
+  <data name="ClusterTextColorDescription" xml:space="preserve">
+    <value>Imposta il colore del testo e del bordo per i cluster del layer corrente</value>
+  </data>
+  <data name="FilterDescription" xml:space="preserve">
+    <value>Consente di filtrare le feature incluse nel layer corrente impostando un'interrogazione degli attributi</value>
+  </data>
+  <data name="HeatMapColorDescription" xml:space="preserve">
+    <value>Selezionare lo schema di colori per la mappa termica</value>
+  </data>
+  <data name="IntensityDescription" xml:space="preserve">
+    <value>Correggere l'intensità della mappa termica. A valori più elevati corrispondono punti caldi più ampi.</value>
+  </data>
+  <data name="MaxPoints" xml:space="preserve">
+    <value>N. massimo punti</value>
+  </data>
+  <data name="MaxPointsDescription" xml:space="preserve">
+    <value>Imposta il numero massimo di feature raggruppabili in un singolo cluster</value>
+  </data>
+  <data name="OpenItemOnClickDescription" xml:space="preserve">
+    <value>Mostra i dettagli di una feature in una nuova finestra del browser quando si fa clic su di essa</value>
+  </data>
+  <data name="PollForUpdatesDescription" xml:space="preserve">
+    <value>Scegliere se recuperare o meno aggiornamenti di feed all'intervallo specificato</value>
+  </data>
+  <data name="PopupsDescription" xml:space="preserve">
+    <value>Configura gli attributi visualizzati nei popup del layer corrente</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>Raggio</value>
+  </data>
+  <data name="RadiusDescription" xml:space="preserve">
+    <value>Specifica il raggio (in pixel) entro il quale le feature verranno raggruppate in un singolo cluster</value>
+  </data>
+  <data name="SymbologyDescription" xml:space="preserve">
+    <value>Configura i simboli utilizzati per la visualizzazione del layer corrente</value>
+  </data>
+  <data name="TableDescription" xml:space="preserve">
+    <value>Configura i campi visualizzati nella tabella degli attributi del layer corrente</value>
+  </data>
+  <data name="UpdateOnExtentChangedDescription" xml:space="preserve">
+    <value>Scegliere se recuperare o meno aggiornamenti di feed quando si eseguono operazioni di pan o zoom sulla mappa</value>
+  </data>
+  <data name="UsePointClusteringDescription" xml:space="preserve">
+    <value>Specifica se visualizzare o meno gruppi di punti come unica feature in cluster</value>
+  </data>
+  <data name="SelectTheLayout" xml:space="preserve">
+    <value>Seleziona layout...</value>
+  </data>
+  <data name="SelectThePrintLayout" xml:space="preserve">
+    <value>Selezionare il layout di stampa</value>
+  </data>
+  <data name="BehaviorPrompt" xml:space="preserve">
+    <value>Comportamento:</value>
+  </data>
+  <data name="Cluster" xml:space="preserve">
+    <value>Cluster</value>
+  </data>
+  <data name="ClusterFeatures" xml:space="preserve">
+    <value>Feature in cluster</value>
+  </data>
+  <data name="ConfigureRange" xml:space="preserve">
+    <value>Configura intervallo</value>
+  </data>
+  <data name="EnablePrompt" xml:space="preserve">
+    <value>Abilita:</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Feature</value>
+  </data>
+  <data name="RenderAsHeatMap" xml:space="preserve">
+    <value>Esegui rendering come mappa termica</value>
+  </data>
+  <data name="RenderHeatMapAdvancedProperties" xml:space="preserve">
+    <value>Proprietà avanzate per il rendering della mappa termica</value>
+  </data>
+  <data name="Tolerance" xml:space="preserve">
+    <value>Tolleranza</value>
+  </data>
+  <data name="LayoutPrompt" xml:space="preserve">
+    <value>Layout:</value>
+  </data>
+  <data name="ConfigurePrint" xml:space="preserve">
+    <value>Configura stampa</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Stampa</value>
+  </data>
+  <data name="LayoutResourceDownloadError" xml:space="preserve">
+    <value>Errore durante il download delle risorse di layout.</value>
+  </data>
+  <data name="ChangeBackground" xml:space="preserve">
+    <value>Cambia sfondo</value>
+  </data>
+  <data name="PreviewTheme" xml:space="preserve">
+    <value>Anteprima tema</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>Senza titolo</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Aggiungi comportamento</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>Gradiente</value>
+  </data>
+  <data name="Solid" xml:space="preserve">
+    <value>Intera</value>
+  </data>
+  <data name="ToggleRibbonVisibility" xml:space="preserve">
+    <value>Imposta visibilità barra multifunzione</value>
+  </data>
+  <data name="ArcGISSilverlightVersion" xml:space="preserve">
+    <value>ArcGIS API for Silverlight:</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versione:</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Sposta giù</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Sposta su</value>
+  </data>
+  <data name="ConstrainExtentBehaviorMessage" xml:space="preserve">
+    <value>Eseguire lo zoom all'estensione della mappa da utilizzare come vincolo e fare clic su Applica.</value>
+  </data>
+  <data name="ConstrainExtentBehaviorTitle" xml:space="preserve">
+    <value>Imposta vincolo estensione mappa</value>
+  </data>
+  <data name="DeleteBehaviorCaption" xml:space="preserve">
+    <value>Eliminare il comportamento?</value>
+  </data>
+  <data name="DeleteBehaviorPrompt" xml:space="preserve">
+    <value>Conferma eliminazione</value>
+  </data>
+  <data name="CurrentConstrainExtentLabel" xml:space="preserve">
+    <value>Envelope vincolo estensione corrente:</value>
+  </data>
+  <data name="ConstrainExtentNotSetMessage" xml:space="preserve">
+    <value>Vincolo estensione mappa non ancora impostato.</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>Non impostato</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Configura mappe di base</value>
+  </data>
+  <data name="ConfigureTheSetOfBaseMaps" xml:space="preserve">
+    <value>Configura il set di mappe di base</value>
+  </data>
+  <data name="AddNewBaseMap" xml:space="preserve">
+    <value>Aggiungi nuova mappa di base</value>
+  </data>
+  <data name="ClickImageToChangeThumbnailIcon" xml:space="preserve">
+    <value>Fare clic sull'immagine per modificare l'icona di anteprima</value>
+  </data>
+  <data name="RequiresBingAppID" xml:space="preserve">
+    <value>Richiede ID applicazione Bing</value>
+  </data>
+  <data name="DeleteCurrentlySelectedBaseMap" xml:space="preserve">
+    <value>Elimina la mappa di base attualmente selezionata</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapDown" xml:space="preserve">
+    <value>Sposta giù la mappa di base attualmente selezionata</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapUp" xml:space="preserve">
+    <value>Sposta su la mappa di base attualmente selezionata</value>
+  </data>
+  <data name="SubTypePrompt" xml:space="preserve">
+    <value>Sottotipo:</value>
+  </data>
+  <data name="TextPrompt" xml:space="preserve">
+    <value>Testo:</value>
+  </data>
+  <data name="ThumbnailPrompt" xml:space="preserve">
+    <value>Anteprima:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Avanti</value>
+  </data>
+  <data name="NoBehaviorTitleSpecified" xml:space="preserve">
+    <value>Nessun titolo specificato per il comportamento</value>
+  </data>
+  <data name="PleaseProvideValidTitleForNewBehavior" xml:space="preserve">
+    <value>Specificare un titolo valido per il nuovo comportamento.</value>
+  </data>
+  <data name="SelectBehaviorToAdd" xml:space="preserve">
+    <value>Seleziona un comportamento</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Modalità</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Dimensioni cache: </value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>Recupera feature nell'area della mappa</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>Recupera tutte le feature contemporaneamente</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Dimensioni cache feature</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Numero massimo di feature che possono essere contenute nel layer. Se tale limite viene superato quando si recuperano nuove feature, le feature meno recenti vengono rimosse dal layer.</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>Recupera feature nell'area della mappa</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Quando si carica o si aggiorna il layer vengono recuperate solo le feature all'interno dell'area della mappa corrente. Quando si modifica l'area della mappa vengono recuperate ulteriori feature.</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>Recupera tutte le feature</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Quando si carica o si aggiorna il layer vengono recuperate tutte le relative feature.</value>
+  </data>
+  <data name="BrowseContentUrlWatermark" xml:space="preserve">
+    <value>Immettere l'URL del server o del layer</value>
+  </data>
+  <data name="BrowseDialogNoResourcesFound" xml:space="preserve">
+    <value>Nessuna risorsa trovata.</value>
+  </data>
+  <data name="BrowseDialogNoServerOrLayerFound" xml:space="preserve">
+    <value>Nessun servizio o layer trovato.</value>
+  </data>
+  <data name="SecureServices" xml:space="preserve">
+    <value>Servizi sicuri</value>
+  </data>
+  <data name="AutoUpdateNumericDescription" xml:space="preserve">
+    <value>Imposta l'intervallo di aggiornamento in secondi o minuti. Il layer verrà automaticamente aggiornato in base a tale intervallo finché non viene disabilitato.</value>
+  </data>
+  <data name="AutoUpdateNumericTooltip" xml:space="preserve">
+    <value>Intervallo di aggiornamento automatico</value>
+  </data>
+  <data name="AutoUpdatePollingDescription" xml:space="preserve">
+    <value>Imposta l'eventuale aggiornamento automatico del layer di feature a intervalli periodici.</value>
+  </data>
+  <data name="AutoUpdatePollingTooltip" xml:space="preserve">
+    <value>Aggiornamento automatico layer di feature</value>
+  </data>
+  <data name="AutoUpdateIntervalText" xml:space="preserve">
+    <value>Intervallo:</value>
+  </data>
+  <data name="AutoUpdateLayerConfigTitle" xml:space="preserve">
+    <value>Aggiornamento automatico</value>
+  </data>
+  <data name="AvailableLayers" xml:space="preserve">
+    <value>Layer disponibili:</value>
+  </data>
+  <data name="EnablePopups" xml:space="preserve">
+    <value>Mostra popup</value>
+  </data>
+  <data name="EnablePopupsForLayer" xml:space="preserve">
+    <value>Mostra i popup per il layer</value>
+  </data>
+  <data name="OnClick" xml:space="preserve">
+    <value>al clic del mouse</value>
+  </data>
+  <data name="OnHover" xml:space="preserve">
+    <value>al passaggio del mouse</value>
+  </data>
+  <data name="ConfigureEditorWidget" xml:space="preserve">
+    <value>Modifica configurazione</value>
+  </data>
+  <data name="SnapshotModeNote" xml:space="preserve">
+    <value>Nota: se il numero di feature nel dataset supera il numero massimo di feature restituite dal servizio, non tutte le feature verranno incluse nel layer.</value>
+  </data>
+  <data name="GraphicSymbolsTakePrecedence" xml:space="preserve">
+    <value>I simboli definiti qui vengono sostituiti dai simboli dei singoli elementi grafici (se definiti).</value>
+  </data>
+  <data name="SpatialReference" xml:space="preserve">
+    <value>Riferimento Spaziale:</value>
+  </data>
+  <data name="XMax" xml:space="preserve">
+    <value>XMax:</value>
+  </data>
+  <data name="XMin" xml:space="preserve">
+    <value>XMin:</value>
+  </data>
+  <data name="YMax" xml:space="preserve">
+    <value>YMax</value>
+  </data>
+  <data name="YMin" xml:space="preserve">
+    <value>YMin</value>
+  </data>
+  <data name="NotFoundInLayout" xml:space="preserve">
+    <value>Impossibile trovare {0} nel layout corrente</value>
+  </data>
+  <data name="ToggleEditFailed" xml:space="preserve">
+    <value>Impossibile visualizzare/nascondere i controlli di modifica. Il layout corrente potrebbe non supportare modifiche</value>
+  </data>
+  <data name="PopupFromWebMap" xml:space="preserve">
+    <value>Usa definizione popup da mappa Web.</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>Zoom automatico su selezione</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Esegui</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opzioni</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>Record ({0} di {1} selezionati)</value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>Inverti selezione</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Recupero feature</value>
+  </data>
+  <data name="ConfigureSecuredServices" xml:space="preserve">
+    <value>Configura servizi protetti</value>
+  </data>
+  <data name="ErrorChangingProxies" xml:space="preserve">
+    <value>Errore di modifica dei proxy</value>
+  </data>
+  <data name="ProxyUrl" xml:space="preserve">
+    <value>URL proxy:</value>
+  </data>
+  <data name="SpecifyUrlToProxyPageUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Specificare l'URL di una pagina proxy utilizzata per accedere ai servizi protetti per l'applicazione. Il proxy verrà condiviso da tutti i layer dell'applicazione che utilizzano un servizio protetto.</value>
+  </data>
+  <data name="UsesProxy" xml:space="preserve">
+    <value>Usa proxy</value>
+  </data>
+  <data name="WhetherThisLayerUsesProxyServiceForaccessingRestrictedService" xml:space="preserve">
+    <value>Indica se il layer utilizza un servizio proxy per accedere a un servizio con limitazioni. Fare clic su Configura proxy per impostare l'URL del proxy.</value>
+  </data>
+  <data name="LayerHasNoAttributes" xml:space="preserve">
+    <value>Il layer selezionato non presenta attributi visualizzabili.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Dettagli</value>
+  </data>
+  <data name="ToggleErrorDetails" xml:space="preserve">
+    <value>Mostra o nasconde i dettagli dell'errore.</value>
+  </data>
+  <data name="LayerIsNotGraphicsLayer" xml:space="preserve">
+    <value>Impossibile visualizzare gli attributi nel layer selezionato perché si tratta di un layer del Map Service dinamico o memorizzato nella cache di ArcGIS Server. Per ulteriori informazioni, leggere l'argomento relativo ai tipi di layer nella Guida.</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteBasemap" xml:space="preserve">
+    <value>Eliminare la mappa di base?</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Conferma eliminazione</value>
+  </data>
+  <data name="NewBasemap" xml:space="preserve">
+    <value>Nuova mappa di base</value>
+  </data>
+  <data name="ConfigureSelectedLayer" xml:space="preserve">
+    <value>Configura layer selezionato</value>
+  </data>
+  <data name="SelectLayerToAdd" xml:space="preserve">
+    <value>Selezionare un layer da aggiungere</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Accedi a servizi protetti</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Aggiungi servizi protetti</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Configura proxy</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServices" xml:space="preserve">
+    <value>Configura il proxy utilizzato per accedere ai servizi protetti per l'applicazione</value>
+  </data>
+  <data name="BehaviorSaveFailed" xml:space="preserve">
+    <value>Impossibile salvare la configurazione del comportamento</value>
+  </data>
+  <data name="BehaviorSaveFailedMessage" xml:space="preserve">
+    <value>Errore durante il salvataggio della configurazione dei comportamenti mappa associati.</value>
+  </data>
+  <data name="LayerInitFailure" xml:space="preserve">
+    <value>Errore di inizializzazione layer</value>
+  </data>
+  <data name="LayerNotInitialized" xml:space="preserve">
+    <value>Impossibile inizializzare il layer</value>
+  </data>
+  <data name="DeleteGraphicConfirmation" xml:space="preserve">
+    <value>Rimuovere feature?</value>
+  </data>
+  <data name="DeleteGraphicConfirmationTitle" xml:space="preserve">
+    <value>Conferma</value>
+  </data>
+  <data name="EditValuesCommandEditorBackButtonContent" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="ConfigureBehavior" xml:space="preserve">
+    <value>Configura il comportamento</value>
+  </data>
+  <data name="DisablePopupForLayer" xml:space="preserve">
+    <value>Disabilita popup</value>
+  </data>
+  <data name="EnablePopupForLayer" xml:space="preserve">
+    <value>Abilita popup</value>
+  </data>
+  <data name="LinkWebMapDialogCaption" xml:space="preserve">
+    <value>Collega a mappa Web</value>
+  </data>
+  <data name="LinkWebMapDialogMessage" xml:space="preserve">
+    <value>La configurazione mappa verrà caricata dalla mappa Web. La configurazione mappa esistente andrà persa. Continuare?</value>
+  </data>
+  <data name="UnlinkWebMapDialogCaption" xml:space="preserve">
+    <value>Scollega da mappa Web</value>
+  </data>
+  <data name="UnlinkWebMapDialogMessage" xml:space="preserve">
+    <value>La configurazione mappa verrà disconnessa dalla mappa Web. Sarà possibile aggiungere, rimuovere e configurare i layer, tuttavia gli aggiornamenti alla mappa Web non verranno più visualizzati nella mappa. Continuare?</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="Business" xml:space="preserve">
+    <value>Aziende</value>
+  </data>
+  <data name="Cartography" xml:space="preserve">
+    <value>Cartografia</value>
+  </data>
+  <data name="Outdoor_Recreation" xml:space="preserve">
+    <value>Attività ricreative all'aperto</value>
+  </data>
+  <data name="People_and_Places" xml:space="preserve">
+    <value>Persone e luoghi</value>
+  </data>
+  <data name="Public_Safety_and_Health" xml:space="preserve">
+    <value>Salute e pubblica sicurezza</value>
+  </data>
+  <data name="Transportation" xml:space="preserve">
+    <value>Trasporti</value>
+  </data>
+  <data name="WebMapLoadFailed" xml:space="preserve">
+    <value>Impossibile caricare la mappa Web con ID {0}. È possibile che non si disponga delle autorizzazioni per accedere alla mappa oppure che questa non esista più.</value>
+  </data>
+  <data name="ClusteringDisallowedCaption" xml:space="preserve">
+    <value>Clustering non consentito</value>
+  </data>
+  <data name="ClusteringDisallowedMessage" xml:space="preserve">
+    <value>Clustering non consentito perché il layer è selezionato per la modifica.</value>
+  </data>
+  <data name="UnsupportedBasemapType" xml:space="preserve">
+    <value>Tipo di mappa di base non supportato</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Usa proxy</value>
+  </data>
+  <data name="AreaNotesLayer" xml:space="preserve">
+    <value>{0} - Aree</value>
+  </data>
+  <data name="LineNotesLayer" xml:space="preserve">
+    <value>{0} - Linee</value>
+  </data>
+  <data name="PointNotesLayer" xml:space="preserve">
+    <value>{0} - Punti</value>
+  </data>
+  <data name="Editing" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Abilitato</value>
+  </data>
+  <data name="ArcGISPortalDefaultName" xml:space="preserve">
+    <value>Portal for ArcGIS</value>
+  </data>
+  <data name="SignInToArcGISServer" xml:space="preserve">
+    <value>Accedi ad ArcGIS Server a {0}</value>
+  </data>
+  <data name="InvalidUrlUserPassword" xml:space="preserve">
+    <value>Valore non valido per URL, nome utente o password</value>
+  </data>
+  <data name="SignInTo" xml:space="preserve">
+    <value>Accedi a {0}</value>
+  </data>
+  <data name="SignInToServer" xml:space="preserve">
+    <value>Accedi ad ArcGIS Server</value>
+  </data>
+  <data name="SignInToSecureServices" xml:space="preserve">
+    <value>Effettuare l'accesso per accedere ai servizi sicuri</value>
+  </data>
+  <data name="OpenStreetMap" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="FeatureLayer" xml:space="preserve">
+    <value>Feature layer</value>
+  </data>
+  <data name="MapLayer" xml:space="preserve">
+    <value>Layer mappa</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>Accesso non riuscito.</value>
+  </data>
+</root>

@@ -1,0 +1,384 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:mapping="clr-namespace:ESRI.ArcGIS.Mapping.Controls;assembly=ESRI.ArcGIS.Mapping.Controls"  
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.GP;assembly=ESRI.ArcGIS.Mapping.GP"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    >
+	<mapping:StringResourcesManager x:Key="Localization" />
+    <local:StringResourcesManager x:Key="GPLocalization" />
+
+    <Style x:Key="MapTipHeaderComboBox" TargetType="ComboBox">
+        <Setter Property="Padding" Value="6,2,25,2" />
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="TabNavigation" Value="Once" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid>
+                        <Grid.Resources>
+                            <Style x:Name="comboToggleStyle" TargetType="ToggleButton">
+                                <Setter Property="Foreground" Value="#FF333333"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderBrush">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                                            <GradientStop Color="#FF617584" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="Padding" Value="3"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Grid Cursor="Hand">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="Normal"/>
+                                                        <VisualState x:Name="MouseOver">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" Storyboard.TargetName="BackgroundOverlay" Storyboard.TargetProperty="Opacity" To="1"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Pressed">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" Storyboard.TargetName="Highlight" Storyboard.TargetProperty="Opacity" To="1"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Disabled" />
+                                                    </VisualStateGroup>
+                                                    <VisualStateGroup x:Name="CheckStates">
+                                                        <VisualState x:Name="Checked">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" Storyboard.TargetName="Highlight" Storyboard.TargetProperty="(UIElement.Opacity)" To="1"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Unchecked" />
+                                                    </VisualStateGroup>
+                                                    <VisualStateGroup x:Name="FocusStates">
+                                                        <VisualState x:Name="Focused" />
+                                                        <VisualState x:Name="Unfocused" />
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <Rectangle x:Name="BackgroundOverlay" Opacity="0.4" Fill="Transparent" StrokeThickness="{TemplateBinding BorderThickness}" 
+                                                                               Stroke="DarkGray" Margin="{TemplateBinding BorderThickness}"/>
+                                                <Rectangle x:Name="Highlight" Opacity="0" IsHitTestVisible="false" Stroke="Black" StrokeThickness="1" Margin="{TemplateBinding BorderThickness}" />
+                                                <ContentPresenter
+                                                          x:Name="contentPresenter"
+                                                          Content="{TemplateBinding Content}"
+                                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                          Margin="{TemplateBinding Padding}"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Grid.Resources>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused"/>
+                                <VisualState x:Name="FocusedDropDown">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="PopupBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="ContentPresenterBorder">
+                            <Grid>
+                                <ToggleButton x:Name="DropDownToggle" Style="{StaticResource comboToggleStyle}"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="0" HorizontalContentAlignment="Right" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
+                                    <Path x:Name="BtnArrow" Height="4" Width="8" Stretch="Uniform" 
+                                            Fill="{TemplateBinding Foreground}"
+                                            Data="F1 M 301.14,-189.041L 311.57,-189.041L 306.355,-182.942L 301.14,-189.041 Z " Margin="0,0,6,0" HorizontalAlignment="Right">
+                                    </Path>
+                                </ToggleButton>
+                                <ContentPresenter x:Name="ContentPresenter" Opacity="0" />
+                                <TextBlock Text="{Binding Content, ElementName=ContentPresenter}"
+                                           Foreground="{TemplateBinding Foreground}"
+                                            Margin="{TemplateBinding Padding}"  
+                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Grid>
+                        </Border>
+                        <Rectangle x:Name="FocusVisualElement" Margin="1"  Stroke="{StaticResource SelectionOutlineColorBrush}" StrokeThickness="1" Opacity="0" IsHitTestVisible="false" />
+                        <Popup x:Name="Popup">
+                            <Border x:Name="PopupBorder" HorizontalAlignment="Stretch" Height="Auto" BorderThickness="{TemplateBinding BorderThickness}" 
+                                                        BorderBrush="Black" 
+                                                        Background="White">
+                                <ScrollViewer x:Name="ScrollViewer" BorderThickness="0" Padding="1">
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="mapping:MapTipsLayerConfig" x:Key="MapTipsLayerConfigStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mapping:MapTipsLayerConfig">
+                    <Grid Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <!-- ClearAll State -->
+                                <VisualState x:Name="ClearAllState">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ToggleAllVisibilityButton" Storyboard.TargetProperty="Content">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{Binding ConverterParameter=ClearAll, Converter={StaticResource GPLocalization}, Source={StaticResource GPLocalization}}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <!-- SelectAll State -->
+                                <VisualState x:Name="SelectAllState">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ToggleAllVisibilityButton" Storyboard.TargetProperty="Content">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{Binding ConverterParameter=SelectAll, Converter={StaticResource GPLocalization}, Source={StaticResource GPLocalization}}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid Margin="0,0,0,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding ConverterParameter=HeaderPrompt, 
+                                Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                VerticalAlignment="Center" />
+                            <ComboBox VerticalAlignment="Center" Margin="3,0,0,0" x:Name="HeaderCombo"
+                                      Foreground="{TemplateBinding Foreground}" Height="23"
+                                      Style="{StaticResource MapTipHeaderComboBox}" Grid.Column="1" 
+                                      MaxDropDownHeight="150">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}" Foreground="Black" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </Grid>
+
+                        <sdk:DataGrid Grid.Row="1" x:Name="MapTipsDataGrid" FontSize="11" Padding="5" Margin="0"
+                            AutoGenerateColumns="False" Foreground="Black" VerticalScrollBarVisibility="Auto" Width="{TemplateBinding Width}"                          
+                            VerticalAlignment="Top" HorizontalAlignment="Stretch" CanUserSortColumns="False" MaxHeight="250">
+                            <sdk:DataGrid.Columns>
+                                <sdk:DataGridTemplateColumn>
+                                    <sdk:DataGridTemplateColumn.HeaderStyle>
+                                        <Style TargetType="sdk:DataGridColumnHeader">
+                                            <Setter Property="ContentTemplate">
+                                                <Setter.Value>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding ConverterParameter=VisibleHeader, 
+                                                            Converter={StaticResource Localization}, 
+                                                            Source={StaticResource Localization}}" />
+                                                    </DataTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </sdk:DataGridTemplateColumn.HeaderStyle>
+                                    <sdk:DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                IsChecked="{Binding VisibleOnMapTip, Mode=TwoWay}">
+                                                <i:Interaction.Behaviors>
+                                                    <mapping:ToggleMapTipVisiblityBehavior />
+                                                </i:Interaction.Behaviors>
+                                            </CheckBox>
+                                        </DataTemplate>
+                                    </sdk:DataGridTemplateColumn.CellTemplate>
+                                </sdk:DataGridTemplateColumn>
+
+                                <sdk:DataGridTextColumn 
+                                    Binding="{Binding Name}" MinWidth="104"
+                                    IsReadOnly="True">
+                                    <sdk:DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="sdk:DataGridColumnHeader">
+                                            <Setter Property="ContentTemplate">
+                                                <Setter.Value>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding ConverterParameter=Name, 
+                                                            Converter={StaticResource Localization}, 
+                                                            Source={StaticResource Localization}}" />
+                                                    </DataTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </sdk:DataGridTextColumn.HeaderStyle>
+                                </sdk:DataGridTextColumn>
+                                <sdk:DataGridTemplateColumn MinWidth="104">
+                                    <sdk:DataGridTemplateColumn.HeaderStyle>
+                                        <Style TargetType="sdk:DataGridColumnHeader">
+                                            <Setter Property="ContentTemplate">
+                                                <Setter.Value>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding ConverterParameter=AliasHeader, 
+                                                            Converter={StaticResource Localization}, 
+                                                            Source={StaticResource Localization}}" />
+                                                    </DataTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </sdk:DataGridTemplateColumn.HeaderStyle>
+                                    <sdk:DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                                    Text="{Binding DisplayName, Mode=TwoWay}" BorderThickness="0"
+                                                    Background="Transparent" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </sdk:DataGridTemplateColumn.CellTemplate>
+                                </sdk:DataGridTemplateColumn>
+                            </sdk:DataGrid.Columns>
+                        </sdk:DataGrid>
+
+                        <Button x:Name="ToggleAllVisibilityButton" Content="{Binding ConverterParameter=ClearAll, 
+                            Converter={StaticResource GPLocalization}, Source={StaticResource GPLocalization}}" 
+                            Margin="0,5,0,0" Padding="10,5,10,5" Grid.Row="2" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="MapTipsConfigStyle" TargetType="mapping:MapTipsConfig">
+        <Setter Property="Foreground" Value="{StaticResource DesignHostBackgroundTextBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="mapping:MapTipsConfig">
+                    <Grid Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <Grid.Resources>
+                            <mapping:ReverseVisibilityConverter x:Key="ReverseVisibilityConverter"/>
+                            <mapping:VisibilityConverter x:Key="VisibilityConverter"/>
+                            <mapping:ReverseBooleanConverter x:Key="ReverseBooleanConverter"/>
+                            <mapping:IsPopupEnabledToResourceStringConverter x:Key="IsPopupEnabledToResourceStringConverter" />
+						</Grid.Resources>
+                        <Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+						<ToggleButton IsChecked="{Binding IsPopupEnabled, Mode=TwoWay}"  HorizontalAlignment="Stretch" 
+                                      HorizontalContentAlignment="Center" Margin="0,0,0,5" Padding="10,5">
+							<ToggleButton.Content>
+                                <TextBlock x:Name="ShowHidePopupsTextBlock" 
+                                           Text="{Binding IsPopupEnabled, 
+                                           Converter={StaticResource IsPopupEnabledToResourceStringConverter}}"
+                                           Foreground="Black" />
+							</ToggleButton.Content>
+						</ToggleButton>
+                        <!-- Grid/StackPanel do not have IsEnabled.  Setting IsEnabled on ScrollViewer instead. -->
+                        <ScrollViewer BorderThickness="0" VerticalScrollBarVisibility="Auto" Grid.Row="1"
+                                      Background="Transparent" IsEnabled="{Binding IsPopupEnabled}"
+                                      HorizontalScrollBarVisibility="Auto" Padding="0"
+                                      Style="{StaticResource ThinBarScrollViewerStyle}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <ListBox ItemsSource="{Binding Layers}" Visibility="{Binding LayerSelectionVisibility, 
+                                    Converter={StaticResource VisibilityConverter}}"
+                                         SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+                                         ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                        Width="150" IsEnabled="{Binding IsPopupEnabled}"
+                                         VerticalAlignment="Stretch" Margin="0,0,4,0">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" >
+                                                <Grid>
+                                                    <Image Source="/ESRI.ArcGIS.Mapping.Controls;component/Images/icons/layer.png" 
+                                                   Visibility="{Binding PopUpsEnabled, Converter={StaticResource ReverseVisibilityConverter}}"></Image>
+                                                    <Image Source="/ESRI.ArcGIS.Mapping.Controls;component/Images/toolbar/HTMLPopUpTool16.png"
+                                                   Visibility="{Binding PopUpsEnabled, Converter={StaticResource VisibilityConverter}}"
+                                                   />
+                                                </Grid>
+                                                <TextBlock Text="{Binding Name}" Margin="3,0,0,0"></TextBlock>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                                <Grid Grid.Column="1" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+									<StackPanel Orientation="Horizontal"
+                                                Visibility="{Binding LayerSelectionVisibility, Converter={StaticResource VisibilityConverter}}">
+										<CheckBox IsChecked="{Binding SelectedItem.PopUpsEnabled, Mode=TwoWay}" 
+                                                  IsEnabled="{Binding IsPopupEnabled}"></CheckBox>
+                                        <TextBlock Text="{Binding ConverterParameter=EnablePopupsForLayer, 
+                                            Converter={StaticResource Localization}}" 
+                                                   Foreground="{TemplateBinding Foreground}" />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Visibility="{Binding LayerSelectionVisibility, 
+                                        Converter={StaticResource ReverseVisibilityConverter}}" Margin="0,0,0,5">
+                                        <StackPanel Orientation="Horizontal" Visibility="{Binding SupportsOnClick, Converter={StaticResource VisibilityConverter}}">
+                                            <TextBlock Text="{Binding ConverterParameter=EnablePopups, 
+                                                Converter={StaticResource Localization}}" 
+                                                       Foreground="{TemplateBinding Foreground}" />
+												<RadioButton IsChecked="{Binding PopUpsOnClick, Mode=TwoWay}" Margin="3,0,0,0" GroupName="g1" IsEnabled="{Binding IsPopupEnabled}">
+                                                <TextBlock Text="{Binding ConverterParameter=OnClick, Converter={StaticResource Localization}}"
+                                                           Foreground="{TemplateBinding Foreground}"></TextBlock>
+                                            </RadioButton>
+                                            <RadioButton IsChecked="{Binding PopUpsOnClick, Mode=TwoWay, Converter={StaticResource ReverseBooleanConverter}}" Margin="3,0,0,0"
+                                              GroupName="g2" IsEnabled="{Binding IsPopupEnabled}">
+                                                <TextBlock Text="{Binding ConverterParameter=OnHover, Converter={StaticResource Localization}}"
+                                                           Foreground="{TemplateBinding Foreground}"></TextBlock> 
+                                            </RadioButton>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <mapping:MapTipsLayerConfig Info="{Binding}" x:Name="MapTipsLayerConfig" 
+                                        Width="{TemplateBinding Width}" Foreground="{TemplateBinding Foreground}"
+                                        Style="{StaticResource MapTipsLayerConfigStyle}"
+                                        IsEnabled="{Binding IsPopupEnabled}" Grid.Row="1"/>
+                                </Grid>
+                            </Grid>
+                        </ScrollViewer>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

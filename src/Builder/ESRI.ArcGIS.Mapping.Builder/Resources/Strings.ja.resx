@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>ビヘイビアーの追加</value>
+  </data>
+  <data name="AddBehaviorDescription" xml:space="preserve">
+    <value>ビヘイビアーをビューアに追加します</value>
+  </data>
+  <data name="AddGeoprocessing" xml:space="preserve">
+    <value>ジオプロセシングの追加</value>
+  </data>
+  <data name="AddGeoprocessingDescription" xml:space="preserve">
+    <value>ジオプロセシング ツールをビューアに追加します。ジオプロセシング ツールを使用すると、ビューアのユーザは ArcGIS Server のジオプロセシング サービスを利用できます。</value>
+  </data>
+  <data name="AddGeoRSSDescription" xml:space="preserve">
+    <value>位置情報に対応している RSS フィードをマップに追加します</value>
+  </data>
+  <data name="AddGP" xml:space="preserve">
+    <value>ジオプロセシングの追加</value>
+  </data>
+  <data name="AddTool" xml:space="preserve">
+    <value>ツールの追加</value>
+  </data>
+  <data name="AddToolDescription" xml:space="preserve">
+    <value>ツールをビューアに追加します</value>
+  </data>
+  <data name="ApplicationBuilderSettings" xml:space="preserve">
+    <value>Application Builder の設定</value>
+  </data>
+  <data name="ApplicationBuilderSettingsDescription" xml:space="preserve">
+    <value>アドインやベースマップの管理など、Application Builder の設定を表示および変更します。</value>
+  </data>
+  <data name="AttributeTable" xml:space="preserve">
+    <value>属性テーブル</value>
+  </data>
+  <data name="BasemapGalleryDescription" xml:space="preserve">
+    <value>マップに別のベース レイヤを選択します</value>
+  </data>
+  <data name="Behaviors" xml:space="preserve">
+    <value>ビヘイビアー</value>
+  </data>
+  <data name="Branding" xml:space="preserve">
+    <value>ブランディング</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>変更</value>
+  </data>
+  <data name="ChangeLayout" xml:space="preserve">
+    <value>レイアウトの変更</value>
+  </data>
+  <data name="ChangeLayoutDescription" xml:space="preserve">
+    <value>ビューアの新しいレイアウトを選択します</value>
+  </data>
+  <data name="ChangeLogo" xml:space="preserve">
+    <value>ロゴの変更</value>
+  </data>
+  <data name="ChangeLogoDescription" xml:space="preserve">
+    <value>ビューアのロゴを選択します</value>
+  </data>
+  <data name="ChangeTitleAndLinks" xml:space="preserve">
+    <value>タイトルとリンクの変更</value>
+  </data>
+  <data name="ChangeTitleAndLinksDescription" xml:space="preserve">
+    <value>ビューアのタイトルとハイパーリンクを編集します</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>構成</value>
+  </data>
+  <data name="ConfigureTheme" xml:space="preserve">
+    <value>テーマの構成</value>
+  </data>
+  <data name="ConfigureThemeDescription" xml:space="preserve">
+    <value>ビューアのテーマ色を編集します</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>全画面表示</value>
+  </data>
+  <data name="FullScreenDescription" xml:space="preserve">
+    <value>Application Builder を全画面モードにします</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>ホーム</value>
+  </data>
+  <data name="HomeDescription" xml:space="preserve">
+    <value>Application Builder のスタート ページに戻ります</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>レイアウト</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>ロゴ</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>管理</value>
+  </data>
+  <data name="ManageBehaviors" xml:space="preserve">
+    <value>ビヘイビアーの管理</value>
+  </data>
+  <data name="ManageBehaviorsDescription" xml:space="preserve">
+    <value>ビューアのビヘイビアーを有効化、無効化、順序変更、追加、または削除します</value>
+  </data>
+  <data name="ManageToolbars" xml:space="preserve">
+    <value>ツールバーの管理</value>
+  </data>
+  <data name="ManageToolbarsDescription" xml:space="preserve">
+    <value>ビューアのツールバー上のツールを追加、削除、移動、構成します</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="PublishDescription" xml:space="preserve">
+    <value>現在のビューアを新しい Web サイトに配置します</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>リセット</value>
+  </data>
+  <data name="ResetTheme" xml:space="preserve">
+    <value>テーマのリセット</value>
+  </data>
+  <data name="ResetThemeDescription" xml:space="preserve">
+    <value>ビューアのテーマ色をデフォルト値にリセットします</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="SaveDescription" xml:space="preserve">
+    <value>現在のビューアを保存します</value>
+  </data>
+  <data name="SelectTheTool" xml:space="preserve">
+    <value>ツールを選択します...</value>
+  </data>
+  <data name="TitleAndLinks" xml:space="preserve">
+    <value>タイトルとリンク</value>
+  </data>
+  <data name="ToggleBrowseDescription" xml:space="preserve">
+    <value>参照パネルの表示/非表示を切り替えます。参照パネルを使用すると、ArcGIS Server や Spatial Data Server のコンテンツのエンドポイントを表示したり、レイヤをマップに追加したりできます。</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>マップ コンテンツのリストの表示/非表示を切り替えます</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>検索パネルの表示/非表示を切り替えます。検索パネルを使用すると、場所の検索、ArcGIS.com のコンテンツの検索、ArcGIS Server サービスの Web 検索ができます。</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>現在選択されているレイヤの属性テーブルの表示/非表示を切り替えます</value>
+  </data>
+  <data name="ToggleToolbar" xml:space="preserve">
+    <value>ツールバーの切り替え</value>
+  </data>
+  <data name="ToggleToolbarDescription" xml:space="preserve">
+    <value>Application Builder のツールバーの表示/非表示を切り替えます</value>
+  </data>
+  <data name="Toolbar" xml:space="preserve">
+    <value>ツールバー</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="Accent" xml:space="preserve">
+    <value>アクセント</value>
+  </data>
+  <data name="AccentText" xml:space="preserve">
+    <value>テキストの強調</value>
+  </data>
+  <data name="AddNewGroupOrControl" xml:space="preserve">
+    <value>新しいグループまたはコントロールを追加します</value>
+  </data>
+  <data name="AddOns" xml:space="preserve">
+    <value>アドイン</value>
+  </data>
+  <data name="ApplicationProperties" xml:space="preserve">
+    <value>アプリケーションのプロパティ</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>適用</value>
+  </data>
+  <data name="ArcGISApplicationBuilder" xml:space="preserve">
+    <value>Application Builder - {0}</value>
+  </data>
+  <data name="ArcGISViewerForMicrosoftSilverlight" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>背景</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>背景テキスト</value>
+  </data>
+  <data name="BaseMaps" xml:space="preserve">
+    <value>ベースマップ</value>
+  </data>
+  <data name="BrowseForFile" xml:space="preserve">
+    <value>ファイルの参照</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>リソースの参照</value>
+  </data>
+  <data name="BuilderTutorial" xml:space="preserve">
+    <value>Builder チュートリアル</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="ChangesSavedSuccessfully" xml:space="preserve">
+    <value>変更内容の保存が完了しました。</value>
+  </data>
+  <data name="ChooseExistingProject" xml:space="preserve">
+    <value>既存のプロジェクトを選択します</value>
+  </data>
+  <data name="ChooseLayout" xml:space="preserve">
+    <value>レイアウトの選択</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>構成</value>
+  </data>
+  <data name="ConfigureExtensions" xml:space="preserve">
+    <value>エクステンションの構成</value>
+  </data>
+  <data name="ConfigureOptionsThatApplyToCurrentUser" xml:space="preserve">
+    <value>現在のユーザに適用されるオプションを構成します</value>
+  </data>
+  <data name="ConfigureSelectedGroupOrControl" xml:space="preserve">
+    <value>選択されているグループまたはコントロールを構成します</value>
+  </data>
+  <data name="ConfigureSetOfBaseMapsUsedByBuilder" xml:space="preserve">
+    <value>Application Builder で使用できる一連のベースマップを構成します</value>
+  </data>
+  <data name="CopySite" xml:space="preserve">
+    <value>サイトのコピー</value>
+  </data>
+  <data name="CreateApplicationUsingDefaultMap" xml:space="preserve">
+    <value>新規マップ</value>
+  </data>
+  <data name="CreateApplicationUsingWebMapFromArcGISCom" xml:space="preserve">
+    <value>Web マップ</value>
+  </data>
+  <data name="CreateNewApplication" xml:space="preserve">
+    <value>新規アプリケーションの作成</value>
+  </data>
+  <data name="CurrentToolbars" xml:space="preserve">
+    <value>現在のツールバー</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="DeleteSite" xml:space="preserve">
+    <value>サイトの削除</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>説明:</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>詳細</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="EditSelectedGroupOrControl" xml:space="preserve">
+    <value>選択されているグループまたはコントロールを編集します</value>
+  </data>
+  <data name="EditSite" xml:space="preserve">
+    <value>サイトの編集</value>
+  </data>
+  <data name="ExceptionUnhandledError" xml:space="preserve">
+    <value>処理されないエラー {0}</value>
+  </data>
+  <data name="ExtensionNotifications" xml:space="preserve">
+    <value>エクステンションの通知</value>
+  </data>
+  <data name="Extensions" xml:space="preserve">
+    <value>エクステンション</value>
+  </data>
+  <data name="HelpLinks" xml:space="preserve">
+    <value>リンク</value>
+  </data>
+  <data name="IconPrompt" xml:space="preserve">
+    <value>アイコン:</value>
+  </data>
+  <data name="LabelPrompt" xml:space="preserve">
+    <value>ラベル:</value>
+  </data>
+  <data name="LoadingSites" xml:space="preserve">
+    <value>サイトを読み込んでいます...</value>
+  </data>
+  <data name="ManageExtensions" xml:space="preserve">
+    <value>エクステンションの管理</value>
+  </data>
+  <data name="MoreSiteOptions" xml:space="preserve">
+    <value>その他のサイト オプション</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>移動</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>下へ移動</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>上へ移動</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="NamePrompt" xml:space="preserve">
+    <value>名前:</value>
+  </data>
+  <data name="NewMap" xml:space="preserve">
+    <value>新規マップ</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>開く</value>
+  </data>
+  <data name="PersonalSettings" xml:space="preserve">
+    <value>個人設定</value>
+  </data>
+  <data name="PublishApplication" xml:space="preserve">
+    <value>アプリケーションの配置</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="RemoveSelectedGroupOrControl" xml:space="preserve">
+    <value>選択されているグループまたはコントロールを削除します</value>
+  </data>
+  <data name="ReturnToPreviousScreen" xml:space="preserve">
+    <value>前の画面に戻ります</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>選択セット</value>
+  </data>
+  <data name="SelectionOutline" xml:space="preserve">
+    <value>選択セットのアウトライン</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="StartWithExistingMap" xml:space="preserve">
+    <value>既存マップから開始します</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>テーマの構成</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>テーマ色</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>タイトル:</value>
+  </data>
+  <data name="ToolbarPrompt" xml:space="preserve">
+    <value>ツールバー:</value>
+  </data>
+  <data name="TooltipPrompt" xml:space="preserve">
+    <value>ツールチップ:</value>
+  </data>
+  <data name="TypePrompt" xml:space="preserve">
+    <value>タイプ:</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>上へ</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>アップロード</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>ようこそ</value>
+  </data>
+  <data name="WelcomeMsgParagraph1" xml:space="preserve">
+    <value>ArcGIS Application Builder は、ビューア アプリケーションを対話的かつリアルタイムに作成および構成できる Web アプリケーションです。Application Builder およびビューア アプリケーションは、ArcGIS API for Silverlight を使用して構築されています。</value>
+  </data>
+  <data name="WelcomeMsgParagraph2" xml:space="preserve">
+    <value>ビューアの作成を開始するには、以下の [新規アプリケーションの作成] ボタンをクリックします。構成するビューアが Application Builder のツールバーの下に表示されます。ツールバー上にあるツールを使用して、ビューアのベースマップ、レイヤ、ツール、タイトル、ロゴ、色などを構成できます。ビューアの構成が完了したら、[配置] ボタンをクリックして、ビューアを新しい Web サイトに配置できます。</value>
+  </data>
+  <data name="AvailableTools" xml:space="preserve">
+    <value>使用可能なツール</value>
+  </data>
+  <data name="BrowseForImage" xml:space="preserve">
+    <value>画像を参照します</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="ErrorUnableToRetrieveDetailsForExtension" xml:space="preserve">
+    <value>アドイン パッケージの詳細を取得できません。</value>
+  </data>
+  <data name="ExtensionContainsTheFollowingAddOns" xml:space="preserve">
+    <value>アドイン パッケージ '{0}' に次のアドインが含まれています:</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteButton" xml:space="preserve">
+    <value>このボタンを削除してもよろしいですか？</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteGroup" xml:space="preserve">
+    <value>このグループを削除してもよろしいですか？</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteWebSite" xml:space="preserve">
+    <value>この Web サイトを削除してもよろしいですか？</value>
+  </data>
+  <data name="AssemblyAlreadyIncludeInTheApplication" xml:space="preserve">
+    <value>{1}アセンブリ '{0}' はアプリケーション ランタイムにすでに含まれています。{1}アセンブリ参照を CopyLocal=false でマークして *.xap パッケージからアセンブリを除外し、エクステンションのサイズとダウンロード速度を最適化することを検討してください。</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>削除の確認</value>
+  </data>
+  <data name="DeletingExtensionWillMakeItUnavailableForFurtherUse" xml:space="preserve">
+    <value>エクステンションを削除すると、今後新しいアプリケーションで使用したり、既存のアプリケーションで編集したりできなくなります。{0}削除してもよろしいですか？</value>
+  </data>
+  <data name="DeletingSite" xml:space="preserve">
+    <value>サイトを削除しています...</value>
+  </data>
+  <data name="EditTool" xml:space="preserve">
+    <value>ツールの編集</value>
+  </data>
+  <data name="EnterNameForApplication" xml:space="preserve">
+    <value>アプリケーションの名前を入力してください</value>
+  </data>
+  <data name="ErrorDetailsNotKnown" xml:space="preserve">
+    <value>エラーの詳細が不明です</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>エラーが発生しました</value>
+  </data>
+  <data name="ErrorRetrievingMapDocumentForSite" xml:space="preserve">
+    <value>サイトのマップ ドキュメントを取得中にエラーが発生しました</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="ExtensionAlreadyExists" xml:space="preserve">
+    <value>アドインはすでに存在します</value>
+  </data>
+  <data name="ExtensionDetails" xml:space="preserve">
+    <value>アドインの詳細: {0}</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsErrors" xml:space="preserve">
+    <value>配置しようとしているアドイン パッケージにエラーが含まれています。続行する前に、エラーを解決する必要があります。</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsWarnings" xml:space="preserve">
+    <value>配置しようとしているアドイン パッケージに警告が含まれています。続行する前に、警告を確認してください。</value>
+  </data>
+  <data name="ExtensionWithSameNameAlreadyExist" xml:space="preserve">
+    <value>同じ名前のアドイン パッケージがすでに存在します。上書きしますか？</value>
+  </data>
+  <data name="FailedToCreateAndPublishApplication" xml:space="preserve">
+    <value>アプリケーションの作成および配置に失敗しました</value>
+  </data>
+  <data name="FollowingErrorsFound" xml:space="preserve">
+    <value>次のエラーが見つかりました。</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>名前が無効です</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>ArcGIS.com から Web マップを開く</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>お待ちください...</value>
+  </data>
+  <data name="TutorialModeDisable" xml:space="preserve">
+    <value>「はじめに」の無効化</value>
+  </data>
+  <data name="TutorialModeEnable" xml:space="preserve">
+    <value>「はじめに」の有効化</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Application Builder について</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Application Builder の [バージョン情報] ダイアログを表示します</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>バージョン情報</value>
+  </data>
+  <data name="GettingStartedAddGPDescription" xml:space="preserve">
+    <value>ArcGIS Server のジオプロセシング サービスの空間解析を利用します。</value>
+  </data>
+  <data name="GettingStartedAddGPTitle" xml:space="preserve">
+    <value>ジオプロセシング サービスの追加</value>
+  </data>
+  <data name="GettingStartedAddLayersDescription" xml:space="preserve">
+    <value>ArcGIS Online および ArcGIS Server からデータを追加します。</value>
+  </data>
+  <data name="GettingStartedAddLayersTitle" xml:space="preserve">
+    <value>操作レイヤの追加</value>
+  </data>
+  <data name="GettingStartedAddToolsDescription" xml:space="preserve">
+    <value>アプリケーションの機能を構成します。</value>
+  </data>
+  <data name="GettingStartedAddToolsTitle" xml:space="preserve">
+    <value>ツールの追加</value>
+  </data>
+  <data name="GettingStartedBasemapDescription" xml:space="preserve">
+    <value>ArcGIS Online、Bing Maps、または OpenStreetMap からベースマップを選択します。</value>
+  </data>
+  <data name="GettingStartedBasemapTitle" xml:space="preserve">
+    <value>ベースマップの選択</value>
+  </data>
+  <data name="GettingStartedChooseLogoDescription" xml:space="preserve">
+    <value>ビューアに組織のロゴを表示します。</value>
+  </data>
+  <data name="GettingStartedChooseLogoTitle" xml:space="preserve">
+    <value>ロゴの選択</value>
+  </data>
+  <data name="GettingStartedSelectLayoutDescription" xml:space="preserve">
+    <value>ビューアのレイアウトや書式を定義します。</value>
+  </data>
+  <data name="GettingStartedSelectLayoutTitle" xml:space="preserve">
+    <value>レイアウトの選択</value>
+  </data>
+  <data name="GettingStartedSetTitleDescription" xml:space="preserve">
+    <value>アプリケーションのタイトルを設定します。</value>
+  </data>
+  <data name="GettingStartedSetTitleTitle" xml:space="preserve">
+    <value>タイトルの設定</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailable" xml:space="preserve">
+    <value>次のアドオンが利用可能です。</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableHere" xml:space="preserve">
+    <value>ここをクリックすると、</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableToUploadANewOne" xml:space="preserve">
+    <value>ディスクから新しいアドオンをアップロードします。</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlDownToolbarTree" xml:space="preserve">
+    <value>選択されているグループまたはコントロールをツールバー ツリーの下へ移動します</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlUpToolbarTree" xml:space="preserve">
+    <value>選択されているグループまたはコントロールをツールバー ツリーの上へ移動します</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>戻る</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>次へ</value>
+  </data>
+  <data name="SelectAToolToAdd" xml:space="preserve">
+    <value>追加するツールを選択:</value>
+  </data>
+  <data name="ChooseMap" xml:space="preserve">
+    <value>Application Builder - マップの選択</value>
+  </data>
+  <data name="AddInPackagesContain" xml:space="preserve">
+    <value>アドイン パッケージには、レイアウトで使用するツール、ビヘイビアー、コントロールのアドインが含まれています</value>
+  </data>
+  <data name="AvailableAddInPackages" xml:space="preserve">
+    <value>使用可能なアドイン パッケージ:</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>ボタン</value>
+  </data>
+  <data name="ConfigureElementsRelatedToMap" xml:space="preserve">
+    <value>マップに関連するエレメントを構成します</value>
+  </data>
+  <data name="ConfigureToolsOfYourApplication" xml:space="preserve">
+    <value>アプリケーションのツールを構成します</value>
+  </data>
+  <data name="DisableGettingStarted" xml:space="preserve">
+    <value>「はじめに」の無効化</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>はじめに</value>
+  </data>
+  <data name="ShowMe" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="SpecifyLayoutOfYourApplication" xml:space="preserve">
+    <value>アプリケーションのレイアウトを指定します</value>
+  </data>
+  <data name="UploadAddInPackages" xml:space="preserve">
+    <value>アドイン パッケージをアップロードします</value>
+  </data>
+  <data name="UploadAddIns" xml:space="preserve">
+    <value>アドインのアップロード</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>マップ</value>
+  </data>
+  <data name="AreYouSureYouWantToLeavePageUnsavedChangesLost" xml:space="preserve">
+    <value>このページから移動してもよろしいですか？保存していない変更内容は失われる可能性があります。</value>
+  </data>
+  <data name="ConfirmPageChange" xml:space="preserve">
+    <value>ページの移動</value>
+  </data>
+  <data name="SpecifyToolProperties" xml:space="preserve">
+    <value>ツールのプロパティの設定</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>名前を付けて保存...</value>
+  </data>
+  <data name="AddGroupButton" xml:space="preserve">
+    <value>グループの追加</value>
+  </data>
+  <data name="CannotAddElement" xml:space="preserve">
+    <value>エレメントを追加できません</value>
+  </data>
+  <data name="CannotAddGroupButton" xml:space="preserve">
+    <value>グループを追加できません</value>
+  </data>
+  <data name="CannotAddTool" xml:space="preserve">
+    <value>ツールを追加できません</value>
+  </data>
+  <data name="ChooseAvailableTool" xml:space="preserve">
+    <value>利用可能なツール ツリーから、ツールを個別に選択する必要があります。</value>
+  </data>
+  <data name="DefaultGroupButtonDescription" xml:space="preserve">
+    <value>新規グループ</value>
+  </data>
+  <data name="DefaultGroupButtonLabel" xml:space="preserve">
+    <value>新規グループ</value>
+  </data>
+  <data name="RootLevelToAddGroup" xml:space="preserve">
+    <value>グループを追加するツールバーまたはツールバーのルート レベル ノードを選択する必要があります。</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>&lt;区切り記号&gt;</value>
+  </data>
+  <data name="MoveIntoGroup" xml:space="preserve">
+    <value>'{0}' グループへ移動</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>グループの編集</value>
+  </data>
+  <data name="ConfigureControls" xml:space="preserve">
+    <value>コントロールの構成</value>
+  </data>
+  <data name="ConfigureControlsDescription" xml:space="preserve">
+    <value>ビューアのコントロールの構成を編集します</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>モード</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>キャッシュ サイズ:</value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>オンデマンド</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>スナップ ショット</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>フィーチャ レイヤのオンデマンド キャッシュ サイズ</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>フィーチャ レイヤのオンデマンド モードでのキャッシュ サイズを設定します（デフォルトは 1000）</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>フィーチャ レイヤのオンデマンド モード</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>オンデマンドになるレイヤのクエリ モードを選択します（フィーチャ レイヤのみ）</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>フィーチャ レイヤのスナップ ショット モード</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>スナップ ショットになるレイヤのクエリ モードを選択します（フィーチャ レイヤのみ）</value>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>リンクの追加</value>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>リンクの削除</value>
+  </data>
+  <data name="ConfigureControlsBanner" xml:space="preserve">
+    <value>構成するコントロール</value>
+  </data>
+  <data name="Controls" xml:space="preserve">
+    <value>コントロール</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>フィーチャの取得</value>
+  </data>
+  <data name="AddGroupDotDot" xml:space="preserve">
+    <value>グループの追加...</value>
+  </data>
+  <data name="AddSeparator" xml:space="preserve">
+    <value>区切り記号の追加</value>
+  </data>
+  <data name="ApplicationBuilderDashSettings" xml:space="preserve">
+    <value>Application Builder - 設定</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>参照</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>コンテンツ</value>
+  </data>
+  <data name="CurrentViewerApplications" xml:space="preserve">
+    <value>現在のビューア アプリケーション</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>マップ コンテンツ</value>
+  </data>
+  <data name="NoFilesFound" xml:space="preserve">
+    <value>ファイルが見つかりませんでした。</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="ViewerProject" xml:space="preserve">
+    <value>ビューア プロジェクト</value>
+  </data>
+  <data name="WebMap" xml:space="preserve">
+    <value>Web マップ</value>
+  </data>
+  <data name="AddLayerFailed" xml:space="preserve">
+    <value>レイヤを追加できませんでした</value>
+  </data>
+  <data name="AddLayerFailedExplanation" xml:space="preserve">
+    <value>レイヤを追加できませんでした。 失敗の理由: {0}。</value>
+  </data>
+  <data name="AddLayerFailedNoDetails" xml:space="preserve">
+    <value>[詳細を抽出できませんでした]</value>
+  </data>
+  <data name="ConfigureLayers" xml:space="preserve">
+    <value>レイヤの構成</value>
+  </data>
+  <data name="ConfigureLayersDescription" xml:space="preserve">
+    <value>マップ内のレイヤの表示設定およびビヘイビアーの変更します</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>レイヤ</value>
+  </data>
+  <data name="SiteCopyFailed" xml:space="preserve">
+    <value>サイトのコピーに失敗しました</value>
+  </data>
+  <data name="SiteDeploymentFailed" xml:space="preserve">
+    <value>サイトの配置に失敗しました</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>上へ移動</value>
+  </data>
+  <data name="BringsCurrentlySelectedLayerForward" xml:space="preserve">
+    <value>レイヤの表示順序を 1 つ上に移動します</value>
+  </data>
+  <data name="ConfigureCurrentlySelectedLayer" xml:space="preserve">
+    <value>現在選択されているレイヤを構成します</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>このアプリケーションにセキュアなサービスにアクセスするためのプロキシを構成します</value>
+  </data>
+  <data name="ConfigureSecureServices" xml:space="preserve">
+    <value>セキュアなサービスの構成</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>移動</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="RefreshCurrentlySelectedLayer" xml:space="preserve">
+    <value>現在選択されているレイヤを更新します</value>
+  </data>
+  <data name="RemovesCurrentlySelectedLayer" xml:space="preserve">
+    <value>現在選択されているレイヤを削除します</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>名前の変更</value>
+  </data>
+  <data name="RenameCurrentlySelectedLayer" xml:space="preserve">
+    <value>現在選択されているレイヤの名前の変更</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>下へ移動</value>
+  </data>
+  <data name="SendsCurrentlySelectedLayerBackward" xml:space="preserve">
+    <value>レイヤの表示順序を 1 つ下に移動します</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>サービスの詳細</value>
+  </data>
+  <data name="ViewInformationAboutSelectedLayerDatasource" xml:space="preserve">
+    <value>選択されているレイヤのデータ ソースについての詳細を表示します</value>
+  </data>
+  <data name="ZoomToCurrentlySelectedLayer" xml:space="preserve">
+    <value>現在の選択レイヤにズームします</value>
+  </data>
+  <data name="CannotAddDropdownCommandsToAGroup" xml:space="preserve">
+    <value>ドロップ ダウン コマンドをグループに追加できません。</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>ベースマップを構成します</value>
+  </data>
+  <data name="FlashAnimationIsNotDefinedOnTargetBuilderToolbarButton" xml:space="preserve">
+    <value>フラッシュ アニメーションは、ターゲットの ［Builder］ ツールバー ボタンで定義されません</value>
+  </data>
+  <data name="ManageAddInsToolsBehaviorsControls" xml:space="preserve">
+    <value>アドインの管理: ツール、ビヘイビアー、コントロール</value>
+  </data>
+  <data name="ManagePersonalSettings" xml:space="preserve">
+    <value>個人設定を管理します</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>セキュアなサービスにアクセス</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>セキュアなサービスの追加</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>プロキシの構成</value>
+  </data>
+  <data name="NewApplication" xml:space="preserve">
+    <value>Application Builder - 新規アプリケーション（未配置）</value>
+  </data>
+  <data name="NotDeployed" xml:space="preserve">
+    <value>（未配置）</value>
+  </data>
+  <data name="DeployingApplication" xml:space="preserve">
+    <value>アプリケーションを配置しています...</value>
+  </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>アプリケーションの設定</value>
+  </data>
+  <data name="ArcGISOnlineSecure" xml:space="preserve">
+    <value>ArcGIS Online（保護）:</value>
+  </data>
+  <data name="ArcGISOnlineSharing" xml:space="preserve">
+    <value>ArcGIS Online（共有）:</value>
+  </data>
+  <data name="BingAppId" xml:space="preserve">
+    <value>Bing アプリケーション ID:</value>
+  </data>
+  <data name="CurrentApplicationSettings" xml:space="preserve">
+    <value>現在のアプリケーション設定</value>
+  </data>
+  <data name="DefaultSettings" xml:space="preserve">
+    <value>デフォルト設定</value>
+  </data>
+  <data name="GeometryService" xml:space="preserve">
+    <value>ジオメトリ サービス:</value>
+  </data>
+  <data name="ManageApplicationSettings" xml:space="preserve">
+    <value>アプリケーション設定を管理します</value>
+  </data>
+  <data name="BasedOnWebMap" xml:space="preserve">
+    <value>ベースとなっている Web マップ:</value>
+  </data>
+  <data name="LinkedToWebMap" xml:space="preserve">
+    <value>Web マップへのリンク元:</value>
+  </data>
+  <data name="LinkToWebMap" xml:space="preserve">
+    <value>リンク</value>
+  </data>
+  <data name="MapConfigurationUnavailable" xml:space="preserve">
+    <value>このアプリケーションのマップ構成は Web マップにリンクされています。このマップ構成を編集するには、Web マップからアプリケーションのリンクを解除してください。</value>
+  </data>
+  <data name="UnlinkFromWebMap" xml:space="preserve">
+    <value>リンク解除</value>
+  </data>
+  <data name="UnableToDeployApplication" xml:space="preserve">
+    <value>アプリケーションを配置できません。</value>
+  </data>
+  <data name="UnableToSaveApplicationChanges" xml:space="preserve">
+    <value>アプリケーションの変更内容を保存できません。</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>プロキシ:</value>
+  </data>
+  <data name="HideGettingStarted" xml:space="preserve">
+    <value>「はじめに」ヘルプを非表示にします</value>
+  </data>
+  <data name="ShowGettingStarted" xml:space="preserve">
+    <value>「はじめに」ヘルプを表示します</value>
+  </data>
+  <data name="DisplayText" xml:space="preserve">
+    <value>テキストを表示します</value>
+  </data>
+  <data name="UpgradeSite" xml:space="preserve">
+    <value>このビューア アプリケーションを最新のバージョンにアップグレードします</value>
+  </data>
+  <data name="UpgradingApplication" xml:space="preserve">
+    <value>アプリケーションをアップグレードしています...</value>
+  </data>
+  <data name="NewLink" xml:space="preserve">
+    <value>新しいリンク</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>ビヘイビアー</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>コントロール</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>レイヤ</value>
+  </data>
+  <data name="Tool" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+</root>

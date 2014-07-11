@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Adăugare</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Adăugare comportament</value>
+  </data>
+  <data name="AddBehaviorDescription" xml:space="preserve">
+    <value>Adăugaţi un comportament la aplicaţia de vizualizare</value>
+  </data>
+  <data name="AddGeoprocessing" xml:space="preserve">
+    <value>Adăugare geoprocesare</value>
+  </data>
+  <data name="AddGeoprocessingDescription" xml:space="preserve">
+    <value>Adăugaţi o geoprocesare la aplicaţia de vizualizare. Un instrument de geoprocesare le permite utilizatorilor aplicaţiei de vizualizare să utilizeze un serviciu de geoprocesare ArcGIS Server.</value>
+  </data>
+  <data name="AddGeoRSSDescription" xml:space="preserve">
+    <value>Adăugaţi un flux RSS geo-activat la hartă</value>
+  </data>
+  <data name="AddGP" xml:space="preserve">
+    <value>Adăugare GP</value>
+  </data>
+  <data name="AddTool" xml:space="preserve">
+    <value>Adăugare instrument</value>
+  </data>
+  <data name="AddToolDescription" xml:space="preserve">
+    <value>Adăugaţi un instrument la aplicaţia de vizualizare</value>
+  </data>
+  <data name="ApplicationBuilderSettings" xml:space="preserve">
+    <value>Setări Application Builder</value>
+  </data>
+  <data name="ApplicationBuilderSettingsDescription" xml:space="preserve">
+    <value>Vizualizaţi şi modificaţi setările Application Builder inclusiv administrarea componentelor add-in şi hărţilor fundal.</value>
+  </data>
+  <data name="AttributeTable" xml:space="preserve">
+    <value>Tabel de atribute</value>
+  </data>
+  <data name="BasemapGalleryDescription" xml:space="preserve">
+    <value>Selectaţi alt strat tematic de bază pentru hartă</value>
+  </data>
+  <data name="Behaviors" xml:space="preserve">
+    <value>Comportamente</value>
+  </data>
+  <data name="Branding" xml:space="preserve">
+    <value>Branding</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Modificare</value>
+  </data>
+  <data name="ChangeLayout" xml:space="preserve">
+    <value>Modificare configuraţie</value>
+  </data>
+  <data name="ChangeLayoutDescription" xml:space="preserve">
+    <value>Selectaţi o configuraţie nouă pentru aplicaţia de vizualizare</value>
+  </data>
+  <data name="ChangeLogo" xml:space="preserve">
+    <value>Modificare siglă</value>
+  </data>
+  <data name="ChangeLogoDescription" xml:space="preserve">
+    <value>Selectaţi o siglă pentru aplicaţia de vizualizare</value>
+  </data>
+  <data name="ChangeTitleAndLinks" xml:space="preserve">
+    <value>Modificare titlu şi legături</value>
+  </data>
+  <data name="ChangeTitleAndLinksDescription" xml:space="preserve">
+    <value>Editaţi titlul şi hiperlegăturile aplicaţiei de vizualizare</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Configurare</value>
+  </data>
+  <data name="ConfigureTheme" xml:space="preserve">
+    <value>Configurare temă</value>
+  </data>
+  <data name="ConfigureThemeDescription" xml:space="preserve">
+    <value>Editaţi culorile temei aplicaţiei de vizualizare</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Pe tot ecranul</value>
+  </data>
+  <data name="FullScreenDescription" xml:space="preserve">
+    <value>Puneţi Application Builder în modul pe tot ecranul</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Prima pagină</value>
+  </data>
+  <data name="HomeDescription" xml:space="preserve">
+    <value>Reveniţi la pagina de pornire a builderului aplicaţiei</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>Configuraţie</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Siglă</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Gestionare</value>
+  </data>
+  <data name="ManageBehaviors" xml:space="preserve">
+    <value>Gestionare comportamente</value>
+  </data>
+  <data name="ManageBehaviorsDescription" xml:space="preserve">
+    <value>Activaţi, dezactivaţi, reordonaţi, adăugaţi sau ştergeţi comportamentele aplicaţiei de vizualizare</value>
+  </data>
+  <data name="ManageToolbars" xml:space="preserve">
+    <value>Gestionare bare de instrumente</value>
+  </data>
+  <data name="ManageToolbarsDescription" xml:space="preserve">
+    <value>Adăugaţi, eliminaţi, mutaţi şi configuraţi instrumente de pe barele de instrumente ale aplicaţiei de vizualizare</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Punere în funcţiune</value>
+  </data>
+  <data name="PublishDescription" xml:space="preserve">
+    <value>Puneţi în funcţiune aplicaţia de vizualizare curentă pe un site Web nou</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Resetare</value>
+  </data>
+  <data name="ResetTheme" xml:space="preserve">
+    <value>Resetare temă</value>
+  </data>
+  <data name="ResetThemeDescription" xml:space="preserve">
+    <value>Resetaţi culorile temei aplicaţiei de vizualizare la valorile lor implicite</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salvare</value>
+  </data>
+  <data name="SaveDescription" xml:space="preserve">
+    <value>Salvaţi aplicaţia de vizualizare curentă</value>
+  </data>
+  <data name="SelectTheTool" xml:space="preserve">
+    <value>Selectaţi instrumentul...</value>
+  </data>
+  <data name="TitleAndLinks" xml:space="preserve">
+    <value>Titlu şi legături</value>
+  </data>
+  <data name="ToggleBrowseDescription" xml:space="preserve">
+    <value>Afişaţi sau ascundeţi panoul de parcurgere. Parcurgerea vă permite să vizualizaţi conţinutul unui punct final ArcGIS Server sau de serviciu de date spaţiale şi să adăugaţi straturi tematice la hartă.</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>Afişaţi sau ascundeţi o listă a conţinutului hărţii</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>Afişaţi sau ascundeţi panoul de căutare. Căutarea vă permite să căutaţi locuri, să căutaţi conţinut în ArcGIS.com sau să căutaţi pe Web servicii ArcGIS Server.</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>Afişaţi sau ascundeţi tabelul de atribute pentru stratul tematic selectat curent</value>
+  </data>
+  <data name="ToggleToolbar" xml:space="preserve">
+    <value>Comutare bară de instrumente</value>
+  </data>
+  <data name="ToggleToolbarDescription" xml:space="preserve">
+    <value>Afişaţi sau ascundeţi bara de instrumente a builderului aplicaţiei</value>
+  </data>
+  <data name="Toolbar" xml:space="preserve">
+    <value>Bară de instrumente</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Instrumente</value>
+  </data>
+  <data name="Accent" xml:space="preserve">
+    <value>Accentuare</value>
+  </data>
+  <data name="AccentText" xml:space="preserve">
+    <value>Accentuare text</value>
+  </data>
+  <data name="AddNewGroupOrControl" xml:space="preserve">
+    <value>Adăugare grup sau control nou</value>
+  </data>
+  <data name="AddOns" xml:space="preserve">
+    <value>Componente add-in</value>
+  </data>
+  <data name="ApplicationProperties" xml:space="preserve">
+    <value>Proprietăţi aplicaţie</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Aplicare</value>
+  </data>
+  <data name="ArcGISApplicationBuilder" xml:space="preserve">
+    <value>Application Builder - {0}</value>
+  </data>
+  <data name="ArcGISViewerForMicrosoftSilverlight" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Fundal</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Text fundal</value>
+  </data>
+  <data name="BaseMaps" xml:space="preserve">
+    <value>Hărţi fundal</value>
+  </data>
+  <data name="BrowseForFile" xml:space="preserve">
+    <value>Parcurgere după fişier</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>Parcurgere după resursă</value>
+  </data>
+  <data name="BuilderTutorial" xml:space="preserve">
+    <value>Tutorial builder</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="ChangesSavedSuccessfully" xml:space="preserve">
+    <value>Modificările au fost salvate cu succes.</value>
+  </data>
+  <data name="ChooseExistingProject" xml:space="preserve">
+    <value>Alegere proiect existent</value>
+  </data>
+  <data name="ChooseLayout" xml:space="preserve">
+    <value>Alegere configuraţie</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Închidere</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>Configurare</value>
+  </data>
+  <data name="ConfigureExtensions" xml:space="preserve">
+    <value>Configurare extinderi</value>
+  </data>
+  <data name="ConfigureOptionsThatApplyToCurrentUser" xml:space="preserve">
+    <value>Configurare opţiuni care se aplică utilizatorului curent</value>
+  </data>
+  <data name="ConfigureSelectedGroupOrControl" xml:space="preserve">
+    <value>Configurare grup sau control selectat</value>
+  </data>
+  <data name="ConfigureSetOfBaseMapsUsedByBuilder" xml:space="preserve">
+    <value>Configurare set de hărţi fundal disponibile în builderul aplicaţiei</value>
+  </data>
+  <data name="CopySite" xml:space="preserve">
+    <value>Copiere site</value>
+  </data>
+  <data name="CreateApplicationUsingDefaultMap" xml:space="preserve">
+    <value>Hartă nouă</value>
+  </data>
+  <data name="CreateApplicationUsingWebMapFromArcGISCom" xml:space="preserve">
+    <value>Hărţi Web</value>
+  </data>
+  <data name="CreateNewApplication" xml:space="preserve">
+    <value>Creare aplicaţie nouă</value>
+  </data>
+  <data name="CurrentToolbars" xml:space="preserve">
+    <value>Bare de instrumente curente</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Ştergere</value>
+  </data>
+  <data name="DeleteSite" xml:space="preserve">
+    <value>Ştergere site</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Descriere:</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalii</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Jos</value>
+  </data>
+  <data name="EditSelectedGroupOrControl" xml:space="preserve">
+    <value>Editare filă, grup sau control selectat</value>
+  </data>
+  <data name="EditSite" xml:space="preserve">
+    <value>Editare site</value>
+  </data>
+  <data name="ExceptionUnhandledError" xml:space="preserve">
+    <value>Eroare netratată {0}</value>
+  </data>
+  <data name="ExtensionNotifications" xml:space="preserve">
+    <value>Notificări extensie</value>
+  </data>
+  <data name="Extensions" xml:space="preserve">
+    <value>Extensii</value>
+  </data>
+  <data name="HelpLinks" xml:space="preserve">
+    <value>Linkuri</value>
+  </data>
+  <data name="IconPrompt" xml:space="preserve">
+    <value>Pictogramă:</value>
+  </data>
+  <data name="LabelPrompt" xml:space="preserve">
+    <value>Etichetă:</value>
+  </data>
+  <data name="LoadingSites" xml:space="preserve">
+    <value>Se încarcă site-uri...</value>
+  </data>
+  <data name="ManageExtensions" xml:space="preserve">
+    <value>Gestionare extensii</value>
+  </data>
+  <data name="MoreSiteOptions" xml:space="preserve">
+    <value>Mai multe opţiuni site</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Mutare</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Mutare în jos</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Mutare în sus</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="NamePrompt" xml:space="preserve">
+    <value>Nume:</value>
+  </data>
+  <data name="NewMap" xml:space="preserve">
+    <value>Hartă nouă</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Deschidere</value>
+  </data>
+  <data name="PersonalSettings" xml:space="preserve">
+    <value>Setări personale</value>
+  </data>
+  <data name="PublishApplication" xml:space="preserve">
+    <value>Punere în funcţiune aplicaţie</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Eliminare</value>
+  </data>
+  <data name="RemoveSelectedGroupOrControl" xml:space="preserve">
+    <value>Eliminare grup sau control selectat</value>
+  </data>
+  <data name="ReturnToPreviousScreen" xml:space="preserve">
+    <value>Revenire la ecranul anterior</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>Selecţie</value>
+  </data>
+  <data name="SelectionOutline" xml:space="preserve">
+    <value>Contur selecţie</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Setări</value>
+  </data>
+  <data name="StartWithExistingMap" xml:space="preserve">
+    <value>Începere cu existent</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Succes</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Configurare temă</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Culori temă</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Titlu:</value>
+  </data>
+  <data name="ToolbarPrompt" xml:space="preserve">
+    <value>Bară de instrumente:</value>
+  </data>
+  <data name="TooltipPrompt" xml:space="preserve">
+    <value>Sugestie instrument:</value>
+  </data>
+  <data name="TypePrompt" xml:space="preserve">
+    <value>Tip:</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Sus</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Încărcare</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bun venit</value>
+  </data>
+  <data name="WelcomeMsgParagraph1" xml:space="preserve">
+    <value>ArcGIS Application Builder este o aplicaţie Web care vă permite să creaţi şi să editaţi aplicaţii de vizualizare într-un mod complet interactiv, în timp real. Aplicaţiile Application Builder şi Viewer sunt construite folosind ArcGIS API for Silverlight.</value>
+  </data>
+  <data name="WelcomeMsgParagraph2" xml:space="preserve">
+    <value>Pentru a începe crearea unei aplicaţii de vizualizare, faceţi clic pe butonul Creare aplicaţie nouă de mai jos. Aplicaţia de vizualizare pe care o configuraţi va fi afişată sub bara de instrumente a Application Builder. Puteţi configura pentru aplicaţia de configurare hărţi fundal, straturi tematice, instrumente, titlu, siglă, culori şi multe altele folosind instrumentele din bara de instrumente. După ce aţi configurat aplicaţia de vizualizare, faceţi clic pe butonul Punere în funcţiune pentru a o pune în funcţiune pe un site Web nou.</value>
+  </data>
+  <data name="AvailableTools" xml:space="preserve">
+    <value>Instrumente disponibile</value>
+  </data>
+  <data name="BrowseForImage" xml:space="preserve">
+    <value>Parcurgere după imagine</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editare</value>
+  </data>
+  <data name="ErrorUnableToRetrieveDetailsForExtension" xml:space="preserve">
+    <value>Nu se pot prelua detalii pentru pachetul add-in.</value>
+  </data>
+  <data name="ExtensionContainsTheFollowingAddOns" xml:space="preserve">
+    <value>Pachetul add-in '{0}' conţine următoarele componente add-in:</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteButton" xml:space="preserve">
+    <value>Sigur doriţi să ştergeţi acest buton?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteGroup" xml:space="preserve">
+    <value>Sigur doriţi să ştergeţi acest grup?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteWebSite" xml:space="preserve">
+    <value>Sigur doriţi să ştergeţi acest site Web?</value>
+  </data>
+  <data name="AssemblyAlreadyIncludeInTheApplication" xml:space="preserve">
+    <value>{1}Librăria '{0}' este inclusă deja în runtime-ul aplicaţiei.{1}Luaţi în considerare optimizarea dimensiunii şi vitezei de descărcare a extensiei prin marcarea Referinţei librăriei cu CopyLocal=false pentru a exclude librăria din pachetul .xap</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Confirmare ştergere</value>
+  </data>
+  <data name="DeletingExtensionWillMakeItUnavailableForFurtherUse" xml:space="preserve">
+    <value>Ştergerea unei extensii o va face indisponibilă pentru utilizarea în continuare în aplicaţii şi editări noi şi de pe aplicaţii existente. {0}Sigur doriţi să ştergeţi?</value>
+  </data>
+  <data name="DeletingSite" xml:space="preserve">
+    <value>Se şterge site-ul...</value>
+  </data>
+  <data name="EditTool" xml:space="preserve">
+    <value>Instrument de editare</value>
+  </data>
+  <data name="EnterNameForApplication" xml:space="preserve">
+    <value>Introduceţi un nume pentru aplicaţie</value>
+  </data>
+  <data name="ErrorDetailsNotKnown" xml:space="preserve">
+    <value>Detalii eroare necunoscute</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>A survenit o eroare</value>
+  </data>
+  <data name="ErrorRetrievingMapDocumentForSite" xml:space="preserve">
+    <value>Eroare la preluarea documentului hărţii pentru site</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Erori</value>
+  </data>
+  <data name="ExtensionAlreadyExists" xml:space="preserve">
+    <value>Componenta add-in există deja</value>
+  </data>
+  <data name="ExtensionDetails" xml:space="preserve">
+    <value>Detalii add-in: {0}</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsErrors" xml:space="preserve">
+    <value>Pachetul add-in pe care încercaţi să îl puneţi în funcţiune conţine erori. Acestea trebuie rezolvate înainte de a continua.</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsWarnings" xml:space="preserve">
+    <value>Pachetul add-in pe care încercaţi să îl puneţi în funcţiune conţine avertismente. Verificaţi-le înainte de a continua.</value>
+  </data>
+  <data name="ExtensionWithSameNameAlreadyExist" xml:space="preserve">
+    <value>Un pachet add-in cu acelaşi nume există deja. Doriţi să îl suprascrieţi?</value>
+  </data>
+  <data name="FailedToCreateAndPublishApplication" xml:space="preserve">
+    <value>Eşec la crearea şi punerea în funcţiune a aplicaţiei</value>
+  </data>
+  <data name="FollowingErrorsFound" xml:space="preserve">
+    <value>Au fost găsite următoarele erori.</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>Nume nevalid</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Deschideţi o hartă Web din ArcGIS.com</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Aşteptaţi...</value>
+  </data>
+  <data name="TutorialModeDisable" xml:space="preserve">
+    <value>Dezactivare modul "Primii paşi"</value>
+  </data>
+  <data name="TutorialModeEnable" xml:space="preserve">
+    <value>Activare Pregătire de începere</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Despre Application Builder</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Vizualizaţi dialogul Despre al Application Builder</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Despre</value>
+  </data>
+  <data name="GettingStartedAddGPDescription" xml:space="preserve">
+    <value>Utilizaţi capacitatea de analiză spaţială a serviciilor de geoprocesare ArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddGPTitle" xml:space="preserve">
+    <value>Adăugare servicii de geoprocesare</value>
+  </data>
+  <data name="GettingStartedAddLayersDescription" xml:space="preserve">
+    <value>Adăugare date din ArcGIS Online şi ArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddLayersTitle" xml:space="preserve">
+    <value>Adăugare straturi tematice operaţionale</value>
+  </data>
+  <data name="GettingStartedAddToolsDescription" xml:space="preserve">
+    <value>Configuraţi funcţionalitatea aplicaţiei</value>
+  </data>
+  <data name="GettingStartedAddToolsTitle" xml:space="preserve">
+    <value>Adăugare instrumente</value>
+  </data>
+  <data name="GettingStartedBasemapDescription" xml:space="preserve">
+    <value>Selectaţi o hartă fundal din ArcGIS Online, Hărţi Bing sau OpenStreetMap.</value>
+  </data>
+  <data name="GettingStartedBasemapTitle" xml:space="preserve">
+    <value>Alegere hartă fundal</value>
+  </data>
+  <data name="GettingStartedChooseLogoDescription" xml:space="preserve">
+    <value>Marcaţi aplicaţia de vizualizare cu sigla organizaţiei dvs.</value>
+  </data>
+  <data name="GettingStartedChooseLogoTitle" xml:space="preserve">
+    <value>Alegere siglă</value>
+  </data>
+  <data name="GettingStartedSelectLayoutDescription" xml:space="preserve">
+    <value>Definiţi aspectul şi caracteristicile aplicaţiei de vizualizare.</value>
+  </data>
+  <data name="GettingStartedSelectLayoutTitle" xml:space="preserve">
+    <value>Selectare configuraţie</value>
+  </data>
+  <data name="GettingStartedSetTitleDescription" xml:space="preserve">
+    <value>Setaţi titlul aplicaţiei.</value>
+  </data>
+  <data name="GettingStartedSetTitleTitle" xml:space="preserve">
+    <value>Setare titlu</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailable" xml:space="preserve">
+    <value>Sunt disponibile următoarele componente add-on. Faceţi clic</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableHere" xml:space="preserve">
+    <value>aici</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableToUploadANewOne" xml:space="preserve">
+    <value>pentru a încărca una nouă de pe disc.</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlDownToolbarTree" xml:space="preserve">
+    <value>Mutaţi grupul sau controlul selectat în jos în arborele barei de instrumente</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlUpToolbarTree" xml:space="preserve">
+    <value>Mutaţi grupul sau controlul selectat în sus în arborele barei de instrumente</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Înapoi</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Înainte</value>
+  </data>
+  <data name="SelectAToolToAdd" xml:space="preserve">
+    <value>Selectare instrument de adăugat:</value>
+  </data>
+  <data name="ChooseMap" xml:space="preserve">
+    <value>Application Builder - Alegere hartă</value>
+  </data>
+  <data name="AddInPackagesContain" xml:space="preserve">
+    <value>Pachetele add-in conţin componente add-in: instrumente, comportamente şi controale utilizate în configuraţii</value>
+  </data>
+  <data name="AvailableAddInPackages" xml:space="preserve">
+    <value>Pachete add-in disponibile:</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>Buton</value>
+  </data>
+  <data name="ConfigureElementsRelatedToMap" xml:space="preserve">
+    <value>Configurare elemente corelate hărţii</value>
+  </data>
+  <data name="ConfigureToolsOfYourApplication" xml:space="preserve">
+    <value>Configurare instrumente ale aplicaţiei</value>
+  </data>
+  <data name="DisableGettingStarted" xml:space="preserve">
+    <value>Dezactivare modul "Primii paşi"</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>Începere</value>
+  </data>
+  <data name="ShowMe" xml:space="preserve">
+    <value>Arată</value>
+  </data>
+  <data name="SpecifyLayoutOfYourApplication" xml:space="preserve">
+    <value>Specificare configuraţie a aplicaţiei</value>
+  </data>
+  <data name="UploadAddInPackages" xml:space="preserve">
+    <value>Încărcare pachete add-in</value>
+  </data>
+  <data name="UploadAddIns" xml:space="preserve">
+    <value>Încărcare componente add-in</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Hartă</value>
+  </data>
+  <data name="AreYouSureYouWantToLeavePageUnsavedChangesLost" xml:space="preserve">
+    <value>Sigur doriţi să părăsiţi această pagină? Toate modificările nesalvate se pot pierde.</value>
+  </data>
+  <data name="ConfirmPageChange" xml:space="preserve">
+    <value>Confirmare modificare pagină</value>
+  </data>
+  <data name="SpecifyToolProperties" xml:space="preserve">
+    <value>Specificare proprietăţi instrument</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>Salvare ca...</value>
+  </data>
+  <data name="AddGroupButton" xml:space="preserve">
+    <value>Adăugare grup</value>
+  </data>
+  <data name="CannotAddElement" xml:space="preserve">
+    <value>Nu se poate adăuga elementul</value>
+  </data>
+  <data name="CannotAddGroupButton" xml:space="preserve">
+    <value>Nu se poate adăuga grupul</value>
+  </data>
+  <data name="CannotAddTool" xml:space="preserve">
+    <value>Nu se poate adăuga instrumentul</value>
+  </data>
+  <data name="ChooseAvailableTool" xml:space="preserve">
+    <value>Trebuie să alegeţi un instrument individual din arborele de instrumente disponibile.</value>
+  </data>
+  <data name="DefaultGroupButtonDescription" xml:space="preserve">
+    <value>Grup nou</value>
+  </data>
+  <data name="DefaultGroupButtonLabel" xml:space="preserve">
+    <value>Grup nou</value>
+  </data>
+  <data name="RootLevelToAddGroup" xml:space="preserve">
+    <value>Trebuie să alegeţi o bară de instrumente sau un nod de la nivelul rădăcinii al unei bare de instrumente pentru a adăuga un grup.</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>&lt;Separator&gt;</value>
+  </data>
+  <data name="MoveIntoGroup" xml:space="preserve">
+    <value>Mutare în grupul '{0}'</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>Editare grup</value>
+  </data>
+  <data name="ConfigureControls" xml:space="preserve">
+    <value>Configurare controale</value>
+  </data>
+  <data name="ConfigureControlsDescription" xml:space="preserve">
+    <value>Editaţi configuraţia controalelor aplicaţiei de vizualizare</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Mod</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Dimensiune cache:</value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>OnDemand</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>SnapShot</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Dimensiune cache OnDemand pentru stratul tematic de obiecte spaţiale</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Setează dimensiunea memoriei cache în modul FeatureLayer OnDemand (implicit = 1000)</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>Mod FeatureLayer OnDemand</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Selectează modul de interogare pentru stratul tematic să fie OnDemand (numai straturi tematice de obiecte spaţiale)</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>Modul FeatureLayer SnapShot</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Selectează modul de interogare pentru stratul tematic să fie SnapShot (numai straturi tematice de obiecte spaţiale)</value>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>Adăugare legătură</value>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Eliminare legătură</value>
+  </data>
+  <data name="ConfigureControlsBanner" xml:space="preserve">
+    <value>Controale pentru configurare</value>
+  </data>
+  <data name="Controls" xml:space="preserve">
+    <value>Controale</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Preluare obiect spaţial</value>
+  </data>
+  <data name="AddGroupDotDot" xml:space="preserve">
+    <value>Adăugare grup...</value>
+  </data>
+  <data name="AddSeparator" xml:space="preserve">
+    <value>Adăugare separator</value>
+  </data>
+  <data name="ApplicationBuilderDashSettings" xml:space="preserve">
+    <value>Application Builder - Setări</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Parcurgere</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Conţinuturi</value>
+  </data>
+  <data name="CurrentViewerApplications" xml:space="preserve">
+    <value>Aplicaţii de vizualizare curente</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Conţinuturi hartă</value>
+  </data>
+  <data name="NoFilesFound" xml:space="preserve">
+    <value>Nu a fost găsit niciun fişier.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Căutare</value>
+  </data>
+  <data name="ViewerProject" xml:space="preserve">
+    <value>Proiect aplicaţie de vizualizare</value>
+  </data>
+  <data name="WebMap" xml:space="preserve">
+    <value>Hartă Web</value>
+  </data>
+  <data name="AddLayerFailed" xml:space="preserve">
+    <value>Adăugare strat tematic eşuată</value>
+  </data>
+  <data name="AddLayerFailedExplanation" xml:space="preserve">
+    <value>Stratul tematic nu a putut fi adăugat. Motivul eşecului: {0}.</value>
+  </data>
+  <data name="AddLayerFailedNoDetails" xml:space="preserve">
+    <value>[Nu a putut fi extras niciun detaliu]</value>
+  </data>
+  <data name="ConfigureLayers" xml:space="preserve">
+    <value>Configurare straturi tematic</value>
+  </data>
+  <data name="ConfigureLayersDescription" xml:space="preserve">
+    <value>Modificaţi aspectul şi comportamentul straturilor tematice din hartă</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Straturi tematice</value>
+  </data>
+  <data name="SiteCopyFailed" xml:space="preserve">
+    <value>Copiere site eşuată</value>
+  </data>
+  <data name="SiteDeploymentFailed" xml:space="preserve">
+    <value>Punere în funcţiune site eşuată</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Mutare în sus</value>
+  </data>
+  <data name="BringsCurrentlySelectedLayerForward" xml:space="preserve">
+    <value>Mută ordinea de afişare a stratului tematic cu o poziţie mai sus pe hartă</value>
+  </data>
+  <data name="ConfigureCurrentlySelectedLayer" xml:space="preserve">
+    <value>Configurare strat tematic selectat curent</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Configuraţi proxy-ul utilizat pentru a accesa serviciile securizate pentru această aplicaţie</value>
+  </data>
+  <data name="ConfigureSecureServices" xml:space="preserve">
+    <value>Configurare servicii securizate</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>Accesaţi</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Reîmprospătare</value>
+  </data>
+  <data name="RefreshCurrentlySelectedLayer" xml:space="preserve">
+    <value>Reîmprospătaţi stratul tematic selectat curent</value>
+  </data>
+  <data name="RemovesCurrentlySelectedLayer" xml:space="preserve">
+    <value>Elimină stratul tematic selectat curent</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Redenumire</value>
+  </data>
+  <data name="RenameCurrentlySelectedLayer" xml:space="preserve">
+    <value>Redenumeşte stratul tematic selectat curent</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Mutare în jos</value>
+  </data>
+  <data name="SendsCurrentlySelectedLayerBackward" xml:space="preserve">
+    <value>Mută ordinea de afişare a stratului tematic cu o poziţie mai jos pe hartă</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Detalii serviciu</value>
+  </data>
+  <data name="ViewInformationAboutSelectedLayerDatasource" xml:space="preserve">
+    <value>Vizualizaţi informaţii despre sursa de date a stratului tematic selectat</value>
+  </data>
+  <data name="ZoomToCurrentlySelectedLayer" xml:space="preserve">
+    <value>Transfocaţi la stratul tematic selectat curent</value>
+  </data>
+  <data name="CannotAddDropdownCommandsToAGroup" xml:space="preserve">
+    <value>Nu se pot adăuga comenzi derulante la un grup.</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Configurare hărţi fundal</value>
+  </data>
+  <data name="FlashAnimationIsNotDefinedOnTargetBuilderToolbarButton" xml:space="preserve">
+    <value>Animaţia flash nu este definită pe butonul din bara de instrumente a builderului ţintă</value>
+  </data>
+  <data name="ManageAddInsToolsBehaviorsControls" xml:space="preserve">
+    <value>Gestionare componente add-in: Instrumente, Comportamente, Controale</value>
+  </data>
+  <data name="ManagePersonalSettings" xml:space="preserve">
+    <value>Gestionare setări personale</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Accesare servicii securizate</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Adăugare servicii securizate</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Configurare proxy</value>
+  </data>
+  <data name="NewApplication" xml:space="preserve">
+    <value>Application Builder - Aplicaţie nouă (nepusă în funcţiune)</value>
+  </data>
+  <data name="NotDeployed" xml:space="preserve">
+    <value>(nepusă în funcţiune)</value>
+  </data>
+  <data name="DeployingApplication" xml:space="preserve">
+    <value>Se pune în funcţiune aplicaţia...</value>
+  </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>Setări aplicaţie</value>
+  </data>
+  <data name="ArcGISOnlineSecure" xml:space="preserve">
+    <value>ArcGIS Online securizat:</value>
+  </data>
+  <data name="ArcGISOnlineSharing" xml:space="preserve">
+    <value>Partajare ArcGIS Online:</value>
+  </data>
+  <data name="BingAppId" xml:space="preserve">
+    <value>ID aplicaţie Bing:</value>
+  </data>
+  <data name="CurrentApplicationSettings" xml:space="preserve">
+    <value>Setări aplicaţie curentă</value>
+  </data>
+  <data name="DefaultSettings" xml:space="preserve">
+    <value>Setări implicite</value>
+  </data>
+  <data name="GeometryService" xml:space="preserve">
+    <value>Serviciu geometrie:</value>
+  </data>
+  <data name="ManageApplicationSettings" xml:space="preserve">
+    <value>Gestionare setări aplicaţie</value>
+  </data>
+  <data name="BasedOnWebMap" xml:space="preserve">
+    <value>Bazat pe hartă Web:</value>
+  </data>
+  <data name="LinkedToWebMap" xml:space="preserve">
+    <value>Legat la hartă Web:</value>
+  </data>
+  <data name="LinkToWebMap" xml:space="preserve">
+    <value>Legare</value>
+  </data>
+  <data name="MapConfigurationUnavailable" xml:space="preserve">
+    <value>Configuraţia hărţii pentru această aplicaţie este utilizată la o hartă Web. Pentru a edita configuraţia hărţii, dezasociaţi aplicaţia de harta Web.</value>
+  </data>
+  <data name="UnlinkFromWebMap" xml:space="preserve">
+    <value>Dezasociere</value>
+  </data>
+  <data name="UnableToDeployApplication" xml:space="preserve">
+    <value>Punerea în funcţiune a aplicaţiei nu este posibilă.</value>
+  </data>
+  <data name="UnableToSaveApplicationChanges" xml:space="preserve">
+    <value>Salvarea modificărilor aplicaţiei este imposibilă.</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Proxy:</value>
+  </data>
+  <data name="HideGettingStarted" xml:space="preserve">
+    <value>Ascundere ajutor la începere</value>
+  </data>
+  <data name="ShowGettingStarted" xml:space="preserve">
+    <value>Afişare ajutor la începere</value>
+  </data>
+  <data name="DisplayText" xml:space="preserve">
+    <value>Text de afişat</value>
+  </data>
+  <data name="UpgradeSite" xml:space="preserve">
+    <value>Faceţi upgrade pentru această aplicaţie de afişare la versiunea curentă</value>
+  </data>
+  <data name="UpgradingApplication" xml:space="preserve">
+    <value>Upgrade aplicaţie...</value>
+  </data>
+  <data name="NewLink" xml:space="preserve">
+    <value>Legare nouă</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Comportament</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Strat tematic</value>
+  </data>
+  <data name="Tool" xml:space="preserve">
+    <value>Instrument</value>
+  </data>
+</root>

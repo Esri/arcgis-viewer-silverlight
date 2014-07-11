@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ExceptionAdditionConverterDoesNotSupportType" xml:space="preserve">
+    <value>AdditionConverter אינו תומך בסוג {0}</value>
+  </data>
+  <data name="ExceptionCannotcallSyncronousMethodGetFileAsText" xml:space="preserve">
+    <value>Cannot call syncronous method GetFileAsText in Silverlight. Use GetFileAsTextAsync instead.</value>
+  </data>
+  <data name="ExceptionCannotCompareWith" xml:space="preserve">
+    <value>לא ניתן להשוות עם {0}</value>
+  </data>
+  <data name="ExceptionCannotDeserializeResponse" xml:space="preserve">
+    <value>לא ניתן לפענח את התשובה</value>
+  </data>
+  <data name="ExceptionClusterer" xml:space="preserve">
+    <value>אשכול</value>
+  </data>
+  <data name="ExceptionConfigFileUrlMustBeSpecified" xml:space="preserve">
+    <value>יש לציין ConfigFileUrl</value>
+  </data>
+  <data name="ExceptionConfigurationFileEmpty" xml:space="preserve">
+    <value>קובץ התצורה היה ריק</value>
+  </data>
+  <data name="ExceptionConfigurationXmlIsEmpty" xml:space="preserve">
+    <value>ה xml של קובץ התצורה הינו ריק</value>
+  </data>
+  <data name="ExceptionDataSource" xml:space="preserve">
+    <value>dataSource</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>אלמנט</value>
+  </data>
+  <data name="ExceptionEmptyFile" xml:space="preserve">
+    <value>קובץ ריק</value>
+  </data>
+  <data name="ExceptionExtensionUrl" xml:space="preserve">
+    <value>extensionURL</value>
+  </data>
+  <data name="ExceptionFileNotFound" xml:space="preserve">
+    <value>קובץ לא נמצא</value>
+  </data>
+  <data name="ExceptionGraphicsLayer" xml:space="preserve">
+    <value>graphicsLayer</value>
+  </data>
+  <data name="ExceptionIdforDataSourceMustNotBeEmpty" xml:space="preserve">
+    <value>מזהה מקור הנתונים לא יכול להיות ריק</value>
+  </data>
+  <data name="ExceptionInconsistentTotalNumberOfValues" xml:space="preserve">
+    <value>מספר לא עיקבי של ערכים</value>
+  </data>
+  <data name="ExceptionInvalidFileMustBeUrlForSilverlightApplication" xml:space="preserve">
+    <value>קובץ לא תקין. חייב להיות Url עבור אפליקצית ה silverlight</value>
+  </data>
+  <data name="ExceptionInvalidPathForresourceDictionary" xml:space="preserve">
+    <value>נתיב לא תקין עבור מילון המשאבים {0}</value>
+  </data>
+  <data name="ExceptionLayer" xml:space="preserve">
+    <value>שכבה</value>
+  </data>
+  <data name="ExceptionMap" xml:space="preserve">
+    <value>מפה</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationFile" xml:space="preserve">
+    <value>חובה לציין קובץ תצורה</value>
+  </data>
+  <data name="ExceptionMustSpecifyFile" xml:space="preserve">
+    <value>חובה לציין קובץ</value>
+  </data>
+  <data name="ExceptionMustSpecifyFileUrl" xml:space="preserve">
+    <value>חובה לציין FileUrl</value>
+  </data>
+  <data name="ExceptionMustSpecifyLocatorUrl" xml:space="preserve">
+    <value>חובה לציין LocatorUrl</value>
+  </data>
+  <data name="ExceptionMustSpecifyValidFileUrl" xml:space="preserve">
+    <value>חובה לציין FileUrl תקף</value>
+  </data>
+  <data name="ExceptionNamespaces" xml:space="preserve">
+    <value>namespaces</value>
+  </data>
+  <data name="ExceptionNoBrushesFound" xml:space="preserve">
+    <value>לא נמצאו מברשות</value>
+  </data>
+  <data name="ExceptionNoDefaultSymbolsFoundInDictionaryForGeometryType" xml:space="preserve">
+    <value>לא נמצאו סימבולים של ברירת מחדל במילון {0} עבור סוג גיאומטריה = {1}</value>
+  </data>
+  <data name="ExceptionNoResourceDictionaryAvailableForGeometryType" xml:space="preserve">
+    <value>לא קיימים משאבי מילון עבור geometryType = {0}</value>
+  </data>
+  <data name="ExceptionNoResourceDictionaryfoundForGeometryType" xml:space="preserve">
+    <value>לא נמצא מילון משאבים לסוג הגיאומטריה = {0}</value>
+  </data>
+  <data name="ExceptionNoResultsFromProjection" xml:space="preserve">
+    <value>אין תוצאות מההיטל</value>
+  </data>
+  <data name="ExceptionNoSymbolAvailableInResourceDictionary" xml:space="preserve">
+    <value>אין סמלים זמינים במילון המשאבים {0}</value>
+  </data>
+  <data name="ExceptionNoThemeFileUrlSpecified" xml:space="preserve">
+    <value>לא צויין ThemeFileUrl</value>
+  </data>
+  <data name="ExceptionNumberofGraphicsBeforeAndAfterProjectionAreNotEqual" xml:space="preserve">
+    <value>מספר אלמנטי הגרפיקה לפני ואחרי ההיטל לא שווים</value>
+  </data>
+  <data name="ExceptionOutputSpatialReference" xml:space="preserve">
+    <value>outputSpatialReference</value>
+  </data>
+  <data name="ExceptionRequiresPointValue" xml:space="preserve">
+    <value>נדרש ערך נקודה</value>
+  </data>
+  <data name="ExceptionResourceDictionaryEmpty" xml:space="preserve">
+    <value>מילון משאבים ריק</value>
+  </data>
+  <data name="ExceptionSymbolConfigXmlEmpty" xml:space="preserve">
+    <value>symbolConfigXml ריק</value>
+  </data>
+  <data name="ExceptionSymbolDescriptionValueNull" xml:space="preserve">
+    <value>ערך ה-SymbolDescription הינו null</value>
+  </data>
+  <data name="ExceptionSymbolFolderParentUrlMustBeSpecified" xml:space="preserve">
+    <value>חובה לציין את SymbolFolderParentUrl</value>
+  </data>
+  <data name="ExceptionUnableToLoadconfigurationStoreFromEmbeddedResource" xml:space="preserve">
+    <value>לא ניתן לטעון תצורה שמורה ממשאב מוטמע</value>
+  </data>
+  <data name="ExceptionUnableToParseFile" xml:space="preserve">
+    <value>לא ניתן לפענח את הקובץ</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConnectionsFromEmbeddedResource" xml:space="preserve">
+    <value>לא ניתן לאחזר קישורים ממשאב מוטמע</value>
+  </data>
+  <data name="ExceptionUnableToretrievedefaultLinearGradientBrushes" xml:space="preserve">
+    <value>לא ניתן לאחזר מברשות ליניאריות מדורגות שהן ברירת מחדל</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveLinearGradientBrushes" xml:space="preserve">
+    <value>לא ניתן לאחזר מברשות ליניאריות מדורגות.</value>
+  </data>
+  <data name="ExceptionUnableToretrieveResourceDictionaryContents" xml:space="preserve">
+    <value>לא ניתן לאחזר תכולת מילון המשאבים</value>
+  </data>
+  <data name="ExceptionUnknownError" xml:space="preserve">
+    <value>שגיאה לא ידועה</value>
+  </data>
+  <data name="Graphics" xml:space="preserve">
+    <value>גרפיקה</value>
+  </data>
+  <data name="NoneInAngleBraces" xml:space="preserve">
+    <value>&lt;ללא&gt;</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>נקודות</value>
+  </data>
+  <data name="FlagCheckered" xml:space="preserve">
+    <value>דגל משובץ</value>
+  </data>
+  <data name="FlagGreen" xml:space="preserve">
+    <value>דגל ירוק</value>
+  </data>
+  <data name="FlagRed" xml:space="preserve">
+    <value>דגל אדום</value>
+  </data>
+  <data name="FlagWhite" xml:space="preserve">
+    <value>דגל לבן</value>
+  </data>
+  <data name="FlagYellow" xml:space="preserve">
+    <value>דגל צהוב</value>
+  </data>
+  <data name="Pin2RedShiny" xml:space="preserve">
+    <value>סיכה בוהקת אדומה 2</value>
+  </data>
+  <data name="PinBlueShiny" xml:space="preserve">
+    <value>סיכה בוהקת כחולה</value>
+  </data>
+  <data name="PinGoldShiny" xml:space="preserve">
+    <value>סיכה בוהקת זהובה</value>
+  </data>
+  <data name="PinGreenShiny" xml:space="preserve">
+    <value>סיכה בוהקת ירוקה</value>
+  </data>
+  <data name="PinLightBlueShiny" xml:space="preserve">
+    <value>סיכה בוהקת כחול בהיר</value>
+  </data>
+  <data name="PinLightGreenShiny" xml:space="preserve">
+    <value>סיכה בוהקת ירוק בהיר</value>
+  </data>
+  <data name="PinPurpleShiny" xml:space="preserve">
+    <value>סיכה בוהקת סגולה</value>
+  </data>
+  <data name="PinShiny" xml:space="preserve">
+    <value>סיכה בוהקת</value>
+  </data>
+  <data name="RedShinyPin" xml:space="preserve">
+    <value>סיכה בוהקת אדומה</value>
+  </data>
+  <data name="StickpinBlack" xml:space="preserve">
+    <value>סיכת הצמדה שחורה</value>
+  </data>
+  <data name="StickpinBlue" xml:space="preserve">
+    <value>סיכת הצמדה כחולה</value>
+  </data>
+  <data name="StickpinBrown" xml:space="preserve">
+    <value>סיכת הצמדה חומה</value>
+  </data>
+  <data name="StickpinGray" xml:space="preserve">
+    <value>סיכת הצמדה אפורה</value>
+  </data>
+  <data name="StickpinGreen" xml:space="preserve">
+    <value>סיכת הצמדה ירוקה</value>
+  </data>
+  <data name="StickpinLightBlue" xml:space="preserve">
+    <value>סיכת הצמדה כחול בהיר</value>
+  </data>
+  <data name="StickpinOrange" xml:space="preserve">
+    <value>Orange Stickpin</value>
+  </data>
+  <data name="StickpinPurple" xml:space="preserve">
+    <value>סיכת הצמדה סגולה</value>
+  </data>
+  <data name="StickpinRed" xml:space="preserve">
+    <value>סיכת הצמדה אדומה</value>
+  </data>
+  <data name="StickpinSpringGreen" xml:space="preserve">
+    <value>סיכת הצמדה ירוקה</value>
+  </data>
+  <data name="StickpinWhite" xml:space="preserve">
+    <value>סיכת הצמדה לבנה</value>
+  </data>
+  <data name="StickpinYellow" xml:space="preserve">
+    <value>סיכת הצמדה צהובה</value>
+  </data>
+  <data name="SymbolAmberBeacon" xml:space="preserve">
+    <value>משואה ענבר</value>
+  </data>
+  <data name="SymbolBlackBeacon" xml:space="preserve">
+    <value>משואה שחורה</value>
+  </data>
+  <data name="SymbolBlackWaypoint" xml:space="preserve">
+    <value>נקודת ציון שחורה</value>
+  </data>
+  <data name="SymbolBlueBeacon" xml:space="preserve">
+    <value>משואה כחולה</value>
+  </data>
+  <data name="SymbolBlueSphere" xml:space="preserve">
+    <value>ספירה כחולה</value>
+  </data>
+  <data name="SymbolBlueWaypoint" xml:space="preserve">
+    <value>נקודת ציון כחולה</value>
+  </data>
+  <data name="SymbolCapital1" xml:space="preserve">
+    <value>Capital 1</value>
+  </data>
+  <data name="SymbolCapital2" xml:space="preserve">
+    <value>Capital 2</value>
+  </data>
+  <data name="SymbolCircleX" xml:space="preserve">
+    <value>המעגל X</value>
+  </data>
+  <data name="SymbolCrossHair" xml:space="preserve">
+    <value>צלב</value>
+  </data>
+  <data name="SymbolGreenBeacon" xml:space="preserve">
+    <value>משואה ירוקה</value>
+  </data>
+  <data name="SymbolGreenSphere" xml:space="preserve">
+    <value>ספירה ירוקה</value>
+  </data>
+  <data name="SymbolOrangeBeacon" xml:space="preserve">
+    <value>משואה כתומה</value>
+  </data>
+  <data name="SymbolOrangeSphere" xml:space="preserve">
+    <value>ספירה כתומה</value>
+  </data>
+  <data name="SymbolPopulated1" xml:space="preserve">
+    <value>איכלוס 1</value>
+  </data>
+  <data name="SymbolPopulated2" xml:space="preserve">
+    <value>איכלוס 2</value>
+  </data>
+  <data name="SymbolPopulated3" xml:space="preserve">
+    <value>איכלוס 3</value>
+  </data>
+  <data name="SymbolPopulated4" xml:space="preserve">
+    <value>איכלוס 4</value>
+  </data>
+  <data name="SymbolPopulated5" xml:space="preserve">
+    <value>איכלוס 5</value>
+  </data>
+  <data name="SymbolPopulated6" xml:space="preserve">
+    <value>איכלוס 6</value>
+  </data>
+  <data name="SymbolPopulated7" xml:space="preserve">
+    <value>איכלוס 7</value>
+  </data>
+  <data name="SymbolPurpleSphere" xml:space="preserve">
+    <value>ספירה סגולה</value>
+  </data>
+  <data name="SymbolRedBeacon" xml:space="preserve">
+    <value>משואה אדומה</value>
+  </data>
+  <data name="SymbolRedSphere" xml:space="preserve">
+    <value>ספירה אדומה</value>
+  </data>
+  <data name="SymbolWhiteWaypoint" xml:space="preserve">
+    <value>נקודת ציון לבנה</value>
+  </data>
+  <data name="SymbolYellowArrow" xml:space="preserve">
+    <value>חץ צהוב</value>
+  </data>
+  <data name="SymbolYellowSphere" xml:space="preserve">
+    <value>ספירה צהובה</value>
+  </data>
+  <data name="ExceptionRequiresParameter" xml:space="preserve">
+    <value>נדרש לציין פרמטר</value>
+  </data>
+  <data name="ExceptionAppendPropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>AppendProperty called outside of an object</value>
+  </data>
+  <data name="ExceptionBadEscape" xml:space="preserve">
+    <value>Bad Escape</value>
+  </data>
+  <data name="ExceptionConverters" xml:space="preserve">
+    <value>ממירים</value>
+  </data>
+  <data name="ExceptionEndArrayCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>EndArray called with no matching StartArray</value>
+  </data>
+  <data name="ExceptionEndArrayIndentedCalledwithNoMatchingStartArray" xml:space="preserve">
+    <value>EndArrayIndented called with no matching StartArray</value>
+  </data>
+  <data name="ExceptionEndObjectCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>EndObject called with no matching StartObject</value>
+  </data>
+  <data name="ExceptionEndObjectIndentedCalledWithNoMatchingStartObject" xml:space="preserve">
+    <value>EndObjectIndented called with no matching StartObject</value>
+  </data>
+  <data name="ExceptionInput" xml:space="preserve">
+    <value>קלט</value>
+  </data>
+  <data name="ExceptionStartPropertycalledOutsideOfAnObject" xml:space="preserve">
+    <value>StartProperty ניקרא מחוץ לאוביקט</value>
+  </data>
+  <data name="ExceptionType" xml:space="preserve">
+    <value>סוג</value>
+  </data>
+  <data name="ExceptionWritePropertyCalledOutsideOfAnObject" xml:space="preserve">
+    <value>WriteProperty called outside of an object</value>
+  </data>
+  <data name="MoreInfo" xml:space="preserve">
+    <value>מידע נוסף</value>
+  </data>
+  <data name="RootVisualError" xml:space="preserve">
+    <value>לא הצליח להשיג את מקור התצוגה של האפליקציה</value>
+  </data>
+  <data name="ExceptionNoResult" xml:space="preserve">
+    <value>לא הוחזרה תוצאה על בסיס הבקשה</value>
+  </data>
+</root>

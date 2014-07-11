@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<BuilderLocalizationInfo xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Localizer">
+  <BuilderFiles>
+    <LocalizedFile>default.aspx</LocalizedFile>
+    <LocalizedFile>App_Data\Basemaps.xml</LocalizedFile>
+    <LocalizedFile>App_Data\Settings.xml</LocalizedFile>
+    <LocalizedFile>SplashScreen.xaml</LocalizedFile>
+  </BuilderFiles>
+  <Templates>
+    <Template xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Localizer">
+       <Name>Default</Name>
+      <XmlTemplateFiles>
+        <LocalizedFile>index.htm</LocalizedFile>
+        <LocalizedFile>SplashScreen.xaml</LocalizedFile>
+        <LocalizedFile>Config\Admin\Connections.xml</LocalizedFile>
+        <LocalizedFile>Config\Admin\Symbols.xml</LocalizedFile>
+        <LocalizedFile>Config\Print\PrintLayoutList.xml</LocalizedFile>
+        <LocalizedFile>Config\Application.xml</LocalizedFile>
+        <LocalizedFile>Config\Tools.xml</LocalizedFile>
+        <LocalizedFile>Config\Behaviors.xml</LocalizedFile>
+        <LocalizedFile>Config\Layouts\Layouts.xml</LocalizedFile>
+        <LocalizedFile>Config\Map.xml</LocalizedFile>
+      </XmlTemplateFiles>
+      <TextTemplateFiles>
+        <LocalizedFile>Config\MapDescription.txt</LocalizedFile>
+      </TextTemplateFiles>
+    </Template>
+  </Templates>
+</BuilderLocalizationInfo>

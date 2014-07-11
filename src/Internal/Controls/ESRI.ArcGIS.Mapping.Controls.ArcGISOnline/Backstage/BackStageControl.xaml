@@ -1,0 +1,211 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls.ArcGISOnline"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:System="clr-namespace:System;assembly=mscorlib">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Backstage/MapCenterResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+	<local:StringResourcesManager x:Key="Localization" />
+	<Style TargetType="local:BackStageControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:BackStageControl">
+                    <Grid x:Name="LayoutRoot" Background="{StaticResource MapCenterBackgroundGradientBrush}">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <!-- Button panel top gradient -->
+                        <Rectangle VerticalAlignment="Top" Height="7" Grid.Row="2" >
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterX="0.5" CenterY="0.5"/>
+                                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                            <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FFD8D9DA" Offset="0"/>
+                                    <GradientStop Color="Transparent" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+
+                        <!-- Bottom Button Panel-->
+                        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                                x:Name="ButtonPanel"
+                                Background="Transparent">
+
+                                <RadioButton x:Name="RecentRadioButton"                     
+                                 Content="{Binding ConverterParameter=BackStageControlRecent, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                 GroupName="BackstageRadioButtons"
+                                 FontSize="12"
+                                 Height="40"      
+                                 Template="{StaticResource MapCenterRadioButtonControlTemplate}" />
+								<RadioButton Content="{Binding ConverterParameter=BackStageControlMyMaps, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                   GroupName="BackstageRadioButtons"
+                                   x:Name="MyMapsRadioButton"
+                                   FontSize="12"
+                                   Height="40"
+                                   Template="{StaticResource MapCenterRadioButtonControlTemplate}" />
+								<RadioButton Content="{Binding ConverterParameter=BackStageControlGroups, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                   GroupName="BackstageRadioButtons"
+                                   x:Name="MyGroupsRadioButton"
+                                   FontSize="12"
+                                   Height="40"
+                                   Template="{StaticResource MapCenterRadioButtonControlTemplate}" />
+								<RadioButton Content="{Binding ConverterParameter=BackStageControlFeatureMaps, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                   GroupName="BackstageRadioButtons"
+                                   x:Name="FeaturedMapsRadioButton"
+                                   FontSize="12"
+                                   IsChecked="True"
+                                   Height="40"
+                                   Template="{StaticResource MapCenterRadioButtonControlTemplate}" />
+								<RadioButton Content="{Binding ConverterParameter=BackStageControlSearch, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                   GroupName="BackstageRadioButtons"
+                                   x:Name="SearchRadioButton"
+                                   FontSize="12"
+                                   Height="40"
+                                   Template="{StaticResource MapCenterRadioButtonControlTemplate}" />
+                            </StackPanel>
+                        </Grid>            
+                                                
+                        <local:MyMapsControl Grid.Column="1" Grid.Row="1"
+                         x:Name="MyMapsControl" />
+
+                        <Grid Grid.Column="1" Grid.Row="1" x:Name="GroupsPanel">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="225"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <RadioButton Content="{Binding ConverterParameter=BackStageControlMyGroups, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                GroupName="GroupsRadioButtons"
+                                x:Name="MyOwnGroupsRadioButton"
+                                ToolTipService.ToolTip="{Binding ConverterParameter=BackStageControlMyGroups, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                Grid.Row="0"
+                                Style="{StaticResource MapCenterRadioButtonControlTemplateLeftStyle}" />
+                            <RadioButton Content="{Binding ConverterParameter=BackStageControlMyOrgGroups, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                GroupName="GroupsRadioButtons"
+                                x:Name="MyOrgGroupsRadioButton"
+                                ToolTipService.ToolTip="{Binding ConverterParameter=BackStageControlMyOrgGroups, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                Grid.Row="1"
+                                Style="{StaticResource MapCenterRadioButtonControlTemplateLeftStyle}" />
+                            <RadioButton Content="{Binding ConverterParameter=BackStageControlMyOrgPublicGroups, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                GroupName="GroupsRadioButtons"
+                                x:Name="MyOrgPublicGroupsRadioButton"
+                                ToolTipService.ToolTip="{Binding ConverterParameter=BackStageControlMyOrgPublicGroups, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                Grid.Row="2"
+                                Style="{StaticResource MapCenterRadioButtonControlTemplateLeftStyle}" />
+                            <!--separator-->
+                            <Path Fill="White"  x:Name="RadioButtonSeparator" Grid.Row="3"
+                                    Visibility="Collapsed"
+                                    Stretch="Fill" 
+                                    Stroke="{StaticResource MapCenterSeparatorFillBrush}"
+                                    Height="1"
+                                    Margin="3,1,3,1"
+                                    UseLayoutRounding="False"
+                                    HorizontalAlignment="Stretch"
+                                    Data="M0,174 L300,174"
+                                    />
+                            <!-- Groups opened by user -->
+                            <ListBox x:Name="GroupsListBox"
+                                Grid.Row="4"
+                                BorderThickness="0"
+                                Width="225"
+                                Margin="-1,0,0,0"
+                                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                Background="Transparent"
+                                Style="{StaticResource MapCenterPagingScrollViewerListBoxStyle}"
+                                ItemContainerStyle="{StaticResource MapCenterListBoxItemStyleNoBorder}">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Vertical" />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="225" />
+                                        </Grid.ColumnDefinitions>
+                                        <RadioButton Content="{Binding Content.Title}"
+                                                GroupName="GroupsRadioButtons"
+                                                IsChecked="{Binding IsChecked, Mode=TwoWay}"
+                                                ToolTipService.ToolTip="{Binding Content.Title}"
+                                                Command="{Binding  ElementName=GroupsListBox, Path=Tag.GroupCommand}"
+                                                CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                                                Style="{StaticResource MapCenterRadioButtonControlTemplateLeftStyle}" 
+                                                BorderThickness="0" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                            <!-- Button panel right gradient -->
+                            <Rectangle HorizontalAlignment="Right" Width="5"  Grid.RowSpan="5" >
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <LinearGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterX="0.5" CenterY="0.5"/>
+                                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                                <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5"/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </LinearGradientBrush.RelativeTransform>
+                                        <GradientStop Color="#FFD8D9DA" Offset="0"/>
+                                        <GradientStop Color="Transparent" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <local:MyGroupsControl Grid.Column="1" x:Name="MyGroupsControl"  Grid.RowSpan="5"/>
+                            <local:GroupControl Grid.Column="1" x:Name="GroupControl" Grid.RowSpan="5"/>
+                        </Grid>
+                        
+                        <local:FeaturedMapsControl Grid.Column="1" Grid.Row="1"
+                               x:Name="FeaturedMapsControl" />
+
+                        <local:SearchMapsControl Grid.Column="1" Grid.Row="1"
+                               x:Name="SearchMapsControl" />
+
+                        <local:RecentMapsControl Grid.Column="1" Grid.Row="1"
+                             x:Name="RecentMapsControl"
+                             Visibility="Collapsed" />
+
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

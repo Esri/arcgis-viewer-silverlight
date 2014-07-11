@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Symbols>
+  <ResourceDictionary>
+    <ID>BasicFillSymbols</ID>
+    <Path>Symbols/BasicFillSymbols.json.txt</Path>
+    <GeometryType>Polygon</GeometryType>
+    <DisplayName>Standard</DisplayName>
+  </ResourceDictionary>
+  <ResourceDictionary>
+    <ID>BasicLineSymbols</ID>
+    <Path>Symbols/BasicLineSymbols.json.txt</Path>
+    <GeometryType>Polyline</GeometryType>
+    <DisplayName>Standard</DisplayName>
+  </ResourceDictionary>
+  <ResourceDictionary>
+    <ID>Basic</ID>
+    <Path>Symbols/BasicSymbols.json.txt</Path>
+    <GeometryType>Point</GeometryType>
+    <DisplayName>Standard</DisplayName>
+  </ResourceDictionary>
+</Symbols>

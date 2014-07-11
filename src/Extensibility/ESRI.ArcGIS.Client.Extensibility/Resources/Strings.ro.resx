@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Afişează dialogul Despre</value>
+  </data>
+  <data name="AboutDisplayName" xml:space="preserve">
+    <value>Despre</value>
+  </data>
+  <data name="AddGeoRssFeedDescription" xml:space="preserve">
+    <value>Adăugare flux GeoRSS la hartă</value>
+  </data>
+  <data name="AddGeoRssFeedDisplayName" xml:space="preserve">
+    <value>Adăugare GeoRSS</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Adăugare "heat map" la hartă</value>
+  </data>
+  <data name="AddHeatMapDisplayName" xml:space="preserve">
+    <value>Adăugare "heat map"</value>
+  </data>
+  <data name="BaseMapGalleryDescription" xml:space="preserve">
+    <value>Alegere hartă fundal pentru hartă</value>
+  </data>
+  <data name="BaseMapGalleryDisplayName" xml:space="preserve">
+    <value>Alegere hartă fundal</value>
+  </data>
+  <data name="BrowseDescription" xml:space="preserve">
+    <value>Adăugare date la hartă prin parcurgerea până la adresa ArcGIS Server </value>
+  </data>
+  <data name="BrowseDisplayName" xml:space="preserve">
+    <value>Parcurgere</value>
+  </data>
+  <data name="CategoryApplication" xml:space="preserve">
+    <value>Aplicaţie</value>
+  </data>
+  <data name="CategoryAttributeTable" xml:space="preserve">
+    <value>Tabel de atribute</value>
+  </data>
+  <data name="CategoryConfigure" xml:space="preserve">
+    <value>Configurare</value>
+  </data>
+  <data name="CategoryEditing" xml:space="preserve">
+    <value>Editare</value>
+  </data>
+  <data name="CategoryGeoprocessing" xml:space="preserve">
+    <value>Geoprocesare</value>
+  </data>
+  <data name="CategoryLayer" xml:space="preserve">
+    <value>Strat tematic</value>
+  </data>
+  <data name="CategoryMap" xml:space="preserve">
+    <value>Hartă</value>
+  </data>
+  <data name="CategoryMouseEvents" xml:space="preserve">
+    <value>Evenimente de mouse</value>
+  </data>
+  <data name="CategoryPopup" xml:space="preserve">
+    <value>Mesaj pop-up</value>
+  </data>
+  <data name="CategorySelection" xml:space="preserve">
+    <value>Selecţie</value>
+  </data>
+  <data name="CategorySymbology" xml:space="preserve">
+    <value>Simbologie</value>
+  </data>
+  <data name="CategoryTheme" xml:space="preserve">
+    <value>Temă</value>
+  </data>
+  <data name="ChangeThemeBackgroundDescription" xml:space="preserve">
+    <value>Schimbare fundal pentru o temă</value>
+  </data>
+  <data name="ChangeThemeBackgroundDisplayName" xml:space="preserve">
+    <value>Schimbare fundal temă</value>
+  </data>
+  <data name="ClearSelectionDescription" xml:space="preserve">
+    <value>Goleşte selecţia din stratul tematic curent</value>
+  </data>
+  <data name="ClearSelectionDisplayName" xml:space="preserve">
+    <value>Golire selecţie</value>
+  </data>
+  <data name="ConfigureLayerDescription" xml:space="preserve">
+    <value>Specificaţi aspectul şi comportamentul stratului tematic selectat</value>
+  </data>
+  <data name="ConfigureLayerDisplayName" xml:space="preserve">
+    <value>Configurare strat tematic</value>
+  </data>
+  <data name="ConfigureLayerRendererDescription" xml:space="preserve">
+    <value>Permite configurarea autorului reproducerii pentru stratul tematic curent</value>
+  </data>
+  <data name="ConfigureLayerRendererDisplayName" xml:space="preserve">
+    <value>Configurare simbologie</value>
+  </data>
+  <data name="ConfigureSelectedLayerDescription" xml:space="preserve">
+    <value>Permite configurarea stratului tematic selectat</value>
+  </data>
+  <data name="ConfigureSelectedLayerDisplayName" xml:space="preserve">
+    <value>Configurare strat tematic</value>
+  </data>
+  <data name="DeleteGraphicToolDescription" xml:space="preserve">
+    <value>Eliminare obiect spaţial din stratul tematic</value>
+  </data>
+  <data name="DeleteGraphicToolDisplayName" xml:space="preserve">
+    <value>Ştergere obiect spaţial</value>
+  </data>
+  <data name="DeleteLayerDescription" xml:space="preserve">
+    <value>Elimină stratul tematic selectat din hartă</value>
+  </data>
+  <data name="DeleteLayerDisplayName" xml:space="preserve">
+    <value>Eliminare strat tematic</value>
+  </data>
+  <data name="EditShapeToolDescription" xml:space="preserve">
+    <value>Modifică geometria obiectului spaţial</value>
+  </data>
+  <data name="EditShapeToolDisplayName" xml:space="preserve">
+    <value>Editare formă</value>
+  </data>
+  <data name="EditValuesToolDescription" xml:space="preserve">
+    <value>Modificaţi valorile atributelor stratului tematic</value>
+  </data>
+  <data name="EditValuesToolDisplayName" xml:space="preserve">
+    <value>Editare valori</value>
+  </data>
+  <data name="AddAttachmentsToolDescription" xml:space="preserve">
+    <value>Adăugaţi o ataşare la obiectul spaţial</value>
+  </data>
+  <data name="AddAttachmentsToolDisplayName" xml:space="preserve">
+    <value>Adăugare ataşare</value>
+  </data>
+  <data name="ExceptionNoValidApplicationContextForApplication" xml:space="preserve">
+    <value>Niciun context de aplicaţie valid pentru această aplicaţie</value>
+  </data>
+  <data name="ExportSelectionDescription" xml:space="preserve">
+    <value>Exportaţi atributele obiectelor spaţiale selectate din stratul tematic curent într-un fişier CSV</value>
+  </data>
+  <data name="ExportSelectionDisplayName" xml:space="preserve">
+    <value>Export selecţie</value>
+  </data>
+  <data name="FilterByMapExtentDescription" xml:space="preserve">
+    <value>Se afişează numai înregistrări pentru obiecte spaţiale din extinderea curentă a hărţii</value>
+  </data>
+  <data name="FilterByMapExtentName" xml:space="preserve">
+    <value>Filtrare după extinderea hărţii</value>
+  </data>
+  <data name="FilterBySelectionAll" xml:space="preserve">
+    <value>Tabel - Afişare toate</value>
+  </data>
+  <data name="FilterBySelectionAllDescription" xml:space="preserve">
+    <value>Tabelul va afişa atât obiectele spaţiale selectate, cât şi pe cele neselectate</value>
+  </data>
+  <data name="FilterBySelectionNotSelected" xml:space="preserve">
+    <value>Tabel - Afişare neselectate</value>
+  </data>
+  <data name="FilterBySelectionNotSelectedDescription" xml:space="preserve">
+    <value>Filtrează tabelul pentru a afişa numai obiectele spaţiale care nu sunt selectate curent.</value>
+  </data>
+  <data name="FilterBySelectionSelected" xml:space="preserve">
+    <value>Tabel - Afişare selectate</value>
+  </data>
+  <data name="FilterBySelectionSelectedDescription" xml:space="preserve">
+    <value>Filtrează tabelul pentru a afişa numai obiectele spaţiale care sunt selectate curent.</value>
+  </data>
+  <data name="FilterLayerDescription" xml:space="preserve">
+    <value>Filtrează obiectele spaţiale din stratul tematic selectat pe baza interogării atributului</value>
+  </data>
+  <data name="FilterLayerDisplayName" xml:space="preserve">
+    <value>Filtrare strat tematic</value>
+  </data>
+  <data name="FindNearbyDescription" xml:space="preserve">
+    <value>Găsire obiecte spaţiale din apropierea selecţiei curente</value>
+  </data>
+  <data name="FindNearbyDisplayName" xml:space="preserve">
+    <value>Găsire în apropiere</value>
+  </data>
+  <data name="GeoprocessingDescription" xml:space="preserve">
+    <value>Un instrument care utilizează un serviciu de geoprocesare ArcGIS Server</value>
+  </data>
+  <data name="GeoprocessingDisplayName" xml:space="preserve">
+    <value>Geoprocesare</value>
+  </data>
+  <data name="GoToLayerDescription" xml:space="preserve">
+    <value>Transfocare la stratul tematic selectat.</value>
+  </data>
+  <data name="GoToLayerDisplayName" xml:space="preserve">
+    <value>Accesare strat tematic</value>
+  </data>
+  <data name="IdentifyBehaviorDisplayName" xml:space="preserve">
+    <value>Identificare comportament</value>
+  </data>
+  <data name="MoveLayerDownDescription" xml:space="preserve">
+    <value>Mută ordinea de afişare a stratului tematic cu o poziţie mai sus pe hartă</value>
+  </data>
+  <data name="MoveLayerDownDisplayName" xml:space="preserve">
+    <value>Mutare în sus</value>
+  </data>
+  <data name="MoveLayerUpDescription" xml:space="preserve">
+    <value>Mută ordinea de afişare a stratului tematic cu o poziţie mai jos pe hartă</value>
+  </data>
+  <data name="MoveLayerUpDisplayName" xml:space="preserve">
+    <value>Mutare în jos</value>
+  </data>
+  <data name="NavigateToHelpLinkDescription" xml:space="preserve">
+    <value>Navighează la sistemul de ajutor</value>
+  </data>
+  <data name="NavigateToHelpLinkDisplayName" xml:space="preserve">
+    <value>Navighează la legătura de ajutor</value>
+  </data>
+  <data name="PrintDescription" xml:space="preserve">
+    <value>Imprimaţi harta</value>
+  </data>
+  <data name="PrintDisplayName" xml:space="preserve">
+    <value>Imprimare</value>
+  </data>
+  <data name="RefreshLayerDescription" xml:space="preserve">
+    <value>Reîmprospătează stratul tematic selectat</value>
+  </data>
+  <data name="RefreshLayerDisplayName" xml:space="preserve">
+    <value>Reîmprospătare strat tematic</value>
+  </data>
+  <data name="RenameLayerDescription" xml:space="preserve">
+    <value>Redenumire strat tematic selectat</value>
+  </data>
+  <data name="RenameLayerDisplayName" xml:space="preserve">
+    <value>Redenumire strat tematic</value>
+  </data>
+  <data name="RestoreDefaultThemeDescription" xml:space="preserve">
+    <value>Restaurează culorile utilizate de hartă la valorile implicite</value>
+  </data>
+  <data name="RestoreDefaultThemeDisplayName" xml:space="preserve">
+    <value>Resetare temă</value>
+  </data>
+  <data name="SelectAllDescription" xml:space="preserve">
+    <value>Selectaţi toate obiectele spaţiale din stratul tematic curent</value>
+  </data>
+  <data name="SelectAllDisplayName" xml:space="preserve">
+    <value>Selectare globală</value>
+  </data>
+  <data name="SelectByDrawDescription" xml:space="preserve">
+    <value>Selectaţi obiecte spaţiale trăgând un chenar în jurul hărţii</value>
+  </data>
+  <data name="SelectByDrawDisplayName" xml:space="preserve">
+    <value>Selectare</value>
+  </data>
+  <data name="SelectedIndexOfTotal" xml:space="preserve">
+    <value>{0} din {1}</value>
+  </data>
+  <data name="ServiceDetailsDescription" xml:space="preserve">
+    <value>Deschideţi adresa URL a serviciului pentru stratul tematic selectat</value>
+  </data>
+  <data name="ServiceDetailsDisplayName" xml:space="preserve">
+    <value>Detalii serviciu</value>
+  </data>
+  <data name="ShowMapCoordinatesDescription" xml:space="preserve">
+    <value>Afişează coordonate pe măsură ce mouse-ul este deplasat peste hartă</value>
+  </data>
+  <data name="ShowMapCoordinatesDisplayName" xml:space="preserve">
+    <value>Afişare coordonate hartă</value>
+  </data>
+  <data name="ShowPreviewControlDescription" xml:space="preserve">
+    <value>Afişaţi un dialog care demonstrează modul în care apar culorile temei când sunt aplicate pe diferite componente ale hărţii</value>
+  </data>
+  <data name="ShowPreviewControlDisplayName" xml:space="preserve">
+    <value>Previzualizare temă</value>
+  </data>
+  <data name="ToggleAddContentDescription" xml:space="preserve">
+    <value>Adăugaţi date ArcGIS Server, SharePoint, de server de date spaţiale sau GeoRSS la hartă</value>
+  </data>
+  <data name="ToggleAddContentDisplayName" xml:space="preserve">
+    <value>Adăugare conţinut</value>
+  </data>
+  <data name="ToggleEditDescription" xml:space="preserve">
+    <value>Afişaţi sau ascundeţi instrumentele de editare</value>
+  </data>
+  <data name="ToggleEditDisplayName" xml:space="preserve">
+    <value>Editare</value>
+  </data>
+  <data name="ToggleFullScreenDescription" xml:space="preserve">
+    <value>Afişează harta în modul pe tot ecranul</value>
+  </data>
+  <data name="ToggleFullScreenDisplayName" xml:space="preserve">
+    <value>Pe tot ecranul</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>Deschideţi panoul Conţinut hartă pentru a vizualiza straturile tematice ale hărţii</value>
+  </data>
+  <data name="ToggleMapContentsDisplayName" xml:space="preserve">
+    <value>Conţinuturi hartă</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>Căutaţi locuri sau servicii ArcGIS Server</value>
+  </data>
+  <data name="ToggleSearchDisplayName" xml:space="preserve">
+    <value>Căutare</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>Deschide tabelul de atribute pentru stratul tematic selectat</value>
+  </data>
+  <data name="ToggleTableDisplayName" xml:space="preserve">
+    <value>Afişare tabel</value>
+  </data>
+  <data name="ZoomToSelectionDescription" xml:space="preserve">
+    <value>Transfocaţi la obiectele spaţiale selectate din stratul tematic curent</value>
+  </data>
+  <data name="ZoomToSelectionDisplayName" xml:space="preserve">
+    <value>Transfocare la</value>
+  </data>
+</root>

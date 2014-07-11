@@ -1,0 +1,47 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:builder="clr-namespace:ESRI.ArcGIS.Mapping.Builder"
+             xmlns:layoutConverters="clr-namespace:ESRI.ArcGIS.Client.Application.Layout.Converters;assembly=ESRI.ArcGIS.Client.Application.Layout"
+             xmlns:agolControls="clr-namespace:ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;assembly=ESRI.ArcGIS.Mapping.Controls.ArcGISOnline"
+             xmlns:esriMappingBehaviors="http://schemas.esri.com/arcgis/mapping/2009"
+             xmlns:esriControls="clr-namespace:ESRI.ArcGIS.Mapping.Controls;assembly=ESRI.ArcGIS.Mapping.Controls"
+             xmlns:Layout="clr-namespace:ESRI.ArcGIS.Client.Application.Layout;assembly=ESRI.ArcGIS.Client.Application.Layout"
+             x:Class="ESRI.ArcGIS.Mapping.Builder.App"
+             >
+    <Application.Resources>
+        <ResourceDictionary> 
+             <ResourceDictionary.MergedDictionaries>
+             	<ResourceDictionary Source="/ESRI.ArcGIS.Client.Extensibility;component/Themes/Common.Theme.xaml" />
+             	<ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/ApplicationStyles.xaml" />
+             	<ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/AppResources.xaml"/>
+                <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Builder;component/Styles/ToolbarStyles.xaml" />
+             	<ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Builder;component/Styles/HomePageStyles.xaml" />
+             	<ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Builder;component/Styles/ComboBoxStyle.xaml" />
+             	<ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Builder;component/Styles/ControlStyles.xaml" />
+             	<ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Builder;component/Styles/TabStyles.xaml" />
+                <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Builder;component/Styles/MapContentLayerConfigurationHost.xaml" />
+             	<ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Builder;component/Styles/LayerConfigurationStyles.xaml" />
+                <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Builder;component/Styles/ScrollBarStyles.xaml" />
+                <!-- Map Center brushes must be here - cannot be in NewApplicationControl.xaml as they are required to be declared before that control is
+                loaded.-->
+             	<ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Builder;component/Styles/MapCenterStyles.xaml" />
+                <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Builder;component/Styles/BrowseStyles.xaml" />
+                <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Builder;component/Styles/WizardStyle.xaml" />
+                <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Builder;component/Styles/DesignHostStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+           <builder:StringResourcesManager x:Key="BuilderLocalization" />
+           <layoutConverters:VisibilityToIntConverter x:Key="VisibilityToIntConverter" />
+            <agolControls:StringResourcesManager x:Key="AgolLocalization" />
+            <esriControls:StringResourcesManager x:Key="Localization" />
+            <esriControls:InvertVisibilityConverter x:Key="InvertVisibilityConverter" />
+            <Layout:RTLHelper x:Key="RTLHelper" /> 
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

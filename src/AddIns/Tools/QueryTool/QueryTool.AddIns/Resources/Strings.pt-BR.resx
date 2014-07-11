@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddLabel" xml:space="preserve">
+    <value>Adicionar Novo</value>
+  </data>
+  <data name="AliasLabel" xml:space="preserve">
+    <value>Nome Alternativo</value>
+  </data>
+  <data name="AutoEnableDataGridLabel" xml:space="preserve">
+    <value>Mostrar resultados na tabela de atributos</value>
+  </data>
+  <data name="AutoPinResults" xml:space="preserve">
+    <value>Manter resultados no mapa</value>
+  </data>
+  <data name="AutoZoomToResultsLabel" xml:space="preserve">
+    <value>Ampliar nos resultados ao completar uma consulta</value>
+  </data>
+  <data name="BuildQueryExpressionsLabel" xml:space="preserve">
+    <value>Construa a consulta</value>
+  </data>
+  <data name="CancelLabel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="CannotExecuteCommand" xml:space="preserve">
+    <value>Não é possível executar o comando</value>
+  </data>
+  <data name="ClickConnect" xml:space="preserve">
+    <value>Clique em conectar</value>
+  </data>
+  <data name="ClickNext" xml:space="preserve">
+    <value>Clique em Avançar para continuar</value>
+  </data>
+  <data name="ConfigurationLabel" xml:space="preserve">
+    <value>Configuração da Ferramenta de Consulta</value>
+  </data>
+  <data name="ConfigureDialogHeading" xml:space="preserve">
+    <value>Configure a aparência do diálogo de consulta</value>
+  </data>
+  <data name="ConfigureResultLabel" xml:space="preserve">
+    <value>Especificar configurações de resultado da consulta</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Conectar</value>
+  </data>
+  <data name="ConnectCompleted" xml:space="preserve">
+    <value>Conexão para '{0}' completada com sucesso.</value>
+  </data>
+  <data name="ConnectFailed" xml:space="preserve">
+    <value>Falha de conexão.</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>Conectando...</value>
+  </data>
+  <data name="DataTypeMismatch" xml:space="preserve">
+    <value>O valor '{0}' não pode ser convertido para o tipo de dados '{1}'.</value>
+  </data>
+  <data name="DefaultValueLabel" xml:space="preserve">
+    <value>Valor Padrão</value>
+  </data>
+  <data name="DeleteExpression" xml:space="preserve">
+    <value>Excluir desta expressão</value>
+  </data>
+  <data name="DuplicateError" xml:space="preserve">
+    <value>A lista não pode conter entradas duplicadas</value>
+  </data>
+  <data name="EditLabel" xml:space="preserve">
+    <value>Editar esta expressão</value>
+  </data>
+  <data name="EmptyEntryError" xml:space="preserve">
+    <value>Valores vazios não são permitidos para este parâmetro</value>
+  </data>
+  <data name="EnterServiceUrl" xml:space="preserve">
+    <value>Insira uma URL para um Serviço da Feição ou Mapa do ArcGIS Server.</value>
+  </data>
+  <data name="EnterValue" xml:space="preserve">
+    <value>Insira um valor</value>
+  </data>
+  <data name="EqualityCheckFailsOnType" xml:space="preserve">
+    <value>O valor '{0}' ({1}) não pode ser comparado para igualdade em relação aos '{2}' ({3}) pois seus tipos não combinam.</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>Detalhes:</value>
+  </data>
+  <data name="ExecuteLabel" xml:space="preserve">
+    <value>Executar</value>
+  </data>
+  <data name="ExecuteQuery" xml:space="preserve">
+    <value>Consultando...</value>
+  </data>
+  <data name="ExpressionBuilderLabel" xml:space="preserve">
+    <value>Construtor de Expressão da Consulta</value>
+  </data>
+  <data name="ExpressionColumnHeader" xml:space="preserve">
+    <value>Expressão da Consulta</value>
+  </data>
+  <data name="ExpressionLabel" xml:space="preserve">
+    <value>Rótulo da Expressão :</value>
+  </data>
+  <data name="FieldAndOperatorLabel" xml:space="preserve">
+    <value>Campo e Operador:</value>
+  </data>
+  <data name="GroupColumnHeader" xml:space="preserve">
+    <value>ID do Grupo</value>
+  </data>
+  <data name="GroupLabel" xml:space="preserve">
+    <value>Grupo Selecionado</value>
+  </data>
+  <data name="IncludedValues" xml:space="preserve">
+    <value>Valores Incluídos</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>Rótulo</value>
+  </data>
+  <data name="LayerInfoMissing" xml:space="preserve">
+    <value>Os metadados da camada não estão disponíveis neste nível.</value>
+  </data>
+  <data name="OkLabel" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OperatorLabel" xml:space="preserve">
+    <value>Operador</value>
+  </data>
+  <data name="ParameterLabelsAndVisibility" xml:space="preserve">
+    <value>Definir cada visibilidade e rótulo do parâmetro de consulta</value>
+  </data>
+  <data name="PinToMapLabel" xml:space="preserve">
+    <value>Manter resultados no mapa</value>
+  </data>
+  <data name="QueryCategory" xml:space="preserve">
+    <value>Consultar</value>
+  </data>
+  <data name="QueryDescription" xml:space="preserve">
+    <value>Localizar feições em uma camada que correspondem ao critério de pesquisa especificado</value>
+  </data>
+  <data name="QueryExpressions" xml:space="preserve">
+    <value>Expressões da Consulta</value>
+  </data>
+  <data name="QueryFailed" xml:space="preserve">
+    <value>Falha ao executar a consulta.</value>
+  </data>
+  <data name="QueryTitleLabel" xml:space="preserve">
+    <value>Título do Diálogo</value>
+  </data>
+  <data name="QueryToolName" xml:space="preserve">
+    <value>Camada de Consulta</value>
+  </data>
+  <data name="RemoveLabel" xml:space="preserve">
+    <value>Excluir Selecionado</value>
+  </data>
+  <data name="ResultOptionsLabel" xml:space="preserve">
+    <value>Outras Opções</value>
+  </data>
+  <data name="ResultsFound" xml:space="preserve">
+    <value>{0} feições encontradas</value>
+  </data>
+  <data name="SampleValues" xml:space="preserve">
+    <value>Valores de Amostra (recuperados da camada)</value>
+  </data>
+  <data name="SelectExpression" xml:space="preserve">
+    <value>Selecione ou desselecione esta expressão</value>
+  </data>
+  <data name="SelectFromList" xml:space="preserve">
+    <value>Selecionar valor desta lista</value>
+  </data>
+  <data name="ServiceUrl" xml:space="preserve">
+    <value>URL do Serviço</value>
+  </data>
+  <data name="StringExceededMaxLength" xml:space="preserve">
+    <value>'{0}' não pode exceder {1} caracteres.</value>
+  </data>
+  <data name="UnableToAccess" xml:space="preserve">
+    <value>Não foi possível acessar a URL '&lt;{0}&gt;'.</value>
+  </data>
+  <data name="UngroupLabel" xml:space="preserve">
+    <value>Desagrupar Selecionado</value>
+  </data>
+  <data name="UriFormatError" xml:space="preserve">
+    <value>A URL '&lt;{0}&gt;' contém caracteres inválidos.</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Utilizar Proxy</value>
+  </data>
+  <data name="UsersTypeValue" xml:space="preserve">
+    <value>Digite um valor</value>
+  </data>
+  <data name="UseServiceRendererLabel" xml:space="preserve">
+    <value>Utilize os símbolos definidos pelo serviço</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>[valor]</value>
+  </data>
+  <data name="VisibleLabel" xml:space="preserve">
+    <value>Visível</value>
+  </data>
+  <data name="InputMethod" xml:space="preserve">
+    <value>Método de Entrada:</value>
+  </data>
+  <data name="Fields" xml:space="preserve">
+    <value>Campos</value>
+  </data>
+  <data name="LabelWatermark" xml:space="preserve">
+    <value>&lt;digite um rótulo&gt;</value>
+  </data>
+  <data name="ResultOptionsDescription" xml:space="preserve">
+    <value>Especificar a aparência e comportamento dos resultados</value>
+  </data>
+  <data name="SelectField" xml:space="preserve">
+    <value>&lt;selecione um campo&gt;</value>
+  </data>
+  <data name="SelectFieldsToInclude" xml:space="preserve">
+    <value>Selecione os dados para incluir com os resultados da pesquisa</value>
+  </data>
+  <data name="AutoEnableDataGridTooltip" xml:space="preserve">
+    <value>Abre a tabela de atributos automaticamente quando um conjunto de resultados é recuperado</value>
+  </data>
+  <data name="AutoPinResultsTooltip" xml:space="preserve">
+    <value>Mantém os resultados da consulta no mapa quando o diálogo da consulta é fechado ou outra consulta é executada</value>
+  </data>
+  <data name="AutoZoomToResultsTooltip" xml:space="preserve">
+    <value>Amplia automaticamente nos resultados da consulta quando são adicionados no mapa </value>
+  </data>
+  <data name="ConfigureQueryLayer" xml:space="preserve">
+    <value>Configure a camada para consultar</value>
+  </data>
+  <data name="DefineQueryExpressions" xml:space="preserve">
+    <value>Defina as expressões contidas na consulta</value>
+  </data>
+  <data name="SampleServiceUrl" xml:space="preserve">
+    <value>http://server/arcgis/rest/services/service/MapServer/0</value>
+  </data>
+  <data name="ServiceUrlDescription" xml:space="preserve">
+    <value>Especifique a URL da camada a ser consultada</value>
+  </data>
+  <data name="UseServiceRendererTooltip" xml:space="preserve">
+    <value>Mostra as feições resultantes no mapa utilizando a simbologia definida pelo serviço. Se desmarcada, todas as feições de um conjunto de resultados serão mostradas com um símbolo padrão</value>
+  </data>
+  <data name="InvalidValue" xml:space="preserve">
+    <value>Valor inválido para este campo</value>
+  </data>
+  <data name="ParameterAppearance" xml:space="preserve">
+    <value>Aparência do Parâmetro</value>
+  </data>
+</root>

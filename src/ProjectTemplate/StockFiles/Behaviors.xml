@@ -1,0 +1,40 @@
+﻿<Behaviors xmlns:esri="http://schemas.esri.com/arcgis/mapping/2009" 
+xmlns:$safeprojectname$="clr-namespace:$safeprojectname$.AddIns;assembly=$safeprojectname$.AddIns">
+  <Behavior IsEnabled="True" Title="My sample behavior">
+    <Behavior.Class>
+      <$safeprojectname$:MyBehavior />
+    </Behavior.Class>
+    <Behavior.ConfigData>Sample behavior configuration</Behavior.ConfigData>
+  </Behavior>
+  <Behavior xmlns:QueryStringSupport="clr-namespace:Esri.ArcGIS.Client.Application.AddIns;assembly=Esri.ArcGIS.Client.Application.AddIns.WebMapQueryStringBehavior" IsEnabled="True" Title="Load Web Map from Query String">
+    <Behavior.Class>
+      <QueryStringSupport:GetWebMapFromQueryStringBehavior />
+    </Behavior.Class>
+  </Behavior>
+  <Behavior xmlns:QueryStringSupport="clr-namespace:Esri.ArcGIS.Client.Application.AddIns;assembly=Esri.ArcGIS.Client.Application.AddIns.ScaleQueryStringBehavior" IsEnabled="True" Title="Initialize Scale from Query String">
+    <Behavior.Class>
+      <QueryStringSupport:GetScaleFromQueryStringBehavior />
+    </Behavior.Class>
+  </Behavior>
+  <Behavior xmlns:QueryStringSupport="clr-namespace:Esri.ArcGIS.Client.Application.AddIns;assembly=Esri.ArcGIS.Client.Application.AddIns.ScaleLevelQueryStringBehavior" IsEnabled="True" Title="Initialize Scale Level from Query String">
+    <Behavior.Class>
+      <QueryStringSupport:GetScaleLevelFromQueryStringBehavior />
+    </Behavior.Class>
+  </Behavior>
+  <Behavior xmlns:QueryStringSupport="clr-namespace:Esri.ArcGIS.Client.Application.AddIns;assembly=Esri.ArcGIS.Client.Application.AddIns.ExtentQueryStringBehavior" IsEnabled="True" Title="Initialize Extent from Query String">
+    <Behavior.Class>
+      <QueryStringSupport:GetExtentFromQueryStringBehavior />
+    </Behavior.Class>
+  </Behavior>
+  <Behavior xmlns:QueryStringSupport="clr-namespace:Esri.ArcGIS.Client.Application.AddIns;assembly=Esri.ArcGIS.Client.Application.AddIns.CenterQueryStringBehavior" IsEnabled="True" Title="Initialize Center from Query String">
+    <Behavior.Class>
+      <QueryStringSupport:GetCenterFromQueryStringBehavior />
+    </Behavior.Class>
+  </Behavior>
+  <Behavior IsEnabled="True" Title="Identify">
+    <Behavior.Class>
+      <esri:IdentifyBehavior />
+    </Behavior.Class>
+    <Behavior.ConfigData></Behavior.ConfigData>
+  </Behavior>
+</Behaviors>

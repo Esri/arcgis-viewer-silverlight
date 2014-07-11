@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddLabel" xml:space="preserve">
+    <value>新增</value>
+  </data>
+  <data name="AliasLabel" xml:space="preserve">
+    <value>别名</value>
+  </data>
+  <data name="AutoEnableDataGridLabel" xml:space="preserve">
+    <value>在属性表中显示结果</value>
+  </data>
+  <data name="AutoPinResults" xml:space="preserve">
+    <value>在地图上保留结果</value>
+  </data>
+  <data name="AutoZoomToResultsLabel" xml:space="preserve">
+    <value>完成查询后缩放至结果</value>
+  </data>
+  <data name="BuildQueryExpressionsLabel" xml:space="preserve">
+    <value>构建查询</value>
+  </data>
+  <data name="CancelLabel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="CannotExecuteCommand" xml:space="preserve">
+    <value>无法执行命令</value>
+  </data>
+  <data name="ClickConnect" xml:space="preserve">
+    <value>单击连接</value>
+  </data>
+  <data name="ClickNext" xml:space="preserve">
+    <value>单击“下一步”以继续</value>
+  </data>
+  <data name="ConfigurationLabel" xml:space="preserve">
+    <value>查询工具配置</value>
+  </data>
+  <data name="ConfigureDialogHeading" xml:space="preserve">
+    <value>配置查询对话框的外观</value>
+  </data>
+  <data name="ConfigureResultLabel" xml:space="preserve">
+    <value>指定查询结果设置</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>连接</value>
+  </data>
+  <data name="ConnectCompleted" xml:space="preserve">
+    <value>已成功连接到“{0}”。</value>
+  </data>
+  <data name="ConnectFailed" xml:space="preserve">
+    <value>连接失败。</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>正在连接...</value>
+  </data>
+  <data name="DataTypeMismatch" xml:space="preserve">
+    <value>值“{0}”无法转换为数据类型“{1}”。</value>
+  </data>
+  <data name="DefaultValueLabel" xml:space="preserve">
+    <value>默认值</value>
+  </data>
+  <data name="DeleteExpression" xml:space="preserve">
+    <value>删除此表达式</value>
+  </data>
+  <data name="DuplicateError" xml:space="preserve">
+    <value>列表不能包含重复的条目</value>
+  </data>
+  <data name="EditLabel" xml:space="preserve">
+    <value>编辑此表达式</value>
+  </data>
+  <data name="EmptyEntryError" xml:space="preserve">
+    <value>此参数不支持空值</value>
+  </data>
+  <data name="EnterServiceUrl" xml:space="preserve">
+    <value>输入 ArcGIS Server 地图或要素服务的 URL。</value>
+  </data>
+  <data name="EnterValue" xml:space="preserve">
+    <value>输入一个值</value>
+  </data>
+  <data name="EqualityCheckFailsOnType" xml:space="preserve">
+    <value>无法比较值“{0}”({1})与“{2}”({3})是否相等，因为它们的类型不匹配。</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>详细信息:</value>
+  </data>
+  <data name="ExecuteLabel" xml:space="preserve">
+    <value>执行</value>
+  </data>
+  <data name="ExecuteQuery" xml:space="preserve">
+    <value>正在查询...</value>
+  </data>
+  <data name="ExpressionBuilderLabel" xml:space="preserve">
+    <value>查询表达式构建器</value>
+  </data>
+  <data name="ExpressionColumnHeader" xml:space="preserve">
+    <value>查询表达式</value>
+  </data>
+  <data name="ExpressionLabel" xml:space="preserve">
+    <value>表达式标注:</value>
+  </data>
+  <data name="FieldAndOperatorLabel" xml:space="preserve">
+    <value>字段和运算符:</value>
+  </data>
+  <data name="GroupColumnHeader" xml:space="preserve">
+    <value>组 ID</value>
+  </data>
+  <data name="GroupLabel" xml:space="preserve">
+    <value>选择的组</value>
+  </data>
+  <data name="IncludedValues" xml:space="preserve">
+    <value>包含的值</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>标注</value>
+  </data>
+  <data name="LayerInfoMissing" xml:space="preserve">
+    <value>此级别不提供图层元数据。</value>
+  </data>
+  <data name="OkLabel" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="OperatorLabel" xml:space="preserve">
+    <value>运算符</value>
+  </data>
+  <data name="ParameterLabelsAndVisibility" xml:space="preserve">
+    <value>设置每个查询参数的标注和可见性</value>
+  </data>
+  <data name="PinToMapLabel" xml:space="preserve">
+    <value>保留地图上的结果</value>
+  </data>
+  <data name="QueryCategory" xml:space="preserve">
+    <value>查询</value>
+  </data>
+  <data name="QueryDescription" xml:space="preserve">
+    <value>在图层中查找符合指定搜索条件的要素</value>
+  </data>
+  <data name="QueryExpressions" xml:space="preserve">
+    <value>查询表达式</value>
+  </data>
+  <data name="QueryFailed" xml:space="preserve">
+    <value>执行查询失败。</value>
+  </data>
+  <data name="QueryTitleLabel" xml:space="preserve">
+    <value>对话框标题</value>
+  </data>
+  <data name="QueryToolName" xml:space="preserve">
+    <value>查询图层</value>
+  </data>
+  <data name="RemoveLabel" xml:space="preserve">
+    <value>删除所选项</value>
+  </data>
+  <data name="ResultOptionsLabel" xml:space="preserve">
+    <value>其他选项</value>
+  </data>
+  <data name="ResultsFound" xml:space="preserve">
+    <value>找到 {0} 个要素</value>
+  </data>
+  <data name="SampleValues" xml:space="preserve">
+    <value>示例值(检索自图层)</value>
+  </data>
+  <data name="SelectExpression" xml:space="preserve">
+    <value>选择或取消选择此表达式</value>
+  </data>
+  <data name="SelectFromList" xml:space="preserve">
+    <value>从列表中选择值</value>
+  </data>
+  <data name="ServiceUrl" xml:space="preserve">
+    <value>服务 URL</value>
+  </data>
+  <data name="StringExceededMaxLength" xml:space="preserve">
+    <value>“{0}”不能超出 {1} 个字符。</value>
+  </data>
+  <data name="UnableToAccess" xml:space="preserve">
+    <value>无法访问 URL“&lt;{0}&gt;”。</value>
+  </data>
+  <data name="UngroupLabel" xml:space="preserve">
+    <value>取消分组所选项</value>
+  </data>
+  <data name="UriFormatError" xml:space="preserve">
+    <value>URL“&lt;{0}&gt;”包含无效字符。</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>使用代理</value>
+  </data>
+  <data name="UsersTypeValue" xml:space="preserve">
+    <value>输入值</value>
+  </data>
+  <data name="UseServiceRendererLabel" xml:space="preserve">
+    <value>使用服务定义的符号</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>[值]</value>
+  </data>
+  <data name="VisibleLabel" xml:space="preserve">
+    <value>可见</value>
+  </data>
+  <data name="InputMethod" xml:space="preserve">
+    <value>输入方法:</value>
+  </data>
+  <data name="Fields" xml:space="preserve">
+    <value>字段</value>
+  </data>
+  <data name="LabelWatermark" xml:space="preserve">
+    <value>&lt;输入标注&gt;</value>
+  </data>
+  <data name="ResultOptionsDescription" xml:space="preserve">
+    <value>指定结果的外观和行为</value>
+  </data>
+  <data name="SelectField" xml:space="preserve">
+    <value>&lt;选择字段&gt;</value>
+  </data>
+  <data name="SelectFieldsToInclude" xml:space="preserve">
+    <value>选择要在查询结果中包含的数据</value>
+  </data>
+  <data name="AutoEnableDataGridTooltip" xml:space="preserve">
+    <value>当检索到一组结果时，将自动打开属性表</value>
+  </data>
+  <data name="AutoPinResultsTooltip" xml:space="preserve">
+    <value>当关闭查询对话框或执行其他查询时，保留地图中的查询结果</value>
+  </data>
+  <data name="AutoZoomToResultsTooltip" xml:space="preserve">
+    <value>将查询结果添加到地图后，自动缩放至这些结果 </value>
+  </data>
+  <data name="ConfigureQueryLayer" xml:space="preserve">
+    <value>配置要查询的图层</value>
+  </data>
+  <data name="DefineQueryExpressions" xml:space="preserve">
+    <value>定义查询中包含的表达式</value>
+  </data>
+  <data name="SampleServiceUrl" xml:space="preserve">
+    <value>http://server/arcgis/rest/services/service/MapServer/0</value>
+  </data>
+  <data name="ServiceUrlDescription" xml:space="preserve">
+    <value>指定待查询图层的 URL</value>
+  </data>
+  <data name="UseServiceRendererTooltip" xml:space="preserve">
+    <value>使用服务定义的符号系统在地图上显示结果要素。如果未选中，将使用默认符号显示结果中的所有要素</value>
+  </data>
+  <data name="InvalidValue" xml:space="preserve">
+    <value>该字段值无效</value>
+  </data>
+  <data name="ParameterAppearance" xml:space="preserve">
+    <value>参数外观</value>
+  </data>
+</root>

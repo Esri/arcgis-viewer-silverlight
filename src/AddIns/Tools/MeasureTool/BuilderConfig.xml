@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Extension Name="MeasureTool.AddIns" InsertPath="//Extensions">
+    <Assemblies>
+        <Assembly Name="MeasureTool.Addins" />
+        <Assembly Name="Microsoft.CSharp" />
+    </Assemblies>
+</Extension>

@@ -1,0 +1,87 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl x:Class="ESRI.ArcGIS.Mapping.Builder.Controls.ConfigureControlsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Builder"
+    >
+    
+    <UserControl.Resources>
+        <Style x:Key="ItemStyle" TargetType="ListBoxItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Grid>
+                            <HyperlinkButton Content="{Binding Label}" FontSize="12" VerticalAlignment="Center" Margin="5"
+                                             CommandParameter="{Binding}" Foreground="{StaticResource DesignHostBackgroundTextBrush}">
+                                <HyperlinkButton.Command>
+                                    <local:ConfigureControlCommand />
+                                </HyperlinkButton.Command>
+                                <HyperlinkButton.Template>
+                                    <ControlTemplate TargetType="HyperlinkButton">
+                                        <Grid Cursor="{TemplateBinding Cursor}"
+                                            Background="{TemplateBinding Background}">
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualState x:Name="Normal" />
+                                                    <VisualState x:Name="MouseOver">
+                                                        <Storyboard>
+                                                            <ObjectAnimationUsingKeyFrames Duration="0"
+                                                     Storyboard.TargetName="UnderlineTextBlock"
+                                                     Storyboard.TargetProperty="TextDecorations">
+                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Underline" />
+                                                            </ObjectAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                    <VisualState x:Name="Pressed">
+                                                        <Storyboard>
+                                                            <ObjectAnimationUsingKeyFrames Duration="0"
+                                                     Storyboard.TargetName="UnderlineTextBlock"
+                                                     Storyboard.TargetProperty="TextDecorations">
+                                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Underline" />
+                                                            </ObjectAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                            <TextBlock x:Name="UnderlineTextBlock"
+                                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                 Margin="{TemplateBinding Padding}"
+                                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                 Text="{TemplateBinding Content}"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </HyperlinkButton.Template>
+                            </HyperlinkButton>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ListBox Name="ControlList" Margin="5" Background="Transparent"  MinWidth="220"
+                 ItemsSource="{Binding ConfigurableItems}" BorderThickness="0" 
+                 SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}" ItemContainerStyle="{StaticResource ItemStyle}">
+        </ListBox>
+        
+        <Button Content="{Binding ConverterParameter=Close, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+            Grid.Row="1"
+            HorizontalAlignment="Right" Margin="0,0,10,10" Padding="10,5,10,5" Command="{Binding Close}"
+            Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+            Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"/>
+    </Grid>
+</UserControl>

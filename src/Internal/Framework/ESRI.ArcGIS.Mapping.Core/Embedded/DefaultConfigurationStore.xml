@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ConfigurationStore xmlns="http://schemas.datacontract.org/2004/07/ESRI.ArcGIS.Mapping.Core">
+  <BaseMaps>
+    <BaseMapInfo>
+      <DisplayName>Streets</DisplayName>
+      <Name>Streets</Name>
+      <ThumbnailImage>Images/basemaps/agol_streets.png</ThumbnailImage>
+      <Url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer</Url>
+      <BaseMapType>ArcGISServer</BaseMapType>
+    </BaseMapInfo>
+    <BaseMapInfo>
+      <DisplayName>Topographic</DisplayName>
+      <Name>Topo</Name>
+      <ThumbnailImage>Images/basemaps/agol_topo.png</ThumbnailImage>
+      <Url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer</Url>
+      <BaseMapType>ArcGISServer</BaseMapType>
+    </BaseMapInfo>
+    <BaseMapInfo>
+      <DisplayName>Imagery</DisplayName>
+      <Name>Imagery</Name>
+      <ThumbnailImage>Images/basemaps/agol_imagery.png</ThumbnailImage>
+      <Url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer</Url>
+      <BaseMapType>ArcGISServer</BaseMapType>
+    </BaseMapInfo>
+    <BaseMapInfo>
+      <DisplayName>USA Topo Maps</DisplayName>
+      <Name>USA Topo Maps</Name>
+      <ThumbnailImage>Images/basemaps/agol_usa.png</ThumbnailImage>
+      <Url>http://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer</Url>
+      <BaseMapType>ArcGISServer</BaseMapType>
+    </BaseMapInfo>
+    <BaseMapInfo>
+      <DisplayName>Ocean</DisplayName>
+      <Name>Ocean</Name>
+      <ThumbnailImage>Images/basemaps/agol_ocean.png</ThumbnailImage>
+      <Url>http://services.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer</Url>
+      <BaseMapType>ArcGISServer</BaseMapType>
+    </BaseMapInfo>
+    <BaseMapInfo>
+      <DisplayName>Light Gray Canvas</DisplayName>
+      <Name>Light Gray Canvas</Name>
+      <ThumbnailImage>Images/basemaps/agol_gray_canvas.png</ThumbnailImage>
+      <Url>http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer</Url>
+      <BaseMapType>ArcGISServer</BaseMapType>
+    </BaseMapInfo>
+    <BaseMapInfo>
+      <DisplayName>Terrain</DisplayName>
+      <Name>Terrain</Name>
+      <ThumbnailImage>Images/basemaps/agol_terrain.png</ThumbnailImage>
+      <Url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer</Url>
+      <BaseMapType>ArcGISServer</BaseMapType>
+    </BaseMapInfo>
+    <BaseMapInfo>
+      <DisplayName>Shaded Relief</DisplayName>
+      <Name>Shaded Relief</Name>
+      <ThumbnailImage>Images/basemaps/agol_world_relief.png</ThumbnailImage>
+      <Url>http://services.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer</Url>
+      <BaseMapType>ArcGISServer</BaseMapType>
+    </BaseMapInfo>
+    <BaseMapInfo>
+      <DisplayName>OpenStreetMap</DisplayName>
+      <Name>OpenStreetMap</Name>
+      <ThumbnailImage>Images/basemaps/osm.png</ThumbnailImage>
+      <Url>http://OpenStreetMap.org</Url>
+      <BaseMapType>OpenStreetMap</BaseMapType>
+    </BaseMapInfo>
+    <BaseMapInfo>
+      <DisplayName>Bing Maps Roads</DisplayName>
+      <Name>Roads</Name>
+      <ThumbnailImage>Images/basemaps/bingmaps_roads.png</ThumbnailImage>
+      <Url>http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc</Url>
+      <BaseMapType>BingMaps</BaseMapType>
+    </BaseMapInfo>
+    <BaseMapInfo>
+      <DisplayName>Bing Maps Aerial</DisplayName>
+      <Name>Aerial</Name>
+      <ThumbnailImage>Images/basemaps/bingmaps_aerial.png</ThumbnailImage>
+      <Url>http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc</Url>
+      <BaseMapType>BingMaps</BaseMapType>
+    </BaseMapInfo>
+    <BaseMapInfo>
+      <DisplayName>Bing Maps Hybrid</DisplayName>
+      <Name>Hybrid</Name>
+      <ThumbnailImage>Images/basemaps/bingmaps_hybrid.png</ThumbnailImage>
+      <Url>http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc</Url>
+      <BaseMapType>BingMaps</BaseMapType>
+    </BaseMapInfo>
+  </BaseMaps>
+  <GeometryServices>
+    <GeometryServiceInfo>
+      <Url>http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer</Url>
+    </GeometryServiceInfo>
+  </GeometryServices>
+  <BingMapsAppId></BingMapsAppId>
+</ConfigurationStore>

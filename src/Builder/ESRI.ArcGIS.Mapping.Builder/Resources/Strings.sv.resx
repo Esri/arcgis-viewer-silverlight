@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Lägg till</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Lägg till beteendefunktion</value>
+  </data>
+  <data name="AddBehaviorDescription" xml:space="preserve">
+    <value>Lägg till ett beteende i visningsprogrammet</value>
+  </data>
+  <data name="AddGeoprocessing" xml:space="preserve">
+    <value>Lägg till Geobearbetning</value>
+  </data>
+  <data name="AddGeoprocessingDescription" xml:space="preserve">
+    <value>Lägg till ett geobearbetningsverktyg i visningsprogrammet så att användarna kan använda en ArcGIS Server-geobearbetningstjänst.</value>
+  </data>
+  <data name="AddGeoRSSDescription" xml:space="preserve">
+    <value>Lägg till en geoaktiverad RSS-feed till kartan</value>
+  </data>
+  <data name="AddGP" xml:space="preserve">
+    <value>Lägg till GP</value>
+  </data>
+  <data name="AddTool" xml:space="preserve">
+    <value>Lägg till verktyg</value>
+  </data>
+  <data name="AddToolDescription" xml:space="preserve">
+    <value>Lägg till ett verktyg i visningsprogrammet</value>
+  </data>
+  <data name="ApplicationBuilderSettings" xml:space="preserve">
+    <value>Inställningar för Application Builder</value>
+  </data>
+  <data name="ApplicationBuilderSettingsDescription" xml:space="preserve">
+    <value>Visa och ändra inställningarna för Application Builder, inklusive hantering av tillägg och baskartor.</value>
+  </data>
+  <data name="AttributeTable" xml:space="preserve">
+    <value>Attributtabell</value>
+  </data>
+  <data name="BasemapGalleryDescription" xml:space="preserve">
+    <value>Välj ett annat baslager för kartan</value>
+  </data>
+  <data name="Behaviors" xml:space="preserve">
+    <value>Beteendefunktioner</value>
+  </data>
+  <data name="Branding" xml:space="preserve">
+    <value>Anpassning</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Ändra</value>
+  </data>
+  <data name="ChangeLayout" xml:space="preserve">
+    <value>Ändra layout</value>
+  </data>
+  <data name="ChangeLayoutDescription" xml:space="preserve">
+    <value>Välj en ny layout för visningsprogrammet</value>
+  </data>
+  <data name="ChangeLogo" xml:space="preserve">
+    <value>Ändra logotyp</value>
+  </data>
+  <data name="ChangeLogoDescription" xml:space="preserve">
+    <value>Välj en logotyp för visningsprogrammet</value>
+  </data>
+  <data name="ChangeTitleAndLinks" xml:space="preserve">
+    <value>Ändra titel och länkar</value>
+  </data>
+  <data name="ChangeTitleAndLinksDescription" xml:space="preserve">
+    <value>Redigera visningsprogrammets titel och hyperlänkar</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Konfigurera</value>
+  </data>
+  <data name="ConfigureTheme" xml:space="preserve">
+    <value>Konfigurera tema</value>
+  </data>
+  <data name="ConfigureThemeDescription" xml:space="preserve">
+    <value>Redigera temafärger i visningsprogrammet</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Helskärm</value>
+  </data>
+  <data name="FullScreenDescription" xml:space="preserve">
+    <value>Visa Application Builder i helskärmsläge</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Hem</value>
+  </data>
+  <data name="HomeDescription" xml:space="preserve">
+    <value>Återgå till startsidan i Application Builder</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Logotyp</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Hantera</value>
+  </data>
+  <data name="ManageBehaviors" xml:space="preserve">
+    <value>Hantera beteendefunktioner</value>
+  </data>
+  <data name="ManageBehaviorsDescription" xml:space="preserve">
+    <value>Aktivera, inaktivera, ordna om, lägg till eller ta bort visningsprogrammets beteendefunktioner</value>
+  </data>
+  <data name="ManageToolbars" xml:space="preserve">
+    <value>Hantera verktygsfält</value>
+  </data>
+  <data name="ManageToolbarsDescription" xml:space="preserve">
+    <value>Lägg till, ta bort, flytta och konfigurera verktyg i visningsprogrammets verktygsfält</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Distribuera</value>
+  </data>
+  <data name="PublishDescription" xml:space="preserve">
+    <value>Distribuera det aktuella visningsprogrammet till en ny webbplats</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Återställ</value>
+  </data>
+  <data name="ResetTheme" xml:space="preserve">
+    <value>Återställ tema</value>
+  </data>
+  <data name="ResetThemeDescription" xml:space="preserve">
+    <value>Återställ standardvärden för temafärger i visningsprogrammet</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Spara</value>
+  </data>
+  <data name="SaveDescription" xml:space="preserve">
+    <value>Spara det aktuella visningsprogrammet</value>
+  </data>
+  <data name="SelectTheTool" xml:space="preserve">
+    <value>Välj verktyget...</value>
+  </data>
+  <data name="TitleAndLinks" xml:space="preserve">
+    <value>Titel och länkar</value>
+  </data>
+  <data name="ToggleBrowseDescription" xml:space="preserve">
+    <value>Visa eller dölj bläddringspanelen, så att du kan visa innehållet på en ArcGIS Server- eller Spatial Data Service-ändpunkt och addera lager till kartan.</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>Visa eller dölj en lista med kartinnehåll</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>Visa eller dölj sökpanelen, så att du kan söka efter platser, söka efter innehåll på ArcGIS.com, eller söka på webben efter ArcGIS Server-tjänster.</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>Visa eller dölj attributtabellen för det valda lagret</value>
+  </data>
+  <data name="ToggleToolbar" xml:space="preserve">
+    <value>Växla verktygsfält</value>
+  </data>
+  <data name="ToggleToolbarDescription" xml:space="preserve">
+    <value>Visa eller dölj verktygsfältet i Application Builder</value>
+  </data>
+  <data name="Toolbar" xml:space="preserve">
+    <value>Verktygsfält</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Verktyg</value>
+  </data>
+  <data name="Accent" xml:space="preserve">
+    <value>Accent</value>
+  </data>
+  <data name="AccentText" xml:space="preserve">
+    <value>Accenttext</value>
+  </data>
+  <data name="AddNewGroupOrControl" xml:space="preserve">
+    <value>Lägg till en ny grupp eller kontroll</value>
+  </data>
+  <data name="AddOns" xml:space="preserve">
+    <value>Tillägg</value>
+  </data>
+  <data name="ApplicationProperties" xml:space="preserve">
+    <value>Programegenskaper</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Använd</value>
+  </data>
+  <data name="ArcGISApplicationBuilder" xml:space="preserve">
+    <value>Application Builder - {0}</value>
+  </data>
+  <data name="ArcGISViewerForMicrosoftSilverlight" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Bakgrund</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Bakgrundstext</value>
+  </data>
+  <data name="BaseMaps" xml:space="preserve">
+    <value>Baskartor</value>
+  </data>
+  <data name="BrowseForFile" xml:space="preserve">
+    <value>Bläddra efter fil</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>Bläddra efter resurs</value>
+  </data>
+  <data name="BuilderTutorial" xml:space="preserve">
+    <value>Självstudier om Application Builder</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="ChangesSavedSuccessfully" xml:space="preserve">
+    <value>Ändringarna har sparats.</value>
+  </data>
+  <data name="ChooseExistingProject" xml:space="preserve">
+    <value>Välj ett befintligt projekt</value>
+  </data>
+  <data name="ChooseLayout" xml:space="preserve">
+    <value>Välj layout</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Stäng</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>Konfiguration</value>
+  </data>
+  <data name="ConfigureExtensions" xml:space="preserve">
+    <value>Konfigurera tillägg</value>
+  </data>
+  <data name="ConfigureOptionsThatApplyToCurrentUser" xml:space="preserve">
+    <value>Konfigurera alternativ som gäller för den aktuella användaren</value>
+  </data>
+  <data name="ConfigureSelectedGroupOrControl" xml:space="preserve">
+    <value>Konfigurera den valda gruppen eller kontrollen</value>
+  </data>
+  <data name="ConfigureSetOfBaseMapsUsedByBuilder" xml:space="preserve">
+    <value>Konfigurera uppsättningen med baskartor som är tillgängliga i Application Builder</value>
+  </data>
+  <data name="CopySite" xml:space="preserve">
+    <value>Kopiera plats</value>
+  </data>
+  <data name="CreateApplicationUsingDefaultMap" xml:space="preserve">
+    <value>Ny karta</value>
+  </data>
+  <data name="CreateApplicationUsingWebMapFromArcGISCom" xml:space="preserve">
+    <value>Webbkartor</value>
+  </data>
+  <data name="CreateNewApplication" xml:space="preserve">
+    <value>Skapa ett nytt program</value>
+  </data>
+  <data name="CurrentToolbars" xml:space="preserve">
+    <value>Aktuella verktygsfält</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="DeleteSite" xml:space="preserve">
+    <value>Ta bort plats</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Beskrivning:</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Ned</value>
+  </data>
+  <data name="EditSelectedGroupOrControl" xml:space="preserve">
+    <value>Redigera den valda gruppen eller kontrollen</value>
+  </data>
+  <data name="EditSite" xml:space="preserve">
+    <value>Redigera plats</value>
+  </data>
+  <data name="ExceptionUnhandledError" xml:space="preserve">
+    <value>Fel som inte hanterats {0}</value>
+  </data>
+  <data name="ExtensionNotifications" xml:space="preserve">
+    <value>Tilläggsmeddelanden</value>
+  </data>
+  <data name="Extensions" xml:space="preserve">
+    <value>Tillägg</value>
+  </data>
+  <data name="HelpLinks" xml:space="preserve">
+    <value>Länkar</value>
+  </data>
+  <data name="IconPrompt" xml:space="preserve">
+    <value>Ikon:</value>
+  </data>
+  <data name="LabelPrompt" xml:space="preserve">
+    <value>Etikett:</value>
+  </data>
+  <data name="LoadingSites" xml:space="preserve">
+    <value>Läser in platser...</value>
+  </data>
+  <data name="ManageExtensions" xml:space="preserve">
+    <value>Hantera tillägg</value>
+  </data>
+  <data name="MoreSiteOptions" xml:space="preserve">
+    <value>Fler platsalternativ</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Flytta</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Flytta ned</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Flytta upp</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Namn</value>
+  </data>
+  <data name="NamePrompt" xml:space="preserve">
+    <value>Namn:</value>
+  </data>
+  <data name="NewMap" xml:space="preserve">
+    <value>Ny karta</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Öppna</value>
+  </data>
+  <data name="PersonalSettings" xml:space="preserve">
+    <value>Personliga inställningar</value>
+  </data>
+  <data name="PublishApplication" xml:space="preserve">
+    <value>Distribuera program</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Ta bort</value>
+  </data>
+  <data name="RemoveSelectedGroupOrControl" xml:space="preserve">
+    <value>Ta bort den valda gruppen eller kontrollen</value>
+  </data>
+  <data name="ReturnToPreviousScreen" xml:space="preserve">
+    <value>Återgå till föregående skärm</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>Val</value>
+  </data>
+  <data name="SelectionOutline" xml:space="preserve">
+    <value>Markeringskontur</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Inställningar</value>
+  </data>
+  <data name="StartWithExistingMap" xml:space="preserve">
+    <value>Börja med befintlig</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Lyckades</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Konfigurera tema</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Temafärger</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Titel:</value>
+  </data>
+  <data name="ToolbarPrompt" xml:space="preserve">
+    <value>Verktygsfält:</value>
+  </data>
+  <data name="TooltipPrompt" xml:space="preserve">
+    <value>Verktygstips:</value>
+  </data>
+  <data name="TypePrompt" xml:space="preserve">
+    <value>Typ:</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Upp</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Överför</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Välkommen</value>
+  </data>
+  <data name="WelcomeMsgParagraph1" xml:space="preserve">
+    <value>Application Builder i ArcGIS är ett webbprogram för att skapa och redigera visningsprogram, interaktivt och i realtid. Application Builder och visningsprogram skapas med ArcGIS API for Silverlight.</value>
+  </data>
+  <data name="WelcomeMsgParagraph2" xml:space="preserve">
+    <value>När du vill skapa ett visningsprogram klickar du på Skapa ett nytt program nedan. Visningsprogrammet du konfigurerar visas under verktygsfältet i Application Builder. Du kan konfigurera visningsprogrammets baskarta, lager, verktyg, titel, logotyp, färger med mera, med hjälp av verktygen i verktygsfältet. När du har konfigurerat visningsprogrammet klickar du på Distribuera och distribuerar det till en ny webbplats.</value>
+  </data>
+  <data name="AvailableTools" xml:space="preserve">
+    <value>Tillgängliga verktyg</value>
+  </data>
+  <data name="BrowseForImage" xml:space="preserve">
+    <value>Bläddra efter bild</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Redigera</value>
+  </data>
+  <data name="ErrorUnableToRetrieveDetailsForExtension" xml:space="preserve">
+    <value>Det går inte att hämta information om tilläggspaket.</value>
+  </data>
+  <data name="ExtensionContainsTheFollowingAddOns" xml:space="preserve">
+    <value>Tilläggspaketet {0} innehåller följande tillägg:</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteButton" xml:space="preserve">
+    <value>Vill du ta bort den här knappen?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteGroup" xml:space="preserve">
+    <value>Vill du ta bort den här gruppen?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteWebSite" xml:space="preserve">
+    <value>Vill du ta bort den här webbplatsen?</value>
+  </data>
+  <data name="AssemblyAlreadyIncludeInTheApplication" xml:space="preserve">
+    <value>{1}Sammansättningen {0} ingår redan i programmets Runtime.{1}Överväg att optimera storlek och nerladdningshastighet för tillägget genom att markera Assembly Reference med CopyLocal=false för att exkludera den från XAP-paketet</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Bekräfta borttagning</value>
+  </data>
+  <data name="DeletingExtensionWillMakeItUnavailableForFurtherUse" xml:space="preserve">
+    <value>Om du tar bort ett tillägg kan det inte längre användas i nya program och vid redigering av befintliga program. {0}Vill du ta bort?</value>
+  </data>
+  <data name="DeletingSite" xml:space="preserve">
+    <value>Tar bort plats...</value>
+  </data>
+  <data name="EditTool" xml:space="preserve">
+    <value>Redigeringsverktyg</value>
+  </data>
+  <data name="EnterNameForApplication" xml:space="preserve">
+    <value>Ange ett namn för programmet</value>
+  </data>
+  <data name="ErrorDetailsNotKnown" xml:space="preserve">
+    <value>Okänd felinformation</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>Det uppstod ett fel</value>
+  </data>
+  <data name="ErrorRetrievingMapDocumentForSite" xml:space="preserve">
+    <value>Det gick inte att hämta kartdokument för platsen</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Fel</value>
+  </data>
+  <data name="ExtensionAlreadyExists" xml:space="preserve">
+    <value>Tillägget finns redan</value>
+  </data>
+  <data name="ExtensionDetails" xml:space="preserve">
+    <value>Information om tillägg: {0}</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsErrors" xml:space="preserve">
+    <value>Tilläggspaketet som du försöker distribuera innehåller fel. Dessa fel måste åtgärdas innan du fortsätter.</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsWarnings" xml:space="preserve">
+    <value>Tilläggspaketet som du försöker distribuera innehåller varningar. Granska dem innan du fortsätter.</value>
+  </data>
+  <data name="ExtensionWithSameNameAlreadyExist" xml:space="preserve">
+    <value>Det finns redan ett tilläggspaket med samma namn. Vill du skriva över det?</value>
+  </data>
+  <data name="FailedToCreateAndPublishApplication" xml:space="preserve">
+    <value>Det gick inte att skapa och distribuera programmet</value>
+  </data>
+  <data name="FollowingErrorsFound" xml:space="preserve">
+    <value>Följande fel påträffades.</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>Ogiltigt namn</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Öppna en webbkarta från ArcGIS.com</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Vänta...</value>
+  </data>
+  <data name="TutorialModeDisable" xml:space="preserve">
+    <value>Inaktivera Komma igång</value>
+  </data>
+  <data name="TutorialModeEnable" xml:space="preserve">
+    <value>Aktivera Komma igång</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Om Application Builder</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Visa dialogrutan Om för Application Builder</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Om</value>
+  </data>
+  <data name="GettingStartedAddGPDescription" xml:space="preserve">
+    <value>Utnyttja avståndsanalysen i geobearbetningstjänsterna i ArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddGPTitle" xml:space="preserve">
+    <value>Lägg till geobearbetningstjänster</value>
+  </data>
+  <data name="GettingStartedAddLayersDescription" xml:space="preserve">
+    <value>Lägg till data från ArcGIS Online och ArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddLayersTitle" xml:space="preserve">
+    <value>Lägg till lager som används</value>
+  </data>
+  <data name="GettingStartedAddToolsDescription" xml:space="preserve">
+    <value>Konfigurera programmets funktioner</value>
+  </data>
+  <data name="GettingStartedAddToolsTitle" xml:space="preserve">
+    <value>Lägg till verktyg</value>
+  </data>
+  <data name="GettingStartedBasemapDescription" xml:space="preserve">
+    <value>Välj en baskarta från ArcGIS Online, Bing Maps eller OpenStreetMap.</value>
+  </data>
+  <data name="GettingStartedBasemapTitle" xml:space="preserve">
+    <value>Välj en baskarta</value>
+  </data>
+  <data name="GettingStartedChooseLogoDescription" xml:space="preserve">
+    <value>Anpassa visningsprogrammet med organisationens logotyp.</value>
+  </data>
+  <data name="GettingStartedChooseLogoTitle" xml:space="preserve">
+    <value>Välj en logotyp</value>
+  </data>
+  <data name="GettingStartedSelectLayoutDescription" xml:space="preserve">
+    <value>Definiera utseende och känsla i visningsprogrammet.</value>
+  </data>
+  <data name="GettingStartedSelectLayoutTitle" xml:space="preserve">
+    <value>Välj en layout</value>
+  </data>
+  <data name="GettingStartedSetTitleDescription" xml:space="preserve">
+    <value>Ange programmets titel.</value>
+  </data>
+  <data name="GettingStartedSetTitleTitle" xml:space="preserve">
+    <value>Ange titeln</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailable" xml:space="preserve">
+    <value>Följande tillägg är tillgängliga. Klicka</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableHere" xml:space="preserve">
+    <value>här</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableToUploadANewOne" xml:space="preserve">
+    <value>om du vill överföra ett nytt från disken.</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlDownToolbarTree" xml:space="preserve">
+    <value>Flytta ned den valda gruppen eller kontrollen i trädet Verktygsfält</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlUpToolbarTree" xml:space="preserve">
+    <value>Flytta upp den valda gruppen eller kontrollen i trädet Verktygsfält</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Bakåt</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Nästa</value>
+  </data>
+  <data name="SelectAToolToAdd" xml:space="preserve">
+    <value>Välj ett verktyg att lägga till:</value>
+  </data>
+  <data name="ChooseMap" xml:space="preserve">
+    <value>Application Builder - välj en karta</value>
+  </data>
+  <data name="AddInPackagesContain" xml:space="preserve">
+    <value>Tilläggspaket innehåller tillägg: verktyg, beteendefunktioner och kontroller som används i layouter</value>
+  </data>
+  <data name="AvailableAddInPackages" xml:space="preserve">
+    <value>Tillgängliga tilläggspaket:</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>Knapp</value>
+  </data>
+  <data name="ConfigureElementsRelatedToMap" xml:space="preserve">
+    <value>Konfigurera element relaterade till kartan</value>
+  </data>
+  <data name="ConfigureToolsOfYourApplication" xml:space="preserve">
+    <value>Konfigurera verktygen för ditt program</value>
+  </data>
+  <data name="DisableGettingStarted" xml:space="preserve">
+    <value>Inaktivera Komma igång</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>Komma igång</value>
+  </data>
+  <data name="ShowMe" xml:space="preserve">
+    <value>Visa mig</value>
+  </data>
+  <data name="SpecifyLayoutOfYourApplication" xml:space="preserve">
+    <value>Anpassa programmets layout</value>
+  </data>
+  <data name="UploadAddInPackages" xml:space="preserve">
+    <value>Överför tilläggspaket</value>
+  </data>
+  <data name="UploadAddIns" xml:space="preserve">
+    <value>Överför tillägg</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Karta</value>
+  </data>
+  <data name="AreYouSureYouWantToLeavePageUnsavedChangesLost" xml:space="preserve">
+    <value>Vill du lämna den här sidan? Ändringar som inte har sparats kan gå förlorade.</value>
+  </data>
+  <data name="ConfirmPageChange" xml:space="preserve">
+    <value>Bekräfta sidändringen</value>
+  </data>
+  <data name="SpecifyToolProperties" xml:space="preserve">
+    <value>Ange verktygets egenskaper</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>Spara som...</value>
+  </data>
+  <data name="AddGroupButton" xml:space="preserve">
+    <value>Lägg till grupp</value>
+  </data>
+  <data name="CannotAddElement" xml:space="preserve">
+    <value>Det går inte att lägga till element</value>
+  </data>
+  <data name="CannotAddGroupButton" xml:space="preserve">
+    <value>Det går inte att lägga till grupp</value>
+  </data>
+  <data name="CannotAddTool" xml:space="preserve">
+    <value>Det går inte att lägga till verktyg</value>
+  </data>
+  <data name="ChooseAvailableTool" xml:space="preserve">
+    <value>Du måste välja ett enskilt verktyg från trädet Tillgängliga verktyg.</value>
+  </data>
+  <data name="DefaultGroupButtonDescription" xml:space="preserve">
+    <value>Ny grupp</value>
+  </data>
+  <data name="DefaultGroupButtonLabel" xml:space="preserve">
+    <value>Ny grupp</value>
+  </data>
+  <data name="RootLevelToAddGroup" xml:space="preserve">
+    <value>Du måste välja ett verktygsfält eller ett verktygsfälts rotnod, för att lägga till en grupp.</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>&lt;Avgränsare&gt;</value>
+  </data>
+  <data name="MoveIntoGroup" xml:space="preserve">
+    <value>Flytta till gruppen {0}</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>Redigera grupp</value>
+  </data>
+  <data name="ConfigureControls" xml:space="preserve">
+    <value>Konfigurera kontroller</value>
+  </data>
+  <data name="ConfigureControlsDescription" xml:space="preserve">
+    <value>Redigera konfigurationen av visningsprogrammets kontroller</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Läge</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Cachestorlek:</value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>OnDemand</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>SnapShot</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Cachestorlek för geoobjektlager i OnDemand-läge</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Anger cachestorlek för geoobjektlager i  OnDemand-läge (standard = 1000)</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>Geoobjektlager OnDemand-läge</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Väljer frågeläge för lagret som ska vara OnDemand (endast geoobjektlager)</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>Geoobjektlager SnapShot-läge</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Väljer frågeläge för lagret som ska vara SnapShot (endast geoobjektlager)</value>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>Lägg till länk</value>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Ta bort länk</value>
+  </data>
+  <data name="ConfigureControlsBanner" xml:space="preserve">
+    <value>Kontroller som ska konfigureras</value>
+  </data>
+  <data name="Controls" xml:space="preserve">
+    <value>Kontroller</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Objekthämtning</value>
+  </data>
+  <data name="AddGroupDotDot" xml:space="preserve">
+    <value>Lägg till grupp...</value>
+  </data>
+  <data name="AddSeparator" xml:space="preserve">
+    <value>Lägg till Avgränsare</value>
+  </data>
+  <data name="ApplicationBuilderDashSettings" xml:space="preserve">
+    <value>Application Builder - Inställningar</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Bläddra</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Innehåll</value>
+  </data>
+  <data name="CurrentViewerApplications" xml:space="preserve">
+    <value>Aktuella visningsprogram</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Kartinnehåll</value>
+  </data>
+  <data name="NoFilesFound" xml:space="preserve">
+    <value>Hittade inga filer.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Sök</value>
+  </data>
+  <data name="ViewerProject" xml:space="preserve">
+    <value>Visningsprogramprojekt</value>
+  </data>
+  <data name="WebMap" xml:space="preserve">
+    <value>Webbkarta</value>
+  </data>
+  <data name="AddLayerFailed" xml:space="preserve">
+    <value>Lägg till lager misslyckades</value>
+  </data>
+  <data name="AddLayerFailedExplanation" xml:space="preserve">
+    <value>Det gick inte att lägga till lager. Felorsak: {0}.</value>
+  </data>
+  <data name="AddLayerFailedNoDetails" xml:space="preserve">
+    <value>[Det gick inte att extrahera någon information]</value>
+  </data>
+  <data name="ConfigureLayers" xml:space="preserve">
+    <value>Konfigurera lager</value>
+  </data>
+  <data name="ConfigureLayersDescription" xml:space="preserve">
+    <value>Ändra utseende och beteende hos lager på kartan</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Lager</value>
+  </data>
+  <data name="SiteCopyFailed" xml:space="preserve">
+    <value>Webbplatskopieringen misslyckades</value>
+  </data>
+  <data name="SiteDeploymentFailed" xml:space="preserve">
+    <value>Webbplatsdistributionen misslyckades</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Flytta upp</value>
+  </data>
+  <data name="BringsCurrentlySelectedLayerForward" xml:space="preserve">
+    <value>Flyttar upp lagrets visningsordning ett steg</value>
+  </data>
+  <data name="ConfigureCurrentlySelectedLayer" xml:space="preserve">
+    <value>Konfigurera det valda lagret</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Konfigurera proxyn som används för att få åtkomst till säkra tjänster för det här programmet</value>
+  </data>
+  <data name="ConfigureSecureServices" xml:space="preserve">
+    <value>Konfigurera säkra tjänster</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>Gå till</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Uppdatera</value>
+  </data>
+  <data name="RefreshCurrentlySelectedLayer" xml:space="preserve">
+    <value>Uppdatera det valda lagret</value>
+  </data>
+  <data name="RemovesCurrentlySelectedLayer" xml:space="preserve">
+    <value>Tar bort det valda lagret</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Byt namn</value>
+  </data>
+  <data name="RenameCurrentlySelectedLayer" xml:space="preserve">
+    <value>Byt namn på det valda lagret</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Flytta ned</value>
+  </data>
+  <data name="SendsCurrentlySelectedLayerBackward" xml:space="preserve">
+    <value>Flyttar ned lagrets visningsordning ett steg</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Information om tjänsten</value>
+  </data>
+  <data name="ViewInformationAboutSelectedLayerDatasource" xml:space="preserve">
+    <value>Visa information om det valda lagrets datakälla</value>
+  </data>
+  <data name="ZoomToCurrentlySelectedLayer" xml:space="preserve">
+    <value>Zooma till lagret som för närvarande är valt</value>
+  </data>
+  <data name="CannotAddDropdownCommandsToAGroup" xml:space="preserve">
+    <value>Det går inte att lägga till rullgardinskommandon i en grupp.</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Konfigurera baskartor</value>
+  </data>
+  <data name="FlashAnimationIsNotDefinedOnTargetBuilderToolbarButton" xml:space="preserve">
+    <value>Flash-animering är inte definierad för målknappen i verktygsfältet i Builder</value>
+  </data>
+  <data name="ManageAddInsToolsBehaviorsControls" xml:space="preserve">
+    <value>Hantera tillägg: verktyg, beteendefunktioner, kontroller</value>
+  </data>
+  <data name="ManagePersonalSettings" xml:space="preserve">
+    <value>Hantera personliga inställningar</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Använd säkra tjänster</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Lägg till säkra tjänster</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Konfigurera proxy</value>
+  </data>
+  <data name="NewApplication" xml:space="preserve">
+    <value>Application Builder - Nytt program (ej distribuerat)</value>
+  </data>
+  <data name="NotDeployed" xml:space="preserve">
+    <value>(inte distribuerat)</value>
+  </data>
+  <data name="DeployingApplication" xml:space="preserve">
+    <value>Distribuerar program...</value>
+  </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>Programinställningar</value>
+  </data>
+  <data name="ArcGISOnlineSecure" xml:space="preserve">
+    <value>ArcGIS Online-säkerhet:</value>
+  </data>
+  <data name="ArcGISOnlineSharing" xml:space="preserve">
+    <value>ArcGIS Online-delning:</value>
+  </data>
+  <data name="BingAppId" xml:space="preserve">
+    <value>Bing AppID:</value>
+  </data>
+  <data name="CurrentApplicationSettings" xml:space="preserve">
+    <value>Aktuella programinställningar</value>
+  </data>
+  <data name="DefaultSettings" xml:space="preserve">
+    <value>Standardinställningar</value>
+  </data>
+  <data name="GeometryService" xml:space="preserve">
+    <value>Geometritjänst:</value>
+  </data>
+  <data name="ManageApplicationSettings" xml:space="preserve">
+    <value>Hantera programinställningar</value>
+  </data>
+  <data name="BasedOnWebMap" xml:space="preserve">
+    <value>Baserat på webbkarta:</value>
+  </data>
+  <data name="LinkedToWebMap" xml:space="preserve">
+    <value>Länkat till webbkarta:</value>
+  </data>
+  <data name="LinkToWebMap" xml:space="preserve">
+    <value>Länk</value>
+  </data>
+  <data name="MapConfigurationUnavailable" xml:space="preserve">
+    <value>Kartkonfigurationen för det här programmet är länkat till en webbkarta. Om du vill redigera kartkonfigurationen bryter du länken mellan programmet och webbkartan.</value>
+  </data>
+  <data name="UnlinkFromWebMap" xml:space="preserve">
+    <value>Bryt länk</value>
+  </data>
+  <data name="UnableToDeployApplication" xml:space="preserve">
+    <value>Det går inte att distribuera programmet.</value>
+  </data>
+  <data name="UnableToSaveApplicationChanges" xml:space="preserve">
+    <value>Det går inte att spara programändringarna.</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Proxy:</value>
+  </data>
+  <data name="HideGettingStarted" xml:space="preserve">
+    <value>Dölj Komma igång-hjälpen</value>
+  </data>
+  <data name="ShowGettingStarted" xml:space="preserve">
+    <value>Visa Komma igång-hjälpen</value>
+  </data>
+  <data name="DisplayText" xml:space="preserve">
+    <value>Visa text</value>
+  </data>
+  <data name="UpgradeSite" xml:space="preserve">
+    <value>Uppgradera visningsprogrammet till den aktuella versionen</value>
+  </data>
+  <data name="UpgradingApplication" xml:space="preserve">
+    <value>Uppgraderar programmet...</value>
+  </data>
+  <data name="NewLink" xml:space="preserve">
+    <value>Ny länk</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Beteendefunktion</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>Kontroll</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Lager</value>
+  </data>
+  <data name="Tool" xml:space="preserve">
+    <value>Verktyg</value>
+  </data>
+</root>

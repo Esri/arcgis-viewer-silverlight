@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Geeft het dialoogvenster Info weer</value>
+  </data>
+  <data name="AboutDisplayName" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="AddGeoRssFeedDescription" xml:space="preserve">
+    <value>Voeg een GeoRSS-feed toe aan de kaart</value>
+  </data>
+  <data name="AddGeoRssFeedDisplayName" xml:space="preserve">
+    <value>Voeg GeoRSS toe</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Voeg een heatmap aan de kaart toe</value>
+  </data>
+  <data name="AddHeatMapDisplayName" xml:space="preserve">
+    <value>Voeg heatmap toe</value>
+  </data>
+  <data name="BaseMapGalleryDescription" xml:space="preserve">
+    <value>Kies een basiskaart voor uw kaart</value>
+  </data>
+  <data name="BaseMapGalleryDisplayName" xml:space="preserve">
+    <value>Kies basiskaart</value>
+  </data>
+  <data name="BrowseDescription" xml:space="preserve">
+    <value>Voeg gegevens toe aan de kaart door naar een ArcGIS Server-eindpunt te bladeren </value>
+  </data>
+  <data name="BrowseDisplayName" xml:space="preserve">
+    <value>Bladeren</value>
+  </data>
+  <data name="CategoryApplication" xml:space="preserve">
+    <value>Applicatie</value>
+  </data>
+  <data name="CategoryAttributeTable" xml:space="preserve">
+    <value>Attribuuttabel</value>
+  </data>
+  <data name="CategoryConfigure" xml:space="preserve">
+    <value>Configureren</value>
+  </data>
+  <data name="CategoryEditing" xml:space="preserve">
+    <value>Bewerken</value>
+  </data>
+  <data name="CategoryGeoprocessing" xml:space="preserve">
+    <value>Geoprocessing</value>
+  </data>
+  <data name="CategoryLayer" xml:space="preserve">
+    <value>Laag</value>
+  </data>
+  <data name="CategoryMap" xml:space="preserve">
+    <value>Kaart</value>
+  </data>
+  <data name="CategoryMouseEvents" xml:space="preserve">
+    <value>Muisacties</value>
+  </data>
+  <data name="CategoryPopup" xml:space="preserve">
+    <value>Pop-up</value>
+  </data>
+  <data name="CategorySelection" xml:space="preserve">
+    <value>Selectie</value>
+  </data>
+  <data name="CategorySymbology" xml:space="preserve">
+    <value>Symbologie</value>
+  </data>
+  <data name="CategoryTheme" xml:space="preserve">
+    <value>Thema</value>
+  </data>
+  <data name="ChangeThemeBackgroundDescription" xml:space="preserve">
+    <value>Wijzig de achtergrond voor een thema</value>
+  </data>
+  <data name="ChangeThemeBackgroundDisplayName" xml:space="preserve">
+    <value>Wijzig thema-achtergrond</value>
+  </data>
+  <data name="ClearSelectionDescription" xml:space="preserve">
+    <value>Wist de selectie van de huidige laag</value>
+  </data>
+  <data name="ClearSelectionDisplayName" xml:space="preserve">
+    <value>Wis selectie</value>
+  </data>
+  <data name="ConfigureLayerDescription" xml:space="preserve">
+    <value>Geef de vormgeving en het gedrag van de geselecteerde laag op</value>
+  </data>
+  <data name="ConfigureLayerDisplayName" xml:space="preserve">
+    <value>Configureer laag</value>
+  </data>
+  <data name="ConfigureLayerRendererDescription" xml:space="preserve">
+    <value>Maakt configuratie van de renderer voor de huidige laag mogelijk</value>
+  </data>
+  <data name="ConfigureLayerRendererDisplayName" xml:space="preserve">
+    <value>Configureer symbologie</value>
+  </data>
+  <data name="ConfigureSelectedLayerDescription" xml:space="preserve">
+    <value>Maakt configuratie van de geselecteerde laag mogelijk</value>
+  </data>
+  <data name="ConfigureSelectedLayerDisplayName" xml:space="preserve">
+    <value>Configureer laag</value>
+  </data>
+  <data name="DeleteGraphicToolDescription" xml:space="preserve">
+    <value>Verwijder het object van de laag</value>
+  </data>
+  <data name="DeleteGraphicToolDisplayName" xml:space="preserve">
+    <value>Verwijder object</value>
+  </data>
+  <data name="DeleteLayerDescription" xml:space="preserve">
+    <value>Verwijdert de geselecteerde laag uit de kaart</value>
+  </data>
+  <data name="DeleteLayerDisplayName" xml:space="preserve">
+    <value>Verwijderen kaartlaag</value>
+  </data>
+  <data name="EditShapeToolDescription" xml:space="preserve">
+    <value>Bewerk de geometrie van het object</value>
+  </data>
+  <data name="EditShapeToolDisplayName" xml:space="preserve">
+    <value>Vorm bewerken</value>
+  </data>
+  <data name="EditValuesToolDescription" xml:space="preserve">
+    <value>Bewerk de attribuutwaarde van het object</value>
+  </data>
+  <data name="EditValuesToolDisplayName" xml:space="preserve">
+    <value>Wijzig waarden</value>
+  </data>
+  <data name="AddAttachmentsToolDescription" xml:space="preserve">
+    <value>Voeg een bijlage toe aan het object</value>
+  </data>
+  <data name="AddAttachmentsToolDisplayName" xml:space="preserve">
+    <value>Bijlage toevoegen</value>
+  </data>
+  <data name="ExceptionNoValidApplicationContextForApplication" xml:space="preserve">
+    <value>Geen geldige applicatiecontext voor deze applicatie</value>
+  </data>
+  <data name="ExportSelectionDescription" xml:space="preserve">
+    <value>Exporteer de attributen van de geselecteerde objecten in de huidige laag naar een CSV-bestand</value>
+  </data>
+  <data name="ExportSelectionDisplayName" xml:space="preserve">
+    <value>Exporteer selectie</value>
+  </data>
+  <data name="FilterByMapExtentDescription" xml:space="preserve">
+    <value>Geef alleen records weer voor de objecten binnen het huidige kaartextent</value>
+  </data>
+  <data name="FilterByMapExtentName" xml:space="preserve">
+    <value>Filter op kaartextent</value>
+  </data>
+  <data name="FilterBySelectionAll" xml:space="preserve">
+    <value>Alles weergeven tabel</value>
+  </data>
+  <data name="FilterBySelectionAllDescription" xml:space="preserve">
+    <value>Tabel geeft geselecteerde en niet-geselecteerde objecten weer</value>
+  </data>
+  <data name="FilterBySelectionNotSelected" xml:space="preserve">
+    <value>Niet-geselecteerde weergeven tabel</value>
+  </data>
+  <data name="FilterBySelectionNotSelectedDescription" xml:space="preserve">
+    <value>Filtert tabel zodat alleen niet-geselecteerde objecten worden weergegeven.</value>
+  </data>
+  <data name="FilterBySelectionSelected" xml:space="preserve">
+    <value>Geselecteerde weergeven tabel</value>
+  </data>
+  <data name="FilterBySelectionSelectedDescription" xml:space="preserve">
+    <value>Filtert tabel zodat alleen geselecteerde objecten worden weergegeven.</value>
+  </data>
+  <data name="FilterLayerDescription" xml:space="preserve">
+    <value>Filtert de objecten in de geselecteerde laag op basis van een attribuutquery</value>
+  </data>
+  <data name="FilterLayerDisplayName" xml:space="preserve">
+    <value>Filter laag</value>
+  </data>
+  <data name="FindNearbyDescription" xml:space="preserve">
+    <value>Zoek objecten in de buurt van de huidige selectie</value>
+  </data>
+  <data name="FindNearbyDisplayName" xml:space="preserve">
+    <value>Zoek in de buurt</value>
+  </data>
+  <data name="GeoprocessingDescription" xml:space="preserve">
+    <value>Een tool die gebruikmaakt van een ArcGIS Server-geoprocessingservice</value>
+  </data>
+  <data name="GeoprocessingDisplayName" xml:space="preserve">
+    <value>Geoprocessing</value>
+  </data>
+  <data name="GoToLayerDescription" xml:space="preserve">
+    <value>Zoom naar de geselecteerde laag</value>
+  </data>
+  <data name="GoToLayerDisplayName" xml:space="preserve">
+    <value>Ga naar laag</value>
+  </data>
+  <data name="IdentifyBehaviorDisplayName" xml:space="preserve">
+    <value>Gedrag Identificeren</value>
+  </data>
+  <data name="MoveLayerDownDescription" xml:space="preserve">
+    <value>Verplaatst de weergavevolgorde van de kaartlaag één positie naar de bovenkant van de kaart</value>
+  </data>
+  <data name="MoveLayerDownDisplayName" xml:space="preserve">
+    <value>Verplaats naar boven</value>
+  </data>
+  <data name="MoveLayerUpDescription" xml:space="preserve">
+    <value>Verplaatst de weergavevolgorde van de kaartlaag één positie naar de onderkant van de kaart</value>
+  </data>
+  <data name="MoveLayerUpDisplayName" xml:space="preserve">
+    <value>Verplaats naar beneden</value>
+  </data>
+  <data name="NavigateToHelpLinkDescription" xml:space="preserve">
+    <value>Navigeert naar het helpsysteem</value>
+  </data>
+  <data name="NavigateToHelpLinkDisplayName" xml:space="preserve">
+    <value>Navigeert naar helpkoppeling</value>
+  </data>
+  <data name="PrintDescription" xml:space="preserve">
+    <value>Druk de kaart af</value>
+  </data>
+  <data name="PrintDisplayName" xml:space="preserve">
+    <value>Afdrukken</value>
+  </data>
+  <data name="RefreshLayerDescription" xml:space="preserve">
+    <value>Vernieuwt de geselecteerde laag</value>
+  </data>
+  <data name="RefreshLayerDisplayName" xml:space="preserve">
+    <value>Verversen kaartlaag</value>
+  </data>
+  <data name="RenameLayerDescription" xml:space="preserve">
+    <value>Wijzig de naam van de geselecteerde laag</value>
+  </data>
+  <data name="RenameLayerDisplayName" xml:space="preserve">
+    <value>Wijzig naam laag</value>
+  </data>
+  <data name="RestoreDefaultThemeDescription" xml:space="preserve">
+    <value>Herstelt de standaardkleuren van de kaart</value>
+  </data>
+  <data name="RestoreDefaultThemeDisplayName" xml:space="preserve">
+    <value>Stel thema opnieuw in</value>
+  </data>
+  <data name="SelectAllDescription" xml:space="preserve">
+    <value>Selecteer alle objecten in de huidige laag</value>
+  </data>
+  <data name="SelectAllDisplayName" xml:space="preserve">
+    <value>Selecteer alles</value>
+  </data>
+  <data name="SelectByDrawDescription" xml:space="preserve">
+    <value>Selecteer objecten door een vak rond de objecten te tekenen in de kaart</value>
+  </data>
+  <data name="SelectByDrawDisplayName" xml:space="preserve">
+    <value>Selecteren</value>
+  </data>
+  <data name="SelectedIndexOfTotal" xml:space="preserve">
+    <value>{0} van {1}</value>
+  </data>
+  <data name="ServiceDetailsDescription" xml:space="preserve">
+    <value>Open het service-eindpunt voor de geselecteerde laag</value>
+  </data>
+  <data name="ServiceDetailsDisplayName" xml:space="preserve">
+    <value>Servicedetails</value>
+  </data>
+  <data name="ShowMapCoordinatesDescription" xml:space="preserve">
+    <value>Geeft coördinaten weer terwijl de muisaanwijzer over de kaart wordt verplaatst</value>
+  </data>
+  <data name="ShowMapCoordinatesDisplayName" xml:space="preserve">
+    <value>Geef kaartcoördinaten weer</value>
+  </data>
+  <data name="ShowPreviewControlDescription" xml:space="preserve">
+    <value>Geef een dialoogvenster weer waarin wordt weergegeven hoe themakleuren eruitzien bij toepassing op verschillende onderdelen van de kaart</value>
+  </data>
+  <data name="ShowPreviewControlDisplayName" xml:space="preserve">
+    <value>Voorbeeld thema</value>
+  </data>
+  <data name="ToggleAddContentDescription" xml:space="preserve">
+    <value>Voeg ArcGIS Server-, SharePoint-, Spatial Data Server- of GeoRSS-gegevens toe aan uw kaart</value>
+  </data>
+  <data name="ToggleAddContentDisplayName" xml:space="preserve">
+    <value>Inhoud toevoegen</value>
+  </data>
+  <data name="ToggleEditDescription" xml:space="preserve">
+    <value>Geef de bewerkingstools weer of verberg deze</value>
+  </data>
+  <data name="ToggleEditDisplayName" xml:space="preserve">
+    <value>Bewerken</value>
+  </data>
+  <data name="ToggleFullScreenDescription" xml:space="preserve">
+    <value>Geeft de kaart in volledig-schermmodus weer</value>
+  </data>
+  <data name="ToggleFullScreenDisplayName" xml:space="preserve">
+    <value>Volledig scherm</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>Open het scherm Kaartinhoud om de lagen van de kaart weer te geven</value>
+  </data>
+  <data name="ToggleMapContentsDisplayName" xml:space="preserve">
+    <value>Kaartinhoud</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>Zoek naar locaties of ArcGIS Server-services</value>
+  </data>
+  <data name="ToggleSearchDisplayName" xml:space="preserve">
+    <value>Zoeken</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>Opent de attribuuttabel voor de geselecteerde laag</value>
+  </data>
+  <data name="ToggleTableDisplayName" xml:space="preserve">
+    <value>Geef tabel weer</value>
+  </data>
+  <data name="ZoomToSelectionDescription" xml:space="preserve">
+    <value>Zoom naar de geselecteerde objecten in de huidige laag</value>
+  </data>
+  <data name="ZoomToSelectionDisplayName" xml:space="preserve">
+    <value>Zoomen naar</value>
+  </data>
+</root>

@@ -1,0 +1,575 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400"
+    xmlns:local="clr-namespace:SearchTool;assembly=SearchTool.AddIns"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    xmlns:extensibility="http://schemas.esri.com/arcgis/client/extensibility/2010">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/SearchTool.AddIns;component/AppResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="local:ServiceSearchResultsView">
+        
+        <!-- style for leader of result details popups -->
+        <Setter Property="ResultDetailsLeaderStyle">
+            <Setter.Value>
+                <Style TargetType="ContentControl">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ContentControl">
+                                <Path 
+                                    Stroke="{StaticResource SelectionColorBrush}" 
+                                    Fill="{StaticResource AccentColorBrush}"
+                                    Data="M 20,0 L 0,10 20,20"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        
+        <!-- style for outer container of result details popups -->
+        <Setter Property="ResultDetailsContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ContentControl">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ContentControl">
+                                <Border 
+                                    BorderBrush="{StaticResource SelectionColorBrush}" 
+                                    BorderThickness="1"
+                                    Margin="-1,0,0,0">
+                                    <Border 
+                                        BorderBrush="{StaticResource AccentColorBrush}" 
+                                        BorderThickness="1" 
+                                        CornerRadius="2">
+                                        <ScrollViewer 
+                                            VerticalScrollBarVisibility="Auto" 
+                                            HorizontalScrollBarVisibility="Auto" 
+                                            Background="{StaticResource BackgroundGradientBrush}"
+                                            Foreground="{StaticResource BackgroundTextColorBrush}">
+                                            <ContentPresenter Content="{TemplateBinding Content}" />
+                                        </ScrollViewer>
+                                    </Border>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        
+        <!-- Style of results -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ServiceSearchResultsView">
+                    <Grid x:Name="LayoutRoot">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.Resources>
+                                <local:StringResourcesManager x:Key="Localization" />
+                                <local:DetailsPopup x:Key="DetailsPopup" />
+                                <local:ChooseSublayersViewModel x:Key="ChooseSublayersViewModel"/>
+                                <local:IntToVisibleConverter x:Key="IntToVisibleConverter" />
+                                <local:BoolVisibilityConverter x:Key="BoolVisibilityConverter" />
+                            <local:ReverseBoolVisibilityConverter x:Key="ReverseBoolVisibilityConverter" />
+                            <local:ReverseBoolConverter x:Key="ReverseBoolConverter" />
+                            <extensibility:MapApplicationBindingSource x:Key="MapApplication" />
+                            <local:InvokeMethodTimer 
+                                x:Key="ClosePopupTimer"
+                                TargetObject="{StaticResource DetailsPopup}"
+                                MethodName="ClosePopup"
+                                Delay="00:00:00.5"/>
+                            <Grid 
+                                x:Key="TemplateBindingProxy"
+                                Tag="{Binding RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Grid.Resources>
+                        
+                        <!-- ListBox containing search results -->
+                        <ListBox 
+                            x:Name="ResultsListBox"
+                            ItemsSource="{Binding PagedResults}"
+                            BorderThickness="0"
+                            ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                            Background="Transparent"
+                            Padding="0"
+                            Style="{StaticResource ResultsListBoxStyle}"
+                            ItemContainerStyle="{StaticResource ServiceResultItemStyle}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid x:Name="Root" Background="Transparent" Margin="10">
+                                        <i:Interaction.Triggers>
+                                            
+                                            <!-- show details popup on mouse enter -->
+                                            <i:EventTrigger EventName="MouseEnter">
+                                                
+                                                <!-- show popup -->
+                                                <local:ShowPopupAction
+                                                    PopupDataContext="{Binding}"
+                                                    PopupLeaderStyle="{Binding Tag.ResultDetailsLeaderStyle, 
+                                                        Source={StaticResource TemplateBindingProxy}}"
+                                                    PopupContentContainerStyle="{Binding Tag.ResultDetailsContainerStyle, 
+                                                        Source={StaticResource TemplateBindingProxy}}">
+                                                    <local:ShowPopupAction.TargetObject>
+                                                        
+                                                        <!-- result details view to be shown within popup -->
+                                                        <local:SearchResultDetailsView>
+                                                            <i:Interaction.Triggers>
+                                                                
+                                                                <!-- on mouse enter, disable timer to close popup -->
+                                                                <i:EventTrigger EventName="MouseEnter">
+                                                                    <ei:ChangePropertyAction
+                                                                        TargetObject="{StaticResource ClosePopupTimer}"
+                                                                        PropertyName="IsTimerRunning"
+                                                                        Value="False" />
+                                                                </i:EventTrigger>
+                                                                
+                                                                <!-- on mouse leave, enable timer to close popup -->
+                                                                <i:EventTrigger EventName="MouseLeave">
+                                                                    <ei:ChangePropertyAction
+                                                                        TargetObject="{StaticResource ClosePopupTimer}"
+                                                                        PropertyName="IsTimerRunning"
+                                                                        Value="True" />
+                                                                </i:EventTrigger>
+                                                            </i:Interaction.Triggers>
+                                                        </local:SearchResultDetailsView>
+                                                    </local:ShowPopupAction.TargetObject>
+                                                </local:ShowPopupAction>
+                                                
+                                                <!-- disable timer to close popup -->
+                                                <ei:ChangePropertyAction
+                                                    TargetObject="{StaticResource ClosePopupTimer}"
+                                                    PropertyName="IsTimerRunning"
+                                                    Value="False" />
+                                            </i:EventTrigger>
+                                            
+                                            <!-- on mouse leave, enable the timer to close popup -->
+                                            <i:EventTrigger EventName="MouseLeave">
+                                                <ei:ChangePropertyAction
+                                                    TargetObject="{StaticResource ClosePopupTimer}"
+                                                    PropertyName="IsTimerRunning"
+                                                    Value="True" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" /> <!-- thumbnail -->
+                                            <ColumnDefinition Width="*" /> <!-- title and add/remove button -->
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" /> <!-- Title -->
+                                            <RowDefinition Height="Auto" /> <!-- add/remove button -->
+                                        </Grid.RowDefinitions>
+                                        
+                                        <!-- Result thumbnail -->
+                                        <Grid Grid.RowSpan="2">
+                                            <Rectangle 
+                                               Width="66"
+                                               Fill="White"
+                                               RadiusX="3"
+                                               RadiusY="3"
+                                               Height="47"
+                                               Stroke="Gray"
+                                               Style="{StaticResource RectangleDropShadowStyle}" />
+                                            <Image 
+                                                Source="{Binding Thumbnail}"
+                                                MaxHeight="41"
+                                                MaxWidth="60" />
+                                        </Grid>
+                                        
+                                        <!-- result title -->
+                                        <TextBlock 
+                                            x:Name="ResultTitle"
+                                            Text="{Binding Result.Title}"
+                                            TextTrimming="WordEllipsis"
+                                            Margin="10,0,0,0"
+                                            TextWrapping="NoWrap"
+                                            HorizontalAlignment="Left"
+                                            Grid.Column="1"/>
+                                        
+                                        <!-- Add/Remove result buttons -->                                                                               
+                                        <Grid
+                                            Grid.Column="1"
+                                            Grid.Row="1"
+                                            VerticalAlignment="Bottom"
+                                            HorizontalAlignment="Right"
+                                            Visibility="{Binding IsInitialized, 
+                                                Converter={StaticResource BoolVisibilityConverter}}">
+                                            <Grid
+                                                Visibility="{Binding InitializationError, 
+                                                    Converter={StaticResource ReverseBoolVisibilityConverter}}">
+                                                
+                                        <!-- button for adding result to the map -->
+                                        <HyperlinkButton
+                                            x:Name="AddResultButton"
+                                            Style="{StaticResource HyperlinkNoFocusBorder}"
+                                            Foreground="{Binding Foreground, ElementName=ResultTitle}"
+                                            Grid.Column="1"
+                                            Grid.Row="1">
+                                            <HyperlinkButton.Content>
+                                                <TextBlock
+                                                    FontStyle="Italic"
+                                                    Opacity="0.5"
+                                                    Text="{Binding ConverterParameter=SearchControlAdd,
+                                                        Converter={StaticResource Localization},
+                                                        Source={StaticResource Localization}}" />
+                                            </HyperlinkButton.Content>
+                                                    <i:Interaction.Behaviors>
+                                                        
+                                                        <!-- Manage visibility of Add button. Will be set
+                                                             to hidden if the result layer is in the map's 
+                                                             layers, visible otherwise -->
+                                                        <local:ContainsItemBehavior
+                                                            Collection="{Binding Map.Layers, Source={StaticResource MapApplication}}"
+                                                            Item="{Binding Layer}"
+                                                            TargetProperty="Visibility"
+                                                            TrueValue="Collapsed"
+                                                            FalseValue="Visible" />
+                                                    </i:Interaction.Behaviors>
+                                            <i:Interaction.Triggers>
+                                                
+                                                <!-- Logic executed when add is clicked and layer is not null -->
+                                                <i:EventTrigger EventName="Click">
+                                                    <i:Interaction.Behaviors>
+                                                        <ei:ConditionBehavior>
+                                                            <ei:ConditionalExpression>
+                                                                <ei:ComparisonCondition
+                                                                    LeftOperand="{Binding Layer}"
+                                                                    Operator="NotEqual"
+                                                                    RightOperand="{x:Null}" />
+                                                            </ei:ConditionalExpression>
+                                                        </ei:ConditionBehavior>
+                                                    </i:Interaction.Behaviors>
+                                                    
+                                                    <!-- initialize layer popup -->
+                                                    <local:SetPopupTitleAction
+                                                        TargetObject="{Binding Layer}" />
+                                                    
+                                                    <!-- add layer to map -->
+                                                    <local:AddItemAction
+                                                        TargetObject="{Binding Map.Layers,
+                                                            Source={StaticResource MapApplication}}"
+                                                        Item="{Binding Layer}" />
+                                                    
+                                                    <!-- close details popup -->
+                                                    <ei:CallMethodAction
+                                                        MethodName="ClosePopup"
+                                                        TargetObject="{StaticResource DetailsPopup}" />
+                                                </i:EventTrigger>
+                                                
+                                                <!-- Logic executed on click if layer is null and result is a feature service -->
+                                                <i:EventTrigger EventName="Click">
+                                                    <i:Interaction.Behaviors>
+                                                        <ei:ConditionBehavior>
+                                                            <ei:ConditionalExpression>
+                                                                <ei:ComparisonCondition
+                                                                    LeftOperand="{Binding Layer}"
+                                                                    Operator="Equal"
+                                                                    RightOperand="{x:Null}" />
+                                                                <ei:ComparisonCondition
+                                                                    LeftOperand="{Binding Result.Type,
+                                                                        FallbackValue=None}"
+                                                                    Operator="Equal"
+                                                                    RightOperand="FeatureService" />
+                                                            </ei:ConditionalExpression>
+                                                        </ei:ConditionBehavior>
+                                                    </i:Interaction.Behaviors>
+
+                                                    <!-- Update properties on ViewModel for choosing layers within
+                                                         the service to add -->
+                                                    
+                                                    <!-- Update proxy URL -->
+                                                    <ei:ChangePropertyAction
+                                                        TargetObject="{StaticResource ChooseSublayersViewModel}"
+                                                        PropertyName="ProxyUrl"
+                                                        Value="{Binding ProxyUrl}" />
+
+                                                    <!-- Update service -->
+                                                    <ei:ChangePropertyAction
+                                                        TargetObject="{StaticResource ChooseSublayersViewModel}"
+                                                        PropertyName="Service"
+                                                        Value="{Binding Service}" />
+                                                    
+                                                    <!-- Show window for selecting layers to add to the map -->
+                                                    <local:ShowWindowAction
+                                                        Title="{Binding ConverterParameter=AddFeatureLayer, 
+                                                            Converter={StaticResource Localization}, 
+                                                            Source={StaticResource Localization}}"
+                                                        Modal="True">
+                                                        <local:ShowWindowAction.TargetObject>
+                                                            <local:AddSublayersView
+                                                                DataContext="{StaticResource ChooseSublayersViewModel}"
+                                                                Width="360"
+                                                                Height="230"
+                                                                Margin="15,15,15,20"/>
+                                                        </local:ShowWindowAction.TargetObject>
+                                                    </local:ShowWindowAction>
+                                                    
+                                                    <!-- close service details popup -->
+                                                    <ei:CallMethodAction
+                                                        MethodName="ClosePopup"
+                                                        TargetObject="{StaticResource DetailsPopup}" />
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                        </HyperlinkButton>
+
+                                        <!-- button for removing results from the map -->
+                                        <HyperlinkButton
+                                            x:Name="RemoveResultButton"
+                                            Style="{StaticResource HyperlinkNoFocusBorder}"
+                                            Foreground="{Binding Foreground, ElementName=ResultTitle}"
+                                            Visibility="Collapsed">
+                                            <HyperlinkButton.Content>
+                                                <TextBlock
+                                                    FontStyle="Italic"
+                                                    Opacity="0.5"
+                                                    Text="{Binding ConverterParameter=Remove,
+                                                    Converter={StaticResource Localization},
+                                                    Source={StaticResource Localization}}" />
+                                            </HyperlinkButton.Content>
+                                                    <i:Interaction.Behaviors>
+                                                        
+                                                        <!-- Manage visibility of Remove button. Will be set
+                                                             to visible if the result layer is in the map's 
+                                                             layers, hidden otherwise -->
+                                                        <local:ContainsItemBehavior
+                                                            Collection="{Binding Map.Layers, Source={StaticResource MapApplication}}"
+                                                            Item="{Binding Layer}"
+                                                            TargetProperty="Visibility"
+                                                            TrueValue="Visible"
+                                                            FalseValue="Collapsed" />
+                                                    </i:Interaction.Behaviors>
+                                            
+                                            <!-- Logic executed on click -->
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Click">
+                                                    
+                                                    <!-- remove layer from map -->
+                                                    <local:RemoveItemAction
+                                                        TargetObject="{Binding Map.Layers,
+                                                            Source={StaticResource MapApplication}}"
+                                                        Item="{Binding Layer}" />
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                        </HyperlinkButton>
+                                            </Grid>
+                                        </Grid>
+                                        
+                                        <!-- busy indicator. shown while connection attempt to service is being made. -->
+                                        <ProgressBar
+                                            IsIndeterminate="True"
+                                            Grid.Column="1"
+                                            Grid.Row="1"
+                                            Height="16"
+                                            Width="40"
+                                            HorizontalAlignment="Right"
+                                            VerticalAlignment="Bottom"
+                                            Visibility="{Binding IsInitializing, Converter={StaticResource BoolVisibilityConverter}}" />
+                                        
+                                        <!-- error icon.  shown if the service could not be connected to.  -->
+                                        <Image
+                                            x:Name="ErrorIcon"
+                                            Visibility="{Binding InitializationError, Converter={StaticResource BoolVisibilityConverter}}"
+                                            Source="/SearchTool.AddIns;component/Images/caution.png"
+                                            Grid.Column="1"
+                                            Grid.Row="1"
+                                            HorizontalAlignment="Right"
+                                            VerticalAlignment="Bottom"
+                                            Stretch="None"
+                                            ToolTipService.ToolTip="{Binding ConverterParameter=ServiceConnectionFailed,
+                                                Converter={StaticResource Localization},
+                                                Source={StaticResource Localization}}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                        <!-- no results found message -->
+                        <TextBlock
+                            Text="{Binding ConverterParameter=NoResults,
+                                Converter={StaticResource Localization},
+                                Source={StaticResource Localization}}"
+                            Foreground="Gray"
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Center"
+                            TextWrapping="Wrap"
+                            Visibility="{Binding Results.Count,
+                                Converter={StaticResource IntToVisibleConverter}}" />
+                        
+                        <!-- Busy content -->
+                        <Grid 
+                            Visibility="{Binding IsSearching, 
+                                Converter={StaticResource BoolVisibilityConverter}}" 
+                            Background="White"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <!-- search executing label -->
+                            <TextBlock
+                                Margin="0,15,0,0"
+                                HorizontalAlignment="Right"
+                                Text="{Binding ConverterParameter=Searching,
+                                    Converter={StaticResource Localization},
+                                    Source={StaticResource Localization}}"
+                                Foreground="Gray"
+                                TextWrapping="Wrap"/>
+                            
+                            <!-- cancel button -->
+                            <Button
+                                Cursor="Hand"
+                                Command="{Binding Cancel}"
+                                Margin="5,15,0,0"
+                                HorizontalAlignment="Left"
+                                Grid.Column="1">
+                                <Button.Content>
+                                    <TextBlock
+                                        Text="{Binding ConverterParameter=Cancel,
+                                            Converter={StaticResource Localization},
+                                            Source={StaticResource Localization}}"
+                                        Foreground="Blue"
+                                        TextWrapping="Wrap"
+                                        TextDecorations="Underline"/>
+                                </Button.Content>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Grid
+                                            Cursor="{TemplateBinding Cursor}">
+                                            <ContentPresenter Content="{TemplateBinding Content}" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Grid>
+
+                        <!-- separator line between results and data pager -->
+                        <Rectangle
+                            Height="1"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Top"
+                            Grid.Row="1"
+                            Fill="DarkGray"
+                            Visibility="{Binding Visibility, ElementName=Pager}"/>
+                        
+                        <!-- data pager for navigating between pages of results -->
+                        <data:DataPager
+                            x:Name="Pager"
+                            Grid.Row="1"
+                            NumericButtonCount="8"
+                            AutoEllipsis="True"
+                            DisplayMode="FirstLastPreviousNextNumeric"
+                            Background="White"
+                            BorderThickness="0"
+                            Foreground="{StaticResource DataPagerForegroundBrush}"
+                            BorderBrush="LightGray"
+                            Margin="0,2,0,2"
+                            HorizontalAlignment="Center"
+                            Source="{Binding ItemsSource, ElementName=ResultsListBox}"
+                            Visibility="Collapsed"
+                            IsEnabled="{Binding IsSearching, Converter={StaticResource ReverseBoolConverter}}">
+                            <i:Interaction.Triggers>
+
+                                <!-- On load, show pager if the number of results is more than the page size -->
+                                <i:EventTrigger 
+                                    EventName="Loaded"
+                                    SourceObject="{Binding Results}">
+                                    <i:Interaction.Behaviors>
+                                        <ei:ConditionBehavior>
+                                            <ei:ConditionalExpression>
+                                                <ei:ComparisonCondition
+                                                    LeftOperand="{Binding Results.Count}"
+                                                    Operator="GreaterThan"
+                                                    RightOperand="{Binding PagedResults.PageSize}" />
+                                            </ei:ConditionalExpression>
+                                        </ei:ConditionBehavior>
+                                    </i:Interaction.Behaviors>
+                                    <ei:ChangePropertyAction
+                                        PropertyName="Visibility"
+                                        Value="Visible" />
+                                </i:EventTrigger>
+
+                                <!-- On load, hide pager if the number of results is more than the page size -->
+                                <i:EventTrigger 
+                                    EventName="Loaded"
+                                    SourceObject="{Binding Results}">
+                                    <i:Interaction.Behaviors>
+                                        <ei:ConditionBehavior>
+                                            <ei:ConditionalExpression>
+                                                <ei:ComparisonCondition
+                                                    LeftOperand="{Binding Results.Count}"
+                                                    Operator="LessThanOrEqual"
+                                                    RightOperand="{Binding PagedResults.PageSize}" />
+                                            </ei:ConditionalExpression>
+                                        </ei:ConditionBehavior>
+                                    </i:Interaction.Behaviors>
+                                    <ei:ChangePropertyAction
+                                        PropertyName="Visibility"
+                                        Value="Collapsed" />
+                                </i:EventTrigger>
+
+                                <!-- When number of results changes, show pager if the number of results is more 
+                                     than the page size -->
+                                <i:EventTrigger 
+                                    EventName="CollectionChanged"
+                                    SourceObject="{Binding Results}">
+                                    <i:Interaction.Behaviors>
+                                        <ei:ConditionBehavior>
+                                            <ei:ConditionalExpression>
+                                                <ei:ComparisonCondition
+                                                    LeftOperand="{Binding Results.Count}"
+                                                    Operator="GreaterThan"
+                                                    RightOperand="{Binding PagedResults.PageSize}" />
+                                            </ei:ConditionalExpression>
+                                        </ei:ConditionBehavior>
+                                    </i:Interaction.Behaviors>
+                                    <ei:ChangePropertyAction
+                                        PropertyName="Visibility"
+                                        Value="Visible" />
+                                </i:EventTrigger>
+
+                                <!-- When number of results changes, hide pager if the number of results is more 
+                                     than the page size -->
+                                <i:EventTrigger 
+                                    EventName="CollectionChanged"
+                                    SourceObject="{Binding Results}">
+                                    <i:Interaction.Behaviors>
+                                        <ei:ConditionBehavior>
+                                            <ei:ConditionalExpression>
+                                                <ei:ComparisonCondition
+                                                    LeftOperand="{Binding Results.Count}"
+                                                    Operator="LessThanOrEqual"
+                                                    RightOperand="{Binding PagedResults.PageSize}" />
+                                            </ei:ConditionalExpression>
+                                        </ei:ConditionBehavior>
+                                    </i:Interaction.Behaviors>
+                                    <ei:ChangePropertyAction
+                                        PropertyName="Visibility"
+                                        Value="Collapsed" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </data:DataPager>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,199 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl
+    x:Class="Bookmarks.AddIns.BookmarksConfigurationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009" 
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:local="clr-namespace:Bookmarks.AddIns"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    mc:Ignorable="d"
+    d:DesignHeight="280" d:DesignWidth="340">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Include resource dictionary that specifies application brushes -->
+                <ResourceDictionary Source="/ESRI.ArcGIS.Client.Extensibility;component/Themes/Common.Theme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Converter for accessing resource strings -->
+            <local:StringResourcesManager x:Key="Localization" />
+
+            <!-- The DataContextProxy allows explicit binding to the parent UserControl's DataContext.  This permits 
+                 binding to the ViewModel in nested objects such as DataTemplates. -->
+            <local:DataContextProxy x:Key="DataContextProxy" />
+
+            <!-- Style for the Bookmark control (from ESRI.ArcGIS.Client.Toolkit) to specify custom datagrid and button styling
+                 and labeling -->
+            <ControlTemplate x:Key="BookmarkControlTemplate" TargetType="esri:Bookmark">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/> <!-- Instructional prompt -->
+                        <RowDefinition Height="Auto"/> <!-- Bookmark name textbox and Add button -->
+                        <RowDefinition Height="Auto"/> <!-- Included bookmarks label -->
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                             
+                    <!-- Instructional prompt -->
+                    <TextBlock 
+                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" 
+                        Opacity=".75"
+                        FontSize="10"
+                        Text="{Binding ConverterParameter=AddBookmarkPrompt, 
+                            Converter={StaticResource Localization},
+                            Source={StaticResource Localization}}"/>
+                                
+                    <!-- Contains bookmark title textbox and button to add bookmark -->
+                    <Grid Margin="0,3,0,0" Grid.Row="1" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                                    
+                        <!--Textbox for specifying the bookmark's name-->
+                        <TextBox 
+                            x:Name="AddBookmarkName" 
+                            HorizontalAlignment="Stretch"/>
+
+                        <!--Button for adding bookmarks. Note that color properties are set to use the brushes included in the Application
+                            Builder so that the button's appearance is consistent with that of the environment -->
+                        <Button 
+                            x:Name="AddBookmark" 
+                            Content="{Binding ConverterParameter=Add, 
+                                Converter={StaticResource Localization},
+                                Source={StaticResource Localization}}"
+                            MinWidth="50" 
+                            HorizontalAlignment="Right" 
+                            Grid.Column="1"
+                            Margin="3,0,0,0" 
+                            Foreground="{StaticResource DesignHostAccentTextBrush}" 
+                            Style="{StaticResource GradientButtonStyle}" 
+                            Background="{StaticResource DesignHostAccentBrush}" 
+                            BorderBrush="{StaticResource DesignHostAccentTextBrush}">
+                            
+                            <!-- Trigger to clear the bookmark name textbox when a bookmark is added -->
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=AddBookmarkName}" PropertyName="Text" Value="" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
+                    </Grid>
+
+                    <!-- Heading for included bookmarks -->
+                    <TextBlock 
+                        Margin="0,7,0,0"
+                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" 
+                        FontSize="11"
+                        Text="{Binding ConverterParameter=IncludedBookmarks, 
+                            Converter={StaticResource Localization},
+                            Source={StaticResource Localization}}"
+                        Grid.Row="2"/>
+                                        
+                    <!-- Datagrid containing the list of included bookmarks-->                                
+                    <sdk:DataGrid x:Name="BookmarkList" 
+                                    Margin="0,3,0,0" 
+                                    Grid.Row="3"
+                                    RowHeight="20" 
+                                    HorizontalAlignment="Stretch" 
+                                    VerticalAlignment="Stretch" 
+                                    AutoGenerateColumns="False" 
+                                    CanUserResizeColumns="False"
+                                    CanUserReorderColumns="False" 
+                                    HeadersVisibility="None" 
+                                    RowDetailsVisibilityMode="Collapsed" 
+                                    TabNavigation="Local" 
+                                    GridLinesVisibility="None">
+                        <sdk:DataGrid.Columns>
+                            
+                            <!-- Column containing button to delete the bookmark -->
+                            <sdk:DataGridTemplateColumn>
+                                <sdk:DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                        <!-- Button for deleting bookmarks.  Leverages DataContextProxy to bind the button's command 
+                                             to the DeleteBookmark command of the ViewModel -->
+                                        <Button 
+                                            x:Name="DeleteBookmark"
+                                            Height="16" 
+                                            Width="16" 
+                                            Command="{Binding DataSource.DeleteBookmark, 
+                                                Source={StaticResource DataContextProxy}}"
+                                            CommandParameter="{Binding}" 
+                                            HorizontalAlignment="Right" 
+                                            Cursor="Hand">
+                                            <Button.Content>
+                                                <Image Source="/Bookmarks.AddIns;component/Images/DeleteBookmark.png" Stretch="None" />
+                                            </Button.Content>
+                                            
+                                            <!-- Control template is specified to eleminate button chrome and visual states, showing
+                                                 only the image -->
+                                            <Button.Template>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Grid>
+                                                        <ContentPresenter Content="{TemplateBinding Content}" />
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                    </DataTemplate>
+                                </sdk:DataGridTemplateColumn.CellTemplate>
+                            </sdk:DataGridTemplateColumn>
+                                        
+                            <!-- Column containing bookmark name -->
+                            <sdk:DataGridTextColumn 
+                                Binding="{Binding Name, Mode=TwoWay}" 
+                                Foreground="Black" 
+                                FontSize="10" 
+                                FontFamily="Times" 
+                                Header="Bookmark" 
+                                IsReadOnly="False"  />
+                        </sdk:DataGrid.Columns>
+                    </sdk:DataGrid>
+                                                                    
+                    <!-- Button to delete all bookmarks -->
+                    <Button 
+                        x:Name="ClearBookmarks"
+                        Grid.Row="4"
+                        Margin="0,5,0,0"
+                        Content="{Binding ConverterParameter=DeleteAllBookmarks,
+                            Converter={StaticResource Localization},
+                            Source={StaticResource Localization}}" 
+                        HorizontalAlignment="Stretch" 
+                        Height="26"
+                        Foreground="{StaticResource DesignHostAccentTextBrush}" 
+                        Style="{StaticResource GradientButtonStyle}"
+                        Background="{StaticResource DesignHostAccentBrush}" 
+                        BorderBrush="{StaticResource DesignHostAccentTextBrush}" />
+                </Grid>
+            </ControlTemplate>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        
+        <!-- Bookmarks control for adding and removing bookmarks.  Note the control's Map property is bound
+             to the ViewModel's Map -->
+        <esri:Bookmark 
+            x:Name="BookmarksControl"
+            MaxHeight="Infinity"
+            Width="NaN"            
+            Template="{StaticResource BookmarkControlTemplate}"
+            Map="{Binding Map}" 
+            UseIsolatedStorage="False">
+
+        </esri:Bookmark>        
+    </Grid>
+</UserControl>

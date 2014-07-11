@@ -1,0 +1,156 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;assembly=ESRI.ArcGIS.Mapping.Controls.ArcGISOnline"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Backstage/MapCenterResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+	<local:StringResourcesManager x:Key="Localization" />
+	<Style TargetType="local:MyGroupsControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:MyGroupsControl">
+                    <Grid x:Name="LayoutRoot" Background="{StaticResource MapCenterBackgroundGradientBrush}">
+                        <Grid.Resources>
+                            <local:DateFormatConverter x:Key="DateFormatConverter" />
+                        </Grid.Resources>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel>
+							<TextBlock x:Name="Title"
+                                Text="{Binding ConverterParameter=BackStageControlMyGroups, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                            FontSize="18" Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                                            Margin="5" />
+                        </StackPanel>
+
+                        <Rectangle Grid.Row="1"
+                                                            Height="1"
+                                                            Fill="{StaticResource MapCenterTitleUnderlineFillBrush}"
+                                                            Margin="3,0,3,0" />
+
+                        <Canvas Height="25"
+                                                            Grid.Row="2"
+                                                            Margin="5">
+                            <local:ProgressIndicator x:Name="ProgressIndicator"
+                                                            Visibility="Collapsed"
+                                                            Margin="5" />
+                            <TextBlock x:Name="SearchResultsTextBlock" 
+                                        Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                       FontWeight="Bold" FontSize="12"
+                                                            VerticalAlignment="Center"
+                                                            Margin="5" />
+                        </Canvas>
+
+                        <ListBox x:Name="MyGroupsListBox" Background="Transparent"
+                                                            ItemsSource="{Binding Items, RelativeSource={RelativeSource TemplatedParent}}"
+                                                            Grid.Row="3" Style="{StaticResource MapCenterListBoxStyle}"
+                                                            BorderThickness="0"
+                                                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                                            Visibility="Collapsed"
+                                                            Margin="5">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <toolkit:WrapPanel Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Width="350">
+                                        <StackPanel.Resources>
+                                            <Grid x:Key="BindingContext" />
+                                        </StackPanel.Resources>
+                                        <TextBlock Text="{Binding Content.Title}"
+                                                            TextTrimming="WordEllipsis"
+                                                            FontSize="12"
+                                                            Margin="5,5,5,0"
+                                                            Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                                            TextWrapping="NoWrap" />
+                                        <RichTextBlock
+                                                FontSize="10" 
+                                                Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                                Margin="5,0,0,0">
+                                            <i:Interaction.Behaviors>
+                                                <local:FormatRichTextBehavior
+                                                        FormatString="{Binding ConverterParameter=CreatedByOwnerOnDate, 
+                                                            Converter={StaticResource Localization}, 
+                                                            Source={StaticResource Localization}}">
+                                                    <local:FormatRichTextBehavior.Values>
+                                                        <Hyperlink
+                                                                Foreground="{StaticResource MapCenterHyperlinkForegroundBrush}"
+                                                                MouseOverForeground="{StaticResource MapCenterHyperlinkForegroundBrush}"
+                                                                TextDecorations="None"
+                                                                MouseOverTextDecorations="Underline"
+                                                                Command="{Binding ElementName=MyGroupsListBox, Path=DataContext.OwnerCommand}"
+                                                                CommandParameter="{Binding DataContext.Content.Owner, 
+                                                                        Source={StaticResource BindingContext}}">
+                                                            <Run Text="{Binding DataContext.Content.Owner, 
+                                                                        Source={StaticResource BindingContext}}" />
+                                                        </Hyperlink>
+                                                        <Run Text="{Binding DataContext.Content.Date, 
+                                                                Converter={StaticResource DateFormatConverter},
+                                                                Source={StaticResource BindingContext}}" />
+                                                    </local:FormatRichTextBehavior.Values>
+                                                </local:FormatRichTextBehavior>
+                                            </i:Interaction.Behaviors>
+                                        </RichTextBlock>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Margin="5, 0, 10, 10">
+                                                <Rectangle Width="130"
+                                                            Height="90"
+                                                            Fill="{StaticResource MapCenterAccentColorBrush}"
+                                                            Stroke="Gray"
+                                                            Style="{StaticResource MapCenterRectangleDropShadowStyle}" />
+                                                <Image Source="{Binding Content.Thumbnail}"
+                                                            MaxHeight="80"
+                                                            MaxWidth="120" />
+                                            </Grid>
+                                            <StackPanel Grid.Column="1">
+                                                <TextBlock Text="{Binding Content.Summary}"
+                                                            TextTrimming="WordEllipsis"
+                                                            TextWrapping="Wrap"
+                                                            Height="85"
+                                                            Margin="5,0,0,0"
+                                                            Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                                            FontSize="10" />
+                                                <StackPanel Orientation="Horizontal"
+                                                            HorizontalAlignment="Right">
+                                                    <HyperlinkButton x:Name="OpenThisGroupButton"
+                                                            Content="{Binding ConverterParameter=MyGroupControlOpenGroup, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                            Style="{StaticResource MapCenterHyperlinkNoFocusBorder}"
+                                                            Command="{Binding  ElementName=MyGroupsListBox, Path=DataContext.OpenCommand}"
+                                                            CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                                                            Margin="5,5,0,0" />
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Grid>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

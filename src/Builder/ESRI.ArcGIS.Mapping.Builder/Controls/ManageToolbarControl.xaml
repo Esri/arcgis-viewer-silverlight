@@ -1,0 +1,549 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl x:Class="ESRI.ArcGIS.Mapping.Builder.Controls.ManageToolbarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+             xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+             xmlns:mapping="clr-namespace:ESRI.ArcGIS.Mapping.Controls;assembly=ESRI.ArcGIS.Mapping.Controls"
+             xmlns:builder="clr-namespace:ESRI.ArcGIS.Mapping.Builder.Controls"
+             xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:Converters="clr-namespace:ESRI.ArcGIS.Mapping.Controls.Converters;assembly=ESRI.ArcGIS.Mapping.Controls"
+             xmlns:Layout="clr-namespace:ESRI.ArcGIS.Client.Application.Layout;assembly=ESRI.ArcGIS.Client.Application.Layout"
+             Loaded="ToolbarConfigControl_Loaded">
+    <UserControl.Resources>
+        <Layout:RTLHelper x:Key="RTLHelper" />
+        <Converters:RtlImageConverter x:Key="RtlImageConverter" />
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <mapping:RuntimeUrlResolver x:Key="RuntimeImageUrlResolver" />
+
+            <DataTemplate x:Name="RootToolbarConfigurationNodeDataTemplate">
+                <TextBlock Text="{Binding Name, RelativeSource={RelativeSource TemplatedParent}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+            </DataTemplate>
+
+            <DataTemplate x:Name="ToolbarGroupNodeDataTemplate">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="16" Height="16" Margin="2" Source="{Binding Icon, Converter={StaticResource RuntimeImageUrlResolver}}" />
+                    <TextBlock Text="{Binding Label}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" VerticalAlignment="Center" />
+                </StackPanel>
+            </DataTemplate>
+
+            <DataTemplate x:Name="ToolbarControlNodeDataTemplate">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="16" Height="16" Margin="2" Source="{Binding Icon, Converter={StaticResource RuntimeImageUrlResolver}}" />
+                    <TextBlock Text="{Binding Label}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" VerticalAlignment="Center" />
+                </StackPanel>
+            </DataTemplate>
+
+            <ControlTemplate x:Key="CommonValidationToolTipTemplate" TargetType="ToolTip">
+                <Grid x:Name="Root" Margin="5,0" Opacity="0" RenderTransformOrigin="0,0">
+                    <Grid.RenderTransform>
+                        <TranslateTransform x:Name="Translation" X="-25"/>
+                    </Grid.RenderTransform>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="OpenStates">
+                            <VisualStateGroup.Transitions>
+                                <VisualTransition GeneratedDuration="0"/>
+                                <VisualTransition GeneratedDuration="0:0:0.2" To="Open">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.2" To="0" Storyboard.TargetProperty="X" Storyboard.TargetName="Translation">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase Amplitude=".3" EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+                                    </Storyboard>
+                                </VisualTransition>
+                            </VisualStateGroup.Transitions>
+                            <VisualState x:Name="Closed">
+                                <Storyboard>
+                                    <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+                                </Storyboard>
+                            </VisualState>
+                            <VisualState x:Name="Open">
+                                <Storyboard>
+                                    <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="X" Storyboard.TargetName="Translation"/>
+                                    <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+                                </Storyboard>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                    <Border Background="#052A2E31" CornerRadius="5" Margin="4,4,-4,-4"/>
+                    <Border Background="#152A2E31" CornerRadius="4" Margin="3,3,-3,-3"/>
+                    <Border Background="#252A2E31" CornerRadius="3" Margin="2,2,-2,-2"/>
+                    <Border Background="#352A2E31" CornerRadius="2" Margin="1,1,-1,-1"/>
+                    <Border Background="#FFDC000C" CornerRadius="2">
+                        <TextBlock Foreground="White" MaxWidth="250" Margin="8,4,8,4" TextWrapping="Wrap" Text="{Binding (Validation.Errors)[0].ErrorContent}" UseLayoutRounding="false"/>
+                    </Border>
+                </Grid>
+            </ControlTemplate>
+
+            <Style x:Key="TreeViewItemStyle" TargetType="sdk:TreeViewItem">
+                <Setter Property="IsExpanded" Value="False" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="sdk:TreeViewItem">
+                            <Grid Background="{x:Null}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver"/>
+                                        <VisualState x:Name="Pressed"/>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Foreground" Storyboard.TargetName="Header">
+                                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                                        <DiscreteObjectKeyFrame.Value>
+                                                            <SolidColorBrush Color="#FF999999"/>
+                                                        </DiscreteObjectKeyFrame.Value>
+                                                    </DiscreteObjectKeyFrame>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="SelectionStates">
+                                        <VisualState x:Name="Unselected"/>
+                                        <VisualState x:Name="Selected">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To=".75" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Selection"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="HasItemsStates">
+                                        <VisualState x:Name="HasItems"/>
+                                        <VisualState x:Name="NoItems">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ExpanderButton">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="ExpansionStates">
+                                        <VisualState x:Name="Collapsed"/>
+                                        <VisualState x:Name="Expanded">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ItemsHost">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <ToggleButton x:Name="ExpanderButton" HorizontalAlignment="Stretch" IsTabStop="False" TabNavigation="Once" VerticalAlignment="Stretch">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Grid x:Name="Root" Background="Transparent">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="Normal"/>
+                                                        <VisualState x:Name="MouseOver">
+                                                            <Storyboard>
+                                                                <ColorAnimation Duration="0" To="#FF1BBBFA" Storyboard.TargetProperty="(Path.Stroke).Color" Storyboard.TargetName="UncheckedVisual"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Disabled">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" To=".7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                    <VisualStateGroup x:Name="CheckStates">
+                                                        <VisualState x:Name="Unchecked"/>
+                                                        <VisualState x:Name="Checked">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="UncheckedVisual"/>
+                                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="CheckedVisual"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <Grid HorizontalAlignment="Right" Margin="2 2 5 2">
+                                                    <Path x:Name="UncheckedVisual" Data="M 0,0 L 0,9 L 5,4.5 Z" Fill="{StaticResource DesignHostBackgroundTextBrush}" 
+                                                  HorizontalAlignment="Right" Height="9" Stroke="{StaticResource DesignHostBackgroundTextBrush}" StrokeThickness="1" 
+                                                  StrokeLineJoin="Miter" VerticalAlignment="Center" Width="6"/>
+                                                    <Path x:Name="CheckedVisual" Data="M 6,0 L 6,6 L 0,6 Z" Fill="{StaticResource DesignHostBackgroundTextBrush}" 
+                                                  Stroke="{StaticResource DesignHostBackgroundTextBrush}"
+                                                  HorizontalAlignment="Center" Height="6" Opacity="0" StrokeLineJoin="Miter" 
+                                                  VerticalAlignment="Center" Width="6"/>
+                                                </Grid>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+                                <Rectangle x:Name="Selection" Fill="{StaticResource DesignHostSelectionBrush}" Stroke="{StaticResource DesignHostSelectionOutlineBrush}" 
+                                           Grid.Column="1" IsHitTestVisible="False" Opacity="0" RadiusY="2" RadiusX="2" StrokeThickness="1">
+
+                                </Rectangle>
+                                <Button x:Name="Header" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                                        Background="{TemplateBinding Background}" Cursor="{TemplateBinding Cursor}" ClickMode="Hover" Grid.Column="1" 
+                                        Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        IsTabStop="False" TabNavigation="Once" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Grid Background="{TemplateBinding Background}">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="Normal"/>
+                                                        <VisualState x:Name="Pressed">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" To=".5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Hover"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Disabled">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" To=".55" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Content"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <Rectangle x:Name="Hover" Fill="{StaticResource DesignHostMouseOverBrush}" IsHitTestVisible="False" Opacity="0" RadiusY="2" RadiusX="2" Stroke="{StaticResource DesignHostSelectionOutlineBrush}" StrokeThickness="1"/>
+                                                <ContentPresenter x:Name="Content" Cursor="{TemplateBinding Cursor}" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="Left" Margin="{TemplateBinding Padding}" />
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                    <ContentPresenter ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}"/>
+                                </Button>
+                                <ItemsPresenter x:Name="ItemsHost" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="ManageToolbarContextMenuStyle" TargetType="toolkit:ContextMenu">
+                <Setter Property="Background" Value="#FFF5F5F5"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush" Value="#FF959595"/>
+                <Setter Property="Padding" Value="2"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="toolkit:ContextMenu">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="2">
+                                <Grid>
+                                    <ItemsPresenter Margin="{TemplateBinding Padding}" />
+                                </Grid>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="ManageToolbarMenuItemStyle" TargetType="toolkit:MenuItem">
+                <Setter Property="Padding" Value="4,3,2,3"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="toolkit:MenuItem">
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Presenter"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Unfocused"/>
+                                        <VisualState x:Name="Focused">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="OuterBorder"
+                                                                               Storyboard.TargetProperty="Visibility">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InnerBorder"
+                                                                               Storyboard.TargetProperty="Visibility">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Rectangle x:Name="InnerBorder" Fill="{StaticResource DesignHostAccentTextBrush}" 
+                                           Visibility="Collapsed" Opacity="0.3" RadiusX="1" RadiusY="1"/>
+                                <Rectangle x:Name="OuterBorder" Stroke="{StaticResource DesignHostAccentTextBrush}" StrokeThickness="2"
+                                           Visibility="Collapsed" Opacity="0.8" RadiusX="1" RadiusY="1"/>
+                                <Grid>
+                                    <ContentPresenter x:Name="Presenter" ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" 
+                                                      Margin="{TemplateBinding Padding}"/>
+                                </Grid>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="SplitButtonStyle" TargetType="mapping:SplitButton">
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="mapping:SplitButton">
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver" />
+                                        <VisualState x:Name="Pressed" />
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="Opacity" To=".5"/>
+                                                <DoubleAnimation Duration="0" Storyboard.TargetName="SplitElement" Storyboard.TargetProperty="Opacity" To=".5"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused" />
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Border BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2"
+                                        BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <ContentPresenter x:Name="contentPresenter" Content="{TemplateBinding Content}" 
+                                                      ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                      Margin="{TemplateBinding Padding}"/>
+                                        <Rectangle Grid.Column="1" Width="1" Fill="{TemplateBinding Foreground}" 
+                                               Opacity="0.4" Margin="0 4 0 4"/>
+                                        <Grid x:Name="SplitElement" Grid.Column="2" Background="Transparent">
+                                            <toolkit:ContextMenuService.ContextMenu>
+                                                <toolkit:ContextMenu ItemsSource="{Binding ButtonMenuItemsSource, RelativeSource={RelativeSource TemplatedParent}}" 
+                                                                 Foreground="{TemplateBinding Foreground}" 
+                                                                 FlowDirection="{TemplateBinding FlowDirection}"
+                                                                 Background="{TemplateBinding Background}"
+                                                                 BorderBrush="{TemplateBinding BorderBrush}"
+                                                                 Style="{StaticResource ManageToolbarContextMenuStyle}"
+                                                                 ItemContainerStyle="{StaticResource ManageToolbarMenuItemStyle}"/>
+                                            </toolkit:ContextMenuService.ContextMenu>
+                                            <Path Data="M 0,0 L 8,0 L 4,4 Z" Fill="{TemplateBinding Foreground}" Margin="2 0 4 0" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions> 
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Orientation="Vertical" Margin="10,5,0,0">
+                <TextBlock Text="{Binding ConverterParameter=AvailableTools, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" HorizontalAlignment="Center" FontWeight="Bold" FontSize="12" Margin="0,0,0,5"></TextBlock>
+                <builder:AvailableToolbarItemsControl x:Name="AvailableToolsControl" DoubleClick="AvailableToolsControl_DoubleClick" VerticalAlignment="Stretch"
+                    Width="210" Height="355" OKButtonVisibility="Collapsed" />
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical" VerticalAlignment="Center">
+                <mapping:SplitButton x:Name="btnAdd" Click="Add_Click" Margin="5" VerticalAlignment="Stretch"
+                        VerticalContentAlignment="Top" Background="{StaticResource DesignHostBackgroundBrush}"
+                                     Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                     Style="{StaticResource SplitButtonStyle}"
+                                     BorderBrush="{StaticResource DesignHostAccentBrush}"
+                                     BorderThickness="1">
+                    <mapping:SplitButton.Content>
+                        <StackPanel Margin="3" FlowDirection="LeftToRight" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="PropertyChanged"
+                                                SourceObject="{StaticResource RTLHelper}">
+                                    <ei:ChangePropertyAction PropertyName="FlowDirection"
+                                                             Value="LeftToRight" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <Image Source="../images/ChevronRightDouble26.png"
+                                   RenderTransformOrigin="0.5,0.5"
+                                   HorizontalAlignment="Center"
+                                   Width="20">
+                                <Image.Projection>
+                                    <PlaneProjection RotationY="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection, Converter={StaticResource RtlImageConverter}}" />
+                                </Image.Projection>
+                            </Image>
+                        </StackPanel>
+                    </mapping:SplitButton.Content>
+                    <ToolTipService.ToolTip>
+                        <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                            <Border Background="{StaticResource DesignHostBackgroundBrush}"
+                                    Margin="-8,-3"
+                                    BorderBrush="{StaticResource DesignHostAccentBrush}"
+                                    BorderThickness="1">
+                                <StackPanel Margin="8">
+                                    <TextBlock Text="{Binding ConverterParameter=Add, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                               FontWeight="Bold"
+                                               Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                    <TextBlock Margin="0,4,0,0"
+                                               TextWrapping="Wrap"
+                                               Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                               Text="{Binding ConverterParameter=AddNewGroupOrControl, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+                                </StackPanel>
+                            </Border>
+                        </ToolTip>
+                    </ToolTipService.ToolTip>
+                    <mapping:SplitButton.ButtonMenuItemsSource>
+						<toolkit:MenuItem Click="Add_Click" Style="{StaticResource ManageToolbarMenuItemStyle}" Header="{Binding ConverterParameter=AddTool, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+						<toolkit:MenuItem Click="AddSeparator_Click" Style="{StaticResource ManageToolbarMenuItemStyle}" Header="{Binding ConverterParameter=AddSeparator, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+						<toolkit:MenuItem Click="AddGroup_Click" Style="{StaticResource ManageToolbarMenuItemStyle}" Header="{Binding ConverterParameter=AddGroupDotDot, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+                    </mapping:SplitButton.ButtonMenuItemsSource>
+                </mapping:SplitButton>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical" Margin="0,5,10,0">
+                <TextBlock Text="{Binding ConverterParameter=CurrentToolbars, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" HorizontalAlignment="Center" FontWeight="Bold" FontSize="12" Margin="0,0,0,5"></TextBlock>
+                <Border CornerRadius="2" BorderThickness="1" Padding="1"
+                    BorderBrush="{StaticResource DesignHostAccentBrush}"
+                    Background="{StaticResource DesignHostBackgroundBrush}">
+                    <ScrollViewer x:Name="ToolbarTreeScrollViewer" VerticalScrollBarVisibility="Auto" BorderBrush="Transparent" Padding="0" 
+                    BorderThickness="1" HorizontalScrollBarVisibility="Auto" Height="325" Width="210" Grid.Row="1" Margin="0"
+                                    Style="{StaticResource DesignHostScrollViewerStyle}">
+                        <controls:TreeView x:Name="ToolbarConfigurationTree" BorderBrush="Transparent" Margin="0" 
+                            ItemContainerStyle="{StaticResource TreeViewItemStyle}"
+                                            Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                            Background="Transparent" SelectedItemChanged="ToolbarConfigurationTree_SelectionChanged">
+                        </controls:TreeView>
+                    </ScrollViewer>
+                </Border>
+            </StackPanel>
+
+            <Grid Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" HorizontalAlignment="Stretch" Margin="0,3,5,5" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0" Grid.Column="0" >
+                    <Button x:Name="btnMoveUp" Click="MoveUp_Click" IsEnabled="False" Margin="1"
+                        Style="{StaticResource SharePointToolbarButtonStyle}" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <Image Source="../images/up.png" HorizontalAlignment="Center" />
+                        <ToolTipService.ToolTip>
+                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                <Border Background="{StaticResource DesignHostBackgroundBrush}"
+                                        Margin="-8,-3"
+                                        BorderBrush="{StaticResource DesignHostAccentBrush}"
+                                        BorderThickness="1">
+                                    <StackPanel Margin="8">
+                                        <TextBlock Text="{Binding ConverterParameter=MoveUp, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                   FontWeight="Bold"
+                                                   Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        <TextBlock Margin="0,4,0,0"
+                                                   TextWrapping="Wrap"
+                                                   Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                                   Text="{Binding ConverterParameter=MoveSelectedGroupOrControlUpToolbarTree, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+                                    </StackPanel>
+                                </Border>
+                            </ToolTip>
+                        </ToolTipService.ToolTip>
+                    </Button>
+                    <Button x:Name="btnMoveDown" Click="MoveDown_Click" IsEnabled="False" Margin="1"
+                        Style="{StaticResource SharePointToolbarButtonStyle}" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <Image Source="../images/down.png" />
+                        <ToolTipService.ToolTip>
+                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                <Border Background="{StaticResource DesignHostBackgroundBrush}"
+                                        Margin="-8,-3"
+                                        BorderBrush="{StaticResource DesignHostAccentBrush}"
+                                        BorderThickness="1">
+                                    <StackPanel Margin="8">
+                                        <TextBlock Text="{Binding ConverterParameter=MoveDown, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                   FontWeight="Bold"
+                                                   Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        <TextBlock Margin="0,4,0,0"
+                                                   TextWrapping="Wrap"
+                                                   Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                                   Text="{Binding ConverterParameter=MoveSelectedGroupOrControlDownToolbarTree, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+                                    </StackPanel>
+                                </Border>
+                            </ToolTip>
+                        </ToolTipService.ToolTip>
+                    </Button>
+
+                    <Button x:Name="btnEdit" Click="Edit_Click" IsEnabled="False" Margin="1"
+                        Style="{StaticResource SharePointToolbarButtonStyle}" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <Image Source="../images/edit.png" />
+                        <ToolTipService.ToolTip>
+                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                <Border Background="{StaticResource DesignHostBackgroundBrush}"
+                                        Margin="-8,-3"
+                                        BorderBrush="{StaticResource DesignHostAccentBrush}"
+                                        BorderThickness="1">
+                                    <StackPanel Margin="8">
+                                        <TextBlock Text="{Binding ConverterParameter=Edit, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                   FontWeight="Bold"
+                                                   Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        <TextBlock Margin="0,4,0,0"
+                                                   TextWrapping="Wrap"
+                                                   Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                                   Text="{Binding ConverterParameter=EditSelectedGroupOrControl, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+                                    </StackPanel>
+                                </Border>
+                            </ToolTip>
+                        </ToolTipService.ToolTip>
+                    </Button>
+                    <Button x:Name="btnDelete" Click="Delete_Click" IsEnabled="False" Margin="1"
+                    Style="{StaticResource SharePointToolbarButtonStyle}" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch">
+                        <Image Source="../images/delete.png" />
+                        <ToolTipService.ToolTip>
+                            <ToolTip FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}">
+                                <Border Background="{StaticResource DesignHostBackgroundBrush}"
+                                        Margin="-8,-3"
+                                        BorderBrush="{StaticResource DesignHostAccentBrush}"
+                                        BorderThickness="1">
+                                    <StackPanel Margin="8">
+                                        <TextBlock Text="{Binding ConverterParameter=Remove, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}"
+                                                   FontWeight="Bold"
+                                                   Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        <TextBlock Margin="0,4,0,0"
+                                                   TextWrapping="Wrap"
+                                                   Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                                   Text="{Binding ConverterParameter=RemoveSelectedGroupOrControl, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" />
+                                    </StackPanel>
+                                </Border>
+                            </ToolTip>
+                        </ToolTipService.ToolTip>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" >
+                    <Button Content="{Binding ConverterParameter=Close, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" HorizontalAlignment="Right" Margin="0,0,5,0" Click="Close_Click" Padding="10,5,10,5" VerticalAlignment="Center" 
+                                            Foreground="{StaticResource DesignHostAccentTextBrush}" Style="{StaticResource GradientButtonStyle}" 
+                                            Background="{StaticResource DesignHostAccentBrush}" BorderBrush="{StaticResource DesignHostAccentTextBrush}"></Button>
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Grid.Row="2">
+                <HyperlinkButton x:Name="lnkExtensionNotifications" Visibility="Collapsed" Margin="10,0,0,5" Content="{Binding ConverterParameter=ExtensionNotifications, Converter={StaticResource BuilderLocalization}, Source={StaticResource BuilderLocalization}}" Click="HyperlinkButton_Click"></HyperlinkButton>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

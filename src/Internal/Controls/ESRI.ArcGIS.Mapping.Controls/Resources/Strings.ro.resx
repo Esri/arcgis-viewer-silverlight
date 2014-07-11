@@ -1,0 +1,2079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptChangesTooltip" xml:space="preserve">
+    <value>Acceptare modificări</value>
+  </data>
+  <data name="AddCoordsToListFailedCaption" xml:space="preserve">
+    <value>Salvarea rezultatelor de localizare a eşuat</value>
+  </data>
+  <data name="AddCoordsToListFailedPrompt" xml:space="preserve">
+    <value>Adăugarea în listă a coordonatelor corespunzătoare adresei a eşuat. Reîncercaţi?</value>
+  </data>
+  <data name="AddData" xml:space="preserve">
+    <value>Adăugare date</value>
+  </data>
+  <data name="AddDataSetTooltip" xml:space="preserve">
+    <value>Adăugare set de date</value>
+  </data>
+  <data name="AddDataTooltip" xml:space="preserve">
+    <value>Adăugarea mai multe date la hartă</value>
+  </data>
+  <data name="AddRange" xml:space="preserve">
+    <value>Adăugare interval</value>
+  </data>
+  <data name="AddressMatchError" xml:space="preserve">
+    <value>Eroare la corelarea adresei: {0}</value>
+  </data>
+  <data name="AddressMatchingServicePrompt" xml:space="preserve">
+    <value>Serviciu:</value>
+  </data>
+  <data name="AdvancedClusterProperties" xml:space="preserve">
+    <value>Proprietăţi avansate grupare</value>
+  </data>
+  <data name="AGSOImagery" xml:space="preserve">
+    <value>Imagini satelitare</value>
+  </data>
+  <data name="AGSOStreets" xml:space="preserve">
+    <value>Străzi</value>
+  </data>
+  <data name="AGSOTopo" xml:space="preserve">
+    <value>Topografic</value>
+  </data>
+  <data name="AliasHeader" xml:space="preserve">
+    <value>Pseudonim</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Aplicare</value>
+  </data>
+  <data name="ArcGISOnline" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="ArcGISServer" xml:space="preserve">
+    <value>ArcGIS Server</value>
+  </data>
+  <data name="AssociatedMapPrompt" xml:space="preserve">
+    <value>Hartă:</value>
+  </data>
+  <data name="AutoScroll" xml:space="preserve">
+    <value>Derulare automată:</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Fundal</value>
+  </data>
+  <data name="BaseMapConfigurationSectionHeader" xml:space="preserve">
+    <value>Hartă fundal</value>
+  </data>
+  <data name="BaseMapPrompt" xml:space="preserve">
+    <value>Hartă fundal:</value>
+  </data>
+  <data name="BingMaps" xml:space="preserve">
+    <value>Hărţi Bing</value>
+  </data>
+  <data name="BingMapsAccountInfo" xml:space="preserve">
+    <value>Informaţii cont Hărţi Bing</value>
+  </data>
+  <data name="BingMapsAerial" xml:space="preserve">
+    <value>Aerian</value>
+  </data>
+  <data name="BingMapsAerialWithLabels" xml:space="preserve">
+    <value>Aerian - Etichete</value>
+  </data>
+  <data name="BingMapsInitializeFailed" xml:space="preserve">
+    <value>Autentificarea Hărţilor Bing a eşuat. În loc, va fi utilizată o hartă fundal ArcGIS Online. Pentru asistenţă suplimentară, contactaţi administratorul.</value>
+  </data>
+  <data name="BingMapsRoads" xml:space="preserve">
+    <value>Drumuri</value>
+  </data>
+  <data name="Border" xml:space="preserve">
+    <value>Margine</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Parcurgere...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>Se anulează</value>
+  </data>
+  <data name="ChangeBaseMapTooltip" xml:space="preserve">
+    <value>Schimbare hartă fundal</value>
+  </data>
+  <data name="ChangeColorRampTooltip" xml:space="preserve">
+    <value>Selectare schemă de culori</value>
+  </data>
+  <data name="ChangeGradientStopsTooltip" xml:space="preserve">
+    <value>Faceţi clic pentru a selecta nivelurile de estompare graduală pentru harta de tip "heat map"</value>
+  </data>
+  <data name="CheckForUpdatesPrompt" xml:space="preserve">
+    <value>Căutare actualizări:</value>
+  </data>
+  <data name="CheckForUpdateTooltip" xml:space="preserve">
+    <value>Obţinere date de listă actualizate când harta este panoramată sau transfocată</value>
+  </data>
+  <data name="ChooseBaseMapLayer" xml:space="preserve">
+    <value>Alegere hartă fundal</value>
+  </data>
+  <data name="ChooseLayerHeader" xml:space="preserve">
+    <value>Alegere set de date</value>
+  </data>
+  <data name="CityPrompt" xml:space="preserve">
+    <value>Oraş:</value>
+  </data>
+  <data name="ClassifyBy" xml:space="preserve">
+    <value>Alegere câmp pe care să se bazeze intervalele de valori</value>
+  </data>
+  <data name="ClassifyByPrompt" xml:space="preserve">
+    <value>Clasificare după:</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Golire toate</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Golire selecţie</value>
+  </data>
+  <data name="ClickSeqmentToZoom" xml:space="preserve">
+    <value>Faceţi clic pe un segment individual pentru a transfoca la segmentul respectiv.</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>Faceţi clic pentru mutare spre est</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>Faceţi clic pentru mutare spre nord</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>Faceţi clic pentru mutare spre sud</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>Faceţi clic pentru mutare spre vest</value>
+  </data>
+  <data name="ClusterAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Proprietăţi avansate</value>
+  </data>
+  <data name="ClusterFeaturesTooltipFirstBit" xml:space="preserve">
+    <value>Grupare</value>
+  </data>
+  <data name="ClusterFeaturesTooltipSecondBit" xml:space="preserve">
+    <value>Obiecte spaţiale</value>
+  </data>
+  <data name="ClusterTooltip" xml:space="preserve">
+    <value>Trasaţi la un loc grupări de obiecte spaţiale</value>
+  </data>
+  <data name="ColorsPrompt" xml:space="preserve">
+    <value>Culori:</value>
+  </data>
+  <data name="ConfigurationTooltip" xml:space="preserve">
+    <value>Configurare</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Configurare</value>
+  </data>
+  <data name="ConfigureBingMapsCredentials" xml:space="preserve">
+    <value>Faceţi clic pentru configurarea informaţiilor de cont Hărţi Bing</value>
+  </data>
+  <data name="ConfigureSettings" xml:space="preserve">
+    <value>Configurare setări</value>
+  </data>
+  <data name="ConfigureTooltip" xml:space="preserve">
+    <value>Configurare</value>
+  </data>
+  <data name="CountryPrompt" xml:space="preserve">
+    <value>Ţară:</value>
+  </data>
+  <data name="CurrentSymbolPrompt" xml:space="preserve">
+    <value>Simbol curent:</value>
+  </data>
+  <data name="CustomColorRamp" xml:space="preserve">
+    <value>Personalizare</value>
+  </data>
+  <data name="CustomColorRampToolTip" xml:space="preserve">
+    <value>Selectare culori pentru fiecare interval de valori</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Sursă de date:</value>
+  </data>
+  <data name="DataSourceTooltip" xml:space="preserve">
+    <value>Introduceţi URL-ul pentru un punct final SharePoint, de serviciu de date spaţiale sau ArcGIS Server</value>
+  </data>
+  <data name="DefinitionTabHeader" xml:space="preserve">
+    <value>Definiţie</value>
+  </data>
+  <data name="DefinitionTabHeaderTooltip" xml:space="preserve">
+    <value>Definiţi proprietăţile pentru setul de date curent</value>
+  </data>
+  <data name="DeleteConnectionCaption" xml:space="preserve">
+    <value>Confirmare ştergere</value>
+  </data>
+  <data name="DeleteConnectionPrompt" xml:space="preserve">
+    <value>Sigur doriţi să ştergeţi această conexiune?</value>
+  </data>
+  <data name="DeleteLayerMessageCaption" xml:space="preserve">
+    <value>Confirmare ştergere</value>
+  </data>
+  <data name="DeleteLayerPrompt" xml:space="preserve">
+    <value>Sigur doriţi să ştergeţi acest set de date din hartă?</value>
+  </data>
+  <data name="DeleteRange" xml:space="preserve">
+    <value>Ştergere interval</value>
+  </data>
+  <data name="DisplayNamePrompt" xml:space="preserve">
+    <value>Nume afişat:</value>
+  </data>
+  <data name="DisplayNameTooltip" xml:space="preserve">
+    <value>Definiţi numele afişat al setului de date curent</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>Trageţi pentru a roti</value>
+  </data>
+  <data name="DuplicateDataSource" xml:space="preserve">
+    <value>{0} a fost deja adăugat ca sursă de date</value>
+  </data>
+  <data name="DuplicateMapServiceLayer" xml:space="preserve">
+    <value>Serviciul de hartă a fost deja adăugat</value>
+  </data>
+  <data name="DuplicateMapServiceLayerCaption" xml:space="preserve">
+    <value>Duplicat detectat</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editare</value>
+  </data>
+  <data name="EnterCredentials" xml:space="preserve">
+    <value>Introduceţi un nume de utilizator şi o parolă</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>Eroare</value>
+  </data>
+  <data name="Europe" xml:space="preserve">
+    <value>Europa</value>
+  </data>
+  <data name="Every" xml:space="preserve">
+    <value>La fiecare</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>Extindere/Restrângere</value>
+  </data>
+  <data name="ExportSelection" xml:space="preserve">
+    <value>Export selecţie</value>
+  </data>
+  <data name="FieldHeader" xml:space="preserve">
+    <value>Câmp</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>Umplere</value>
+  </data>
+  <data name="FilterByMapView" xml:space="preserve">
+    <value>Filtrare după vizualizarea de hartă:</value>
+  </data>
+  <data name="FilterExpressionPrompt" xml:space="preserve">
+    <value>Expresie de filtrare:</value>
+  </data>
+  <data name="FilterExpressionTooltip" xml:space="preserve">
+    <value>Aplicaţi un filtru setului de date curent</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Găsire</value>
+  </data>
+  <data name="FindDirections" xml:space="preserve">
+    <value>Găsire indicaţii</value>
+  </data>
+  <data name="FindLocation" xml:space="preserve">
+    <value>Găsire locaţie</value>
+  </data>
+  <data name="FindNearby" xml:space="preserve">
+    <value>Găsire în apropiere</value>
+  </data>
+  <data name="FixLocation" xml:space="preserve">
+    <value>Fixare locaţie</value>
+  </data>
+  <data name="Foreground" xml:space="preserve">
+    <value>Prim-plan</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>Informaţii suplimentare</value>
+  </data>
+  <data name="FromPrompt" xml:space="preserve">
+    <value>De la:</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>Extindere completă</value>
+  </data>
+  <data name="GetListItemsFailed" xml:space="preserve">
+    <value>Eşec la preluarea elementelor din {0} de pe site-ul {1}</value>
+  </data>
+  <data name="GetListItemsFailedPromptRemove" xml:space="preserve">
+    <value>Eşec la preluarea elementelor din {0} de pe site-ul {1}.  Eliminaţi această vizualizare de pe hartă?</value>
+  </data>
+  <data name="GetListsFailed" xml:space="preserve">
+    <value>Preluare liste eşuată: {0}</value>
+  </data>
+  <data name="HeatMap" xml:space="preserve">
+    <value>Heat Map</value>
+  </data>
+  <data name="HeatMapAdvancedProperties" xml:space="preserve">
+    <value>Proprietăţi hartă de tip "heat map"</value>
+  </data>
+  <data name="HeatMapAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Proprietăţi pentru modul de redare "heat map"</value>
+  </data>
+  <data name="HeatMapTooltip" xml:space="preserve">
+    <value>Afişare date ca hartă de tip "heat map"</value>
+  </data>
+  <data name="HundredPercent" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="InitializationError" xml:space="preserve">
+    <value>Eroare de iniţializare: {0}</value>
+  </data>
+  <data name="IntensityPrompt" xml:space="preserve">
+    <value>Intensitate:</value>
+  </data>
+  <data name="InvalidUrlCaption" xml:space="preserve">
+    <value>URL nevalid</value>
+  </data>
+  <data name="InvalidUrlPrompt" xml:space="preserve">
+    <value>Introduceţi un URL valid</value>
+  </data>
+  <data name="LatitudePrompt" xml:space="preserve">
+    <value>Latitudine (Y):</value>
+  </data>
+  <data name="LayerInfoRetrievalError" xml:space="preserve">
+    <value>Eroare la preluarea informaţiilor despre stratul tematic: {0}</value>
+  </data>
+  <data name="LayersTabHeader" xml:space="preserve">
+    <value>Vizibilitate strat tematic</value>
+  </data>
+  <data name="LayersTabHeaderTooltip" xml:space="preserve">
+    <value>Configurare vizibilitate straturi tematice</value>
+  </data>
+  <data name="ListViewHeader" xml:space="preserve">
+    <value>Vizualizare listă</value>
+  </data>
+  <data name="LoadDataSourceTooltip" xml:space="preserve">
+    <value>Încărcare sursă de date</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>Localizare</value>
+  </data>
+  <data name="LocateByAddress" xml:space="preserve">
+    <value>Adresă</value>
+  </data>
+  <data name="LocateByAddressTooltip" xml:space="preserve">
+    <value>Utilizare corespondenţă adrese pentru trasarea datelor din lista curentă</value>
+  </data>
+  <data name="LocateByCoordinates" xml:space="preserve">
+    <value>Coordonate</value>
+  </data>
+  <data name="LocateByCoordinatesTooltip" xml:space="preserve">
+    <value>Utilizare coordonate pentru trasarea datelor din lista curentă</value>
+  </data>
+  <data name="LocateByPrompt" xml:space="preserve">
+    <value>Localizare după:</value>
+  </data>
+  <data name="LocateTooltip" xml:space="preserve">
+    <value>Stabilire corespondenţă adrese pentru lista curentă</value>
+  </data>
+  <data name="LocateUpdateTooltip" xml:space="preserve">
+    <value>Trasare listă curentă pe baza câmpurilor de coordonate selectate</value>
+  </data>
+  <data name="LocationFieldsTabHeader" xml:space="preserve">
+    <value>Câmpuri pentru locaţie</value>
+  </data>
+  <data name="LocationFieldsTabHeaderTooltip" xml:space="preserve">
+    <value>Selectare adrese sau câmpuri geografice din setul de date curent</value>
+  </data>
+  <data name="LongitudePrompt" xml:space="preserve">
+    <value>Longitudine (X):</value>
+  </data>
+  <data name="MapContentsTooltip" xml:space="preserve">
+    <value>Conţinuturi hartă</value>
+  </data>
+  <data name="MapXaml" xml:space="preserve">
+    <value>XAML hartă</value>
+  </data>
+  <data name="MapXamlRepresentation" xml:space="preserve">
+    <value>Reprezentare XAML a hărţii</value>
+  </data>
+  <data name="MaxPrompt" xml:space="preserve">
+    <value>Maxim:</value>
+  </data>
+  <data name="MinPrompt" xml:space="preserve">
+    <value>Minim:</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minute</value>
+  </data>
+  <data name="ModifyRangeTooltip" xml:space="preserve">
+    <value>Modificare interval</value>
+  </data>
+  <data name="MoveBarUpDown" xml:space="preserve">
+    <value>Mutaţi bara în sus pentru a apropia, în jos pentru a îndepărta</value>
+  </data>
+  <data name="MoveDownTooltip" xml:space="preserve">
+    <value>Mutare în jos</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>Mutare la început</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>Mutare la sfârşit</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>Mutare următor</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>Mutare anterior</value>
+  </data>
+  <data name="MoveRangeTooltip" xml:space="preserve">
+    <value>Interval de mutare</value>
+  </data>
+  <data name="MoveUpTooltip" xml:space="preserve">
+    <value>Mutare în sus</value>
+  </data>
+  <data name="MultiLayerCacheNotSupported" xml:space="preserve">
+    <value>Serviciile de hărţi multi-strat optimizate nu sunt acceptate. Utilizaţi sau creaţi un serviciu de hartă optimizat cu straturi fuzionate.</value>
+  </data>
+  <data name="MultiLayerCacheNotSupportedCaption" xml:space="preserve">
+    <value>Serviciile de hărţi multi-strat optimizate nu sunt acceptate</value>
+  </data>
+  <data name="MultipleViewsNotAllowed" xml:space="preserve">
+    <value>Vizualizările de liste SharePoint nu pot fi adăugate de mai multe ori</value>
+  </data>
+  <data name="NewDataSourceHelpText" xml:space="preserve">
+    <value>&lt;Introduceţi numele serverului sau adresa http&gt;</value>
+  </data>
+  <data name="NextRange" xml:space="preserve">
+    <value>Următorul interval</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefined" xml:space="preserve">
+    <value>Câmpurile de locaţie pentru listă nu au fost mapate. Mapaţi coloane din listă la câmpurile corespunzătoare.</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefinedCaption" xml:space="preserve">
+    <value>Definire mapare câmpuri locaţie</value>
+  </data>
+  <data name="NoAssociatedMapWebPart" xml:space="preserve">
+    <value>Nu au fost găsite elemente Web Part pentru hartă.</value>
+  </data>
+  <data name="NoDistinctNumericFields" xml:space="preserve">
+    <value>Toate câmpurile numerice din acest set de date au aceleaşi valori minime şi maxime. Pentru a configura intervale de valori, minimul şi maximul trebuie să fie diferite.</value>
+  </data>
+  <data name="NoGeographicListsFound" xml:space="preserve">
+    <value>Nu a fost găsită nicio listă cu date geografice la {0}</value>
+  </data>
+  <data name="NoLayersAdded" xml:space="preserve">
+    <value>Faceţi clic pe butonul „Adăugare date” pentru a adăuga date la hartă</value>
+  </data>
+  <data name="NoGPServicesFound" xml:space="preserve">
+    <value>Nu a fost găsit niciun serviciu de geoprocesare la {0}</value>
+  </data>
+  <data name="NoMapServicesFound" xml:space="preserve">
+    <value>Nu a fost găsit niciun serviciu de hartă la {0}</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Niciuna</value>
+  </data>
+  <data name="NoNumericFieldsFound" xml:space="preserve">
+    <value>Acest set de date nu conţine niciun câmp numeric. Intervale de valori pot fi setate numai în seturi de date care conţin cel puţin un câmp numeric.</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>Nicio înregistrare</value>
+  </data>
+  <data name="NoRecordsForVisibleLayer" xml:space="preserve">
+    <value>Elementele pentru această listă nu au fost preluate de hartă. Activaţi vizibilitatea pentru listă pentru a vedea elemente.</value>
+  </data>
+  <data name="NoResultsCaption" xml:space="preserve">
+    <value>Niciun rezultat</value>
+  </data>
+  <data name="NoResultsLayerNotVisible" xml:space="preserve">
+    <value>Nu a fost găsită nicio înregistrare, deoarece lista nu este vizibilă pe hartă</value>
+  </data>
+  <data name="NorthAmerica" xml:space="preserve">
+    <value>America de Nord</value>
+  </data>
+  <data name="NoSpatialTablesFound" xml:space="preserve">
+    <value>Nu a fost găsit niciun tabel cu date spaţiale la {0}</value>
+  </data>
+  <data name="NumericFieldNotDistinct" xml:space="preserve">
+    <value>Câmpul {0} conţine aceeaşi valoare pentru minim şi maxim. Intervale de valori se pot configura numai pentru câmpuri care au valori minimă şi maximă diferite.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OnPanAndZoom" xml:space="preserve">
+    <value>La panoramare şi transfocare</value>
+  </data>
+  <data name="OperationalDataSectionHeader" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Parolă:</value>
+  </data>
+  <data name="PleaseSpecifyDataSourceMessage" xml:space="preserve">
+    <value>Specificaţi o sursă de date</value>
+  </data>
+  <data name="PollForUpdatesTooltip" xml:space="preserve">
+    <value>Definiţi un interval pentru preluarea datelor din lista actualizată</value>
+  </data>
+  <data name="PopUpTabHeader" xml:space="preserve">
+    <value>Mesaj pop-up</value>
+  </data>
+  <data name="PopUpTabHeaderTooltip" xml:space="preserve">
+    <value>Configuraţi mesajul pop-up cu informaţii despre hartă pentru setul de date curent</value>
+  </data>
+  <data name="PreDefinedColorRamp" xml:space="preserve">
+    <value>Predefinit</value>
+  </data>
+  <data name="PreDefinedColorRampTooltip" xml:space="preserve">
+    <value>Aplicaţi un set de culori predefinite</value>
+  </data>
+  <data name="PreviousRange" xml:space="preserve">
+    <value>Intervalul anterior</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>Producţie</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Proprietăţi - {0}</value>
+  </data>
+  <data name="RecordsPrompt" xml:space="preserve">
+    <value>Înregistrări:</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Reîmprospătare</value>
+  </data>
+  <data name="RefreshError" xml:space="preserve">
+    <value>A survenit o eroare la reîmprospătarea stratului tematic {0}</value>
+  </data>
+  <data name="RefreshMapXamlTooltip" xml:space="preserve">
+    <value>Reîmprospătare XAML hartă</value>
+  </data>
+  <data name="RefreshTooltip" xml:space="preserve">
+    <value>Reîmprospătare</value>
+  </data>
+  <data name="RemoveTooltip" xml:space="preserve">
+    <value>Eliminare</value>
+  </data>
+  <data name="ResetExtent" xml:space="preserve">
+    <value>Resetare extindere</value>
+  </data>
+  <data name="ResetExtentTooltip" xml:space="preserve">
+    <value>Resetaţi extinderea hărţii la extinderea iniţială, definită de serviciul ArcGIS Server.</value>
+  </data>
+  <data name="ResetMapRotation" xml:space="preserve">
+    <value>Resetare rotire hartă</value>
+  </data>
+  <data name="ResolutionPrompt" xml:space="preserve">
+    <value>Rezoluţie:</value>
+  </data>
+  <data name="ResultsViewHeader" xml:space="preserve">
+    <value>Vizualizare rezultate</value>
+  </data>
+  <data name="RetrievingBaseMaps" xml:space="preserve">
+    <value>Se preiau hărţi fundal disponibile</value>
+  </data>
+  <data name="RetrievingGeometryType" xml:space="preserve">
+    <value>Se preia tipul geometriei</value>
+  </data>
+  <data name="RetrievingInformation" xml:space="preserve">
+    <value>Se preiau informaţii de pe server</value>
+  </data>
+  <data name="RollBackChangesTooltip" xml:space="preserve">
+    <value>Derulare înapoi modificări</value>
+  </data>
+  <data name="ScaleBarUnit_feet" xml:space="preserve">
+    <value>ft</value>
+  </data>
+  <data name="ScaleBarUnit_kilometers" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="ScaleBarUnit_meters" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="ScaleBarUnit_miles" xml:space="preserve">
+    <value>mi.</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>Secunde</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Selectare globală</value>
+  </data>
+  <data name="SelectAllTooltip" xml:space="preserve">
+    <value>Selectare globală</value>
+  </data>
+  <data name="SelectedRangePrompt" xml:space="preserve">
+    <value>Interval:</value>
+  </data>
+  <data name="SelectedRecordsFormatString" xml:space="preserve">
+    <value>Înregistrări ({0} din {1} selectate)</value>
+  </data>
+  <data name="SelectRangeTooltip" xml:space="preserve">
+    <value>Selectare interval pentru editare</value>
+  </data>
+  <data name="ServerPrompt" xml:space="preserve">
+    <value>Server:</value>
+  </data>
+  <data name="ServiceConnectionError" xml:space="preserve">
+    <value>A survenit o eroare la conectarea la {0}.  Verificaţi URL-ul, asiguraţi-vă că serviciul este în funcţiune şi încercaţi din nou.</value>
+  </data>
+  <data name="ServiceConnectionErrorCaption" xml:space="preserve">
+    <value>Eroare de conectare</value>
+  </data>
+  <data name="ServiceConnectionErrorDuringInit" xml:space="preserve">
+    <value>Conectare la {0} imposibilă.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Setări</value>
+  </data>
+  <data name="ShowHide" xml:space="preserve">
+    <value>Afişare/Ascundere</value>
+  </data>
+  <data name="ShowHideTooltip" xml:space="preserve">
+    <value>Afişare/Ascundere</value>
+  </data>
+  <data name="SimpleSymbolType" xml:space="preserve">
+    <value>Simplu</value>
+  </data>
+  <data name="SimpleSymbolTypeTooltip" xml:space="preserve">
+    <value>Afişare set de date curent cu un singur simbol</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Sursă:</value>
+  </data>
+  <data name="Staging" xml:space="preserve">
+    <value>Testare</value>
+  </data>
+  <data name="StatePrompt" xml:space="preserve">
+    <value>Stat/Subdiviziune:</value>
+  </data>
+  <data name="SymbolsTabHeader" xml:space="preserve">
+    <value>Simboluri</value>
+  </data>
+  <data name="SymbolsTabHeaderTooltip" xml:space="preserve">
+    <value>Configuraţi afişarea setului de date curent</value>
+  </data>
+  <data name="SymbolTypePrompt" xml:space="preserve">
+    <value>Tip simbol:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>până la</value>
+  </data>
+  <data name="TokenAuthenticationFailed" xml:space="preserve">
+    <value>Autentificarea la Hărţi Bing a eşuat. Verificaţi-vă datele de autentificare şi încercaţi din nou.</value>
+  </data>
+  <data name="TokenConnectionFailed" xml:space="preserve">
+    <value>Conexiunea pentru preluarea tokenului a eşuat. Verificaţi conexiunea la serverul gazdă şi încercaţi din nou.</value>
+  </data>
+  <data name="TolerancePrompt" xml:space="preserve">
+    <value>Toleranţă:</value>
+  </data>
+  <data name="ToPrompt" xml:space="preserve">
+    <value>La:</value>
+  </data>
+  <data name="TotalDistancePrompt" xml:space="preserve">
+    <value>Distanţă totală:</value>
+  </data>
+  <data name="TotalTimePrompt" xml:space="preserve">
+    <value>Timp total:</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>Transparenţă</value>
+  </data>
+  <data name="TransparencyPrompt" xml:space="preserve">
+    <value>Transparenţă:</value>
+  </data>
+  <data name="UnhandledSilverlightError" xml:space="preserve">
+    <value>Eroare netratată în aplicaţia Silverlight 2</value>
+  </data>
+  <data name="UpdateAddress" xml:space="preserve">
+    <value>Actualizare adresă</value>
+  </data>
+  <data name="UpdateLayerError" xml:space="preserve">
+    <value>Eroare la actualizarea stratului tematic: {0}</value>
+  </data>
+  <data name="UpdateListError" xml:space="preserve">
+    <value>Eroare la aplicarea modificărilor listei: {0}</value>
+  </data>
+  <data name="UrlPrompt" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="UserNamePrompt" xml:space="preserve">
+    <value>Utilizator:</value>
+  </data>
+  <data name="UseStagingServer" xml:space="preserve">
+    <value>Utilizarea server testare</value>
+  </data>
+  <data name="ValidAddressError" xml:space="preserve">
+    <value>Introduceţi o adresă validă</value>
+  </data>
+  <data name="ValidAddressErrorCaption" xml:space="preserve">
+    <value>Adresă nevalidă</value>
+  </data>
+  <data name="ValidCoordinatesError" xml:space="preserve">
+    <value>Introduceţi coordonate valide</value>
+  </data>
+  <data name="ValidCoordinatesErrorCaption" xml:space="preserve">
+    <value>Coordonate nevalide</value>
+  </data>
+  <data name="ValueRanges" xml:space="preserve">
+    <value>Intervale de valori</value>
+  </data>
+  <data name="ValueRangesTooltip" xml:space="preserve">
+    <value>Afişare set de date curent pe baza intervalelor de valori</value>
+  </data>
+  <data name="ViewItem" xml:space="preserve">
+    <value>Vizualizare element</value>
+  </data>
+  <data name="VisibleHeader" xml:space="preserve">
+    <value>Vizibil</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Lăţime</value>
+  </data>
+  <data name="XamlRepresentation" xml:space="preserve">
+    <value>Reprezentare XAML a stratului tematic curent</value>
+  </data>
+  <data name="XamlViewTabHeader" xml:space="preserve">
+    <value>Vizualizare Xaml</value>
+  </data>
+  <data name="XamlViewTabHeaderTooltip" xml:space="preserve">
+    <value>Vizualizare Xaml generat pentru stratul tematic</value>
+  </data>
+  <data name="ZeroPercent" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="Zip4Prompt" xml:space="preserve">
+    <value>Zip4:</value>
+  </data>
+  <data name="ZipPrompt" xml:space="preserve">
+    <value>Cod zip/poştal:</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Apropiere</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Îndepărtare</value>
+  </data>
+  <data name="ZoomOutButton" xml:space="preserve">
+    <value>Îndepărtare</value>
+  </data>
+  <data name="ZoomRangeTooltip" xml:space="preserve">
+    <value>Apropiere în interval</value>
+  </data>
+  <data name="ZoomToAllRecords" xml:space="preserve">
+    <value>Accesaţi</value>
+  </data>
+  <data name="ZoomToItem" xml:space="preserve">
+    <value>Transfocare la element</value>
+  </data>
+  <data name="ZoomToSelection" xml:space="preserve">
+    <value>Transfocare la selecţie</value>
+  </data>
+  <data name="ConfigFileUrlTextboxTooltip" xml:space="preserve">
+    <value>Introducere URL pentru fişierul de configurare</value>
+  </data>
+  <data name="ConnectToSharePointDataSource" xml:space="preserve">
+    <value>&lt;Introducere URL pentru un site SharePoint&gt;</value>
+  </data>
+  <data name="ExportToFile" xml:space="preserve">
+    <value>Export în fişier</value>
+  </data>
+  <data name="FileNamePrompt" xml:space="preserve">
+    <value>Nume fişier:</value>
+  </data>
+  <data name="MustEnterFileName" xml:space="preserve">
+    <value>Introduceţi un nume de fişier</value>
+  </data>
+  <data name="MustEnterFileNameTitle" xml:space="preserve">
+    <value>Lipseşte numele fişierului</value>
+  </data>
+  <data name="OverwriteExistingFile" xml:space="preserve">
+    <value>Suprascriere fişier existent</value>
+  </data>
+  <data name="UrlToSitePrompt" xml:space="preserve">
+    <value>URL site:</value>
+  </data>
+  <data name="CustomBaseMap" xml:space="preserve">
+    <value>Hartă fundal ArcGIS Server</value>
+  </data>
+  <data name="AGSDataSourceTooltip" xml:space="preserve">
+    <value>Introduceţi adresa URL ArcGIS Server</value>
+  </data>
+  <data name="NotUsingBingMapsResource" xml:space="preserve">
+    <value>Aplicaţia dvs. nu utilizează nicio resursă din Hărţi Bing. În acest moment nu este necesară configurarea informaţiilor vreunui cont.</value>
+  </data>
+  <data name="NotUsingBingMapsResourceCaption" xml:space="preserve">
+    <value>Nicio resursă de Hărţi Bing</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Închidere</value>
+  </data>
+  <data name="BrowseForBaseMap" xml:space="preserve">
+    <value>Parcurgere pentru hartă fundal</value>
+  </data>
+  <data name="EnterUrl" xml:space="preserve">
+    <value>Introducere URL</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatch" xml:space="preserve">
+    <value>Referinţa spaţială a serviciului de hartă optimizat nu corespunde referinţei spaţiale a hărţii de fundal. Acest serviciu de hartă nu poate fi adăugat.</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatchCaption" xml:space="preserve">
+    <value>Referinţa spaţială nu corespunde</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemoved" xml:space="preserve">
+    <value>Seturile dvs. de date operaţionale includ servicii de hărţi ale căror referinţe spaţiale nu corespund hărţii fundal alese. Pentru a continua, aceste servicii de hărţi trebuie eliminate. Faceţi clic pe OK pentru a elimina.</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemovedCaption" xml:space="preserve">
+    <value>Setul de date operaţionale nu corespunde</value>
+  </data>
+  <data name="AddContentTitle" xml:space="preserve">
+    <value>Adăugare conţinut</value>
+  </data>
+  <data name="BaseMapGalleryTitle" xml:space="preserve">
+    <value>Alegere hartă fundal</value>
+  </data>
+  <data name="BrowseForBaseMapTitle" xml:space="preserve">
+    <value>Parcurgere pentru hartă fundal</value>
+  </data>
+  <data name="EnterUrlDialogTitle" xml:space="preserve">
+    <value>Introduceţi URL-ul pentru harta fundal</value>
+  </data>
+  <data name="MapContentsTitle" xml:space="preserve">
+    <value>Conţinuturi hartă</value>
+  </data>
+  <data name="CanOnlyUseCachedMapServicesAsBaseMap" xml:space="preserve">
+    <value>Numai serviciile de hărţi ArcGIS optimizate (cached) pot fi utilizate ca hărţi de fundal.</value>
+  </data>
+  <data name="InvalidMapServiceCaption" xml:space="preserve">
+    <value>Serviciu de hărţi nevalid </value>
+  </data>
+  <data name="MapTipBorderColorTooltip" xml:space="preserve">
+    <value>Modificare culoare margine pentru MapTip</value>
+  </data>
+  <data name="MapTipFillColorTooltip" xml:space="preserve">
+    <value>Modificare culoare de umplere pentru MapTip</value>
+  </data>
+  <data name="MapTipForegroundColorTooltip" xml:space="preserve">
+    <value>Modificare culoare text pentru MapTip</value>
+  </data>
+  <data name="SampleMapTipText" xml:space="preserve">
+    <value>Eşantion text</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Adăugare strat tematic selectat</value>
+  </data>
+  <data name="AttributePrompt" xml:space="preserve">
+    <value>Atribut:</value>
+  </data>
+  <data name="ColorScheme" xml:space="preserve">
+    <value>Schemă de culori</value>
+  </data>
+  <data name="MoreOptions" xml:space="preserve">
+    <value>Mai multe opţiuni</value>
+  </data>
+  <data name="RendererPrompt" xml:space="preserve">
+    <value>Autor reproducere:</value>
+  </data>
+  <data name="SymbolOptions" xml:space="preserve">
+    <value>Opţiuni schemă</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Simbol curent:</value>
+  </data>
+  <data name="Basemap" xml:space="preserve">
+    <value>Hartă fundal</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Aducere în faţă</value>
+  </data>
+  <data name="ClassBreaks" xml:space="preserve">
+    <value>Pauze de clase</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Culoare</value>
+  </data>
+  <data name="FromServer" xml:space="preserve">
+    <value>Parcurgere...</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Prima pagină</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Hartă</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Conţinuturi hartă</value>
+  </data>
+  <data name="MapTip" xml:space="preserve">
+    <value>Sugestie hartă</value>
+  </data>
+  <data name="MoreSymbolOptions" xml:space="preserve">
+    <value>Opţiuni schemă</value>
+  </data>
+  <data name="Organize" xml:space="preserve">
+    <value>Organizare</value>
+  </data>
+  <data name="RefreshLayer" xml:space="preserve">
+    <value>Reîmprospătare</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Eliminare</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Căutare...</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Trimitere în spate</value>
+  </data>
+  <data name="SingleSymbol" xml:space="preserve">
+    <value>Simbol unic</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Dimensiune</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Instrumente</value>
+  </data>
+  <data name="UniqueValues" xml:space="preserve">
+    <value>Valori unice</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="CategoryPrompt" xml:space="preserve">
+    <value>Categorie:</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>Simbol</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Vizualizare</value>
+  </data>
+  <data name="DrawOrder" xml:space="preserve">
+    <value>Ordine de trasare</value>
+  </data>
+  <data name="Popups" xml:space="preserve">
+    <value>Mesaje pop-up</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Tabel</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>Configurare mesaje pop-up</value>
+  </data>
+  <data name="AddUniqueValue" xml:space="preserve">
+    <value>Adăugare valoare</value>
+  </data>
+  <data name="DeleteUniqueValue" xml:space="preserve">
+    <value>Ştergere valoare selectată</value>
+  </data>
+  <data name="NextUniqueValue" xml:space="preserve">
+    <value>Valoarea unică următoare</value>
+  </data>
+  <data name="PreviousUniqueValue" xml:space="preserve">
+    <value>Valoarea unică anterioară</value>
+  </data>
+  <data name="ValuePrompt" xml:space="preserve">
+    <value>Valoare:</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Strat tematic</value>
+  </data>
+  <data name="MapCenterTooltip" xml:space="preserve">
+    <value>Centrul de hărţi ArcGIS.com</value>
+  </data>
+  <data name="ClassesPrompt" xml:space="preserve">
+    <value>Clase:</value>
+  </data>
+  <data name="InvalidClassBreakValue" xml:space="preserve">
+    <value>Valoare nevalidă</value>
+  </data>
+  <data name="DefaultSymbol" xml:space="preserve">
+    <value>Simbol implicit</value>
+  </data>
+  <data name="MaxPointsPrompt" xml:space="preserve">
+    <value>Număr maxim de puncte:</value>
+  </data>
+  <data name="RadiusPrompt" xml:space="preserve">
+    <value>Rază:</value>
+  </data>
+  <data name="UsePointClustering" xml:space="preserve">
+    <value>Utilizare grupare puncte</value>
+  </data>
+  <data name="AddContent" xml:space="preserve">
+    <value>Adăugare conţinut</value>
+  </data>
+  <data name="LayerSymbology" xml:space="preserve">
+    <value>Simbologie</value>
+  </data>
+  <data name="AutoUpdates" xml:space="preserve">
+    <value>Actualizări automate</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>Interval</value>
+  </data>
+  <data name="PollForUpdates" xml:space="preserve">
+    <value>Interogare după actualizări</value>
+  </data>
+  <data name="UpdateOnExtentChanged" xml:space="preserve">
+    <value>Actualizare la modificarea extinderii</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtru</value>
+  </data>
+  <data name="FilterLayerTitle" xml:space="preserve">
+    <value>Specificare expresie filtru</value>
+  </data>
+  <data name="FilterByMapExtent" xml:space="preserve">
+    <value>Filtrare după extindere</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Pe tot ecranul</value>
+  </data>
+  <data name="AutoScrollRow" xml:space="preserve">
+    <value>Derulare automată rând</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Detalii serviciu</value>
+  </data>
+  <data name="DatasetPrompt" xml:space="preserve">
+    <value>Set de date:</value>
+  </data>
+  <data name="DistancePrompt" xml:space="preserve">
+    <value>Distanţă:</value>
+  </data>
+  <data name="FindNearbyTitle" xml:space="preserve">
+    <value>Găsire în apropiere</value>
+  </data>
+  <data name="InvalidDistance" xml:space="preserve">
+    <value>Introduceţi o distanţă validă</value>
+  </data>
+  <data name="InvalidDistanceCaption" xml:space="preserve">
+    <value>Distanţă nevalidă</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>Kilometri</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Metri</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>Mile</value>
+  </data>
+  <data name="SelectionTools" xml:space="preserve">
+    <value>Instrumente de selectare</value>
+  </data>
+  <data name="BufferDistance" xml:space="preserve">
+    <value>Distanţă buffer</value>
+  </data>
+  <data name="Feed" xml:space="preserve">
+    <value>GeoRSS...</value>
+  </data>
+  <data name="FindNearbyBufferPrefix" xml:space="preserve">
+    <value>Găsire buffer în apropiere - </value>
+  </data>
+  <data name="FindNearbyPrefix" xml:space="preserve">
+    <value>Găsire în apropiere - </value>
+  </data>
+  <data name="SelectByDraw" xml:space="preserve">
+    <value>Selectare prin trasare</value>
+  </data>
+  <data name="ColorSchemePrompt" xml:space="preserve">
+    <value>Schemă de culori:</value>
+  </data>
+  <data name="EditValuesPrompt" xml:space="preserve">
+    <value>Editare valori:</value>
+  </data>
+  <data name="TypeValueToAdd" xml:space="preserve">
+    <value>Introduceţi o valoare de adăugat</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Temă</value>
+  </data>
+  <data name="AddGeoRSSTitle" xml:space="preserve">
+    <value>Introducere URL pentru flux GeoRSS</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>Antet:</value>
+  </data>
+  <data name="BrowseDialogGeographicDataNotFound" xml:space="preserve">
+    <value>Datele geografice nu au fost găsite</value>
+  </data>
+  <data name="DefaultBasemapLayerDisplayName" xml:space="preserve">
+    <value>Hartă fundal</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>Strat tematic:</value>
+  </data>
+  <data name="AddLayerTooltip" xml:space="preserve">
+    <value>Adăugaţi setul de date selectat din ArcGIS Server, SharePoint sau serviciul de date spaţiale în hartă</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Redenumire</value>
+  </data>
+  <data name="ODataFeed" xml:space="preserve">
+    <value>OData...</value>
+  </data>
+  <data name="SignInWithGlobalAccount" xml:space="preserve">
+    <value>Autentificaţi-vă folosind contul global ESRI</value>
+  </data>
+  <data name="ClusterColor" xml:space="preserve">
+    <value>Culoare fundal grupare</value>
+  </data>
+  <data name="ClusterTextColor" xml:space="preserve">
+    <value>Culoare prim-plan grupare</value>
+  </data>
+  <data name="Clustering" xml:space="preserve">
+    <value>Grupare</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Noţiuni generale</value>
+  </data>
+  <data name="HeatMapAdd" xml:space="preserve">
+    <value>Adăugare "heat map"</value>
+  </data>
+  <data name="Intensity" xml:space="preserve">
+    <value>Intensitate</value>
+  </data>
+  <data name="OpenItemOnClick" xml:space="preserve">
+    <value>Deschidere element la clic</value>
+  </data>
+  <data name="Symbology" xml:space="preserve">
+    <value>Simbologie</value>
+  </data>
+  <data name="ShowMapContents" xml:space="preserve">
+    <value>Înapoi</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>Atribute</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Diverse</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avansat</value>
+  </data>
+  <data name="ExtensionLoadFailed" xml:space="preserve">
+    <value>Încărcare extensie eşuată</value>
+  </data>
+  <data name="ToolClassLoadFailed" xml:space="preserve">
+    <value>Încărcare librărie de instrumente eşuată</value>
+  </data>
+  <data name="ToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Configurare încărcare librărie de instrumente eşuată</value>
+  </data>
+  <data name="ExtensionInitializationFailed" xml:space="preserve">
+    <value>Eşec la instanţializarea unei instanţe a unei comenzi personalizate.</value>
+  </data>
+  <data name="ExtensionInitializationFailedHeader" xml:space="preserve">
+    <value>Eşec la iniţializarea extensiei</value>
+  </data>
+  <data name="Less" xml:space="preserve">
+    <value>Mai puţin</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Mai mult</value>
+  </data>
+  <data name="ConfiguringLayer" xml:space="preserve">
+    <value>Se configurează:</value>
+  </data>
+  <data name="RemoveLayerCaption" xml:space="preserve">
+    <value>Eliminare strat tematic?</value>
+  </data>
+  <data name="RemoveLayerNameSubstitude" xml:space="preserve">
+    <value>selectat</value>
+  </data>
+  <data name="RemoveLayerPrompt" xml:space="preserve">
+    <value>Doriţi să eliminaţi stratul tematic {0} din hartă?</value>
+  </data>
+  <data name="BrowseNoEllipsis" xml:space="preserve">
+    <value>Parcurgere</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Conţinuturi</value>
+  </data>
+  <data name="GeoRSS" xml:space="preserve">
+    <value>GeoRSS</value>
+  </data>
+  <data name="SearchNoEllipsis" xml:space="preserve">
+    <value>Căutare</value>
+  </data>
+  <data name="ErrorLoadConfigurationOfExtension" xml:space="preserve">
+    <value>Eroare netratată în parametrul LoadConfiguration al extensiei ({0})</value>
+  </data>
+  <data name="ErrorNoPrinterContainerFoundInPrintTemplate" xml:space="preserve">
+    <value>Nu a fost găsit niciun recipient de imprimare în şablonul de imprimare.</value>
+  </data>
+  <data name="ErrorSaveConfigurationOfExtension" xml:space="preserve">
+    <value>Eroare netratată în parametrul SaveConfiguration al extensiei ({0})</value>
+  </data>
+  <data name="ExceptionCachedMapServiceSpatialReferenceDoesNotMatch" xml:space="preserve">
+    <value>Referinţa spaţială a serviciului de hartă optimizat (cached) nu corespunde.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitialized" xml:space="preserve">
+    <value>Imposibil de apelat parametrul ZoomMapToExtent înainte de iniţializarea hărţii. Utilizaţi parametrul MapLayersInitialized pentru a aştepta acest eveniment.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitializedMapReferenceNull" xml:space="preserve">
+    <value>Imposibil de apelat parametrul ZoomMapToExtent înainte de iniţializarea hărţii. Referinţa spaţială a hărţii este nulă.</value>
+  </data>
+  <data name="ExceptionConnectionTypeDoesNotCoorespondToDatasourceWhichHasResources" xml:space="preserve">
+    <value>Tipul de conexiune {0} nu corespunde unei surse de date ({1}) care conţine resurse</value>
+  </data>
+  <data name="ExceptionCouldNotFindElementWithName" xml:space="preserve">
+    <value>Nu a putut fi găsit un element cu numele {0}.</value>
+  </data>
+  <data name="ExceptionCouldNotFindToggleButtonWithName" xml:space="preserve">
+    <value>Nu a putut fi găsit un buton de comutare cu numele {0}.</value>
+  </data>
+  <data name="ExceptionDatasourceNotLoadedForBaseMapType" xml:space="preserve">
+    <value>Parametrul DataSource nu este încărcat pentru tipul de hartă fundal {0}</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>element</value>
+  </data>
+  <data name="ExceptionMapHasNotBeenInitializedYet" xml:space="preserve">
+    <value>Harta nu a fost iniţializată încă</value>
+  </data>
+  <data name="ExceptionMapLayersHaveNotBeenInstantiated" xml:space="preserve">
+    <value>Straturile tematice ale hărţii nu au fost instanţializate. Harta fundal poate fi modificată numai după ce parametrul MapLayersInitialized a fost activat</value>
+  </data>
+  <data name="ExceptionMapNotSet" xml:space="preserve">
+    <value>Harta nu este setată</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationProvider" xml:space="preserve">
+    <value>Trebuie specificat un parametru ConfigurationProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationStoreProvider" xml:space="preserve">
+    <value>Trebuie specificat un parametru ConfigurationStoreProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyDataSourceProvider" xml:space="preserve">
+    <value>Trebuie specificat parametrul DataSourceProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyLayoutProvider" xml:space="preserve">
+    <value>Trebuie specificat un parametru LayoutProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifySpatialReferenceOnEnvelope" xml:space="preserve">
+    <value>Trebuie specificată referinţa spaţială pe „envelope”</value>
+  </data>
+  <data name="ExceptionMustSpecifyThemeProvider" xml:space="preserve">
+    <value>Trebuie specificat un parametru ThemeProvider</value>
+  </data>
+  <data name="ExceptionNoBingMapsTokenAvailable" xml:space="preserve">
+    <value>Nu este disponibil niciun token de Hărţi Bing</value>
+  </data>
+  <data name="ExceptionNoGeometryServiceUrlSpecifiedLayerZoomedIsDifferentSpatialReference" xml:space="preserve">
+    <value>Nu este specificat niciun URL de serviciu de geometrie. Stratul tematic la care se face transfocarea se află într-o referinţă spaţială diferită din hartă şi extinderea completă trebuie reproiectată utilizându-se un serviciu de geometrie</value>
+  </data>
+  <data name="ExceptionNotSupported" xml:space="preserve">
+    <value>Neacceptat</value>
+  </data>
+  <data name="ExceptionNullBaseMapInfo" xml:space="preserve">
+    <value>baseMapInfo</value>
+  </data>
+  <data name="ExceptionOnlyCachedServicesCanBeUsedAsBaseMaps" xml:space="preserve">
+    <value>Numai serviciile de hărţi optimizate (cached) pot fi folosite drept hărţi de fundal</value>
+  </data>
+  <data name="ExceptionUnableToInstantiateDatasourceForBaseMapType" xml:space="preserve">
+    <value>Imposibil de instanţializat sursa de date pentru tipul de hartă fundal {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Imposibil de preluat informaţii despre configurare. Nu a fost returnată nicio informaţie.</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasource" xml:space="preserve">
+    <value>Imposibil de preluat surse de date pentru {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasourceConnectionType" xml:space="preserve">
+    <value>Imposibil de preluat surse de date pentru tipul de conexiune {0}</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Încărcare...</value>
+  </data>
+  <data name="LoadingMapCenter" xml:space="preserve">
+    <value>Se încarcă centrul de hărţi...</value>
+  </data>
+  <data name="LogUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Imposibil de preluat informaţii despre configuraţie</value>
+  </data>
+  <data name="MsgErrorExecutingBufferOperation" xml:space="preserve">
+    <value>Eroare la executarea operaţiei în buffer.</value>
+  </data>
+  <data name="MsgErrorExecutingRelationAsyncOperation" xml:space="preserve">
+    <value>Eroare la executarea operaţiei RelationAsync</value>
+  </data>
+  <data name="MsgErrorOpeningFile" xml:space="preserve">
+    <value>Eroare la deschiderea fişierului</value>
+  </data>
+  <data name="MsgErrorRetrievingSubLayersForMapService" xml:space="preserve">
+    <value>Eroare la preluarea substraturile tematice pentru serviciul de hartă</value>
+  </data>
+  <data name="MsgErrorSavingFile" xml:space="preserve">
+    <value>Eroare la salvarea fişierului</value>
+  </data>
+  <data name="MsgNoFeaturesSelected" xml:space="preserve">
+    <value>Niciun obiect spaţial selectat</value>
+  </data>
+  <data name="MsgNoResourcesFound" xml:space="preserve">
+    <value>Nu au fost găsite resurse</value>
+  </data>
+  <data name="MsgUnableToAccessGeometryService" xml:space="preserve">
+    <value>Imposibil de accesat serviciul de geometrie.</value>
+  </data>
+  <data name="MsgUnableToCreateLayer" xml:space="preserve">
+    <value>Imposibil de creat stratul tematic</value>
+  </data>
+  <data name="MsgUnableToRetrieveResources" xml:space="preserve">
+    <value>Imposibil de preluat resurse.</value>
+  </data>
+  <data name="MsgUnknownError" xml:space="preserve">
+    <value>Eroare necunoscută</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>Utilizator necunoscut</value>
+  </data>
+  <data name="NotValidMapDocument" xml:space="preserve">
+    <value>Nu este un document de hartă valid.</value>
+  </data>
+  <data name="ErrorRetrievingSymbols" xml:space="preserve">
+    <value>Eroare la preluarea simbolurilor</value>
+  </data>
+  <data name="ExceptionCacheMapServicesCannotReproject" xml:space="preserve">
+    <value>Serviciile de hărţi optimizate (cached) din aplicaţie nu pot fi reproiectate</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Deschideţi o hartă Web din ArcGIS.com</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Autentificare</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Ieşire</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Text fundal</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Membri</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Previzualizare</value>
+  </data>
+  <data name="SelectedItem" xml:space="preserve">
+    <value>Element selectat</value>
+  </data>
+  <data name="RecordOutOfSelected" xml:space="preserve">
+    <value>Înregistrări ({0} din {1} selectate)</value>
+  </data>
+  <data name="ExtensionInitializationFailedUrl" xml:space="preserve">
+    <value>Eşec la instanţializarea unei instanţe a unei comenzi personalizate. URL: {0}</value>
+  </data>
+  <data name="HeatMapTitle" xml:space="preserve">
+    <value>{0} Heat Map</value>
+  </data>
+  <data name="CurrentColor" xml:space="preserve">
+    <value>Culoare curentă</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Descriere:</value>
+  </data>
+  <data name="HeightPrompt" xml:space="preserve">
+    <value>Înălţime:</value>
+  </data>
+  <data name="Moredotdot" xml:space="preserve">
+    <value>Mai mult...</value>
+  </data>
+  <data name="NotificationDontShowDialogOnStartup" xml:space="preserve">
+    <value>Nu se afişează acest dialog la pornire</value>
+  </data>
+  <data name="RecordPrompt" xml:space="preserve">
+    <value>Înregistrare:</value>
+  </data>
+  <data name="StandardColors" xml:space="preserve">
+    <value>Culori standard</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Culori temă</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Titlu:</value>
+  </data>
+  <data name="WidthPrompt" xml:space="preserve">
+    <value>Lăţime:</value>
+  </data>
+  <data name="MapBehaviors" xml:space="preserve">
+    <value>Comportamente hartă</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Jos</value>
+  </data>
+  <data name="MapBehaviorAdd" xml:space="preserve">
+    <value>Adăugare un comportament de hartă nou</value>
+  </data>
+  <data name="MapBehaviorConfigure" xml:space="preserve">
+    <value>Configurare comportament de hartă selectat</value>
+  </data>
+  <data name="MapBehaviorMoveDown" xml:space="preserve">
+    <value>Mutare comportament de hartă selectat o poziţie mai jos</value>
+  </data>
+  <data name="MapBehaviorMoveUp" xml:space="preserve">
+    <value>Mutare comportament de hartă selectat o poziţie mai sus</value>
+  </data>
+  <data name="MapBehaviorRemove" xml:space="preserve">
+    <value>Eliminaţi comportamentul hărţii selectate</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviors" xml:space="preserve">
+    <value>Niciun comportament nu a fost asociat cu harta.</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviorsInEdit" xml:space="preserve">
+    <value>Faceţi clic pe Adăugare pentru a configura un comportament de hartă nou.</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Mutare</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Sus</value>
+  </data>
+  <data name="AddLabel" xml:space="preserve">
+    <value>Adăugare</value>
+  </data>
+  <data name="BehaviorClassLoadFailed" xml:space="preserve">
+    <value>Încărcarea clasei de comportamente a eşuat</value>
+  </data>
+  <data name="BehaviorConfigurationFailed" xml:space="preserve">
+    <value>Configurarea comportamentului a eşuat</value>
+  </data>
+  <data name="BehaviorConfigurationFailedDescription" xml:space="preserve">
+    <value>Metoda de configurare a comportamentului a generat o excepţie.</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Configurare încărcare librărie de comportamente eşuată</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailedDescription" xml:space="preserve">
+    <value>Încărcarea configuraţiei comportamentului a generat o excepţie.</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>Tip:</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Creaţi un strat tematic de tip "heat map" pe baza obiectelor spaţiale din stratul tematic curent</value>
+  </data>
+  <data name="ClusterColorDescription" xml:space="preserve">
+    <value>Setaţi culoarea fundalului pentru grupările stratului tematic curent</value>
+  </data>
+  <data name="ClusterTextColorDescription" xml:space="preserve">
+    <value>Setaţi culoarea marginii şi textului pentru grupările stratului tematic curent</value>
+  </data>
+  <data name="FilterDescription" xml:space="preserve">
+    <value>Filtraţi obiectele spaţiale incluse în stratul tematic curent, specificând o interogare de atribute</value>
+  </data>
+  <data name="HeatMapColorDescription" xml:space="preserve">
+    <value>Selectaţi schema de culoare pentru harta de tip "heat map"</value>
+  </data>
+  <data name="IntensityDescription" xml:space="preserve">
+    <value>Ajustaţi intensitatea hărţii de tip "heat map". O intensitate mai mare va conduce la pete de căldură mai mari.</value>
+  </data>
+  <data name="MaxPoints" xml:space="preserve">
+    <value>Număr maxim de puncte</value>
+  </data>
+  <data name="MaxPointsDescription" xml:space="preserve">
+    <value>Setaţi numărul maxim de obiecte spaţiale care pot fi grupate într-o singură grupare</value>
+  </data>
+  <data name="OpenItemOnClickDescription" xml:space="preserve">
+    <value>Afişaţi detaliile unui obiect spaţial într-o fereastră de browser nouă când se face clic pe el</value>
+  </data>
+  <data name="PollForUpdatesDescription" xml:space="preserve">
+    <value>Setaţi dacă să se preia sau nu actualizări ale fluxului la intervalul specificat</value>
+  </data>
+  <data name="PopupsDescription" xml:space="preserve">
+    <value>Configuraţi atributele afişate în mesajele pop-up ale stratului tematic curent</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>Rază</value>
+  </data>
+  <data name="RadiusDescription" xml:space="preserve">
+    <value>Specificaţi raza, în pixeli, în care obiectele spaţiale vor fi grupare într-o singură grupare</value>
+  </data>
+  <data name="SymbologyDescription" xml:space="preserve">
+    <value>Configuraţi simbolurile utilizate pentru afişarea stratului tematic curent</value>
+  </data>
+  <data name="TableDescription" xml:space="preserve">
+    <value>Configuraţi câmpurile afişate în tabelul de atribute al stratului tematic curent</value>
+  </data>
+  <data name="UpdateOnExtentChangedDescription" xml:space="preserve">
+    <value>Setaţi dacă să se preia sau nu actualizări ale fluxului când harta este panoramată sau transfocată</value>
+  </data>
+  <data name="UsePointClusteringDescription" xml:space="preserve">
+    <value>Specificaţi dacă să se afişeze sau nu grupuri de puncte ca un obiect spaţial grupat</value>
+  </data>
+  <data name="SelectTheLayout" xml:space="preserve">
+    <value>Selectare configuraţie...</value>
+  </data>
+  <data name="SelectThePrintLayout" xml:space="preserve">
+    <value>Selectare configuraţie imprimare</value>
+  </data>
+  <data name="BehaviorPrompt" xml:space="preserve">
+    <value>Comportament:</value>
+  </data>
+  <data name="Cluster" xml:space="preserve">
+    <value>Grupare</value>
+  </data>
+  <data name="ClusterFeatures" xml:space="preserve">
+    <value>Obiecte spaţiale grupare</value>
+  </data>
+  <data name="ConfigureRange" xml:space="preserve">
+    <value>Interval de configurare</value>
+  </data>
+  <data name="EnablePrompt" xml:space="preserve">
+    <value>Activare:</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Obiecte spaţiale</value>
+  </data>
+  <data name="RenderAsHeatMap" xml:space="preserve">
+    <value>Redare ca "heat map"</value>
+  </data>
+  <data name="RenderHeatMapAdvancedProperties" xml:space="preserve">
+    <value>Proprietăţi avansate pentru modul de redare a hărţii de încălzire</value>
+  </data>
+  <data name="Tolerance" xml:space="preserve">
+    <value>Toleranţă</value>
+  </data>
+  <data name="LayoutPrompt" xml:space="preserve">
+    <value>Structură:</value>
+  </data>
+  <data name="ConfigurePrint" xml:space="preserve">
+    <value>Configurare imprimare</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Imprimare</value>
+  </data>
+  <data name="LayoutResourceDownloadError" xml:space="preserve">
+    <value>Eroare la descărcarea resurselor pentru configuraţie.</value>
+  </data>
+  <data name="ChangeBackground" xml:space="preserve">
+    <value>Modificare fundal</value>
+  </data>
+  <data name="PreviewTheme" xml:space="preserve">
+    <value>Previzualizare temă</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>Fără titlu</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Adăugare comportament</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>Estompare graduală</value>
+  </data>
+  <data name="Solid" xml:space="preserve">
+    <value>Linie continuă</value>
+  </data>
+  <data name="ToggleRibbonVisibility" xml:space="preserve">
+    <value>Comutare vizibilitate bandă</value>
+  </data>
+  <data name="ArcGISSilverlightVersion" xml:space="preserve">
+    <value>ArcGIS API for Silverlight:</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versiune:</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Despre</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Mutare în jos</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Mutare în sus</value>
+  </data>
+  <data name="ConstrainExtentBehaviorMessage" xml:space="preserve">
+    <value>Transfocaţi la extinderea hărţii pe care doriţi să o utilizaţi drept constrângere şi apăsaţi pe Aplicare.</value>
+  </data>
+  <data name="ConstrainExtentBehaviorTitle" xml:space="preserve">
+    <value>Setare constrângere pentru extindere hartă</value>
+  </data>
+  <data name="DeleteBehaviorCaption" xml:space="preserve">
+    <value>Sigur doriţi să ştergeţi acest comportament?</value>
+  </data>
+  <data name="DeleteBehaviorPrompt" xml:space="preserve">
+    <value>Confirmare ştergere</value>
+  </data>
+  <data name="CurrentConstrainExtentLabel" xml:space="preserve">
+    <value>"Envelope" constrângere curentă pentru extindere:</value>
+  </data>
+  <data name="ConstrainExtentNotSetMessage" xml:space="preserve">
+    <value>Constrângerea pentru extinderea hărţii nu este setată încă.</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>Nesetat</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Configurare hărţi fundal</value>
+  </data>
+  <data name="ConfigureTheSetOfBaseMaps" xml:space="preserve">
+    <value>Configuraţi setul de hărţi fundal</value>
+  </data>
+  <data name="AddNewBaseMap" xml:space="preserve">
+    <value>Adăugaţi o hartă fundal nouă</value>
+  </data>
+  <data name="ClickImageToChangeThumbnailIcon" xml:space="preserve">
+    <value>Faceţi clic pe imagine pentru a modifica pictograma miniaturii</value>
+  </data>
+  <data name="RequiresBingAppID" xml:space="preserve">
+    <value>Necesită ID-ul aplicaţiei Bing</value>
+  </data>
+  <data name="DeleteCurrentlySelectedBaseMap" xml:space="preserve">
+    <value>Ştergeţi harta fundal selectată</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapDown" xml:space="preserve">
+    <value>Mutaţi harta fundal selectată curent în jos</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapUp" xml:space="preserve">
+    <value>Mutaţi harta fundal selectată curent în sus</value>
+  </data>
+  <data name="SubTypePrompt" xml:space="preserve">
+    <value>Subtip:</value>
+  </data>
+  <data name="TextPrompt" xml:space="preserve">
+    <value>Text:</value>
+  </data>
+  <data name="ThumbnailPrompt" xml:space="preserve">
+    <value>Miniatură:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Înainte</value>
+  </data>
+  <data name="NoBehaviorTitleSpecified" xml:space="preserve">
+    <value>Nciun titlu de comportament specificat</value>
+  </data>
+  <data name="PleaseProvideValidTitleForNewBehavior" xml:space="preserve">
+    <value>Furnizaţi un titlu valid pentru noul comportament.</value>
+  </data>
+  <data name="SelectBehaviorToAdd" xml:space="preserve">
+    <value>Selectaţi un comportament</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Mod</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Dimensiune cache </value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>Obţinere obiecte spaţiale din zona hărţii</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>Obţinere simultană a tuturor obiectelor spaţiale</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Dimensiune memorie cache de obiecte spaţiale</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Numărul maxim de obiecte spaţiale pe care stratul tematic le poate conţine. Dacă această limită este depăşită în momentul în care sunt preluate obiecte spaţiale noi, cele mai vechi obiecte spaţiale vor fi eliminate din stratul tematic.</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>Obţinere obiecte spaţiale din zona hărţii</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>La încărcarea sau reîmprospătarea stratului tematic, sunt preluate numai obiectele spaţiale din zona curentă a hărţii. Mai multe obiecte spaţiale sunt preluate când se modifică zona hărţii.</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>Preluare toate obiectele spaţiale</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>La încărcarea sau reîmprospătarea stratului tematic, sunt preluate toate obiectele spaţiale din stratul tematic.</value>
+  </data>
+  <data name="BrowseContentUrlWatermark" xml:space="preserve">
+    <value>Introducere URL pentru server sau stratul tematic</value>
+  </data>
+  <data name="BrowseDialogNoResourcesFound" xml:space="preserve">
+    <value>Nu au fost găsite resurse.</value>
+  </data>
+  <data name="BrowseDialogNoServerOrLayerFound" xml:space="preserve">
+    <value>Nu a fost găsit niciun serviciu sau strat tematic.</value>
+  </data>
+  <data name="SecureServices" xml:space="preserve">
+    <value>Securizare servicii</value>
+  </data>
+  <data name="AutoUpdateNumericDescription" xml:space="preserve">
+    <value>Setează intervalul de reîmprospătare în secunde sau minute. Acest strat tematic va fi reîmprospătat automat la acest interval până va fi dezactivat.</value>
+  </data>
+  <data name="AutoUpdateNumericTooltip" xml:space="preserve">
+    <value>Actualizare automată interval de reîmprospătare</value>
+  </data>
+  <data name="AutoUpdatePollingDescription" xml:space="preserve">
+    <value>Setează dacă parametrul FeatureLayer va fi reîmprospătat automat la un interval regulat.</value>
+  </data>
+  <data name="AutoUpdatePollingTooltip" xml:space="preserve">
+    <value>Actualizare automată straturi tematice de obiecte spaţiale</value>
+  </data>
+  <data name="AutoUpdateIntervalText" xml:space="preserve">
+    <value>Interval:</value>
+  </data>
+  <data name="AutoUpdateLayerConfigTitle" xml:space="preserve">
+    <value>Actualizare automată</value>
+  </data>
+  <data name="AvailableLayers" xml:space="preserve">
+    <value>Straturi tematice disponibile:</value>
+  </data>
+  <data name="EnablePopups" xml:space="preserve">
+    <value>Afişare mesaje pop-up</value>
+  </data>
+  <data name="EnablePopupsForLayer" xml:space="preserve">
+    <value>Afişare ferestre pop-up pentru acest strat tematic</value>
+  </data>
+  <data name="OnClick" xml:space="preserve">
+    <value>la clic</value>
+  </data>
+  <data name="OnHover" xml:space="preserve">
+    <value>la suprapunerea mouse-ului</value>
+  </data>
+  <data name="ConfigureEditorWidget" xml:space="preserve">
+    <value>Configurare editare</value>
+  </data>
+  <data name="SnapshotModeNote" xml:space="preserve">
+    <value>Notă: Dacă numărul de obiecte spaţiale din setul de date depăşeşte numărul maxim de obiecte spaţiale returnate de serviciu, nu toate obiectele spaţiale vor fi incluse în stratul tematic.</value>
+  </data>
+  <data name="GraphicSymbolsTakePrecedence" xml:space="preserve">
+    <value>Simbolurile definite aici sunt înlocuite de simbolurile din graficele individuale, dacă sunt definite.</value>
+  </data>
+  <data name="SpatialReference" xml:space="preserve">
+    <value>Referinţă spaţială:</value>
+  </data>
+  <data name="XMax" xml:space="preserve">
+    <value>XMax:</value>
+  </data>
+  <data name="XMin" xml:space="preserve">
+    <value>XMin:</value>
+  </data>
+  <data name="YMax" xml:space="preserve">
+    <value>YMax</value>
+  </data>
+  <data name="YMin" xml:space="preserve">
+    <value>YMin</value>
+  </data>
+  <data name="NotFoundInLayout" xml:space="preserve">
+    <value>{0} nu a fost găsit în configuraţia curentă</value>
+  </data>
+  <data name="ToggleEditFailed" xml:space="preserve">
+    <value>Eşec la editarea controalelor de editare. Este posibil ca configuraţia curentă să nu accepte editarea</value>
+  </data>
+  <data name="PopupFromWebMap" xml:space="preserve">
+    <value>Utilizaţi definiţia pop-up din harta Web.</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>Transfocare automată la selecţie</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Introducere</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opţiuni</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>Înregistrări ({0} din {1} selectate)</value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>Comutare selecţie</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Preluare obiect spaţial</value>
+  </data>
+  <data name="ConfigureSecuredServices" xml:space="preserve">
+    <value>Configurare servicii securizate</value>
+  </data>
+  <data name="ErrorChangingProxies" xml:space="preserve">
+    <value>Eroare la modificarea proxy-urilor</value>
+  </data>
+  <data name="ProxyUrl" xml:space="preserve">
+    <value>URL poxy:</value>
+  </data>
+  <data name="SpecifyUrlToProxyPageUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Specificaţi URL-ul unei pagini poxy utilizate pentru accesarea serviciilor securizate pentru această aplicaţie. Acest proxy va fi partajat de toate straturile tematice din aplicaţie, care utilizează un serviciu securizat.</value>
+  </data>
+  <data name="UsesProxy" xml:space="preserve">
+    <value>Utilizează proxy</value>
+  </data>
+  <data name="WhetherThisLayerUsesProxyServiceForaccessingRestrictedService" xml:space="preserve">
+    <value>Dacă acest strat tematic utilizează un serviciu proxy pentru accesarea unui serviciu restricţionat. Faceţi clic pe Configurare proxy pentru a configura URL-ul proxy-ului.</value>
+  </data>
+  <data name="LayerHasNoAttributes" xml:space="preserve">
+    <value>Stratul tematic selectat nu are niciun atribut care poate fi afişat.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalii</value>
+  </data>
+  <data name="ToggleErrorDetails" xml:space="preserve">
+    <value>Afişaţi sau ascundeţi detaliile erorii.</value>
+  </data>
+  <data name="LayerIsNotGraphicsLayer" xml:space="preserve">
+    <value>Atributele despre stratul tematic selectat nu pot fi afişate, deoarece stratul tematic este un strat tematic de serviciu de hartă ArcGIS Server dinamic sau memorat în cache. Pentru detalii suplimentare, citiţi subiectul Tipuri de straturi tematice din sistemul de ajutor.</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteBasemap" xml:space="preserve">
+    <value>Sigur doriţi să ştergeţi această hartă fundal?</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Confirmare ştergere</value>
+  </data>
+  <data name="NewBasemap" xml:space="preserve">
+    <value>Hartă fundal nouă</value>
+  </data>
+  <data name="ConfigureSelectedLayer" xml:space="preserve">
+    <value>Configurare strat tematic selectat</value>
+  </data>
+  <data name="SelectLayerToAdd" xml:space="preserve">
+    <value>Selectare strat tematic de adăugat</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Accesare servicii securizate</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Adăugare servicii securizate</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Configurare proxy</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServices" xml:space="preserve">
+    <value>Configuraţi proxy-ul utilizat pentru a accesa serviciile securizate pentru această aplicaţie</value>
+  </data>
+  <data name="BehaviorSaveFailed" xml:space="preserve">
+    <value>Eşec la salvarea configuraţiei comportamentului</value>
+  </data>
+  <data name="BehaviorSaveFailedMessage" xml:space="preserve">
+    <value>A survenit o eroare la salvarea configuraţiei comportamentelor hărţii ataşate.</value>
+  </data>
+  <data name="LayerInitFailure" xml:space="preserve">
+    <value>Eşec la iniţializarea stratului tematic</value>
+  </data>
+  <data name="LayerNotInitialized" xml:space="preserve">
+    <value>Stratul tematic nu a putut fi iniţializat.</value>
+  </data>
+  <data name="DeleteGraphicConfirmation" xml:space="preserve">
+    <value>Eliminare obiect spaţial?</value>
+  </data>
+  <data name="DeleteGraphicConfirmationTitle" xml:space="preserve">
+    <value>Confirmare</value>
+  </data>
+  <data name="EditValuesCommandEditorBackButtonContent" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="ConfigureBehavior" xml:space="preserve">
+    <value>Configurare comportament</value>
+  </data>
+  <data name="DisablePopupForLayer" xml:space="preserve">
+    <value>Dezactivare mesaje pop-up</value>
+  </data>
+  <data name="EnablePopupForLayer" xml:space="preserve">
+    <value>Activare mesaje pop-up</value>
+  </data>
+  <data name="LinkWebMapDialogCaption" xml:space="preserve">
+    <value>Link către harta Web</value>
+  </data>
+  <data name="LinkWebMapDialogMessage" xml:space="preserve">
+    <value>Configurarea hărţii va fi încărcată din harta Web. Configuraţia existentă a hărţii se va pierde. Continuaţi?</value>
+  </data>
+  <data name="UnlinkWebMapDialogCaption" xml:space="preserve">
+    <value>Anulare legătură de la harta Web</value>
+  </data>
+  <data name="UnlinkWebMapDialogMessage" xml:space="preserve">
+    <value>Configuraţia hărţii va fi deconectată de la harta Web. Veţi putea adăuga, elimina şi configura straturi tematice, însă actualizările hărţii Web nu vor mai fi afişate în hartă. Continuaţi?</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="Business" xml:space="preserve">
+    <value>Afacere</value>
+  </data>
+  <data name="Cartography" xml:space="preserve">
+    <value>Cartografiere</value>
+  </data>
+  <data name="Outdoor_Recreation" xml:space="preserve">
+    <value>Agrement în aer liber</value>
+  </data>
+  <data name="People_and_Places" xml:space="preserve">
+    <value>Oameni şi locuri</value>
+  </data>
+  <data name="Public_Safety_and_Health" xml:space="preserve">
+    <value>Siguranţă şi sănătate publică</value>
+  </data>
+  <data name="Transportation" xml:space="preserve">
+    <value>Transport</value>
+  </data>
+  <data name="WebMapLoadFailed" xml:space="preserve">
+    <value>Harta Web cu ID-ul {0} nu a putut fi încărcată. Este posibil să nu aveţi permisiuni să accesaţi această hartă sau este posibil ca harta să nu mai existe.</value>
+  </data>
+  <data name="ClusteringDisallowedCaption" xml:space="preserve">
+    <value>Grupare nepermisă</value>
+  </data>
+  <data name="ClusteringDisallowedMessage" xml:space="preserve">
+    <value>Gruparea nu este permisă deoarece stratul tematic este selectat pentru editare.</value>
+  </data>
+  <data name="UnsupportedBasemapType" xml:space="preserve">
+    <value>Tip hartă fundal neacceptat</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Utilizare Proxy</value>
+  </data>
+  <data name="AreaNotesLayer" xml:space="preserve">
+    <value>{0} - Suprafeţe</value>
+  </data>
+  <data name="LineNotesLayer" xml:space="preserve">
+    <value>{0} - Linii</value>
+  </data>
+  <data name="PointNotesLayer" xml:space="preserve">
+    <value>{0} - Puncte</value>
+  </data>
+  <data name="Editing" xml:space="preserve">
+    <value>Editare</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Activat</value>
+  </data>
+  <data name="ArcGISPortalDefaultName" xml:space="preserve">
+    <value>Portal pentru ArcGIS</value>
+  </data>
+  <data name="SignInToArcGISServer" xml:space="preserve">
+    <value>Autentificaţi-vă la ArcGIS Server la {0}</value>
+  </data>
+  <data name="InvalidUrlUserPassword" xml:space="preserve">
+    <value>Adresă URL, nume de utilizator sau parolă incorectă</value>
+  </data>
+  <data name="SignInTo" xml:space="preserve">
+    <value>Autentificare la {0}</value>
+  </data>
+  <data name="SignInToServer" xml:space="preserve">
+    <value>Autentificare la ArcGIS Server</value>
+  </data>
+  <data name="SignInToSecureServices" xml:space="preserve">
+    <value>Autentificaţi-vă pentru a accesa servicii securizate</value>
+  </data>
+  <data name="OpenStreetMap" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="FeatureLayer" xml:space="preserve">
+    <value>Strat tematic de obiecte spaţiale</value>
+  </data>
+  <data name="MapLayer" xml:space="preserve">
+    <value>Strat tematic hartă</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>Autentificare eşuată.</value>
+  </data>
+</root>

@@ -1,0 +1,72 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:esriExt="http://schemas.esri.com/arcgis/mapping/extensibility/2009" 
+                    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls" 
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+                    xmlns:Converters="clr-namespace:ESRI.ArcGIS.Mapping.Controls.Converters"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:mapping="clr-namespace:ESRI.ArcGIS.Mapping.Controls">
+
+    <local:StringResourcesManager x:Key="Localization" />
+    <sys:Double x:Key="FontSize">11.0</sys:Double>
+
+    <Style TargetType="local:SecureServicesConfig">
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="FontSize" Value="{StaticResource FontSize}" />
+        <Setter Property="Foreground" Value="{StaticResource DesignHostBackgroundTextBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:SecureServicesConfig">
+                    <StackPanel Orientation="Vertical" Margin="{TemplateBinding Padding}">
+                        <Grid MaxWidth="400">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+							<TextBlock Text="{Binding ConverterParameter=ProxyUrl, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                       Margin="0,0,2,0" VerticalAlignment="Center"></TextBlock>
+                            <TextBox Grid.Column="1" Text="{Binding Proxy}" HorizontalAlignment="Stretch" x:Name="TextBox"></TextBox>
+                        </Grid>
+						<TextBlock Text="{Binding ConverterParameter=SpecifyUrlToProxyPageUsedToAccessSecureServicesForApplication, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                   TextWrapping="Wrap" MaxWidth="400" Opacity="0.75" Margin="5,3,5,0"
+                                   FontStyle="Italic"></TextBlock>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+							<Button x:Name="OKButton" Content="{Binding ConverterParameter=OK, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                    MinWidth="50" Margin="3" HorizontalAlignment="Right" Padding="5,3"
+                                CommandParameter="{Binding ElementName=TextBox, Path=Text}"
+                                Command="{Binding OKCommand}" Style="{StaticResource GradientButtonStyle}"
+                                    Foreground="{StaticResource DesignHostAccentTextBrush}"
+                                    Background="{StaticResource DesignHostAccentBrush}" 
+                                    BorderBrush="{StaticResource DesignHostAccentTextBrush}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click" SourceObject="{Binding OKButton}">
+                                    <local:CloseWindowAction TargetObject="{Binding RelativeSource={RelativeSource TemplatedParent}}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
+							<Button Content="{Binding ConverterParameter=Cancel, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                    Margin="3,3,10,3" HorizontalAlignment="Right" MinWidth="50" Padding="10,3"
+                                    CommandParameter="{Binding RelativeSource={RelativeSource TemplatedParent}}" 
+                                    Style="{StaticResource GradientButtonStyle}"
+                                    Foreground="{StaticResource DesignHostAccentTextBrush}"
+                                    Background="{StaticResource DesignHostAccentBrush}" 
+                                    BorderBrush="{StaticResource DesignHostAccentTextBrush}">
+                                <Button.Command>
+                                    <local:CloseWindowCommand/>
+                                </Button.Command>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

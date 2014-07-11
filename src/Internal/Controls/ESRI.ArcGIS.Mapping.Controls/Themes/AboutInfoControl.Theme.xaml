@@ -1,0 +1,90 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls">
+
+    <local:StringResourcesManager x:Key="Localization" />
+    <local:VisibilityStringNotNullOrEmptyConverter x:Key="VisibilityStringNotNullOrEmptyConverter"/>
+    
+    <Style TargetType="local:AboutInfoControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:AboutInfoControl">
+                    <Grid x:Name="LayoutRoot" MaxWidth="600">
+                        <Grid Margin="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock x:Name="ApplicationName" TextWrapping="Wrap" FontSize="18" 
+                                       FontFamily="Verdana" FontWeight="Bold"  
+                                       Foreground="{TemplateBinding Foreground}"
+                                      Text="{Binding Title}" TextAlignment="Right"/>
+
+                            <Grid Grid.Row="1" Margin="0,20,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock 
+                                    Foreground="{TemplateBinding Foreground}"
+                                    TextWrapping="Wrap" 
+                                    Text="{Binding ConverterParameter=Version, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                    FontFamily="Verdana" 
+                                    FontSize="12" 
+                                    TextAlignment="Right"/>
+                                <TextBlock 
+                                    Foreground="{TemplateBinding Foreground}"
+                                    Grid.Column="1" 
+                                    Text="{Binding Version}" 
+                                    Margin="5,0,0,0" 
+                                    TextWrapping="Wrap" 
+                                    FontSize="12" 
+                                    FontFamily="Verdana" 
+                                    FontWeight="Bold" />
+                                <TextBlock 
+                                    Foreground="{TemplateBinding Foreground}"
+                                    Grid.Row="1" 
+                                    TextWrapping="Wrap" 
+                                    Text="{Binding ConverterParameter=ArcGISSilverlightVersion, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                    FontFamily="Verdana" 
+                                    FontSize="12" 
+                                    TextAlignment="Right"
+                                    Visibility="{Binding SilverlightApiVersion, Converter={StaticResource VisibilityStringNotNullOrEmptyConverter}}"/>
+                                <TextBlock 
+                                    Foreground="{TemplateBinding Foreground}"
+                                    Grid.Row="1" 
+                                    Text="{Binding SilverlightApiVersion}" 
+                                    Margin="5,0,0,0" 
+                                    Grid.Column="1" 
+                                    TextWrapping="Wrap" 
+                                    FontSize="12" 
+                                    FontFamily="Verdana" 
+                                    FontWeight="Bold"
+                                    Visibility="{Binding SilverlightApiVersion, Converter={StaticResource VisibilityStringNotNullOrEmptyConverter}}"/>
+                            </Grid>
+                            <TextBlock Text="© 2013 Esri" Foreground="{StaticResource DesignHostBackgroundTextBrush}" 
+                                       Grid.Row="2" HorizontalAlignment="Left"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Voeg gedrag toe</value>
+  </data>
+  <data name="AddBehaviorDescription" xml:space="preserve">
+    <value>Voeg een gedrag aan de viewer toe</value>
+  </data>
+  <data name="AddGeoprocessing" xml:space="preserve">
+    <value>Voeg Geoprocessing toe</value>
+  </data>
+  <data name="AddGeoprocessingDescription" xml:space="preserve">
+    <value>Voeg een geoprocessingtool aan de Viewer toe. Met een geoprocessingtool kunnen gebruikers van de Viewer een ArcGIS Server-geoprocessingservice gebruiken.</value>
+  </data>
+  <data name="AddGeoRSSDescription" xml:space="preserve">
+    <value>Voeg een RSS-feed met geografie aan de kaart toe</value>
+  </data>
+  <data name="AddGP" xml:space="preserve">
+    <value>Voeg GP toe</value>
+  </data>
+  <data name="AddTool" xml:space="preserve">
+    <value>Voeg tool toe</value>
+  </data>
+  <data name="AddToolDescription" xml:space="preserve">
+    <value>Voeg een tool toe aan de Viewer</value>
+  </data>
+  <data name="ApplicationBuilderSettings" xml:space="preserve">
+    <value>Instellingen Application Builder</value>
+  </data>
+  <data name="ApplicationBuilderSettingsDescription" xml:space="preserve">
+    <value>Bekijk en bewerk de instellingen van Application Builder, waaronder beheer van invoegapplicaties en basiskaarten.</value>
+  </data>
+  <data name="AttributeTable" xml:space="preserve">
+    <value>Attribuuttabel</value>
+  </data>
+  <data name="BasemapGalleryDescription" xml:space="preserve">
+    <value>Selecteer een andere basislaag voor de kaart</value>
+  </data>
+  <data name="Behaviors" xml:space="preserve">
+    <value>Gedragingen</value>
+  </data>
+  <data name="Branding" xml:space="preserve">
+    <value>Huisstijl</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Wijzigen</value>
+  </data>
+  <data name="ChangeLayout" xml:space="preserve">
+    <value>Verander lay-out</value>
+  </data>
+  <data name="ChangeLayoutDescription" xml:space="preserve">
+    <value>Selecteer een nieuwe lay-out voor de Viewer</value>
+  </data>
+  <data name="ChangeLogo" xml:space="preserve">
+    <value>Wijzig logo</value>
+  </data>
+  <data name="ChangeLogoDescription" xml:space="preserve">
+    <value>Selecteer een logo voor de Viewer</value>
+  </data>
+  <data name="ChangeTitleAndLinks" xml:space="preserve">
+    <value>Wijzig titel en koppelingen</value>
+  </data>
+  <data name="ChangeTitleAndLinksDescription" xml:space="preserve">
+    <value>Wijzig de titel en hyperlinks van de Viewer</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Configureren</value>
+  </data>
+  <data name="ConfigureTheme" xml:space="preserve">
+    <value>Configureer thema</value>
+  </data>
+  <data name="ConfigureThemeDescription" xml:space="preserve">
+    <value>Wijzig de themakleuren van de Viewer</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Volledig scherm</value>
+  </data>
+  <data name="FullScreenDescription" xml:space="preserve">
+    <value>Schakel de volledig-schermmodus van de Application Builder in</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Startpagina</value>
+  </data>
+  <data name="HomeDescription" xml:space="preserve">
+    <value>Ga terug naar de startpagina van de Application Builder</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>Lay-out</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Logo</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Beheer</value>
+  </data>
+  <data name="ManageBehaviors" xml:space="preserve">
+    <value>Beheer gedragingen</value>
+  </data>
+  <data name="ManageBehaviorsDescription" xml:space="preserve">
+    <value>Schakel de gedragingen van de Viewer in of uit, wijzig de volgorde of verwijder de gedragingen</value>
+  </data>
+  <data name="ManageToolbars" xml:space="preserve">
+    <value>Beheer werkbalken</value>
+  </data>
+  <data name="ManageToolbarsDescription" xml:space="preserve">
+    <value>Voeg tools toe, verwijder tools, verplaats tools en configureer tools op de werkbalken van de Viewer</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Uitrollen</value>
+  </data>
+  <data name="PublishDescription" xml:space="preserve">
+    <value>Rol de huidige Viewer uit naar een nieuwe website</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Opnieuw instellen</value>
+  </data>
+  <data name="ResetTheme" xml:space="preserve">
+    <value>Stel thema opnieuw in</value>
+  </data>
+  <data name="ResetThemeDescription" xml:space="preserve">
+    <value>Herstel de standaardwaarden van de themakleuren van de Viewer</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="SaveDescription" xml:space="preserve">
+    <value>Sla de huidige Viewer op</value>
+  </data>
+  <data name="SelectTheTool" xml:space="preserve">
+    <value>Selecteer de tool...</value>
+  </data>
+  <data name="TitleAndLinks" xml:space="preserve">
+    <value>Titel en koppelingen</value>
+  </data>
+  <data name="ToggleBrowseDescription" xml:space="preserve">
+    <value>Geef het bladerpaneel weer of verberg het. Met bladeren kunt u de inhoud van een ArcGIS Server- Spatial Data Service-eindpunt weergeven en lagen aan de kaart toevoegen.</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>Geef een lijst met de inhoud van de kaart weer of verberg deze</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>Geef het zoekpaneel weer of verberg het. U kunt plaatsen zoeken, inhoud zoeken op ArcGIS.com of ArcGIS Server-services zoeken op het web.</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>Geef de attribuuttabel weer of verberg deze voor de op dit moment geselecteerde laag</value>
+  </data>
+  <data name="ToggleToolbar" xml:space="preserve">
+    <value>Wissel werkbalk</value>
+  </data>
+  <data name="ToggleToolbarDescription" xml:space="preserve">
+    <value>Geef werkbalk Application Builder weer of verberg deze</value>
+  </data>
+  <data name="Toolbar" xml:space="preserve">
+    <value>Werkbalk</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="Accent" xml:space="preserve">
+    <value>Accent</value>
+  </data>
+  <data name="AccentText" xml:space="preserve">
+    <value>Accenttekst</value>
+  </data>
+  <data name="AddNewGroupOrControl" xml:space="preserve">
+    <value>Voeg een nieuwe groep of een nieuw besturingselement toe</value>
+  </data>
+  <data name="AddOns" xml:space="preserve">
+    <value>Invoegtoepassingen</value>
+  </data>
+  <data name="ApplicationProperties" xml:space="preserve">
+    <value>Eigenschappen applicatie</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Toepassen</value>
+  </data>
+  <data name="ArcGISApplicationBuilder" xml:space="preserve">
+    <value>Application Builder - {0}</value>
+  </data>
+  <data name="ArcGISViewerForMicrosoftSilverlight" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Achtergrond</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Achtergrondtekst</value>
+  </data>
+  <data name="BaseMaps" xml:space="preserve">
+    <value>Basiskaarten</value>
+  </data>
+  <data name="BrowseForFile" xml:space="preserve">
+    <value>Zoek naar bestand</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>Zoek naar resource</value>
+  </data>
+  <data name="BuilderTutorial" xml:space="preserve">
+    <value>Builder Tutorial</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="ChangesSavedSuccessfully" xml:space="preserve">
+    <value>Wijzigingen zijn opgeslagen.</value>
+  </data>
+  <data name="ChooseExistingProject" xml:space="preserve">
+    <value>Kies bestaand project</value>
+  </data>
+  <data name="ChooseLayout" xml:space="preserve">
+    <value>Kies lay-out</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>Configuratie</value>
+  </data>
+  <data name="ConfigureExtensions" xml:space="preserve">
+    <value>Configureer extensies</value>
+  </data>
+  <data name="ConfigureOptionsThatApplyToCurrentUser" xml:space="preserve">
+    <value>Configureer opties die van toepassing zijn op de huidige gebruiker</value>
+  </data>
+  <data name="ConfigureSelectedGroupOrControl" xml:space="preserve">
+    <value>Configureer de geselecteerde groep of het geselecteerde besturingselement</value>
+  </data>
+  <data name="ConfigureSetOfBaseMapsUsedByBuilder" xml:space="preserve">
+    <value>Configureer de set met basiskaarten die beschikbaar is in de Application Builder</value>
+  </data>
+  <data name="CopySite" xml:space="preserve">
+    <value>Kopieer site</value>
+  </data>
+  <data name="CreateApplicationUsingDefaultMap" xml:space="preserve">
+    <value>Nieuwe kaart</value>
+  </data>
+  <data name="CreateApplicationUsingWebMapFromArcGISCom" xml:space="preserve">
+    <value>Webkaarten</value>
+  </data>
+  <data name="CreateNewApplication" xml:space="preserve">
+    <value>Maak nieuwe applicatie</value>
+  </data>
+  <data name="CurrentToolbars" xml:space="preserve">
+    <value>Huidige werkbalken</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="DeleteSite" xml:space="preserve">
+    <value>Verwijder site</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Beschrijving:</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Naar beneden</value>
+  </data>
+  <data name="EditSelectedGroupOrControl" xml:space="preserve">
+    <value>Bewerk de geselecteerde groep of het geselecteerde besturingselement</value>
+  </data>
+  <data name="EditSite" xml:space="preserve">
+    <value>Bewerk site</value>
+  </data>
+  <data name="ExceptionUnhandledError" xml:space="preserve">
+    <value>Onverwerkte fout {0}</value>
+  </data>
+  <data name="ExtensionNotifications" xml:space="preserve">
+    <value>Kennisgevingen extensie</value>
+  </data>
+  <data name="Extensions" xml:space="preserve">
+    <value>Extensies</value>
+  </data>
+  <data name="HelpLinks" xml:space="preserve">
+    <value>Koppelingen</value>
+  </data>
+  <data name="IconPrompt" xml:space="preserve">
+    <value>Pictogram:</value>
+  </data>
+  <data name="LabelPrompt" xml:space="preserve">
+    <value>Label:</value>
+  </data>
+  <data name="LoadingSites" xml:space="preserve">
+    <value>Sites laden...</value>
+  </data>
+  <data name="ManageExtensions" xml:space="preserve">
+    <value>Extensies beheren</value>
+  </data>
+  <data name="MoreSiteOptions" xml:space="preserve">
+    <value>Meer siteopties</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Verplaatsen</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Verplaats naar beneden</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Verplaats naar boven</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="NamePrompt" xml:space="preserve">
+    <value>Naam:</value>
+  </data>
+  <data name="NewMap" xml:space="preserve">
+    <value>Nieuwe kaart</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Openen</value>
+  </data>
+  <data name="PersonalSettings" xml:space="preserve">
+    <value>Persoonlijke instellingen</value>
+  </data>
+  <data name="PublishApplication" xml:space="preserve">
+    <value>Rol applicatie uit</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="RemoveSelectedGroupOrControl" xml:space="preserve">
+    <value>Verwijder de geselecteerde groep of het geselecteerde besturingselement</value>
+  </data>
+  <data name="ReturnToPreviousScreen" xml:space="preserve">
+    <value>Ga terug naar het vorige scherm</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>Selectie</value>
+  </data>
+  <data name="SelectionOutline" xml:space="preserve">
+    <value>Omlijning selectie</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Instellingen</value>
+  </data>
+  <data name="StartWithExistingMap" xml:space="preserve">
+    <value>Begin met bestaande</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Gelukt</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Configureer thema</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Themakleuren</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Titel:</value>
+  </data>
+  <data name="ToolbarPrompt" xml:space="preserve">
+    <value>Werkbalk:</value>
+  </data>
+  <data name="TooltipPrompt" xml:space="preserve">
+    <value>Tooltip:</value>
+  </data>
+  <data name="TypePrompt" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Bovenkant</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Uploaden</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welkom</value>
+  </data>
+  <data name="WelcomeMsgParagraph1" xml:space="preserve">
+    <value>De ArcGIS Application Builder is een webapplicatie waarmee u realtime en volledig interactief Viewer-applicaties kunt maken en bewerken. De applicaties Application Builder en Viewer zijn gemaakt met ArcGIS API for Silverlight.</value>
+  </data>
+  <data name="WelcomeMsgParagraph2" xml:space="preserve">
+    <value>Als u wilt beginnen met het maken van een Viewer, klikt u hieronder op de knop Maak nieuwe knop. De Viewer die u configureert, wordt hieronder weergegeven op de werkbalk van de Application Builder. U kunt de basiskaart, de lagen, tools, titel, het logo, de kleuren enzovoort van uw Viewer configureren met behulp van de tools op de werkbalk. Na het configureren van uw Viewer klikt u op de knop Uitrollen om deze uit te rollen op een nieuwe website.</value>
+  </data>
+  <data name="AvailableTools" xml:space="preserve">
+    <value>Beschikbare tools</value>
+  </data>
+  <data name="BrowseForImage" xml:space="preserve">
+    <value>Zoek naar afbeelding</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Bewerken</value>
+  </data>
+  <data name="ErrorUnableToRetrieveDetailsForExtension" xml:space="preserve">
+    <value>Kan details voor invoegtoepassingenpakket niet ophalen.</value>
+  </data>
+  <data name="ExtensionContainsTheFollowingAddOns" xml:space="preserve">
+    <value>Het invoegtoepassingenpakket '{0}' bevat de volgende invoegtoepassingen:</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteButton" xml:space="preserve">
+    <value>Weet u zeker dat u deze knop wilt verwijderen?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteGroup" xml:space="preserve">
+    <value>Weet u zeker dat u deze groep wilt verwijderen?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteWebSite" xml:space="preserve">
+    <value>Weet u zeker dat u deze website wilt verwijderen?</value>
+  </data>
+  <data name="AssemblyAlreadyIncludeInTheApplication" xml:space="preserve">
+    <value>{1}De assembly '{0}' is al opgenomen in de applicatieruntime.{1}U kunt de grootte en downloadsnelheid van uw extensie optimaliseren door de Assembly Reference te markeren met CopyLocal=false om de assembly uit te sluiten in de .xap-packaging</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Bevestig verwijderen</value>
+  </data>
+  <data name="DeletingExtensionWillMakeItUnavailableForFurtherUse" xml:space="preserve">
+    <value>Wanneer u een extensie verwijdert, is deze niet meer beschikbaar voor gebruik in nieuwe applicaties en bewerkingen in bestaande applicaties. {0}Weet u zeker dat u wilt verwijderen?</value>
+  </data>
+  <data name="DeletingSite" xml:space="preserve">
+    <value>Site verwijderen...</value>
+  </data>
+  <data name="EditTool" xml:space="preserve">
+    <value>Mutatietool</value>
+  </data>
+  <data name="EnterNameForApplication" xml:space="preserve">
+    <value>Voer een naam in voor de applicatie</value>
+  </data>
+  <data name="ErrorDetailsNotKnown" xml:space="preserve">
+    <value>Details fout niet bekend</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>Er is een fout opgetreden</value>
+  </data>
+  <data name="ErrorRetrievingMapDocumentForSite" xml:space="preserve">
+    <value>Fout bij ophalen kaartdocument voor site</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Fouten</value>
+  </data>
+  <data name="ExtensionAlreadyExists" xml:space="preserve">
+    <value>Invoegtoepassing bestaat al</value>
+  </data>
+  <data name="ExtensionDetails" xml:space="preserve">
+    <value>Details invoegtoepassing: {0}</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsErrors" xml:space="preserve">
+    <value>Het invoegtoepassingenpakket dat u probeert uit te rollen, bevat fouten. Deze moeten worden opgelost voordat u verder kunt gaan.</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsWarnings" xml:space="preserve">
+    <value>Het invoegtoepassingenpakket dat u probeert uit te rollen, bevat waarschuwingen. Controleer deze voordat u verder gaat.</value>
+  </data>
+  <data name="ExtensionWithSameNameAlreadyExist" xml:space="preserve">
+    <value>Er bestaat al een invoegtoepassingenpakket met dezelfde naam. Wilt u dit overschrijven?</value>
+  </data>
+  <data name="FailedToCreateAndPublishApplication" xml:space="preserve">
+    <value>Kan applicatie niet maken en uitrollen</value>
+  </data>
+  <data name="FollowingErrorsFound" xml:space="preserve">
+    <value>De volgende fouten zijn gevonden.</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>Ongeldige naam</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Open een webmap van ArcGIS.com</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Een ogenblik geduld...</value>
+  </data>
+  <data name="TutorialModeDisable" xml:space="preserve">
+    <value>Schakel Aan de slag uit</value>
+  </data>
+  <data name="TutorialModeEnable" xml:space="preserve">
+    <value>Schakel Aan de slag in</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Info Application Builder</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Geef het Info-dialoogvenster van Application Builder weer</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="GettingStartedAddGPDescription" xml:space="preserve">
+    <value>Profiteer van de ruimtelijke analyse van ArcGIS Server-geoprocessingservices.</value>
+  </data>
+  <data name="GettingStartedAddGPTitle" xml:space="preserve">
+    <value>Voeg geoprocessingservices toe</value>
+  </data>
+  <data name="GettingStartedAddLayersDescription" xml:space="preserve">
+    <value>Voeg data toe van ArcGIS Online en ArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddLayersTitle" xml:space="preserve">
+    <value>Voeg operationele lagen toe</value>
+  </data>
+  <data name="GettingStartedAddToolsDescription" xml:space="preserve">
+    <value>Configureer de  functionaliteit van de applicatie</value>
+  </data>
+  <data name="GettingStartedAddToolsTitle" xml:space="preserve">
+    <value>Voeg tools toe</value>
+  </data>
+  <data name="GettingStartedBasemapDescription" xml:space="preserve">
+    <value>Selecteer een basiskaart van ArcGIS Online, Bing Maps of OpenStreetMap.</value>
+  </data>
+  <data name="GettingStartedBasemapTitle" xml:space="preserve">
+    <value>Kies een basiskaart</value>
+  </data>
+  <data name="GettingStartedChooseLogoDescription" xml:space="preserve">
+    <value>Voorzie de Viewer van het logo van uw organisatie.</value>
+  </data>
+  <data name="GettingStartedChooseLogoTitle" xml:space="preserve">
+    <value>Kies een logo</value>
+  </data>
+  <data name="GettingStartedSelectLayoutDescription" xml:space="preserve">
+    <value>Bepaal de weergavestijl van uw Viewer.</value>
+  </data>
+  <data name="GettingStartedSelectLayoutTitle" xml:space="preserve">
+    <value>Selecteer een lay-out</value>
+  </data>
+  <data name="GettingStartedSetTitleDescription" xml:space="preserve">
+    <value>Stel de titel van uw applicatie in.</value>
+  </data>
+  <data name="GettingStartedSetTitleTitle" xml:space="preserve">
+    <value>Stel de titel in</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailable" xml:space="preserve">
+    <value>De volgende invoegtoepassingen zijn beschikbaar. Klik</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableHere" xml:space="preserve">
+    <value>hier</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableToUploadANewOne" xml:space="preserve">
+    <value>om een nieuwe invoegtoepassing vanaf een schijf te uploaden.</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlDownToolbarTree" xml:space="preserve">
+    <value>Verplaats de geselecteerde groep of het geselecteerde besturingselement omlaag in de werkbalkboomstructuur</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlUpToolbarTree" xml:space="preserve">
+    <value>Verplaats de geselecteerde groep of het geselecteerde besturingselement omhoog in de werkbalkboomstructuur</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Vorige</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Volgende</value>
+  </data>
+  <data name="SelectAToolToAdd" xml:space="preserve">
+    <value>Selecteer een tool om toe te voegen:</value>
+  </data>
+  <data name="ChooseMap" xml:space="preserve">
+    <value>Application Builder - Kies een kaart</value>
+  </data>
+  <data name="AddInPackagesContain" xml:space="preserve">
+    <value>Invoegtoepassingenpakket bevat invoegtoepassingen: tools, gedragingen en besturingselementen die worden gebruikt in lay-outs</value>
+  </data>
+  <data name="AvailableAddInPackages" xml:space="preserve">
+    <value>Beschikbare invoegtoepassingenpakketten:</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>Knop</value>
+  </data>
+  <data name="ConfigureElementsRelatedToMap" xml:space="preserve">
+    <value>Configureer elementen in verband met de kaart</value>
+  </data>
+  <data name="ConfigureToolsOfYourApplication" xml:space="preserve">
+    <value>Configureer de tools van uw applicatie</value>
+  </data>
+  <data name="DisableGettingStarted" xml:space="preserve">
+    <value>Schakel Aan de slag uit</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>Aan de slag</value>
+  </data>
+  <data name="ShowMe" xml:space="preserve">
+    <value>Laat zien</value>
+  </data>
+  <data name="SpecifyLayoutOfYourApplication" xml:space="preserve">
+    <value>Geef de lay-out van uw applicatie op</value>
+  </data>
+  <data name="UploadAddInPackages" xml:space="preserve">
+    <value>Upload invoegtoepassingenpakketten</value>
+  </data>
+  <data name="UploadAddIns" xml:space="preserve">
+    <value>Upload invoegtoepassingen</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Kaart</value>
+  </data>
+  <data name="AreYouSureYouWantToLeavePageUnsavedChangesLost" xml:space="preserve">
+    <value>Weet u zeker dat u deze pagina wilt verlaten? Niet-opgeslagen wijzigingen gaan mogelijk verloren.</value>
+  </data>
+  <data name="ConfirmPageChange" xml:space="preserve">
+    <value>Bevestig wijzigen pagina</value>
+  </data>
+  <data name="SpecifyToolProperties" xml:space="preserve">
+    <value>Geef de eigenschappen van de tool op</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>Opslaan als...</value>
+  </data>
+  <data name="AddGroupButton" xml:space="preserve">
+    <value>Voeg groep toe</value>
+  </data>
+  <data name="CannotAddElement" xml:space="preserve">
+    <value>Kan element niet toevoegen</value>
+  </data>
+  <data name="CannotAddGroupButton" xml:space="preserve">
+    <value>Kan groep niet toevoegen</value>
+  </data>
+  <data name="CannotAddTool" xml:space="preserve">
+    <value>Kan tool niet toevoegen</value>
+  </data>
+  <data name="ChooseAvailableTool" xml:space="preserve">
+    <value>U moet een afzonderlijke tool kiezen uit de structuurweergave met beschikbare tools.</value>
+  </data>
+  <data name="DefaultGroupButtonDescription" xml:space="preserve">
+    <value>Nieuwe groep</value>
+  </data>
+  <data name="DefaultGroupButtonLabel" xml:space="preserve">
+    <value>Nieuwe groep</value>
+  </data>
+  <data name="RootLevelToAddGroup" xml:space="preserve">
+    <value>U moet een werkbalk of knooppunt op hoofdniveau van een werkbalk kiezen om een groep te kunnen toevoegen</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>&lt;Scheidingsteken&gt;</value>
+  </data>
+  <data name="MoveIntoGroup" xml:space="preserve">
+    <value>Verplaats naar de '{0}'-groep</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>Bewerk groep</value>
+  </data>
+  <data name="ConfigureControls" xml:space="preserve">
+    <value>Configureer besturingselementen</value>
+  </data>
+  <data name="ConfigureControlsDescription" xml:space="preserve">
+    <value>Wijzig de configuratie van de besturingselementen van de Viewer</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Modus</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Omvang cache:</value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>OnDemand</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>SnapShot</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Cachegrootte OnDemand objectlaag</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Stelt de cachegrootte OnDemand-modus objectlaag in (standaard = 1000)</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>OnDemand-modus objectlaag</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Selecteert de bevragingsmodus voor de layer voor OnDemand (alleen objectlagen)</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>SnapShot-modus objectlaag</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Selecteert de bevragingsmodus voor de laag voor SnapShot (alleen objectlagen)</value>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>Voeg koppeling toe</value>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Verwijder koppeling</value>
+  </data>
+  <data name="ConfigureControlsBanner" xml:space="preserve">
+    <value>Te configureren besturingselementen</value>
+  </data>
+  <data name="Controls" xml:space="preserve">
+    <value>Besturingselementen</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Ophalen object</value>
+  </data>
+  <data name="AddGroupDotDot" xml:space="preserve">
+    <value>Voeg groep toe...</value>
+  </data>
+  <data name="AddSeparator" xml:space="preserve">
+    <value>Voeg scheidingsteken toe</value>
+  </data>
+  <data name="ApplicationBuilderDashSettings" xml:space="preserve">
+    <value>Application Builder - instellingen</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Bladeren</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Inhoud</value>
+  </data>
+  <data name="CurrentViewerApplications" xml:space="preserve">
+    <value>Huidige Viewer-applicaties</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Kaartinhoud</value>
+  </data>
+  <data name="NoFilesFound" xml:space="preserve">
+    <value>Geen bestanden gevonden.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Zoeken</value>
+  </data>
+  <data name="ViewerProject" xml:space="preserve">
+    <value>Viewer-project</value>
+  </data>
+  <data name="WebMap" xml:space="preserve">
+    <value>Webkaart</value>
+  </data>
+  <data name="AddLayerFailed" xml:space="preserve">
+    <value>Toevoegen laag mislukt</value>
+  </data>
+  <data name="AddLayerFailedExplanation" xml:space="preserve">
+    <value>Laag kan niet worden toegevoegd. Reden voor mislukking: {0}.</value>
+  </data>
+  <data name="AddLayerFailedNoDetails" xml:space="preserve">
+    <value>[Kan geen details ophalen]</value>
+  </data>
+  <data name="ConfigureLayers" xml:space="preserve">
+    <value>Configureer lagen</value>
+  </data>
+  <data name="ConfigureLayersDescription" xml:space="preserve">
+    <value>Bewerk het uiterlijk en het gedrag van lagen in de kaart</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Lagen</value>
+  </data>
+  <data name="SiteCopyFailed" xml:space="preserve">
+    <value>Kopiëren site mislukt</value>
+  </data>
+  <data name="SiteDeploymentFailed" xml:space="preserve">
+    <value>Uitrollen site mislukt</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Verplaats naar boven</value>
+  </data>
+  <data name="BringsCurrentlySelectedLayerForward" xml:space="preserve">
+    <value>Verplaatst de weergavevolgorde van de kaartlaag één positie naar de bovenkant van de kaart</value>
+  </data>
+  <data name="ConfigureCurrentlySelectedLayer" xml:space="preserve">
+    <value>Configureer de op dit moment geselecteerde laag</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Configureer de proxy die wordt gebruikt om beveiligde services te openen voor deze applicatie</value>
+  </data>
+  <data name="ConfigureSecureServices" xml:space="preserve">
+    <value>Configureer beveiligde services</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>Ga naar</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Vernieuwen</value>
+  </data>
+  <data name="RefreshCurrentlySelectedLayer" xml:space="preserve">
+    <value>Vernieuw de op dit moment geselecteerde laag</value>
+  </data>
+  <data name="RemovesCurrentlySelectedLayer" xml:space="preserve">
+    <value>Verwijdert de op dit moment geselecteerde laag</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Naam wijzigen</value>
+  </data>
+  <data name="RenameCurrentlySelectedLayer" xml:space="preserve">
+    <value>Wijzig de naam van de op dit moment geselecteerde laag</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Verplaats naar beneden</value>
+  </data>
+  <data name="SendsCurrentlySelectedLayerBackward" xml:space="preserve">
+    <value>Verplaatst de weergavevolgorde van de kaartlaag één positie naar de onderkant van de kaart</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Servicedetails</value>
+  </data>
+  <data name="ViewInformationAboutSelectedLayerDatasource" xml:space="preserve">
+    <value>Geef informatie weer over de databron van de geselecteerde laag</value>
+  </data>
+  <data name="ZoomToCurrentlySelectedLayer" xml:space="preserve">
+    <value>Zoom in op de op dit moment geselecteerde laag</value>
+  </data>
+  <data name="CannotAddDropdownCommandsToAGroup" xml:space="preserve">
+    <value>Kan geen vervolgkeuzelijstopdrachten toevoegen aan een groep.</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Configureer basiskaarten</value>
+  </data>
+  <data name="FlashAnimationIsNotDefinedOnTargetBuilderToolbarButton" xml:space="preserve">
+    <value>Flashanimatie is niet gedefinieerd op de doelknop van de Builder-werkbalk</value>
+  </data>
+  <data name="ManageAddInsToolsBehaviorsControls" xml:space="preserve">
+    <value>Beheer invoegtoepassingen: tools, gedragingen, besturingselementen</value>
+  </data>
+  <data name="ManagePersonalSettings" xml:space="preserve">
+    <value>Beheer persoonlijke instellingen</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Open beveiligde services</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Voeg beveiligde services toe</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Configureer proxy</value>
+  </data>
+  <data name="NewApplication" xml:space="preserve">
+    <value>Application Builder - Nieuwe applicatie (niet uitgerold)</value>
+  </data>
+  <data name="NotDeployed" xml:space="preserve">
+    <value>(niet uitgerold)</value>
+  </data>
+  <data name="DeployingApplication" xml:space="preserve">
+    <value>Applicatie uitrollen...</value>
+  </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>Applicatie-instellingen</value>
+  </data>
+  <data name="ArcGISOnlineSecure" xml:space="preserve">
+    <value>ArcGIS Online Beveiligd:</value>
+  </data>
+  <data name="ArcGISOnlineSharing" xml:space="preserve">
+    <value>ArcGIS Online Delen:</value>
+  </data>
+  <data name="BingAppId" xml:space="preserve">
+    <value>Bing AppID:</value>
+  </data>
+  <data name="CurrentApplicationSettings" xml:space="preserve">
+    <value>Huidige applicatie-instellingen</value>
+  </data>
+  <data name="DefaultSettings" xml:space="preserve">
+    <value>Standaardinstellingen</value>
+  </data>
+  <data name="GeometryService" xml:space="preserve">
+    <value>Geometrieservice:</value>
+  </data>
+  <data name="ManageApplicationSettings" xml:space="preserve">
+    <value>Beheer applicatie-instellingen</value>
+  </data>
+  <data name="BasedOnWebMap" xml:space="preserve">
+    <value>Gebaseerd op webmap:</value>
+  </data>
+  <data name="LinkedToWebMap" xml:space="preserve">
+    <value>Gekoppeld aan webmap:</value>
+  </data>
+  <data name="LinkToWebMap" xml:space="preserve">
+    <value>Koppeling</value>
+  </data>
+  <data name="MapConfigurationUnavailable" xml:space="preserve">
+    <value>Kaartconfiguratie voor deze applicatie is gekoppeld aan een webmap. Als u de kaartconfiguratie wilt bewerken, verwijdert u de koppeling tussen de applicatie en de webmap.</value>
+  </data>
+  <data name="UnlinkFromWebMap" xml:space="preserve">
+    <value>Ontkoppelen</value>
+  </data>
+  <data name="UnableToDeployApplication" xml:space="preserve">
+    <value>Kan applicatie niet uitrollen.</value>
+  </data>
+  <data name="UnableToSaveApplicationChanges" xml:space="preserve">
+    <value>Kan wijzigingen applicatie niet opslaan.</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Proxy:</value>
+  </data>
+  <data name="HideGettingStarted" xml:space="preserve">
+    <value>Help bij Aan de slag verbergen</value>
+  </data>
+  <data name="ShowGettingStarted" xml:space="preserve">
+    <value>Help bij Aan de slag weergeven</value>
+  </data>
+  <data name="DisplayText" xml:space="preserve">
+    <value>Tekst weergeven</value>
+  </data>
+  <data name="UpgradeSite" xml:space="preserve">
+    <value>Deze Viewer-applicatie bijwerken naar de huidige versie</value>
+  </data>
+  <data name="UpgradingApplication" xml:space="preserve">
+    <value>Applicatie bijwerken...</value>
+  </data>
+  <data name="NewLink" xml:space="preserve">
+    <value>Nieuwe koppeling</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Gedrag</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>Besturingselement</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Laag</value>
+  </data>
+  <data name="Tool" xml:space="preserve">
+    <value>Tool</value>
+  </data>
+</root>

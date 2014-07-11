@@ -1,0 +1,28 @@
+<VSTemplate Version="3.0.0" Type="ProjectGroup"
+    xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+    <TemplateData>
+        <Name>ArcGIS Viewer for Silverlight Project</Name>
+        <Description>An ArcGIS Viewer for Silverlight application with custom tool and behavior add-ins</Description>
+        <ProjectType>CSharp</ProjectType>
+	<Icon>__TemplateIcon.ico</Icon>
+    	<ProjectSubType>Silverlight</ProjectSubType>
+    	<RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    	<CreateNewFolder>true</CreateNewFolder>
+    	<DefaultName>ViewerApplication</DefaultName>
+    	<ProvideDefaultName>true</ProvideDefaultName>
+    	<PreviewImage>__PreviewImage.PNG</PreviewImage>
+    </TemplateData>
+    <TemplateContent>
+        <ProjectCollection>
+                <ProjectTemplateLink ProjectName="$safeprojectname$">
+                    Viewer.Web\csESRIViewerWebVS2010.vstemplate
+                </ProjectTemplateLink>
+                <ProjectTemplateLink ProjectName="$safeprojectname$.Layouts">
+                    Viewer.Layouts\csESRIViewerLayoutsVS2010.vstemplate
+                </ProjectTemplateLink>
+                <ProjectTemplateLink ProjectName="$safeprojectname$.AddIns">
+                    Viewer.AddIns\csESRIViewerAddInsVS2010.vstemplate
+                </ProjectTemplateLink>
+        </ProjectCollection>
+    </TemplateContent>
+</VSTemplate>

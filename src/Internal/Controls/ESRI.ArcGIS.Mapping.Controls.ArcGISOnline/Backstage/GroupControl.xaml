@@ -1,0 +1,646 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls.ArcGISOnline"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    x:Name="Root">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Backstage/MapCenterResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+	<local:StringResourcesManager x:Key="Localization" />
+	<Style TargetType="local:GroupControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:GroupControl">
+                    <Grid x:Name="LayoutRoot"
+                                        Background="{StaticResource MapCenterBackgroundGradientBrush}">
+                        <Grid.Resources>
+                            <local:InvertBooleanConverter x:Key="InvertBooleanConverter" />
+                            <local:InvertVisibilityConverter x:Key="InvertVisibilityConverter" />
+                            <local:DateFormatConverter x:Key="DateFormatConverter" />
+                            <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+                            <local:InvertBoolToVisibilityConverter x:Key="InvertBoolToVisibilityConverter"/>
+                        </Grid.Resources>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="350" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.RowSpan="2"
+                                        Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+
+                                <Image x:Name="GroupWatermarkImage"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Top"
+                                        Grid.RowSpan="2"
+                                        Stretch="None"
+                                        Source="../Images/groupwatermark.png"
+                                        Opacity="0.5"
+                                        Visibility="{Binding Visibility, ElementName=GroupHeaderGrid}" />
+
+                            </Grid>
+                            <Grid Grid.ColumnSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <HyperlinkButton x:Name="CloseGroupButton"
+                                        Content="{Binding ConverterParameter=GroupControlCloseGroup, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Margin="5,10,10,0"
+                                        Style="{StaticResource MapCenterHyperlinkNoFocusBorder}" />
+                                </Grid>
+
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="{Binding Content.Title}"
+                                        TextTrimming="WordEllipsis"
+                                        FontSize="18"
+                                        Margin="5,0,0,5"
+                                        TextWrapping="NoWrap"
+                                        Grid.Column="1"
+                                        x:Name="TitleTextBlock"
+                                        Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                        HorizontalAlignment="Left" />
+                                </Grid>
+
+                                <Grid Grid.Row="2"
+                                        Grid.ColumnSpan="2"
+                                        x:Name="GroupHeaderGrid"
+                                        MaxHeight="200"
+                                        Visibility="{Binding Visibility, ElementName=MapDetailsControl, Converter={StaticResource InvertVisibilityConverter}}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Margin="0,0,10,10"
+                                        VerticalAlignment="Top"
+                                        Grid.Column="1">
+                                        <Rectangle Width="130"
+                                        Height="90"
+                                        Fill="{StaticResource MapCenterAccentColorBrush}"
+                                        Stroke="Gray"
+                                        Style="{StaticResource MapCenterRectangleDropShadowStyle}" />
+                                        <Image Source="{Binding Content.Thumbnail}"
+                                        MaxHeight="80"
+                                        MaxWidth="120"
+                                        x:Name="Thumbnail" />
+                                    </Grid>
+
+                                    <Grid Grid.Column="2">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="1*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Text="{Binding Content.Summary}"
+                                        TextTrimming="WordEllipsis"
+                                        TextWrapping="Wrap"
+                                        Margin="5,0,0,0"
+                                        Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                        x:Name="SummaryTextBlock"
+                                        Grid.Column="1"
+                                        Grid.ColumnSpan="2" />
+
+										<TextBlock Text="{Binding ConverterParameter=GroupControlOwner, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                        Margin="5,1,5,1"
+                                        Grid.Row="1"
+                                        Grid.Column="1" />
+                                        <HyperlinkButton Content="{Binding Content.Owner}" x:Name="GroupOwnerButton"
+                                        Margin="0,0,5,0"
+                                        Style="{StaticResource MapCenterHyperlinkNoFocusBorder}"
+                                        Grid.Column="2"
+                                        Grid.Row="1" />
+
+										<TextBlock Text="{Binding ConverterParameter=GroupControlTags, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Foreground="{StaticResource MapCenterBackgroundTextColorBrush}" Margin="5,5,5,1"
+                                        Grid.Row="2"
+                                        Grid.Column="1" />
+
+                                        <ListBox x:Name="TagListBox"
+                                        BorderThickness="0"
+                                        Grid.Column="2"
+                                        Grid.Row="2"
+                                        ItemsSource="{Binding Content.Tags}"
+                                        BorderBrush="Transparent"
+                                        ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                        ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                        HorizontalAlignment="Left"
+                                        Background="Transparent"
+                                        Style="{StaticResource MapCenterPagingScrollViewerListBoxStyle}"
+                                        ItemContainerStyle="{StaticResource MapCenterListBoxItemNoHover}">
+                                            <ListBox.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <toolkit:WrapPanel />
+                                                </ItemsPanelTemplate>
+                                            </ListBox.ItemsPanel>
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <HyperlinkButton Content="{Binding}"
+                                         Command="{Binding  ElementName=TagListBox, Path=Tag.TagCommand}"
+                                                            CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                                        Style="{StaticResource MapCenterHyperlinkNoFocusBorder}" />
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
+                            <controls:TabControl x:Name="Tab" Background="Transparent"
+                                        BorderBrush="{StaticResource MapCenterDarkBlueFillBrush}"
+                                        BorderThickness="0,1,0,0"
+                                        Grid.Row="1"
+                                        Margin="0,5,0,0"
+                                        Grid.ColumnSpan="2">
+
+								<controls:TabItem Header="{Binding ConverterParameter=GroupControlDescription, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Template="{StaticResource MapCenterBlueTabHeaderControlTemplate}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <StackPanel x:Name="FailedDescriptionPanel"
+                                        Visibility="Collapsed"
+                                        Grid.Row="1">
+											<TextBlock Text="{Binding ConverterParameter=DescriptionForGroupCanotBeDisplayed, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource MapCenterBackgroundTextColorBrush}" />
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+												<HyperlinkButton Content="{Binding ConverterParameter=GroupControlClickHereToViewInSeparateBrowser, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        x:Name="OpenDescriptionInBrowserButton"
+                                        Margin="0,5,0,0"
+                                        Style="{StaticResource MapCenterHyperlinkNoFocusBorder}" />
+                                            </Grid>
+                                        </StackPanel>
+
+                                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                        HorizontalScrollBarVisibility="Hidden"
+                                        BorderThickness="0"
+                                        Grid.Row="2"
+                                        x:Name="DescriptionRichTextBlockScrollViewer">
+                                            <local:HtmlTextBlock 
+                                                x:Name="DescriptionRichTextBlock"
+                                                Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                                Background="Transparent"
+                                                HorizontalAlignment="Stretch"
+                                                VerticalAlignment="Top"
+                                                BorderBrush="Transparent"
+                                                TextWrapping="Wrap"/>
+                                        </ScrollViewer>
+                                    </Grid>
+                                </controls:TabItem>
+
+								<controls:TabItem Header="{Binding ConverterParameter=GroupControlFeaturedMaps, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Visibility="Collapsed" 
+                                        Template="{StaticResource MapCenterBlueTabHeaderControlTemplate}">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+										<TextBlock Text="{Binding ConverterParameter=GroupControlNoFeaturedMapsFound, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                        Visibility="Collapsed"
+                                        x:Name="NoFeaturedMapsTextBlock" />
+
+                                        <!--todo: data pager? relatedItems request doesn't return "start", "next start" parameters though-->
+
+                                        <ListBox x:Name="FeaturedMapsOfGroupListBox"  Style="{StaticResource MapCenterListBoxStyle}"
+                                        Margin="10,0,0,0" Background="Transparent"
+                                        BorderThickness="0"
+                                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                        ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                        ItemsSource="{Binding}"
+                                        Grid.Row="2">
+                                            <ListBox.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <toolkit:WrapPanel Orientation="Horizontal" />
+                                                </ItemsPanelTemplate>
+                                            </ListBox.ItemsPanel>
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid Width="355">
+                                                        <Grid.Resources>
+                                                            <Grid x:Name="BindingContext" />
+                                                        </Grid.Resources>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto" />
+                                                            <RowDefinition Height="Auto" />
+                                                            <RowDefinition Height="Auto" />
+                                                        </Grid.RowDefinitions>
+
+                                                        <TextBlock TextTrimming="WordEllipsis"
+                                        Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                        Text="{Binding Title}"
+                                        Grid.Row="0"
+                                        FontSize="12"
+                                        Margin="5,5,5,0"
+                                        TextWrapping="NoWrap"/>
+                                                        <RichTextBlock
+                                                            Grid.Row="1"
+                                                            FontSize="10" 
+                                                            Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                                            Margin="5,0,0,0">
+                                                            <i:Interaction.Behaviors>
+                                                                <local:FormatRichTextBehavior
+                                                                    FormatString="{Binding ConverterParameter=WebMapOwnerDateFormat, 
+                                                                        Converter={StaticResource Localization}, 
+                                                                        Source={StaticResource Localization}}">
+                                                                    <local:FormatRichTextBehavior.Values>
+                                                                        <Hyperlink
+                                                                            Foreground="{StaticResource MapCenterHyperlinkForegroundBrush}"
+                                                                            MouseOverForeground="{StaticResource MapCenterHyperlinkForegroundBrush}"
+                                                                            TextDecorations="None"
+                                                                            MouseOverTextDecorations="Underline"
+                                                                            Command="{Binding ElementName=FeaturedMapsOfGroupListBox, Path=Tag.OwnerCommand}"
+                                                                            CommandParameter="{Binding DataContext.Item.Owner, 
+                                                                                    Source={StaticResource BindingContext}}">
+                                                                            <Run Text="{Binding DataContext.Owner, 
+                                                                                    Source={StaticResource BindingContext}}" />
+                                                                        </Hyperlink>
+                                                                        <Run Text="{Binding DataContext.Modified, 
+                                                                                Converter={StaticResource DateFormatConverter},
+                                                                                Source={StaticResource BindingContext}}" />
+                                                                    </local:FormatRichTextBehavior.Values>
+                                                                </local:FormatRichTextBehavior>
+                                                            </i:Interaction.Behaviors>
+                                                        </RichTextBlock>
+                                                        <Grid Grid.Row="2">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto" />
+                                                                <ColumnDefinition Width="*" />
+                                                            </Grid.ColumnDefinitions>
+
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="85" />
+                                                                <RowDefinition Height="*" />
+                                                            </Grid.RowDefinitions>
+
+
+                                                            <Grid Margin="5, 0, 10, 0"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Grid.RowSpan="2">
+                                                                <Rectangle Width="130"
+                                        Height="90"
+                                        Fill="{StaticResource MapCenterAccentColorBrush}"
+                                        Stroke="Gray"
+                                        Style="{StaticResource MapCenterRectangleDropShadowStyle}" />
+                                                                <Image Source="{Binding Thumbnail}"
+                                        MaxHeight="80"
+                                        MaxWidth="120" />
+                                                            </Grid>
+
+                                                            <TextBlock Text="{Binding Summary}"
+                                        TextTrimming="WordEllipsis"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Height="85"
+                                        TextWrapping="Wrap"
+                                        FontSize="10"
+                                        Width="200"
+                                        Margin="5,5,5,1"
+                                        Foreground="{StaticResource MapCenterBackgroundTextColorBrush}" />
+
+
+
+                                                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Right"
+                                        Grid.Row="1"
+                                        Grid.Column="1">
+                                                                <HyperlinkButton 
+                                                                    Command="{Binding  ElementName=FeaturedMapsOfGroupListBox, Path=Tag.DetailsCommand}"
+                                                            CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                                        Content="{Binding ConverterParameter=FeatureMapsControlDetails, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Style="{StaticResource MapCenterHyperlinkNoFocusBorder}" />
+                                                                <HyperlinkButton 
+                                                                    Command="{Binding  ElementName=FeaturedMapsOfGroupListBox, Path=Tag.OpenCommand}"
+                                                            CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                                        Content="{Binding ConverterParameter=FeatureMapsControlOpen, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Margin="10,0,0,0"
+                                        Style="{StaticResource MapCenterHyperlinkNoFocusBorder}" />
+                                                            </StackPanel>
+                                                        </Grid>
+
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
+                                    </Grid>
+
+                                </controls:TabItem>
+
+								<controls:TabItem Header="{Binding ConverterParameter=Maps, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Template="{StaticResource MapCenterBlueTabHeaderControlTemplate}" IsSelected="True" >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+										<TextBlock Text="{Binding ConverterParameter=GroupControlNoMapsFound, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Foreground="{StaticResource MapCenterBackgroundTextColorBrush}" Visibility="Collapsed"
+                                        x:Name="NoMapsTextBlock" />
+                                        <data:DataPager NumericButtonCount="10"
+                                            DisplayMode="FirstLastPreviousNextNumeric"
+                                            Background="{StaticResource MapCenterBackgroundGradientBrush}"
+                                            BorderThickness="0"
+                                            Foreground="{StaticResource MapCenterDataPagerForegroundBrush}"
+                                            BorderBrush="LightGray"
+                                            Visibility="Collapsed"
+                                            x:Name="DataPager"
+                                            PageSize="12"
+                                            Margin="0,0,0,5"
+                                            HorizontalAlignment="Center"
+                                            Source="{Binding}"
+                                            Grid.Row="2" />
+
+                                        <Rectangle Grid.Row="2"
+                                            Height="1"
+                                            Fill="{StaticResource MapCenterTitleUnderlineFillBrush}"
+                                            VerticalAlignment="Top"
+                                            Visibility="{Binding Visibility, ElementName=DataPager}" />
+
+                                        <ListBox x:Name="MapsOfGroupListBox" Style="{StaticResource MapCenterListBoxStyle}"
+                                            Margin="10,0,0,0" Background="Transparent"
+                                            BorderThickness="0"
+                                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                            ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                            ItemsSource="{Binding}"
+                                            Grid.Row="1">
+                                            <ListBox.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <toolkit:WrapPanel Orientation="Horizontal" />
+                                                </ItemsPanelTemplate>
+                                            </ListBox.ItemsPanel>
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid Width="355">
+                                                        <Grid.Resources>
+                                                            <Grid x:Name="BindingContext" />
+                                                        </Grid.Resources>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto" />
+                                                            <RowDefinition Height="Auto" />
+                                                            <RowDefinition Height="Auto" />
+                                                        </Grid.RowDefinitions>
+
+                                                        <TextBlock Text="{Binding Item.Title}" Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                        TextTrimming="WordEllipsis"
+                                        Grid.Row="0"
+                                        FontSize="12"
+                                        Margin="5,5,5,0"
+                                        TextWrapping="NoWrap" />
+                                                        <RichTextBlock
+                                                            Grid.Row="1"
+                                                            FontSize="10" 
+                                                            Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                                            Margin="5,0,0,0">
+                                                            <i:Interaction.Behaviors>
+                                                                <local:FormatRichTextBehavior
+                                                                    FormatString="{Binding ConverterParameter=WebMapOwnerDateFormat, 
+                                                                        Converter={StaticResource Localization}, 
+                                                                        Source={StaticResource Localization}}">
+                                                                    <local:FormatRichTextBehavior.Values>
+                                                                        <Hyperlink
+                                                                            Foreground="{StaticResource MapCenterHyperlinkForegroundBrush}"
+                                                                            MouseOverForeground="{StaticResource MapCenterHyperlinkForegroundBrush}"
+                                                                            TextDecorations="None"
+                                                                            MouseOverTextDecorations="Underline"
+                                                                            Command="{Binding ElementName=MapsOfGroupListBox, Path=Tag.OwnerCommand}"
+                                                                            CommandParameter="{Binding DataContext.Item.Owner, 
+                                                                                    Source={StaticResource BindingContext}}">
+                                                                            <Run Text="{Binding DataContext.Item.Owner, 
+                                                                                    Source={StaticResource BindingContext}}" />
+                                                                        </Hyperlink>
+                                                                        <Run Text="{Binding DataContext.Item.Modified, 
+                                                                                Converter={StaticResource DateFormatConverter},
+                                                                                Source={StaticResource BindingContext}}" />
+                                                                    </local:FormatRichTextBehavior.Values>
+                                                                </local:FormatRichTextBehavior>
+                                                            </i:Interaction.Behaviors>
+                                                        </RichTextBlock>
+
+                                                        <Grid Grid.Row="2">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto" />
+                                                                <ColumnDefinition Width="*" />
+                                                            </Grid.ColumnDefinitions>
+
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="85" />
+                                                                <RowDefinition Height="*" />
+                                                            </Grid.RowDefinitions>
+
+
+                                                            <Grid Margin="5, 0, 10, 0"
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Grid.RowSpan="2">
+                                                                <Rectangle Width="130"
+                                        Height="90"
+                                        Fill="{StaticResource MapCenterAccentColorBrush}"
+                                        Stroke="Gray"
+                                        Style="{StaticResource MapCenterRectangleDropShadowStyle}" />
+                                                                <Image Source="{Binding Item.Thumbnail}"
+                                        MaxHeight="80"
+                                        MaxWidth="120" />
+                                                            </Grid>
+
+                                                            <TextBlock Text="{Binding Item.Summary}"
+                                        TextTrimming="WordEllipsis"
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Height="85"
+                                        TextWrapping="Wrap"
+                                        FontSize="10"
+                                        Width="200"
+                                        Margin="5,5,5,1"
+                                        Foreground="{StaticResource MapCenterBackgroundTextColorBrush}" />
+
+
+
+                                                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Right"
+                                        Grid.Row="1"
+                                        Grid.Column="1">
+                                                                <HyperlinkButton 
+                                                                    Command="{Binding  ElementName=MapsOfGroupListBox, Path=Tag.FeatureMapCommand}"
+                                                            CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                                        Content="{Binding FeatureButtonText}"
+                                        Visibility="Collapsed"
+                                        Style="{StaticResource MapCenterHyperlinkNoFocusBorder}" />
+                                                                <HyperlinkButton 
+                                                                    Command="{Binding  ElementName=MapsOfGroupListBox, Path=Tag.DetailsCommand}"
+                                                            CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
+                                        Content="{Binding ConverterParameter=FeatureMapsControlDetails, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Margin="10,0,0,0"
+                                        Style="{StaticResource MapCenterHyperlinkNoFocusBorder}" />
+                                                                <HyperlinkButton Command="{Binding  ElementName=MapsOfGroupListBox, Path=Tag.OpenCommand}"
+                                                            CommandParameter="{Binding RelativeSource={RelativeSource Self}}" 
+                                        Content="{Binding ConverterParameter=FeatureMapsControlOpen, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Margin="10,0,0,0"
+                                        Style="{StaticResource MapCenterHyperlinkNoFocusBorder}" />
+                                                            </StackPanel>
+                                                        </Grid>
+
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
+                                    </Grid>
+                                </controls:TabItem>
+
+								<controls:TabItem Header="{Binding ConverterParameter=Members, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Template="{StaticResource MapCenterBlueTabHeaderControlTemplate}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <StackPanel>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="../Images/groupowner32.png"
+                                        Height="32"
+                                        Width="32"
+                                        Visibility="{Binding Visibility, ElementName=OwnerTextBlock}" />
+                                                <StackPanel Orientation="Horizontal"
+                                        Grid.Column="1"
+                                        VerticalAlignment="Center">
+                                                    <TextBlock x:Name="OwnerTextBlock" Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"/>
+                                                    <TextBlock Text="{Binding ConverterParameter=GroupControlOwnerParenthesis, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                        Margin="10,0,0,0"
+                                        Visibility="{Binding Visibility, ElementName=OwnerTextBlock}" />
+                                                </StackPanel>
+                                            </Grid>
+                                            <ListBox x:Name="UsersOfGroupListBox" Style="{StaticResource MapCenterListBoxStyle}"
+                                        Margin="0,0,0,0"
+                                        BorderThickness="0"
+                                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                        ItemsSource="{Binding Users}"
+                                        IsHitTestVisible="False">
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto" />
+                                                                <ColumnDefinition Width="*" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <Image Source="../Images/groupmember32.png"
+                                        Height="32"
+                                        Width="32" />
+                                                            <TextBlock Text="{Binding}" Foreground="{StaticResource MapCenterBackgroundTextColorBrush}"
+                                        VerticalAlignment="Center"
+                                        Grid.Column="1" />
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </StackPanel>
+
+                                        <!--separator-->
+                                        <Rectangle Grid.Column="1"
+                                        Width="1"
+                                        Fill="{StaticResource MapCenterTitleUnderlineFillBrush}"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Stretch"
+                                        Margin="10,0,10,0"
+                                        Visibility="{Binding Visibility, ElementName=GroupPermissionsGrid}" />
+
+                                        <Grid Grid.Column="3"
+                                        Visibility="{Binding EditButtonVisibility}"
+                                        x:Name="GroupPermissionsGrid">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+
+											<TextBlock Text="{Binding ConverterParameter=GroupControlPublicUserCanSearchAndFindGroup, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="10,5,10,5" 
+                                        Foreground="{StaticResource MapCenterBackgroundTextColorBrush}" Visibility="{Binding Content.IsPublic, Converter={StaticResource BoolToVisibilityConverter}}"/>
+											<TextBlock Text="{Binding ConverterParameter=GroupControlPrivateUserCannotFindGroup, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="10,5,10,5" 
+                                        Foreground="{StaticResource MapCenterBackgroundTextColorBrush}" Visibility="{Binding Content.IsPublic, Converter={StaticResource InvertBoolToVisibilityConverter}}"/>
+                                        </Grid>
+                                    </Grid>
+                                </controls:TabItem>
+
+                            </controls:TabControl>
+
+                        </Grid>
+
+                        <local:MapDetailsControl Grid.Column="1"
+                                        Margin="5,0,0,0"
+                                        Visibility="Collapsed"
+                                        x:Name="MapDetailsControl"
+                                        IsSeparatorVisible="Visible" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

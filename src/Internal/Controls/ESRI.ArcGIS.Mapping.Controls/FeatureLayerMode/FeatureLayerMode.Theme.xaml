@@ -1,0 +1,159 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:esriExt="http://schemas.esri.com/arcgis/client/extensibility/2010" 
+                    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls" 
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+                    xmlns:Converters="clr-namespace:ESRI.ArcGIS.Mapping.Controls.Converters"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:mapping="clr-namespace:ESRI.ArcGIS.Mapping.Controls">
+
+    <local:StringResourcesManager x:Key="Localization" />
+    <Converters:FeatureLayerModeConverter x:Key="FeatureLayerModeConverter" />
+    <local:ReverseBooleanConverter x:Key="ReverseBooleanConverter" />
+    <sys:Double x:Key="FontSize">12.0</sys:Double>
+    <local:EnabledOpacityConverter x:Key="EnabledOpacityConverter" />
+
+    <LinearGradientBrush x:Key="TooltipBackgroundBrush"  StartPoint="0.5,0" EndPoint="0.5,1">
+        <GradientStop Color="#FFB1B7C6" />
+        <GradientStop Color="White" Offset="1" />
+    </LinearGradientBrush>
+
+    <Style TargetType="local:FeatureLayerModeConfigControl">
+        <Setter Property="FontSize"
+                Value="{StaticResource FontSize}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:FeatureLayerModeConfigControl">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!--Row 0-->
+                            <StackPanel
+                                         Grid.Row="0"
+                                         Margin="5,0,0,0">
+                                <RadioButton 
+                                         Foreground="{TemplateBinding Foreground}"
+                                         ToolTipService.Placement="Right"
+                                         ToolTipService.PlacementTarget="{Binding ElementName=FeatureLayerModeConfigControl}"
+                                         Cursor="Hand"
+                                         IsChecked="{Binding Layer.Mode, ElementName=FeatureLayerModeConfigControl, Converter={StaticResource FeatureLayerModeConverter}, ConverterParameter=SnapShot,Mode=TwoWay}">
+                                    <TextBlock Margin="-1,-1,0,0" TextTrimming="WordEllipsis"
+                                        Text="{Binding ConverterParameter=UseSnapShotMode, Converter={StaticResource Localization}, Source={StaticResource Localization}}"/>
+                                    <ToolTipService.ToolTip>
+                                        <Border BorderBrush="Black"
+                                            BorderThickness="1"
+                                            Background="{StaticResource TooltipBackgroundBrush}"
+                                            Margin="-8,-3">
+                                            <StackPanel Margin="6,8">
+                                                <TextBlock Text="{Binding ConverterParameter=SnapShotRadio, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                       FontWeight="Bold"
+                                                       Foreground="Black" />
+                                                <TextBlock Text="{Binding ConverterParameter=SnapShotRadioDescription, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                       Margin="0,3,0,0"
+                                                       MaxWidth="350"
+                                                       TextWrapping="Wrap"
+                                                       Foreground="Black" />
+                                                <TextBlock Text="{Binding ConverterParameter=SnapshotModeNote, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                       Margin="0,5,0,0"
+                                                       MaxWidth="350"
+                                                       TextWrapping="Wrap"
+                                                       Foreground="Black" 
+                                                           FontStyle="Italic"
+                                                           FontSize="10"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </ToolTipService.ToolTip>
+                                </RadioButton>
+                                <RadioButton x:Name="OnDemandButton" 
+                                             VerticalContentAlignment="Center" VerticalAlignment="Center"
+                                             Margin="0,7,0,0"
+                                             Foreground="{TemplateBinding Foreground}"
+                                         ToolTipService.Placement="Right"
+                                         ToolTipService.PlacementTarget="{Binding ElementName=FeatureLayerModeConfigControl}"
+                                         Cursor="Hand"
+                                         IsChecked="{Binding Layer.Mode, ElementName=FeatureLayerModeConfigControl, Converter={StaticResource FeatureLayerModeConverter}, ConverterParameter=OnDemand,Mode=TwoWay}">
+                                    <TextBlock TextTrimming="WordEllipsis" Margin="-1,-1,0,0" VerticalAlignment="Center" 
+                                    Text="{Binding ConverterParameter=UseOnDemandMode, Converter={StaticResource Localization}, Source={StaticResource Localization}}" />
+                                    <ToolTipService.ToolTip>
+                                        <Border BorderBrush="Black"
+                                            BorderThickness="1"
+                                            Background="{StaticResource TooltipBackgroundBrush}"
+                                            Margin="-8,-3">
+                                            <StackPanel Margin="6,8">
+                                                <TextBlock Text="{Binding ConverterParameter=OnDemandRadio, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                       FontWeight="Bold"
+                                                       Foreground="Black" />
+                                                <TextBlock Text="{Binding ConverterParameter=OnDemandRadioDescription, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                       Margin="0,3,0,0"
+                                                       MaxWidth="350"
+                                                       TextWrapping="Wrap"
+                                                       Foreground="Black" />
+                                            </StackPanel>
+                                        </Border>
+                                    </ToolTipService.ToolTip>
+                                </RadioButton>
+                            </StackPanel>
+
+                            <!--Row 1-->
+                            <StackPanel Orientation="Horizontal"
+                                        Grid.Row="1"
+                                         ToolTipService.Placement="Right"
+                                         ToolTipService.PlacementTarget="{Binding ElementName=FeatureLayerModeConfigControl}"
+                                        Margin="27,0,0,4">
+
+                                <TextBlock Text="{Binding ConverterParameter=ModeCacheSizeLabel, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"
+                                           FontSize="9"
+                                           Opacity="{Binding IsChecked, ElementName=OnDemandButton, Converter={StaticResource EnabledOpacityConverter}, ConverterParameter=0.60}">
+                                </TextBlock>
+                                <TextBox x:Name="TextBoxCacheSizeValue"
+                                         FontSize="9"
+                                         HorizontalAlignment="Right"
+                                         Margin="5,0,2,0"
+                                         Width="50"
+                                         Height="20"
+                                         IsEnabled="{Binding IsChecked, ElementName=OnDemandButton}"
+                                         Opacity="{Binding IsChecked, ElementName=OnDemandButton, Converter={StaticResource EnabledOpacityConverter}, ConverterParameter=0.65}"
+                                         Text="{Binding Layer.OnDemandCacheSize, ElementName=FeatureLayerModeConfigControl, Mode=TwoWay}">
+                                    <i:Interaction.Behaviors>
+                                        <mapping:RequiredTextInTextBoxBehavior />
+                                    </i:Interaction.Behaviors>
+                                </TextBox>
+                                <ToolTipService.ToolTip>
+                                    <Border BorderBrush="Black"
+                                                BorderThickness="1"
+                                                Background="{StaticResource TooltipBackgroundBrush}"
+                                                Margin="-8,-3">
+                                        <StackPanel Margin="6,8">
+                                            <TextBlock Text="{Binding ConverterParameter=OnDemandCacheSize, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                           FontWeight="Bold"
+                                                           Foreground="Black" />
+                                            <TextBlock Text="{Binding ConverterParameter=OnDemandCacheSizeDescription, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                                           Margin="0,3,0,0"
+                                                           MaxWidth="350"
+                                                           TextWrapping="Wrap"
+                                                           Foreground="Black" />
+                                        </StackPanel>
+                                    </Border>
+                                </ToolTipService.ToolTip>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

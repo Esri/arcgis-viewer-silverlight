@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Показывает диалог "О программе"</value>
+  </data>
+  <data name="AboutDisplayName" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="AddGeoRssFeedDescription" xml:space="preserve">
+    <value>Добавить канал GeoRSS к карте</value>
+  </data>
+  <data name="AddGeoRssFeedDisplayName" xml:space="preserve">
+    <value>Добавить GeoRSS</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Добавить Тепловую карту</value>
+  </data>
+  <data name="AddHeatMapDisplayName" xml:space="preserve">
+    <value>Добавить тепловую карту</value>
+  </data>
+  <data name="BaseMapGalleryDescription" xml:space="preserve">
+    <value>Выбрать базовую карту для вашей карты</value>
+  </data>
+  <data name="BaseMapGalleryDisplayName" xml:space="preserve">
+    <value>Выбрать базовую карту</value>
+  </data>
+  <data name="BrowseDescription" xml:space="preserve">
+    <value>Добавить данные, выбранные на ArcGIS Server, к карте </value>
+  </data>
+  <data name="BrowseDisplayName" xml:space="preserve">
+    <value>Обзор</value>
+  </data>
+  <data name="CategoryApplication" xml:space="preserve">
+    <value>Приложение</value>
+  </data>
+  <data name="CategoryAttributeTable" xml:space="preserve">
+    <value>Таблица атрибутов</value>
+  </data>
+  <data name="CategoryConfigure" xml:space="preserve">
+    <value>Настроить</value>
+  </data>
+  <data name="CategoryEditing" xml:space="preserve">
+    <value>Редактирование</value>
+  </data>
+  <data name="CategoryGeoprocessing" xml:space="preserve">
+    <value>Геообработка</value>
+  </data>
+  <data name="CategoryLayer" xml:space="preserve">
+    <value>Слой</value>
+  </data>
+  <data name="CategoryMap" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="CategoryMouseEvents" xml:space="preserve">
+    <value>События мыши</value>
+  </data>
+  <data name="CategoryPopup" xml:space="preserve">
+    <value>Всплывающее</value>
+  </data>
+  <data name="CategorySelection" xml:space="preserve">
+    <value>Выборка</value>
+  </data>
+  <data name="CategorySymbology" xml:space="preserve">
+    <value>Символы</value>
+  </data>
+  <data name="CategoryTheme" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="ChangeThemeBackgroundDescription" xml:space="preserve">
+    <value>Изменение фона для темы</value>
+  </data>
+  <data name="ChangeThemeBackgroundDisplayName" xml:space="preserve">
+    <value>Изменить фон темы</value>
+  </data>
+  <data name="ClearSelectionDescription" xml:space="preserve">
+    <value>Очищает выборку для текущего слоя</value>
+  </data>
+  <data name="ClearSelectionDisplayName" xml:space="preserve">
+    <value>Очистить выборку</value>
+  </data>
+  <data name="ConfigureLayerDescription" xml:space="preserve">
+    <value>Укажите внешний вид и поведение выбранного слоя</value>
+  </data>
+  <data name="ConfigureLayerDisplayName" xml:space="preserve">
+    <value>Настроить слой</value>
+  </data>
+  <data name="ConfigureLayerRendererDescription" xml:space="preserve">
+    <value>Позволяет настраивать визуализацию текущего слоя</value>
+  </data>
+  <data name="ConfigureLayerRendererDisplayName" xml:space="preserve">
+    <value>Настроить условные обозначения</value>
+  </data>
+  <data name="ConfigureSelectedLayerDescription" xml:space="preserve">
+    <value>Позволяет настраивать выбранный слой</value>
+  </data>
+  <data name="ConfigureSelectedLayerDisplayName" xml:space="preserve">
+    <value>Настроить слой</value>
+  </data>
+  <data name="DeleteGraphicToolDescription" xml:space="preserve">
+    <value>Удаляет пространственный объект из слоя</value>
+  </data>
+  <data name="DeleteGraphicToolDisplayName" xml:space="preserve">
+    <value>Удалить объект</value>
+  </data>
+  <data name="DeleteLayerDescription" xml:space="preserve">
+    <value>Удаляет выбранный слой из содержания карты</value>
+  </data>
+  <data name="DeleteLayerDisplayName" xml:space="preserve">
+    <value>Удалить слой</value>
+  </data>
+  <data name="EditShapeToolDescription" xml:space="preserve">
+    <value>Изменяет геометрию пространственного объекта</value>
+  </data>
+  <data name="EditShapeToolDisplayName" xml:space="preserve">
+    <value>Редактировать геометрию</value>
+  </data>
+  <data name="EditValuesToolDescription" xml:space="preserve">
+    <value>Изменяет атрибутивные значения пространственного объекта</value>
+  </data>
+  <data name="EditValuesToolDisplayName" xml:space="preserve">
+    <value>Редактировать значения</value>
+  </data>
+  <data name="AddAttachmentsToolDescription" xml:space="preserve">
+    <value>Добавить вложения к объекту</value>
+  </data>
+  <data name="AddAttachmentsToolDisplayName" xml:space="preserve">
+    <value>Добавить вложение</value>
+  </data>
+  <data name="ExceptionNoValidApplicationContextForApplication" xml:space="preserve">
+    <value>Для этого приложения нет допустимого контекста приложения</value>
+  </data>
+  <data name="ExportSelectionDescription" xml:space="preserve">
+    <value>Экспортирует атрибуты выбранных в текущем слое объектов в файл CSV</value>
+  </data>
+  <data name="ExportSelectionDisplayName" xml:space="preserve">
+    <value>Экспорт выборки</value>
+  </data>
+  <data name="FilterByMapExtentDescription" xml:space="preserve">
+    <value>Показывает только записи, соответствующие объектам, находящимся в текущем экстенте карты</value>
+  </data>
+  <data name="FilterByMapExtentName" xml:space="preserve">
+    <value>Фильтр по экстенту карты</value>
+  </data>
+  <data name="FilterBySelectionAll" xml:space="preserve">
+    <value>Отображение всех записей таблицы</value>
+  </data>
+  <data name="FilterBySelectionAllDescription" xml:space="preserve">
+    <value>Таблица отобразит как выбранные, так и невыбранные объекты</value>
+  </data>
+  <data name="FilterBySelectionNotSelected" xml:space="preserve">
+    <value>Отображение невыбранных записей таблицы</value>
+  </data>
+  <data name="FilterBySelectionNotSelectedDescription" xml:space="preserve">
+    <value>Таблица отобразит только не выбранные в данный момент объекты.</value>
+  </data>
+  <data name="FilterBySelectionSelected" xml:space="preserve">
+    <value>Отображение выбранных записей таблицы</value>
+  </data>
+  <data name="FilterBySelectionSelectedDescription" xml:space="preserve">
+    <value>Таблица отобразит только выбранные объекты.</value>
+  </data>
+  <data name="FilterLayerDescription" xml:space="preserve">
+    <value>Отображает объекты выбранного слоя на основе запроса к их атрибутам</value>
+  </data>
+  <data name="FilterLayerDisplayName" xml:space="preserve">
+    <value>Фильтр слоя</value>
+  </data>
+  <data name="FindNearbyDescription" xml:space="preserve">
+    <value>Поиск объектов, расположенных рядом с текущей выборкой</value>
+  </data>
+  <data name="FindNearbyDisplayName" xml:space="preserve">
+    <value>Найти ближайший</value>
+  </data>
+  <data name="GeoprocessingDescription" xml:space="preserve">
+    <value>Инструмент использует Сервис геообработки ArcGIS Server</value>
+  </data>
+  <data name="GeoprocessingDisplayName" xml:space="preserve">
+    <value>Геообработка</value>
+  </data>
+  <data name="GoToLayerDescription" xml:space="preserve">
+    <value>Приблизить к выбранному слою</value>
+  </data>
+  <data name="GoToLayerDisplayName" xml:space="preserve">
+    <value>Перейти к слою</value>
+  </data>
+  <data name="IdentifyBehaviorDisplayName" xml:space="preserve">
+    <value>Идентифицировать поведение</value>
+  </data>
+  <data name="MoveLayerDownDescription" xml:space="preserve">
+    <value>Перемещает слой в списке порядка отображения на одну позицию вверх</value>
+  </data>
+  <data name="MoveLayerDownDisplayName" xml:space="preserve">
+    <value>Переместить вверх</value>
+  </data>
+  <data name="MoveLayerUpDescription" xml:space="preserve">
+    <value>Перемещает слой в списке порядка отображения слоев на одну позицию вниз</value>
+  </data>
+  <data name="MoveLayerUpDisplayName" xml:space="preserve">
+    <value>Переместить вниз</value>
+  </data>
+  <data name="NavigateToHelpLinkDescription" xml:space="preserve">
+    <value>Переходит к справочной системе</value>
+  </data>
+  <data name="NavigateToHelpLinkDisplayName" xml:space="preserve">
+    <value>Перейти к справке</value>
+  </data>
+  <data name="PrintDescription" xml:space="preserve">
+    <value>Печатать карту</value>
+  </data>
+  <data name="PrintDisplayName" xml:space="preserve">
+    <value>Печать</value>
+  </data>
+  <data name="RefreshLayerDescription" xml:space="preserve">
+    <value>Обновляет отображение выбранного слоя</value>
+  </data>
+  <data name="RefreshLayerDisplayName" xml:space="preserve">
+    <value>Обновить слой</value>
+  </data>
+  <data name="RenameLayerDescription" xml:space="preserve">
+    <value>Изменяет имя выбранного слоя</value>
+  </data>
+  <data name="RenameLayerDisplayName" xml:space="preserve">
+    <value>Переименовать слой</value>
+  </data>
+  <data name="RestoreDefaultThemeDescription" xml:space="preserve">
+    <value>Восстанавливает используемые по умолчанию цвета для отображения карты</value>
+  </data>
+  <data name="RestoreDefaultThemeDisplayName" xml:space="preserve">
+    <value>Сбросить тему</value>
+  </data>
+  <data name="SelectAllDescription" xml:space="preserve">
+    <value>Выбирает все объекты текущего слоя</value>
+  </data>
+  <data name="SelectAllDisplayName" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="SelectByDrawDescription" xml:space="preserve">
+    <value>Выбирает объекты с помощью прямоугольника, рисуемого на карте</value>
+  </data>
+  <data name="SelectByDrawDisplayName" xml:space="preserve">
+    <value>Выбрать</value>
+  </data>
+  <data name="SelectedIndexOfTotal" xml:space="preserve">
+    <value>{0} из {1}</value>
+  </data>
+  <data name="ServiceDetailsDescription" xml:space="preserve">
+    <value>Открыть точку доступа сервиса для выбранного слоя</value>
+  </data>
+  <data name="ServiceDetailsDisplayName" xml:space="preserve">
+    <value>Детали сервиса</value>
+  </data>
+  <data name="ShowMapCoordinatesDescription" xml:space="preserve">
+    <value>Отображает координаты места, на котором находится указатель мыши</value>
+  </data>
+  <data name="ShowMapCoordinatesDisplayName" xml:space="preserve">
+    <value>Показать координаты карты</value>
+  </data>
+  <data name="ShowPreviewControlDescription" xml:space="preserve">
+    <value>Отображает диалоговое окно, демонстрирующее характер использования цветов для отображения различных компонентов карты</value>
+  </data>
+  <data name="ShowPreviewControlDisplayName" xml:space="preserve">
+    <value>Предварительный просмотр темы</value>
+  </data>
+  <data name="ToggleAddContentDescription" xml:space="preserve">
+    <value>Добавить к карте данные ArcGIS Server, SharePoint, Spatial Data Server или GeoRSS</value>
+  </data>
+  <data name="ToggleAddContentDisplayName" xml:space="preserve">
+    <value>Добавить ресурсы</value>
+  </data>
+  <data name="ToggleEditDescription" xml:space="preserve">
+    <value>Показать или скрыть инструменты редактирования</value>
+  </data>
+  <data name="ToggleEditDisplayName" xml:space="preserve">
+    <value>Редактирование</value>
+  </data>
+  <data name="ToggleFullScreenDescription" xml:space="preserve">
+    <value>Отображает карту в полноэкранном режиме</value>
+  </data>
+  <data name="ToggleFullScreenDisplayName" xml:space="preserve">
+    <value>Во весь экран</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>Открывает панель Содержания карты, для того чтобы увидеть слои карты</value>
+  </data>
+  <data name="ToggleMapContentsDisplayName" xml:space="preserve">
+    <value>Содержание карты</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>Поиск мест или сервисов ArcGIS Server</value>
+  </data>
+  <data name="ToggleSearchDisplayName" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>Открывает таблицу атрибутов выбранного слоя</value>
+  </data>
+  <data name="ToggleTableDisplayName" xml:space="preserve">
+    <value>Показать таблицу</value>
+  </data>
+  <data name="ZoomToSelectionDescription" xml:space="preserve">
+    <value>Приблизить к выбранным объектам в текущем слое</value>
+  </data>
+  <data name="ZoomToSelectionDisplayName" xml:space="preserve">
+    <value>Приблизить к</value>
+  </data>
+</root>

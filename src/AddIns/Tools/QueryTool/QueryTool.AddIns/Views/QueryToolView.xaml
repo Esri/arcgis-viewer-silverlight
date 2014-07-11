@@ -1,0 +1,341 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl x:Class="QueryTool.AddIns.QueryToolView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:local="clr-namespace:QueryTool.AddIns"
+             d:DesignHeight="300"
+             d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/QueryTool.AddIns;component/Themes/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:StringResourcesManager x:Key="Localization" />
+            <local:BoolVisibilityConverter x:Key="BoolVisibilityConverter" />
+            <local:ReverseBoolVisibilityConverter x:Key="ReverseBoolVisibilityConverter" />
+            <local:ReverseBoolConverter x:Key="ReverseBoolConverter" />
+            <local:NullVisibilityConverter x:Key="NullVisibilityConverter" />
+            <local:NotNullVisibilityConverter x:Key="NotNullVisibilityConverter" />
+            <local:NotEmptyTextVisibilityConverter x:Key="NotEmptyTextVisibilityConverter" />
+            <local:EmptyTextVisibilityConverter x:Key="EmptyTextVisibilityConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Query parameter labels -->
+            <ListBox 
+                Background="Transparent"
+                ItemsSource="{Binding QueryExpressions}"
+                Foreground="{StaticResource BackgroundTextColorBrush}"
+                BorderThickness="0"
+                HorizontalAlignment="Left">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Grid 
+                                        Background="{TemplateBinding Background}"
+                                        VerticalAlignment="Center"
+                                        Height="24"
+                                        Margin="0,0,0,3"
+                                        Visibility="{Binding IsVisible, 
+                                            Converter={StaticResource BoolVisibilityConverter}}">
+                                        <TextBlock 
+                                                Text="{Binding ExpressionLabel}" 
+                                                TextTrimming="WordEllipsis"
+                                                VerticalAlignment="Center"
+                                            Opacity="0.5"
+                                            FontSize="13"
+                                            FontWeight="Bold"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+
+            <!-- Query input values -->
+            <ListBox 
+                Background="Transparent"
+                ItemsSource="{Binding QueryExpressions}"
+                Grid.Column="1"
+                Margin="3,0,0,0"
+                Foreground="{StaticResource BackgroundTextColorBrush}"
+                BorderThickness="0"
+                HorizontalAlignment="Stretch">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Grid 
+                                        Background="{TemplateBinding Background}"
+                                        VerticalAlignment="Center"
+                                        Height="24"
+                                        Margin="0,0,0,3"
+                                        Visibility="{Binding IsVisible, 
+                                            Converter={StaticResource BoolVisibilityConverter}}">
+                                        <Grid Visibility="{Binding IsNullValue, 
+                                                Converter={StaticResource ReverseBoolVisibilityConverter}}">
+                                            <TextBlock 
+                                                Text="{Binding ChoiceValues.ChoicesAsString}"
+                                                Visibility="{Binding UseMultipleValues, 
+                                                    Converter={StaticResource BoolVisibilityConverter}}" 
+                                                TextTrimming="WordEllipsis"
+                                                VerticalAlignment="Center"/>
+                                            <ComboBox 
+                                                ItemsSource="{Binding ChoiceValues.Choices}"
+                                                SelectedItem="{Binding ChoiceValues.SelectedChoice, Mode=TwoWay}"                                      
+                                                Visibility="{Binding UseMultipleValues, 
+                                                    Converter={StaticResource ReverseBoolVisibilityConverter}}"
+                                                HorizontalAlignment="Left"
+                                                FontSize="13"
+                                                Style="{StaticResource ComboBoxStyle}"
+                                                Foreground="{StaticResource BackgroundTextColorBrush}"
+                                                Background="{StaticResource BackgroundGradientBrush}"
+                                                BorderBrush="Transparent">
+                                                <ComboBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding Value}" />
+                                                    </DataTemplate>
+                                                </ComboBox.ItemTemplate>
+                                            </ComboBox>
+                                            <TextBox 
+                                                x:Name="ValueTextBox"
+                                                Text="{Binding ChoiceValues.CurrentValue.Value, 
+                                                    Mode=TwoWay}"
+                                                Visibility="{Binding UseDefaultValue, 
+                                                Converter={StaticResource BoolVisibilityConverter}}" 
+                                                HorizontalAlignment="Stretch"
+                                                local:Extensions.ValidationError="{Binding ChoiceValues.CurrentValue.ValidationException}"
+                                                Style="{StaticResource ValidationTextBoxStyle}"
+                                                MinWidth="150">
+                                                <i:Interaction.Behaviors>
+                                                    <local:UpdateBindingOnTextChanged />
+                                                </i:Interaction.Behaviors>
+                                            </TextBox>
+                                        </Grid>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </Grid>
+
+        <Rectangle 
+            Height="8"
+            HorizontalAlignment="Stretch"
+            Grid.Row="1"
+            Visibility="{Binding HasVisibleExpression,
+                Converter={StaticResource BoolVisibilityConverter}}" />
+
+        <Grid Grid.Row="2"
+              MinHeight="45"
+              Margin="10,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <!-- Status -->
+            <ScrollViewer 
+                MaxHeight="100"     
+                BorderThickness="0"
+                VerticalAlignment="Top"
+                HorizontalScrollBarVisibility="Disabled"
+                VerticalScrollBarVisibility="Auto"
+                Foreground="{StaticResource AccentColorBrush}"
+                Style="{StaticResource ThinBarScrollViewerStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" /> <!-- Operation status/instructions -->
+                        <RowDefinition Height="Auto" /> <!-- Busy indicator or error details header -->
+                        <RowDefinition Height="Auto" /> <!-- Error details -->
+                    </Grid.RowDefinitions>
+                    <!-- ================================ 
+                     ROW 1 - STATUS/INSTRUCTIONS 
+                     ================================ -->
+                    <!-- Ordinary status/instructions -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock 
+                            Text="{Binding Status}"
+                            Visibility="{Binding Error, 
+                                Converter={StaticResource NullVisibilityConverter}}"
+                            TextWrapping="Wrap"
+                            Foreground="{StaticResource BackgroundTextColorBrush}"
+                            FontFamily="Segoe UI"
+                            FontStyle="Italic"
+                            Padding="3,0"
+                            Opacity="0.7" />    
+                        <!-- Failure notification -->
+                        <TextBlock 
+                            Text="{Binding ConverterParameter=QueryFailed,
+                                Converter={StaticResource Localization},
+                                Source={StaticResource Localization}}"
+                            Visibility="{Binding Error, 
+                                Converter={StaticResource NotNullVisibilityConverter}}"
+                            TextWrapping="Wrap"
+                            Foreground="{StaticResource BackgroundTextColorBrush}"
+                            FontFamily="Segoe UI"
+                            Padding="3,0"
+                            FontStyle="Italic"
+                            Opacity="0.7" />
+
+                    </Grid>
+                    <!-- ================================================ 
+                     ROW 2 - BUSY INDICATOR / ERROR DETAILS HEADER
+                     ================================================-->
+                    <!-- Busy indicator.  Is only visible when Error is null and IsBusy is true. -->
+                    <Grid Grid.Row="1"
+                      Visibility="{Binding Error, 
+                        Converter={StaticResource NullVisibilityConverter}}">
+                        <ProgressBar Visibility="{Binding IsBusy,
+                            Converter={StaticResource BoolVisibilityConverter}}"
+                                 Margin="0,5,0,0"
+                                 HorizontalAlignment="Left"
+                                 IsIndeterminate="True"
+                                 Height="16"
+                                 Width="200" />
+                    </Grid>
+                    <!-- Error details header -->
+                    <ToggleButton 
+                        x:Name="ErrorDetailsButton"
+                        Content="{Binding ConverterParameter=ErrorDetails,
+                            Converter={StaticResource Localization},
+                            Source={StaticResource Localization}}"
+                        Visibility="{Binding Error, 
+                        Converter={StaticResource NotNullVisibilityConverter}}"
+                        Margin="0,4,0,0"
+                        Padding="0"
+                        FontFamily="Segoe UI"
+                        Foreground="{StaticResource BackgroundTextColorBrush}"          
+                        Grid.Row="1" 
+                        Style="{StaticResource ExpanderToggleButtonStyle}"
+                        Opacity="0.7" />
+                    <!-- ========================= 
+                     ROW 3 - ERROR DETAILS 
+                     ========================= -->
+                    <TextBlock 
+                        Text="{Binding Error.Message}"
+                        Visibility="{Binding IsChecked, ElementName=ErrorDetailsButton,
+                            Converter={StaticResource BoolVisibilityConverter}}"
+                        Margin="0,2,0,0"
+                        TextWrapping="Wrap"
+                        FontFamily="Segoe UI"
+                        FontSize="11"
+                        FontStyle="Italic"
+                        Foreground="{StaticResource BackgroundTextColorBrush}"
+                        Grid.Row="2"
+                        Opacity="0.7">
+                        <i:Interaction.Triggers>
+                            <ei:PropertyChangedTrigger Binding="{Binding Error}">
+                                <i:Interaction.Behaviors>
+                                    <ei:ConditionBehavior>
+                                        <ei:ConditionalExpression>
+                                            <ei:ComparisonCondition
+                                                LeftOperand="{Binding Error}"
+                                                Operator="Equal"
+                                                RightOperand="{x:Null}" />
+                                        </ei:ConditionalExpression>
+                                    </ei:ConditionBehavior>
+                                </i:Interaction.Behaviors>
+                                <ei:ChangePropertyAction 
+                                    PropertyName="Opacity"
+                                    Value="0" />
+                            </ei:PropertyChangedTrigger>
+                            <ei:PropertyChangedTrigger Binding="{Binding Error}">
+                                <i:Interaction.Behaviors>
+                                    <ei:ConditionBehavior>
+                                        <ei:ConditionalExpression>
+                                            <ei:ComparisonCondition
+                                                LeftOperand="{Binding Error}"
+                                                Operator="NotEqual"
+                                                RightOperand="{x:Null}" />
+                                        </ei:ConditionalExpression>
+                                    </ei:ConditionBehavior>
+                                </i:Interaction.Behaviors>
+                                <ei:ChangePropertyAction 
+                                    PropertyName="Opacity"
+                                    Value="0.7" />
+                            </ei:PropertyChangedTrigger>
+                        </i:Interaction.Triggers>
+                    </TextBlock>
+                </Grid>
+            </ScrollViewer>
+
+            <Grid
+                Grid.Row="1"
+                Margin="0,7,0,0"
+                Visibility="{Binding HasResults,
+                    Converter={StaticResource BoolVisibilityConverter}}">
+                <Grid
+                    Visibility="{Binding IsTable,
+                        Converter={StaticResource ReverseBoolVisibilityConverter}}">
+                    <CheckBox
+                        Content="{Binding ConverterParameter=PinToMapLabel,
+                            Converter={StaticResource Localization},
+                            Source={StaticResource Localization}}"
+                        IsChecked="{Binding IsPinned, Mode=TwoWay}"
+                        Visibility="{Binding AutoPinResults, 
+                            Converter={StaticResource ReverseBoolVisibilityConverter}}"
+                        Foreground="{StaticResource BackgroundTextColorBrush}"
+                        Cursor="Hand">
+                        <ToolTipService.ToolTip>
+                            <TextBlock
+                                Text="{Binding ConverterParameter=AutoPinResultsTooltip,
+                                    Converter={StaticResource Localization},
+                                    Source={StaticResource Localization}}"
+                                MaxWidth="300"
+                                TextWrapping="Wrap" />
+                        </ToolTipService.ToolTip>
+                    </CheckBox>
+                </Grid>
+            </Grid>
+
+        </Grid>
+        
+        <Button HorizontalAlignment="Right"
+                Grid.Row="3"
+                Visibility="{Binding HasVisibleExpression, 
+                    Converter={StaticResource BoolVisibilityConverter}}"
+                Content="{Binding ConverterParameter=ExecuteLabel,
+                        Converter={StaticResource Localization},
+                        Source={StaticResource Localization}}"
+                Command="{Binding Execute}"
+                MinWidth="55"
+                Padding="10,5"
+                Style="{StaticResource GradientButtonStyle}" 
+                Foreground="{StaticResource AccentTextColorBrush}" 
+                Background="{StaticResource AccentColorBrush}" 
+                BorderBrush="{StaticResource AccentTextColorBrush}" />
+    </Grid>
+</UserControl>

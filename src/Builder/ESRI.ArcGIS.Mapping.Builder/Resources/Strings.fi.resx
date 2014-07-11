@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Lisää</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Lisää toiminta</value>
+  </data>
+  <data name="AddBehaviorDescription" xml:space="preserve">
+    <value>Lisää toiminta Vieweriin</value>
+  </data>
+  <data name="AddGeoprocessing" xml:space="preserve">
+    <value>Lisää geoprosessointi</value>
+  </data>
+  <data name="AddGeoprocessingDescription" xml:space="preserve">
+    <value>Lisää Vieweriin geoprosessointityökalu. Geoprosessointityökalun avulla Viewerin käyttäjät voivat käyttää ArcGIS Serverin geoprosessointipalvelua.</value>
+  </data>
+  <data name="AddGeoRSSDescription" xml:space="preserve">
+    <value>Lisää karttaan paikkatietoja sisältävä RSS-syöte</value>
+  </data>
+  <data name="AddGP" xml:space="preserve">
+    <value>Lisää geoprosessointi</value>
+  </data>
+  <data name="AddTool" xml:space="preserve">
+    <value>Lisää työkalu</value>
+  </data>
+  <data name="AddToolDescription" xml:space="preserve">
+    <value>Lisää Vieweriin työkalu</value>
+  </data>
+  <data name="ApplicationBuilderSettings" xml:space="preserve">
+    <value>Application Builderin asetukset</value>
+  </data>
+  <data name="ApplicationBuilderSettingsDescription" xml:space="preserve">
+    <value>Näytä ja muokkaa Application Builderin asetuksia, kuten lisäosien ja taustakarttojen hallinta-asetuksia.</value>
+  </data>
+  <data name="AttributeTable" xml:space="preserve">
+    <value>Ominaisuustietotaulu</value>
+  </data>
+  <data name="BasemapGalleryDescription" xml:space="preserve">
+    <value>Valitse eri taustakarttataso kartalle</value>
+  </data>
+  <data name="Behaviors" xml:space="preserve">
+    <value>Toiminnot</value>
+  </data>
+  <data name="Branding" xml:space="preserve">
+    <value>Brändäys</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Muuta</value>
+  </data>
+  <data name="ChangeLayout" xml:space="preserve">
+    <value>Muuta asettelua</value>
+  </data>
+  <data name="ChangeLayoutDescription" xml:space="preserve">
+    <value>Valitse uusi asettelu Viewerille</value>
+  </data>
+  <data name="ChangeLogo" xml:space="preserve">
+    <value>Muuta logoa</value>
+  </data>
+  <data name="ChangeLogoDescription" xml:space="preserve">
+    <value>Valitse logo Viewerille</value>
+  </data>
+  <data name="ChangeTitleAndLinks" xml:space="preserve">
+    <value>Muuta otsikkoa ja linkkejä</value>
+  </data>
+  <data name="ChangeTitleAndLinksDescription" xml:space="preserve">
+    <value>Muokkaa Viewerin otsikkoa ja hyperlinkkejä</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Muokkaa</value>
+  </data>
+  <data name="ConfigureTheme" xml:space="preserve">
+    <value>Muokkaa teemaa</value>
+  </data>
+  <data name="ConfigureThemeDescription" xml:space="preserve">
+    <value>Muokkaa Viewerin teeman värejä</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Koko näyttö</value>
+  </data>
+  <data name="FullScreenDescription" xml:space="preserve">
+    <value>Siirrä Application Builder koko näytön tilaan</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Koti</value>
+  </data>
+  <data name="HomeDescription" xml:space="preserve">
+    <value>Palaa Application Builderin aloitussivulle</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>Asettelu</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Logo</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Hallitse</value>
+  </data>
+  <data name="ManageBehaviors" xml:space="preserve">
+    <value>Hallitse toimintoja</value>
+  </data>
+  <data name="ManageBehaviorsDescription" xml:space="preserve">
+    <value>Ota käyttöön, poista käytöstä, järjestä uudelleen, lisää tai poista Viewerin toimintoja</value>
+  </data>
+  <data name="ManageToolbars" xml:space="preserve">
+    <value>Hallitse työkalurivejä</value>
+  </data>
+  <data name="ManageToolbarsDescription" xml:space="preserve">
+    <value>Lisää, poista, siirrä tai muokkaa Viewerin työkalurivin työkaluja</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Ota käyttöön</value>
+  </data>
+  <data name="PublishDescription" xml:space="preserve">
+    <value>Ota nykyinen Viewer käyttöön uudessa verkkosivustossa</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Palauta</value>
+  </data>
+  <data name="ResetTheme" xml:space="preserve">
+    <value>Palauta teema</value>
+  </data>
+  <data name="ResetThemeDescription" xml:space="preserve">
+    <value>Palauta Viewerin teeman värit oletusarvoihin</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Tallenna</value>
+  </data>
+  <data name="SaveDescription" xml:space="preserve">
+    <value>Tallenna nykyinen Viewer</value>
+  </data>
+  <data name="SelectTheTool" xml:space="preserve">
+    <value>Valitse työkalu...</value>
+  </data>
+  <data name="TitleAndLinks" xml:space="preserve">
+    <value>Otsikko ja linkit</value>
+  </data>
+  <data name="ToggleBrowseDescription" xml:space="preserve">
+    <value>Näytä tai piilota selausruutu. Selaustoiminnon avulla voit tarkastella ArcGIS Serverin tai paikkatietopalvelun päätepisteen sisältöä ja lisätä tasoja karttaan.</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>Näytä tai piilota kartan sisällysluettelo</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>Näytä tai piilota hakuruutu. Haun avulla voit hakea paikkoja tai etsiä sisältöä ArcGIS.com-sivustosta tai ArcGIS Server -palveluista.</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>Näytä tai piilota valitun tason ominaisuustietotaulu</value>
+  </data>
+  <data name="ToggleToolbar" xml:space="preserve">
+    <value>Vaihda työkalurivi</value>
+  </data>
+  <data name="ToggleToolbarDescription" xml:space="preserve">
+    <value>Näytä tai piilota Application Builderin työkalurivi</value>
+  </data>
+  <data name="Toolbar" xml:space="preserve">
+    <value>Työkalurivi</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Työkalut</value>
+  </data>
+  <data name="Accent" xml:space="preserve">
+    <value>Tehoste</value>
+  </data>
+  <data name="AccentText" xml:space="preserve">
+    <value>Tehosteteksti</value>
+  </data>
+  <data name="AddNewGroupOrControl" xml:space="preserve">
+    <value>Lisää uusi ryhmä tai säädin</value>
+  </data>
+  <data name="AddOns" xml:space="preserve">
+    <value>Lisäosat</value>
+  </data>
+  <data name="ApplicationProperties" xml:space="preserve">
+    <value>Sovelluksen ominaisuudet</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Käytä</value>
+  </data>
+  <data name="ArcGISApplicationBuilder" xml:space="preserve">
+    <value>Application Builder – {0}</value>
+  </data>
+  <data name="ArcGISViewerForMicrosoftSilverlight" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Tausta</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Taustateksti</value>
+  </data>
+  <data name="BaseMaps" xml:space="preserve">
+    <value>Taustakartat</value>
+  </data>
+  <data name="BrowseForFile" xml:space="preserve">
+    <value>Etsi tiedosto selaamalla</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>Etsi resurssi selaamalla</value>
+  </data>
+  <data name="BuilderTutorial" xml:space="preserve">
+    <value>Builder-opetusohjelma</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Peruuta</value>
+  </data>
+  <data name="ChangesSavedSuccessfully" xml:space="preserve">
+    <value>Muutokset tallennettu.</value>
+  </data>
+  <data name="ChooseExistingProject" xml:space="preserve">
+    <value>Valitse olemassa oleva projekti</value>
+  </data>
+  <data name="ChooseLayout" xml:space="preserve">
+    <value>Valitse asettelu</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Sulje</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>Muokkaus</value>
+  </data>
+  <data name="ConfigureExtensions" xml:space="preserve">
+    <value>Muokkaa laajennuksia</value>
+  </data>
+  <data name="ConfigureOptionsThatApplyToCurrentUser" xml:space="preserve">
+    <value>Muokkaa nykyisen käyttäjän asetuksia</value>
+  </data>
+  <data name="ConfigureSelectedGroupOrControl" xml:space="preserve">
+    <value>Muokkaa valittua ryhmää tai säädintä</value>
+  </data>
+  <data name="ConfigureSetOfBaseMapsUsedByBuilder" xml:space="preserve">
+    <value>Muokkaa Application Builderissa käytettävissä olevia taustakarttoja</value>
+  </data>
+  <data name="CopySite" xml:space="preserve">
+    <value>Kopioi sivusto</value>
+  </data>
+  <data name="CreateApplicationUsingDefaultMap" xml:space="preserve">
+    <value>Uusi kartta</value>
+  </data>
+  <data name="CreateApplicationUsingWebMapFromArcGISCom" xml:space="preserve">
+    <value>Web-kartat</value>
+  </data>
+  <data name="CreateNewApplication" xml:space="preserve">
+    <value>Luo uusi sovellus</value>
+  </data>
+  <data name="CurrentToolbars" xml:space="preserve">
+    <value>Nykyiset työkalurivit</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Poista</value>
+  </data>
+  <data name="DeleteSite" xml:space="preserve">
+    <value>Poista sivusto</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Kuvaus:</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Yksityiskohdat</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Alas</value>
+  </data>
+  <data name="EditSelectedGroupOrControl" xml:space="preserve">
+    <value>Muokkaa valittua ryhmää tai säädintä</value>
+  </data>
+  <data name="EditSite" xml:space="preserve">
+    <value>Muokkaa sivustoa</value>
+  </data>
+  <data name="ExceptionUnhandledError" xml:space="preserve">
+    <value>Käsittelemätön virhe {0}</value>
+  </data>
+  <data name="ExtensionNotifications" xml:space="preserve">
+    <value>Laajennusten ilmoitukset</value>
+  </data>
+  <data name="Extensions" xml:space="preserve">
+    <value>Laajennukset</value>
+  </data>
+  <data name="HelpLinks" xml:space="preserve">
+    <value>Linkit</value>
+  </data>
+  <data name="IconPrompt" xml:space="preserve">
+    <value>Kuvake:</value>
+  </data>
+  <data name="LabelPrompt" xml:space="preserve">
+    <value>Tunnusteksti:</value>
+  </data>
+  <data name="LoadingSites" xml:space="preserve">
+    <value>Ladataan sivustoja...</value>
+  </data>
+  <data name="ManageExtensions" xml:space="preserve">
+    <value>Hallitse laajennuksia</value>
+  </data>
+  <data name="MoreSiteOptions" xml:space="preserve">
+    <value>Lisää sivuston asetuksia</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Siirrä</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Siirrä alas</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Siirrä ylös</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nimi</value>
+  </data>
+  <data name="NamePrompt" xml:space="preserve">
+    <value>Nimi:</value>
+  </data>
+  <data name="NewMap" xml:space="preserve">
+    <value>Uusi kartta</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Avaa</value>
+  </data>
+  <data name="PersonalSettings" xml:space="preserve">
+    <value>Henkilökohtaiset asetukset</value>
+  </data>
+  <data name="PublishApplication" xml:space="preserve">
+    <value>Ota sovellus käyttöön</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Poista</value>
+  </data>
+  <data name="RemoveSelectedGroupOrControl" xml:space="preserve">
+    <value>Poista valittu ryhmä tai säädin</value>
+  </data>
+  <data name="ReturnToPreviousScreen" xml:space="preserve">
+    <value>Palaa edelliseen näyttöön</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>Valinta</value>
+  </data>
+  <data name="SelectionOutline" xml:space="preserve">
+    <value>Valinnan jäsennys</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>Asetukset</value>
+  </data>
+  <data name="StartWithExistingMap" xml:space="preserve">
+    <value>Aloita olemassa olevalla</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Menestys</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Muokkaa teemaa</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Teeman värit</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Otsikko:</value>
+  </data>
+  <data name="ToolbarPrompt" xml:space="preserve">
+    <value>Työkalurivi:</value>
+  </data>
+  <data name="TooltipPrompt" xml:space="preserve">
+    <value>Työkaluvihje:</value>
+  </data>
+  <data name="TypePrompt" xml:space="preserve">
+    <value>Tyyppi:</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Ylös</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Vie</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Tervetuloa</value>
+  </data>
+  <data name="WelcomeMsgParagraph1" xml:space="preserve">
+    <value>ArcGIS Application Builder on verkkosovellus, jonka avulla voit luoda ja muokata Viewer-sovelluksia reaaliajassa ja täysin interaktiivisesti. Application Builder ja Viewer -sovellukset on luotu käyttämällä ArcGIS API for Silverlightia.</value>
+  </data>
+  <data name="WelcomeMsgParagraph2" xml:space="preserve">
+    <value>Voit aloittaa Viewerin luomisen napsauttamalla alla olevaa Luo uusi sovellus -painiketta. Viewer, jota olet määrittämässä, näkyy Application Builderin työkalurivin alapuolella. Voit määrittää esimerkiksi Viewerin taustakartan, tasot, otsikon, logon ja värit käyttämällä työkalurivin työkaluja. Kun olet määrittänyt Viewerin, ota se käyttöön uudessa verkkosivustossa napsauttamalla Ota käyttöön -painiketta.</value>
+  </data>
+  <data name="AvailableTools" xml:space="preserve">
+    <value>Käytettävissä olevat työkalut</value>
+  </data>
+  <data name="BrowseForImage" xml:space="preserve">
+    <value>Etsi kuva selaamalla</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Muokkaa</value>
+  </data>
+  <data name="ErrorUnableToRetrieveDetailsForExtension" xml:space="preserve">
+    <value>Lisäosapaketin tietoja ei voi noutaa.</value>
+  </data>
+  <data name="ExtensionContainsTheFollowingAddOns" xml:space="preserve">
+    <value>Lisäosapaketti {0} sisältää seuraavat lisäosat:</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteButton" xml:space="preserve">
+    <value>Haluatko varmasti poistaa tämän painikkeen?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteGroup" xml:space="preserve">
+    <value>Haluatko varmasti poistaa tämän ryhmän?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteWebSite" xml:space="preserve">
+    <value>Haluatko varmasti poistaa tämän verkkosivuston?</value>
+  </data>
+  <data name="AssemblyAlreadyIncludeInTheApplication" xml:space="preserve">
+    <value>{1}Kokoonpano {0} sisältyy jo sovelluksen suorituspalveluun.{1}Optimoi laajennuksesi koko ja latausnopeus määrittämällä kokoonpanoviittauksen ominaisuuden CopyLocal arvoksi false, jotta kokoonpano jätetään pois .xap-paketista.</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Vahvista poisto</value>
+  </data>
+  <data name="DeletingExtensionWillMakeItUnavailableForFurtherUse" xml:space="preserve">
+    <value>Jos poistat laajennuksen, sitä ei voi enää käyttää uusissa sovelluksissa eikä nykyisten sovellusten uusissa versioissa. {0}Haluatko varmasti poistaa sen?</value>
+  </data>
+  <data name="DeletingSite" xml:space="preserve">
+    <value>Poistetaan sivustoa...</value>
+  </data>
+  <data name="EditTool" xml:space="preserve">
+    <value>Muokkaa työkalua</value>
+  </data>
+  <data name="EnterNameForApplication" xml:space="preserve">
+    <value>Anna sovellukselle nimi</value>
+  </data>
+  <data name="ErrorDetailsNotKnown" xml:space="preserve">
+    <value>Virhetietoja ei tiedetä</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>Tapahtui virhe</value>
+  </data>
+  <data name="ErrorRetrievingMapDocumentForSite" xml:space="preserve">
+    <value>Virhe noudettaessa sivuston kartta-asiakirjaa</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Virheet</value>
+  </data>
+  <data name="ExtensionAlreadyExists" xml:space="preserve">
+    <value>Lisäosa on jo olemassa</value>
+  </data>
+  <data name="ExtensionDetails" xml:space="preserve">
+    <value>Lisäosan tiedot: {0}</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsErrors" xml:space="preserve">
+    <value>Lisäosapaketti, jota yrität ottaa käyttöön, sisältää virheitä. Ne on ratkaistava ennen jatkamista.</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsWarnings" xml:space="preserve">
+    <value>Lisäosapaketti, jota yrität ottaa käyttöön, sisältää varoituksia. Tutustu varoituksiin ennen jatkamista.</value>
+  </data>
+  <data name="ExtensionWithSameNameAlreadyExist" xml:space="preserve">
+    <value>Samanniminen lisäosapaketti on jo olemassa. Haluatko korvata sen?</value>
+  </data>
+  <data name="FailedToCreateAndPublishApplication" xml:space="preserve">
+    <value>Sovelluksen luonti ja käyttöönotto epäonnistui</value>
+  </data>
+  <data name="FollowingErrorsFound" xml:space="preserve">
+    <value>Järjestelmä on havainnut seuraavat virheet.</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>Virheellinen nimi</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Avaa web-kartta ArcGIS.com-sivustolta</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Odota...</value>
+  </data>
+  <data name="TutorialModeDisable" xml:space="preserve">
+    <value>Poista Aloitusopas käytöstä</value>
+  </data>
+  <data name="TutorialModeEnable" xml:space="preserve">
+    <value>Ota käyttöön aloitusopas</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Tietoja Application Builderista</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Näytä Application Builderin Tietoja-valintaikkuna</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Tietoja</value>
+  </data>
+  <data name="GettingStartedAddGPDescription" xml:space="preserve">
+    <value>Hyödynnä ArcGIS Serverin geoprosessointipalveluiden paikkatietoanalyysia.</value>
+  </data>
+  <data name="GettingStartedAddGPTitle" xml:space="preserve">
+    <value>Lisää geprosessointipalvelut</value>
+  </data>
+  <data name="GettingStartedAddLayersDescription" xml:space="preserve">
+    <value>Lisää tietoja ArcGIS Onlinesta ja ArcGIS Serveristä.</value>
+  </data>
+  <data name="GettingStartedAddLayersTitle" xml:space="preserve">
+    <value>Lisää toiminnalliset karttatasot</value>
+  </data>
+  <data name="GettingStartedAddToolsDescription" xml:space="preserve">
+    <value>Muokkaa sovelluksen toimintoja</value>
+  </data>
+  <data name="GettingStartedAddToolsTitle" xml:space="preserve">
+    <value>Lisää työkalut</value>
+  </data>
+  <data name="GettingStartedBasemapDescription" xml:space="preserve">
+    <value>Valitse taustakartta ArcGIS Onlinesta, Bing-kartoista tai OpenStreetMap-palvelusta.</value>
+  </data>
+  <data name="GettingStartedBasemapTitle" xml:space="preserve">
+    <value>Valitse taustakartta</value>
+  </data>
+  <data name="GettingStartedChooseLogoDescription" xml:space="preserve">
+    <value>Tuotteista Viewer organisaatiosi logolla.</value>
+  </data>
+  <data name="GettingStartedChooseLogoTitle" xml:space="preserve">
+    <value>Valitse logo</value>
+  </data>
+  <data name="GettingStartedSelectLayoutDescription" xml:space="preserve">
+    <value>Määritä Viewerin ulkoasu.</value>
+  </data>
+  <data name="GettingStartedSelectLayoutTitle" xml:space="preserve">
+    <value>Valitse asettelu</value>
+  </data>
+  <data name="GettingStartedSetTitleDescription" xml:space="preserve">
+    <value>Määritä sovelluksen otsikko.</value>
+  </data>
+  <data name="GettingStartedSetTitleTitle" xml:space="preserve">
+    <value>Määritä otsikko</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailable" xml:space="preserve">
+    <value>Käytettävissä ovat seuraavat lisäosat. Napsauta</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableHere" xml:space="preserve">
+    <value>täällä</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableToUploadANewOne" xml:space="preserve">
+    <value>uuden lataamiseksi levyltä.</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlDownToolbarTree" xml:space="preserve">
+    <value>Siirrä valittu ryhmä tai säädin alaspäin työkalurivirakenteessa</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlUpToolbarTree" xml:space="preserve">
+    <value>Siirrä valittu ryhmä tai säädin ylöspäin työkalurivirakenteessa</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Takaosa</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Seuraava</value>
+  </data>
+  <data name="SelectAToolToAdd" xml:space="preserve">
+    <value>Valitse lisättävä työkalu:</value>
+  </data>
+  <data name="ChooseMap" xml:space="preserve">
+    <value>Application Builder – Valitse kartta</value>
+  </data>
+  <data name="AddInPackagesContain" xml:space="preserve">
+    <value>Lisäosapaketit sisältävät lisäosat: työkalut, toiminnan ja asetteluissa käytetyt säätimet</value>
+  </data>
+  <data name="AvailableAddInPackages" xml:space="preserve">
+    <value>Käytettävissä olevat lisäosapaketit:</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>Painike</value>
+  </data>
+  <data name="ConfigureElementsRelatedToMap" xml:space="preserve">
+    <value>Muokkaa karttaan liittyviä elementtejä</value>
+  </data>
+  <data name="ConfigureToolsOfYourApplication" xml:space="preserve">
+    <value>Muokkaa sovelluksesi työkaluja</value>
+  </data>
+  <data name="DisableGettingStarted" xml:space="preserve">
+    <value>Poista Aloitusopas käytöstä</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>Aloitusopas</value>
+  </data>
+  <data name="ShowMe" xml:space="preserve">
+    <value>Näytä minut</value>
+  </data>
+  <data name="SpecifyLayoutOfYourApplication" xml:space="preserve">
+    <value>Määritä sovelluksen asettelu</value>
+  </data>
+  <data name="UploadAddInPackages" xml:space="preserve">
+    <value>Lataa lisäosapaketit</value>
+  </data>
+  <data name="UploadAddIns" xml:space="preserve">
+    <value>Lataa lisäosat</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Kartta</value>
+  </data>
+  <data name="AreYouSureYouWantToLeavePageUnsavedChangesLost" xml:space="preserve">
+    <value>Haluatko varmasti poistua tältä sivulta? Kaikki tallentamattomat muutokset saattavat kadota.</value>
+  </data>
+  <data name="ConfirmPageChange" xml:space="preserve">
+    <value>Vahvista sivunvaihto</value>
+  </data>
+  <data name="SpecifyToolProperties" xml:space="preserve">
+    <value>Määritä työkalun ominaisuudet</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>Tallenna nimellä...</value>
+  </data>
+  <data name="AddGroupButton" xml:space="preserve">
+    <value>Lisää ryhmä</value>
+  </data>
+  <data name="CannotAddElement" xml:space="preserve">
+    <value>Elementtiä ei voi lisätä</value>
+  </data>
+  <data name="CannotAddGroupButton" xml:space="preserve">
+    <value>Ryhmää ei voi lisätä</value>
+  </data>
+  <data name="CannotAddTool" xml:space="preserve">
+    <value>Työkalua ei voi lisätä</value>
+  </data>
+  <data name="ChooseAvailableTool" xml:space="preserve">
+    <value>Sinun on valittava yksittäinen työkalu Käytettävissä olevat työkalut -rakenteesta.</value>
+  </data>
+  <data name="DefaultGroupButtonDescription" xml:space="preserve">
+    <value>Uusi ryhmä</value>
+  </data>
+  <data name="DefaultGroupButtonLabel" xml:space="preserve">
+    <value>Uusi ryhmä</value>
+  </data>
+  <data name="RootLevelToAddGroup" xml:space="preserve">
+    <value>Sinun on valittava ryhmään lisättävä työkalurivi tai työkalurivin päätason solmu.</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>&lt;Erotin&gt;</value>
+  </data>
+  <data name="MoveIntoGroup" xml:space="preserve">
+    <value>Siirry ryhmään {0}</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>Muokkaa ryhmää</value>
+  </data>
+  <data name="ConfigureControls" xml:space="preserve">
+    <value>Muokkaa säätimiä</value>
+  </data>
+  <data name="ConfigureControlsDescription" xml:space="preserve">
+    <value>Muokkaa Viewerin säätimien määritystä</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Tila</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Välimuistin koko:</value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>OnDemand</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>SnapShot</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Kohteen tason OnDemand-välimuistin koko</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Määrittää FeatureLayer OnDemand -tilan välimuistin koon (oletus = 1000)</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>FeatureLayer OnDemand -tila</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Valitsee kyselytilan OnDemand-tasolle (vain FeatureLayers)</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>FeatureLayer SnapShot -tila</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Valitsee kyselytilan SnapShot-tasolle (vain FeatureLayers)</value>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>Lisää linkki</value>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Poista linkki</value>
+  </data>
+  <data name="ConfigureControlsBanner" xml:space="preserve">
+    <value>Muokattavat säätimet</value>
+  </data>
+  <data name="Controls" xml:space="preserve">
+    <value>Säätimet</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Kohteen nouto</value>
+  </data>
+  <data name="AddGroupDotDot" xml:space="preserve">
+    <value>Lisää ryhmä...</value>
+  </data>
+  <data name="AddSeparator" xml:space="preserve">
+    <value>Lisää erotin</value>
+  </data>
+  <data name="ApplicationBuilderDashSettings" xml:space="preserve">
+    <value>Application Builder – Asetukset</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Selaa</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Sisältö</value>
+  </data>
+  <data name="CurrentViewerApplications" xml:space="preserve">
+    <value>Nykyiset Viewer-sovellukset</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Kartan sisältö</value>
+  </data>
+  <data name="NoFilesFound" xml:space="preserve">
+    <value>Tiedostoja ei löytynyt.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Etsi</value>
+  </data>
+  <data name="ViewerProject" xml:space="preserve">
+    <value>Viewer-projekti</value>
+  </data>
+  <data name="WebMap" xml:space="preserve">
+    <value>Web-kartta</value>
+  </data>
+  <data name="AddLayerFailed" xml:space="preserve">
+    <value>Karttatason lisäys epäonnistui</value>
+  </data>
+  <data name="AddLayerFailedExplanation" xml:space="preserve">
+    <value>Karttatasoa ei voitu lisätä. Virheen syy: {0}.</value>
+  </data>
+  <data name="AddLayerFailedNoDetails" xml:space="preserve">
+    <value>[Tietoja ei voitu poimia]</value>
+  </data>
+  <data name="ConfigureLayers" xml:space="preserve">
+    <value>Muokkaa karttatasoja</value>
+  </data>
+  <data name="ConfigureLayersDescription" xml:space="preserve">
+    <value>Muuta kartan tasojen ulkoasua ja toimintaa</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Karttatasot</value>
+  </data>
+  <data name="SiteCopyFailed" xml:space="preserve">
+    <value>Sivuston kopiointi epäonnistui</value>
+  </data>
+  <data name="SiteDeploymentFailed" xml:space="preserve">
+    <value>Sivuston käyttöönotto epäonnistui</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Siirrä ylös</value>
+  </data>
+  <data name="BringsCurrentlySelectedLayerForward" xml:space="preserve">
+    <value>Siirtää karttatason näyttöjärjestyksen yhden sijainnin lähemmäs kartan yläreunaa</value>
+  </data>
+  <data name="ConfigureCurrentlySelectedLayer" xml:space="preserve">
+    <value>Muokkaa valittua karttatasoa</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Muokkaa välityspalvelinta, jonka avulla käytettiin tämän sovelluksen suojattuja palveluita</value>
+  </data>
+  <data name="ConfigureSecureServices" xml:space="preserve">
+    <value>Muokkaa suojattuja palveluita</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>Siirry kohteeseen</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Päivitä</value>
+  </data>
+  <data name="RefreshCurrentlySelectedLayer" xml:space="preserve">
+    <value>Päivitä valittu karttataso</value>
+  </data>
+  <data name="RemovesCurrentlySelectedLayer" xml:space="preserve">
+    <value>Poistaa valitun karttatason</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Nimeä uudelleen</value>
+  </data>
+  <data name="RenameCurrentlySelectedLayer" xml:space="preserve">
+    <value>Nimeä valittu karttataso uudelleen</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Siirrä alas</value>
+  </data>
+  <data name="SendsCurrentlySelectedLayerBackward" xml:space="preserve">
+    <value>Siirtää karttatason näyttöjärjestyksen yhden sijainnin lähemmäs kartan alareunaa</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Palvelun tiedot</value>
+  </data>
+  <data name="ViewInformationAboutSelectedLayerDatasource" xml:space="preserve">
+    <value>Näytä tietoja valitun karttatason tietolähteestä</value>
+  </data>
+  <data name="ZoomToCurrentlySelectedLayer" xml:space="preserve">
+    <value>Tarkenna valittuun karttatasoon</value>
+  </data>
+  <data name="CannotAddDropdownCommandsToAGroup" xml:space="preserve">
+    <value>Ryhmälle ei voi lisätä avattavan luettelon komentoja.</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Muokkaa taustakarttoja</value>
+  </data>
+  <data name="FlashAnimationIsNotDefinedOnTargetBuilderToolbarButton" xml:space="preserve">
+    <value>Flash-animaatiota ei ole määritetty Builder-työkalurivin painikkeessa</value>
+  </data>
+  <data name="ManageAddInsToolsBehaviorsControls" xml:space="preserve">
+    <value>Hallitse lisäosia: työkalut, toiminnot ja säätimet</value>
+  </data>
+  <data name="ManagePersonalSettings" xml:space="preserve">
+    <value>Hallitse henkilökohtaisia asetuksia</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Käytä suojattuja palveluita</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Lisää suojattuja palveluita</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Määritä välityspalvelin</value>
+  </data>
+  <data name="NewApplication" xml:space="preserve">
+    <value>Application Builder – Uusi sovellus (ei otettu käyttöön)</value>
+  </data>
+  <data name="NotDeployed" xml:space="preserve">
+    <value>(ei otettu käyttöön)</value>
+  </data>
+  <data name="DeployingApplication" xml:space="preserve">
+    <value>Otetaan sovellusta käyttöön...</value>
+  </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>Sovelluksen asetukset</value>
+  </data>
+  <data name="ArcGISOnlineSecure" xml:space="preserve">
+    <value>Tietoturva ArcGIS Onlinessa:</value>
+  </data>
+  <data name="ArcGISOnlineSharing" xml:space="preserve">
+    <value>Jakaminen ArcGIS Onlinessa:</value>
+  </data>
+  <data name="BingAppId" xml:space="preserve">
+    <value>Bing-sovelluksen tunnus:</value>
+  </data>
+  <data name="CurrentApplicationSettings" xml:space="preserve">
+    <value>Nykyisen sovelluksen asetukset</value>
+  </data>
+  <data name="DefaultSettings" xml:space="preserve">
+    <value>Oletusasetukset</value>
+  </data>
+  <data name="GeometryService" xml:space="preserve">
+    <value>Geometriapalvelu:</value>
+  </data>
+  <data name="ManageApplicationSettings" xml:space="preserve">
+    <value>Hallitse sovelluksen asetuksia</value>
+  </data>
+  <data name="BasedOnWebMap" xml:space="preserve">
+    <value>Web-kartan perusteella:</value>
+  </data>
+  <data name="LinkedToWebMap" xml:space="preserve">
+    <value>Linkitetty web-karttaan:</value>
+  </data>
+  <data name="LinkToWebMap" xml:space="preserve">
+    <value>Linkki</value>
+  </data>
+  <data name="MapConfigurationUnavailable" xml:space="preserve">
+    <value>Tämän sovelluksen karttamääritys on linkitetty web-karttaan. Voit muokata karttamääritystä poistamalla sovelluksen linkityksen web-kartasta.</value>
+  </data>
+  <data name="UnlinkFromWebMap" xml:space="preserve">
+    <value>Poista linkitys</value>
+  </data>
+  <data name="UnableToDeployApplication" xml:space="preserve">
+    <value>Sovellusta ei voi ottaa käyttöön.</value>
+  </data>
+  <data name="UnableToSaveApplicationChanges" xml:space="preserve">
+    <value>Sovelluksen muutoksia ei voi tallentaa.</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>Välityspalvelin:</value>
+  </data>
+  <data name="HideGettingStarted" xml:space="preserve">
+    <value>Piilota aloitusoppaan ohje</value>
+  </data>
+  <data name="ShowGettingStarted" xml:space="preserve">
+    <value>Näytä aloitusoppaan ohje</value>
+  </data>
+  <data name="DisplayText" xml:space="preserve">
+    <value>Näytä teksti</value>
+  </data>
+  <data name="UpgradeSite" xml:space="preserve">
+    <value>Päivitä tämä Viewer-sovellus nykyiseen versioon</value>
+  </data>
+  <data name="UpgradingApplication" xml:space="preserve">
+    <value>Päivitetään sovellusta...</value>
+  </data>
+  <data name="NewLink" xml:space="preserve">
+    <value>Uusi linkki</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>Toiminta</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>Säädin</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Karttataso</value>
+  </data>
+  <data name="Tool" xml:space="preserve">
+    <value>Työkalu</value>
+  </data>
+</root>

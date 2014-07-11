@@ -1,0 +1,287 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:esriExt="http://schemas.esri.com/arcgis/client/extensibility/2010"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls">
+
+    <local:VisibilityConverter x:Key="VisibilityConverter" />
+    <local:ReverseVisibilityConverter x:Key="ReverseVisibilityConverter" />
+	<local:StringResourcesManager x:Key="Localization" />
+
+	<Style TargetType="local:SolidColorBrushSelector">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:SolidColorBrushSelector">
+                    <esriExt:DropDownButton x:Name="DropDownButton" Margin="{TemplateBinding Margin}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                                          IsContentPopupOpen="{Binding Path=IsContentPopupOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                        <esriExt:DropDownButton.Content>
+                            <Image Source="{TemplateBinding Image}" />
+                        </esriExt:DropDownButton.Content>
+                        <esriExt:DropDownButton.PopupContent>
+                            <local:ColorPalette x:Name="ColorPalette" ThemeColors="{Binding Path=ThemeColors, RelativeSource={RelativeSource TemplatedParent}}" Background="White">
+                                <local:ColorPalette.Colors>
+                                    <Color>#FFFFFF</Color>
+                                    <Color>#000000</Color>
+                                    <Color>#EEECE1</Color>
+                                    <Color>#1F497D</Color>
+                                    <Color>#4F81BD</Color>
+                                    <Color>#C0504D</Color>
+                                    <Color>#9BBB59</Color>
+                                    <Color>#8064A2</Color>
+                                    <Color>#4BACC6</Color>
+                                    <Color>#F79646</Color>
+                                    <Color>#FF0000</Color>
+                                    <Color>#FFC000</Color>
+                                    <Color>#FFFF00</Color>
+                                    <Color>#92D050</Color>
+                                    <Color>#00B050</Color>
+                                    <Color>#00B0F0</Color>
+                                    <Color>#0070C0</Color>
+                                    <Color>#002060</Color>
+                                    <Color>#7030A0</Color>
+                                </local:ColorPalette.Colors>
+                            </local:ColorPalette>
+                        </esriExt:DropDownButton.PopupContent>
+                    </esriExt:DropDownButton>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:ColorSelector">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ColorSelector">
+                    <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition  />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="12" />                                
+                            </Grid.ColumnDefinitions>
+                                <Grid x:Name="colorArea">
+                                <Rectangle x:Name="rectSample" Fill="Red" />
+                                <Rectangle x:Name="rectWhiteGradient">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStop Offset="0" Color="#ffffffff"/>
+                                            <GradientStop Offset="1" Color="#00ffffff"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Rectangle x:Name="rectBlackGradient" >
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint="0,1" EndPoint="0, 0">
+                                            <GradientStop Offset="0" Color="#ff000000"/>
+                                            <GradientStop Offset="1" Color="#00000000"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Canvas x:Name="SampleSelector" Width="8" Height="8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-2,-2,0,0" >
+                                    <Ellipse Width="8" Height="8" StrokeThickness="2" Stroke="#FFFFFFFF"/>
+                                    <Ellipse Width="8" Height="8" StrokeThickness="1" Stroke="#FF000000"/>
+                                </Canvas>
+                                <Rectangle x:Name="rectSampleMonitor" Fill="Transparent" />
+                            </Grid>
+
+                                <Grid Margin="5,0,5,0" Grid.Column="1">
+                                <Rectangle x:Name="rectHueMonitor" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush StartPoint ="0,0" EndPoint="0,1">
+                                            <GradientStop Offset="0.00" Color="#ffff0000"/>
+                                            <GradientStop Offset="0.17" Color="#ffffff00"/>
+                                            <GradientStop Offset="0.33" Color="#ff00ff00"/>
+                                            <GradientStop Offset="0.50" Color="#ff00ffff"/>
+                                            <GradientStop Offset="0.66" Color="#ff0000ff"/>
+                                            <GradientStop Offset="0.83" Color="#ffff00ff"/>
+                                            <GradientStop Offset="1.00" Color="#ffff0000"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Canvas x:Name="HueSelector" Height="8" Margin="0,-4,0,0" VerticalAlignment="Top">
+                                    <Path Width="5" Height="8" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF000000" Data="F1 M 276.761,316L 262.619,307.835L 262.619,324.165L 276.761,316 Z " />
+                                    <Path Width="5" Height="8" Canvas.Top="8" Canvas.Left="20" Stretch="Fill" StrokeLineJoin="Round" Stroke="#FF000000" Fill="#FF000000" Data="F1 M 276.761,316L 262.619,307.835L 262.619,324.165L 276.761,316 Z ">
+                                        <Path.RenderTransform>
+                                            <RotateTransform Angle="180" />
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Canvas>
+                            </Grid>
+
+                                <Grid Grid.Column="2" Height="152" HorizontalAlignment="Left" Margin="0,2,2,0" 
+                                    VerticalAlignment="Top" Width="8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Rectangle Fill="White" />
+                                <Line Stroke="Gray" StrokeThickness="4" StrokeDashArray="1,1" X1="2" Y1="0" X2="2" Y2="300"  />
+                                <Line Stroke="Gray" StrokeThickness="4" StrokeDashArray="0,1,0" X1="2" Y1="0" X2="2" Y2="300" Grid.Column="1"  />
+                                <Rectangle Grid.ColumnSpan="2">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFFFFFFF" Offset="0" x:Name="displayColor" />
+                                            <GradientStop Color="#00000000" Offset="1" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <Rectangle Grid.ColumnSpan="2" x:Name="rectMonitor" Margin="0,0,-4,0" Fill="Transparent" />
+                                <Canvas IsHitTestVisible="False">
+                                    <Canvas x:Name="rectMarker" Height="4" Margin="-2,-2,0,0" VerticalAlignment="Top">
+                                        <Path Width="4" Height="4" Stretch="Fill" StrokeLineJoin="Miter" Stroke="#FF000000" Fill="#FF000000" Data="F1 M 276.761,316L 262.619,307.835L 262.619,324.165L 276.761,316 Z " />
+                                        <Path Width="4" Height="4" Canvas.Top="4" Canvas.Left="12" Stretch="Fill" StrokeLineJoin="Miter" Stroke="#FF000000" Fill="#FF000000" Data="F1 M 276.761,316L 262.619,307.835L 262.619,324.165L 276.761,316 Z ">
+                                            <Path.RenderTransform>
+                                                <RotateTransform Angle="180" />
+                                            </Path.RenderTransform>
+                                        </Path>
+                                    </Canvas>
+
+                                </Canvas>
+                            </Grid>
+                            </Grid>
+                            <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal">
+                                <Rectangle Margin="6" Name="SelectedColor" Width="20" Height="20" Fill="White" Stroke="Black" />                                
+                                <TextBox x:Name="HexValue" Foreground="Black" Background="#4fFFFFFF" BorderBrush="#4F444444" Width="70" Text="#FFFFFFFF"  Canvas.Top="4" Canvas.Left="5"
+                                 FontSize="10"
+                                 Height="22"
+                                 VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:ColorPalette">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ColorPalette">
+                    <Border BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />                            
+                            </Grid.RowDefinitions>
+                            <Grid Visibility="{Binding Path=IsChecked, ElementName=ToggleViewButton, Converter={StaticResource ReverseVisibilityConverter}}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid>
+                                    <Rectangle Margin="2" Fill="{TemplateBinding SelectedColorBrush}" 
+                                                   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
+                                                   Stroke="Black" StrokeThickness="1" />
+									<TextBlock Text="{Binding ConverterParameter=CurrentColor, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Grid.Column="1" VerticalAlignment="Center" FontWeight="Bold"
+                                                   HorizontalAlignment="Center" Margin="5" Foreground="Black">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="5" Color="Black" />
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+									<TextBlock Text="{Binding ConverterParameter=CurrentColor, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Grid.Column="1" VerticalAlignment="Center" FontWeight="Bold"
+                                                   HorizontalAlignment="Center" Margin="5" Foreground="White">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="0" BlurRadius="5" Color="Black" />
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                </Grid>
+                                <Border Background="#FFF0F2F5" Padding="1" Grid.Row="1" Margin="1,3,1,2">
+									<TextBlock Text="{Binding ConverterParameter=ThemeColors, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="#FF3B3B3B" FontWeight="SemiBold"
+                                                   Margin="5,2,0,0" FontFamily="Calibri.ttf#Calibri"/>
+                                </Border>
+                                <StackPanel Grid.Row="2">
+                                    <Grid x:Name="ColorsGrid" />
+                                    <Grid x:Name="GraduationsGrid" />
+                                </StackPanel>
+                                <Border Background="#FFF0F2F5" Grid.Row="3" Padding="1" Margin="1,3,1,2">
+									<TextBlock Text="{Binding ConverterParameter=StandardColors, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="#FF3B3B3B" FontWeight="SemiBold"
+                                                   Margin="5,2,0,0" FontFamily="Calibri.ttf#Calibri" />
+                                </Border>
+                                <StackPanel Grid.Row="4">
+                                    <Grid x:Name="StandardColorsGrid" />
+                                </StackPanel>
+                            </Grid>
+                            <ToggleButton x:Name="ToggleViewButton" Cursor="Hand" Grid.Row="1" HorizontalAlignment="Stretch">
+                                <ToggleButton.Template>
+                                    <ControlTemplate TargetType="ToggleButton">
+                                        <Grid>
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualState x:Name="Normal"/>
+                                                    <VisualState x:Name="MouseOver" />
+                                                    <VisualState x:Name="Pressed" />
+                                                    <VisualState x:Name="Disabled" />
+                                                </VisualStateGroup>
+
+                                                <VisualStateGroup x:Name="CheckStates">
+                                                    <VisualState x:Name="Checked">
+                                                        <Storyboard>
+                                                            <ObjectAnimationUsingKeyFrames BeginTime="0" Duration="0" Storyboard.TargetProperty="Text" Storyboard.TargetName="toggleButtonContent">
+                                                                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{Binding ConverterParameter=SimpleSymbolType, Converter={StaticResource Localization}, Source={StaticResource Localization}}" />
+                                                            </ObjectAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                    <VisualState x:Name="Unchecked">
+                                                        <Storyboard>
+                                                            <ObjectAnimationUsingKeyFrames BeginTime="0" Duration="0" Storyboard.TargetProperty="Text" Storyboard.TargetName="toggleButtonContent">
+                                                                <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{Binding ConverterParameter=Advanced, Converter={StaticResource Localization}, Source={StaticResource Localization}}" />
+                                                            </ObjectAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                                <VisualStateGroup x:Name="FocusStates">
+                                                    <VisualState x:Name="Focused">
+                                                        <Storyboard>
+                                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualElement"/>
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                    <VisualState x:Name="Unfocused"/>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                            <TextBlock Margin="5,2,0,2" Text="{Binding ConverterParameter=Advanced, Converter={StaticResource Localization}, Source={StaticResource Localization}}" x:Name="toggleButtonContent" Cursor="Hand" HorizontalAlignment="Stretch" Foreground="Blue" FontWeight="Normal" TextDecorations="Underline" />
+                                            <Rectangle x:Name="FocusVisualElement" IsHitTestVisible="false" Margin="1" Opacity="0" Visibility="Collapsed" RadiusY="2" RadiusX="2" Stroke="#FF6DBDD1" StrokeThickness="1"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </ToggleButton.Template>
+                            </ToggleButton>
+                            <local:ColorSelector Width="207" Padding="5" VerticalAlignment="Top" Margin="0,5,0,0" Height="191" x:Name="ColorSelector" HorizontalAlignment="Center" Visibility="{Binding Path=IsChecked, ElementName=ToggleViewButton, Converter={StaticResource VisibilityConverter}}" />                            
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:ColorPaletteButton">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ColorPaletteButton">
+                    <Border x:Name="OuterBorder" BorderBrush="#FFE2E4E7" Cursor="Hand">
+                        <Border x:Name="Border">
+                            <Border x:Name="Content" Background="{TemplateBinding Fill}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                   BorderBrush="Transparent" BorderThickness="1" Margin="0"  />
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>

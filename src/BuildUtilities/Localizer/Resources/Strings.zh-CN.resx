@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_ArcGISOnline_" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="_BingMapsRoads_" xml:space="preserve">
+    <value>Bing 道路地图</value>
+  </data>
+  <data name="_Business_" xml:space="preserve">
+    <value>商业</value>
+  </data>
+  <data name="_Cartography_" xml:space="preserve">
+    <value>制图</value>
+  </data>
+  <data name="_ChooseBasemap_" xml:space="preserve">
+    <value>选择底图</value>
+  </data>
+  <data name="_OutdoorRecreation_" xml:space="preserve">
+    <value>户外娱乐</value>
+  </data>
+  <data name="_PeopleandPlaces_" xml:space="preserve">
+    <value>乡土人情</value>
+  </data>
+  <data name="_PublicSafetyandHealth_" xml:space="preserve">
+    <value>公共安全和健康</value>
+  </data>
+  <data name="_Standard_" xml:space="preserve">
+    <value>标准</value>
+  </data>
+  <data name="_Transportation_" xml:space="preserve">
+    <value>交通运输</value>
+  </data>
+  <data name="_BingMapsAerial_" xml:space="preserve">
+    <value>Bing 航空地图</value>
+  </data>
+  <data name="_BingMapsHybrid_" xml:space="preserve">
+    <value>Bing 混合地图</value>
+  </data>
+  <data name="_Streets_" xml:space="preserve">
+    <value>街道图</value>
+  </data>
+  <data name="_Topographic_" xml:space="preserve">
+    <value>地形图</value>
+  </data>
+  <data name="_Imagery_" xml:space="preserve">
+    <value>影像图</value>
+  </data>
+  <data name="_Terrain_" xml:space="preserve">
+    <value>Terrain 图</value>
+  </data>
+  <data name="_USATopoMaps_" xml:space="preserve">
+    <value>美国地形图</value>
+  </data>
+  <data name="_OpenStreetMap_" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="_AttributeTable_" xml:space="preserve">
+    <value>属性表</value>
+  </data>
+  <data name="_ClearSelectedFeaturesFromCurrentlySelectedLayer_" xml:space="preserve">
+    <value>从当前选中的图层中清除所选要素</value>
+  </data>
+  <data name="_ClearSelection_" xml:space="preserve">
+    <value>清除所选内容</value>
+  </data>
+  <data name="_ExportAttributesOfSelectedFeaturesToCSVFile_" xml:space="preserve">
+    <value>将所选要素的属性导出到 CSV 文件</value>
+  </data>
+  <data name="_ExportSelection_" xml:space="preserve">
+    <value>导出所选内容</value>
+  </data>
+  <data name="_GoTo_" xml:space="preserve">
+    <value>转至</value>
+  </data>
+  <data name="_MapContents_" xml:space="preserve">
+    <value>地图内容</value>
+  </data>
+  <data name="_RefreshCurrentlySelectedLayer_" xml:space="preserve">
+    <value>刷新当前所选图层</value>
+  </data>
+  <data name="_Refresh_" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="_SearchForPlacesOrLayers_" xml:space="preserve">
+    <value>搜索地点或图层</value>
+  </data>
+  <data name="_Search_" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="_SelectABasemapForTheMap_" xml:space="preserve">
+    <value>选择地图的底图</value>
+  </data>
+  <data name="_SelectAllFeaturesInCurrentlySelectedLayer_" xml:space="preserve">
+    <value>选择当前所选图层中的所有要素</value>
+  </data>
+  <data name="_SelectAll_" xml:space="preserve">
+    <value>全选</value>
+  </data>
+  <data name="_SelectFeaturesByDrawingBoxOnMap_" xml:space="preserve">
+    <value>在地图中拖出一个框来选择要素</value>
+  </data>
+  <data name="_Select_" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="_ServiceDetails_" xml:space="preserve">
+    <value>服务详细信息</value>
+  </data>
+  <data name="_ShowOrHideTheAttributesTable_" xml:space="preserve">
+    <value>显示或隐藏属性表</value>
+  </data>
+  <data name="_ToggleMapContents_" xml:space="preserve">
+    <value>切换地图内容</value>
+  </data>
+  <data name="_ViewInformationAboutSelectedLayerDatasource_" xml:space="preserve">
+    <value>查看有关所选图层数据源的信息</value>
+  </data>
+  <data name="_ZoomToCurrentlySelectedFeatures_" xml:space="preserve">
+    <value>缩放至当前所选要素</value>
+  </data>
+  <data name="_ZoomToCurrentlySelectedLayer_" xml:space="preserve">
+    <value>缩放至当前所选图层</value>
+  </data>
+  <data name="_ZoomToSelection_" xml:space="preserve">
+    <value>缩放至所选项</value>
+  </data>
+  <data name="_ArcGISViewerForMicrosoftSilverlight_" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="_AStreetMapOfTheWorld_" xml:space="preserve">
+    <value>地形图包括边界、城市、水体要素、地形要素、公园、地标、交通和建筑物。</value>
+  </data>
+  <data name="_BasicPrintLayout_" xml:space="preserve">
+    <value>基本打印布局。</value>
+  </data>
+  <data name="_Blog_" xml:space="preserve">
+    <value>博客</value>
+  </data>
+  <data name="_CategoryColon_" xml:space="preserve">
+    <value>类别:</value>
+  </data>
+  <data name="_CodeColon_" xml:space="preserve">
+    <value>编码:</value>
+  </data>
+  <data name="_ErrorUnHandledErrorInSilverlightApplcation_" xml:space="preserve">
+    <value>Silverlight 应用程序中有未处理的错误</value>
+  </data>
+  <data name="_FileColon_" xml:space="preserve">
+    <value>文件:</value>
+  </data>
+  <data name="_Forums_" xml:space="preserve">
+    <value>论坛</value>
+  </data>
+  <data name="_Help_" xml:space="preserve">
+    <value>帮助</value>
+  </data>
+  <data name="_LineColon_" xml:space="preserve">
+    <value>线:</value>
+  </data>
+  <data name="_Loading_" xml:space="preserve">
+    <value>正在下载...</value>
+  </data>
+  <data name="_MessageColon_" xml:space="preserve">
+    <value>消息:</value>
+  </data>
+  <data name="_MethodNameColon_" xml:space="preserve">
+    <value>方法名称:</value>
+  </data>
+  <data name="_PositionColon_" xml:space="preserve">
+    <value>位置:</value>
+  </data>
+  <data name="_PrintLayoutWithMapElementsLikeOverviewMap_" xml:space="preserve">
+    <value>包含地图元素(如鹰眼图)的打印布局。</value>
+  </data>
+  <data name="_ArcGISApplicationBuilderForMicrosoftSilverlight_" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight - Application Builder</value>
+  </data>
+  <data name="_LoadingColon_" xml:space="preserve">
+    <value>正在下载:</value>
+  </data>
+  <data name="_PoweredByArcGIS_" xml:space="preserve">
+    <value>由 ArcGIS 提供支持</value>
+  </data>
+  <data name="_AttachmentEditor_" xml:space="preserve">
+    <value>附加文档</value>
+  </data>
+  <data name="_AttachmentDocumentsToSelectedFeature_" xml:space="preserve">
+    <value>向所选要素附加文档</value>
+  </data>
+  <data name="_FilterByExtentTooltip_" xml:space="preserve">
+    <value>仅显示当前地图范围内要素的记录</value>
+  </data>
+  <data name="_FilterByExtent_" xml:space="preserve">
+    <value>按地图范围过滤</value>
+  </data>
+  <data name="_ShowAllTooltip_" xml:space="preserve">
+    <value>显示当前图层中所有要素的记录</value>
+  </data>
+  <data name="_ShowAll_" xml:space="preserve">
+    <value>显示全部</value>
+  </data>
+  <data name="_ShowSelectedTooltip_" xml:space="preserve">
+    <value>显示当前图层中所选要素的记录</value>
+  </data>
+  <data name="_ShowSelected_" xml:space="preserve">
+    <value>显示所选</value>
+  </data>
+  <data name="_ShowUnselectedTooltip_" xml:space="preserve">
+    <value>显示当前图层中未选要素的记录</value>
+  </data>
+  <data name="_ShowUnselected_" xml:space="preserve">
+    <value>显示未选</value>
+  </data>
+  <data name="_Ocean_" xml:space="preserve">
+    <value>海洋图</value>
+  </data>
+  <data name="_Physical_" xml:space="preserve">
+    <value>物理</value>
+  </data>
+  <data name="_ShadedRelief_" xml:space="preserve">
+    <value>晕渲地貌图</value>
+  </data>
+  <data name="_Color_" xml:space="preserve">
+    <value>颜色</value>
+  </data>
+  <data name="_PopupToolbarAddAttachements_" xml:space="preserve">
+    <value>添加附件</value>
+  </data>
+  <data name="_PopupToolbarAddAttachmentsTooltip_" xml:space="preserve">
+    <value>向要素添加附件</value>
+  </data>
+  <data name="_PopupToolbarDeleteTooltip_" xml:space="preserve">
+    <value>从图层中移除要素</value>
+  </data>
+  <data name="_PopupToolbarDelete_" xml:space="preserve">
+    <value>删除要素</value>
+  </data>
+  <data name="_PopupToolbarEditShapeTooltip_" xml:space="preserve">
+    <value>修改要素的几何</value>
+  </data>
+  <data name="_PopupToolbarEditShape_" xml:space="preserve">
+    <value>编辑几何形状</value>
+  </data>
+  <data name="_PopupToolbarEditValuesTooltip_" xml:space="preserve">
+    <value>修改要素的属性值</value>
+  </data>
+  <data name="_PopupToolbarEditValues_" xml:space="preserve">
+    <value>编辑值</value>
+  </data>
+  <data name="_LightGrayCanvas_" xml:space="preserve">
+    <value>浅灰色画布地图</value>
+  </data>
+  <data name="_ArcGISOnlineDescription_" xml:space="preserve">
+    <value>在 ArcGIS Online 中搜索地图、图像和要素服务</value>
+  </data>
+  <data name="_PlacesDescription_" xml:space="preserve">
+    <value>搜索地址、城市或其他地点</value>
+  </data>
+  <data name="_Places_" xml:space="preserve">
+    <value>地点</value>
+  </data>
+  <data name="_SearchDescription_" xml:space="preserve">
+    <value>搜索要添加到地图上的地点或内容</value>
+  </data>
+  <data name="_TheWebDescription_" xml:space="preserve">
+    <value>搜索 web 中的地图服务</value>
+  </data>
+  <data name="_TheWeb_" xml:space="preserve">
+    <value>Web</value>
+  </data>
+  <data name="_AttributeTableToolbar_" xml:space="preserve">
+    <value>属性表工具栏</value>
+  </data>
+  <data name="_FilterRecordsToolbar_" xml:space="preserve">
+    <value>过滤记录工具栏</value>
+  </data>
+  <data name="_LayerContextMenu_" xml:space="preserve">
+    <value>图层快捷菜单</value>
+  </data>
+  <data name="_LayerToolbar_" xml:space="preserve">
+    <value>图层工具栏</value>
+  </data>
+  <data name="_MainToolbar_" xml:space="preserve">
+    <value>主工具栏</value>
+  </data>
+  <data name="_PopupToolbar_" xml:space="preserve">
+    <value>弹出窗口工具栏</value>
+  </data>
+  <data name="_Identify_" xml:space="preserve">
+    <value>识别</value>
+  </data>
+  <data name="_Accordion_" xml:space="preserve">
+    <value>Accordion</value>
+  </data>
+  <data name="_Basic_" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="_BlackBoxReverse_" xml:space="preserve">
+    <value>Black Box - Reverse</value>
+  </data>
+  <data name="_BlackBox_" xml:space="preserve">
+    <value>Black Box</value>
+  </data>
+  <data name="_FloatingPanels_" xml:space="preserve">
+    <value>Floating Panels</value>
+  </data>
+  <data name="_Glass_" xml:space="preserve">
+    <value>Glass</value>
+  </data>
+  <data name="_UnderGlow_" xml:space="preserve">
+    <value>Under Glow</value>
+  </data>
+  <data name="_Wings_" xml:space="preserve">
+    <value>Wings</value>
+  </data>
+  <data name="_WithMapElements_" xml:space="preserve">
+    <value>包含地图元素</value>
+  </data>
+  <data name="_StartXMax_" xml:space="preserve">
+    <value>-5753581.74313559</value>
+  </data>
+  <data name="_StartXMin_" xml:space="preserve">
+    <value>-15499611.752488</value>
+  </data>
+  <data name="_StartYMax_" xml:space="preserve">
+    <value>6681909.77215536</value>
+  </data>
+  <data name="_StartYMin_" xml:space="preserve">
+    <value>2862067.82166302</value>
+  </data>
+  <data name="_FlowDirection_" xml:space="preserve">
+    <value>LeftToRight</value>
+  </data>
+  <data name="_QueryRelatedToolDescription_" xml:space="preserve">
+    <value>检索要素的相关记录</value>
+  </data>
+  <data name="_QueryRelatedToolTitle_" xml:space="preserve">
+    <value>获取相关记录</value>
+  </data>
+  <data name="_ExtentQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>通过查询字符串初始化范围</value>
+  </data>
+  <data name="_ScaleQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>通过查询字符串初始化比例</value>
+  </data>
+  <data name="_CenterQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>通过查询字符串初始化中心</value>
+  </data>
+  <data name="_ScaleLevelQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>通过查询字符串初始化比例级别</value>
+  </data>
+  <data name="_WebMapQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>通过查询字符串加载 Web 地图</value>
+  </data>
+  <data name="_HelpUrl_" xml:space="preserve">
+    <value>http://links.esri.com/silverlightviewer/help/zh-CN</value>
+  </data>
+</root>

@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>הוסף</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>הוסף התנהגות</value>
+  </data>
+  <data name="AddBehaviorDescription" xml:space="preserve">
+    <value>הוסף התנהגות לצפיין</value>
+  </data>
+  <data name="AddGeoprocessing" xml:space="preserve">
+    <value>הוסף Geoprocessing</value>
+  </data>
+  <data name="AddGeoprocessingDescription" xml:space="preserve">
+    <value>הוסף כלי geoprocessing לצפיין. כלי geoprocessing מאפשר למשתמשים להשתמש בשירות geoprocessing של ArcGIS Server</value>
+  </data>
+  <data name="AddGeoRSSDescription" xml:space="preserve">
+    <value>הוסף למפה Rss Feed מאופשר גיאוגרפית</value>
+  </data>
+  <data name="AddGP" xml:space="preserve">
+    <value>הוסף GP</value>
+  </data>
+  <data name="AddTool" xml:space="preserve">
+    <value>הוסף כלי</value>
+  </data>
+  <data name="AddToolDescription" xml:space="preserve">
+    <value>הוסף כלי לצפיין</value>
+  </data>
+  <data name="ApplicationBuilderSettings" xml:space="preserve">
+    <value>הגדרות Application Builder</value>
+  </data>
+  <data name="ApplicationBuilderSettingsDescription" xml:space="preserve">
+    <value>צפייה ועדכון של הגדרות ה- Application Builder כולל ניהול ה-add-ins ומפות הבסיס.</value>
+  </data>
+  <data name="AttributeTable" xml:space="preserve">
+    <value>טבלת מאפיינים</value>
+  </data>
+  <data name="BasemapGalleryDescription" xml:space="preserve">
+    <value>בחר שכבת בסיס אחרת למפה</value>
+  </data>
+  <data name="Behaviors" xml:space="preserve">
+    <value>התנהגויות</value>
+  </data>
+  <data name="Branding" xml:space="preserve">
+    <value>מיתוג</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>שנה</value>
+  </data>
+  <data name="ChangeLayout" xml:space="preserve">
+    <value>שנה את תבנית המפה</value>
+  </data>
+  <data name="ChangeLayoutDescription" xml:space="preserve">
+    <value>בחר את תבנית מפה חדשה לצפיין</value>
+  </data>
+  <data name="ChangeLogo" xml:space="preserve">
+    <value>שנה לוגו</value>
+  </data>
+  <data name="ChangeLogoDescription" xml:space="preserve">
+    <value>בחר לוגו לצפיין</value>
+  </data>
+  <data name="ChangeTitleAndLinks" xml:space="preserve">
+    <value>שנה כותרת וקישורים</value>
+  </data>
+  <data name="ChangeTitleAndLinksDescription" xml:space="preserve">
+    <value>ערוך את כותרת צפיין והיפר הקישור</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>קבע תצורה</value>
+  </data>
+  <data name="ConfigureTheme" xml:space="preserve">
+    <value>הגדרת נושא</value>
+  </data>
+  <data name="ConfigureThemeDescription" xml:space="preserve">
+    <value>ערוך את צבעי הנושא של הצופים</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>מסך מלא</value>
+  </data>
+  <data name="FullScreenDescription" xml:space="preserve">
+    <value>הפוך את ה- Application Builder למוד מסך מלא</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HomeDescription" xml:space="preserve">
+    <value>חזור אל דף ההתחלה של ה-Application Builder's</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>תבנית מפה</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>לוגו</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>נהל</value>
+  </data>
+  <data name="ManageBehaviors" xml:space="preserve">
+    <value>נהל התנהגות</value>
+  </data>
+  <data name="ManageBehaviorsDescription" xml:space="preserve">
+    <value>אפשר, חסום, סדר מחדש או מחק את התנהגויות הצפיין</value>
+  </data>
+  <data name="ManageToolbars" xml:space="preserve">
+    <value>ניהול סרגלי כלים</value>
+  </data>
+  <data name="ManageToolbarsDescription" xml:space="preserve">
+    <value>הוספה, הסרה, הזזה וכלי התאמה בסרגלי הכלים של הצפיין</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>הפצה</value>
+  </data>
+  <data name="PublishDescription" xml:space="preserve">
+    <value>הפץ את הצפיין הנוכחי לאתר חדש</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>אפס</value>
+  </data>
+  <data name="ResetTheme" xml:space="preserve">
+    <value>אפס נושא</value>
+  </data>
+  <data name="ResetThemeDescription" xml:space="preserve">
+    <value>אפס את צבע נושאי הצפיין לערכי ברירת המחדל</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>שמור</value>
+  </data>
+  <data name="SaveDescription" xml:space="preserve">
+    <value>שמירת הצפיין הנוכחי</value>
+  </data>
+  <data name="SelectTheTool" xml:space="preserve">
+    <value>בחירת הכלי...</value>
+  </data>
+  <data name="TitleAndLinks" xml:space="preserve">
+    <value>כותרות וקישורים</value>
+  </data>
+  <data name="ToggleBrowseDescription" xml:space="preserve">
+    <value>הצג או הסתר את פנל הדפדפן. דפדוף מאפשר לראות את התוכן של  ArcGIS Server או Spatial Data Service endpoint  ולהוסיף שכבות למפה.</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>מציג או מסתיר את תוכן המפה</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>הצג או הסתר את פנל החיפוש. חיפוש מאפשר לך לחפש מקומות, לבצע חיפוש תוכן ב- ArcGIS.com או לחפש ברשת שרותי ArcGIS Server.</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>הצג או הסתר את טבלת המאפיינים של השכבה הנבחרת הנוכחית</value>
+  </data>
+  <data name="ToggleToolbar" xml:space="preserve">
+    <value>הצג או הסתר את סרגל הכלים</value>
+  </data>
+  <data name="ToggleToolbarDescription" xml:space="preserve">
+    <value>הצג או הסתר סרגל כלי ה-Application Builder</value>
+  </data>
+  <data name="Toolbar" xml:space="preserve">
+    <value>סרגל כלים</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>כלים</value>
+  </data>
+  <data name="Accent" xml:space="preserve">
+    <value>הדגש</value>
+  </data>
+  <data name="AccentText" xml:space="preserve">
+    <value>הדגש טקסט</value>
+  </data>
+  <data name="AddNewGroupOrControl" xml:space="preserve">
+    <value>הוסף כלי או קבוצה חדשים</value>
+  </data>
+  <data name="AddOns" xml:space="preserve">
+    <value>Add-Ins</value>
+  </data>
+  <data name="ApplicationProperties" xml:space="preserve">
+    <value>מאפיני אפליקציה</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>בצע</value>
+  </data>
+  <data name="ArcGISApplicationBuilder" xml:space="preserve">
+    <value>Application Builder - {0}</value>
+  </data>
+  <data name="ArcGISViewerForMicrosoftSilverlight" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>רקע</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>טקסט רקע</value>
+  </data>
+  <data name="BaseMaps" xml:space="preserve">
+    <value>מפות בסיס</value>
+  </data>
+  <data name="BrowseForFile" xml:space="preserve">
+    <value>דפדוף לקובץ</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>דפדף למציאת משאבים</value>
+  </data>
+  <data name="BuilderTutorial" xml:space="preserve">
+    <value>Builder Tutorial</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="ChangesSavedSuccessfully" xml:space="preserve">
+    <value>השינויים נשמרו בהצלחה.</value>
+  </data>
+  <data name="ChooseExistingProject" xml:space="preserve">
+    <value>בחר פרויקט קיים</value>
+  </data>
+  <data name="ChooseLayout" xml:space="preserve">
+    <value>בחר מבט המפה</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>סגור</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>תצורה</value>
+  </data>
+  <data name="ConfigureExtensions" xml:space="preserve">
+    <value>הגדרת תצורה להרחבה</value>
+  </data>
+  <data name="ConfigureOptionsThatApplyToCurrentUser" xml:space="preserve">
+    <value>אפשרויות הגדרת תצורה המשויכות למשתמש הנוכחי</value>
+  </data>
+  <data name="ConfigureSelectedGroupOrControl" xml:space="preserve">
+    <value>הגדר תצורה לקבוצה הנבחרת או הפקד</value>
+  </data>
+  <data name="ConfigureSetOfBaseMapsUsedByBuilder" xml:space="preserve">
+    <value>קבע תצורה לסט מפות הבסיס הזמינות בתוך ה- Application Builder</value>
+  </data>
+  <data name="CopySite" xml:space="preserve">
+    <value>העתק אתר</value>
+  </data>
+  <data name="CreateApplicationUsingDefaultMap" xml:space="preserve">
+    <value>מפה חדשה</value>
+  </data>
+  <data name="CreateApplicationUsingWebMapFromArcGISCom" xml:space="preserve">
+    <value>Web Maps</value>
+  </data>
+  <data name="CreateNewApplication" xml:space="preserve">
+    <value>צור אפליקציה חדשה</value>
+  </data>
+  <data name="CurrentToolbars" xml:space="preserve">
+    <value>סרגלי כלים נוכחיים</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>מחק</value>
+  </data>
+  <data name="DeleteSite" xml:space="preserve">
+    <value>מחיקת אתר</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>תיאור:</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>פרטים</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>למטה</value>
+  </data>
+  <data name="EditSelectedGroupOrControl" xml:space="preserve">
+    <value>ערוך את הקבוצה או הפקד הנבחרים</value>
+  </data>
+  <data name="EditSite" xml:space="preserve">
+    <value>ערוך אתר</value>
+  </data>
+  <data name="ExceptionUnhandledError" xml:space="preserve">
+    <value>שגיאה לא צפויה {0}</value>
+  </data>
+  <data name="ExtensionNotifications" xml:space="preserve">
+    <value>הודעות של ההרחבות</value>
+  </data>
+  <data name="Extensions" xml:space="preserve">
+    <value>הרחבות</value>
+  </data>
+  <data name="HelpLinks" xml:space="preserve">
+    <value>קישורים</value>
+  </data>
+  <data name="IconPrompt" xml:space="preserve">
+    <value>צלמית:</value>
+  </data>
+  <data name="LabelPrompt" xml:space="preserve">
+    <value>תווית:</value>
+  </data>
+  <data name="LoadingSites" xml:space="preserve">
+    <value>טוען אתרים...</value>
+  </data>
+  <data name="ManageExtensions" xml:space="preserve">
+    <value>ניהול הרחבות</value>
+  </data>
+  <data name="MoreSiteOptions" xml:space="preserve">
+    <value>אפשרויות אתר נוספות</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>הזז</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>הזז למטה</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>הזז למעלה</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>שם</value>
+  </data>
+  <data name="NamePrompt" xml:space="preserve">
+    <value>שם:</value>
+  </data>
+  <data name="NewMap" xml:space="preserve">
+    <value>מפה חדשה</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>אישור</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>פתח</value>
+  </data>
+  <data name="PersonalSettings" xml:space="preserve">
+    <value>הגדרות אישיות</value>
+  </data>
+  <data name="PublishApplication" xml:space="preserve">
+    <value>הפצת אפליקציה</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>הסר</value>
+  </data>
+  <data name="RemoveSelectedGroupOrControl" xml:space="preserve">
+    <value>הסר את הקבוצה או הפקד הנבחרים</value>
+  </data>
+  <data name="ReturnToPreviousScreen" xml:space="preserve">
+    <value>חזור למסך קודם</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>בחירה</value>
+  </data>
+  <data name="SelectionOutline" xml:space="preserve">
+    <value>בחירת קו תוחם</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>הגדרות</value>
+  </data>
+  <data name="StartWithExistingMap" xml:space="preserve">
+    <value>התחל עם הקיים</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>הצלחה</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>הגדרת נושא</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>צבעי נושא</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>כותרת:</value>
+  </data>
+  <data name="ToolbarPrompt" xml:space="preserve">
+    <value>סרגל כלים:</value>
+  </data>
+  <data name="TooltipPrompt" xml:space="preserve">
+    <value>בועית מידע:</value>
+  </data>
+  <data name="TypePrompt" xml:space="preserve">
+    <value>סוג:</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>למעלה</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>העלאה</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>ברוך הבא</value>
+  </data>
+  <data name="WelcomeMsgParagraph1" xml:space="preserve">
+    <value>ה-  ArcGIS Application Builder היא אפליקצית אינטרנט המאפשרת לך ליצור ולערוך אפליקציית צפיין בזמן אמת ובמוד אינטראקטיבי מלא. ה-  Application Builder ואפליקצית הצפיין נבנות בשימוש של  ArcGIS API for Silverlight.</value>
+  </data>
+  <data name="WelcomeMsgParagraph2" xml:space="preserve">
+    <value>על מנת להתחיל ביצירת צפיין, הקלק על הכפתור התחתון ''צור אפליקציה חדשה''. הצפיין שאתה מגדיר את תצורתו יוצג מתחת לסרגל הכלים של ה - Application Builder. ניתן להגדיר את התצורה של מפת הבסיס של הצפיין, את השכבות שלו, כלים, כותרת, לוגו, צבעים ועוד, ע''י שימוש בכלים שעל סרגל הכלים. לאחר שסיימת להגדיר את התצורה של הצפיין, הקלק על כפתור ההפצה על מנת להפיץ אותו לאתר אינטרנט חדש.</value>
+  </data>
+  <data name="AvailableTools" xml:space="preserve">
+    <value>כלים זמינים</value>
+  </data>
+  <data name="BrowseForImage" xml:space="preserve">
+    <value>דפדף למציאת לתמונה</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>עריכה</value>
+  </data>
+  <data name="ErrorUnableToRetrieveDetailsForExtension" xml:space="preserve">
+    <value>לא ניתן לאחזר פרטים אודות חבילת ה- add-in</value>
+  </data>
+  <data name="ExtensionContainsTheFollowingAddOns" xml:space="preserve">
+    <value>חבילת ה- add-in '{0}' כוללת את ה- add-in הבאים:</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteButton" xml:space="preserve">
+    <value>האם אתה בטוח שברצונך למחוק את הכפתור?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteGroup" xml:space="preserve">
+    <value>האם אתה בטוח שברצונך למחוק את הקבוצה?</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteWebSite" xml:space="preserve">
+    <value>האם אתה בטוח כי ברצונך למחוק את האתר?</value>
+  </data>
+  <data name="AssemblyAlreadyIncludeInTheApplication" xml:space="preserve">
+    <value>{1}The assembly '{0}' is already included in the application runtime.{1}Consider optimizing the size and download speed of your extension by marking the Assembly Reference with CopyLocal=false to exclude the assembly in the .xap packaging</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>אשר מחיקה</value>
+  </data>
+  <data name="DeletingExtensionWillMakeItUnavailableForFurtherUse" xml:space="preserve">
+    <value>מחיקת הרחבה תהפוך אותה ללא זמינה עבור אפליקציות חדשות וקיימות. {0}האם אתה בטוח שברצונך למחוק?</value>
+  </data>
+  <data name="DeletingSite" xml:space="preserve">
+    <value>מוחק אתר...</value>
+  </data>
+  <data name="EditTool" xml:space="preserve">
+    <value>כלי עריכה</value>
+  </data>
+  <data name="EnterNameForApplication" xml:space="preserve">
+    <value>הכנס בבקשה שם לאפליקציה</value>
+  </data>
+  <data name="ErrorDetailsNotKnown" xml:space="preserve">
+    <value>פרטי השגיאה אינם ידועים</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>אירעה שגיאה</value>
+  </data>
+  <data name="ErrorRetrievingMapDocumentForSite" xml:space="preserve">
+    <value>שגיאה בהבאת מסמך מפה לאתר</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>שגיאות</value>
+  </data>
+  <data name="ExtensionAlreadyExists" xml:space="preserve">
+    <value>Add-in כבר קיים</value>
+  </data>
+  <data name="ExtensionDetails" xml:space="preserve">
+    <value>פרטי Add-In: {0}</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsErrors" xml:space="preserve">
+    <value>חבילת ה-  add-in שאתה מנסה להפיץ מכילה שגיאות. חובה לפתור אותן לפני שממשיכים.</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsWarnings" xml:space="preserve">
+    <value>חבילת ה- add-in להפצה מכילה אזהרות. בדוק אותן בבקשה לפני ההפצה</value>
+  </data>
+  <data name="ExtensionWithSameNameAlreadyExist" xml:space="preserve">
+    <value>קיימת חבילת  add-in באותו שם. האם לדרוס אותה?</value>
+  </data>
+  <data name="FailedToCreateAndPublishApplication" xml:space="preserve">
+    <value>נכשל ביצירת והפצת האפליקציה</value>
+  </data>
+  <data name="FollowingErrorsFound" xml:space="preserve">
+    <value>נמצאו השגיאות הבאות.</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>שם לא חוקי</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>פתיחת מפת אינטרנט מתוך  ArcGIS.com</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>המתן בבקשה...</value>
+  </data>
+  <data name="TutorialModeDisable" xml:space="preserve">
+    <value>נטרל התחלת עבודה</value>
+  </data>
+  <data name="TutorialModeEnable" xml:space="preserve">
+    <value>אפשר התחלת עבודה</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>אודות Application Builder</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>צפה בדיאלוג 'אודות' של ה-Application Builder</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>אודות</value>
+  </data>
+  <data name="GettingStartedAddGPDescription" xml:space="preserve">
+    <value>מינוף ה- spatial analytics של שירותי ה- Geoprocessing של ArcGIS Server</value>
+  </data>
+  <data name="GettingStartedAddGPTitle" xml:space="preserve">
+    <value>הוסף שירות Geoprocessing</value>
+  </data>
+  <data name="GettingStartedAddLayersDescription" xml:space="preserve">
+    <value>הוסף מידע מ- ArcGIS Online ומ- ArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddLayersTitle" xml:space="preserve">
+    <value>הוסף שכבה פעילה</value>
+  </data>
+  <data name="GettingStartedAddToolsDescription" xml:space="preserve">
+    <value>הגדרת התצורה של האפליקציה</value>
+  </data>
+  <data name="GettingStartedAddToolsTitle" xml:space="preserve">
+    <value>הוסף כלים</value>
+  </data>
+  <data name="GettingStartedBasemapDescription" xml:space="preserve">
+    <value>בחר מפת בסיס מ-ArcGIS Online, Bing Maps, או OpenStreetMap.</value>
+  </data>
+  <data name="GettingStartedBasemapTitle" xml:space="preserve">
+    <value>בחר מפת בסיס</value>
+  </data>
+  <data name="GettingStartedChooseLogoDescription" xml:space="preserve">
+    <value>מיתוג הצפיין בלוגו החברה שלך.</value>
+  </data>
+  <data name="GettingStartedChooseLogoTitle" xml:space="preserve">
+    <value>בחר לוגו</value>
+  </data>
+  <data name="GettingStartedSelectLayoutDescription" xml:space="preserve">
+    <value>הגדר את סגנון ממשק המשתמש של הצפיין</value>
+  </data>
+  <data name="GettingStartedSelectLayoutTitle" xml:space="preserve">
+    <value>בחר תבנית</value>
+  </data>
+  <data name="GettingStartedSetTitleDescription" xml:space="preserve">
+    <value>קבע את כותרת האפליקציה.</value>
+  </data>
+  <data name="GettingStartedSetTitleTitle" xml:space="preserve">
+    <value>הגדר את הכותרת</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailable" xml:space="preserve">
+    <value>ה- add-ons הבאים זמינים. הקלק</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableHere" xml:space="preserve">
+    <value>כאן</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableToUploadANewOne" xml:space="preserve">
+    <value>לטעינת חדש מהדיסק.</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlDownToolbarTree" xml:space="preserve">
+    <value>הזז את הקבוצה או הפקד הנבחרים במורד עץ סרגל הכלים</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlUpToolbarTree" xml:space="preserve">
+    <value>הזז את הקבוצה או הפקד הנבחרים במעלה עץ סרגל הכלים</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>חזור</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>הבא</value>
+  </data>
+  <data name="SelectAToolToAdd" xml:space="preserve">
+    <value>בחר כלי להוספה:</value>
+  </data>
+  <data name="ChooseMap" xml:space="preserve">
+    <value>Application Builder - בחר מפה</value>
+  </data>
+  <data name="AddInPackagesContain" xml:space="preserve">
+    <value>חבילות Add-In המכילות  add-ins: כלים, התנהגות וכלים המשמשים את תבנית המפה</value>
+  </data>
+  <data name="AvailableAddInPackages" xml:space="preserve">
+    <value>חבילות תכניות עזר זמינות:</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>כפתור</value>
+  </data>
+  <data name="ConfigureElementsRelatedToMap" xml:space="preserve">
+    <value>ערוך תצורה של אלמנטים מקושרים למפה</value>
+  </data>
+  <data name="ConfigureToolsOfYourApplication" xml:space="preserve">
+    <value>הגדר תצורה לכלי האפליקציה שלך</value>
+  </data>
+  <data name="DisableGettingStarted" xml:space="preserve">
+    <value>נטרל התחלת עבודה</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>התחלת עבודה</value>
+  </data>
+  <data name="ShowMe" xml:space="preserve">
+    <value>הראה לי</value>
+  </data>
+  <data name="SpecifyLayoutOfYourApplication" xml:space="preserve">
+    <value>הגדר את תבנית המפה של האפליקציה שלך</value>
+  </data>
+  <data name="UploadAddInPackages" xml:space="preserve">
+    <value>העלאת חבילות תכניות עזר</value>
+  </data>
+  <data name="UploadAddIns" xml:space="preserve">
+    <value>טעינת תכניות עזר</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>מפה</value>
+  </data>
+  <data name="AreYouSureYouWantToLeavePageUnsavedChangesLost" xml:space="preserve">
+    <value>אתה בטוח שברצונך לעזוב את הדף הזה? שינויים שלא נשמרו יאבדו.</value>
+  </data>
+  <data name="ConfirmPageChange" xml:space="preserve">
+    <value>אשר שינוי הדף</value>
+  </data>
+  <data name="SpecifyToolProperties" xml:space="preserve">
+    <value>הגדר את מאפייני הכלי</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>שמור בשם...</value>
+  </data>
+  <data name="AddGroupButton" xml:space="preserve">
+    <value>הוסף קבוצה</value>
+  </data>
+  <data name="CannotAddElement" xml:space="preserve">
+    <value>לא ניתן להוסיף אלמנט</value>
+  </data>
+  <data name="CannotAddGroupButton" xml:space="preserve">
+    <value>לא ניתן להוסיף קבוצה</value>
+  </data>
+  <data name="CannotAddTool" xml:space="preserve">
+    <value>לא ניתן להוסיף כלי</value>
+  </data>
+  <data name="ChooseAvailableTool" xml:space="preserve">
+    <value>חובה לבחור כלי יחיד מהכלים הזמינים בעץ הכלים.</value>
+  </data>
+  <data name="DefaultGroupButtonDescription" xml:space="preserve">
+    <value>קבוצה חדשה</value>
+  </data>
+  <data name="DefaultGroupButtonLabel" xml:space="preserve">
+    <value>קבוצה חדשה</value>
+  </data>
+  <data name="RootLevelToAddGroup" xml:space="preserve">
+    <value>חובה לבחור סרגל כלים או  root level node של סרגל כלים כדי להוסיפו לקבוצה.</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>&lt;Separator&gt;</value>
+  </data>
+  <data name="MoveIntoGroup" xml:space="preserve">
+    <value>עבור לתוך הקבוצה '{0}'</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>ערוך שכבה</value>
+  </data>
+  <data name="ConfigureControls" xml:space="preserve">
+    <value>הגדרת פקדים</value>
+  </data>
+  <data name="ConfigureControlsDescription" xml:space="preserve">
+    <value>ערוך את הגדרת התצורה של כלי הצפיין</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>מצב</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>גודל Cache:</value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>לפי דרישה</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>צילום בזק</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>גודל cache של שכבת ישויות במוד לפי דרישה</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>הגדר את גודל ה-cache של שכבת הישויות במוד לפי דרישה (ברירת מחדל = 1000)</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>מוד FeatureLayer OnDemand</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>בוחר את מוד התשאול של השכבה ל  OnDemand (FeatureLayers only)‏</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>מוד צילום בזק של שכבת ישויות</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>בוחר את מוד התשאול למוד צילום בזק של השכבה (שכבת ישויות בלבד)</value>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>הוסף קישור</value>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>הסר קישור</value>
+  </data>
+  <data name="ConfigureControlsBanner" xml:space="preserve">
+    <value>פקדים להגדרת תצורה</value>
+  </data>
+  <data name="Controls" xml:space="preserve">
+    <value>פקדים</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>אחזור ישויות</value>
+  </data>
+  <data name="AddGroupDotDot" xml:space="preserve">
+    <value>הוספת קבוצה...</value>
+  </data>
+  <data name="AddSeparator" xml:space="preserve">
+    <value>הוסף מפריד</value>
+  </data>
+  <data name="ApplicationBuilderDashSettings" xml:space="preserve">
+    <value>הגדרות - Application Builder</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>דפדף</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>תכולה</value>
+  </data>
+  <data name="CurrentViewerApplications" xml:space="preserve">
+    <value>אפליקצית צפיין נוכחית</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>תכולת המפה</value>
+  </data>
+  <data name="NoFilesFound" xml:space="preserve">
+    <value>לא נמצא קובץ.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>חפש</value>
+  </data>
+  <data name="ViewerProject" xml:space="preserve">
+    <value>פרויקט צפיין</value>
+  </data>
+  <data name="WebMap" xml:space="preserve">
+    <value>Webmap</value>
+  </data>
+  <data name="AddLayerFailed" xml:space="preserve">
+    <value>הוספת שכבה נכשלה</value>
+  </data>
+  <data name="AddLayerFailedExplanation" xml:space="preserve">
+    <value>לא ניתן להוסיף שכבה. סיבת הכישלון: {0}.</value>
+  </data>
+  <data name="AddLayerFailedNoDetails" xml:space="preserve">
+    <value>[לא ניתן לחלץ פרטים]</value>
+  </data>
+  <data name="ConfigureLayers" xml:space="preserve">
+    <value>ערוך תצורת שכבות</value>
+  </data>
+  <data name="ConfigureLayersDescription" xml:space="preserve">
+    <value>התאם את ההופעה וההתנהגות של שכבות במפה</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>שכבות</value>
+  </data>
+  <data name="SiteCopyFailed" xml:space="preserve">
+    <value>העתקת האתר נכשלה</value>
+  </data>
+  <data name="SiteDeploymentFailed" xml:space="preserve">
+    <value>נכשלה הפצת האתר</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>הזז למעלה</value>
+  </data>
+  <data name="BringsCurrentlySelectedLayerForward" xml:space="preserve">
+    <value>מזיז את סדר תצוגת השכבה מקום אחד קרוב יותר לחלק העליון של המפה</value>
+  </data>
+  <data name="ConfigureCurrentlySelectedLayer" xml:space="preserve">
+    <value>הגדר תצורה לשכבה הנבחרת הנוכחית</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>הגדר תצורה ל- proxy המשמש לגישה לשרותים מאובטחים לאפליקציה זו</value>
+  </data>
+  <data name="ConfigureSecureServices" xml:space="preserve">
+    <value>הגדר תצורה לשירות מאובטח</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>עבור אל</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>רענן</value>
+  </data>
+  <data name="RefreshCurrentlySelectedLayer" xml:space="preserve">
+    <value>רענן את המפה הנבחרת</value>
+  </data>
+  <data name="RemovesCurrentlySelectedLayer" xml:space="preserve">
+    <value>הסרת השכבה הנבחרת הנוכחית</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>שנה שם</value>
+  </data>
+  <data name="RenameCurrentlySelectedLayer" xml:space="preserve">
+    <value>שנה שם לשכבה הנבחרת הנוכחית</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>הזז למטה</value>
+  </data>
+  <data name="SendsCurrentlySelectedLayerBackward" xml:space="preserve">
+    <value>מזיז את סדר תצוגת השכבה מקום אחד קרוב יותר לחלק התחתון של המפה</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>פרטי השירות</value>
+  </data>
+  <data name="ViewInformationAboutSelectedLayerDatasource" xml:space="preserve">
+    <value>הצגת מידע אודות מקור הנתונים של השכבות הנבחרות</value>
+  </data>
+  <data name="ZoomToCurrentlySelectedLayer" xml:space="preserve">
+    <value>התמקד לשכבה הנבחרת</value>
+  </data>
+  <data name="CannotAddDropdownCommandsToAGroup" xml:space="preserve">
+    <value>לא ניתן להוסיף פקודת drop down לקבוצה</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>קבע תצורה ל- Basemaps</value>
+  </data>
+  <data name="FlashAnimationIsNotDefinedOnTargetBuilderToolbarButton" xml:space="preserve">
+    <value>לא מוגדרת אנימציית הבזק בכפתור שבסרגל הכלים של ה- target Builder</value>
+  </data>
+  <data name="ManageAddInsToolsBehaviorsControls" xml:space="preserve">
+    <value>ניהול תכניות עזר: כלים, התנהגות, פקדים</value>
+  </data>
+  <data name="ManagePersonalSettings" xml:space="preserve">
+    <value>ניהות ההגדרות האישיות</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>גישה לשירותים מאובטחים</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>הוסף שירותים מאובטחים</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>קבע תצורה ל-Proxy</value>
+  </data>
+  <data name="NewApplication" xml:space="preserve">
+    <value>Application Builder - אפליקציה חדשה (לא פרוס)</value>
+  </data>
+  <data name="NotDeployed" xml:space="preserve">
+    <value>(לא מופץ)</value>
+  </data>
+  <data name="DeployingApplication" xml:space="preserve">
+    <value>מפיץ אפליקציה...</value>
+  </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>הגדרות אפליקציה</value>
+  </data>
+  <data name="ArcGISOnlineSecure" xml:space="preserve">
+    <value>מאובטח ArcGIS Online</value>
+  </data>
+  <data name="ArcGISOnlineSharing" xml:space="preserve">
+    <value>שיתוף ArcGIS Online:</value>
+  </data>
+  <data name="BingAppId" xml:space="preserve">
+    <value>Bing AppID:</value>
+  </data>
+  <data name="CurrentApplicationSettings" xml:space="preserve">
+    <value>הגדרות האפליקציה הנוכחית</value>
+  </data>
+  <data name="DefaultSettings" xml:space="preserve">
+    <value>הגדרות ברירת מחדל</value>
+  </data>
+  <data name="GeometryService" xml:space="preserve">
+    <value>שירות גיאומטרי:</value>
+  </data>
+  <data name="ManageApplicationSettings" xml:space="preserve">
+    <value>ניהול הגדרות האפליקציה</value>
+  </data>
+  <data name="BasedOnWebMap" xml:space="preserve">
+    <value>בסיס מ- Web Map:</value>
+  </data>
+  <data name="LinkedToWebMap" xml:space="preserve">
+    <value>קישור למפת אינטרנט:</value>
+  </data>
+  <data name="LinkToWebMap" xml:space="preserve">
+    <value>קישור</value>
+  </data>
+  <data name="MapConfigurationUnavailable" xml:space="preserve">
+    <value>תצורת המפה לאפליקציה קשורה למפת אינטרנט. כדי לערוך את תצורת המפה, נתק את האפליקציה מהמפה האינטרנטית.</value>
+  </data>
+  <data name="UnlinkFromWebMap" xml:space="preserve">
+    <value>נתק קישור</value>
+  </data>
+  <data name="UnableToDeployApplication" xml:space="preserve">
+    <value>לא ניתן להפיץ אפליקציה</value>
+  </data>
+  <data name="UnableToSaveApplicationChanges" xml:space="preserve">
+    <value>לא ניתן לשמור שינויים באפליקציה</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>פרוקסי:</value>
+  </data>
+  <data name="HideGettingStarted" xml:space="preserve">
+    <value>הסתר עזרה של התחלת עבודה</value>
+  </data>
+  <data name="ShowGettingStarted" xml:space="preserve">
+    <value>הצג עזרה של התחלת עבודה</value>
+  </data>
+  <data name="DisplayText" xml:space="preserve">
+    <value>הצג טקסט</value>
+  </data>
+  <data name="UpgradeSite" xml:space="preserve">
+    <value>שדרג אפליקציית צפיין זו לגרסה הנוכחית</value>
+  </data>
+  <data name="UpgradingApplication" xml:space="preserve">
+    <value>משדרג אפליקציה...</value>
+  </data>
+  <data name="NewLink" xml:space="preserve">
+    <value>קישור חדש</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>התנהגות</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>פקד</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>שכבה</value>
+  </data>
+  <data name="Tool" xml:space="preserve">
+    <value>כלי</value>
+  </data>
+</root>

@@ -1,0 +1,95 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.GP;assembly=ESRI.ArcGIS.Mapping.GP"
+    >
+
+    <local:StringResourcesManager x:Key="Localization" />
+    <local:NonNullVisibilityConverter x:Key="NonNullVisibilityConverter" />
+
+    <!-- Style for heading of GP config wizard pages.  Includes hyperlink to selected task's services direcotry
+    page and help button linked to task's help URL.  Assumes DataContext is a GPConfiguration object. -->
+    <Style x:Key="GPContentStyle" TargetType="ContentControl">
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Foreground" Value="{StaticResource DesignHostBackgroundTextBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                        <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,5,0,0"
+                                      HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                                    Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                    VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" BorderBrush="Transparent"
+                                    Style="{StaticResource ThinBarScrollViewerStyle}" Padding="5,0,5,0">
+                            <ContentControl HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" 
+                                        VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"
+                                        Content="{TemplateBinding Content}" />
+                        </ScrollViewer>
+                        <Rectangle Fill="{StaticResource DesignHostBackgroundTextBrush}" Height="1" HorizontalAlignment="Stretch"
+                                   Grid.Row="1" Margin="0,2,0,0"
+                                    Visibility="{Binding TaskEndPoint, Converter={StaticResource NonNullVisibilityConverter}}">
+                            <Rectangle.OpacityMask>
+                                <LinearGradientBrush StartPoint="0, 0.5" EndPoint="1, 0.5">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Offset="0" Color="Transparent" />
+                                        <GradientStop Offset="1" Color="White" />
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Rectangle.OpacityMask>
+                        </Rectangle>
+						<Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="2" Margin="0,5,0,0"
+                                            Visibility="{Binding TaskEndPoint, Converter={StaticResource NonNullVisibilityConverter}}">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+							<TextBlock Grid.Column="0" Text="{Binding ConverterParameter=TaskPrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                        VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+										   ToolTipService.ToolTip="{Binding ConverterParameter=TaskPrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                       FontStyle="Normal" MaxWidth="175" TextTrimming="WordEllipsis" />
+							<HyperlinkButton Grid.Column="1" TargetName="_blank" Margin="4,0,0,0"
+                                         NavigateUri="{Binding TaskEndPoint}" 
+                                         ToolTipService.ToolTip="{Binding TaskEndPoint.AbsoluteUri}" 
+                                         HorizontalAlignment="Right" VerticalAlignment="Center" FontStyle="Normal">
+								<TextBlock TextDecorations="Underline" Foreground="DarkBlue" Text="{Binding TaskName}" ToolTipService.ToolTip="{Binding TaskName}" TextTrimming="WordEllipsis">
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="0" BlurRadius="5" Color="White" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+                            </HyperlinkButton>
+							<HyperlinkButton Grid.Column="2" Margin="3,0,0,0" 
+                                            ToolTipService.ToolTip="{Binding ConverterParameter=InformationAboutThisGeoprocessingTool, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                            NavigateUri="{Binding HelpUrl}"
+                                            TargetName="_blank" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                            Visibility="{Binding HelpUrl, Converter={StaticResource NonNullVisibilityConverter}}">
+                                    <HyperlinkButton.Content>
+                                        <Image Source="/ESRI.ArcGIS.Mapping.GP;component/Images/GenericInformation_B_16.png"></Image>
+                                    </HyperlinkButton.Content>
+                                </HyperlinkButton>
+						</Grid>
+                        </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

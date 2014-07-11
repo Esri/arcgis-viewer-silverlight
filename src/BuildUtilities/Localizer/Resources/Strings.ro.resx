@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_ArcGISOnline_" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="_BingMapsRoads_" xml:space="preserve">
+    <value>Hărţi Bing stradale</value>
+  </data>
+  <data name="_Business_" xml:space="preserve">
+    <value>Afacere</value>
+  </data>
+  <data name="_Cartography_" xml:space="preserve">
+    <value>Cartografiere</value>
+  </data>
+  <data name="_ChooseBasemap_" xml:space="preserve">
+    <value>Alegere hartă fundal</value>
+  </data>
+  <data name="_OutdoorRecreation_" xml:space="preserve">
+    <value>Agrement în aer liber</value>
+  </data>
+  <data name="_PeopleandPlaces_" xml:space="preserve">
+    <value>Oameni şi locuri</value>
+  </data>
+  <data name="_PublicSafetyandHealth_" xml:space="preserve">
+    <value>Siguranţă şi sănătate publică</value>
+  </data>
+  <data name="_Standard_" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="_Transportation_" xml:space="preserve">
+    <value>Transport</value>
+  </data>
+  <data name="_BingMapsAerial_" xml:space="preserve">
+    <value>Hărţi Bing aeriene</value>
+  </data>
+  <data name="_BingMapsHybrid_" xml:space="preserve">
+    <value>Hărţi Bing hibride</value>
+  </data>
+  <data name="_Streets_" xml:space="preserve">
+    <value>Străzi</value>
+  </data>
+  <data name="_Topographic_" xml:space="preserve">
+    <value>Topografic</value>
+  </data>
+  <data name="_Imagery_" xml:space="preserve">
+    <value>Imagini satelitare</value>
+  </data>
+  <data name="_Terrain_" xml:space="preserve">
+    <value>Teren</value>
+  </data>
+  <data name="_USATopoMaps_" xml:space="preserve">
+    <value>Hărţi topografice SUA</value>
+  </data>
+  <data name="_OpenStreetMap_" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="_AttributeTable_" xml:space="preserve">
+    <value>Tabel de atribute</value>
+  </data>
+  <data name="_ClearSelectedFeaturesFromCurrentlySelectedLayer_" xml:space="preserve">
+    <value>Goliţi selecţia de obiecte spaţiale din stratul tematic selectat</value>
+  </data>
+  <data name="_ClearSelection_" xml:space="preserve">
+    <value>Golire selecţie</value>
+  </data>
+  <data name="_ExportAttributesOfSelectedFeaturesToCSVFile_" xml:space="preserve">
+    <value>Exportaţi atributele obiectelor spaţiale selectate într-un fişier CSV</value>
+  </data>
+  <data name="_ExportSelection_" xml:space="preserve">
+    <value>Export selecţie</value>
+  </data>
+  <data name="_GoTo_" xml:space="preserve">
+    <value>Accesaţi</value>
+  </data>
+  <data name="_MapContents_" xml:space="preserve">
+    <value>Conţinuturi hartă</value>
+  </data>
+  <data name="_RefreshCurrentlySelectedLayer_" xml:space="preserve">
+    <value>Reîmprospătaţi stratul tematic selectat curent</value>
+  </data>
+  <data name="_Refresh_" xml:space="preserve">
+    <value>Reîmprospătare</value>
+  </data>
+  <data name="_SearchForPlacesOrLayers_" xml:space="preserve">
+    <value>Căutaţi locuri sau straturi tematice</value>
+  </data>
+  <data name="_Search_" xml:space="preserve">
+    <value>Căutare</value>
+  </data>
+  <data name="_SelectABasemapForTheMap_" xml:space="preserve">
+    <value>Selectaţi o hartă fundal pentru hartă</value>
+  </data>
+  <data name="_SelectAllFeaturesInCurrentlySelectedLayer_" xml:space="preserve">
+    <value>Selectaţi toate obiectele spaţiale din stratul tematic selectat</value>
+  </data>
+  <data name="_SelectAll_" xml:space="preserve">
+    <value>Selectare globală</value>
+  </data>
+  <data name="_SelectFeaturesByDrawingBoxOnMap_" xml:space="preserve">
+    <value>Selectare obiecte spaţiale trasând o casetă pe hartă</value>
+  </data>
+  <data name="_Select_" xml:space="preserve">
+    <value>Selectare</value>
+  </data>
+  <data name="_ServiceDetails_" xml:space="preserve">
+    <value>Detalii serviciu</value>
+  </data>
+  <data name="_ShowOrHideTheAttributesTable_" xml:space="preserve">
+    <value>Afişaţi sau ascundeţi tabelul de atribute</value>
+  </data>
+  <data name="_ToggleMapContents_" xml:space="preserve">
+    <value>Comutaţi conţinutul hărţii</value>
+  </data>
+  <data name="_ViewInformationAboutSelectedLayerDatasource_" xml:space="preserve">
+    <value>Vizualizaţi informaţii despre sursa de date a stratului tematic selectat</value>
+  </data>
+  <data name="_ZoomToCurrentlySelectedFeatures_" xml:space="preserve">
+    <value>Transfocaţi la obiectele spaţiale selectate curent</value>
+  </data>
+  <data name="_ZoomToCurrentlySelectedLayer_" xml:space="preserve">
+    <value>Transfocaţi la stratul tematic selectat curent</value>
+  </data>
+  <data name="_ZoomToSelection_" xml:space="preserve">
+    <value>Transfocare (zoom) la selecţie</value>
+  </data>
+  <data name="_ArcGISViewerForMicrosoftSilverlight_" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="_AStreetMapOfTheWorld_" xml:space="preserve">
+    <value>Harta topografică ce include graniţe, oraşe, ape, forme de relief, parcuri, obiective turistice, transporturi şi clădiri.</value>
+  </data>
+  <data name="_BasicPrintLayout_" xml:space="preserve">
+    <value>O configuraţie de bază pentru imprimare.</value>
+  </data>
+  <data name="_Blog_" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="_CategoryColon_" xml:space="preserve">
+    <value>Categorie:</value>
+  </data>
+  <data name="_CodeColon_" xml:space="preserve">
+    <value>Cod:</value>
+  </data>
+  <data name="_ErrorUnHandledErrorInSilverlightApplcation_" xml:space="preserve">
+    <value>Eroare netratată în aplicaţia Silverlight</value>
+  </data>
+  <data name="_FileColon_" xml:space="preserve">
+    <value>Fişier:</value>
+  </data>
+  <data name="_Forums_" xml:space="preserve">
+    <value>Forumuri</value>
+  </data>
+  <data name="_Help_" xml:space="preserve">
+    <value>Ajutor</value>
+  </data>
+  <data name="_LineColon_" xml:space="preserve">
+    <value>Linie:</value>
+  </data>
+  <data name="_Loading_" xml:space="preserve">
+    <value>Se descarcă...</value>
+  </data>
+  <data name="_MessageColon_" xml:space="preserve">
+    <value>Mesaj:</value>
+  </data>
+  <data name="_MethodNameColon_" xml:space="preserve">
+    <value>Nume metodă:</value>
+  </data>
+  <data name="_PositionColon_" xml:space="preserve">
+    <value>Poziţie:</value>
+  </data>
+  <data name="_PrintLayoutWithMapElementsLikeOverviewMap_" xml:space="preserve">
+    <value>O configuraţie de imprimare cu elemente de hartă precum harta de ansamblu.</value>
+  </data>
+  <data name="_ArcGISApplicationBuilderForMicrosoftSilverlight_" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight - Application Builder</value>
+  </data>
+  <data name="_LoadingColon_" xml:space="preserve">
+    <value>Se descarcă:</value>
+  </data>
+  <data name="_PoweredByArcGIS_" xml:space="preserve">
+    <value>Bazat pe ArcGIS</value>
+  </data>
+  <data name="_AttachmentEditor_" xml:space="preserve">
+    <value>Ataşare documente</value>
+  </data>
+  <data name="_AttachmentDocumentsToSelectedFeature_" xml:space="preserve">
+    <value>Ataşare documente la obiectul spaţial selectat</value>
+  </data>
+  <data name="_FilterByExtentTooltip_" xml:space="preserve">
+    <value>Se afişează numai înregistrări pentru obiecte spaţiale din extinderea curentă a hărţii</value>
+  </data>
+  <data name="_FilterByExtent_" xml:space="preserve">
+    <value>Filtrare după extinderea hărţii</value>
+  </data>
+  <data name="_ShowAllTooltip_" xml:space="preserve">
+    <value>Afişare înregistrări pentru toate obiectele spaţiale din stratul tematic curent</value>
+  </data>
+  <data name="_ShowAll_" xml:space="preserve">
+    <value>Afişare toate</value>
+  </data>
+  <data name="_ShowSelectedTooltip_" xml:space="preserve">
+    <value>Afişare înregistrări pentru obiectele spaţiale selectate din stratul tematic curent</value>
+  </data>
+  <data name="_ShowSelected_" xml:space="preserve">
+    <value>Afişare obiecte selectate</value>
+  </data>
+  <data name="_ShowUnselectedTooltip_" xml:space="preserve">
+    <value>Afişare înregistrări pentru obiectele spaţiale neselectate din stratul tematic curent</value>
+  </data>
+  <data name="_ShowUnselected_" xml:space="preserve">
+    <value>Afişare obiecte neselectate</value>
+  </data>
+  <data name="_Ocean_" xml:space="preserve">
+    <value>Ocean</value>
+  </data>
+  <data name="_Physical_" xml:space="preserve">
+    <value>Fizic</value>
+  </data>
+  <data name="_ShadedRelief_" xml:space="preserve">
+    <value>Relief cu umbrire</value>
+  </data>
+  <data name="_Color_" xml:space="preserve">
+    <value>Culoare</value>
+  </data>
+  <data name="_PopupToolbarAddAttachements_" xml:space="preserve">
+    <value>Adăugare ataşare</value>
+  </data>
+  <data name="_PopupToolbarAddAttachmentsTooltip_" xml:space="preserve">
+    <value>Adăugaţi o ataşare la obiectul spaţial</value>
+  </data>
+  <data name="_PopupToolbarDeleteTooltip_" xml:space="preserve">
+    <value>Eliminare obiect spaţial din stratul tematic</value>
+  </data>
+  <data name="_PopupToolbarDelete_" xml:space="preserve">
+    <value>Ştergere obiect spaţial</value>
+  </data>
+  <data name="_PopupToolbarEditShapeTooltip_" xml:space="preserve">
+    <value>Modifică geometria obiectului spaţial</value>
+  </data>
+  <data name="_PopupToolbarEditShape_" xml:space="preserve">
+    <value>Editare formă</value>
+  </data>
+  <data name="_PopupToolbarEditValuesTooltip_" xml:space="preserve">
+    <value>Modificaţi valorile atributelor stratului tematic</value>
+  </data>
+  <data name="_PopupToolbarEditValues_" xml:space="preserve">
+    <value>Editare valori</value>
+  </data>
+  <data name="_LightGrayCanvas_" xml:space="preserve">
+    <value>Fond gri deschis</value>
+  </data>
+  <data name="_ArcGISOnlineDescription_" xml:space="preserve">
+    <value>Căutaţi în ArcGIS Online servicii de hărţi, imagini şi obiecte spaţiale</value>
+  </data>
+  <data name="_PlacesDescription_" xml:space="preserve">
+    <value>Căutaţi adrese, oraşe sau alte locuri</value>
+  </data>
+  <data name="_Places_" xml:space="preserve">
+    <value>Locuri</value>
+  </data>
+  <data name="_SearchDescription_" xml:space="preserve">
+    <value>Căutaţi locuri sau conţinut de adăugat la hartă</value>
+  </data>
+  <data name="_TheWebDescription_" xml:space="preserve">
+    <value>Căutaţi servicii de hartă pe Web</value>
+  </data>
+  <data name="_TheWeb_" xml:space="preserve">
+    <value>Web</value>
+  </data>
+  <data name="_AttributeTableToolbar_" xml:space="preserve">
+    <value>Bară de instrumente tabel de atribute</value>
+  </data>
+  <data name="_FilterRecordsToolbar_" xml:space="preserve">
+    <value>Bară de instrumente filtrare înregistrări</value>
+  </data>
+  <data name="_LayerContextMenu_" xml:space="preserve">
+    <value>Meniul contextual strat tematic</value>
+  </data>
+  <data name="_LayerToolbar_" xml:space="preserve">
+    <value>Bară de instrumente strat tematic</value>
+  </data>
+  <data name="_MainToolbar_" xml:space="preserve">
+    <value>Bară de instrumente principală</value>
+  </data>
+  <data name="_PopupToolbar_" xml:space="preserve">
+    <value>Bară de instrumente pop-up</value>
+  </data>
+  <data name="_Identify_" xml:space="preserve">
+    <value>Identificare</value>
+  </data>
+  <data name="_Accordion_" xml:space="preserve">
+    <value>Acordeon</value>
+  </data>
+  <data name="_Basic_" xml:space="preserve">
+    <value>De bază</value>
+  </data>
+  <data name="_BlackBoxReverse_" xml:space="preserve">
+    <value>Cutie neagră - Inversată</value>
+  </data>
+  <data name="_BlackBox_" xml:space="preserve">
+    <value>Cutie neagră</value>
+  </data>
+  <data name="_FloatingPanels_" xml:space="preserve">
+    <value>Panouri mobile</value>
+  </data>
+  <data name="_Glass_" xml:space="preserve">
+    <value>Sticlă</value>
+  </data>
+  <data name="_UnderGlow_" xml:space="preserve">
+    <value>În lumină</value>
+  </data>
+  <data name="_Wings_" xml:space="preserve">
+    <value>Aripi</value>
+  </data>
+  <data name="_WithMapElements_" xml:space="preserve">
+    <value>Cu elemente de hartă</value>
+  </data>
+  <data name="_StartXMax_" xml:space="preserve">
+    <value>-5753581.74313559</value>
+  </data>
+  <data name="_StartXMin_" xml:space="preserve">
+    <value>-15499611.752488</value>
+  </data>
+  <data name="_StartYMax_" xml:space="preserve">
+    <value>6681909.77215536</value>
+  </data>
+  <data name="_StartYMin_" xml:space="preserve">
+    <value>2862067.82166302</value>
+  </data>
+  <data name="_FlowDirection_" xml:space="preserve">
+    <value>LeftToRight</value>
+  </data>
+  <data name="_QueryRelatedToolDescription_" xml:space="preserve">
+    <value>Preluaţi înregistrările corelate pentru un obiect spaţial</value>
+  </data>
+  <data name="_QueryRelatedToolTitle_" xml:space="preserve">
+    <value>Obţineţi înregistrările corelate</value>
+  </data>
+  <data name="_ExtentQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>Iniţializare extindere din şirul de interogare</value>
+  </data>
+  <data name="_ScaleQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>Iniţializare scală din şirul de interogare</value>
+  </data>
+  <data name="_CenterQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>Iniţializare centru din şirul de interogare</value>
+  </data>
+  <data name="_ScaleLevelQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>Iniţializare nivel scară din şirul de interogare</value>
+  </data>
+  <data name="_WebMapQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>Încărcare hartă web din şirul de interogare</value>
+  </data>
+  <data name="_HelpUrl_" xml:space="preserve">
+    <value>http://links.esri.com/silverlightviewer/help/ro</value>
+  </data>
+</root>

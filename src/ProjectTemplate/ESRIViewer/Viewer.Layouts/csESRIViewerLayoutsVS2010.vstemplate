@@ -1,0 +1,64 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Viewer.Layouts</Name>
+    <Description>The layouts used in ArcGIS Viewer for Silverlight Applications.  For Design in Expression Blend and Visual Studio</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Viewer.Layouts</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Viewer.Layouts.csproj" File="Viewer.Layouts.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.xaml">App.xaml</ProjectItem>
+      <Folder Name="Config" TargetFolderName="Config">
+        <Folder Name="Layouts" TargetFolderName="Layouts">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Accordion.xaml">Accordion.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Basic.xaml">Basic.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="BlackBox.xaml">BlackBox.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="BlackBox_-_Reverse.xaml">BlackBox_-_Reverse.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="FloatingPanels.xaml">FloatingPanels.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Glass.xaml">Glass.xaml</ProjectItem>
+          <Folder Name="ResourceDictionaries" TargetFolderName="ResourceDictionaries">
+            <Folder Name="Common" TargetFolderName="Common">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Colors.xaml">Colors.xaml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="HorizontalNavigationStyle.xaml">HorizontalNavigationStyle.xaml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="HoverPopupContainerStyle.xaml">HoverPopupContainerStyle.xaml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="OnClickPopupContainerStyle.xaml">OnClickPopupContainerStyle.xaml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Shared_Resources.xaml">Shared_Resources.xaml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="VerticalNavigationStyle.xaml">VerticalNavigationStyle.xaml</ProjectItem>
+              <ProjectItem ReplaceParameters="true" TargetFileName="WingedNavigationStyle.xaml">WingedNavigationStyle.xaml</ProjectItem>
+            </Folder>
+            <ProjectItem ReplaceParameters="true" TargetFileName="EditorWidget_Resources.xaml">EditorWidget_Resources.xaml</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Glass_Resources.xaml">Glass_Resources.xaml</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="UnderGlow.xaml">UnderGlow.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Wings.xaml">Wings.xaml</ProjectItem>
+        </Folder>
+        <Folder Name="Print" TargetFolderName="Print">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Basic.xaml">Basic.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="PrintLayoutList.xml">PrintLayoutList.xml</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Images" TargetFolderName="Images">
+        <ProjectItem ReplaceParameters="false" TargetFileName="logo.png">logo.png</ProjectItem>
+      </Folder>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DesignTimeResources.xaml">DesignTimeResources.xaml</ProjectItem>
+      </Folder>
+      <Folder Name="SampleData" TargetFolderName="SampleData">
+        <ProjectItem ReplaceParameters="true" TargetFileName="SampleGraphicsLayerConverter.cs">SampleGraphicsLayerConverter.cs</ProjectItem>
+        <Folder Name="ViewerDataSource" TargetFolderName="ViewerDataSource">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ViewerDataSource.xaml">ViewerDataSource.xaml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ViewerDataSource.xaml.cs">ViewerDataSource.xaml.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="ViewerDataSource.xsd">ViewerDataSource.xsd</ProjectItem>
+        </Folder>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

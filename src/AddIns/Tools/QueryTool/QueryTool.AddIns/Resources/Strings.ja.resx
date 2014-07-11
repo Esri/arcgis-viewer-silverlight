@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddLabel" xml:space="preserve">
+    <value>新規追加</value>
+  </data>
+  <data name="AliasLabel" xml:space="preserve">
+    <value>エイリアス</value>
+  </data>
+  <data name="AutoEnableDataGridLabel" xml:space="preserve">
+    <value>属性テーブルに結果を表示する</value>
+  </data>
+  <data name="AutoPinResults" xml:space="preserve">
+    <value>マップ上に結果を保持する</value>
+  </data>
+  <data name="AutoZoomToResultsLabel" xml:space="preserve">
+    <value>クエリ完了後、結果にズームする</value>
+  </data>
+  <data name="BuildQueryExpressionsLabel" xml:space="preserve">
+    <value>クエリの作成</value>
+  </data>
+  <data name="CancelLabel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="CannotExecuteCommand" xml:space="preserve">
+    <value>コマンドを実行できません</value>
+  </data>
+  <data name="ClickConnect" xml:space="preserve">
+    <value>[接続] をクリック</value>
+  </data>
+  <data name="ClickNext" xml:space="preserve">
+    <value>[次へ] をクリックして続行します</value>
+  </data>
+  <data name="ConfigurationLabel" xml:space="preserve">
+    <value>クエリ ツールの構成</value>
+  </data>
+  <data name="ConfigureDialogHeading" xml:space="preserve">
+    <value>クエリ ダイアログの外観の構成</value>
+  </data>
+  <data name="ConfigureResultLabel" xml:space="preserve">
+    <value>クエリ結果の設定の指定</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>接続</value>
+  </data>
+  <data name="ConnectCompleted" xml:space="preserve">
+    <value>'{0}' への接続が正常に完了しました。</value>
+  </data>
+  <data name="ConnectFailed" xml:space="preserve">
+    <value>接続が失敗しました。</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>接続しています...</value>
+  </data>
+  <data name="DataTypeMismatch" xml:space="preserve">
+    <value>値 '{0}' をデータ タイプ '{1}' に変換できません。</value>
+  </data>
+  <data name="DefaultValueLabel" xml:space="preserve">
+    <value>デフォルト値</value>
+  </data>
+  <data name="DeleteExpression" xml:space="preserve">
+    <value>この式を削除</value>
+  </data>
+  <data name="DuplicateError" xml:space="preserve">
+    <value>リストに同一の入力値を含めることはできません</value>
+  </data>
+  <data name="EditLabel" xml:space="preserve">
+    <value>この式を編集</value>
+  </data>
+  <data name="EmptyEntryError" xml:space="preserve">
+    <value>このパラメータに空の値を入力することはできません</value>
+  </data>
+  <data name="EnterServiceUrl" xml:space="preserve">
+    <value>ArcGIS Server のマップまたはフィーチャ サービスの URL を入力します。</value>
+  </data>
+  <data name="EnterValue" xml:space="preserve">
+    <value>値の入力</value>
+  </data>
+  <data name="EqualityCheckFailsOnType" xml:space="preserve">
+    <value>値 '{0}' ({1}) と '{2}' ({3}) は種類が異なるため、等価性を比較できません。</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>詳細:</value>
+  </data>
+  <data name="ExecuteLabel" xml:space="preserve">
+    <value>実行</value>
+  </data>
+  <data name="ExecuteQuery" xml:space="preserve">
+    <value>クエリを実行しています...</value>
+  </data>
+  <data name="ExpressionBuilderLabel" xml:space="preserve">
+    <value>クエリ式の設定</value>
+  </data>
+  <data name="ExpressionColumnHeader" xml:space="preserve">
+    <value>クエリ式</value>
+  </data>
+  <data name="ExpressionLabel" xml:space="preserve">
+    <value>式のラベル:</value>
+  </data>
+  <data name="FieldAndOperatorLabel" xml:space="preserve">
+    <value>フィールドと演算子:</value>
+  </data>
+  <data name="GroupColumnHeader" xml:space="preserve">
+    <value>グループ ID</value>
+  </data>
+  <data name="GroupLabel" xml:space="preserve">
+    <value>選択項目のグループ化</value>
+  </data>
+  <data name="IncludedValues" xml:space="preserve">
+    <value>含まれる値</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>ラベル</value>
+  </data>
+  <data name="LayerInfoMissing" xml:space="preserve">
+    <value>このレベルでは、レイヤ メタデータは使用できません。</value>
+  </data>
+  <data name="OkLabel" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OperatorLabel" xml:space="preserve">
+    <value>演算子</value>
+  </data>
+  <data name="ParameterLabelsAndVisibility" xml:space="preserve">
+    <value>各クエリ パラメータのラベルと表示設定</value>
+  </data>
+  <data name="PinToMapLabel" xml:space="preserve">
+    <value>マップ上に結果を保持</value>
+  </data>
+  <data name="QueryCategory" xml:space="preserve">
+    <value>クエリ</value>
+  </data>
+  <data name="QueryDescription" xml:space="preserve">
+    <value>指定した検索条件に一致するレイヤのフィーチャを検索</value>
+  </data>
+  <data name="QueryExpressions" xml:space="preserve">
+    <value>クエリ式</value>
+  </data>
+  <data name="QueryFailed" xml:space="preserve">
+    <value>クエリは実行できませんでした。</value>
+  </data>
+  <data name="QueryTitleLabel" xml:space="preserve">
+    <value>ダイアログ タイトル</value>
+  </data>
+  <data name="QueryToolName" xml:space="preserve">
+    <value>レイヤのクエリ</value>
+  </data>
+  <data name="RemoveLabel" xml:space="preserve">
+    <value>選択項目の削除</value>
+  </data>
+  <data name="ResultOptionsLabel" xml:space="preserve">
+    <value>その他のオプション</value>
+  </data>
+  <data name="ResultsFound" xml:space="preserve">
+    <value>{0} フィーチャが見つかりました</value>
+  </data>
+  <data name="SampleValues" xml:space="preserve">
+    <value>サンプル値 (レイヤから取得)</value>
+  </data>
+  <data name="SelectExpression" xml:space="preserve">
+    <value>この式を選択または選択解除</value>
+  </data>
+  <data name="SelectFromList" xml:space="preserve">
+    <value>リストから値を選択</value>
+  </data>
+  <data name="ServiceUrl" xml:space="preserve">
+    <value>サービス URL</value>
+  </data>
+  <data name="StringExceededMaxLength" xml:space="preserve">
+    <value>'{0}' は {1} 文字を超えてはなりません。</value>
+  </data>
+  <data name="UnableToAccess" xml:space="preserve">
+    <value>URL '&lt;{0}&gt;' にアクセスできません。</value>
+  </data>
+  <data name="UngroupLabel" xml:space="preserve">
+    <value>選択項目のグループ解除</value>
+  </data>
+  <data name="UriFormatError" xml:space="preserve">
+    <value>URL '&lt;{0}&gt;' には、不正な文字が含まれています。</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>プロキシの利用</value>
+  </data>
+  <data name="UsersTypeValue" xml:space="preserve">
+    <value>値の入力</value>
+  </data>
+  <data name="UseServiceRendererLabel" xml:space="preserve">
+    <value>サービスで定義されたシンボルを使用する</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>[値]</value>
+  </data>
+  <data name="VisibleLabel" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="InputMethod" xml:space="preserve">
+    <value>入力方法:</value>
+  </data>
+  <data name="Fields" xml:space="preserve">
+    <value>フィールド</value>
+  </data>
+  <data name="LabelWatermark" xml:space="preserve">
+    <value>&lt;ラベルを入力&gt;</value>
+  </data>
+  <data name="ResultOptionsDescription" xml:space="preserve">
+    <value>結果の外観と動作を指定</value>
+  </data>
+  <data name="SelectField" xml:space="preserve">
+    <value>&lt;フィールドを選択&gt;</value>
+  </data>
+  <data name="SelectFieldsToInclude" xml:space="preserve">
+    <value>クエリ結果に含めるデータを選択します</value>
+  </data>
+  <data name="AutoEnableDataGridTooltip" xml:space="preserve">
+    <value>結果セットの取得時に属性テーブルを自動的に開きます</value>
+  </data>
+  <data name="AutoPinResultsTooltip" xml:space="preserve">
+    <value>クエリ ダイアログを閉じるか、別のクエリを実行したときに、マップにクエリ結果を保持します</value>
+  </data>
+  <data name="AutoZoomToResultsTooltip" xml:space="preserve">
+    <value>クエリ結果をマップに追加したときに、自動的にズームします </value>
+  </data>
+  <data name="ConfigureQueryLayer" xml:space="preserve">
+    <value>クエリ対象のレイヤの構成</value>
+  </data>
+  <data name="DefineQueryExpressions" xml:space="preserve">
+    <value>クエリに含まれる式を定義</value>
+  </data>
+  <data name="SampleServiceUrl" xml:space="preserve">
+    <value>http://server/arcgis/rest/services/service/MapServer/0</value>
+  </data>
+  <data name="ServiceUrlDescription" xml:space="preserve">
+    <value>クエリ対象のレイヤの URL を指定します</value>
+  </data>
+  <data name="UseServiceRendererTooltip" xml:space="preserve">
+    <value>サービスで指定されるシンボルを使用してマップ上に結果フィーチャを表示します。オフの場合、結果セット内のフィーチャはすべて、デフォルトのシンボルで表示されます。</value>
+  </data>
+  <data name="InvalidValue" xml:space="preserve">
+    <value>このフィールドには無効な値です</value>
+  </data>
+  <data name="ParameterAppearance" xml:space="preserve">
+    <value>パラメータの外観</value>
+  </data>
+</root>

@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Apply" xml:space="preserve">
+    <value>Applica</value>
+  </data>
+  <data name="AuthorLabel" xml:space="preserve">
+    <value>Autore: </value>
+  </data>
+  <data name="CloseLabel" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="ConnectLabel" xml:space="preserve">
+    <value>Connetti</value>
+  </data>
+  <data name="CopyrightLabel" xml:space="preserve">
+    <value>Copyright:</value>
+  </data>
+  <data name="DescriptionLabel" xml:space="preserve">
+    <value>Descrizione:</value>
+  </data>
+  <data name="DpiLabel" xml:space="preserve">
+    <value>DPI:</value>
+  </data>
+  <data name="DrawingLabel" xml:space="preserve">
+    <value>Disegno...</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>Dettagli:</value>
+  </data>
+  <data name="FormatsLabel" xml:space="preserve">
+    <value>Formato file:</value>
+  </data>
+  <data name="GetLayoutTemplatesCompleted" xml:space="preserve">
+    <value>Recupero dei modelli di layout di stampa completato.</value>
+  </data>
+  <data name="GetLayoutTemplatesStarted" xml:space="preserve">
+    <value>Recupero dei modelli di layout di stampa avviato.</value>
+  </data>
+  <data name="GetPrintLayoutXamlCompleted" xml:space="preserve">
+    <value>Recupero del codice XAML dei layout di stampa completato.</value>
+  </data>
+  <data name="GetPrintLayoutXamlStarted" xml:space="preserve">
+    <value>Recupero del codice XAML dei layout di stampa avviato.</value>
+  </data>
+  <data name="HeightLabel" xml:space="preserve">
+    <value>Altezza:</value>
+  </data>
+  <data name="LayoutLabel" xml:space="preserve">
+    <value>Layout:</value>
+  </data>
+  <data name="LayoutTemplatesLabel" xml:space="preserve">
+    <value>Modello:</value>
+  </data>
+  <data name="LoadFailed" xml:space="preserve">
+    <value>Caricamento dei modelli di layout non riuscito.</value>
+  </data>
+  <data name="LoadLabel" xml:space="preserve">
+    <value> ... </value>
+  </data>
+  <data name="NotSupportedClusterer" xml:space="preserve">
+    <value>Il cluster per il layer {0} ({1}) non verrà applicato alla mappa di output.</value>
+  </data>
+  <data name="NotSupportedGraphicSymbol" xml:space="preserve">
+    <value>Il simbolo di tipo {0} non è supportato per la stampa, pertanto ne verrà eseguito il downgrade e verrà impostato come simbolo predefinito per il layer {1} ({2}).</value>
+  </data>
+  <data name="NotSupportedLayerRenderer" xml:space="preserve">
+    <value>Il renderer di tipo {0} non è supportato per la stampa, pertanto ne verrà eseguito il downgrade e verrà impostato come renderer predefinito per il layer {1} ({2}).</value>
+  </data>
+  <data name="NotSupportedLayerType" xml:space="preserve">
+    <value>Il layer {0} di tipo {1} non è supportato per la stampa e verrà escluso nella mappa di output.</value>
+  </data>
+  <data name="NotSupportedLayerWithProxy" xml:space="preserve">
+    <value>Il layer {0} è configurato per l'uso come server proxy. I layer che utilizzano un proxy non possono essere stampati con ArcGIS Server e verranno esclusi dalla mappa di output.</value>
+  </data>
+  <data name="PrintCanceled" xml:space="preserve">
+    <value>Stampa annullata.</value>
+  </data>
+  <data name="PrintCompleted" xml:space="preserve">
+    <value>Richiesta di stampa completata.</value>
+  </data>
+  <data name="PrintConfigTitle" xml:space="preserve">
+    <value>Configura stampa</value>
+  </data>
+  <data name="PrintFailed" xml:space="preserve">
+    <value>Stampa non riuscita.</value>
+  </data>
+  <data name="PrintLabel" xml:space="preserve">
+    <value>Stampa</value>
+  </data>
+  <data name="PrintLayoutPickerTitle" xml:space="preserve">
+    <value>Selezionare il layout di stampa</value>
+  </data>
+  <data name="PrintPreviewLabel" xml:space="preserve">
+    <value>Anteprima di stampa:</value>
+  </data>
+  <data name="PrintStarted" xml:space="preserve">
+    <value>Richiesta di stampa inviata.</value>
+  </data>
+  <data name="PrintToolCategory" xml:space="preserve">
+    <value>Stampa</value>
+  </data>
+  <data name="PrintToolDescription" xml:space="preserve">
+    <value>Genera un file di output stampabile.</value>
+  </data>
+  <data name="PrintToolTitle" xml:space="preserve">
+    <value>Stampa</value>
+  </data>
+  <data name="PrintWithArcGISServerLabel" xml:space="preserve">
+    <value>Usa servizio di stampa di ArcGIS Server</value>
+  </data>
+  <data name="RequiredFieldException" xml:space="preserve">
+    <value>Campo obbligatorio.</value>
+  </data>
+  <data name="SizeFieldException" xml:space="preserve">
+    <value>Il valore deve essere un numero maggiore di 0.</value>
+  </data>
+  <data name="TaskUrlLabel" xml:space="preserve">
+    <value>URL servizio di stampa:</value>
+  </data>
+  <data name="TitleLabel" xml:space="preserve">
+    <value>Titolo:</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>Senza titolo</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Usa proxy</value>
+  </data>
+  <data name="UseScaleLabel" xml:space="preserve">
+    <value>Scala:</value>
+  </data>
+  <data name="VisibleLabel" xml:space="preserve">
+    <value>Visibile</value>
+  </data>
+  <data name="WidthLabel" xml:space="preserve">
+    <value>Larghezza:</value>
+  </data>
+</root>

@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AreaLabelFormat" xml:space="preserve">
+    <value>면적: {0}</value>
+  </data>
+  <data name="DrawClickContinue" xml:space="preserve">
+    <value>다른 포인트를 배치하려면 클릭하세요.</value>
+  </data>
+  <data name="LengthLabelFormat" xml:space="preserve">
+    <value>길이: {0}</value>
+  </data>
+  <data name="MeasureLabelArea" xml:space="preserve">
+    <value>면적:</value>
+  </data>
+  <data name="MeasureLabelClickFeature" xml:space="preserve">
+    <value>{0} 레이어에서 피처를 클릭하세요.</value>
+  </data>
+  <data name="MeasureLabelFeaturesMap" xml:space="preserve">
+    <value>측정할 피처를 선택하세요.</value>
+  </data>
+  <data name="MeasureLabelLatitude" xml:space="preserve">
+    <value>위도:</value>
+  </data>
+  <data name="MeasureLabelLength" xml:space="preserve">
+    <value>길이:</value>
+  </data>
+  <data name="MeasureLabelLongitude" xml:space="preserve">
+    <value>경도:</value>
+  </data>
+  <data name="MeasureLabelMeasurements" xml:space="preserve">
+    <value>측정</value>
+  </data>
+  <data name="MeasureLabelPerimeter" xml:space="preserve">
+    <value>둘레:</value>
+  </data>
+  <data name="MeasureLabelShapesDraw" xml:space="preserve">
+    <value>측정할 쉐이프 그리기</value>
+  </data>
+  <data name="MeasurementFormat" xml:space="preserve">
+    <value>{0:0,0.0000} {1}</value>
+  </data>
+  <data name="MeasureTitle" xml:space="preserve">
+    <value>측정</value>
+  </data>
+  <data name="MeasureToolCategory" xml:space="preserve">
+    <value>분석</value>
+  </data>
+  <data name="MeasureToolDescription" xml:space="preserve">
+    <value>기존 피처에서 측정값을 가져오거나 맵에서 그려 측정값을 구합니다.</value>
+  </data>
+  <data name="NoFeaturesFound" xml:space="preserve">
+    <value>피처가 없습니다. 다시 시도하거나 다른 레이어를 선택하세요.</value>
+  </data>
+  <data name="PerimeterLabelFormat" xml:space="preserve">
+    <value>둘레: {0}</value>
+  </data>
+  <data name="ProjectInputsNotValid" xml:space="preserve">
+    <value>대상 지오메트리, 출력 공간 참조 및 지오메트리 서비스 URL을 지정해야 합니다.</value>
+  </data>
+  <data name="QueryFailed" xml:space="preserve">
+    <value>쿼리 실패: {0}</value>
+  </data>
+  <data name="RadiusLabelFormat" xml:space="preserve">
+    <value>반경: {0}</value>
+  </data>
+  <data name="SegmentLengthLabelFormat" xml:space="preserve">
+    <value>세그먼트: {0}</value>
+  </data>
+  <data name="SimplifyFailed" xml:space="preserve">
+    <value>{0}을(를) 사용하여 지오메트리를 단순화하지 못했습니다. 오류:
+{1}</value>
+  </data>
+  <data name="SimplifyInputsNotValid" xml:space="preserve">
+    <value>대상 지오메트리 및 지오메트리 서비스 URL을 정의해야 합니다.</value>
+  </data>
+  <data name="TooltipCircle" xml:space="preserve">
+    <value>원</value>
+  </data>
+  <data name="TooltipEllipse" xml:space="preserve">
+    <value>타원</value>
+  </data>
+  <data name="TooltipFreehandLine" xml:space="preserve">
+    <value>자유곡선</value>
+  </data>
+  <data name="TooltipFreehandPolygon" xml:space="preserve">
+    <value>자유곡선 폴리곤</value>
+  </data>
+  <data name="TooltipPoint" xml:space="preserve">
+    <value>포인트</value>
+  </data>
+  <data name="TooltipPolygon" xml:space="preserve">
+    <value>폴리곤</value>
+  </data>
+  <data name="TooltipPolyline" xml:space="preserve">
+    <value>라인</value>
+  </data>
+  <data name="TooltipRectangle" xml:space="preserve">
+    <value>직사각형</value>
+  </data>
+  <data name="TotalLengthLabelFormat" xml:space="preserve">
+    <value>합계: {0}</value>
+  </data>
+  <data name="UnitsAcres" xml:space="preserve">
+    <value>에이커</value>
+  </data>
+  <data name="UnitsCentimeters" xml:space="preserve">
+    <value>센티미터</value>
+  </data>
+  <data name="UnitsFeet" xml:space="preserve">
+    <value>피트</value>
+  </data>
+  <data name="UnitsHectares" xml:space="preserve">
+    <value>헥타르</value>
+  </data>
+  <data name="UnitsInches" xml:space="preserve">
+    <value>인치</value>
+  </data>
+  <data name="UnitsKilometers" xml:space="preserve">
+    <value>킬로미터</value>
+  </data>
+  <data name="UnitsMeters" xml:space="preserve">
+    <value>미터</value>
+  </data>
+  <data name="UnitsMiles" xml:space="preserve">
+    <value>마일</value>
+  </data>
+  <data name="UnitsNauticalMiles" xml:space="preserve">
+    <value>해리</value>
+  </data>
+  <data name="UnitsSquareFeet" xml:space="preserve">
+    <value>제곱 피트</value>
+  </data>
+  <data name="UnitsSquareKilometers" xml:space="preserve">
+    <value>제곱 킬로미터</value>
+  </data>
+  <data name="UnitsSquareMeters" xml:space="preserve">
+    <value>제곱 미터</value>
+  </data>
+  <data name="UnitsSquareMiles" xml:space="preserve">
+    <value>평방 마일</value>
+  </data>
+  <data name="UnitsYards" xml:space="preserve">
+    <value>야드</value>
+  </data>
+  <data name="DrawClickContinueDoubleClickFinish" xml:space="preserve">
+    <value>클릭하여 다른 포인트를 배치하거나 더블 클릭하여 작업을 마치세요.</value>
+  </data>
+  <data name="DrawClickDrag" xml:space="preserve">
+    <value>그리기를 시작하려면 클릭하여 드래그하세요.</value>
+  </data>
+  <data name="DrawClickStart" xml:space="preserve">
+    <value>첫 번째 포인트를 배치하려면 클릭하세요.</value>
+  </data>
+  <data name="DrawReleaseFinish" xml:space="preserve">
+    <value>그리기를 마치려면 마우스를 놓으세요.</value>
+  </data>
+  <data name="DrawShapePoint" xml:space="preserve">
+    <value>포인트를 그리려면 클릭하세요.</value>
+  </data>
+  <data name="StatusCalculateCompleteDrawAgain" xml:space="preserve">
+    <value>계산이 완료되었습니다. 다시 측정하려면 새로 그리세요.</value>
+  </data>
+  <data name="StatusCalculating" xml:space="preserve">
+    <value>계산하는 중...</value>
+  </data>
+  <data name="StatusClickShapeButton" xml:space="preserve">
+    <value>그릴 쉐이프 선택</value>
+  </data>
+  <data name="StatusDrawing" xml:space="preserve">
+    <value>그리는 중...</value>
+  </data>
+  <data name="StatusDrawShape" xml:space="preserve">
+    <value>맵에서 쉐이프 그리기</value>
+  </data>
+  <data name="MeasureLabelClickAnotherFeature" xml:space="preserve">
+    <value>새 측정값을 구하려면 다른 피처를 클릭하세요.</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>레이어:</value>
+  </data>
+  <data name="SubLayerPrompt" xml:space="preserve">
+    <value>하위 레이어:</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="MeasureFailed" xml:space="preserve">
+    <value>측정 작업 실패</value>
+  </data>
+  <data name="UnsupportedLayerType" xml:space="preserve">
+    <value>피처 선택을 지원하지 않는 레이어 유형입니다.</value>
+  </data>
+  <data name="GeometryServiceNotSpecified" xml:space="preserve">
+    <value>재투영이 필요한 지오메트리를 측정하려면 지오메트리 서비스 URL을 지정해야 합니다.</value>
+  </data>
+  <data name="NoProjectionResults" xml:space="preserve">
+    <value>지오메트리를 WGS 84에 투영하지 못했습니다. {0}에서 반환된 결과가 없습니다.</value>
+  </data>
+  <data name="ProjectFailure" xml:space="preserve">
+    <value>{0}을(를) 사용하여 지오메트리를 WGS 84에 투영하지 못했습니다. 오류:
+{1}</value>
+  </data>
+  <data name="ConverterCannotConvertBack" xml:space="preserve">
+    <value>변환기에서 다시 변환할 수 없습니다.</value>
+  </data>
+  <data name="DrawPopupBehaviorNoMap" xml:space="preserve">
+    <value>DrawPopupBehavior는 맵에 연결된 그리기 개체에만 첨부할 수 있습니다.</value>
+  </data>
+  <data name="MeasureUnsupportedGeometryType" xml:space="preserve">
+    <value>측정 작업에 지원되지 않는 지오메트리 유형입니다.</value>
+  </data>
+  <data name="NonClientSpatialRef" xml:space="preserve">
+    <value>계산은 Web Mercator 또는 WGS84 공간 참조가 있는 지오메트리에서만 지원됩니다.</value>
+  </data>
+</root>

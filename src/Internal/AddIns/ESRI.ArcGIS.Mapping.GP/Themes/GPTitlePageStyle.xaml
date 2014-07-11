@@ -1,0 +1,56 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+    xmlns:mapping="http://schemas.esri.com/arcgis/mapping/2009"
+    xmlns:gp="clr-namespace:ESRI.ArcGIS.Mapping.GP;assembly=ESRI.ArcGIS.Mapping.GP">
+
+    <!-- Style for heading of GP config wizard pages.  Includes hyperlink to selected task's services direcotry
+    page and help button linked to task's help URL.  Assumes DataContext is a GPConfiguration object. -->
+    <Style x:Key="GPTitlePageStyle" TargetType="ContentControl">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid>
+                        <Grid.Resources>
+                            <gp:StringResourcesManager x:Key="Localization" />
+                        </Grid.Resources>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding ConverterParameter=TitlePrompt, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                   FontWeight="Bold" VerticalAlignment="Center" Foreground="{StaticResource DesignHostBackgroundTextBrush}"/>
+                        <TextBox Grid.Column="1" Margin="4,0,0,0" HorizontalAlignment="Stretch"
+                                 Text="{Binding Title, Mode=TwoWay}"/>
+                        <TextBlock Text="{Binding ConverterParameter=LayerOrder, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                   FontWeight="Bold" VerticalAlignment="Center" Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                                   Margin="0,10,0,0" Grid.Row="1" Grid.ColumnSpan="2"/>
+                        <mapping:ReorderList Margin="2,3,2,2" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
+                                             VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"
+                                             MinHeight="150"
+                                             Items="{Binding LayerOrder}" 
+                                             Grid.Row="2" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

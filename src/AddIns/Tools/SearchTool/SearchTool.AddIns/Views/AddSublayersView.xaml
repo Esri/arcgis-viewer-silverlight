@@ -1,0 +1,245 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+
+<!-- UI for adding layers within a map or feature service.  
+     DataContext is assumed to be an instance of ChooseSublayersViewModel -->
+    
+<UserControl 
+    x:Class="SearchTool.AddSublayersView"
+    x:Name="ParentView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:extensibility="http://schemas.esri.com/arcgis/client/extensibility/2010"
+    xmlns:local="clr-namespace:SearchTool;assembly=SearchTool.AddIns">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SearchTool.AddIns;component/AppResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:StringResourcesManager x:Key="Localization" />
+            <local:DataContextProxy x:Key="DataContextProxy" />
+            <extensibility:MapApplicationBindingSource x:Key="MapApplication" />
+            <local:ReverseListConverter x:Key="ReverseListConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Text with name of parent service -->
+        <TextBlock 
+            Text="{Binding Service.Title}"
+            FontSize="12"
+            FontWeight="Bold"
+            Opacity="0.5"
+            Margin="0,0,0,5"/>
+
+        <!-- Listbox for selecting the layers to add -->
+        <ListBox
+            ItemsSource="{Binding AvailableLayers}"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            ItemContainerStyle="{StaticResource StretchyListBoxNoHoverItemStyle}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    
+                    <!-- Checkbox for including/excluding layer to add to the map -->
+                    <CheckBox 
+                        Margin="3"
+                        IsChecked="{Binding (local:Properties.IsSelected), Mode=TwoWay}"
+                        Cursor="Hand">
+                        <i:Interaction.Triggers>
+
+                            <!-- Set the popup title on the layer -->
+                            <i:EventTrigger EventName="Loaded">
+                                <local:SetPopupTitleAction
+                                    TargetObject="{Binding}" />
+                            </i:EventTrigger>
+
+                            <!-- Add the layer to the ViewModel's SelectedLayers collection on checked -->
+                            <i:EventTrigger EventName="Checked">
+                                <local:AddItemAction
+                                    TargetObject="{Binding DataSource.SelectedLayers,
+                                        Source={StaticResource DataContextProxy}}"
+                                    Item="{Binding}" />
+                            </i:EventTrigger>
+
+                            <!-- Remove the layer from the ViewModel's SelectedLayers collection on unchecked -->
+                            <i:EventTrigger EventName="Unchecked">
+                                <local:RemoveItemAction
+                                    TargetObject="{Binding DataSource.SelectedLayers,
+                                        Source={StaticResource DataContextProxy}}"
+                                    Item="{Binding}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <StackPanel Orientation="Horizontal">
+                            
+                            <!-- Layer icon -->
+                            <Image 
+                                Source="/SearchTool.AddIns;component/Images/sublayer.png" />
+                            
+                            <!-- Layer name -->
+                            <TextBlock 
+                                Text="{Binding (extensibility:MapApplication.LayerName)}"
+                                VerticalAlignment="Center"
+                                Margin="4,0,0,0"/>
+                        </StackPanel>
+                    </CheckBox>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+            
+        <!-- Select all button -->
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Content="{Binding ConverterParameter=AddFeatureLayerWindowCheckAll, 
+                Converter={StaticResource Localization}, 
+                Source={StaticResource Localization}}"
+            MinWidth="75"
+            Height="25"
+            Margin="4,5,0,0"
+            Padding="6,0,6,0"
+            Foreground="{StaticResource DesignHostAccentTextBrush}" 
+            Style="{StaticResource GradientButtonStyle}" 
+            Background="{StaticResource DesignHostAccentBrush}" 
+            BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top">
+            <i:Interaction.Triggers>
+                
+                <!-- Perform actions on click -->
+                <i:EventTrigger EventName="Click">
+                    
+                    <!-- Add all layers in AvailableLayers to SelectedLayers -->
+                    <local:AddItemsAction
+                        TargetObject="{Binding SelectedLayers}"
+                        Items="{Binding AvailableLayers}" />
+                    
+                    <!-- Mark all layers as selected -->
+                    <local:SelectAllAction
+                        TargetObject="{Binding AvailableLayers}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+
+        <!-- Clear all button -->
+        <Button 
+            Grid.Row="2"
+            Grid.Column="1"
+            Content="{Binding ConverterParameter=AddFeatureLayerWindowUnCheckAll, 
+                Converter={StaticResource Localization}, 
+                Source={StaticResource Localization}}" 
+            MinWidth="75"
+            Height="25"
+            Margin="4,10,0,0"
+            Padding="6,0,6,0"
+            Foreground="{StaticResource DesignHostAccentTextBrush}" 
+            Style="{StaticResource GradientButtonStyle}" 
+            Background="{StaticResource DesignHostAccentBrush}" 
+            BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top">
+            <i:Interaction.Triggers>
+
+                <!-- Perform actions on click -->
+                <i:EventTrigger EventName="Click">
+                    
+                    <!-- Remove all layers from SelectedLayers -->
+                    <ei:CallMethodAction
+                        TargetObject="{Binding SelectedLayers}"
+                        MethodName="Clear" />
+                    
+                    <!-- Mark all layers as unselected -->
+                    <local:UnselectAllAction
+                        TargetObject="{Binding AvailableLayers}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+
+        <!-- OK (add layers) button -->
+        <Button 
+            Content="{Binding ConverterParameter=OK, 
+                Converter={StaticResource Localization}, 
+                Source={StaticResource Localization}}"
+            MinWidth="75"
+            Height="25"
+            HorizontalAlignment="Right"
+            Margin="0,10,0,0"
+            Padding="6,0,6,0"
+            Grid.Row="3"
+            Foreground="{StaticResource DesignHostAccentTextBrush}" 
+            Style="{StaticResource GradientButtonStyle}" 
+            Background="{StaticResource DesignHostAccentBrush}" 
+            BorderBrush="{StaticResource DesignHostAccentTextBrush}">
+            <i:Interaction.Triggers>
+
+                <!-- Perform actions on click -->
+                <i:EventTrigger EventName="Click">
+                    
+                    <!-- Add all items in SelectedLayers to the map's layers collection.
+                         Use a converter to reverse the layer order because the map renders 
+                         the first layer in the collection on the bottom and the last on top. -->
+                    <local:AddItemsAction
+                        TargetObject="{Binding Map.Layers,
+                            Source={StaticResource MapApplication}}"
+                        Items="{Binding SelectedLayers, 
+                            Converter={StaticResource ReverseListConverter}}" />
+                    
+                    <!-- Close the view -->
+                    <local:CloseWindowAction
+                        TargetObject="{Binding ElementName=ParentView}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+
+        <!-- Cancel button -->
+        <Button 
+            Content="{Binding ConverterParameter=Cancel, 
+                Converter={StaticResource Localization}, 
+                Source={StaticResource Localization}}"
+            MinWidth="75"
+            Height="25"
+            HorizontalAlignment="Stretch"
+            Margin="4,10,0,0"
+            Padding="6,0,6,0"
+            Grid.Row="3"
+            Grid.Column="1"
+            Foreground="{StaticResource DesignHostAccentTextBrush}"
+            Style="{StaticResource GradientButtonStyle}" 
+            Background="{StaticResource DesignHostAccentBrush}" 
+            BorderBrush="{StaticResource DesignHostAccentTextBrush}">
+            <i:Interaction.Triggers>
+
+                <!-- Perform actions on click -->
+                <i:EventTrigger EventName="Click">
+
+                    <!-- Close the view -->
+                    <local:CloseWindowAction
+                        TargetObject="{Binding ElementName=ParentView}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+    </Grid>
+</UserControl>

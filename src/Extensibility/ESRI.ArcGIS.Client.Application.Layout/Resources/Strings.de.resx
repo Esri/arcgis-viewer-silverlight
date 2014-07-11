@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddPointInstructions" xml:space="preserve">
+    <value>Klicken Sie auf die Karte, um ein {0}-Feature zu erstellen.</value>
+  </data>
+  <data name="AddSelect" xml:space="preserve">
+    <value>Zur Auswahl hinzufügen</value>
+  </data>
+  <data name="AddSelectDescription" xml:space="preserve">
+    <value>Der aktuellen Auswahl Features hinzufügen</value>
+  </data>
+  <data name="AddShapeInstructions" xml:space="preserve">
+    <value>Klicken Sie auf die Karte, um Stützpunkte hinzuzufügen, und doppelklicken Sie anschließend, um ein {0}-Feature zu erstellen.</value>
+  </data>
+  <data name="AttributesOf" xml:space="preserve">
+    <value>Attribute von {0}</value>
+  </data>
+  <data name="AutoCompleteDescription" xml:space="preserve">
+    <value>Polygone automatisch vervollständigen</value>
+  </data>
+  <data name="AutoComplete" xml:space="preserve">
+    <value>Automatisch vervollständigen</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>Automatisch auf Auswahl zoomen</value>
+  </data>
+  <data name="BrowseTabHeader" xml:space="preserve">
+    <value>Durchsuchen</value>
+  </data>
+  <data name="BtnBack" xml:space="preserve">
+    <value>Zurück</value>
+  </data>
+  <data name="BtnCancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="BtnNext" xml:space="preserve">
+    <value>Weiter</value>
+  </data>
+  <data name="BtnOk" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>Schaltfläche</value>
+  </data>
+  <data name="CancelTool" xml:space="preserve">
+    <value>Werkzeug abbrechen</value>
+  </data>
+  <data name="ClearSelect" xml:space="preserve">
+    <value>Auswahl aufheben</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>Klicken, um nach Osten zu schwenken</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>Klicken, um nach Norden zu schwenken</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>Klicken, um nach Süden zu schwenken</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>Klicken, um nach Westen zu schwenken</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Bestätigen</value>
+  </data>
+  <data name="ContentsTabHeader" xml:space="preserve">
+    <value>Inhalt</value>
+  </data>
+  <data name="ContentTypeColon" xml:space="preserve">
+    <value>Inhaltstyp: </value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Ausschneiden</value>
+  </data>
+  <data name="CutDescription" xml:space="preserve">
+    <value>Feature ausschneiden</value>
+  </data>
+  <data name="DeleteAttachment" xml:space="preserve">
+    <value>Diese Anlage löschen</value>
+  </data>
+  <data name="DeleteSelect" xml:space="preserve">
+    <value>Auswahl löschen</value>
+  </data>
+  <data name="DeleteSelectDescription" xml:space="preserve">
+    <value>Löscht die ausgewählten Features</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>Zum Drehen ziehen</value>
+  </data>
+  <data name="DragToZoomInOrOut" xml:space="preserve">
+    <value>Zum Vergrößern/Verkleinern ziehen</value>
+  </data>
+  <data name="DrawingDotDot" xml:space="preserve">
+    <value>Zeichnung wird erstellt...</value>
+  </data>
+  <data name="EditGeometry" xml:space="preserve">
+    <value>Shape bearbeiten</value>
+  </data>
+  <data name="EditShapeDescription" xml:space="preserve">
+    <value>Geometrie, Position, Rotation oder die Skalierung des Features bearbeiten</value>
+  </data>
+  <data name="EditTabHeader" xml:space="preserve">
+    <value>Features hinzufügen</value>
+  </data>
+  <data name="EditValues" xml:space="preserve">
+    <value>Werte bearbeiten</value>
+  </data>
+  <data name="EditValuesDescription" xml:space="preserve">
+    <value>Feature-Werte bearbeiten</value>
+  </data>
+  <data name="Freehand" xml:space="preserve">
+    <value>Freihand</value>
+  </data>
+  <data name="FreehandDescription" xml:space="preserve">
+    <value>Freihandzeichnung zum Erstellen von Linien oder Formen verwenden</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>Volle Ausdehnung</value>
+  </data>
+  <data name="MapContentsTabHeader" xml:space="preserve">
+    <value>Karteninhalt</value>
+  </data>
+  <data name="MoveBarUpZoomInMoveDownToZoomOut" xml:space="preserve">
+    <value>Zum Vergrößern in der Leiste nach oben und zum Verkleinern nach unten ziehen</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>Erstes Element verschieben</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>Letztes Element verschieben</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>Nächstes Element verschieben</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>Vorheriges Element verschieben</value>
+  </data>
+  <data name="NameColon" xml:space="preserve">
+    <value>Name: </value>
+  </data>
+  <data name="NewSelect" xml:space="preserve">
+    <value>Neue Auswahl</value>
+  </data>
+  <data name="NewSelectDescription" xml:space="preserve">
+    <value>Neue Auswahl starten</value>
+  </data>
+  <data name="OpenItem" xml:space="preserve">
+    <value>Element öffnen</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Optionen</value>
+  </data>
+  <data name="OptionsDotDot" xml:space="preserve">
+    <value>Optionen ...</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Drucken</value>
+  </data>
+  <data name="PrintPreviewColon" xml:space="preserve">
+    <value>Druckvorschau:</value>
+  </data>
+  <data name="RecordColon" xml:space="preserve">
+    <value>Datensatz:</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>Datensätze ({0} von {1} ausgewählt)</value>
+  </data>
+  <data name="RemoveSelect" xml:space="preserve">
+    <value>Aus Auswahl entfernen</value>
+  </data>
+  <data name="RemoveSelectDescription" xml:space="preserve">
+    <value>Feature aus der aktuellen Auswahl entfernen</value>
+  </data>
+  <data name="ResetNorth" xml:space="preserve">
+    <value>Norden zurücksetzen</value>
+  </data>
+  <data name="Reshape" xml:space="preserve">
+    <value>Umformen</value>
+  </data>
+  <data name="ReshapeDescription" xml:space="preserve">
+    <value>Feature umformen</value>
+  </data>
+  <data name="SaveEdit" xml:space="preserve">
+    <value>Änderungen speichern</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Suchen</value>
+  </data>
+  <data name="SearchTabHeader" xml:space="preserve">
+    <value>Suchen</value>
+  </data>
+  <data name="SizeColon" xml:space="preserve">
+    <value>Größe: </value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>Auswahl umkehren</value>
+  </data>
+  <data name="Union" xml:space="preserve">
+    <value>Vereinigen</value>
+  </data>
+  <data name="UnionDescription" xml:space="preserve">
+    <value>Eine Vereinigung der ausgewählten Features durchführen</value>
+  </data>
+  <data name="UriColon" xml:space="preserve">
+    <value>Uri: </value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zoomen</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Vergrößern</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Verkleinern</value>
+  </data>
+  <data name="CouldNotLoadViewer" xml:space="preserve">
+    <value>Der Viewer konnte nicht geladen werden. Weitere Details finden Sie in der Konsole des Browsers.</value>
+  </data>
+  <data name="InitializingViewer" xml:space="preserve">
+    <value>Viewer wird initialisiert...</value>
+  </data>
+</root>

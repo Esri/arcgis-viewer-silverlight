@@ -1,0 +1,445 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl 
+    x:Class="SearchTool.ProviderSelectionView"
+    x:Name="View"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:SearchTool;assembly=SearchTool.AddIns"    
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400"
+    BorderBrush="Black">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SearchTool.AddIns;component/AppResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:StringResourcesManager x:Key="Localization" />
+            <local:DataContextProxy x:Key="DataContextProxy" />
+            <local:IntToCollapsedConverter x:Key="IntToCollapsedConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!-- Search type selection -->
+            <RowDefinition Height="Auto" /> <!-- Included searches title -->
+            <RowDefinition Height="*" />    <!-- Included searches -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />   <!-- Search type label -->
+            <ColumnDefinition Width="*" />      <!-- search type drop-down -->
+            <ColumnDefinition Width="Auto" />   <!-- Add search type button -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Search type label -->
+        <TextBlock
+            Text="{Binding ConverterParameter=SearchType,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}" 
+            VerticalAlignment="Center"
+            FontSize="12"/>
+
+        <!-- Drop-down for type of search to be added -->
+        <ComboBox 
+            x:Name="ProvidersComboBox"
+            ItemsSource="{Binding AvailableSearchProviders}"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            MinWidth="150"
+            Foreground="Black"
+            Margin="3,0,0,0"
+            Grid.Column="1">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding (local:Properties.DisplayName)}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+            <i:Interaction.Behaviors>
+                <local:AutoSelectFirstItem />
+            </i:Interaction.Behaviors>
+        </ComboBox>
+
+        <!-- Add search type button -->
+        <Button
+            Content="{Binding ConverterParameter=SearchControlAdd,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}"
+            Padding="10,5,10,5"
+            Margin="5,0,0,0"
+            Grid.Column="2"
+            Command="{Binding AddProvider}"
+            CommandParameter="{Binding SelectedItem, ElementName=ProvidersComboBox}"/>
+        
+        <!-- Heading for area listing included searches -->
+        <TextBlock
+            Text="{Binding ConverterParameter=IncludedSearches,
+                Converter={StaticResource Localization},
+                Source={StaticResource Localization}}"
+            FontSize="12"
+            FontStyle="Italic"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            Margin="2,10,0,0" />
+        
+        <!-- included searches list -->
+        <ListBox
+            ItemsSource="{Binding SelectedSearchProviders}"
+            BorderThickness="1"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+            Background="White"
+            BorderBrush="{Binding BorderBrush, ElementName=View}"
+            Padding="0"
+            ItemContainerStyle="{StaticResource ServiceResultItemStyle}"
+            Margin="0,2,0,0"
+            Grid.Row="2"
+            Grid.ColumnSpan="3">
+            <ListBox.ItemTemplate>
+                
+                <!-- Template for each included search -->
+                <DataTemplate>                    
+                    <Grid x:Name="Root" Background="Transparent" Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Title display/editing -->
+                        <Grid HorizontalAlignment="Left">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="21" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <!-- Search title -->
+                            <TextBlock 
+                                x:Name="SearchTitleLabel"
+                                Text="{Binding (local:Properties.DisplayName)}"
+                                TextWrapping="Wrap"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Bottom"
+                                FontWeight="Bold"
+                                FontSize="12" />
+
+                            <!-- TextBox for editing search title -->
+                            <TextBox
+                                x:Name="SearchTitleTextBox"
+                                Text="{Binding (local:Properties.DisplayName), Mode=TwoWay}"
+                                TextWrapping="Wrap"
+                                HorizontalAlignment="Stretch" 
+                                Visibility="Collapsed">
+                                <i:Interaction.Behaviors>
+                                    <local:UpdateBindingOnTextChanged />
+                                </i:Interaction.Behaviors>
+                                <i:Interaction.Triggers>
+                                    
+                                    <!-- Hide textbox and save button on enter, show label and edit button -->
+                                    <local:KeyPressedTrigger Key="Enter">
+                                        <ei:ChangePropertyAction PropertyName="Visibility"
+                                                             Value="Collapsed" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SaveButton}"
+                                                             PropertyName="Visibility"
+                                                             Value="Collapsed" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchTitleLabel}"
+                                                             PropertyName="Opacity"
+                                                             Value="1" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=EditButton}"
+                                                             PropertyName="Visibility"
+                                                             Value="Visible" />
+                                    </local:KeyPressedTrigger>
+
+                                    <!-- Hide textbox and save button on lost focus, show label and edit button -->
+                                    <i:EventTrigger EventName="LostFocus">
+                                        <ei:ChangePropertyAction PropertyName="Visibility"
+                                                             Value="Collapsed" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SaveButton}"
+                                                             PropertyName="Visibility"
+                                                             Value="Collapsed" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchTitleLabel}"
+                                                             PropertyName="Opacity"
+                                                             Value="1" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=EditButton}"
+                                                             PropertyName="Visibility"
+                                                             Value="Visible" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </TextBox>
+
+                            <!-- Edit button for editing search title -->
+                            <Button x:Name="EditButton" 
+                                Cursor="Hand"
+                                Grid.Column="1"
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left">
+                                <Button.Content>
+                                    <Image Source="/SearchTool.AddIns;component/Images/edit.png"
+                                       Stretch="None" />
+                                </Button.Content>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Grid>
+                                            <ContentPresenter Content="{TemplateBinding Content}" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Button.Template>
+                                <i:Interaction.Triggers>
+
+                                    <!-- Show textbox and save button on click, hide label and edit button -->
+                                    <i:EventTrigger EventName="Click">
+                                        <ei:ChangePropertyAction PropertyName="Visibility"
+                                                             Value="Collapsed" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchTitleLabel}"
+                                                             PropertyName="Opacity"
+                                                             Value="0.01" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchTitleTextBox}"
+                                                             PropertyName="Visibility"
+                                                             Value="Visible" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SaveButton}"
+                                                             PropertyName="Visibility"
+                                                             Value="Visible" />
+                                        <local:FocusAction TargetObject="{Binding ElementName=SearchTitleTextBox}" />
+                                        <ei:CallMethodAction MethodName="SelectAll"
+                                                         TargetObject="{Binding ElementName=SearchTitleTextBox}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </Button>
+
+                            <!-- Save button for search title -->
+                            <Button x:Name="SaveButton" 
+                                Cursor="Hand"
+                                Grid.Column="1"
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Visibility="Collapsed"
+                                HorizontalAlignment="Left">
+                                <Button.Content>
+                                    <Image Source="/SearchTool.AddIns;component/Images/save.png"
+                                       Stretch="None" />
+                                </Button.Content>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Grid>
+                                            <ContentPresenter Content="{TemplateBinding Content}" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Button.Template>
+                                <i:Interaction.Triggers>
+
+                                    <!-- Hide textbox and save button on click, show label and edit button -->
+                                    <i:EventTrigger EventName="Click">
+                                        <ei:ChangePropertyAction PropertyName="Visibility"
+                                                             Value="Collapsed" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchTitleTextBox}"
+                                                             PropertyName="Visibility"
+                                                             Value="Collapsed" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchTitleLabel}"
+                                                             PropertyName="Opacity"
+                                                             Value="1" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=EditButton}"
+                                                             PropertyName="Visibility"
+                                                             Value="Visible" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </Button>
+
+                        </Grid>
+
+                        <!-- Description display/editing -->
+                        <Grid Grid.Row="1" HorizontalAlignment="Left">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="21" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <!-- search description -->
+                            <TextBlock 
+                                x:Name="SearchDescriptionLabel"
+                                Text="{Binding (local:Properties.Description)}"
+                                TextWrapping="Wrap"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center" />
+
+                            <!-- TextBox for editing search description -->
+                            <TextBox
+                                x:Name="SearchDescriptionTextBox"
+                                Text="{Binding (local:Properties.Description), Mode=TwoWay}"
+                                HorizontalAlignment="Left" 
+                                Opacity="0.01"
+                                TextWrapping="Wrap"
+                                IsHitTestVisible="False">
+                                <i:Interaction.Behaviors>
+                                    <local:UpdateBindingOnTextChanged />
+                                </i:Interaction.Behaviors>
+                                <i:Interaction.Triggers>
+
+                                    <!-- Hide textbox and save button on enter, show label and edit button -->
+                                    <local:KeyPressedTrigger Key="Enter">
+                                        <ei:ChangePropertyAction PropertyName="Opacity"
+                                                             Value="0.01" />
+                                        <ei:ChangePropertyAction PropertyName="IsHitTestVisible"
+                                                             Value="False" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SaveDescriptionButton}"
+                                                             PropertyName="Visibility"
+                                                             Value="Collapsed" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchDescriptionLabel}"
+                                                             PropertyName="Opacity"
+                                                             Value="1" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=EditDescriptionButton}"
+                                                             PropertyName="Visibility"
+                                                             Value="Visible" />
+                                        <local:FocusAction TargetObject="{Binding ElementName=EditDescriptionButton}" />
+                                    </local:KeyPressedTrigger>
+
+                                    <!-- Hide textbox and save button on lost focus, show label and edit button -->
+                                    <i:EventTrigger EventName="LostFocus">
+                                        <ei:ChangePropertyAction PropertyName="Opacity"
+                                                             Value="0.01" />
+                                        <ei:ChangePropertyAction PropertyName="IsHitTestVisible"
+                                                             Value="False" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SaveDescriptionButton}"
+                                                             PropertyName="Visibility"
+                                                             Value="Collapsed" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchDescriptionLabel}"
+                                                             PropertyName="Opacity"
+                                                             Value="1" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=EditDescriptionButton}"
+                                                             PropertyName="Visibility"
+                                                             Value="Visible" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </TextBox>
+
+                            <!-- Edit button for editing search description -->
+                            <Button x:Name="EditDescriptionButton" 
+                                Cursor="Hand"
+                                Grid.Column="1"
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left">
+                                <Button.Content>
+                                    <Image Source="/SearchTool.AddIns;component/Images/edit.png"
+                                       Stretch="None" />
+                                </Button.Content>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Grid>
+                                            <ContentPresenter Content="{TemplateBinding Content}" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Button.Template>
+                                <i:Interaction.Triggers>
+
+                                    <!-- Show textbox and save button on click, hide label and edit button -->
+                                    <i:EventTrigger EventName="Click">
+                                        <ei:ChangePropertyAction PropertyName="Visibility"
+                                                             Value="Collapsed" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchDescriptionLabel}"
+                                                             PropertyName="Opacity"
+                                                             Value="0.01" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchDescriptionTextBox}"
+                                                             PropertyName="Opacity"
+                                                             Value="1" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchDescriptionTextBox}"
+                                                             PropertyName="IsHitTestVisible"
+                                                             Value="True" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SaveDescriptionButton}"
+                                                             PropertyName="Visibility"
+                                                             Value="Visible" />
+                                        <local:FocusAction TargetObject="{Binding ElementName=SearchDescriptionTextBox}" />
+                                        <ei:CallMethodAction MethodName="SelectAll"
+                                                         TargetObject="{Binding ElementName=SearchDescriptionTextBox}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </Button>
+
+                            <!-- Save button for search description -->
+                            <Button x:Name="SaveDescriptionButton" 
+                                Cursor="Hand"
+                                Grid.Column="1"
+                                Margin="5,0,0,0"
+                                VerticalAlignment="Center"
+                                Visibility="Collapsed"
+                                HorizontalAlignment="Left">
+                                <Button.Content>
+                                    <Image Source="/SearchTool.AddIns;component/Images/save.png"
+                                       Stretch="None" />
+                                </Button.Content>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Grid>
+                                            <ContentPresenter Content="{TemplateBinding Content}" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Button.Template>
+                                <i:Interaction.Triggers>
+
+                                    <!-- Hide textbox and save button on click, show label and edit button -->
+                                    <i:EventTrigger EventName="Click">
+                                        <ei:ChangePropertyAction PropertyName="Visibility"
+                                                             Value="Collapsed" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchDescriptionTextBox}"
+                                                             PropertyName="Opacity"
+                                                             Value="0.01" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchDescriptionTextBox}"
+                                                             PropertyName="IsHitTestVisible"
+                                                             Value="False" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchDescriptionLabel}"
+                                                             PropertyName="Opacity"
+                                                             Value="1" />
+                                        <ei:ChangePropertyAction TargetObject="{Binding ElementName=EditDescriptionButton}"
+                                                             PropertyName="Visibility"
+                                                             Value="Visible" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </Button>
+
+                        </Grid>
+                        
+                        <!-- Button for removing an included search -->
+                        <HyperlinkButton
+                            Style="{StaticResource HyperlinkNoFocusBorder}"
+                            Margin="0,5,0,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Foreground="{Binding Foreground, ElementName=SearchTitle}"
+                            Grid.Row="2"
+                            Visibility="{Binding Items.Count,
+                                RelativeSource={RelativeSource AncestorType=ListBox},
+                                Converter={StaticResource IntToCollapsedConverter},
+                                ConverterParameter=1}">
+                            <HyperlinkButton.Content>
+                                <TextBlock
+                                    FontStyle="Italic"
+                                    Opacity="0.5"
+                                    Text="{Binding ConverterParameter=Remove,
+                                        Converter={StaticResource Localization},
+                                        Source={StaticResource Localization}}" />
+                            </HyperlinkButton.Content>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <local:RemoveItemAction
+                                        TargetObject="{Binding DataSource.SelectedSearchProviders, 
+                                            Source={StaticResource DataContextProxy}}"
+                                        Item="{Binding}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </HyperlinkButton>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>            
+            
+    </Grid>
+</UserControl>

@@ -1,0 +1,730 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{11941B50-B43E-42E1-9190-B727C819B024}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ESRI.ArcGIS.Mapping.Builder.Web</RootNamespace>
+    <AssemblyName>ESRI.ArcGIS.Mapping.Builder.Web</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SilverlightApplicationList>{4C2A5CD6-51FF-4A7C-9755-49F226B34D8A}|..\ESRI.ArcGIS.Mapping.Builder\ESRI.ArcGIS.Mapping.Builder.csproj||False</SilverlightApplicationList>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;USE_DEV_KEY;VIEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <PublishDatabases>false</PublishDatabases>
+    <DeployIisAppPath>Default Web Site/ESRI.ArcGIS.Mapping.Builder</DeployIisAppPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>VIEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Basemaps.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Extensions.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Templates.xml" />
+    <Content Include="App_Data\Sites.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Settings.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="default.aspx" />
+    <Content Include="ESRI.ArcGIS.Mapping.Builder.xap" />
+    <Content Include="Images\basemaps\agol_imagery.png" />
+    <Content Include="Images\basemaps\agol_streets.png" />
+    <Content Include="Images\basemaps\agol_terrain.png" />
+    <Content Include="Images\basemaps\agol_topo.png" />
+    <Content Include="Images\basemaps\agol_usa.png" />
+    <Content Include="Images\basemaps\agol_ocean.png" />
+    <Content Include="Images\basemaps\agol_gray_canvas.png" />
+    <Content Include="Images\basemaps\agol_world_relief.png" />
+    <Content Include="Images\basemaps\bingmaps_aerial.png" />
+    <Content Include="Images\basemaps\bingmaps_hybrid.png" />
+    <Content Include="Images\basemaps\bingmaps_roads.png" />
+    <Content Include="Images\basemaps\osm.png" />
+    <Content Include="Images\app_thumbnails\atlantic_80_testbufferfeatures.png" />
+    <Content Include="Images\app_thumbnails\atlantic_80_ve_nik.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\MarkerSymbols\Basic\AmberBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Basic\ArrowYellow.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BlackBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BlackPin1LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BlackPin2LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BlackStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BlackTag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BlackWaypoint.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BlueBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BluePin1LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BluePin2LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BlueShinyPin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BlueSphere.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BlueStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BlueWaypoint.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BrownStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\BrownTag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\Capital1.png" />
+    <Content Include="Images\MarkerSymbols\Basic\Capital2.png" />
+    <Content Include="Images\MarkerSymbols\Basic\CheckeredFlag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\CircleX.png" />
+    <Content Include="Images\MarkerSymbols\Basic\CrossHair.png" />
+    <Content Include="Images\MarkerSymbols\Basic\CyanTag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\GoldShinyPin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\Gray1Tag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\GrayStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\GreenBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Basic\GreenFlag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\GreenPin1LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\GreenPin2LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\GreenShinyPin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\GreenSphere.png" />
+    <Content Include="Images\MarkerSymbols\Basic\GreenStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\LightBlueShinyPin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\LightBlueStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\LightGreenShinyPin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\LimeTag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\NavyTag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\OliveTag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\OrangeBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Basic\OrangePin1LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\OrangePin2LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\OrangeSphere.png" />
+    <Content Include="Images\MarkerSymbols\Basic\OrangeStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\OrangeTag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\PinkStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\PinkTag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\Populated1.png" />
+    <Content Include="Images\MarkerSymbols\Basic\Populated2.png" />
+    <Content Include="Images\MarkerSymbols\Basic\Populated3.png" />
+    <Content Include="Images\MarkerSymbols\Basic\Populated4.png" />
+    <Content Include="Images\MarkerSymbols\Basic\Populated5.png" />
+    <Content Include="Images\MarkerSymbols\Basic\Populated6.png" />
+    <Content Include="Images\MarkerSymbols\Basic\Populated7.png" />
+    <Content Include="Images\MarkerSymbols\Basic\PurplePin1LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\PurplePin2LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\PurpleShinyPin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\PurpleSphere.png" />
+    <Content Include="Images\MarkerSymbols\Basic\PurpleStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\RedBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Basic\RedFlag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\RedPin1LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\RedPin2LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\RedShinyPin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\RedShinyPin2.png" />
+    <Content Include="Images\MarkerSymbols\Basic\RedSphere.png" />
+    <Content Include="Images\MarkerSymbols\Basic\RedStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\RedTag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\shinyPin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\SpringGreenStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\Star.png" />
+    <Content Include="Images\MarkerSymbols\Basic\WhiteFlag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\WhiteStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\WhiteTag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\WhiteWaypoint.png" />
+    <Content Include="Images\MarkerSymbols\Basic\YellowFlag.png" />
+    <Content Include="Images\MarkerSymbols\Basic\YellowPin1LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\YellowPin2LargeB.png" />
+    <Content Include="Images\MarkerSymbols\Basic\YellowSphere.png" />
+    <Content Include="Images\MarkerSymbols\Basic\YellowStickpin.png" />
+    <Content Include="Images\MarkerSymbols\Basic\YellowTag.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Beach.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\BoatLaunch.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Bowling.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Camping.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Cloudy.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Deer.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Fishing.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Geocache.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\GeocacheFound.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Gliding.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Golf.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\HeatAdvisory.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Hiking.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Lightning.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Mountain.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Park.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\PartlySunny.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Rain.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\RestArea.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\RVPark.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\SkyDiving.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Snow.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Sports.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Sunny.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\Swimming.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\TrackBack.png" />
+    <Content Include="Images\MarkerSymbols\OutdoorRecreation\WaterSkiing.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\AmusementPark.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\ATM.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Bank.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Bar.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Beach.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Bell.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\BoatLaunch.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Bowling.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Camera.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\CameraWeb.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Camping.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\CellPhone.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Cemetery.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\City.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Clue.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Coffee.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Crowd.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Dam.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Deer.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\DepartmentStore.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Dining.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\DrinkingWater.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\FastFood.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Fishing.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\FitnessCenter.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Forest.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Geocache.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\GeocacheFound.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\GhostTown.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Gliding.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Globe.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Golf.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Hiking.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Horn.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Housing.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Information.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\InformationQuestion.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\LandLine.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Light.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\LiveShow.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\MailPost.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Mine.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Mountain.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\MovieTheater.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Museum.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\News.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Note.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Office.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\OilWell.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Park.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Pizza.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Pub.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Question.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Radioactive.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\RealEstate.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Reservoir.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\RestArea.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Restroom.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\RVPark.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\School.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Shopping.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Shower.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\SkyDiving.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Sports.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Stadium.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\StarsStripes.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Swimming.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\TowerShort.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\TowerTall.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\TrackBack.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\WaterSkiing.png" />
+    <Content Include="Images\MarkerSymbols\PeoplePlaces\Zoo.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\AidStation.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\Ambulance.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\Burglary.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\Doctor.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\FireFighter.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\FireStation.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\FireTruck.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\Health.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\Homicide.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\Hospital.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\Pharmacy.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\Police.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\PoliceCar.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\PoliceOfficer.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\PoliceStation.png" />
+    <Content Include="Images\MarkerSymbols\SafetyHealth\Theft.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Airplane.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\AirStrip.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\AmberBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\BlackBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\BlueBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\BoatsKeepOut.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Breakdown.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Bus.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\CarGreenBack.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\CarGreenFront.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\CarRedBack.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\CarRedFront.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\CarRental.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\CarRepair.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\CarYellowBack.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\CarYellowFront.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\ControlledArea.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\ConvenienceStore.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Crossing.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Danger.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\DiverDown.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Fuel.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\GreenBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\GreenDiamondDaymark.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\GreenRedBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\GreenSquareDaymark.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\GreenWhiteBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\HelicopterGreen.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\HelicopterRed.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\HelicopterYellow.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Landingpad.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Lodging.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\MileMarker.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\MountainPass.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\OrangeBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Overpass.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Parking.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\PersonOverboard.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\PrivateField.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\RadioBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\RedBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\RedDiamondDaymark.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\RedGreenBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\RedSquareDaymark.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\RedTriangleDaymark.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\RedWhiteBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\RoadClosure.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\RoadWork.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Sailing.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Scales.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Seaplane.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\SkullandCrossbones.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Tank.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Toll.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\TrafficAccident.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Tunnel.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Ultralight.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\UnderwaterOperations.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\VioletBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\WarningRed.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\WarningYellow.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\WhiteBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\WhiteDiamondDaymark.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\WhiteGreenBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\WhiteRedBeacon.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\Wreck.png" />
+    <Content Include="Images\MarkerSymbols\Transportation\YellowSemiTractor.png" />
+    <Content Include="Images\Ribbon\about.png" />
+    <Content Include="Images\Ribbon\AddContent16.png" />
+    <Content Include="Images\Ribbon\AddContent32.png" />
+    <Content Include="Images\Ribbon\AddGeoprocessing16.png" />
+    <Content Include="Images\Ribbon\AddHeatMap16.png" />
+    <Content Include="Images\Ribbon\AddHeatMap32.png" />
+    <Content Include="Images\Ribbon\AddTool16.png" />
+    <Content Include="Images\Ribbon\AutoScroll16.png" />
+    <Content Include="Images\Ribbon\AutoScroll32.png" />
+    <Content Include="Images\Ribbon\baseMap16.png" />
+    <Content Include="Images\Ribbon\bingmaps_aerial.png" />
+    <Content Include="Images\Ribbon\bingmaps_hybrid.png" />
+    <Content Include="Images\Ribbon\bingmaps_roads.png" />
+    <Content Include="Images\Ribbon\BringForward16.png" />
+    <Content Include="Images\Ribbon\ColorScheme16.png" />
+    <Content Include="Images\Ribbon\ColorScheme32.png" />
+    <Content Include="Images\Ribbon\ColorSchemeProperties16.png" />
+    <Content Include="Images\Ribbon\ColorSchemeProperties32.png" />
+    <Content Include="Images\Ribbon\configure16.png" />
+    <Content Include="Images\Ribbon\ConfigureRibbon16.png" />
+    <Content Include="Images\Ribbon\DefaultPointMarkerSymbol.png" />
+    <Content Include="Images\Ribbon\execute16.png" />
+    <Content Include="Images\Ribbon\file16.png" />
+    <Content Include="Images\Ribbon\FillColor16.png" />
+    <Content Include="Images\Ribbon\FilterByExtent16.png" />
+    <Content Include="Images\Ribbon\FilterByExtent32.png" />
+    <Content Include="Images\Ribbon\Filter_C_16.png" />
+    <Content Include="Images\Ribbon\Filter_C_32.png" />
+    <Content Include="Images\Ribbon\Find16.png" />
+    <Content Include="Images\Ribbon\Find32.png" />
+    <Content Include="Images\Ribbon\findNearby.png" />
+    <Content Include="Images\Ribbon\Find_Nearby16.png" />
+    <Content Include="Images\Ribbon\Find_Nearby32.png" />
+    <Content Include="Images\Ribbon\Fix_Location.png" />
+    <Content Include="Images\Ribbon\folder.png" />
+    <Content Include="Images\Ribbon\folder16.png" />
+    <Content Include="Images\Ribbon\FullScreen16.png" />
+    <Content Include="Images\Ribbon\FullScreen32.png" />
+    <Content Include="Images\Ribbon\Gallery16.png" />
+    <Content Include="Images\Ribbon\GenericRefresh16.png" />
+    <Content Include="Images\Ribbon\GenericRefresh32.png" />
+    <Content Include="Images\Ribbon\goto16.png" />
+    <Content Include="Images\Ribbon\goto32.png" />
+    <Content Include="Images\Ribbon\HeatMapIntensity16.png" />
+    <Content Include="Images\Ribbon\HeatMapIntensity32.png" />
+    <Content Include="Images\Ribbon\Help.png" />
+    <Content Include="Images\Ribbon\HTMLPopUpTool16.png" />
+    <Content Include="Images\Ribbon\HTMLPopUpTool32.png" />
+    <Content Include="Images\Ribbon\Icon_tools.png" />
+    <Content Include="Images\Ribbon\intensitySlider.png" />
+    <Content Include="Images\Ribbon\Layer16.png" />
+    <Content Include="Images\Ribbon\Layerbw16.png" />
+    <Content Include="Images\Ribbon\lock32.png" />
+    <Content Include="Images\Ribbon\lockOpen32.png" />
+    <Content Include="Images\Ribbon\MakeLineThicker16.png" />
+    <Content Include="Images\Ribbon\MakeLineThinner16.png" />
+    <Content Include="Images\Ribbon\MakePointLarger16.png" />
+    <Content Include="Images\Ribbon\MakePointSmaller16.png" />
+    <Content Include="Images\Ribbon\MapCenter16.png" />
+    <Content Include="Images\Ribbon\MapCenter32.png" />
+    <Content Include="Images\Ribbon\MapContents16.png" />
+    <Content Include="Images\Ribbon\MapContents32.png" />
+    <Content Include="Images\Ribbon\new16.png" />
+    <Content Include="Images\Ribbon\Open16.png" />
+    <Content Include="Images\Ribbon\Open32.PNG" />
+    <Content Include="Images\Ribbon\OutlineColor16.png" />
+    <Content Include="Images\Ribbon\PreviewTheme16.png" />
+    <Content Include="Images\Ribbon\PreviewTheme32.png" />
+    <Content Include="Images\Ribbon\publish16.png" />
+    <Content Include="Images\Ribbon\publish32.png" />
+    <Content Include="Images\Ribbon\refresh16.png" />
+    <Content Include="Images\Ribbon\Remove16.png" />
+    <Content Include="Images\Ribbon\Remove32.png" />
+    <Content Include="Images\Ribbon\Rename16.png" />
+    <Content Include="Images\Ribbon\ResetTheme16.png" />
+    <Content Include="Images\Ribbon\rss16.png" />
+    <Content Include="Images\Ribbon\Save16.png" />
+    <Content Include="Images\Ribbon\Save32.png" />
+    <Content Include="Images\Ribbon\SaveAs16.png" />
+    <Content Include="Images\Ribbon\SelectionClearSelection_B_16.png" />
+    <Content Include="Images\Ribbon\SelectionClearSelection_B_32.png" />
+    <Content Include="Images\Ribbon\SelectionSelectAll16.png" />
+    <Content Include="Images\Ribbon\SelectionSelectAll32.png" />
+    <Content Include="Images\Ribbon\SelectionSelectTool16.png" />
+    <Content Include="Images\Ribbon\SelectionSelectTool32.png" />
+    <Content Include="Images\Ribbon\SelectionZoomToSelected16.png" />
+    <Content Include="Images\Ribbon\SelectionZoomToSelected32.png" />
+    <Content Include="Images\Ribbon\Select_Location.png" />
+    <Content Include="Images\Ribbon\SendBackward16.png" />
+    <Content Include="Images\Ribbon\Server16.png" />
+    <Content Include="Images\Ribbon\ServiceDetails16.png" />
+    <Content Include="Images\Ribbon\ServiceDetails32.png" />
+    <Content Include="Images\Ribbon\signIn16.png" />
+    <Content Include="Images\Ribbon\signOut16.png" />
+    <Content Include="Images\Ribbon\SnapToScaleLevels16.png" />
+    <Content Include="Images\Ribbon\SnapToScaleLevels32.png" />
+    <Content Include="Images\Ribbon\Symbol16.png" />
+    <Content Include="Images\Ribbon\Symbol32.png" />
+    <Content Include="Images\Ribbon\TableExport16.png" />
+    <Content Include="Images\Ribbon\TableExport32.png" />
+    <Content Include="Images\Ribbon\TableOpen16.png" />
+    <Content Include="Images\Ribbon\TableOpen32.png" />
+    <Content Include="Images\Ribbon\TableSettings16.png" />
+    <Content Include="Images\Ribbon\TableSettings32.png" />
+    <Content Include="Images\Ribbon\TextColor16.png" />
+    <Content Include="Images\Ribbon\Theme16.png" />
+    <Content Include="Images\Ribbon\Theme32.png" />
+    <Content Include="Images\Ribbon\ToggleItemOnClickBehavior16.png" />
+    <Content Include="Images\Ribbon\ToggleItemOnClickBehavior32.png" />
+    <Content Include="Images\Ribbon\Transparency16.png" />
+    <Content Include="Images\Ribbon\Transparency32.png" />
+    <Content Include="Images\Ribbon\transparencySlider.png" />
+    <Content Include="Images\Ribbon\Update_Location.png" />
+    <Content Include="Images\Ribbon\url16.png" />
+    <Content Include="Images\Ribbon\zoomToAll.png" />
+    <Content Include="Images\toolbar\AddContent32.png" />
+    <Content Include="Images\toolbar\basemap32.png" />
+    <Content Include="Images\toolbar\BringForward16.png" />
+    <Content Include="Images\toolbar\browseToUrl16.png" />
+    <Content Include="Images\toolbar\clearSelection.png" />
+    <Content Include="Images\toolbar\copy16.png" />
+    <Content Include="Images\toolbar\createWebApp16.png" />
+    <Content Include="Images\toolbar\cursor.png" />
+    <Content Include="Images\toolbar\delete16.png" />
+    <Content Include="Images\toolbar\edit16.png" />
+    <Content Include="Images\toolbar\enterUrl16.png" />
+    <Content Include="Images\toolbar\Filter_C_32.png" />
+    <Content Include="Images\toolbar\Find16.png" />
+    <Content Include="Images\toolbar\findNearby.png" />
+    <Content Include="Images\toolbar\FullScreen32.png" />
+    <Content Include="Images\toolbar\GenericLightBlueUpArrow16.png" />
+    <Content Include="Images\toolbar\GenericRefresh32.png" />
+    <Content Include="Images\toolbar\goto16.png" />
+    <Content Include="Images\toolbar\HTMLPopUpTool32.png" />
+    <Content Include="Images\Ribbon\MapTabImage.png" />
+    <Content Include="Images\toolbar\refresh16.png" />
+    <Content Include="Images\toolbar\Remove32.png" />
+    <Content Include="Images\toolbar\Rename32.png" />
+    <Content Include="Images\toolbar\save.png" />
+    <Content Include="Images\toolbar\selectAll.png" />
+    <Content Include="Images\toolbar\SendBackward16.png" />
+    <Content Include="Images\toolbar\Server16.png" />
+    <Content Include="Images\toolbar\ServiceDetails16.png" />
+    <Content Include="Images\toolbar\ServiceDetails32.png" />
+    <Content Include="Images\toolbar\TableQuery32.png" />
+    <Content Include="Images\toolbar\TableSettings32.png" />
+    <Content Include="Images\toolbar\Table_Only16.png" />
+    <Content Include="Images\toolbar\TextColor16.png" />
+    <Content Include="Images\toolbar\Transparency32.png" />
+    <Content Include="Images\toolbar\zoomToSelection.png" />
+    <Content Include="favico.ico" />
+    <Content Include="Silverlight.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\BuildUtilities\Localizer\Resources\Strings.AppBuilder.designer.cs">
+      <Link>App_GlobalResources\Strings.AppBuilder.designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\build\include\buildnum.cs">
+      <Link>Properties\buildnum.cs</Link>
+    </Compile>
+    <Compile Include="Code\AppSettings.cs" />
+    <Compile Include="Code\ConfigurationStoreManager.cs" />
+    <Compile Include="Code\ExtensionsManager.cs" />
+    <Compile Include="Code\FileExplorer\FileExplorerUtility.cs" />
+    <Compile Include="Code\ServiceHandlers\UpgradeSiteHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\GetSettingsXmlHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\CopySiteRequestHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\GetFilesRequestHandler.cs" />
+    <Compile Include="Code\IISManagement\IISHelper.cs" />
+    <Compile Include="Code\IISManagement\IISManagementHelper.cs" />
+    <Compile Include="Code\IISManagement\IISObjects.cs" />
+    <Compile Include="Code\IISManagement\IISSettings.cs" />
+    <Compile Include="Code\IISManagement\IOHelper.cs" />
+    <Compile Include="Code\PreviewImageManager.cs" />
+    <Compile Include="Code\ServiceHandlers\CreateSiteFromTemplateHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\DeleteExtensionRequestHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\DeleteSiteHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\GetConfigurationStoreXmlHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\GetExtensionsHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\GetSitesHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\GetTemplatesHandler.cs" />
+    <Compile Include="Code\ServerUtility.cs" />
+    <Compile Include="Code\ServiceHandlers\SaveConfigurationStoreXmlHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\SaveSettingsRequestHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\SaveSiteRequestHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\UploadExtensionRequestHandler.cs" />
+    <Compile Include="Code\ServiceHandlers\UploadFileRequestHandler.cs" />
+    <Compile Include="Code\SiteConfiguration.cs" />
+    <Compile Include="Code\ApplicationBuilder\ApplicationBuilderHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Code\TemplateConfiguration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ESRI.ArcGIS.Mapping.Builder.Common\ESRI.ArcGIS.Mapping.Builder.Common.csproj">
+      <Project>{2CCCA8B6-1DC9-411A-93A3-FD69933B6895}</Project>
+      <Name>ESRI.ArcGIS.Mapping.Builder.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ESRI.ArcGIS.Mapping.Builder.Server\ESRI.ArcGIS.Mapping.Builder.Server.csproj">
+      <Project>{CC756BDF-710A-438D-8B25-3C5C76903467}</Project>
+      <Name>ESRI.ArcGIS.Mapping.Builder.Server</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SplashScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.resx">
+      <Link>App_GlobalResources\Strings.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.AppBuilder.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.ar.resx">
+      <Link>App_GlobalResources\Strings.ar.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.ar.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.cs.resx">
+      <Link>App_GlobalResources\Strings.cs.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.cs.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.da.resx">
+      <Link>App_GlobalResources\Strings.da.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.da.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.de.resx">
+      <Link>App_GlobalResources\Strings.de.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.de.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.es.resx">
+      <Link>App_GlobalResources\Strings.es.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.es.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.et.resx">
+      <Link>App_GlobalResources\Strings.et.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.et.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.fi.resx">
+      <Link>App_GlobalResources\Strings.fi.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.fi.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.fr.resx">
+      <Link>App_GlobalResources\Strings.fr.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.fr.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.he.resx">
+      <Link>App_GlobalResources\Strings.he.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.he.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.it.resx">
+      <Link>App_GlobalResources\Strings.it.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.it.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.ja.resx">
+      <Link>App_GlobalResources\Strings.ja.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.ja.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.ko.resx">
+      <Link>App_GlobalResources\Strings.ko.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.ko.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.lt.resx">
+      <Link>App_GlobalResources\Strings.lt.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.lt.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.lv.resx">
+      <Link>App_GlobalResources\Strings.lv.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.lv.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.nb-NO.resx">
+      <Link>App_GlobalResources\Strings.nb-NO.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.nb-NO.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.nl.resx">
+      <Link>App_GlobalResources\Strings.nl.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.nl.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.pl.resx">
+      <Link>App_GlobalResources\Strings.pl.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.pl.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.pt-BR.resx">
+      <Link>App_GlobalResources\Strings.pt-BR.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.pt-BR.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.pt-PT.resx">
+      <Link>App_GlobalResources\Strings.pt-PT.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.pt-PT.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.ro.resx">
+      <Link>App_GlobalResources\Strings.ro.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.ro.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.ru.resx">
+      <Link>App_GlobalResources\Strings.ru.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.ru.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.sv.resx">
+      <Link>App_GlobalResources\Strings.sv.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.sv.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="..\..\BuildUtilities\Localizer\Resources\Strings.zh-CN.resx">
+      <Link>App_GlobalResources\Strings.zh-CN.resx</Link>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Strings.zh-CN.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

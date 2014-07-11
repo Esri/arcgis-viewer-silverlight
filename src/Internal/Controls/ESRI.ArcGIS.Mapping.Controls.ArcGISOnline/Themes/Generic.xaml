@@ -1,0 +1,28 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:local="clr-namespace:Five20"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/AppResources.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Backstage/MapCenterResources.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Client.Extensibility;component/Themes/Common.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Backstage/BackStageControl.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Backstage/FeaturedMapsControl.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Backstage/GroupControl.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Backstage/MapDetailsControl.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Backstage/MyGroupsControl.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Backstage/MyMapsControl.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Backstage/RecentMapsControl.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Backstage/SearchMapsControl.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/UserControls/ProgressIndicator.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;component/Windows/DefineQueryWindow.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

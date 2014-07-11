@@ -1,0 +1,320 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls.Editor"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:esriMapping="http://schemas.esri.com/arcgis/mapping/2009"
+    xmlns:ext="http://schemas.esri.com/arcgis/client/extensibility/2010"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <local:VisibilityConverter x:Key="VisibilityConverter" />
+    <local:IsNullOrEmptyCollectionToBoolConverter x:Key="IsNullOrEmptyCollectionToBoolConverter"/>
+    <local:ReverseBooleanConverter x:Key="ReverseBooleanConverter"/>
+    <local:StringResourcesManager x:Key="Localization" />
+    <local:ReverseEnumerationConverter x:Key="ReverseEnumerationConverter"/>
+    <sys:Double x:Key="FontSize">11.0</sys:Double>
+
+    <Style x:Key="EditorCheckBoxStyle" TargetType="CheckBox">
+        <Setter Property="Background" Value="#FF1F3B53" />
+        <Setter Property="Foreground" Value="#FF000000"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSize}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid VerticalAlignment="Top">
+                            <CheckBox IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"></CheckBox>
+                        </Grid>
+                        <TextBlock Grid.Column="1" Text="{TemplateBinding Content}" Margin="3,0,0,0" TextWrapping="Wrap"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="local:SelectLayers">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:SelectLayers">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <CheckBox x:Name="chkDefaultLayerIds" 
+                                        IsChecked="{Binding UseDefaultLayerIds, Mode=TwoWay}"
+                                        Content="{Binding ConverterParameter=DefaultLayerIds, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                  Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"/>
+
+                        <TextBlock Grid.Row="1" Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                            Text="{Binding ConverterParameter=SelectLayersForEdit, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="0,10,0,5"></TextBlock>
+
+                        <ListBox Grid.Row="2"
+                                 ItemsSource="{Binding LayerInfos, Converter={StaticResource ReverseEnumerationConverter}}"
+                                 IsEnabled="{Binding ElementName=chkDefaultLayerIds, Path=IsChecked, Converter={StaticResource ReverseBooleanConverter}}"
+                                 Height="280">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Path=IsChecked, Mode=TwoWay}" 
+                                              Content="{Binding Path=Layer.(ext:MapApplication.LayerName)}"
+                                              Foreground="Black"
+                                              Cursor="Hand"/>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListBoxItem">
+                                                <ContentPresenter x:Name="contentPresenter"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                Margin="{TemplateBinding Padding}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                Content="{TemplateBinding Content}"
+                                                ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                        </ListBox>
+                        
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:EditorOptions">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:EditorOptions">
+                    <ContentControl Foreground="{StaticResource DesignHostBackgroundTextBrush}" HorizontalAlignment="Center" VerticalAlignment="Stretch" >
+                        <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                      VerticalScrollBarVisibility="Auto" BorderThickness="0" 
+                                      BorderBrush="Transparent" 
+                                      Style="{StaticResource ThinBarScrollViewerStyle}"
+                                      Foreground="{StaticResource DesignHostAccentBrush}">
+                            <Grid Width="430" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <StackPanel x:Name="AdvancedOptions" Margin="5">
+
+                                    <CheckBox IsChecked="{Binding AutoSave, Mode=TwoWay}" Style="{StaticResource EditorCheckBoxStyle}"
+                                        Content="{Binding ConverterParameter=AutoSaveEditChanges, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"/>
+                                    <CheckBox IsChecked="{Binding ShowAttributesOnAdd, Mode=TwoWay}" Style="{StaticResource EditorCheckBoxStyle}"
+                                        Content="{Binding ConverterParameter=ShowAttributesOnAdd, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"/>
+                                    <CheckBox x:Name="EditingShapesEnabledCheckBox" IsChecked="{Binding EditingShapesEnabled, Mode=TwoWay}" Style="{StaticResource EditorCheckBoxStyle}"
+                                        Content="{Binding ConverterParameter=EditingShapesEnabled, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"/>
+                                    <CheckBox IsChecked="{Binding AutoSelect, Mode=TwoWay}" Style="{StaticResource EditorCheckBoxStyle}"
+                                        Content="{Binding ConverterParameter=AutoSelect, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"/>
+                                    <CheckBox IsChecked="{Binding AutoComplete, Mode=TwoWay}" Style="{StaticResource EditorCheckBoxStyle}"
+                                        Content="{Binding ConverterParameter=AutoComplete, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"/>
+                                    <CheckBox IsChecked="{Binding MaintainAspectRatio, Mode=TwoWay}" Style="{StaticResource EditorCheckBoxStyle}"
+                                        Content="{Binding ConverterParameter=MaintainAspectRatio, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"/>
+                                    <CheckBox IsChecked="{Binding AlwaysDisplayDefaultTemplates, Mode=TwoWay}" Style="{StaticResource EditorCheckBoxStyle}"
+                                        Content="{Binding ConverterParameter=AlwaysDisplayDefaultTemplates, Converter={StaticResource Localization}, Source={StaticResource Localization}}"       
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand" />
+                                    <CheckBox IsChecked="{Binding Continuous, Mode=TwoWay}" Style="{StaticResource EditorCheckBoxStyle}"
+                                        Content="{Binding ConverterParameter=Continuous, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"/>
+
+                                </StackPanel>
+
+                                <ToggleButton x:Name="ToggleAdvanceOptionsButton" Cursor="Hand" Grid.Row="1" 
+                                              HorizontalAlignment="Stretch" IsChecked="False" 
+                                              Foreground="{StaticResource DesignHostBackgroundTextBrush}" Margin="0,5,0,0">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Grid>
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="Normal"/>
+                                                        <VisualState x:Name="MouseOver" />
+                                                        <VisualState x:Name="Pressed" />
+                                                        <VisualState x:Name="Disabled" />
+                                                    </VisualStateGroup>
+
+                                                    <VisualStateGroup x:Name="CheckStates">
+                                                        <VisualState x:Name="Checked">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames BeginTime="0" Duration="0" Storyboard.TargetProperty="Text" Storyboard.TargetName="toggleButtonContent">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{Binding ConverterParameter=AdvancedOptionsHeaderHide, Converter={StaticResource Localization}, Source={StaticResource Localization}}" />
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Unchecked">
+                                                            <Storyboard>
+                                                                <ObjectAnimationUsingKeyFrames BeginTime="0" Duration="0" Storyboard.TargetProperty="Text" Storyboard.TargetName="toggleButtonContent">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{Binding ConverterParameter=AdvancedOptionsHeader, Converter={StaticResource Localization}, Source={StaticResource Localization}}" />
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                    <VisualStateGroup x:Name="FocusStates">
+                                                        <VisualState x:Name="Focused">
+                                                            <Storyboard>
+                                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualElement"/>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Unfocused"/>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <TextBlock Margin="5,2,0,2" Text="{Binding ConverterParameter=AdvancedOptionsHeader, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                                           x:Name="toggleButtonContent" Cursor="Hand" 
+                                                           HorizontalAlignment="Stretch" 
+                                                           Foreground="{TemplateBinding Foreground}" 
+                                                           FontWeight="Normal" TextDecorations="Underline" />
+                                                <Rectangle x:Name="FocusVisualElement" IsHitTestVisible="false" Margin="1" Opacity="0" Visibility="Collapsed" RadiusY="2" RadiusX="2" Stroke="#FF6DBDD1" StrokeThickness="1"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+
+                                <StackPanel HorizontalAlignment="Left" Margin="10,5" Grid.Row="2"
+                                    Visibility="{Binding IsChecked, ElementName=ToggleAdvanceOptionsButton, 
+                                    Converter={StaticResource VisibilityConverter}}" >
+                                    <CheckBox IsChecked="{Binding SelectTool, Mode=TwoWay}" 
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Margin="5,0,5,0" VerticalAlignment="Center"
+                                                    Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/NewSelection.png" />
+                                            <TextBlock VerticalAlignment="Center" Margin="2,0,0,0"
+                                                       Text="{Binding ConverterParameter=Select, Converter={StaticResource Localization}, Source={StaticResource Localization}}" 
+                                                       Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>
+                                    <CheckBox IsChecked="{Binding AddToSelectionTool, Mode=TwoWay}" 
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"
+                                        Margin="0,3,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/AddToSelection.png" Margin="5,0,5,0" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding ConverterParameter=AddToSelection, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>
+                                    <CheckBox IsChecked="{Binding RemoveFromSelectionTool, Mode=TwoWay}" 
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"
+                                        Margin="0,3,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/RemoveFromSelection.png" Margin="5,0,5,0" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding ConverterParameter=RemoveFromSelection, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>
+                                    <CheckBox IsChecked="{Binding ClearSelectionTool, Mode=TwoWay}" 
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"
+                                        Margin="0,3,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/Clear.png" Margin="5,0,5,0" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding ConverterParameter=ClearSelection, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>
+                                    <CheckBox IsChecked="{Binding DeleteTool, Mode=TwoWay}" 
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"
+                                        Margin="0,3,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/deleteFeature.png" Margin="5,0,5,0" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding ConverterParameter=Delete, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>
+                                    <CheckBox IsChecked="{Binding EditValuesTool, Mode=TwoWay}" 
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"
+                                        Margin="0,3,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/attributes.png" Margin="5,0,5,0" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding ConverterParameter=EditValues, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>
+                                    <CheckBox IsChecked="{Binding EditShapesTool, Mode=TwoWay}" Visibility="{Binding IsChecked, ElementName=EditingShapesEnabledCheckBox, Converter={StaticResource VisibilityConverter}}"
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"
+                                        Margin="0,3,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/showVertices.png" Margin="5,0,5,0" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding ConverterParameter=EditShape, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>
+                                    <CheckBox IsChecked="{Binding ReshapeTool, Mode=TwoWay}" 
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"
+                                        Margin="0,3,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/reshape.png" Margin="5,0,5,0" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding ConverterParameter=Reshape, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>
+                                    <CheckBox IsChecked="{Binding UnionTool, Mode=TwoWay}" 
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"
+                                        Margin="0,3,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/union.png" Margin="5,0,5,0" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding ConverterParameter=Union, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>
+                                    <CheckBox IsChecked="{Binding CutTool, Mode=TwoWay}" 
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"
+                                        Margin="0,3,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/cut.png" Margin="5,0,5,0" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding ConverterParameter=Cut, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>
+                                    <CheckBox IsChecked="{Binding FreehandTool, Mode=TwoWay}" 
+                                            Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"
+                                        Margin="0,3,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Source="/ESRI.ArcGIS.Mapping.Controls;component/images/toolbar/Freehand16.png" Margin="5,0,5,0" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding ConverterParameter=Freehand, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>
+                                    <CheckBox IsChecked="{Binding AutocompleteTool, Mode=TwoWay}" 
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand"
+                                        Margin="0,3,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/autocomplete.png" Margin="5,0,5,0" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding ConverterParameter=AutocompleteTool, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>
+                                    <!--<CheckBox IsChecked="{Binding ClearTool, Mode=TwoWay}" 
+                                        Foreground="{StaticResource DesignHostBackgroundTextBrush}" Cursor="Hand">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Width="16" Source="" Margin="5,0,5,0" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding ConverterParameter=ClearTool, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DesignHostBackgroundTextBrush}" />
+                                        </StackPanel>
+                                    </CheckBox>-->
+                                </StackPanel>
+                            </Grid>
+
+                        </ScrollViewer>
+                    </ContentControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

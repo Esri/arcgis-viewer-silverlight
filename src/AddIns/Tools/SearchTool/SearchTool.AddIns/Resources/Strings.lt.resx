@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFeatureLayer" xml:space="preserve">
+    <value>Pridėti elementų sluoksnius</value>
+  </data>
+  <data name="AddFeatureLayerWindowCheckAll" xml:space="preserve">
+    <value>Pažymėti viską</value>
+  </data>
+  <data name="AddFeatureLayerWindowUnCheckAll" xml:space="preserve">
+    <value>Nužymėti visus</value>
+  </data>
+  <data name="ArcGIS" xml:space="preserve">
+    <value>ArcGIS</value>
+  </data>
+  <data name="BackStageControlFeatureMaps" xml:space="preserve">
+    <value>Rekomenduojami žemėlapiai</value>
+  </data>
+  <data name="BackStageControlGroups" xml:space="preserve">
+    <value>Grupės</value>
+  </data>
+  <data name="BackStageControlMyGroups" xml:space="preserve">
+    <value>Mano Grupės</value>
+  </data>
+  <data name="BackStageControlMyOrgGroups" xml:space="preserve">
+    <value>Mano organizacijos grupės</value>
+  </data>
+  <data name="BackStageControlMyOrgPublicGroups" xml:space="preserve">
+    <value>Mano organizacijos viešos grupės</value>
+  </data>
+  <data name="BackStageControlMyMaps" xml:space="preserve">
+    <value>Mano žemėlapiai</value>
+  </data>
+  <data name="BackStageControlSearch" xml:space="preserve">
+    <value>Ieškoti</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>Paspaudę čia, pamatysite aprašymą naujame naršyklės lange</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>Uždaryti išsamią informaciją</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Komentarai</value>
+  </data>
+  <data name="ContentEveryone" xml:space="preserve">
+    <value>kiekvienas</value>
+  </data>
+  <data name="ContentGroups" xml:space="preserve">
+    <value>grupės</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Sukurtas</value>
+  </data>
+  <data name="DefineQueryWindowAlias" xml:space="preserve">
+    <value>Pseudonimas:</value>
+  </data>
+  <data name="DefineQueryWindowAnd" xml:space="preserve">
+    <value>ir</value>
+  </data>
+  <data name="DefineQueryWindowApply" xml:space="preserve">
+    <value>Vykdyti</value>
+  </data>
+  <data name="DefineQueryWindowClickPickDate" xml:space="preserve">
+    <value>Paspaudę pasirinkite datą, suformatuotą naudojimui išraiškoje.</value>
+  </data>
+  <data name="DefineQueryWindowData" xml:space="preserve">
+    <value>Duomenys</value>
+  </data>
+  <data name="DefineQueryWindowExpression" xml:space="preserve">
+    <value>Išraiška:</value>
+  </data>
+  <data name="DefineQueryWindowFailedToRetrieveSampleFeaturesForLayer" xml:space="preserve">
+    <value>Nepavyko gauti atrinktų sluoksnio objektų.</value>
+  </data>
+  <data name="DefineQueryWindowFields" xml:space="preserve">
+    <value>Laukai:</value>
+  </data>
+  <data name="DefineQueryWindowLike" xml:space="preserve">
+    <value>kaip</value>
+  </data>
+  <data name="DefineQueryWindowName" xml:space="preserve">
+    <value>Pavadinimas:</value>
+  </data>
+  <data name="DefineQueryWindowNot" xml:space="preserve">
+    <value>ne</value>
+  </data>
+  <data name="DefineQueryWindowOr" xml:space="preserve">
+    <value>arba</value>
+  </data>
+  <data name="DefineQueryWindowQuery" xml:space="preserve">
+    <value>Užklausa</value>
+  </data>
+  <data name="DefineQueryWindowTableIsSampleOfFeatureLayer" xml:space="preserve">
+    <value>Ši lentelė yra sluoksnio objektų išranka.</value>
+  </data>
+  <data name="DefineQueryWindowType" xml:space="preserve">
+    <value>Tipas:</value>
+  </data>
+  <data name="DescriptionForMapCanotBeDisplayed" xml:space="preserve">
+    <value>Šio žemėlapio aprašymo šiame lange parodyti negalima.</value>
+  </data>
+  <data name="ExceptionDeleteFailed" xml:space="preserve">
+    <value>Nepavyko pašalinti</value>
+  </data>
+  <data name="ExceptionDeleteFailedUserSignIn" xml:space="preserve">
+    <value>Nepavyko pašalinti. Naudotojas nėra prisijungęs.</value>
+  </data>
+  <data name="ExceptionFaileAcceptApplicateForGroup" xml:space="preserve">
+    <value>Nepavyko patvirtinti kandidato {0} grupėje {1}</value>
+  </data>
+  <data name="ExceptionFaileDeclineApplicateForGroup" xml:space="preserve">
+    <value>Nepavyko atmesti kandidato {0} grupėje {1}</value>
+  </data>
+  <data name="ExceptionFailedInviteUserToGroup" xml:space="preserve">
+    <value>Nepavyko pakviesti vartotojų {0} į grupę {1}</value>
+  </data>
+  <data name="ExceptionFailedLeaveRequestForGroup" xml:space="preserve">
+    <value>Nepavyko nusiųsti vartotojui {0} reikalavimo palikti grupę {1}</value>
+  </data>
+  <data name="ExceptionFailedSendJoinRequestToGroup" xml:space="preserve">
+    <value>Nepavyko vartotojui {0} nusiųsti reikalavimo prisijungti prie grupės {1}</value>
+  </data>
+  <data name="ExceptionFailedToAcceptGroupInvitationForGroup" xml:space="preserve">
+    <value>Nepavyko priimti pakvietimo prisijungti prie grupės {0} vartotojui {1}</value>
+  </data>
+  <data name="ExceptionFailedToCreateGroup" xml:space="preserve">
+    <value>Nepavyko sukurti grupės.</value>
+  </data>
+  <data name="ExceptionFailedToDeclineGroupInvitationForGroup" xml:space="preserve">
+    <value>Nepavyko atmesti pakvietimo prisijungti prie grupės {0} vartotojui {1}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteGroup" xml:space="preserve">
+    <value>Nepavyko pašalinti grupės {0}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteNoitification" xml:space="preserve">
+    <value>Nepavyko ištrinti pranešimo {0} vartotojui {1}</value>
+  </data>
+  <data name="ExceptionFailedToGetGroupApplicationsForGroup" xml:space="preserve">
+    <value>Nepavyko gauti grupės paraiškų grupei {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveTagForUser" xml:space="preserve">
+    <value>Nepavyko gauti žymių apie vartotoją {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveOrgGroups" xml:space="preserve">
+    <value>Nepavyko gauti organizacinių grupių</value>
+  </data>
+  <data name="ExceptionFailedToShareItem" xml:space="preserve">
+    <value>Nepavyko bendrinti elemento {0}</value>
+  </data>
+  <data name="ExceptionFailedToUpdateGroup" xml:space="preserve">
+    <value>Nepavyko atnaujinti grupės {0}</value>
+  </data>
+  <data name="ExceptionGetCommentsFailed" xml:space="preserve">
+    <value>Nepavyko gauti komentarų.</value>
+  </data>
+  <data name="ExceptionGetFolderFailedUserSignedIn" xml:space="preserve">
+    <value>GetFolder nepavyko. Vartotojas nėra prisijungęs.</value>
+  </data>
+  <data name="ExceptionNoUserSignedIn" xml:space="preserve">
+    <value>Nėra prisijungusio vartotojo.</value>
+  </data>
+  <data name="ExceptionSignInFailed" xml:space="preserve">
+    <value>Nepavyko prisijungti.</value>
+  </data>
+  <data name="FeatureMapsControlCloseParenthesis" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="FeatureMapsControlDetails" xml:space="preserve">
+    <value>Išsami informacija</value>
+  </data>
+  <data name="FeatureMapsControlLastModified" xml:space="preserve">
+    <value>(paskutinis keitimas: </value>
+  </data>
+  <data name="FeatureMapsControlOpen" xml:space="preserve">
+    <value>Atverti</value>
+  </data>
+  <data name="GroupControlClickHereToViewInSeparateBrowser" xml:space="preserve">
+    <value>Paspaudę čia, aprašymą pamatysite naujame naršyklės lange</value>
+  </data>
+  <data name="GroupControlCloseGroup" xml:space="preserve">
+    <value>Uždaryti šią grupę</value>
+  </data>
+  <data name="GroupControlDescription" xml:space="preserve">
+    <value>Aprašas</value>
+  </data>
+  <data name="GroupControlFeaturedMaps" xml:space="preserve">
+    <value>Rekomenduojami žemėlapiai</value>
+  </data>
+  <data name="GroupControlNoFeaturedMapsFound" xml:space="preserve">
+    <value>Nerasta rekomenduojamų žemėlapių.</value>
+  </data>
+  <data name="GroupControlNoMapsFound" xml:space="preserve">
+    <value>Nerasta žemėlapių.</value>
+  </data>
+  <data name="GroupControlOwner" xml:space="preserve">
+    <value>Savininkas</value>
+  </data>
+  <data name="GroupControlPrivateUserCannotFindGroup" xml:space="preserve">
+    <value>Privati (Paieškoje grupė nerandama ir nauji vartotojai gali prisijungti tik gavę pakvietimą)</value>
+  </data>
+  <data name="GroupControlPublicUserCanSearchAndFindGroup" xml:space="preserve">
+    <value>Vieša (Vartotojai gali ieškoti ir rasti šią grupę)</value>
+  </data>
+  <data name="GroupControlSearchOwner" xml:space="preserve">
+    <value>savininkas: {0}</value>
+  </data>
+  <data name="GroupControlTags" xml:space="preserve">
+    <value>Raktažodis</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Grupės</value>
+  </data>
+  <data name="HighestRated" xml:space="preserve">
+    <value>Geriausiai įvertintas</value>
+  </data>
+  <data name="ItemNotFound" xml:space="preserve">
+    <value>Nerastas elementas: {0}</value>
+  </data>
+  <data name="LastModified" xml:space="preserve">
+    <value>Paskutinis pakeitimas</value>
+  </data>
+  <data name="MapDetailsRating" xml:space="preserve">
+    <value>({0} vertinimų)</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Žemėlapiai</value>
+  </data>
+  <data name="MapServiceReferenceInvalid" xml:space="preserve">
+    <value>Žemėlapio paslaugos atraminiai duomenys netinkami. Paslaugos pridėti į žemėlapį negalima.</value>
+  </data>
+  <data name="MapServiceReferenceNoDetails" xml:space="preserve">
+    <value>Žemėlapio paslaugos atraminiai duomenys netinkami. Išsamesnės informacijos parodyti negalima.</value>
+  </data>
+  <data name="MostComments" xml:space="preserve">
+    <value>Daugiausia komentarų</value>
+  </data>
+  <data name="MostPopular" xml:space="preserve">
+    <value>Patys populiariausi</value>
+  </data>
+  <data name="MostRecentlyAdded" xml:space="preserve">
+    <value>Naujausiai pridėti</value>
+  </data>
+  <data name="MostRelevant" xml:space="preserve">
+    <value>Labiausiai tinkami</value>
+  </data>
+  <data name="MyGroupControlGroups" xml:space="preserve">
+    <value>{0} grupės</value>
+  </data>
+  <data name="MyGroupControlOn" xml:space="preserve">
+    <value>ant</value>
+  </data>
+  <data name="MyGroupControlOpenGroup" xml:space="preserve">
+    <value>Atverti šią grupę</value>
+  </data>
+  <data name="MyGroupControlZeroGroups" xml:space="preserve">
+    <value>0 grupių</value>
+  </data>
+  <data name="MyMapControlMaps" xml:space="preserve">
+    <value>{0} žemėlapiai</value>
+  </data>
+  <data name="MyMapControlZeroMaps" xml:space="preserve">
+    <value>0 žemėlapių</value>
+  </data>
+  <data name="Places" xml:space="preserve">
+    <value>Vietos</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Savybės</value>
+  </data>
+  <data name="RecentMaps" xml:space="preserve">
+    <value>Paskutiniai naudoti žemėlapiai</value>
+  </data>
+  <data name="SearchArcGISCom" xml:space="preserve">
+    <value>ArcGIS Online ieškoti žemėlapių, paveikslų ir elementų servisų</value>
+  </data>
+  <data name="SearchControlAdd" xml:space="preserve">
+    <value>Pridėti</value>
+  </data>
+  <data name="SearchControlMapServiceFound" xml:space="preserve">
+    <value>Rastas žemėlapio servisas.</value>
+  </data>
+  <data name="SearchControlResultsFound" xml:space="preserve">
+    <value>{0} rezultatų</value>
+  </data>
+  <data name="SearchControlServiceCouldNotBeAccessed" xml:space="preserve">
+    <value>Serviso negalima naudoti.</value>
+  </data>
+  <data name="SearchControlZeroResultsFound" xml:space="preserve">
+    <value>Rasta 0 rezultatų.</value>
+  </data>
+  <data name="SearchDetailsBy" xml:space="preserve">
+    <value>pagal</value>
+  </data>
+  <data name="SearchDetailsRating" xml:space="preserve">
+    <value>Vertinimas: </value>
+  </data>
+  <data name="SearchMapResultsFor" xml:space="preserve">
+    <value>{0} rezultatai {1}</value>
+  </data>
+  <data name="SearchTheWeb" xml:space="preserve">
+    <value>Ieškoti žemėlapio servisų žiniatinklyje</value>
+  </data>
+  <data name="SearchWebDetailsAdd" xml:space="preserve">
+    <value>Pridėti</value>
+  </data>
+  <data name="SearchWebDetailsCopyright" xml:space="preserve">
+    <value>Autoriaus teisės: </value>
+  </data>
+  <data name="SearchWebDetailsDescription" xml:space="preserve">
+    <value>Aprašymas: </value>
+  </data>
+  <data name="SearchWebDetailsExploreGISServer" xml:space="preserve">
+    <value>Naršyti šiame GIS Serveryje</value>
+  </data>
+  <data name="SearchWebDetailsName" xml:space="preserve">
+    <value>Pavadinimas:</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Rūšiuoti pagal</value>
+  </data>
+  <data name="SortResults" xml:space="preserve">
+    <value>Rūšiuoti rezultatus</value>
+  </data>
+  <data name="SortSearchResults" xml:space="preserve">
+    <value>Rūšiuoti paieškos rezultatus.</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Santrauka</value>
+  </data>
+  <data name="TheWeb" xml:space="preserve">
+    <value>Internetas</value>
+  </data>
+  <data name="TitleAZ" xml:space="preserve">
+    <value>Pavadinimas A-Z</value>
+  </data>
+  <data name="TitleZA" xml:space="preserve">
+    <value>Pavadinimas Z-A</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="UserSearchFailed" xml:space="preserve">
+    <value>Vartotojo paieška nepavyko.</value>
+  </data>
+  <data name="BackStageControlRecent" xml:space="preserve">
+    <value>Paskutiniai</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Atsisakyti</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Prisijungti</value>
+  </data>
+  <data name="SignInForgotYourPassword" xml:space="preserve">
+    <value>Pamiršote slaptažodį?</value>
+  </data>
+  <data name="SignInSignUp" xml:space="preserve">
+    <value>Prisijungti</value>
+  </data>
+  <data name="InvalidIDOrPassword" xml:space="preserve">
+    <value>Neteisingas ID arba slaptažodis.</value>
+  </data>
+  <data name="NewHere" xml:space="preserve">
+    <value>Jungiatės pirmą kartą?</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Slaptažodis:</value>
+  </data>
+  <data name="UsernamePrompt" xml:space="preserve">
+    <value>Vatotojo vardas:</value>
+  </data>
+  <data name="DescriptionForGroupCanotBeDisplayed" xml:space="preserve">
+    <value>Šios grupės aprašymo šiame lange parodyti negalima.</value>
+  </data>
+  <data name="GroupControlOwnerParenthesis" xml:space="preserve">
+    <value>(Savininkas)</value>
+  </data>
+  <data name="LastModifiedPrompt" xml:space="preserve">
+    <value>(paskutinis keitimas:</value>
+  </data>
+  <data name="LastModifiedPromptEnd" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="MapDetailsControlAverageRating" xml:space="preserve">
+    <value>Vertinimo vidurkis</value>
+  </data>
+  <data name="MapDetailsControlType" xml:space="preserve">
+    <value>Tipas</value>
+  </data>
+  <data name="OnWithSpace" xml:space="preserve">
+    <value> ant </value>
+  </data>
+  <data name="SearchR" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="LoadingMaps" xml:space="preserve">
+    <value>Įkeliami žemėlapiai...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Pašalinti</value>
+  </data>
+  <data name="NoFeaturedMaps" xml:space="preserve">
+    <value>Šiuo metu rekomenduojamų žemėlapių nėra</value>
+  </data>
+  <data name="SigningIn" xml:space="preserve">
+    <value>Jungiamasi...</value>
+  </data>
+  <data name="SignInLabel" xml:space="preserve">
+    <value>Prisijungti prie {0}</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Paslaugos apibūdinimas</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Gerai</value>
+  </data>
+  <data name="NumberResults" xml:space="preserve">
+    <value>({0} Rezultatai)</value>
+  </data>
+  <data name="ProjectInputsNotValid" xml:space="preserve">
+    <value>Privaloma nurodyti paskirties geometriją, išvesties erdvinę atramą ir geometrijos paslaugos URL</value>
+  </data>
+  <data name="AGOL" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="NoResults" xml:space="preserve">
+    <value>Nėra rodomų rezultatų</value>
+  </data>
+  <data name="SearchPlaces" xml:space="preserve">
+    <value>Ieškoti adresų, miestų arba kitų vietovių</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adresas</value>
+  </data>
+  <data name="AddressTitleExpression" xml:space="preserve">
+    <value>{Adresas}</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Vardas</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Ieškoti</value>
+  </data>
+  <data name="SearchCategory" xml:space="preserve">
+    <value>Užklausa</value>
+  </data>
+  <data name="SearchDescription" xml:space="preserve">
+    <value>Ieškoma vietų arba turinio, leidžiamo pridėti į žemėlapį</value>
+  </data>
+  <data name="SearchToolName" xml:space="preserve">
+    <value>Ieškoti</value>
+  </data>
+  <data name="ServiceConnectionFailed" xml:space="preserve">
+    <value>Nepavyko pasiekti serviso, todėl jo pridėti į žemėlapį negalima.</value>
+  </data>
+  <data name="CannotConvertBack" xml:space="preserve">
+    <value>Negalima pakeisti atgal</value>
+  </data>
+  <data name="EmptyGeometryServiceUrl" xml:space="preserve">
+    <value>Geometrijos serviso URL negali būti null arba tuščia reikšmė</value>
+  </data>
+  <data name="EmptyLocatorUrl" xml:space="preserve">
+    <value>Lokatoriaus serviso URL negali būti null arba tuščia reikšmė</value>
+  </data>
+  <data name="InvalidSearchResultType" xml:space="preserve">
+    <value>Paieškos rezultatas privalo būti ArcGISPortalItem, WebSearchResultItem arba ArcGISService tipo</value>
+  </data>
+  <data name="MustSpecifyExtentFields" xml:space="preserve">
+    <value>Privaloma nurodyti visus aprėpties laukus</value>
+  </data>
+  <data name="NullExtentSpatialRef" xml:space="preserve">
+    <value>Aprėpties erdvinė atrama negali būti null</value>
+  </data>
+  <data name="CommandNotExecutable" xml:space="preserve">
+    <value>Komanda nėra vykdoma</value>
+  </data>
+  <data name="ZeroExtentWidthError" xml:space="preserve">
+    <value>Aprėpties dydis privalo būti teigiamas</value>
+  </data>
+  <data name="Searching" xml:space="preserve">
+    <value>Ieškoma...</value>
+  </data>
+  <data name="IncludedSearches" xml:space="preserve">
+    <value>Įtrauktos paieškos:</value>
+  </data>
+  <data name="SearchType" xml:space="preserve">
+    <value>Paieškos tipas:</value>
+  </data>
+  <data name="SelectSearchTypes" xml:space="preserve">
+    <value>Pažymėkite paieškos tipus, kuriuos norite įtraukti</value>
+  </data>
+  <data name="LocatorUrl" xml:space="preserve">
+    <value>Serviso URL:</value>
+  </data>
+  <data name="Bottom" xml:space="preserve">
+    <value>Apačia:</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Jungtis</value>
+  </data>
+  <data name="ConnectedTo" xml:space="preserve">
+    <value>Jungtis į {0} lokatoriaus servisą</value>
+  </data>
+  <data name="ExtentFields" xml:space="preserve">
+    <value>Naudokite aprėpties laukus</value>
+  </data>
+  <data name="Left" xml:space="preserve">
+    <value>Kairė:</value>
+  </data>
+  <data name="Right" xml:space="preserve">
+    <value>Dešinė:</value>
+  </data>
+  <data name="Top" xml:space="preserve">
+    <value>Viršus:</value>
+  </data>
+  <data name="ConfigureLocatorService" xml:space="preserve">
+    <value>{0} paieška: nurodykite Lokatoriaus servisą</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>Jungiasi...</value>
+  </data>
+  <data name="ExtentFieldsTooltip" xml:space="preserve">
+    <value>Naudokite laukus paieškos rezultatų aprėpčiai nustatyti. Aprėptis yra naudojama priartinant rezultatus.</value>
+  </data>
+  <data name="ExtentWidth" xml:space="preserve">
+    <value>Naudoti aprėpties plotį</value>
+  </data>
+  <data name="ExtentWidthInputError" xml:space="preserve">
+    <value>Aprėpties dydis privalo būti teigiamas</value>
+  </data>
+  <data name="ExtentWidthTooltip" xml:space="preserve">
+    <value>Įveskite plotį paieškos rezultatų aprėpčiai nustatyti. Aprėptis yra naudojama priartinant rezultatus.</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Metrai</value>
+  </data>
+  <data name="AddSearchError" xml:space="preserve">
+    <value>Negalima pridėti šio paieškos tipo.  Šiuo metu komanda nėra vykdoma.</value>
+  </data>
+  <data name="ClickConnect" xml:space="preserve">
+    <value>Spauskite URL patikrinimui</value>
+  </data>
+  <data name="ClickNext" xml:space="preserve">
+    <value>Norėdami tęsti, spauskite Toliau</value>
+  </data>
+  <data name="ConfigureResultExtent" xml:space="preserve">
+    <value>{0} Paieška: Pasirinkite, kaip priartinti kiekvieną rezultatą</value>
+  </data>
+  <data name="EnterLocatorUrl" xml:space="preserve">
+    <value>Įveskite URL į ArcGIS Server Lokatoriaus servisą</value>
+  </data>
+  <data name="LocatorConnectionFailed" xml:space="preserve">
+    <value>Ryšys nepavyko.  Patikrinkite URL ir bandykite iš naujo.</value>
+  </data>
+  <data name="LocatorUrlMustEndWith" xml:space="preserve">
+    <value>URL privalo baigtis "GeocodeServer"</value>
+  </data>
+  <data name="UnitsCentimeters" xml:space="preserve">
+    <value>Centimetetrai</value>
+  </data>
+  <data name="UnitsFeet" xml:space="preserve">
+    <value>Pėdos</value>
+  </data>
+  <data name="UnitsInches" xml:space="preserve">
+    <value>Coliai</value>
+  </data>
+  <data name="UnitsKilometers" xml:space="preserve">
+    <value>Kilometrai</value>
+  </data>
+  <data name="UnitsMeters" xml:space="preserve">
+    <value>Metrai</value>
+  </data>
+  <data name="UnitsMiles" xml:space="preserve">
+    <value>Mylios</value>
+  </data>
+  <data name="UnitsNauticalMiles" xml:space="preserve">
+    <value>Jūrmylės</value>
+  </data>
+  <data name="UnitsYards" xml:space="preserve">
+    <value>Jardai</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Naudoti Proxy</value>
+  </data>
+  <data name="ConnectingToLocatorService" xml:space="preserve">
+    <value>Jungiamasi prie lokatoriaus serviso...</value>
+  </data>
+  <data name="ContainsErrorMessage" xml:space="preserve">
+    <value>Collection turi turėti realizuotą Contains metodą su vienu parametru, grąžinantį boolean tipo rezultatą</value>
+  </data>
+  <data name="ExpectedItemTypeMismatch" xml:space="preserve">
+    <value>{0}.Contains metodo įvestyje reikalingas {1} objekto tipas.  {2} tipo parametras buvo priimtas.</value>
+  </data>
+</root>

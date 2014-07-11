@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Apply" xml:space="preserve">
+    <value>Kehtesta</value>
+  </data>
+  <data name="AuthorLabel" xml:space="preserve">
+    <value>Autor: </value>
+  </data>
+  <data name="CloseLabel" xml:space="preserve">
+    <value>Sulge</value>
+  </data>
+  <data name="ConnectLabel" xml:space="preserve">
+    <value>Ühenda</value>
+  </data>
+  <data name="CopyrightLabel" xml:space="preserve">
+    <value>Õigused:</value>
+  </data>
+  <data name="DescriptionLabel" xml:space="preserve">
+    <value>Kirjeldus:</value>
+  </data>
+  <data name="DpiLabel" xml:space="preserve">
+    <value>DPI:</value>
+  </data>
+  <data name="DrawingLabel" xml:space="preserve">
+    <value>Joonistan...</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>Detailid:</value>
+  </data>
+  <data name="FormatsLabel" xml:space="preserve">
+    <value>Faili formaat:</value>
+  </data>
+  <data name="GetLayoutTemplatesCompleted" xml:space="preserve">
+    <value>Hangi valmiskujul printimise paigutuse mallid.</value>
+  </data>
+  <data name="GetLayoutTemplatesStarted" xml:space="preserve">
+    <value>Hangi alustatud printimise paigutuse mallid.</value>
+  </data>
+  <data name="GetPrintLayoutXamlCompleted" xml:space="preserve">
+    <value>Hangi valmiskujul XAML printimise paigutus.</value>
+  </data>
+  <data name="GetPrintLayoutXamlStarted" xml:space="preserve">
+    <value>Hangi alustatud printimise paigutuse XAML.</value>
+  </data>
+  <data name="HeightLabel" xml:space="preserve">
+    <value>Kõrgus:</value>
+  </data>
+  <data name="LayoutLabel" xml:space="preserve">
+    <value>Paigutus:</value>
+  </data>
+  <data name="LayoutTemplatesLabel" xml:space="preserve">
+    <value>Mall:</value>
+  </data>
+  <data name="LoadFailed" xml:space="preserve">
+    <value>Paigutuse mallide laadimine nurjus.</value>
+  </data>
+  <data name="LoadLabel" xml:space="preserve">
+    <value> ... </value>
+  </data>
+  <data name="NotSupportedClusterer" xml:space="preserve">
+    <value>Klastrit kihile {0} ({1}) ei lisata väljundkaardile.</value>
+  </data>
+  <data name="NotSupportedGraphicSymbol" xml:space="preserve">
+    <value>Sümboli tüüp {0} ei ole printimiseks toetatud ja seda ei saa taastada vaikimisi sümboliga kihile {1} ({2}).</value>
+  </data>
+  <data name="NotSupportedLayerRenderer" xml:space="preserve">
+    <value>Renderdaja tüüp {0} ei ole printimiseks toetatud ja seda ei saa taastada vaikimisi renderdaja kihile {1} ({2}).</value>
+  </data>
+  <data name="NotSupportedLayerType" xml:space="preserve">
+    <value>Kiht {0} tüübiga {1} ei ole printimiseks toetatud ja see jäetakse väljundkaardilt kõrvale.</value>
+  </data>
+  <data name="NotSupportedLayerWithProxy" xml:space="preserve">
+    <value>Kiht {0} on seadistatud kasutamaks proksi-serverit.  Kihid, mis kasutavad proksit, ei ole ArcGIS Serveriga prinditavad ning jäetakse väljundkaardilt välja.</value>
+  </data>
+  <data name="PrintCanceled" xml:space="preserve">
+    <value>Printimine katkestati.</value>
+  </data>
+  <data name="PrintCompleted" xml:space="preserve">
+    <value>Printimise pöördumine lõpetati.</value>
+  </data>
+  <data name="PrintConfigTitle" xml:space="preserve">
+    <value>Seadista printimine</value>
+  </data>
+  <data name="PrintFailed" xml:space="preserve">
+    <value>Printimine nurjus.</value>
+  </data>
+  <data name="PrintLabel" xml:space="preserve">
+    <value>Prindi</value>
+  </data>
+  <data name="PrintLayoutPickerTitle" xml:space="preserve">
+    <value>Vali printimise paigutus</value>
+  </data>
+  <data name="PrintPreviewLabel" xml:space="preserve">
+    <value>Printimise eelvaade:</value>
+  </data>
+  <data name="PrintStarted" xml:space="preserve">
+    <value>Printimise pöördumine esitati.</value>
+  </data>
+  <data name="PrintToolCategory" xml:space="preserve">
+    <value>Printimine</value>
+  </data>
+  <data name="PrintToolDescription" xml:space="preserve">
+    <value>Tekitab prinditava väljundfaili.</value>
+  </data>
+  <data name="PrintToolTitle" xml:space="preserve">
+    <value>Prindi</value>
+  </data>
+  <data name="PrintWithArcGISServerLabel" xml:space="preserve">
+    <value>Kasuta ArcGIS Server printimise teenust</value>
+  </data>
+  <data name="RequiredFieldException" xml:space="preserve">
+    <value>See väli on nõutud.</value>
+  </data>
+  <data name="SizeFieldException" xml:space="preserve">
+    <value>Väärtus peab olema nullist suurem number.</value>
+  </data>
+  <data name="TaskUrlLabel" xml:space="preserve">
+    <value>Printimise teenuse URL:</value>
+  </data>
+  <data name="TitleLabel" xml:space="preserve">
+    <value>Nimi:</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>Pealkirjata</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Kasuta proksit</value>
+  </data>
+  <data name="UseScaleLabel" xml:space="preserve">
+    <value>Mõõtkava:</value>
+  </data>
+  <data name="VisibleLabel" xml:space="preserve">
+    <value>Nähtav</value>
+  </data>
+  <data name="WidthLabel" xml:space="preserve">
+    <value>Laius:</value>
+  </data>
+</root>

@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFeatureLayer" xml:space="preserve">
+    <value>הוסף שכבות ישויות</value>
+  </data>
+  <data name="AddFeatureLayerWindowCheckAll" xml:space="preserve">
+    <value>בטל הכל</value>
+  </data>
+  <data name="AddFeatureLayerWindowUnCheckAll" xml:space="preserve">
+    <value>בטל סימון להכל</value>
+  </data>
+  <data name="ArcGIS" xml:space="preserve">
+    <value>ArcGIS</value>
+  </data>
+  <data name="BackStageControlFeatureMaps" xml:space="preserve">
+    <value>מפות עניין</value>
+  </data>
+  <data name="BackStageControlGroups" xml:space="preserve">
+    <value>קבוצות</value>
+  </data>
+  <data name="BackStageControlMyGroups" xml:space="preserve">
+    <value>הקבוצות שלי</value>
+  </data>
+  <data name="BackStageControlMyOrgGroups" xml:space="preserve">
+    <value>קבוצות של הארגון שלי</value>
+  </data>
+  <data name="BackStageControlMyOrgPublicGroups" xml:space="preserve">
+    <value>קבוצות ציבוריות של הארגון שלי</value>
+  </data>
+  <data name="BackStageControlMyMaps" xml:space="preserve">
+    <value>המפות שלי</value>
+  </data>
+  <data name="BackStageControlSearch" xml:space="preserve">
+    <value>חפש</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>הקש כאן כדי לצפות בתיאור בחלון דפדפן נפרד</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>הסתר פרטים</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>הערות</value>
+  </data>
+  <data name="ContentEveryone" xml:space="preserve">
+    <value>כל אחד</value>
+  </data>
+  <data name="ContentGroups" xml:space="preserve">
+    <value>קבוצות</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>נוצר על ידי</value>
+  </data>
+  <data name="DefineQueryWindowAlias" xml:space="preserve">
+    <value>כינוי:</value>
+  </data>
+  <data name="DefineQueryWindowAnd" xml:space="preserve">
+    <value>וגם</value>
+  </data>
+  <data name="DefineQueryWindowApply" xml:space="preserve">
+    <value>בצע</value>
+  </data>
+  <data name="DefineQueryWindowClickPickDate" xml:space="preserve">
+    <value>הקש כדי לבחור תאריך מפורמט בביטוי</value>
+  </data>
+  <data name="DefineQueryWindowData" xml:space="preserve">
+    <value>נתונים</value>
+  </data>
+  <data name="DefineQueryWindowExpression" xml:space="preserve">
+    <value>ביטוי:</value>
+  </data>
+  <data name="DefineQueryWindowFailedToRetrieveSampleFeaturesForLayer" xml:space="preserve">
+    <value>כישלון באחזור ישויות לדוגמה עבור השכבה.</value>
+  </data>
+  <data name="DefineQueryWindowFields" xml:space="preserve">
+    <value>שדות:</value>
+  </data>
+  <data name="DefineQueryWindowLike" xml:space="preserve">
+    <value>כמו</value>
+  </data>
+  <data name="DefineQueryWindowName" xml:space="preserve">
+    <value>שם:</value>
+  </data>
+  <data name="DefineQueryWindowNot" xml:space="preserve">
+    <value>לא</value>
+  </data>
+  <data name="DefineQueryWindowOr" xml:space="preserve">
+    <value>או</value>
+  </data>
+  <data name="DefineQueryWindowQuery" xml:space="preserve">
+    <value>שאילתא</value>
+  </data>
+  <data name="DefineQueryWindowTableIsSampleOfFeatureLayer" xml:space="preserve">
+    <value>הטבלה הבאה היא דוגמה לישויות בשכבה.</value>
+  </data>
+  <data name="DefineQueryWindowType" xml:space="preserve">
+    <value>סוג:</value>
+  </data>
+  <data name="DescriptionForMapCanotBeDisplayed" xml:space="preserve">
+    <value>לא ניתן להציג בחלון זה את התיאור עבור מפה זו.</value>
+  </data>
+  <data name="EnterPlaceNameAddressLatLongitutePair" xml:space="preserve">
+    <value>הזן שם מקום; כתובת; או צמד קו רוחב/אורך</value>
+  </data>
+  <data name="ExceptionDeleteFailed" xml:space="preserve">
+    <value>המחיקה נכשלה</value>
+  </data>
+  <data name="ExceptionDeleteFailedUserSignIn" xml:space="preserve">
+    <value>המחיקה נכשלה. המשתמש אינו רשום.</value>
+  </data>
+  <data name="ExceptionFaileAcceptApplicateForGroup" xml:space="preserve">
+    <value>כישלון בקבלת מועמד {0} לקבוצה {1}</value>
+  </data>
+  <data name="ExceptionFaileDeclineApplicateForGroup" xml:space="preserve">
+    <value>כישלון בהורדת מועמד {0} עבור קבוצה {1}</value>
+  </data>
+  <data name="ExceptionFailedInviteUserToGroup" xml:space="preserve">
+    <value>כישלון בהזמנת משתמשים{0} לקבוצה {1}</value>
+  </data>
+  <data name="ExceptionFailedLeaveRequestForGroup" xml:space="preserve">
+    <value>כישלון בשליחת בקשת נטישה {0} מקבוצה {1}</value>
+  </data>
+  <data name="ExceptionFailedSendJoinRequestToGroup" xml:space="preserve">
+    <value>כישלון בשליחת בקשת צירוף עבור משתמש {0} לקבוצה {1}</value>
+  </data>
+  <data name="ExceptionFailedToAcceptGroupInvitationForGroup" xml:space="preserve">
+    <value>כישלון בקבלת הזמנת קבוצה עבור קבוצה {0} על ידי {1}</value>
+  </data>
+  <data name="ExceptionFailedToCreateGroup" xml:space="preserve">
+    <value>כשל ביצירת קבוצה.</value>
+  </data>
+  <data name="ExceptionFailedToDeclineGroupInvitationForGroup" xml:space="preserve">
+    <value>כישלון בסירוב הזמנת קבוצה עבור קבוצה {0} על ידי {1}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteGroup" xml:space="preserve">
+    <value>כישלון במחיקת קבוצה {0}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteNoitification" xml:space="preserve">
+    <value>כשלון ב {0} על ידי {1}מחיקת ההודעה</value>
+  </data>
+  <data name="ExceptionFailedToGetGroupApplicationsForGroup" xml:space="preserve">
+    <value>כישלון בקבלת מועמדים לקבוצה {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveTagForUser" xml:space="preserve">
+    <value>כישלון באיחזור תגים עבור משתמש  {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveOrgGroups" xml:space="preserve">
+    <value>כישלון באיחזור קבוצות האירגון</value>
+  </data>
+  <data name="ExceptionFailedToShareItem" xml:space="preserve">
+    <value>כישלון בשיתוף פריט {0}</value>
+  </data>
+  <data name="ExceptionFailedToUpdateGroup" xml:space="preserve">
+    <value>כשלון בשידרוג קבוצה {0}</value>
+  </data>
+  <data name="ExceptionGetCommentsFailed" xml:space="preserve">
+    <value>קבלת ההערות נכשלה.</value>
+  </data>
+  <data name="ExceptionGetFolderFailedUserSignedIn" xml:space="preserve">
+    <value>הבאת קובץ נכשלה. המשתמש אינו רשום.</value>
+  </data>
+  <data name="ExceptionNoUserSignedIn" xml:space="preserve">
+    <value>לא נרשם אף משתמש.</value>
+  </data>
+  <data name="ExceptionSignInFailed" xml:space="preserve">
+    <value>ההרשמה נכשלה.</value>
+  </data>
+  <data name="FeatureMapsControlCloseParenthesis" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="FeatureMapsControlDetails" xml:space="preserve">
+    <value>פרטים</value>
+  </data>
+  <data name="FeatureMapsControlLastModified" xml:space="preserve">
+    <value>(עודכן לאחרונה: </value>
+  </data>
+  <data name="FeatureMapsControlOpen" xml:space="preserve">
+    <value>פתח</value>
+  </data>
+  <data name="GroupControlClickHereToViewInSeparateBrowser" xml:space="preserve">
+    <value>הקש כאן כדי לצפות בתיאור בחלון דפדפן נפרד</value>
+  </data>
+  <data name="GroupControlCloseGroup" xml:space="preserve">
+    <value>סגור קבוצה זו</value>
+  </data>
+  <data name="GroupControlDescription" xml:space="preserve">
+    <value>תיאור</value>
+  </data>
+  <data name="GroupControlFeaturedMaps" xml:space="preserve">
+    <value>מפות עניין</value>
+  </data>
+  <data name="GroupControlNoFeaturedMapsFound" xml:space="preserve">
+    <value>לא נימצאו מפות עניין.</value>
+  </data>
+  <data name="GroupControlNoMapsFound" xml:space="preserve">
+    <value>לא נימצאו מפות.</value>
+  </data>
+  <data name="GroupControlOwner" xml:space="preserve">
+    <value>יוצר</value>
+  </data>
+  <data name="GroupControlPrivateUserCannotFindGroup" xml:space="preserve">
+    <value>פרטי (משתמשים אינם יכולים למצא את הקבוצה ויכולים להצטרף רק על ידי הזמנה)</value>
+  </data>
+  <data name="GroupControlPublicUserCanSearchAndFindGroup" xml:space="preserve">
+    <value>ציבורי (משתמשים רשאים לחפש ולמצא קבוצה)</value>
+  </data>
+  <data name="GroupControlSearchOwner" xml:space="preserve">
+    <value>בעלים: {0}</value>
+  </data>
+  <data name="GroupControlTags" xml:space="preserve">
+    <value>תגיות</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>קבוצות</value>
+  </data>
+  <data name="HighestRated" xml:space="preserve">
+    <value>הדירוג הגבוה ביותר</value>
+  </data>
+  <data name="HintTextBoxToolTip" xml:space="preserve">
+    <value>הזן שם מקום; כתובת; או צמד קו רוחב/אורך</value>
+  </data>
+  <data name="ItemNotFound" xml:space="preserve">
+    <value>פריט לא נמצא:{0}</value>
+  </data>
+  <data name="LastModified" xml:space="preserve">
+    <value>שונה לאחרונה</value>
+  </data>
+  <data name="MapDetailsRating" xml:space="preserve">
+    <value>({0} דרוג)</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>מפות</value>
+  </data>
+  <data name="MapServiceReferenceInvalid" xml:space="preserve">
+    <value>ההפניה לשירות המפות לא תקינה. לא ניתן להוסיף את השירות למפה.</value>
+  </data>
+  <data name="MapServiceReferenceNoDetails" xml:space="preserve">
+    <value>ההפניה לשירות המפות לא תקינה. לא ניתן להוסיף פרטים.</value>
+  </data>
+  <data name="MostComments" xml:space="preserve">
+    <value>מרבית ההערות</value>
+  </data>
+  <data name="MostPopular" xml:space="preserve">
+    <value>הפופולרי ביותר</value>
+  </data>
+  <data name="MostRecentlyAdded" xml:space="preserve">
+    <value>נוספו לאחרונה</value>
+  </data>
+  <data name="MostRelevant" xml:space="preserve">
+    <value>הרלוונטי ביותר</value>
+  </data>
+  <data name="MyGroupControlGroups" xml:space="preserve">
+    <value>{0} קבוצות</value>
+  </data>
+  <data name="MyGroupControlOn" xml:space="preserve">
+    <value>בתוך</value>
+  </data>
+  <data name="MyGroupControlOpenGroup" xml:space="preserve">
+    <value>פתח קבוצה זו</value>
+  </data>
+  <data name="MyGroupControlZeroGroups" xml:space="preserve">
+    <value>0 קבוצות</value>
+  </data>
+  <data name="MyMapControlMaps" xml:space="preserve">
+    <value>{0} מפות</value>
+  </data>
+  <data name="MyMapControlZeroMaps" xml:space="preserve">
+    <value>0 מפות</value>
+  </data>
+  <data name="Places" xml:space="preserve">
+    <value>מיקומים</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>מאפיינים</value>
+  </data>
+  <data name="RecentMaps" xml:space="preserve">
+    <value>מפות אחרונות</value>
+  </data>
+  <data name="SearchArcGISCom" xml:space="preserve">
+    <value>חפש ב- ArcGIS.com</value>
+  </data>
+  <data name="SearchControlAdd" xml:space="preserve">
+    <value>הוסף</value>
+  </data>
+  <data name="SearchControlMapServiceFound" xml:space="preserve">
+    <value>שירות המפות נימצא</value>
+  </data>
+  <data name="SearchControlResultsFound" xml:space="preserve">
+    <value>נמצאו {0} תוצאות.</value>
+  </data>
+  <data name="SearchControlServiceCouldNotBeAccessed" xml:space="preserve">
+    <value>לא ניתן לגשת לשירות.</value>
+  </data>
+  <data name="SearchControlZeroResultsFound" xml:space="preserve">
+    <value>0 תוצאות נמצאו.</value>
+  </data>
+  <data name="SearchDetailsBy" xml:space="preserve">
+    <value>ע"י</value>
+  </data>
+  <data name="SearchDetailsRating" xml:space="preserve">
+    <value>דירוג: </value>
+  </data>
+  <data name="SearchMapResultsFor" xml:space="preserve">
+    <value>{0} תוצאות עבור {1}</value>
+  </data>
+  <data name="SearchTextBoxToolTip" xml:space="preserve">
+    <value>הזן שם מקום; כתובת; או צמד קו רוחב/אורך</value>
+  </data>
+  <data name="SearchTheWeb" xml:space="preserve">
+    <value>חפש ב- web"</value>
+  </data>
+  <data name="SearchWebDetailsAdd" xml:space="preserve">
+    <value>הוסף</value>
+  </data>
+  <data name="SearchWebDetailsCopyright" xml:space="preserve">
+    <value>זכויות יוצרים: </value>
+  </data>
+  <data name="SearchWebDetailsDescription" xml:space="preserve">
+    <value>תיאור: </value>
+  </data>
+  <data name="SearchWebDetailsExploreGISServer" xml:space="preserve">
+    <value>חקור שרת GIS זה</value>
+  </data>
+  <data name="SearchWebDetailsName" xml:space="preserve">
+    <value>שם:</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>מיון לפי</value>
+  </data>
+  <data name="SortResults" xml:space="preserve">
+    <value>מיין תוצאות</value>
+  </data>
+  <data name="SortSearchResults" xml:space="preserve">
+    <value>מיין תוצאות חיפוש</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>סיכום</value>
+  </data>
+  <data name="TheWeb" xml:space="preserve">
+    <value>ה Web</value>
+  </data>
+  <data name="TitleAZ" xml:space="preserve">
+    <value>כותרת  A-Z</value>
+  </data>
+  <data name="TitleZA" xml:space="preserve">
+    <value>כותרת Z-A</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="UserSearchFailed" xml:space="preserve">
+    <value>חיפוש המשתמש נכשל.</value>
+  </data>
+  <data name="BackStageControlRecent" xml:space="preserve">
+    <value>אחרונים</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>התחבר</value>
+  </data>
+  <data name="SignInForgotYourPassword" xml:space="preserve">
+    <value>האם שכחת סיסמא?</value>
+  </data>
+  <data name="SignInSignUp" xml:space="preserve">
+    <value>התחבר</value>
+  </data>
+  <data name="InvalidIDOrPassword" xml:space="preserve">
+    <value>זיהוי משתמש או סיסמה שגויים</value>
+  </data>
+  <data name="NewHere" xml:space="preserve">
+    <value>New here?</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>סיסמה:</value>
+  </data>
+  <data name="UsernamePrompt" xml:space="preserve">
+    <value>שם משתמש:</value>
+  </data>
+  <data name="DescriptionForGroupCanotBeDisplayed" xml:space="preserve">
+    <value>לא ניתן להציג בחלון זה את התיאור עבור קבוצה זו.</value>
+  </data>
+  <data name="GroupControlOwnerParenthesis" xml:space="preserve">
+    <value>(בעלים)</value>
+  </data>
+  <data name="LastModifiedPrompt" xml:space="preserve">
+    <value>(עודכן לאחרונה:</value>
+  </data>
+  <data name="LastModifiedPromptEnd" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="MapDetailsControlAverageRating" xml:space="preserve">
+    <value>דירוג ממוצע</value>
+  </data>
+  <data name="MapDetailsControlType" xml:space="preserve">
+    <value>סוג</value>
+  </data>
+  <data name="OnWithSpace" xml:space="preserve">
+    <value> בתוך </value>
+  </data>
+  <data name="SearchR" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="LoadingMaps" xml:space="preserve">
+    <value>טוען מפות...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>הסר</value>
+  </data>
+  <data name="NoFeaturedMaps" xml:space="preserve">
+    <value>לא נימצאו מפות עניין זמינות</value>
+  </data>
+  <data name="SigningIn" xml:space="preserve">
+    <value>מתחבר...</value>
+  </data>
+  <data name="SignInLabel" xml:space="preserve">
+    <value>התחבר ל- {0}</value>
+  </data>
+  <data name="CreatedByOwnerOnDate" xml:space="preserve">
+    <value>נוצר על ידי {0} ב- {1}</value>
+  </data>
+  <data name="WebMapOwnerDateFormat" xml:space="preserve">
+    <value>מפת רשת על ידי {0} (שונתה לאחרונה: {1})</value>
+  </data>
+  <data name="WebMapBy" xml:space="preserve">
+    <value>מפת רשת על ידי {0}</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>הכניסה נכשלה.</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>חברים</value>
+  </data>
+</root>

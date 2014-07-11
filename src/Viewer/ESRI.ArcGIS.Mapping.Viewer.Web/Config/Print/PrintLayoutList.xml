@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PrintLayouts>
+  <PrintLayout ID="Basic" DisplayName="_Basic_" Description="_BasicPrintLayout_"/>
+  <PrintLayout ID="WithMapElements" DisplayName="_WithMapElements_" Description="_PrintLayoutWithMapElementsLikeOverviewMap_"/>
+</PrintLayouts>

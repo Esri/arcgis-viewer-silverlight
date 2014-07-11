@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A0B28F52-9F48-431F-9697-A9D2C60B0D88}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectTemplateCreation</RootNamespace>
+    <AssemblyName>ProjectTemplateCreation</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core">
+      <HintPath>$(TargetFrameworkDirectory)System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>@echo ---------------- Create Project Template -----------------
+set TemplateFolder=$(ProjectDir)..\..\ProjectTemplate
+set TempFolder=$(ProjectDir)..\..\..\output\ProjectTemplate\temp
+set ViewerFolder=$(ProjectDir)..\..\..\output\Viewer
+set OutFolder=$(ProjectDir)..\..\..\output\ProjectTemplate
+
+@echo template folder: "%25TemplateFolder%25"
+@echo temp folder: "%25TempFolder%25"
+@echo viewer folder: "%25ViewerFolder%25"
+@echo output folder: "%25OutFolder%25"
+
+REM delete placeholder _._ file
+del /f "%25ViewerFolder%25_._"
+
+@echo Copy template files to temp folder
+xcopy "%25TemplateFolder%25"  "%25TempFolder%25" /i /f /y /s
+
+@echo Copy Viewer website
+xcopy "%25ViewerFolder%25"  "%25TempFolder%25\ESRIViewer\Viewer.Web" /i /f /y /s
+
+@echo Copy config files, layouts, and other supporting files
+xcopy  "%25TempFolder%25\StockFiles\Application.xml" "%25TempFolder%25\ESRIViewer\Viewer.Web\Config\Application.xml"  /i /f /y
+xcopy  "%25TempFolder%25\StockFiles\Tools.xml" "%25TempFolder%25\ESRIViewer\Viewer.Web\Config\Tools.xml"  /i /f /y
+xcopy  "%25TempFolder%25\StockFiles\Behaviors.xml" "%25TempFolder%25\ESRIViewer\Viewer.Web\Config\Behaviors.xml"  /i /f /y
+
+rd /s /q  "%25TempFolder%25\ESRIViewer\Viewer.Layouts\Config\"
+rd /s /q  "%25TempFolder%25\ESRIViewer\Viewer.Layouts\Images\"
+xcopy "%25ViewerFolder%25\Config\Layouts" "%25TempFolder%25\ESRIViewer\Viewer.Layouts\Config\Layouts" /i /f /y /s
+xcopy "%25ViewerFolder%25\Config\Print" "%25TempFolder%25\ESRIViewer\Viewer.Layouts\Config\Print" /i /f /y /s
+xcopy "%25ViewerFolder%25\Images\logo.png" "%25TempFolder%25\ESRIViewer\Viewer.Layouts\Images\" /i /f /y /s
+xcopy "%25ViewerFolder%25\Images\toolbar" "%25TempFolder%25\ESRIViewer\Viewer.Layouts\Images\toolbar" /i /f /y /s
+
+@echo zip up template files
+del /f "%25OutFolder%25\ESRIViewer.zip"
+pushd "%25TempFolder%25\ESRIViewer
+"$(ProjectDir)..\..\..\build\utilities\7za.exe" a -tzip -r "%25OutFolder%25\ESRIViewer.zip" *.*
+popd
+
+REM rd /s /q "%25TempFolder%25\"
+</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

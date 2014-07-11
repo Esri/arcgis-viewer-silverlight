@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddLabel" xml:space="preserve">
+    <value>새로 추가</value>
+  </data>
+  <data name="AliasLabel" xml:space="preserve">
+    <value>별칭</value>
+  </data>
+  <data name="AutoEnableDataGridLabel" xml:space="preserve">
+    <value>속성 테이블에 결과 표시</value>
+  </data>
+  <data name="AutoPinResults" xml:space="preserve">
+    <value>맵에 결과 유지</value>
+  </data>
+  <data name="AutoZoomToResultsLabel" xml:space="preserve">
+    <value>쿼리가 완료되면 결과로 확대/축소</value>
+  </data>
+  <data name="BuildQueryExpressionsLabel" xml:space="preserve">
+    <value>쿼리 작성</value>
+  </data>
+  <data name="CancelLabel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="CannotExecuteCommand" xml:space="preserve">
+    <value>명령을 실행할 수 없음</value>
+  </data>
+  <data name="ClickConnect" xml:space="preserve">
+    <value>연결 클릭</value>
+  </data>
+  <data name="ClickNext" xml:space="preserve">
+    <value>계속하려면 "다음"을 클릭하세요.</value>
+  </data>
+  <data name="ConfigurationLabel" xml:space="preserve">
+    <value>쿼리 도구 구성</value>
+  </data>
+  <data name="ConfigureDialogHeading" xml:space="preserve">
+    <value>쿼리 대화상자의 모양 구성</value>
+  </data>
+  <data name="ConfigureResultLabel" xml:space="preserve">
+    <value>쿼리 결과 설정 지정</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>연결</value>
+  </data>
+  <data name="ConnectCompleted" xml:space="preserve">
+    <value>'{0}'에 대한 연결이 완료되었습니다.</value>
+  </data>
+  <data name="ConnectFailed" xml:space="preserve">
+    <value>연결에 실패했습니다.</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>연결하는 중...</value>
+  </data>
+  <data name="DataTypeMismatch" xml:space="preserve">
+    <value>'{0}' 값을 '{1}' 데이터 유형으로 변환할 수 없습니다.</value>
+  </data>
+  <data name="DefaultValueLabel" xml:space="preserve">
+    <value>기본값</value>
+  </data>
+  <data name="DeleteExpression" xml:space="preserve">
+    <value>이 식 삭제</value>
+  </data>
+  <data name="DuplicateError" xml:space="preserve">
+    <value>목록에 중복 항목을 포함할 수 없습니다.</value>
+  </data>
+  <data name="EditLabel" xml:space="preserve">
+    <value>이 식 편집</value>
+  </data>
+  <data name="EmptyEntryError" xml:space="preserve">
+    <value>이 매개 변수의 값은 비워 둘 수 없습니다.</value>
+  </data>
+  <data name="EnterServiceUrl" xml:space="preserve">
+    <value>ArcGIS Server 맵 또는 피처 서비스의 URL을 입력하세요.</value>
+  </data>
+  <data name="EnterValue" xml:space="preserve">
+    <value>값을 입력하세요.</value>
+  </data>
+  <data name="EqualityCheckFailsOnType" xml:space="preserve">
+    <value>해당 유형이 일치하지 않으므로 '{0}'({1}) 값과 '{2}'({3})의 동일성을 비교할 수 없습니다.</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>설명:</value>
+  </data>
+  <data name="ExecuteLabel" xml:space="preserve">
+    <value>실행</value>
+  </data>
+  <data name="ExecuteQuery" xml:space="preserve">
+    <value>쿼리 중...</value>
+  </data>
+  <data name="ExpressionBuilderLabel" xml:space="preserve">
+    <value>쿼리 식 작성기</value>
+  </data>
+  <data name="ExpressionColumnHeader" xml:space="preserve">
+    <value>쿼리 식</value>
+  </data>
+  <data name="ExpressionLabel" xml:space="preserve">
+    <value>식 레이블:</value>
+  </data>
+  <data name="FieldAndOperatorLabel" xml:space="preserve">
+    <value>필드 및 연산자:</value>
+  </data>
+  <data name="GroupColumnHeader" xml:space="preserve">
+    <value>그룹 ID</value>
+  </data>
+  <data name="GroupLabel" xml:space="preserve">
+    <value>선택한 그룹</value>
+  </data>
+  <data name="IncludedValues" xml:space="preserve">
+    <value>포함된 값</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>레이블</value>
+  </data>
+  <data name="LayerInfoMissing" xml:space="preserve">
+    <value>이 수준에서는 레이어 메타데이터를 사용할 수 없습니다.</value>
+  </data>
+  <data name="OkLabel" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="OperatorLabel" xml:space="preserve">
+    <value>연산자</value>
+  </data>
+  <data name="ParameterLabelsAndVisibility" xml:space="preserve">
+    <value>각 쿼리 매개 변수의 레이블 및 표시 여부를 설정하세요.</value>
+  </data>
+  <data name="PinToMapLabel" xml:space="preserve">
+    <value>맵에 결과 유지</value>
+  </data>
+  <data name="QueryCategory" xml:space="preserve">
+    <value>쿼리</value>
+  </data>
+  <data name="QueryDescription" xml:space="preserve">
+    <value>레이어에서 지정된 검색 조건과 일치하는 피처를 찾습니다.</value>
+  </data>
+  <data name="QueryExpressions" xml:space="preserve">
+    <value>쿼리 식</value>
+  </data>
+  <data name="QueryFailed" xml:space="preserve">
+    <value>쿼리를 실행하지 못했습니다.</value>
+  </data>
+  <data name="QueryTitleLabel" xml:space="preserve">
+    <value>대화상자 제목</value>
+  </data>
+  <data name="QueryToolName" xml:space="preserve">
+    <value>쿼리 레이어</value>
+  </data>
+  <data name="RemoveLabel" xml:space="preserve">
+    <value>선택 항목 삭제</value>
+  </data>
+  <data name="ResultOptionsLabel" xml:space="preserve">
+    <value>다른 옵션</value>
+  </data>
+  <data name="ResultsFound" xml:space="preserve">
+    <value>피처 {0}개를 찾았습니다.</value>
+  </data>
+  <data name="SampleValues" xml:space="preserve">
+    <value>샘플 값(레이어에서 검색)</value>
+  </data>
+  <data name="SelectExpression" xml:space="preserve">
+    <value>이 식을 선택하거나 선택 취소합니다.</value>
+  </data>
+  <data name="SelectFromList" xml:space="preserve">
+    <value>목록에서 값을 선택합니다.</value>
+  </data>
+  <data name="ServiceUrl" xml:space="preserve">
+    <value>서비스 URL</value>
+  </data>
+  <data name="StringExceededMaxLength" xml:space="preserve">
+    <value>'{0}'은(는) {1}자를 초과할 수 없습니다.</value>
+  </data>
+  <data name="UnableToAccess" xml:space="preserve">
+    <value>URL '&lt;{0}&gt;'에 액세스할 수 없습니다.</value>
+  </data>
+  <data name="UngroupLabel" xml:space="preserve">
+    <value>선택 항목 그룹 해제</value>
+  </data>
+  <data name="UriFormatError" xml:space="preserve">
+    <value>URL '&lt;{0}&gt;'에 잘못된 문자가 포함되어 있습니다.</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>프록시 사용</value>
+  </data>
+  <data name="UsersTypeValue" xml:space="preserve">
+    <value>값을 입력하세요.</value>
+  </data>
+  <data name="UseServiceRendererLabel" xml:space="preserve">
+    <value>서비스에서 정의한 심볼을 사용합니다.</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>[값]</value>
+  </data>
+  <data name="VisibleLabel" xml:space="preserve">
+    <value>표시</value>
+  </data>
+  <data name="InputMethod" xml:space="preserve">
+    <value>입력 방법:</value>
+  </data>
+  <data name="Fields" xml:space="preserve">
+    <value>필드</value>
+  </data>
+  <data name="LabelWatermark" xml:space="preserve">
+    <value>&lt;레이블 입력&gt;</value>
+  </data>
+  <data name="ResultOptionsDescription" xml:space="preserve">
+    <value>결과의 모양 및 동작을 지정합니다.</value>
+  </data>
+  <data name="SelectField" xml:space="preserve">
+    <value>&lt;필드 선택&gt;</value>
+  </data>
+  <data name="SelectFieldsToInclude" xml:space="preserve">
+    <value>쿼리 결과에 포함할 데이터를 선택하세요.</value>
+  </data>
+  <data name="AutoEnableDataGridTooltip" xml:space="preserve">
+    <value>결과 세트가 검색되면 속성 테이블이 자동으로 열립니다.</value>
+  </data>
+  <data name="AutoPinResultsTooltip" xml:space="preserve">
+    <value>쿼리 대화상자를 닫거나 다른 쿼리를 실행할 경우 쿼리 결과가 맵에 유지됩니다.</value>
+  </data>
+  <data name="AutoZoomToResultsTooltip" xml:space="preserve">
+    <value>쿼리 결과가 맵에 추가되면 해당 쿼리 결과로 자동으로 확대/축소됩니다. </value>
+  </data>
+  <data name="ConfigureQueryLayer" xml:space="preserve">
+    <value>쿼리할 레이어 구성</value>
+  </data>
+  <data name="DefineQueryExpressions" xml:space="preserve">
+    <value>쿼리에 포함된 식 정의</value>
+  </data>
+  <data name="SampleServiceUrl" xml:space="preserve">
+    <value>http://server/arcgis/rest/services/service/MapServer/0</value>
+  </data>
+  <data name="ServiceUrlDescription" xml:space="preserve">
+    <value>쿼리할 레이어의 URL을 지정합니다.</value>
+  </data>
+  <data name="UseServiceRendererTooltip" xml:space="preserve">
+    <value>서비스에서 정의한 심볼을 사용하여 맵에 결과 피처를 표시합니다. 선택을 취소하면 결과 세트의 모든 피처가 기본 심볼로 표시됩니다.</value>
+  </data>
+  <data name="InvalidValue" xml:space="preserve">
+    <value>이 필드의 값이 잘못되었습니다.</value>
+  </data>
+  <data name="ParameterAppearance" xml:space="preserve">
+    <value>매개 변수 표시</value>
+  </data>
+</root>

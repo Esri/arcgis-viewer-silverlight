@@ -1,0 +1,986 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkitPrim="clr-namespace:ESRI.ArcGIS.Client.Toolkit.Primitives;assembly=ESRI.ArcGIS.Client.Toolkit"
+    xmlns:mapping="http://schemas.esri.com/arcgis/mapping/2009"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+    xmlns:extensibility="clr-namespace:ESRI.ArcGIS.Client.Extensibility;assembly=ESRI.ArcGIS.Client.Extensibility"
+    xmlns:converters="clr-namespace:ESRI.ArcGIS.Client.Application.Layout.Converters;assembly=ESRI.ArcGIS.Client.Application.Layout"
+    mc:Ignorable="d"    >
+
+    <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <converters:BooleanToCollapsedConverter x:Key="BooleanToCollapsedConverter" />
+    <converters:LocalizationConverter x:Key="LayoutLocalization"/>
+    <converters:ReverseEnumerationConverter x:Key="ReverseEnumerationConverter"/>
+
+    <converters:EditorSwatchGenerator x:Key="EditorSwatchGenerator" />
+    <converters:TemplatePickerTextConverter x:Key="TemplatePickerTextConverter" />
+    
+    <!-- Editor Styles -->
+    <ItemsPanelTemplate x:Key="WrapItemsPaneltemplate">
+        <toolkit:WrapPanel />
+    </ItemsPanelTemplate>
+
+    <Style x:Key="BorderStyle" TargetType="Border">
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style x:Key="EditorToolButtonStyle" TargetType="Button">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid x:Name="root" Margin="0" >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="glow" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ColorAnimation Duration="0" To="{StaticResource ButtonPushedBackgroundDarkColor}" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="darkborder" />
+                                        <ColorAnimation Duration="0" To="{StaticResource ButtonPushedBackgroundLightColor}" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="darkborder" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="0.5" 
+                                                Storyboard.TargetName="contentPresenter" 
+                                                         Storyboard.TargetProperty="Opacity" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" />
+
+                        <Border x:Name="darkborder" Visibility="Collapsed" BorderBrush="{StaticResource DarkBorderBrush}" BorderThickness="1,1,1,1" CornerRadius="2" Background="{StaticResource DarkButtonBackgroundBrush}">
+                            <Border Opacity="0" HorizontalAlignment="Stretch" x:Name="glow" Width="Auto" Grid.RowSpan="2" CornerRadius="2" Background="{StaticResource ButtonHoverGlowBrush}" />
+                        </Border>
+
+                        <Grid>
+                            <Border x:Name="HoverBorder" Background="{StaticResource SelectionColorBrush}" BorderBrush="{StaticResource AccentColorBrush}" Visibility="Collapsed" CornerRadius="1.5" BorderThickness="1" Opacity="0.25" />
+                            <Border x:Name="PressedBorder" Background="{StaticResource SelectionColorBrush}" Visibility="Collapsed" CornerRadius="1.5"  BorderBrush="{StaticResource ButtonHotOuterBorderBrush}" BorderThickness="1" />
+                        </Grid>
+
+                        <ContentPresenter x:Name="contentPresenter" Margin="3"
+                                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                      
+                                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                      Content="{TemplateBinding Content}"
+                                                                      ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EditorToolToggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid x:Name="root" Margin="0" >
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="glow" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PressedBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ColorAnimation Duration="0" To="{StaticResource ButtonPushedBackgroundDarkColor}" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="darkborder" />
+                                        <ColorAnimation Duration="0" To="{StaticResource ButtonPushedBackgroundLightColor}" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="darkborder" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="0.5" 
+                                                Storyboard.TargetName="contentPresenter" 
+                                                         Storyboard.TargetProperty="Opacity" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckedStates">
+                                <VisualState x:Name="Unchecked">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CheckedBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CheckedBorder" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Border x:Name="CheckedBorder" Visibility="Collapsed" Margin="0" Opacity="0.5"
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    Background="{StaticResource SelectionColorBrush}"
+                                    BorderBrush="{StaticResource AccentColorBrush}"/>
+
+                        <Border x:Name="darkborder" Visibility="Collapsed" BorderBrush="{StaticResource DarkBorderBrush}" BorderThickness="1,1,1,1" CornerRadius="2" Background="{StaticResource DarkButtonBackgroundBrush}" Margin="2" >
+                            <Border Opacity="0" HorizontalAlignment="Stretch" x:Name="glow" Width="Auto" Grid.RowSpan="2" CornerRadius="2" Background="{StaticResource ButtonHoverGlowBrush}" />
+                        </Border>
+
+                        <Grid Margin="0" >
+                            <Border x:Name="HoverBorder" Background="{StaticResource SelectionColorBrush}" BorderBrush="{StaticResource AccentColorBrush}" Visibility="Collapsed" CornerRadius="1.5" BorderThickness="1" Opacity="0.25" />
+                            <Border x:Name="PressedBorder" Background="{StaticResource AccentColorBrush}" Visibility="Collapsed" CornerRadius="1.5"  BorderBrush="{StaticResource SelectionColorBrush}" BorderThickness="1" />
+                        </Grid>
+
+                        <ContentPresenter x:Name="contentPresenter" Margin="3"
+                                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                      
+                                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                      Content="{TemplateBinding Content}"
+                                                                      ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="TemplatePickerButtonStyle" TargetType="Button" >
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource BackgroundTextColorBrush}" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button" >
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates" >
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="BackgroundAnimation" Storyboard.TargetProperty="Opacity" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="BackgroundAnimation" Storyboard.TargetProperty="Opacity" To="1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="DisabledVisualElement" Storyboard.TargetProperty="Opacity" To=".55" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates" >
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="Opacity" To="1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" CornerRadius="3" Background="Transparent" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" >
+                            <Grid Background="Transparent" Margin="1">
+                                <Border Opacity="0" x:Name="BackgroundAnimation" Background="{StaticResource SelectionColorBrush}" CornerRadius="3" BorderBrush="{StaticResource SelectionOutlineColorBrush}" BorderThickness="1" />
+                                <Rectangle x:Name="BackgroundGradient" Fill="#00FFFFFF" />
+                            </Grid>
+                        </Border>
+                        <ContentPresenter x:Name="contentPresenter" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}"  />
+                        <Rectangle x:Name="DisabledVisualElement" RadiusX="3" RadiusY="3" Fill="#FFFFFFFF" Opacity="0" IsHitTestVisible="false"  />
+                        <Rectangle x:Name="FocusVisualElement" RadiusX="2" RadiusY="2" Margin="1" Stroke="{StaticResource AccentColorBrush}" StrokeThickness="1" Opacity="0" IsHitTestVisible="false"  />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EditorToolbarListBoxItemStyle" TargetType="ListBoxItem">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="TabNavigation" Value="Local" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Grid Background="{TemplateBinding Background}" Margin="0">
+                        <ContentPresenter
+                              x:Name="contentPresenter"
+                              Content="{TemplateBinding Content}"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              Margin="0"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="toolkit:Expander" x:Key="ExpanderStyle" >
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="toolkit:Expander" >
+                    <Grid Background="Transparent">
+                        <Grid.Resources>
+                            <LinearGradientBrush x:Key="ExpanderArrowFill" EndPoint="0,1" StartPoint="0,0" >
+                                <GradientStop Color="White" Offset="0" />
+                                <GradientStop Color="#FFBFBFBF" Offset="0.5" />
+                                <GradientStop Color="#FF878787" Offset="1" />
+                            </LinearGradientBrush>
+                            <LinearGradientBrush x:Key="ExpanderArrowHoverFill" EndPoint="0,1" StartPoint="0,0" >
+                                <GradientStop Color="#FFF0F8FE" Offset="0" />
+                                <GradientStop Color="#FFE0F3FE" Offset="0.3" />
+                                <GradientStop Color="#FF6FA7C5" Offset="1" />
+                            </LinearGradientBrush>
+                            <LinearGradientBrush x:Key="ExpanderArrowPressedFill" EndPoint="0,1" StartPoint="0,0" >
+                                <GradientStop Color="#FFDCF0FA" Offset="0" />
+                                <GradientStop Color="#FFC5E6F7" Offset="0.2" />
+                                <GradientStop Color="#FF5690D0" Offset="1" />
+                            </LinearGradientBrush>
+                            <ControlTemplate x:Key="ExpanderDownHeaderTemplate" TargetType="ToggleButton" >
+                                <Grid Background="Transparent">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CheckStates">
+                                            <VisualStateGroup.Transitions>
+                                                <VisualTransition GeneratedDuration="00:00:00" />
+                                            </VisualStateGroup.Transitions>
+                                            <VisualState x:Name="Checked">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="arrow" Storyboard.TargetProperty="Data">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="M 0,1 L 9,1 L 4.5,6 L 0,1" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Unchecked" />
+                                        </VisualStateGroup>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualStateGroup.Transitions>
+                                                <VisualTransition GeneratedDuration="0" />
+                                                <VisualTransition GeneratedDuration="00:00:00.1" To="MouseOver" />
+                                                <VisualTransition GeneratedDuration="00:00:00.1" To="Pressed" />
+                                            </VisualStateGroup.Transitions>
+                                            <VisualState x:Name="Normal" />
+                                            <VisualState x:Name="MouseOver">
+                                                <Storyboard>
+                                                    <ColorAnimation BeginTime="0" Storyboard.TargetName="arrow" Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)" To="{StaticResource SelectionColor}" />
+                                                    <ColorAnimation BeginTime="0" Storyboard.TargetName="arrow" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" To="{StaticResource SelectionColor}" />
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <Storyboard>
+                                                    <ColorAnimation BeginTime="0" Storyboard.TargetName="arrow" Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)" To="{StaticResource AccentColor}" />
+                                                    <ColorAnimation BeginTime="0" Storyboard.TargetName="arrow" Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)" To="{StaticResource AccentColor}" />
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Border Padding="{TemplateBinding Padding}">
+                                        <Grid Background="Transparent">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="10" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Width="10">
+                                                <Path Data="M 1,0 L 6,4.5 L 1,9 L 1,0" HorizontalAlignment="Center" x:Name="arrow" Fill="{StaticResource BackgroundTextColorBrush}" Stroke="{StaticResource BackgroundTextColorBrush}" StrokeThickness="1" VerticalAlignment="Center" />
+                                            </Grid>
+                                            <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" Grid.Column="1" HorizontalAlignment="Stretch" Margin="4,0,0,0" x:Name="header" VerticalAlignment="Center" />
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                            </ControlTemplate>
+                        </Grid.Resources>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates" >
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="DisabledVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)" To="1" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates" >
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="ExpansionStates" >
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Collapsed" />
+                                <VisualState x:Name="Expanded">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="ExpandSite" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="ExpandDirectionStates" >
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="ExpandDown">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="rd1" Storyboard.TargetProperty="Height">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="*" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="cd0" Storyboard.TargetProperty="Width">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="*" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" >
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" x:Name="rd0" />
+                                    <RowDefinition Height="Auto" x:Name="rd1" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" x:Name="cd0" />
+                                    <ColumnDefinition Width="Auto" x:Name="cd1" />
+                                </Grid.ColumnDefinitions>
+                                <ToggleButton Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontStretch="{TemplateBinding FontStretch}" FontStyle="{TemplateBinding FontStyle}" FontWeight="{TemplateBinding FontWeight}" Foreground="{TemplateBinding Foreground}" Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" IsChecked="{TemplateBinding IsExpanded}" Margin="1" MinHeight="0" MinWidth="0" x:Name="ExpanderButton" Padding="{TemplateBinding Padding}" Template="{StaticResource ExpanderDownHeaderTemplate}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" Cursor="Hand" />
+                                <ContentControl Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" FontFamily="{TemplateBinding FontFamily}" FontSize="{TemplateBinding FontSize}" FontStretch="{TemplateBinding FontStretch}" FontStyle="{TemplateBinding FontStyle}" FontWeight="{TemplateBinding FontWeight}" Foreground="{TemplateBinding Foreground}" Grid.Column="0" Grid.Row="1" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" x:Name="ExpandSite" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" Visibility="Collapsed" Padding="0" />
+                            </Grid>
+                        </Border>
+                        <Border x:Name="DisabledVisualElement" IsHitTestVisible="false" Opacity="0" Background="#A5FFFFFF" CornerRadius="3"  />
+                        <Border x:Name="FocusVisualElement" IsHitTestVisible="false" Visibility="Collapsed" BorderThickness="1" CornerRadius="3" >
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="UngroupedDataTemplate">
+        <Grid>
+            <Button HorizontalContentAlignment="Center" Margin="2" Command="{Binding Editor.Add}" CommandParameter="{Binding TypeID}" ToolTipService.ToolTip="{Binding Name}">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" IsHitTestVisible="False">
+                    <toolkitPrim:SymbolDisplay Height="25" Width="30" Symbol="{Binding Symbol}" />
+                </StackPanel>
+            </Button>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="GroupedDataTemplate">
+        <toolkit:Expander HorizontalAlignment="Stretch" Margin="0" Style="{StaticResource ExpanderStyle}" Padding="0" IsExpanded="True" >
+            <toolkit:Expander.Header>
+                <TextBlock Text="{Binding Layer.(extensibility:MapApplication.LayerName)}" TextWrapping="Wrap" HorizontalAlignment="Stretch" FontWeight="Bold" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource BackgroundTextColorBrush}" />
+            </toolkit:Expander.Header>
+            <toolkit:Expander.Content>
+                <Border HorizontalAlignment="Stretch" Margin="0" BorderBrush="{StaticResource SelectionColorBrush}" BorderThickness="1" 
+                        CornerRadius="3" MinWidth="225" >                    
+                    <ItemsControl ItemsSource="{Binding Templates}" Margin="0" HorizontalAlignment="Stretch">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <toolkit:WrapPanel HorizontalAlignment="Center" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid VerticalAlignment="Top">
+                                    <Button HorizontalContentAlignment="Center" Command="{Binding Editor.Add}" CommandParameter="{Binding TypeID}" Cursor="Hand" Style="{StaticResource TemplatePickerButtonStyle}" Padding="0,5,0,0" VerticalAlignment="Top" >
+                                        <ToolTipService.ToolTip>
+                                            <Grid>
+                                                <TextBlock MaxWidth="157" FontSize="9" TextWrapping="Wrap" Text="{Binding DataContext.FeatureTemplate, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource TemplatePickerTextConverter}}" />
+                                            </Grid>
+                                        </ToolTipService.ToolTip>
+                                        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Margin="2" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition />
+                                            </Grid.RowDefinitions>
+                                            <toolkitPrim:SymbolDisplay Height="30" Width="45" Symbol="{Binding Path=., Converter={StaticResource EditorSwatchGenerator}}" IsHitTestVisible="False" />
+                                            <TextBlock Grid.Row="1" Text="{Binding Name}" 
+                                                       Foreground="{StaticResource BackgroundTextColorBrush}" 
+                                                       TextWrapping="Wrap" HorizontalAlignment="Center" 
+                                                       TextAlignment="Center" FontSize="10"  
+                                                       Width="70" VerticalAlignment="Center" />
+                                        </Grid>
+                                    </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Border>
+            </toolkit:Expander.Content>
+        </toolkit:Expander>
+    </DataTemplate>
+
+    <Style x:Key="UngroupedTemplatePickerStyle" TargetType="esri:TemplatePicker">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="esri:TemplatePicker">
+                    <Border Style="{StaticResource BorderStyle}" HorizontalAlignment="Center"
+                                    Background="Transparent" Margin="0">
+                        <ItemsControl ItemsSource="{TemplateBinding Templates}" Margin="8,0,8,0" ItemTemplate="{StaticResource UngroupedDataTemplate}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <toolkit:WrapPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TemplatePickerStyle" TargetType="esri:TemplatePicker">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="esri:TemplatePicker">
+                    <Border Style="{StaticResource BorderStyle}" HorizontalAlignment="Stretch"
+                                    Background="Transparent" Margin="0">
+                        <!-- Grouped by Layer -->
+                        <ItemsControl ItemsSource="{Binding TemplateGroups, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ReverseEnumerationConverter}}" Margin="0" ItemTemplate="{StaticResource GroupedDataTemplate}" HorizontalAlignment="Stretch" >
+                        </ItemsControl>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="TemplatePickerEditorStyle" TargetType="esri:EditorWidget">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="esri:EditorWidget">
+                    <StackPanel Margin="0">
+                        <esri:TemplatePicker Map="{TemplateBinding Map}"
+                                                  GeometryServiceUrl="{TemplateBinding GeometryServiceUrl}"
+                                                  ShowAttributesOnAdd="False"
+                                                  LayerIDs="{TemplateBinding LayerIDs}"
+                                                  AlwaysDisplayDefaultTemplates="{TemplateBinding AlwaysDisplayDefaultTemplates}"
+                                                  Continuous="{TemplateBinding Continuous}"
+                                                  AutoSelect="{TemplateBinding AutoSelect}"
+                                                  Freehand="{Binding Freehand}"
+                                                  AutoComplete="{Binding AutoComplete}"
+                                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                                  Background="{TemplateBinding Background}"
+                                                  x:Name="TemplatePicker"
+                                                  Style="{StaticResource TemplatePickerStyle}">
+                        </esri:TemplatePicker>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="UngroupedEditorWidgetStyle" TargetType="esri:EditorWidget">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="esri:EditorWidget">
+                    <StackPanel Margin="0,0,0,0">
+
+                        <Border x:Name="ToolsContainer" HorizontalAlignment="Center" 
+                                    VerticalAlignment="Top" Margin="0" Grid.Row="2" >
+                            <ListBox ItemsPanel="{StaticResource WrapItemsPaneltemplate}" Margin="8,0,8,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" ItemContainerStyle="{StaticResource EditorToolbarListBoxItemStyle}" >
+
+                                <Grid Visibility="{Binding DataContext.SelectTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button x:Name="NewSelect"  Command="{Binding Select}" CommandParameter="New" 
+                                        ToolTipService.Placement="Top" Style="{StaticResource EditorToolButtonStyle}">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=NewSelect, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=NewSelectDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image  Stretch="None" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/NewSelection.png"/>
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.AddToSelectionTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button x:Name="AddSelect" Command="{Binding Select}" CommandParameter="Add" 
+                                        ToolTipService.Placement="Top" Style="{StaticResource EditorToolButtonStyle}">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=AddSelect, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=AddSelectDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image  Stretch="None" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/AddToSelection.png"/>
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.RemoveFromSelectionTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button  x:Name="RemoveSelect" Command="{Binding Select}" CommandParameter="Remove" 
+                                         ToolTipService.Placement="Top"  Style="{StaticResource EditorToolButtonStyle}">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=RemoveSelect, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=RemoveSelectDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Stretch="None" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/RemoveFromSelection.png"/>
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.ClearSelectionTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button Command="{Binding ClearSelection}" x:Name="ClearSelect" 
+                                                     Style="{StaticResource EditorToolButtonStyle}" ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=ClearSelect, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=ClearSelect, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/Clear.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.DeleteTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button Command="{Binding DeleteSelected}" x:Name="DeleteSelect" 
+                                                     Style="{StaticResource EditorToolButtonStyle}" ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=DeleteSelect, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=DeleteSelectDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/deleteFeature.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.EditValuesTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button  x:Name="DisplayAttribute" Style="{StaticResource EditorToolButtonStyle}"
+                                        ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=EditValues, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=EditValuesDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/attributes.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.EditShapesTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button x:Name="EditGeometry" Command="{Binding EditVertices}" ToolTipService.Placement="Top" 
+                                        Style="{StaticResource EditorToolButtonStyle}">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=EditGeometry, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=EditShapeDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image  Stretch="None" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/showVertices.png"/>
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.ReshapeTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button x:Name="Reshape" Command="{Binding Reshape}" ToolTipService.Placement="Top" 
+                                        Style="{StaticResource EditorToolButtonStyle}">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=Reshape, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=ReshapeDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Stretch="None" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/reshape.png"/>
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.UnionTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button Command="{Binding Union}" x:Name="Union" 
+                                                     Style="{StaticResource EditorToolButtonStyle}" ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=Union, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=UnionDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/union.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.CutTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button Command="{Binding Cut}" x:Name="Cut" 
+                                                     Style="{StaticResource EditorToolButtonStyle}" ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=Cut, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=CutDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/cut.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="Collapsed" >
+                                    <Button x:Name="Options" Margin="0" Padding="0" Content="" />
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.FreehandTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <ToggleButton IsChecked="{Binding Path=Freehand, Mode=TwoWay}" IsEnabled="{Binding IsEnabled, ElementName=Options}"
+                                       Style="{StaticResource EditorToolToggleButtonStyle}" ToolTipService.Placement="Top" >
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=Freehand, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=FreehandDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Mapping.Controls;component/images/toolbar/Freehand16.png" Stretch="None" />
+                                    </ToggleButton>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.AutocompleteTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <ToggleButton IsChecked="{Binding Path=AutoComplete, Mode=TwoWay}" IsEnabled="{Binding IsEnabled, ElementName=Options}"
+                                       Style="{StaticResource EditorToolToggleButtonStyle}" ToolTipService.Placement="Top" >
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=AutoComplete, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=AutoCompleteDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/autocomplete.png" Stretch="None" />
+                                    </ToggleButton>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.Continuous, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button x:Name="CancelButton" Command="{Binding CancelActive}"
+                                        Style="{StaticResource EditorToolButtonStyle}" ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=CancelTool, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=CancelTool, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Mapping.Controls;component/images/toolbar/cursor.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.AutoSave, Converter={StaticResource BooleanToCollapsedConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button Command="{Binding Save}" x:Name="Save" 
+                                                     Style="{StaticResource EditorToolButtonStyle}" ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=SaveEdit, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=SaveEdit, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/commit.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <StackPanel VerticalAlignment="Center" Margin="0,0,3,3">
+                                    <ContentControl Content="{Binding DataContext.ToolPanel, ElementName=EditorConfigContainer}" />
+                                </StackPanel>
+                            </ListBox>
+
+                        </Border>
+
+                        <Rectangle Fill="{StaticResource AccentColorGradientBrush}" Height="2" HorizontalAlignment="Stretch" Margin="0,10,0,10"/>
+
+                        <esri:TemplatePicker Map="{TemplateBinding Map}"
+                                                  GeometryServiceUrl="{TemplateBinding GeometryServiceUrl}"
+                                                  ShowAttributesOnAdd="False"
+                                                  LayerIDs="{TemplateBinding LayerIDs}"
+                                                  AlwaysDisplayDefaultTemplates="{TemplateBinding AlwaysDisplayDefaultTemplates}"
+                                                  Continuous="{TemplateBinding Continuous}"
+                                                  AutoSelect="{TemplateBinding AutoSelect}"
+                                                  Freehand="{Binding Freehand}"
+                                                  AutoComplete="{Binding AutoComplete}"
+                                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                                  Background="{TemplateBinding Background}"
+                                                  Style="{StaticResource TemplatePickerStyle}"
+                                                  Margin="0"
+                                                  x:Name="TemplatePicker">
+                        </esri:TemplatePicker>
+
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EditorWidgetStyle" TargetType="esri:EditorWidget">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="esri:EditorWidget">
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="7" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" 
+                                      HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" 
+                                      BorderThickness="0">                            
+                            <esri:TemplatePicker Map="{TemplateBinding Map}" HorizontalAlignment="Stretch"
+                                                GeometryServiceUrl="{TemplateBinding GeometryServiceUrl}"
+                                                ShowAttributesOnAdd="False"
+                                                LayerIDs="{TemplateBinding LayerIDs}"
+                                                AlwaysDisplayDefaultTemplates="{TemplateBinding AlwaysDisplayDefaultTemplates}"
+                                                Continuous="{TemplateBinding Continuous}"
+                                                AutoSelect="{TemplateBinding AutoSelect}"
+                                                Freehand="{Binding Freehand}"
+                                                AutoComplete="{Binding AutoComplete}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                Background="{TemplateBinding Background}"
+                                                Style="{StaticResource TemplatePickerStyle}"
+                                                Margin="0"
+                                                x:Name="TemplatePicker">
+                            </esri:TemplatePicker>
+                        </ScrollViewer>
+                        <Grid HorizontalAlignment="Stretch" 
+                                    VerticalAlignment="Center" Grid.Row="1" Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Height="1" Fill="{StaticResource AccentColorGradientBrush}" 
+                                   HorizontalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" Grid.Column="0">
+                                <Rectangle.RenderTransform>
+                                    <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5" />
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                            <Rectangle Height="1" Fill="{StaticResource AccentColorBrush}" 
+                                   HorizontalAlignment="Stretch" Margin="0,2,0,0"
+                                       Grid.Column="1"/>
+                            <Rectangle Height="1" Fill="{StaticResource AccentColorGradientBrush}" 
+                                   HorizontalAlignment="Stretch" Margin="0,2,0,0" Grid.Column="2"/>
+                        </Grid>
+                        <Border x:Name="ToolsContainer" HorizontalAlignment="Center" 
+                                    VerticalAlignment="Top" Margin="0" Grid.Row="2" >
+                            <ListBox ItemsPanel="{StaticResource WrapItemsPaneltemplate}" Margin="8,0,8,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" ItemContainerStyle="{StaticResource EditorToolbarListBoxItemStyle}" >
+ 
+                                <Grid Visibility="{Binding DataContext.SelectTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button x:Name="NewSelect"  Command="{Binding Select}" CommandParameter="New" 
+                                        ToolTipService.Placement="Top" Style="{StaticResource EditorToolButtonStyle}">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=NewSelect, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=NewSelectDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image  Stretch="None" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/NewSelection.png"/>
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.AddToSelectionTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button x:Name="AddSelect" Command="{Binding Select}" CommandParameter="Add" 
+                                        ToolTipService.Placement="Top" Style="{StaticResource EditorToolButtonStyle}">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=AddSelect, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=AddSelectDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image  Stretch="None" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/AddToSelection.png"/>
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.RemoveFromSelectionTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button  x:Name="RemoveSelect" Command="{Binding Select}" CommandParameter="Remove" 
+                                         ToolTipService.Placement="Top"  Style="{StaticResource EditorToolButtonStyle}">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=RemoveSelect, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=RemoveSelectDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Stretch="None" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/RemoveFromSelection.png"/>
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.ClearSelectionTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button Command="{Binding ClearSelection}" x:Name="ClearSelect" 
+                                                     Style="{StaticResource EditorToolButtonStyle}" ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=ClearSelect, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=ClearSelect, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/Clear.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.DeleteTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button Command="{Binding DeleteSelected}" x:Name="DeleteSelect" 
+                                                     Style="{StaticResource EditorToolButtonStyle}" ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=DeleteSelect, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=DeleteSelectDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/deleteFeature.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.EditValuesTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button  x:Name="DisplayAttribute" Style="{StaticResource EditorToolButtonStyle}"
+                                        ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=EditValues, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=EditValuesDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/attributes.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.EditShapesTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button x:Name="EditGeometry" Command="{Binding EditVertices}" ToolTipService.Placement="Top" 
+                                        Style="{StaticResource EditorToolButtonStyle}">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=EditGeometry, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=EditShapeDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image  Stretch="None" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/showVertices.png"/>
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.ReshapeTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button x:Name="Reshape" Command="{Binding Reshape}" ToolTipService.Placement="Top" 
+                                        Style="{StaticResource EditorToolButtonStyle}">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=Reshape, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=ReshapeDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Stretch="None" Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/reshape.png"/>
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.UnionTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button Command="{Binding Union}" x:Name="Union" 
+                                                     Style="{StaticResource EditorToolButtonStyle}" ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=Union, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=UnionDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/union.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.CutTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button Command="{Binding Cut}" x:Name="Cut" 
+                                                     Style="{StaticResource EditorToolButtonStyle}" ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=Cut, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=CutDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/cut.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="Collapsed" >
+                                    <Button x:Name="Options" Margin="0" Padding="0" Content="" />
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.FreehandTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <ToggleButton IsChecked="{Binding Path=Freehand, Mode=TwoWay}" IsEnabled="{Binding IsEnabled, ElementName=Options}"
+                                       Style="{StaticResource EditorToolToggleButtonStyle}" ToolTipService.Placement="Top" >
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=Freehand, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=FreehandDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Mapping.Controls;component/images/toolbar/Freehand16.png" Stretch="None" />
+                                    </ToggleButton>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.AutocompleteTool, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <ToggleButton IsChecked="{Binding Path=AutoComplete, Mode=TwoWay}" IsEnabled="{Binding IsEnabled, ElementName=Options}"
+                                       Style="{StaticResource EditorToolToggleButtonStyle}" ToolTipService.Placement="Top" >
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=AutoComplete, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=AutoCompleteDescription, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/autocomplete.png" Stretch="None" />
+                                    </ToggleButton>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.Continuous, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button x:Name="CancelButton" Command="{Binding CancelActive}"
+                                        Style="{StaticResource EditorToolButtonStyle}" ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=CancelTool, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=CancelTool, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Mapping.Controls;component/images/toolbar/cursor.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <Grid Visibility="{Binding DataContext.AutoSave, Converter={StaticResource BooleanToCollapsedConverter}, ElementName=EditorConfigContainer}" >
+                                    <Button Command="{Binding Save}" x:Name="Save" 
+                                                     Style="{StaticResource EditorToolButtonStyle}" ToolTipService.Placement="Top">
+                                        <ToolTipService.ToolTip >
+                                            <StackPanel Orientation="Vertical" Margin="3">
+                                                <TextBlock Text="{Binding ConverterParameter=SaveEdit, Converter={StaticResource LayoutLocalization}}" FontWeight="Bold" Margin="0,0,0,3" />
+                                                <TextBlock Text="{Binding ConverterParameter=SaveEdit, Converter={StaticResource LayoutLocalization}}" />
+                                            </StackPanel>
+                                        </ToolTipService.ToolTip>
+                                        <Image Source="/ESRI.ArcGIS.Client.Toolkit;component/Images/commit.png" Stretch="None" />
+                                    </Button>
+                                </Grid>
+                                <StackPanel VerticalAlignment="Center" Margin="0,0,3,3">
+                                    <ContentControl Content="{Binding DataContext.ToolPanel, ElementName=EditorConfigContainer}"/>
+                                </StackPanel>
+                            </ListBox>
+
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

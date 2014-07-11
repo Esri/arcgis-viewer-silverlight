@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+    <Extension Url="Extensions/QueryRelatedRecords.AddIns.xap" InsertPath="//Extensions" />
+    <Tool xmlns:QueryRelated="clr-namespace:QueryRelatedRecords.AddIns;assembly=QueryRelatedRecords.AddIns"
+            Label="_QueryRelatedToolTitle_" Icon="/QueryRelatedRecords.AddIns;component/images/GetRelatedRecords16.png" Description="_QueryRelatedToolDescription_"
+            InsertPath="//ToolPanel[@Name='_PopupToolbar_']/Tools" InsertIndex="0">
+        <Tool.Class>
+            <QueryRelated:QueryRelatedTool />
+        </Tool.Class>
+    </Tool>
+</Config>

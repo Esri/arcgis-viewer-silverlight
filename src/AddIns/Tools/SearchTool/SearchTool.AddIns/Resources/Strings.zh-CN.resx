@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFeatureLayer" xml:space="preserve">
+    <value>添加要素图层</value>
+  </data>
+  <data name="AddFeatureLayerWindowCheckAll" xml:space="preserve">
+    <value>全部选中</value>
+  </data>
+  <data name="AddFeatureLayerWindowUnCheckAll" xml:space="preserve">
+    <value>全部取消选中</value>
+  </data>
+  <data name="ArcGIS" xml:space="preserve">
+    <value>ArcGIS</value>
+  </data>
+  <data name="BackStageControlFeatureMaps" xml:space="preserve">
+    <value>专题地图</value>
+  </data>
+  <data name="BackStageControlGroups" xml:space="preserve">
+    <value>组</value>
+  </data>
+  <data name="BackStageControlMyGroups" xml:space="preserve">
+    <value>我的组</value>
+  </data>
+  <data name="BackStageControlMyOrgGroups" xml:space="preserve">
+    <value>我所在组织的组</value>
+  </data>
+  <data name="BackStageControlMyOrgPublicGroups" xml:space="preserve">
+    <value>我所在组织的公共组</value>
+  </data>
+  <data name="BackStageControlMyMaps" xml:space="preserve">
+    <value>我的地图</value>
+  </data>
+  <data name="BackStageControlSearch" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>单击此处在单独的浏览器窗口中查看描述</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>关闭详细资料</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>评论</value>
+  </data>
+  <data name="ContentEveryone" xml:space="preserve">
+    <value>任何人</value>
+  </data>
+  <data name="ContentGroups" xml:space="preserve">
+    <value>组</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>创建者</value>
+  </data>
+  <data name="DefineQueryWindowAlias" xml:space="preserve">
+    <value>别名:</value>
+  </data>
+  <data name="DefineQueryWindowAnd" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="DefineQueryWindowApply" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="DefineQueryWindowClickPickDate" xml:space="preserve">
+    <value>单击以选取适用于该表达式的日期。</value>
+  </data>
+  <data name="DefineQueryWindowData" xml:space="preserve">
+    <value>数据</value>
+  </data>
+  <data name="DefineQueryWindowExpression" xml:space="preserve">
+    <value>表达式：</value>
+  </data>
+  <data name="DefineQueryWindowFailedToRetrieveSampleFeaturesForLayer" xml:space="preserve">
+    <value>检索图层的实例要素失败。</value>
+  </data>
+  <data name="DefineQueryWindowFields" xml:space="preserve">
+    <value>字段:</value>
+  </data>
+  <data name="DefineQueryWindowLike" xml:space="preserve">
+    <value>like</value>
+  </data>
+  <data name="DefineQueryWindowName" xml:space="preserve">
+    <value>名称:</value>
+  </data>
+  <data name="DefineQueryWindowNot" xml:space="preserve">
+    <value>not</value>
+  </data>
+  <data name="DefineQueryWindowOr" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="DefineQueryWindowQuery" xml:space="preserve">
+    <value>查询</value>
+  </data>
+  <data name="DefineQueryWindowTableIsSampleOfFeatureLayer" xml:space="preserve">
+    <value>下表是该图层中所含要素的实例。</value>
+  </data>
+  <data name="DefineQueryWindowType" xml:space="preserve">
+    <value>类型:</value>
+  </data>
+  <data name="DescriptionForMapCanotBeDisplayed" xml:space="preserve">
+    <value>这幅地图的描述不能显示在此窗口中。</value>
+  </data>
+  <data name="ExceptionDeleteFailed" xml:space="preserve">
+    <value>删除失败</value>
+  </data>
+  <data name="ExceptionDeleteFailedUserSignIn" xml:space="preserve">
+    <value>删除失败。用户没有登录。</value>
+  </data>
+  <data name="ExceptionFaileAcceptApplicateForGroup" xml:space="preserve">
+    <value>无法接受组 {1} 的申请人 {0}</value>
+  </data>
+  <data name="ExceptionFaileDeclineApplicateForGroup" xml:space="preserve">
+    <value>无法拒绝组 {1} 的申请人 {0}</value>
+  </data>
+  <data name="ExceptionFailedInviteUserToGroup" xml:space="preserve">
+    <value>无法邀请用户 {0} 加入组 {1}</value>
+  </data>
+  <data name="ExceptionFailedLeaveRequestForGroup" xml:space="preserve">
+    <value>无法发送用户 {0} 要退出组 {1} 的申请</value>
+  </data>
+  <data name="ExceptionFailedSendJoinRequestToGroup" xml:space="preserve">
+    <value>无法发送用户 {0} 要加入组 {1} 的申请</value>
+  </data>
+  <data name="ExceptionFailedToAcceptGroupInvitationForGroup" xml:space="preserve">
+    <value>无法接受由 {1} 发出的组 {0} 的邀请</value>
+  </data>
+  <data name="ExceptionFailedToCreateGroup" xml:space="preserve">
+    <value>创建组失败。</value>
+  </data>
+  <data name="ExceptionFailedToDeclineGroupInvitationForGroup" xml:space="preserve">
+    <value>无法拒绝由 {1} 发出的组 {0} 的邀请</value>
+  </data>
+  <data name="ExceptionFailedToDeleteGroup" xml:space="preserve">
+    <value>删除组 {0} 失败</value>
+  </data>
+  <data name="ExceptionFailedToDeleteNoitification" xml:space="preserve">
+    <value>无法删除由 {1} 发出的通知 {0}</value>
+  </data>
+  <data name="ExceptionFailedToGetGroupApplicationsForGroup" xml:space="preserve">
+    <value>无法获取组 {0} 的组应用程序</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveTagForUser" xml:space="preserve">
+    <value>检索用户 {0} 的标签失败</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveOrgGroups" xml:space="preserve">
+    <value>无法检索所在组织的组</value>
+  </data>
+  <data name="ExceptionFailedToShareItem" xml:space="preserve">
+    <value>共享项 {0} 失败</value>
+  </data>
+  <data name="ExceptionFailedToUpdateGroup" xml:space="preserve">
+    <value>更新组 {0} 失败</value>
+  </data>
+  <data name="ExceptionGetCommentsFailed" xml:space="preserve">
+    <value>获取命令失败。</value>
+  </data>
+  <data name="ExceptionGetFolderFailedUserSignedIn" xml:space="preserve">
+    <value>获取文件夹失败。用户未登录。</value>
+  </data>
+  <data name="ExceptionNoUserSignedIn" xml:space="preserve">
+    <value>用户未登录。</value>
+  </data>
+  <data name="ExceptionSignInFailed" xml:space="preserve">
+    <value>登录失败。</value>
+  </data>
+  <data name="FeatureMapsControlCloseParenthesis" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="FeatureMapsControlDetails" xml:space="preserve">
+    <value>详细信息</value>
+  </data>
+  <data name="FeatureMapsControlLastModified" xml:space="preserve">
+    <value>(上次修改时间: </value>
+  </data>
+  <data name="FeatureMapsControlOpen" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="GroupControlClickHereToViewInSeparateBrowser" xml:space="preserve">
+    <value>单击此处在单独的浏览器窗口中查看描述</value>
+  </data>
+  <data name="GroupControlCloseGroup" xml:space="preserve">
+    <value>关闭该组</value>
+  </data>
+  <data name="GroupControlDescription" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="GroupControlFeaturedMaps" xml:space="preserve">
+    <value>专题地图</value>
+  </data>
+  <data name="GroupControlNoFeaturedMapsFound" xml:space="preserve">
+    <value>未找到任何专题地图。</value>
+  </data>
+  <data name="GroupControlNoMapsFound" xml:space="preserve">
+    <value>未找到任何地图。</value>
+  </data>
+  <data name="GroupControlOwner" xml:space="preserve">
+    <value>所有者</value>
+  </data>
+  <data name="GroupControlPrivateUserCannotFindGroup" xml:space="preserve">
+    <value>私有(用户无法查找该组，只能通过邀请加入)</value>
+  </data>
+  <data name="GroupControlPublicUserCanSearchAndFindGroup" xml:space="preserve">
+    <value>公共(用户可以搜索和查找该组)</value>
+  </data>
+  <data name="GroupControlSearchOwner" xml:space="preserve">
+    <value>所有者: {0}</value>
+  </data>
+  <data name="GroupControlTags" xml:space="preserve">
+    <value>标签</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>组</value>
+  </data>
+  <data name="HighestRated" xml:space="preserve">
+    <value>最高评级</value>
+  </data>
+  <data name="ItemNotFound" xml:space="preserve">
+    <value>未找到项: {0}</value>
+  </data>
+  <data name="LastModified" xml:space="preserve">
+    <value>上次修改时间</value>
+  </data>
+  <data name="MapDetailsRating" xml:space="preserve">
+    <value>({0} 次评级)</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>地图</value>
+  </data>
+  <data name="MapServiceReferenceInvalid" xml:space="preserve">
+    <value>地图服务引用无效。无法将该服务添加到地图中。</value>
+  </data>
+  <data name="MapServiceReferenceNoDetails" xml:space="preserve">
+    <value>地图服务引用无效。无法显示详细信息。</value>
+  </data>
+  <data name="MostComments" xml:space="preserve">
+    <value>最多评论</value>
+  </data>
+  <data name="MostPopular" xml:space="preserve">
+    <value>最具人气</value>
+  </data>
+  <data name="MostRecentlyAdded" xml:space="preserve">
+    <value>最近添加</value>
+  </data>
+  <data name="MostRelevant" xml:space="preserve">
+    <value>最高相关度</value>
+  </data>
+  <data name="MyGroupControlGroups" xml:space="preserve">
+    <value>{0} 个组</value>
+  </data>
+  <data name="MyGroupControlOn" xml:space="preserve">
+    <value>创建日期</value>
+  </data>
+  <data name="MyGroupControlOpenGroup" xml:space="preserve">
+    <value>打开该组</value>
+  </data>
+  <data name="MyGroupControlZeroGroups" xml:space="preserve">
+    <value>0 个组</value>
+  </data>
+  <data name="MyMapControlMaps" xml:space="preserve">
+    <value>{0} 幅地图</value>
+  </data>
+  <data name="MyMapControlZeroMaps" xml:space="preserve">
+    <value>0 幅地图</value>
+  </data>
+  <data name="Places" xml:space="preserve">
+    <value>地点</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>属性</value>
+  </data>
+  <data name="RecentMaps" xml:space="preserve">
+    <value>最近查看的地图</value>
+  </data>
+  <data name="SearchArcGISCom" xml:space="preserve">
+    <value>在 ArcGIS Online 中搜索地图、图像和要素服务</value>
+  </data>
+  <data name="SearchControlAdd" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="SearchControlMapServiceFound" xml:space="preserve">
+    <value>找到地图服务。</value>
+  </data>
+  <data name="SearchControlResultsFound" xml:space="preserve">
+    <value>{0} 个结果</value>
+  </data>
+  <data name="SearchControlServiceCouldNotBeAccessed" xml:space="preserve">
+    <value>无法访问此服务。</value>
+  </data>
+  <data name="SearchControlZeroResultsFound" xml:space="preserve">
+    <value>找到 0 个结果。</value>
+  </data>
+  <data name="SearchDetailsBy" xml:space="preserve">
+    <value>所有者</value>
+  </data>
+  <data name="SearchDetailsRating" xml:space="preserve">
+    <value>评级: </value>
+  </data>
+  <data name="SearchMapResultsFor" xml:space="preserve">
+    <value>{1} 有 {0} 个结果</value>
+  </data>
+  <data name="SearchTheWeb" xml:space="preserve">
+    <value>搜索 web 中的地图服务</value>
+  </data>
+  <data name="SearchWebDetailsAdd" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="SearchWebDetailsCopyright" xml:space="preserve">
+    <value>版权所有: </value>
+  </data>
+  <data name="SearchWebDetailsDescription" xml:space="preserve">
+    <value>描述: </value>
+  </data>
+  <data name="SearchWebDetailsExploreGISServer" xml:space="preserve">
+    <value>浏览此 GIS 服务器</value>
+  </data>
+  <data name="SearchWebDetailsName" xml:space="preserve">
+    <value>名称:</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>排序依据</value>
+  </data>
+  <data name="SortResults" xml:space="preserve">
+    <value>排序结果</value>
+  </data>
+  <data name="SortSearchResults" xml:space="preserve">
+    <value>排序搜索结果。</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>摘要</value>
+  </data>
+  <data name="TheWeb" xml:space="preserve">
+    <value>Web</value>
+  </data>
+  <data name="TitleAZ" xml:space="preserve">
+    <value>标题 A-Z</value>
+  </data>
+  <data name="TitleZA" xml:space="preserve">
+    <value>标题 Z-A</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="UserSearchFailed" xml:space="preserve">
+    <value>用户搜索失败。</value>
+  </data>
+  <data name="BackStageControlRecent" xml:space="preserve">
+    <value>最近</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="SignInForgotYourPassword" xml:space="preserve">
+    <value>忘记密码?</value>
+  </data>
+  <data name="SignInSignUp" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="InvalidIDOrPassword" xml:space="preserve">
+    <value>ID 或密码无效。</value>
+  </data>
+  <data name="NewHere" xml:space="preserve">
+    <value>在此处新建?</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>密码:</value>
+  </data>
+  <data name="UsernamePrompt" xml:space="preserve">
+    <value>用户名:</value>
+  </data>
+  <data name="DescriptionForGroupCanotBeDisplayed" xml:space="preserve">
+    <value>无法在此窗口中显示该组的说明。</value>
+  </data>
+  <data name="GroupControlOwnerParenthesis" xml:space="preserve">
+    <value>(所有者)</value>
+  </data>
+  <data name="LastModifiedPrompt" xml:space="preserve">
+    <value>(上次修改:</value>
+  </data>
+  <data name="LastModifiedPromptEnd" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="MapDetailsControlAverageRating" xml:space="preserve">
+    <value>平均评级</value>
+  </data>
+  <data name="MapDetailsControlType" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="OnWithSpace" xml:space="preserve">
+    <value> 于 </value>
+  </data>
+  <data name="SearchR" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="LoadingMaps" xml:space="preserve">
+    <value>正在加载地图...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>移除</value>
+  </data>
+  <data name="NoFeaturedMaps" xml:space="preserve">
+    <value>目前没有可用的专题地图</value>
+  </data>
+  <data name="SigningIn" xml:space="preserve">
+    <value>正在登录...</value>
+  </data>
+  <data name="SignInLabel" xml:space="preserve">
+    <value>登录到 {0}</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>服务详细信息</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="NumberResults" xml:space="preserve">
+    <value>({0} 个结果)</value>
+  </data>
+  <data name="ProjectInputsNotValid" xml:space="preserve">
+    <value>必须指定目标几何、输出的空间参考以及几何服务 URL</value>
+  </data>
+  <data name="AGOL" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="NoResults" xml:space="preserve">
+    <value>没有要显示的结果</value>
+  </data>
+  <data name="SearchPlaces" xml:space="preserve">
+    <value>搜索地址、城市或其他地点</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>地址</value>
+  </data>
+  <data name="AddressTitleExpression" xml:space="preserve">
+    <value>{Address}</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="SearchCategory" xml:space="preserve">
+    <value>查询</value>
+  </data>
+  <data name="SearchDescription" xml:space="preserve">
+    <value>搜索要添加到地图上的地点或内容</value>
+  </data>
+  <data name="SearchToolName" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="ServiceConnectionFailed" xml:space="preserve">
+    <value>无法连接到服务。它无法添加到地图中。</value>
+  </data>
+  <data name="CannotConvertBack" xml:space="preserve">
+    <value>转换无法恢复</value>
+  </data>
+  <data name="EmptyGeometryServiceUrl" xml:space="preserve">
+    <value>几何服务 URL 不能为 null 或为空值</value>
+  </data>
+  <data name="EmptyLocatorUrl" xml:space="preserve">
+    <value>定位器服务 URL 不能为 null 或为空值</value>
+  </data>
+  <data name="InvalidSearchResultType" xml:space="preserve">
+    <value>搜索结果必须为以下类型之一: ArcGISPortalItem、WebSearchResultItem 或 ArcGISService</value>
+  </data>
+  <data name="MustSpecifyExtentFields" xml:space="preserve">
+    <value>必须指定所有范围字段</value>
+  </data>
+  <data name="NullExtentSpatialRef" xml:space="preserve">
+    <value>范围空间参考不能为 null</value>
+  </data>
+  <data name="CommandNotExecutable" xml:space="preserve">
+    <value>命令未处于可执行状态</value>
+  </data>
+  <data name="ZeroExtentWidthError" xml:space="preserve">
+    <value>范围宽度必须大于零</value>
+  </data>
+  <data name="Searching" xml:space="preserve">
+    <value>正在搜索...</value>
+  </data>
+  <data name="IncludedSearches" xml:space="preserve">
+    <value>添加的搜索内容:</value>
+  </data>
+  <data name="SearchType" xml:space="preserve">
+    <value>搜索类型:</value>
+  </data>
+  <data name="SelectSearchTypes" xml:space="preserve">
+    <value>选择要添加的搜索类型</value>
+  </data>
+  <data name="LocatorUrl" xml:space="preserve">
+    <value>服务 URL:</value>
+  </data>
+  <data name="Bottom" xml:space="preserve">
+    <value>底部:</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>连接</value>
+  </data>
+  <data name="ConnectedTo" xml:space="preserve">
+    <value>已连接到 {0} 定位器服务</value>
+  </data>
+  <data name="ExtentFields" xml:space="preserve">
+    <value>使用范围字段</value>
+  </data>
+  <data name="Left" xml:space="preserve">
+    <value>左侧:</value>
+  </data>
+  <data name="Right" xml:space="preserve">
+    <value>右侧:</value>
+  </data>
+  <data name="Top" xml:space="preserve">
+    <value>顶部:</value>
+  </data>
+  <data name="ConfigureLocatorService" xml:space="preserve">
+    <value>{0} 搜索: 指定一个定位器服务</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>正在连接...</value>
+  </data>
+  <data name="ExtentFieldsTooltip" xml:space="preserve">
+    <value>使用字段来定义搜索结果的范围。该范围用于缩放到某个结果。</value>
+  </data>
+  <data name="ExtentWidth" xml:space="preserve">
+    <value>使用范围宽度</value>
+  </data>
+  <data name="ExtentWidthInputError" xml:space="preserve">
+    <value>范围宽度必须是大于零的数值</value>
+  </data>
+  <data name="ExtentWidthTooltip" xml:space="preserve">
+    <value>使用宽度来定义搜索结果的范围。该范围用于缩放到某个结果。</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>米</value>
+  </data>
+  <data name="AddSearchError" xml:space="preserve">
+    <value>无法添加该搜索类型。命令当前未处于可执行状态。</value>
+  </data>
+  <data name="ClickConnect" xml:space="preserve">
+    <value>单击以验证该 URL</value>
+  </data>
+  <data name="ClickNext" xml:space="preserve">
+    <value>单击“下一步”以继续</value>
+  </data>
+  <data name="ConfigureResultExtent" xml:space="preserve">
+    <value>{0} 搜索: 选择缩放到每个结果的方法</value>
+  </data>
+  <data name="EnterLocatorUrl" xml:space="preserve">
+    <value>输入 ArcGIS Server 定位器服务的 URL</value>
+  </data>
+  <data name="LocatorConnectionFailed" xml:space="preserve">
+    <value>连接失败。请检查 URL 并重试。</value>
+  </data>
+  <data name="LocatorUrlMustEndWith" xml:space="preserve">
+    <value>URL 必须以 "GeocodeServer" 结尾</value>
+  </data>
+  <data name="UnitsCentimeters" xml:space="preserve">
+    <value>厘米</value>
+  </data>
+  <data name="UnitsFeet" xml:space="preserve">
+    <value>英尺</value>
+  </data>
+  <data name="UnitsInches" xml:space="preserve">
+    <value>英寸</value>
+  </data>
+  <data name="UnitsKilometers" xml:space="preserve">
+    <value>公里</value>
+  </data>
+  <data name="UnitsMeters" xml:space="preserve">
+    <value>米</value>
+  </data>
+  <data name="UnitsMiles" xml:space="preserve">
+    <value>英里</value>
+  </data>
+  <data name="UnitsNauticalMiles" xml:space="preserve">
+    <value>海里</value>
+  </data>
+  <data name="UnitsYards" xml:space="preserve">
+    <value>码</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>使用代理</value>
+  </data>
+  <data name="ConnectingToLocatorService" xml:space="preserve">
+    <value>正在连接定位器服务...</value>
+  </data>
+  <data name="ContainsErrorMessage" xml:space="preserve">
+    <value>集合必须实现 Contains 方法，以接受一个具有布尔型返回值的参数</value>
+  </data>
+  <data name="ExpectedItemTypeMismatch" xml:space="preserve">
+    <value>{0}.Contains 方法需要使用对象类型 {1} 作为输入。并传递类型 {2} 的参数。</value>
+  </data>
+</root>

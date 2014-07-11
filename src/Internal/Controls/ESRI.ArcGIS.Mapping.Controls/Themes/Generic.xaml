@@ -1,0 +1,56 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Layout="clr-namespace:ESRI.ArcGIS.Client.Application.Layout;assembly=ESRI.ArcGIS.Client.Application.Layout">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/BaseMapGallery.Theme.xaml" />         
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/AttributeDisplay.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/ColorPickerControls.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/ProgressGauge.Theme.xaml" />        
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/AddContentControl.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/BrowseContentControl.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/EnterUrlDialog.Theme.xaml" />        
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/Symbols.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/ExpandCollapseControls.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/ColorRampControl.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/Ribbon.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/ThemePreviewControl.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/MapTipsConfig/MapTipsConfig.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/MapTipsConfig/MapTipsLayerConfig.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/AttributeDisplayConfig/AttributeDisplayConfig.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Clusterer/Clusterer.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/AutoUpdates/AutoUpdateConfig.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/FindNearbyDialog.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/HeatMap/HeatMapConfigControl.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/MapCenter.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/BackgroundColorPicker.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/GradientStopPick.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/LayerConfiguration/LayerConfiguration.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/LayerConfiguration/LayerConfigurationDialog.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/SignInStatusControl.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/ThicknessUpDownControl.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/ScaleBar.Theme.xaml" />
+		<ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/SplitButton.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/NotificationPanel.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Behaviors/Configuration/MapBehaviorsList.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Behaviors/Configuration/MapBehaviorConfigControl.Theme.xaml" />
+		<ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/AboutInfoControl.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/BaseMapsConfig/BaseMapItemConfigControl.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/BaseMapsConfig/BaseMapsConfigControl.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Behaviors/NotPublic/Configs/ConstrainExtentBehaviorConfigControl.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/AvailableBehaviorItemsControl.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/ControlStyles.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/FeatureLayerMode/FeatureLayerMode.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/Themes/WatermarkedTextBox.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/SecureServices/SecureServicesLayerConfig.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/SecureServices/SecureServicesConfig.Theme.xaml" />
+        <ResourceDictionary Source="/ESRI.ArcGIS.Mapping.Controls;component/ErrorDisplay/ErrorDisplay.Theme.xaml" />
+    </ResourceDictionary.MergedDictionaries>    
+</ResourceDictionary>

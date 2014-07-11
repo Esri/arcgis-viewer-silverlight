@@ -1,0 +1,726 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls">
+
+    <local:StringResourcesManager x:Key="Localization" />
+    <local:VisibilityConverter x:Key="VisibilityConverter" />
+    <local:InvertVisibilityConverter x:Key="InvertVisibilityConverter" />
+
+    <Style x:Key="GradientThumbStyle" TargetType="Thumb">
+        <Setter Property="Background" Value="#FF1F3B53"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0" To="#A6FFFFFF" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                        <ColorAnimation Duration="0" To="#83FFFFFF" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                        <ColorAnimation Duration="0" To="#31FFFFFF" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                        <ColorAnimation Duration="0" To="#D5FFFFFF" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimation Duration="0" To="#FF6DBDD1" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Background"/>
+                                        <ColorAnimation Duration="0" To="#D8FFFFFF" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                        <ColorAnimation Duration="0" To="#C6FFFFFF" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                        <ColorAnimation Duration="0" To="#8CFFFFFF" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                        <ColorAnimation Duration="0" To="#3FFFFFFF" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled"/>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused"/>
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="Background" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="White" CornerRadius="2">
+                            <Grid Background="{TemplateBinding Background}">
+                                <Rectangle x:Name="BackgroundGradient" RadiusX="3" RadiusY="3">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                            <GradientStop Color="#C6FFFFFF" Offset="0"/>
+                                            <GradientStop Color="#86FFFFFF" Offset="0.375"/>
+                                            <GradientStop Color="#4FFFFFFF" Offset="0.625"/>
+                                            <GradientStop Color="Transparent" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="NavigationSliderStyle" TargetType="Slider">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Maximum" Value="10"/>
+        <Setter Property="Minimum" Value="0"/>
+        <Setter Property="Value" Value="0"/>
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Slider">
+                    <Grid x:Name="Root">
+                        <Grid.Resources>
+                            <ControlTemplate x:Key="RepeatButtonTemplate">
+                                <Grid x:Name="Root" Background="Transparent" Opacity="0"/>
+                            </ControlTemplate>
+                        </Grid.Resources>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="HorizontalTemplate">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle x:Name="TrackRectangle" Grid.ColumnSpan="3" Grid.Column="0" Fill="#FFE6EFF7" Height="3" Margin="5,0,5,0" RadiusY="1" RadiusX="1" Stroke="#FFA3AEB9" StrokeThickness="{TemplateBinding BorderThickness}"/>
+                            <Rectangle x:Name="HorizontalTrackRectangleDisabledOverlay" Grid.ColumnSpan="3" Grid.Column="0" Fill="White" Height="3" Margin="5,0,5,0" Opacity=".55" RadiusY="1" RadiusX="1" Visibility="Collapsed"/>
+                            <RepeatButton x:Name="HorizontalTrackLargeChangeDecreaseRepeatButton" Grid.Column="0" Height="18" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}"/>
+                            <Thumb x:Name="HorizontalThumb" Grid.Column="1" Height="18" IsTabStop="True" Width="11"/>
+                            <Rectangle x:Name="ThumbDisabledOverlay" Grid.Column="1" Fill="White" Opacity=".55" RadiusY="2" RadiusX="2" Visibility="Collapsed" Width="11"/>
+                            <RepeatButton x:Name="HorizontalTrackLargeChangeIncreaseRepeatButton" Grid.Column="2" Height="18" IsTabStop="False" Template="{StaticResource RepeatButtonTemplate}"/>
+                        </Grid>
+                        <Grid x:Name="VerticalTemplate" Visibility="Collapsed">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Rectangle Fill="{TemplateBinding Background}" Margin="0,5,0,5" RadiusY="1" Grid.Row="0" RadiusX="1" Grid.RowSpan="3" 
+                                       Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding BorderThickness}" Width="5"/>
+                            <RepeatButton x:Name="VerticalTrackLargeChangeDecreaseRepeatButton" IsTabStop="False" Grid.Row="2" Template="{StaticResource RepeatButtonTemplate}" Width="18"/>
+                            <Thumb x:Name="VerticalThumb" Height="11" IsTabStop="True" Grid.Row="1" Width="18" Background="{TemplateBinding Foreground}" 
+                                   Style="{StaticResource GradientThumbStyle}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                            <RepeatButton x:Name="VerticalTrackLargeChangeIncreaseRepeatButton" IsTabStop="False" Grid.Row="0" Template="{StaticResource RepeatButtonTemplate}" Width="18"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ThinScrollBarStyle" TargetType="ScrollBar">
+        <Setter Property="MinWidth" Value="11"/>
+        <Setter Property="MinHeight" Value="11"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Foreground" Value="{StaticResource DesignHostAccentBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource DesignHostAccentTextBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollBar">
+                    <Grid x:Name="Root">
+                        <Grid.Resources>
+                            <ControlTemplate x:Key="RepeatButtonTemplate" TargetType="RepeatButton">
+                                <Grid x:Name="Root" Background="Transparent">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal"/>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </Grid>
+                            </ControlTemplate>
+                            <ControlTemplate x:Key="HorizontalIncrementTemplate" TargetType="RepeatButton">
+                                <Grid x:Name="Root">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal"/>
+                                            <VisualState x:Name="MouseOver">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background"/>
+                                                    <DoubleAnimation Duration="0:0:0" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundPressed"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To=".7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledElement"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Rectangle x:Name="Background" Fill="{TemplateBinding Background}" Opacity="0" RadiusY="2" RadiusX="2" StrokeThickness="1" Stroke="{TemplateBinding BorderBrush}"/>
+                                    <Rectangle x:Name="BackgroundPressed" Fill="White" Opacity="0" RadiusY="2" RadiusX="2" StrokeThickness="0"/>
+                                    <Path Data="F1 M 511.047,352.682L 511.047,342.252L 517.145,347.467L 511.047,352.682 Z " Height="8" Stretch="Uniform" Width="4" Fill="{TemplateBinding Foreground}"/>
+                                    <Rectangle x:Name="DisabledElement" Fill="#FFFFFFFF" Opacity="0" RadiusY="2" RadiusX="2" StrokeThickness="0" Margin="1"/>
+                                </Grid>
+                            </ControlTemplate>
+                            <ControlTemplate x:Key="HorizontalDecrementTemplate" TargetType="RepeatButton">
+                                <Grid x:Name="Root">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal"/>
+                                            <VisualState x:Name="MouseOver">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background"/>
+                                                    <DoubleAnimation Duration="0:0:0" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundPressed"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To=".7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledElement"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Rectangle x:Name="Background" Fill="{TemplateBinding Background}" Opacity="0" RadiusY="2" RadiusX="2" StrokeThickness="1" Stroke="{TemplateBinding BorderBrush}"/>
+                                    <Rectangle x:Name="BackgroundPressed" Fill="White" Opacity="0" RadiusY="2" RadiusX="2" StrokeThickness="0"/>
+                                    <Path Data="F1 M 110.692,342.252L 110.692,352.682L 104.594,347.467L 110.692,342.252 Z " Height="8" Stretch="Uniform" Width="4" Fill="{TemplateBinding Foreground}"/>
+                                    <Rectangle x:Name="DisabledElement" Fill="#FFFFFFFF" Opacity="0" RadiusY="2" RadiusX="2" StrokeThickness="0" Margin="1"/>
+                                </Grid>
+                            </ControlTemplate>
+                            <ControlTemplate x:Key="VerticalIncrementTemplate" TargetType="RepeatButton">
+                                <Grid x:Name="Root">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal"/>
+                                            <VisualState x:Name="MouseOver">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background"/>
+                                                    <DoubleAnimation Duration="0:0:0" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundPressed"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To=".7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledElement"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Rectangle x:Name="Background" Fill="{TemplateBinding Background}" Opacity="0" RadiusY="2" RadiusX="2" StrokeThickness="1" Stroke="{TemplateBinding BorderBrush}"/>
+                                    <Rectangle x:Name="BackgroundPressed" Fill="White" Opacity="0" RadiusY="2" RadiusX="2" StrokeThickness="0"/>
+                                    <Path Data="F1 M 531.107,321.943L 541.537,321.943L 536.322,328.042L 531.107,321.943 Z " Height="4" Stretch="Uniform" Width="8" Fill="{TemplateBinding Foreground}"/>
+                                    <Rectangle x:Name="DisabledElement" Fill="#FFFFFFFF" Opacity="0" RadiusY="2" RadiusX="2" Margin="1" StrokeThickness="0"/>
+                                </Grid>
+                            </ControlTemplate>
+                            <ControlTemplate x:Key="VerticalDecrementTemplate" TargetType="RepeatButton">
+                                <Grid x:Name="Root">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal"/>
+                                            <VisualState x:Name="MouseOver">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background"/>
+                                                    <DoubleAnimation Duration="0:0:0" To="0.6" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundPressed"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To=".7" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledElement"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                        <VisualStateGroup x:Name="FocusStates">
+                                            <VisualState x:Name="Focused"/>
+                                            <VisualState x:Name="Unfocused"/>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Rectangle x:Name="Background" Fill="{TemplateBinding Background}" RadiusY="2" RadiusX="2" Stroke="{TemplateBinding BorderBrush}" Opacity="0"/>
+                                    <Rectangle x:Name="BackgroundPressed" Fill="White" Opacity="0" RadiusY="2" RadiusX="2" StrokeThickness="0" Margin="0"/>
+                                    <Path Data="F1 M 541.537,173.589L 531.107,173.589L 536.322,167.49L 541.537,173.589 Z " Height="4" Stretch="Uniform" Width="8" Fill="{TemplateBinding Foreground}"/>
+                                    <Rectangle x:Name="DisabledElement" Fill="#FFFFFFFF" Opacity="0" RadiusY="2" RadiusX="2" Margin="1"/>
+                                </Grid>
+                            </ControlTemplate>
+                            <ControlTemplate x:Key="VerticalThumbTemplate" TargetType="Thumb">
+                                <Grid>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal"/>
+                                            <VisualState x:Name="MouseOver">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0" To="0.4" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BackgroundGradient" />
+                                                    <DoubleAnimation Duration="0" To="0.4" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BackgroundGradient2" />
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="0.4" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundPressed"/>
+                                                    <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BackgroundGradient" />
+                                                    <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BackgroundGradient2" />
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ThumbVisual"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                        <VisualStateGroup x:Name="FocusStates">
+                                            <VisualState x:Name="Unfocused"/>
+                                            <VisualState x:Name="Focused"/>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Grid x:Name="ThumbVisual" Margin="0">
+                                        <Rectangle x:Name="Background" Fill="{TemplateBinding Foreground}" RadiusY="6" RadiusX="10" StrokeThickness="1" Margin="1,0"/>
+                                        <Rectangle x:Name="BackgroundPressed" Fill="{TemplateBinding BorderBrush}" Opacity="0" RadiusY="6" RadiusX="10" StrokeThickness="1" Margin="1,0"/>
+                                        <Rectangle x:Name="BackgroundGradient" Margin="1,0" RadiusY="6" RadiusX="10" StrokeThickness="0" Opacity="0.25">
+                                            <Rectangle.Fill>
+                                                <LinearGradientBrush EndPoint="1,.7" StartPoint="0,.7">
+                                                    <GradientStop Color="Black" Offset="0"/>
+                                                    <GradientStop Color="Black" Offset="0.5"/>
+                                                    <GradientStop Color="Transparent" Offset="0.5001"/>
+                                                    <GradientStop Color="Transparent" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+                                        <Rectangle x:Name="BackgroundGradient2" Margin="1,0" RadiusY="6" RadiusX="10" StrokeThickness="0" Opacity="0.25">
+                                            <Rectangle.Fill>
+                                                <LinearGradientBrush EndPoint="1,.7" StartPoint="0,.7">
+                                                    <GradientStop Color="Transparent" Offset="0"/>
+                                                    <GradientStop Color="Transparent" Offset="0.5"/>
+                                                    <GradientStop Color="White" Offset="0.5001"/>
+                                                    <GradientStop Color="White" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+                                    </Grid>
+                                </Grid>
+                            </ControlTemplate>
+                            <ControlTemplate x:Key="HorizontalThumbTemplate" TargetType="Thumb">
+                                <Grid>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="CommonStates">
+                                            <VisualState x:Name="Normal"/>
+                                            <VisualState x:Name="MouseOver">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0" To="0.4" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BackgroundGradient" />
+                                                    <DoubleAnimation Duration="0" To="0.4" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BackgroundGradient2" />
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Pressed">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="0.4" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundPressed"/>
+                                                    <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BackgroundGradient" />
+                                                    <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BackgroundGradient2" />
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <DoubleAnimation Duration="0:0:0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ThumbVisual"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Grid x:Name="ThumbVisual" Margin="0,1,0,1">
+                                        <Rectangle x:Name="Background" Fill="{TemplateBinding Foreground}" RadiusY="10" RadiusX="6" StrokeThickness="0"/>
+                                        <Rectangle x:Name="BackgroundMouseOver" Fill="{TemplateBinding BorderBrush}" Opacity="0" RadiusY="10" RadiusX="6" StrokeThickness="0"/>
+                                        <Rectangle x:Name="BackgroundPressed" Fill="{TemplateBinding BorderBrush}" Opacity="0" RadiusY="10" RadiusX="6" StrokeThickness="0"/>
+                                        <Rectangle x:Name="BackgroundGradient" Margin="0" RadiusY="10" RadiusX="6" StrokeThickness="0" Opacity="0.25">
+                                            <Rectangle.Fill>
+                                                <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                                    <GradientStop Color="Black" Offset="0"/>
+                                                    <GradientStop Color="Black" Offset="0.5"/>
+                                                    <GradientStop Color="Transparent" Offset="0.5001"/>
+                                                    <GradientStop Color="Transparent" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+                                        <Rectangle x:Name="BackgroundGradient2" Margin="0" RadiusY="10" RadiusX="6" StrokeThickness="0" Opacity="0.25">
+                                            <Rectangle.Fill>
+                                                <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                                    <GradientStop Color="Transparent" Offset="0"/>
+                                                    <GradientStop Color="Transparent" Offset="0.5"/>
+                                                    <GradientStop Color="White" Offset="0.5001"/>
+                                                    <GradientStop Color="White" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+                                    </Grid>
+                                </Grid>
+                            </ControlTemplate>
+                        </Grid.Resources>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="HorizontalRoot" VerticalAlignment="Bottom" Height="{TemplateBinding Height}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle Grid.ColumnSpan="5" RadiusY="1" RadiusX="1" StrokeThickness="0" Fill="{TemplateBinding Background}"/>
+                            <RepeatButton x:Name="HorizontalSmallDecrease" Cursor="Hand" Grid.Column="0" IsTabStop="False" Interval="50" Template="{StaticResource HorizontalDecrementTemplate}" Width="14" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding Foreground}" Foreground="{TemplateBinding Foreground}"/>
+                            <RepeatButton x:Name="HorizontalLargeDecrease" Grid.Column="1" IsTabStop="False" Interval="50" Template="{StaticResource RepeatButtonTemplate}" Width="0"/>
+                            <Thumb x:Name="HorizontalThumb" Background="{TemplateBinding Background}" 
+                                   Grid.Column="2" MinWidth="18" Template="{StaticResource HorizontalThumbTemplate}" 
+                                   Width="18" BorderThickness="0" BorderBrush="{TemplateBinding BorderBrush}"
+                                   Foreground="{TemplateBinding Foreground}"/>
+                            <RepeatButton x:Name="HorizontalLargeIncrease" Grid.Column="3" IsTabStop="False" Interval="50" Template="{StaticResource RepeatButtonTemplate}"/>
+                            <RepeatButton x:Name="HorizontalSmallIncrease" Cursor="Hand" Grid.Column="4" IsTabStop="False" Interval="50" Template="{StaticResource HorizontalIncrementTemplate}" Width="14" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                        </Grid>
+                        <Grid x:Name="VerticalRoot" Visibility="Collapsed" HorizontalAlignment="Right" Width="{TemplateBinding Width}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Rectangle RadiusY="1" RadiusX="1" Grid.RowSpan="5" StrokeThickness="0" Fill="{TemplateBinding Background}"/>
+                            <RepeatButton x:Name="VerticalSmallDecrease" Cursor="Hand" Height="14" IsTabStop="False" Interval="50" Margin="0" Grid.Row="0" Template="{StaticResource VerticalDecrementTemplate}" Foreground="{TemplateBinding Foreground}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                            <RepeatButton x:Name="VerticalLargeDecrease" Height="0" IsTabStop="False" Interval="50" Grid.Row="1" Template="{StaticResource RepeatButtonTemplate}"/>
+                            <Thumb x:Name="VerticalThumb" MinHeight="18" Grid.Row="2" 
+                                   Template="{StaticResource VerticalThumbTemplate}" Foreground="{TemplateBinding Foreground}"
+                                   BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
+                            <RepeatButton x:Name="VerticalLargeIncrease" IsTabStop="False" Interval="50" Grid.Row="3" Template="{StaticResource RepeatButtonTemplate}"/>
+                            <RepeatButton x:Name="VerticalSmallIncrease" Cursor="Hand" Height="14" IsTabStop="False" Interval="50" Margin="0" Grid.Row="4" Template="{StaticResource VerticalIncrementTemplate}" Foreground="{TemplateBinding Foreground}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="ThinBarScrollViewerStyle" TargetType="ScrollViewer">
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Visible" />
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Foreground" Value="{StaticResource DesignHostAccentBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollViewer">
+                    <Border CornerRadius="2" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <ScrollContentPresenter x:Name="ScrollContentPresenter"
+                                                  Cursor="{TemplateBinding Cursor}"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"/>
+
+                            <Rectangle Grid.Column="1" Grid.Row="1" Fill="{TemplateBinding Background}"/>
+
+                            <ScrollBar x:Name="VerticalScrollBar"
+                                     IsTabStop="False"
+                                     Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                     Grid.Column="1" Grid.Row="0" Orientation="Vertical"
+                                     ViewportSize="{TemplateBinding ViewportHeight}"
+                                     Maximum="{TemplateBinding ScrollableHeight}"
+                                     Minimum="0"
+                                       Width="11"
+                                     Value="{TemplateBinding VerticalOffset}"
+                                     Style="{StaticResource ThinScrollBarStyle}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       BorderBrush="{TemplateBinding Foreground}"
+                                       Background="Transparent"/>
+
+                            <ScrollBar x:Name="HorizontalScrollBar"
+                                     IsTabStop="False"
+                                     Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                     Grid.Column="0" Grid.Row="1" Orientation="Horizontal"
+                                     ViewportSize="{TemplateBinding ViewportWidth}"
+                                     Maximum="{TemplateBinding ScrollableWidth}"
+                                     Minimum="0"
+                                       Height="11"
+                                     Value="{TemplateBinding HorizontalOffset}"
+                                     Style="{StaticResource ThinScrollBarStyle}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       BorderBrush="{TemplateBinding Foreground}"
+                                       Background="Transparent"/>
+
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style TargetType="sdk:DataGrid" x:Key="ThinScrollDataGridStyle">
+        <Setter Property="RowBackground" Value="#AAEAEFF4" />
+        <Setter Property="AlternatingRowBackground" Value="#00FFFFFF" />
+        <Setter Property="Background" Value="#FFFFFFFF" />
+        <Setter Property="HeadersVisibility" Value="Column" />
+        <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="SelectionMode" Value="Extended" />
+        <Setter Property="CanUserReorderColumns" Value="True" />
+        <Setter Property="CanUserResizeColumns" Value="True" />
+        <Setter Property="CanUserSortColumns" Value="True" />
+        <Setter Property="AutoGenerateColumns" Value="True" />
+        <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected" />
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="DragIndicatorStyle">
+            <Setter.Value>
+                <!-- TODO: Change the TargetType to Control when the fix Jolt bugs 18719 is verified -->
+                <Style TargetType="ContentControl">
+                    <Setter Property="Foreground" Value="#7FFFFFFF" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <!-- TODO: Change the TargetType to Control when the fix Jolt bugs 18719 is verified -->
+                            <ControlTemplate TargetType="ContentControl">
+                                <Grid>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup x:Name="SortStates">
+                                            <VisualState x:Name="Unsorted" />
+                                            <VisualState x:Name="SortAscending">
+                                                <Storyboard>
+                                                    <DoubleAnimation Storyboard.TargetName="SortIcon" Storyboard.TargetProperty="Opacity" Duration="0" To="1.0"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                            <VisualState x:Name="SortDescending">
+                                                <Storyboard>
+                                                    <DoubleAnimation Storyboard.TargetName="SortIcon" Storyboard.TargetProperty="Opacity" Duration="0" To="1.0"/>
+                                                    <DoubleAnimation Storyboard.TargetName="SortIcon" Storyboard.TargetProperty="(RenderTransform).ScaleY" Duration="0" To="-.9"/>
+                                                </Storyboard>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+
+                                    <Rectangle x:Name="BackgroundRectangle" Stretch="Fill" Fill="#66808080" Grid.ColumnSpan="2" />
+
+                                    <Rectangle x:Name="BackgroundGradient" Stretch="Fill" Grid.ColumnSpan="2" Opacity="0" >
+                                        <Rectangle.Fill>
+                                            <LinearGradientBrush StartPoint=".7,0" EndPoint=".7,1">
+                                                <GradientStop Color="#FFFFFFFF" Offset="0.015" />
+                                                <GradientStop Color="#F9FFFFFF" Offset="0.375" />
+                                                <GradientStop Color="#E5FFFFFF" Offset="0.6" />
+                                                <GradientStop Color="#C6FFFFFF" Offset="1" />
+                                            </LinearGradientBrush>
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+
+                                    <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="{TemplateBinding Padding}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <ContentPresenter Content="{TemplateBinding Content}"/>
+
+                                        <Path Grid.Column="1" Name="SortIcon" Fill="#7FFFFFFF" RenderTransformOrigin=".5,.5" HorizontalAlignment="Left" VerticalAlignment="Center" Opacity="0" Stretch="Uniform" Width="8" Margin="4,0,0,0" Data="F1 M -5.215,6.099L 5.215,6.099L 0,0L -5.215,6.099 Z ">
+                                            <Path.RenderTransform>
+                                                <ScaleTransform ScaleX=".9" ScaleY=".9" />
+                                            </Path.RenderTransform>
+                                        </Path>
+                                    </Grid>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="DropLocationIndicatorStyle">
+            <Setter.Value>
+                <Style TargetType="ContentControl">
+                    <Setter Property="Background" Value="#FF3F4346"/>
+                    <Setter Property="Width" Value="2"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ContentControl">
+                                <Rectangle Fill="{TemplateBinding Background}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="GridLinesVisibility" Value="Vertical" />
+        <Setter Property="HorizontalGridLinesBrush" Value="#FFC9CACA" />
+        <Setter Property="IsTabStop" Value="True" />
+        <Setter Property="VerticalGridLinesBrush" Value="#FFC9CACA" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="sdk:DataGrid">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="DisabledVisualElement" Storyboard.TargetProperty="Opacity" Duration="0" To="1"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="2">
+                            <Grid Name="Root" Background="{TemplateBinding Background}">
+                                <Grid.Resources>
+                                    <!--Start: TopLeftHeaderTemplate-->
+                                    <ControlTemplate x:Key="TopLeftHeaderTemplate" TargetType="sdk:DataGridColumnHeader">
+                                        <Grid Name="Root">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Border BorderThickness="0,0,1,0" BorderBrush="#FFC9CACA" Background="#FF1F3B53" Grid.RowSpan="2">
+                                                <Rectangle Stretch="Fill" StrokeThickness="1">
+                                                    <Rectangle.Fill>
+                                                        <LinearGradientBrush StartPoint=".7,0" EndPoint=".7,1">
+                                                            <GradientStop Color="#FCFFFFFF" Offset="0.015" />
+                                                            <GradientStop Color="#F7FFFFFF" Offset="0.375" />
+                                                            <GradientStop Color="#E5FFFFFF" Offset="0.6" />
+                                                            <GradientStop Color="#D1FFFFFF" Offset="1" />
+                                                        </LinearGradientBrush>
+                                                    </Rectangle.Fill>
+                                                </Rectangle>
+                                            </Border>
+                                            <Rectangle VerticalAlignment="Bottom" Width="Auto" StrokeThickness="1" Height="1" Fill="#FFDBDCDC" Grid.RowSpan="2"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                    <!--End: TopLeftHeaderTemplate-->
+
+                                    <!--Start: TopRightHeaderTemplate-->
+                                    <ControlTemplate x:Key="TopRightHeaderTemplate" TargetType="sdk:DataGridColumnHeader">
+                                        <Grid Name="RootElement">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Border BorderThickness="1,0,0,0" BorderBrush="#FFC9CACA" Background="#FF1F3B53" Grid.RowSpan="2">
+                                                <Rectangle Stretch="Fill">
+                                                    <Rectangle.Fill>
+                                                        <LinearGradientBrush StartPoint=".7,0" EndPoint=".7,1">
+                                                            <GradientStop Color="#FCFFFFFF" Offset="0.015" />
+                                                            <GradientStop Color="#F7FFFFFF" Offset="0.375" />
+                                                            <GradientStop Color="#E5FFFFFF" Offset="0.6" />
+                                                            <GradientStop Color="#D1FFFFFF" Offset="1" />
+                                                        </LinearGradientBrush>
+                                                    </Rectangle.Fill>
+                                                </Rectangle>
+                                            </Border>
+                                        </Grid>
+                                    </ControlTemplate>
+                                    <!--End: TopRightHeaderTemplate-->
+                                </Grid.Resources>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <sdk:DataGridColumnHeader Name="TopLeftCornerHeader" Template="{StaticResource TopLeftHeaderTemplate}" Width="22" />
+                                <sdk:DataGridColumnHeadersPresenter Name="ColumnHeadersPresenter" Grid.Column="1"/>
+                                <sdk:DataGridColumnHeader Name="TopRightCornerHeader" Grid.Column="2" Template="{StaticResource TopRightHeaderTemplate}" />
+                                <Rectangle Name="ColumnHeadersAndRowsSeparator" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Width="Auto" StrokeThickness="1" Height="1" Fill="#FFC9CACA"/>
+
+                                <sdk:DataGridRowsPresenter Name="RowsPresenter" Grid.ColumnSpan="2" Grid.Row="1" />
+                                <Rectangle Name="BottomRightCorner" Fill="#FFE9EEF4" Grid.Column="2" Grid.Row="2" />
+                                <Rectangle Name="BottomLeftCorner" Fill="#FFE9EEF4" Grid.Row="2" Grid.ColumnSpan="2" />
+                                <ScrollBar Name="VerticalScrollbar" Orientation="Vertical" Grid.Column="2" 
+                                           Grid.Row="1" Width="11" Opacity="0.8"
+                                           Style="{StaticResource ThinScrollBarStyle}"
+                                            Foreground="{StaticResource DesignHostBackgroundBrush}"
+                                            BorderBrush="{StaticResource DesignHostBackgroundBrush}"
+                                            Background="{StaticResource DesignHostAccentBrush}"/>
+
+                                <Grid Grid.Column="1" Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Name="FrozenColumnScrollBarSpacer" />
+                                    <ScrollBar Name="HorizontalScrollbar" Grid.Column="1" 
+                                               Orientation="Horizontal" Height="11"  Opacity="0.8"
+                                               Style="{StaticResource ThinScrollBarStyle}"
+                                               Foreground="{StaticResource DesignHostAccentBrush}"
+                                               BorderBrush="{StaticResource DesignHostAccentTextBrush}"
+                                               Background="{StaticResource DesignHostBackgroundBrush}"/>
+                                </Grid>
+
+                                <sdk:ValidationSummary Name="ValidationSummary" Grid.Row="3" Grid.ColumnSpan="3" MaxHeight="90"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="DisabledVisualElement" IsHitTestVisible="False" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" CornerRadius="2" Background="#8CFFFFFF" Opacity="0"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>

@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="_ArcGISOnline_" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="_BingMapsRoads_" xml:space="preserve">
+    <value>Bing Maps Roads</value>
+  </data>
+  <data name="_Business_" xml:space="preserve">
+    <value>비즈니스</value>
+  </data>
+  <data name="_Cartography_" xml:space="preserve">
+    <value>지도 제작</value>
+  </data>
+  <data name="_ChooseBasemap_" xml:space="preserve">
+    <value>베이스맵 선택</value>
+  </data>
+  <data name="_OutdoorRecreation_" xml:space="preserve">
+    <value>실외 레크리에이션</value>
+  </data>
+  <data name="_PeopleandPlaces_" xml:space="preserve">
+    <value>사람과 장소</value>
+  </data>
+  <data name="_PublicSafetyandHealth_" xml:space="preserve">
+    <value>공공 안전 및 보건</value>
+  </data>
+  <data name="_Standard_" xml:space="preserve">
+    <value>표준</value>
+  </data>
+  <data name="_Transportation_" xml:space="preserve">
+    <value>운송</value>
+  </data>
+  <data name="_BingMapsAerial_" xml:space="preserve">
+    <value>Bing Maps Aerial</value>
+  </data>
+  <data name="_BingMapsHybrid_" xml:space="preserve">
+    <value>Bing Maps Hybrid</value>
+  </data>
+  <data name="_Streets_" xml:space="preserve">
+    <value>도로</value>
+  </data>
+  <data name="_Topographic_" xml:space="preserve">
+    <value>지형학</value>
+  </data>
+  <data name="_Imagery_" xml:space="preserve">
+    <value>Imagery</value>
+  </data>
+  <data name="_Terrain_" xml:space="preserve">
+    <value>지형</value>
+  </data>
+  <data name="_USATopoMaps_" xml:space="preserve">
+    <value>USA Topo Maps</value>
+  </data>
+  <data name="_OpenStreetMap_" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="_AttributeTable_" xml:space="preserve">
+    <value>속성 테이블</value>
+  </data>
+  <data name="_ClearSelectedFeaturesFromCurrentlySelectedLayer_" xml:space="preserve">
+    <value>현재 선택된 레이어에서 선택한 피처 지우기</value>
+  </data>
+  <data name="_ClearSelection_" xml:space="preserve">
+    <value>선택 영역 지우기</value>
+  </data>
+  <data name="_ExportAttributesOfSelectedFeaturesToCSVFile_" xml:space="preserve">
+    <value>선택한 피처의 속성을 CSV 파일로 내보내기</value>
+  </data>
+  <data name="_ExportSelection_" xml:space="preserve">
+    <value>선택 영역 내보내기</value>
+  </data>
+  <data name="_GoTo_" xml:space="preserve">
+    <value>이동</value>
+  </data>
+  <data name="_MapContents_" xml:space="preserve">
+    <value>맵 컨텐츠</value>
+  </data>
+  <data name="_RefreshCurrentlySelectedLayer_" xml:space="preserve">
+    <value>현재 선택된 레이어 새로 고침</value>
+  </data>
+  <data name="_Refresh_" xml:space="preserve">
+    <value>새로고침</value>
+  </data>
+  <data name="_SearchForPlacesOrLayers_" xml:space="preserve">
+    <value>장소 또는 레이어 검색</value>
+  </data>
+  <data name="_Search_" xml:space="preserve">
+    <value>검색</value>
+  </data>
+  <data name="_SelectABasemapForTheMap_" xml:space="preserve">
+    <value>맵의 베이스맵 선택</value>
+  </data>
+  <data name="_SelectAllFeaturesInCurrentlySelectedLayer_" xml:space="preserve">
+    <value>현재 선택된 레이어에서 모든 피처 선택</value>
+  </data>
+  <data name="_SelectAll_" xml:space="preserve">
+    <value>모두 선택</value>
+  </data>
+  <data name="_SelectFeaturesByDrawingBoxOnMap_" xml:space="preserve">
+    <value>맵에 상자를 그려서 피처 선택</value>
+  </data>
+  <data name="_Select_" xml:space="preserve">
+    <value>선택</value>
+  </data>
+  <data name="_ServiceDetails_" xml:space="preserve">
+    <value>서비스 정보</value>
+  </data>
+  <data name="_ShowOrHideTheAttributesTable_" xml:space="preserve">
+    <value>속성 테이블 표시 또는 숨기기</value>
+  </data>
+  <data name="_ToggleMapContents_" xml:space="preserve">
+    <value>맵 컨텐츠 전환</value>
+  </data>
+  <data name="_ViewInformationAboutSelectedLayerDatasource_" xml:space="preserve">
+    <value>선택한 레이어의 데이터 소스에 대한 정보 보기</value>
+  </data>
+  <data name="_ZoomToCurrentlySelectedFeatures_" xml:space="preserve">
+    <value>현재 선택된 피처 확대</value>
+  </data>
+  <data name="_ZoomToCurrentlySelectedLayer_" xml:space="preserve">
+    <value>현재 선택된 레이어 확대</value>
+  </data>
+  <data name="_ZoomToSelection_" xml:space="preserve">
+    <value>선택 영역 확대</value>
+  </data>
+  <data name="_ArcGISViewerForMicrosoftSilverlight_" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="_AStreetMapOfTheWorld_" xml:space="preserve">
+    <value>경계, 시, 용수 피처, 지형적 피처, 공원, 랜드마크, 운송 및 건물을 포함하는 지형 맵입니다.</value>
+  </data>
+  <data name="_BasicPrintLayout_" xml:space="preserve">
+    <value>기본 인쇄 레이아웃입니다.</value>
+  </data>
+  <data name="_Blog_" xml:space="preserve">
+    <value>블로그</value>
+  </data>
+  <data name="_CategoryColon_" xml:space="preserve">
+    <value>범주:</value>
+  </data>
+  <data name="_CodeColon_" xml:space="preserve">
+    <value>코드:</value>
+  </data>
+  <data name="_ErrorUnHandledErrorInSilverlightApplcation_" xml:space="preserve">
+    <value>Silverlight 응용프로그램에서 처리되지 않은 오류</value>
+  </data>
+  <data name="_FileColon_" xml:space="preserve">
+    <value>파일:</value>
+  </data>
+  <data name="_Forums_" xml:space="preserve">
+    <value>포럼</value>
+  </data>
+  <data name="_Help_" xml:space="preserve">
+    <value>도움말</value>
+  </data>
+  <data name="_LineColon_" xml:space="preserve">
+    <value>선:</value>
+  </data>
+  <data name="_Loading_" xml:space="preserve">
+    <value>다운로드 중...</value>
+  </data>
+  <data name="_MessageColon_" xml:space="preserve">
+    <value>메시지:</value>
+  </data>
+  <data name="_MethodNameColon_" xml:space="preserve">
+    <value>방법 이름:</value>
+  </data>
+  <data name="_PositionColon_" xml:space="preserve">
+    <value>포지션:</value>
+  </data>
+  <data name="_PrintLayoutWithMapElementsLikeOverviewMap_" xml:space="preserve">
+    <value>개요 맵과 같은 맵 요소가 있는 인쇄 레이아웃입니다.</value>
+  </data>
+  <data name="_ArcGISApplicationBuilderForMicrosoftSilverlight_" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight - Application Builder</value>
+  </data>
+  <data name="_LoadingColon_" xml:space="preserve">
+    <value>다운로드 중:</value>
+  </data>
+  <data name="_PoweredByArcGIS_" xml:space="preserve">
+    <value>Powered by ArcGIS</value>
+  </data>
+  <data name="_AttachmentEditor_" xml:space="preserve">
+    <value>문서 첨부</value>
+  </data>
+  <data name="_AttachmentDocumentsToSelectedFeature_" xml:space="preserve">
+    <value>선택한 피처에 문서 첨부</value>
+  </data>
+  <data name="_FilterByExtentTooltip_" xml:space="preserve">
+    <value>현재 맵 범위 내에 있는 피처에 대한 레코드만 표시합니다.</value>
+  </data>
+  <data name="_FilterByExtent_" xml:space="preserve">
+    <value>맵 범위 기준으로 필터링</value>
+  </data>
+  <data name="_ShowAllTooltip_" xml:space="preserve">
+    <value>현재 레이어에 있는 모든 피처에 대한 레코드를 표시합니다.</value>
+  </data>
+  <data name="_ShowAll_" xml:space="preserve">
+    <value>모두 표시</value>
+  </data>
+  <data name="_ShowSelectedTooltip_" xml:space="preserve">
+    <value>현재 레이어에서 선택된 피처에 대한 레코드를 표시합니다.</value>
+  </data>
+  <data name="_ShowSelected_" xml:space="preserve">
+    <value>선택 항목 표시</value>
+  </data>
+  <data name="_ShowUnselectedTooltip_" xml:space="preserve">
+    <value>현재 레이어에서 선택되지 않은 피처에 대한 레코드를 표시합니다.</value>
+  </data>
+  <data name="_ShowUnselected_" xml:space="preserve">
+    <value>선택되지 않은 항목 표시</value>
+  </data>
+  <data name="_Ocean_" xml:space="preserve">
+    <value>대양</value>
+  </data>
+  <data name="_Physical_" xml:space="preserve">
+    <value>물리적</value>
+  </data>
+  <data name="_ShadedRelief_" xml:space="preserve">
+    <value>음영 처리된 릴리프</value>
+  </data>
+  <data name="_Color_" xml:space="preserve">
+    <value>색상</value>
+  </data>
+  <data name="_PopupToolbarAddAttachements_" xml:space="preserve">
+    <value>첨부 추가</value>
+  </data>
+  <data name="_PopupToolbarAddAttachmentsTooltip_" xml:space="preserve">
+    <value>피처에 첨부 파일을 추가합니다.</value>
+  </data>
+  <data name="_PopupToolbarDeleteTooltip_" xml:space="preserve">
+    <value>레이어에서 피처를 제거합니다.</value>
+  </data>
+  <data name="_PopupToolbarDelete_" xml:space="preserve">
+    <value>피처 삭제</value>
+  </data>
+  <data name="_PopupToolbarEditShapeTooltip_" xml:space="preserve">
+    <value>피처의 지오메트리를 수정합니다.</value>
+  </data>
+  <data name="_PopupToolbarEditShape_" xml:space="preserve">
+    <value>쉐이프 편집</value>
+  </data>
+  <data name="_PopupToolbarEditValuesTooltip_" xml:space="preserve">
+    <value>피처의 속성 값을 수정합니다.</value>
+  </data>
+  <data name="_PopupToolbarEditValues_" xml:space="preserve">
+    <value>값 편집</value>
+  </data>
+  <data name="_LightGrayCanvas_" xml:space="preserve">
+    <value>옅은 회색 캔버스</value>
+  </data>
+  <data name="_ArcGISOnlineDescription_" xml:space="preserve">
+    <value>ArcGIS Online에서 맵, 이미지 및 피처 서비스 검색</value>
+  </data>
+  <data name="_PlacesDescription_" xml:space="preserve">
+    <value>주소, 도시 또는 기타 장소 검색</value>
+  </data>
+  <data name="_Places_" xml:space="preserve">
+    <value>장소</value>
+  </data>
+  <data name="_SearchDescription_" xml:space="preserve">
+    <value>맵에 추가할 내용 또는 장소 검색</value>
+  </data>
+  <data name="_TheWebDescription_" xml:space="preserve">
+    <value>웹에서 맵 서비스 검색</value>
+  </data>
+  <data name="_TheWeb_" xml:space="preserve">
+    <value>웹</value>
+  </data>
+  <data name="_AttributeTableToolbar_" xml:space="preserve">
+    <value>속성 테이블 도구막대</value>
+  </data>
+  <data name="_FilterRecordsToolbar_" xml:space="preserve">
+    <value>필터 레코드 도구막대</value>
+  </data>
+  <data name="_LayerContextMenu_" xml:space="preserve">
+    <value>레이어 상황 메뉴</value>
+  </data>
+  <data name="_LayerToolbar_" xml:space="preserve">
+    <value>레이어 도구막대</value>
+  </data>
+  <data name="_MainToolbar_" xml:space="preserve">
+    <value>주 도구막대</value>
+  </data>
+  <data name="_PopupToolbar_" xml:space="preserve">
+    <value>팝업 도구막대</value>
+  </data>
+  <data name="_Identify_" xml:space="preserve">
+    <value>정보 조회</value>
+  </data>
+  <data name="_Accordion_" xml:space="preserve">
+    <value>아코디언</value>
+  </data>
+  <data name="_Basic_" xml:space="preserve">
+    <value>기본</value>
+  </data>
+  <data name="_BlackBoxReverse_" xml:space="preserve">
+    <value>검은색 상자 - 반전</value>
+  </data>
+  <data name="_BlackBox_" xml:space="preserve">
+    <value>검은색 상자</value>
+  </data>
+  <data name="_FloatingPanels_" xml:space="preserve">
+    <value>플로팅 패널</value>
+  </data>
+  <data name="_Glass_" xml:space="preserve">
+    <value>유리</value>
+  </data>
+  <data name="_UnderGlow_" xml:space="preserve">
+    <value>후광 효과</value>
+  </data>
+  <data name="_Wings_" xml:space="preserve">
+    <value>날개</value>
+  </data>
+  <data name="_WithMapElements_" xml:space="preserve">
+    <value>맵 요소 포함</value>
+  </data>
+  <data name="_StartXMax_" xml:space="preserve">
+    <value>-5753581.74313559</value>
+  </data>
+  <data name="_StartXMin_" xml:space="preserve">
+    <value>-15499611.752488</value>
+  </data>
+  <data name="_StartYMax_" xml:space="preserve">
+    <value>6681909.77215536</value>
+  </data>
+  <data name="_StartYMin_" xml:space="preserve">
+    <value>2862067.82166302</value>
+  </data>
+  <data name="_FlowDirection_" xml:space="preserve">
+    <value>LeftToRight</value>
+  </data>
+  <data name="_QueryRelatedToolDescription_" xml:space="preserve">
+    <value>피처에 대한 관련 레코드를 검색합니다.</value>
+  </data>
+  <data name="_QueryRelatedToolTitle_" xml:space="preserve">
+    <value>관련 레코드 가져오기</value>
+  </data>
+  <data name="_ExtentQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>쿼리 문자열에서 범위 초기화</value>
+  </data>
+  <data name="_ScaleQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>쿼리 문자열에서 축척 초기화</value>
+  </data>
+  <data name="_CenterQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>쿼리 문자열에서 중심 초기화</value>
+  </data>
+  <data name="_ScaleLevelQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>쿼리 문자열에서 축척 수준 초기화</value>
+  </data>
+  <data name="_WebMapQueryStringBehaviorTitle_" xml:space="preserve">
+    <value>쿼리 문자열에서 웹 맵 로드</value>
+  </data>
+  <data name="_HelpUrl_" xml:space="preserve">
+    <value>http://links.esri.com/silverlightviewer/help/ko</value>
+  </data>
+</root>

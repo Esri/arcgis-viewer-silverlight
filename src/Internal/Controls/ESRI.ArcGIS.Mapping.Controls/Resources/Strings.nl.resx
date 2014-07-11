@@ -1,0 +1,2079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptChangesTooltip" xml:space="preserve">
+    <value>Accepteer wijzigingen</value>
+  </data>
+  <data name="AddCoordsToListFailedCaption" xml:space="preserve">
+    <value>Opslaan resultaten lokaliseren mislukt</value>
+  </data>
+  <data name="AddCoordsToListFailedPrompt" xml:space="preserve">
+    <value>Toevoegen van aan adres gekoppelde coördinaten aan de lijst is mislukt. Opnieuw proberen?</value>
+  </data>
+  <data name="AddData" xml:space="preserve">
+    <value>Voeg data toe</value>
+  </data>
+  <data name="AddDataSetTooltip" xml:space="preserve">
+    <value>Voeg dataset toe</value>
+  </data>
+  <data name="AddDataTooltip" xml:space="preserve">
+    <value>Voeg meer data aan de kaart toe</value>
+  </data>
+  <data name="AddRange" xml:space="preserve">
+    <value>Voeg bereik toe</value>
+  </data>
+  <data name="AddressMatchError" xml:space="preserve">
+    <value>Fout matchen van adressen: {0}</value>
+  </data>
+  <data name="AddressMatchingServicePrompt" xml:space="preserve">
+    <value>Service:</value>
+  </data>
+  <data name="AdvancedClusterProperties" xml:space="preserve">
+    <value>Geavanceerde clustereigenschappen</value>
+  </data>
+  <data name="AGSOImagery" xml:space="preserve">
+    <value>Beeldmateriaal</value>
+  </data>
+  <data name="AGSOStreets" xml:space="preserve">
+    <value>Straten</value>
+  </data>
+  <data name="AGSOTopo" xml:space="preserve">
+    <value>Topo</value>
+  </data>
+  <data name="AliasHeader" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Toepassen</value>
+  </data>
+  <data name="ArcGISOnline" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="ArcGISServer" xml:space="preserve">
+    <value>ArcGIS Server</value>
+  </data>
+  <data name="AssociatedMapPrompt" xml:space="preserve">
+    <value>Kaart:</value>
+  </data>
+  <data name="AutoScroll" xml:space="preserve">
+    <value>Automatisch scrollen:</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Achtergrond</value>
+  </data>
+  <data name="BaseMapConfigurationSectionHeader" xml:space="preserve">
+    <value>Basiskaart</value>
+  </data>
+  <data name="BaseMapPrompt" xml:space="preserve">
+    <value>Basiskaart:</value>
+  </data>
+  <data name="BingMaps" xml:space="preserve">
+    <value>Bing Maps</value>
+  </data>
+  <data name="BingMapsAccountInfo" xml:space="preserve">
+    <value>Accountgegevens Bing Maps</value>
+  </data>
+  <data name="BingMapsAerial" xml:space="preserve">
+    <value>Luchtbeelden</value>
+  </data>
+  <data name="BingMapsAerialWithLabels" xml:space="preserve">
+    <value>Luchtbeelden - labels</value>
+  </data>
+  <data name="BingMapsInitializeFailed" xml:space="preserve">
+    <value>Verificatie Bing mislukt. Er wordt in plaats hiervan een ArcGIS Online-basiskaart gebruikt. Neem contact op met uw beheerder voor hulp.</value>
+  </data>
+  <data name="BingMapsRoads" xml:space="preserve">
+    <value>Wegen</value>
+  </data>
+  <data name="Border" xml:space="preserve">
+    <value>Rand</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Bladeren...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="ChangeBaseMapTooltip" xml:space="preserve">
+    <value>Wijzig basiskaart</value>
+  </data>
+  <data name="ChangeColorRampTooltip" xml:space="preserve">
+    <value>Selecteer een kleurenschema</value>
+  </data>
+  <data name="ChangeGradientStopsTooltip" xml:space="preserve">
+    <value>Klik om kleurovergangsbeëindigingen voor de heatmap te selecteren</value>
+  </data>
+  <data name="CheckForUpdatesPrompt" xml:space="preserve">
+    <value>Controleer op updates:</value>
+  </data>
+  <data name="CheckForUpdateTooltip" xml:space="preserve">
+    <value>Haal geactualiseerde lijstdata op bij pannen of zoomen van de kaart</value>
+  </data>
+  <data name="ChooseBaseMapLayer" xml:space="preserve">
+    <value>Kies basiskaart</value>
+  </data>
+  <data name="ChooseLayerHeader" xml:space="preserve">
+    <value>Kies dataset</value>
+  </data>
+  <data name="CityPrompt" xml:space="preserve">
+    <value>Stad:</value>
+  </data>
+  <data name="ClassifyBy" xml:space="preserve">
+    <value>Kiest het veld waar u het waardebereik op wilt baseren</value>
+  </data>
+  <data name="ClassifyByPrompt" xml:space="preserve">
+    <value>Classificeer op:</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Wis alles</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Wis selectie</value>
+  </data>
+  <data name="ClickSeqmentToZoom" xml:space="preserve">
+    <value>Klik op een afzonderlijk segment om in te zoomen op dat segment.</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>Klik om oostwaarts te gaan</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>Klik om noordwaarts te gaan</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>Klik om zuidwaarts te gaan</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>Klik om westwaarts te gaan</value>
+  </data>
+  <data name="ClusterAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Geavanceerde eigenschappen</value>
+  </data>
+  <data name="ClusterFeaturesTooltipFirstBit" xml:space="preserve">
+    <value>Cluster</value>
+  </data>
+  <data name="ClusterFeaturesTooltipSecondBit" xml:space="preserve">
+    <value>Objecten</value>
+  </data>
+  <data name="ClusterTooltip" xml:space="preserve">
+    <value>Teken clusters van objecten samen</value>
+  </data>
+  <data name="ColorsPrompt" xml:space="preserve">
+    <value>Kleuren:</value>
+  </data>
+  <data name="ConfigurationTooltip" xml:space="preserve">
+    <value>Configuratie</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Configureren</value>
+  </data>
+  <data name="ConfigureBingMapsCredentials" xml:space="preserve">
+    <value>Klik om accountgegevens Bing Maps te configureren</value>
+  </data>
+  <data name="ConfigureSettings" xml:space="preserve">
+    <value>Configureer instellingen</value>
+  </data>
+  <data name="ConfigureTooltip" xml:space="preserve">
+    <value>Configureren</value>
+  </data>
+  <data name="CountryPrompt" xml:space="preserve">
+    <value>Land:</value>
+  </data>
+  <data name="CurrentSymbolPrompt" xml:space="preserve">
+    <value>Huidig symbool:</value>
+  </data>
+  <data name="CustomColorRamp" xml:space="preserve">
+    <value>Aangepast</value>
+  </data>
+  <data name="CustomColorRampToolTip" xml:space="preserve">
+    <value>Kies kleuren voor elk waardebereik</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Databron:</value>
+  </data>
+  <data name="DataSourceTooltip" xml:space="preserve">
+    <value>Voer de URL naar een SharePoint-, Spatial Data Service- of ArcGIS Server-eindpunt in</value>
+  </data>
+  <data name="DefinitionTabHeader" xml:space="preserve">
+    <value>Definitie</value>
+  </data>
+  <data name="DefinitionTabHeaderTooltip" xml:space="preserve">
+    <value>Definieer eigenschappen voor huidige dataset</value>
+  </data>
+  <data name="DeleteConnectionCaption" xml:space="preserve">
+    <value>Bevestig verwijderen</value>
+  </data>
+  <data name="DeleteConnectionPrompt" xml:space="preserve">
+    <value>Weet u zeker dat u deze verbinding wilt verwijderen?</value>
+  </data>
+  <data name="DeleteLayerMessageCaption" xml:space="preserve">
+    <value>Bevestig verwijderen</value>
+  </data>
+  <data name="DeleteLayerPrompt" xml:space="preserve">
+    <value>Weet u zeker dat u deze dataset uit de kaart wilt verwijderen?</value>
+  </data>
+  <data name="DeleteRange" xml:space="preserve">
+    <value>Verwijder bereik</value>
+  </data>
+  <data name="DisplayNamePrompt" xml:space="preserve">
+    <value>Weergavenaam:</value>
+  </data>
+  <data name="DisplayNameTooltip" xml:space="preserve">
+    <value>Definieer de weergavenaam van de huidige dataset</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>Sleep om te draaien</value>
+  </data>
+  <data name="DuplicateDataSource" xml:space="preserve">
+    <value>{0} is al toegevoegd als een databron</value>
+  </data>
+  <data name="DuplicateMapServiceLayer" xml:space="preserve">
+    <value>Mapservice is al toegevoegd</value>
+  </data>
+  <data name="DuplicateMapServiceLayerCaption" xml:space="preserve">
+    <value>Dubbel item gedetecteerd</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Bewerken</value>
+  </data>
+  <data name="EnterCredentials" xml:space="preserve">
+    <value>Voer een gebruikersnaam en wachtwoord in</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>Fout</value>
+  </data>
+  <data name="Europe" xml:space="preserve">
+    <value>Europa</value>
+  </data>
+  <data name="Every" xml:space="preserve">
+    <value>Elke</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>Uit- en samenvouwen</value>
+  </data>
+  <data name="ExportSelection" xml:space="preserve">
+    <value>Exporteer selectie</value>
+  </data>
+  <data name="FieldHeader" xml:space="preserve">
+    <value>Veld</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>Vullen</value>
+  </data>
+  <data name="FilterByMapView" xml:space="preserve">
+    <value>Filter op kaartweergave:</value>
+  </data>
+  <data name="FilterExpressionPrompt" xml:space="preserve">
+    <value>Filterexpressie:</value>
+  </data>
+  <data name="FilterExpressionTooltip" xml:space="preserve">
+    <value>Pas een filter toe op de huidige dataset</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Zoeken</value>
+  </data>
+  <data name="FindDirections" xml:space="preserve">
+    <value>Zoek routebeschrijving</value>
+  </data>
+  <data name="FindLocation" xml:space="preserve">
+    <value>Locatie zoeken</value>
+  </data>
+  <data name="FindNearby" xml:space="preserve">
+    <value>Zoek in de buurt</value>
+  </data>
+  <data name="FixLocation" xml:space="preserve">
+    <value>Leg locatie vast</value>
+  </data>
+  <data name="Foreground" xml:space="preserve">
+    <value>Voorgrond</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>Meer informatie</value>
+  </data>
+  <data name="FromPrompt" xml:space="preserve">
+    <value>Van:</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>Volledig bereik</value>
+  </data>
+  <data name="GetListItemsFailed" xml:space="preserve">
+    <value>Kan items van {0} niet ophalen op site {1}</value>
+  </data>
+  <data name="GetListItemsFailedPromptRemove" xml:space="preserve">
+    <value>Kan items van {0} op site {1} niet ophalen. Deze weergave uit de kaart verwijderen?</value>
+  </data>
+  <data name="GetListsFailed" xml:space="preserve">
+    <value>Ophalen lijsten mislukt: {0}</value>
+  </data>
+  <data name="HeatMap" xml:space="preserve">
+    <value>Heatmap</value>
+  </data>
+  <data name="HeatMapAdvancedProperties" xml:space="preserve">
+    <value>Eigenschappen heatmap</value>
+  </data>
+  <data name="HeatMapAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Eigenschappen voor renderen heatmap</value>
+  </data>
+  <data name="HeatMapTooltip" xml:space="preserve">
+    <value>Data weergeven als een heatmap</value>
+  </data>
+  <data name="HundredPercent" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="InitializationError" xml:space="preserve">
+    <value>Initalisatiefout: {0}</value>
+  </data>
+  <data name="IntensityPrompt" xml:space="preserve">
+    <value>Intensiteit:</value>
+  </data>
+  <data name="InvalidUrlCaption" xml:space="preserve">
+    <value>Ongeldige URL</value>
+  </data>
+  <data name="InvalidUrlPrompt" xml:space="preserve">
+    <value>Voer een geldige URL in</value>
+  </data>
+  <data name="LatitudePrompt" xml:space="preserve">
+    <value>Breedtegraad (Y):</value>
+  </data>
+  <data name="LayerInfoRetrievalError" xml:space="preserve">
+    <value>Fout bij het ophalen van laaggegevens: {0}</value>
+  </data>
+  <data name="LayersTabHeader" xml:space="preserve">
+    <value>Zichtbaarheid laag</value>
+  </data>
+  <data name="LayersTabHeaderTooltip" xml:space="preserve">
+    <value>Configureer laagzichtbaarheid</value>
+  </data>
+  <data name="ListViewHeader" xml:space="preserve">
+    <value>Lijstweergave</value>
+  </data>
+  <data name="LoadDataSourceTooltip" xml:space="preserve">
+    <value>Laad gegevensdata</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>Zoom naar</value>
+  </data>
+  <data name="LocateByAddress" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="LocateByAddressTooltip" xml:space="preserve">
+    <value>Gebruik adresmatch om huidige lijstdata te tekenen</value>
+  </data>
+  <data name="LocateByCoordinates" xml:space="preserve">
+    <value>Coördinaten</value>
+  </data>
+  <data name="LocateByCoordinatesTooltip" xml:space="preserve">
+    <value>Gebruik coördinaten om de huidige lijstdata te tekenen</value>
+  </data>
+  <data name="LocateByPrompt" xml:space="preserve">
+    <value>Lokaliseer op:</value>
+  </data>
+  <data name="LocateTooltip" xml:space="preserve">
+    <value>De huidige lijst voorzien van adresmatches</value>
+  </data>
+  <data name="LocateUpdateTooltip" xml:space="preserve">
+    <value>Teken de huidige lijst op basis van de geselecteerde coördinatenvelden</value>
+  </data>
+  <data name="LocationFieldsTabHeader" xml:space="preserve">
+    <value>Locatievelden</value>
+  </data>
+  <data name="LocationFieldsTabHeaderTooltip" xml:space="preserve">
+    <value>Selecteer het adres of de geografische velden van de huidige dataset</value>
+  </data>
+  <data name="LongitudePrompt" xml:space="preserve">
+    <value>Lengtegraad (X):</value>
+  </data>
+  <data name="MapContentsTooltip" xml:space="preserve">
+    <value>Kaartinhoud</value>
+  </data>
+  <data name="MapXaml" xml:space="preserve">
+    <value>XAML kaart</value>
+  </data>
+  <data name="MapXamlRepresentation" xml:space="preserve">
+    <value>XAML-representatie van kaart</value>
+  </data>
+  <data name="MaxPrompt" xml:space="preserve">
+    <value>Max:</value>
+  </data>
+  <data name="MinPrompt" xml:space="preserve">
+    <value>Min:</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minuten</value>
+  </data>
+  <data name="ModifyRangeTooltip" xml:space="preserve">
+    <value>Wijzig bereik</value>
+  </data>
+  <data name="MoveBarUpDown" xml:space="preserve">
+    <value>Schuif balk omhoog om in te zoomen, omlaag om uit te zoomen</value>
+  </data>
+  <data name="MoveDownTooltip" xml:space="preserve">
+    <value>Verplaats naar beneden</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>Verplaats eerste</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>Verplaats laatste</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>Verplaats volgende</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>Verplaats vorige</value>
+  </data>
+  <data name="MoveRangeTooltip" xml:space="preserve">
+    <value>Verplaats bereik</value>
+  </data>
+  <data name="MoveUpTooltip" xml:space="preserve">
+    <value>Verplaats naar boven</value>
+  </data>
+  <data name="MultiLayerCacheNotSupported" xml:space="preserve">
+    <value>Tiled mapservices met meerlaagse cache worden niet ondersteund. Gebruik of maak in plaats daarvan een enkele samengevoegde cache.</value>
+  </data>
+  <data name="MultiLayerCacheNotSupportedCaption" xml:space="preserve">
+    <value>Tiled mapservices met meerlaagse cache worden niet ondersteund</value>
+  </data>
+  <data name="MultipleViewsNotAllowed" xml:space="preserve">
+    <value>SharePoint-lijstweergaven kunnen niet meerdere malen worden toegevoegd</value>
+  </data>
+  <data name="NewDataSourceHelpText" xml:space="preserve">
+    <value>&lt;Voer servernaam of http-eindpunt in&gt;</value>
+  </data>
+  <data name="NextRange" xml:space="preserve">
+    <value>Volgende bereik</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefined" xml:space="preserve">
+    <value>Locatievelden voor de lijst zijn niet toegewezen. Wijs kolommen binnen de lijst aan de juiste velden toe.</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefinedCaption" xml:space="preserve">
+    <value>Definieer veldtoewijzing</value>
+  </data>
+  <data name="NoAssociatedMapWebPart" xml:space="preserve">
+    <value>Er zijn geen webonderdelen gevonden.</value>
+  </data>
+  <data name="NoDistinctNumericFields" xml:space="preserve">
+    <value>Alle numerieke velden in deze dataset hebben dezelfde minimum- en maximumwaarden. Voor het configureren van het waardebereik moeten het minimum en het maximum verschillend zijn.</value>
+  </data>
+  <data name="NoGeographicListsFound" xml:space="preserve">
+    <value>Er zijn geen lijsten met geografische data gevonden op {0}</value>
+  </data>
+  <data name="NoLayersAdded" xml:space="preserve">
+    <value>Klik op de knop 'Voeg data toe' om data toe te voegen aan de kaart</value>
+  </data>
+  <data name="NoGPServicesFound" xml:space="preserve">
+    <value>Er zijn geen geoprocessingservices gevonden op {0}</value>
+  </data>
+  <data name="NoMapServicesFound" xml:space="preserve">
+    <value>Geen mapservices gevonden op {0}</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Geen</value>
+  </data>
+  <data name="NoNumericFieldsFound" xml:space="preserve">
+    <value>Deze dataset bevat geen numerieke velden. Het waardebereik kan alleen worden ingesteld op datasets die ten minste één numeriek veld bevatten.</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>Geen records</value>
+  </data>
+  <data name="NoRecordsForVisibleLayer" xml:space="preserve">
+    <value>Items voor deze lijst zijn niet gevonden door de kaart. Schakel zichtbaarheid voor de lijst in om items weer te geven.</value>
+  </data>
+  <data name="NoResultsCaption" xml:space="preserve">
+    <value>Geen resultaten</value>
+  </data>
+  <data name="NoResultsLayerNotVisible" xml:space="preserve">
+    <value>Geen records gevonden omdat lijst niet zichtbaar is op de kaart</value>
+  </data>
+  <data name="NorthAmerica" xml:space="preserve">
+    <value>Noord-Amerika</value>
+  </data>
+  <data name="NoSpatialTablesFound" xml:space="preserve">
+    <value>Geen tabellen met ruimtelijke data gevonden op {0}</value>
+  </data>
+  <data name="NumericFieldNotDistinct" xml:space="preserve">
+    <value>Het veld {0} bevat dezelfde minimum- en maximumwaarden. Een waardebereik kan alleen worden geconfigureerd op velden die verschillende minimum- en maximumwaarden hebben.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OnPanAndZoom" xml:space="preserve">
+    <value>Over pannen en zoomen</value>
+  </data>
+  <data name="OperationalDataSectionHeader" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Wachtwoord:</value>
+  </data>
+  <data name="PleaseSpecifyDataSourceMessage" xml:space="preserve">
+    <value>Geef een databron op</value>
+  </data>
+  <data name="PollForUpdatesTooltip" xml:space="preserve">
+    <value>Definieer een interval voor het ontvangen van geactualiseerde lijstdata</value>
+  </data>
+  <data name="PopUpTabHeader" xml:space="preserve">
+    <value>Pop-up</value>
+  </data>
+  <data name="PopUpTabHeaderTooltip" xml:space="preserve">
+    <value>Configureer de kaartgegevenspop-up voor de huidige dataset</value>
+  </data>
+  <data name="PreDefinedColorRamp" xml:space="preserve">
+    <value>Vooraf gedefinieerd</value>
+  </data>
+  <data name="PreDefinedColorRampTooltip" xml:space="preserve">
+    <value>Pas een reeks vooraf gedefinieerde kleuren toe</value>
+  </data>
+  <data name="PreviousRange" xml:space="preserve">
+    <value>Vorig bereik</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>Productie</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Eigenschappen - {0}</value>
+  </data>
+  <data name="RecordsPrompt" xml:space="preserve">
+    <value>Records:</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Vernieuwen</value>
+  </data>
+  <data name="RefreshError" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het vernieuwen van de {0}-laag</value>
+  </data>
+  <data name="RefreshMapXamlTooltip" xml:space="preserve">
+    <value>Vernieuw XAML kaart</value>
+  </data>
+  <data name="RefreshTooltip" xml:space="preserve">
+    <value>Vernieuwen</value>
+  </data>
+  <data name="RemoveTooltip" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="ResetExtent" xml:space="preserve">
+    <value>Stel extent opnieuw in</value>
+  </data>
+  <data name="ResetExtentTooltip" xml:space="preserve">
+    <value>Stel de oorspronkelijke extent van de kaart die is gedefinieerd door de ArcGIS-serverservice, opnieuw in.</value>
+  </data>
+  <data name="ResetMapRotation" xml:space="preserve">
+    <value>Stel rotatie kaart opnieuw in</value>
+  </data>
+  <data name="ResolutionPrompt" xml:space="preserve">
+    <value>Resolutie:</value>
+  </data>
+  <data name="ResultsViewHeader" xml:space="preserve">
+    <value>Resultatenweergave</value>
+  </data>
+  <data name="RetrievingBaseMaps" xml:space="preserve">
+    <value>Beschikbare basiskaarten ophalen</value>
+  </data>
+  <data name="RetrievingGeometryType" xml:space="preserve">
+    <value>Geometrietype ophalen</value>
+  </data>
+  <data name="RetrievingInformation" xml:space="preserve">
+    <value>Gegevens van server ophalen</value>
+  </data>
+  <data name="RollBackChangesTooltip" xml:space="preserve">
+    <value>Draai wijzigingen terug</value>
+  </data>
+  <data name="ScaleBarUnit_feet" xml:space="preserve">
+    <value>ft</value>
+  </data>
+  <data name="ScaleBarUnit_kilometers" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="ScaleBarUnit_meters" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="ScaleBarUnit_miles" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>Seconden</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Selecteer alles</value>
+  </data>
+  <data name="SelectAllTooltip" xml:space="preserve">
+    <value>Selecteer alles</value>
+  </data>
+  <data name="SelectedRangePrompt" xml:space="preserve">
+    <value>Bereik:</value>
+  </data>
+  <data name="SelectedRecordsFormatString" xml:space="preserve">
+    <value>Records ({0} van {1} geselecteerd)</value>
+  </data>
+  <data name="SelectRangeTooltip" xml:space="preserve">
+    <value>Selecteer bereik voor bewerken</value>
+  </data>
+  <data name="ServerPrompt" xml:space="preserve">
+    <value>Server:</value>
+  </data>
+  <data name="ServiceConnectionError" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het maken van een verbinding met {0}. Controleer de URL, zorg ervoor dat de service wordt uitgevoerd en probeer opnieuw.</value>
+  </data>
+  <data name="ServiceConnectionErrorCaption" xml:space="preserve">
+    <value>Verbindingsfout</value>
+  </data>
+  <data name="ServiceConnectionErrorDuringInit" xml:space="preserve">
+    <value>Kan geen verbinding maken met {0}.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Instellingen</value>
+  </data>
+  <data name="ShowHide" xml:space="preserve">
+    <value>Verbergen/weergeven</value>
+  </data>
+  <data name="ShowHideTooltip" xml:space="preserve">
+    <value>Verbergen/weergeven</value>
+  </data>
+  <data name="SimpleSymbolType" xml:space="preserve">
+    <value>Eenvoudig</value>
+  </data>
+  <data name="SimpleSymbolTypeTooltip" xml:space="preserve">
+    <value>Geef de huidige dataset weer met één symbool</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Bron:</value>
+  </data>
+  <data name="Staging" xml:space="preserve">
+    <value>Faseren</value>
+  </data>
+  <data name="StatePrompt" xml:space="preserve">
+    <value>Status/subeenheid:</value>
+  </data>
+  <data name="SymbolsTabHeader" xml:space="preserve">
+    <value>Symbolen</value>
+  </data>
+  <data name="SymbolsTabHeaderTooltip" xml:space="preserve">
+    <value>Configureer de weergave van de huidige dataset</value>
+  </data>
+  <data name="SymbolTypePrompt" xml:space="preserve">
+    <value>Symbooltype:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>naar</value>
+  </data>
+  <data name="TokenAuthenticationFailed" xml:space="preserve">
+    <value>Verificatie Bing Maps mislukt. Controleer uw referenties en probeer opnieuw.</value>
+  </data>
+  <data name="TokenConnectionFailed" xml:space="preserve">
+    <value>Verbinding voor ophalen token mislukt. Controleer de verbinding met de hostserver en probeer opnieuw.</value>
+  </data>
+  <data name="TolerancePrompt" xml:space="preserve">
+    <value>Tolerantie:</value>
+  </data>
+  <data name="ToPrompt" xml:space="preserve">
+    <value>Tot:</value>
+  </data>
+  <data name="TotalDistancePrompt" xml:space="preserve">
+    <value>Totale afstand:</value>
+  </data>
+  <data name="TotalTimePrompt" xml:space="preserve">
+    <value>Totale tijd:</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>Transparant</value>
+  </data>
+  <data name="TransparencyPrompt" xml:space="preserve">
+    <value>Transparantie:</value>
+  </data>
+  <data name="UnhandledSilverlightError" xml:space="preserve">
+    <value>Onverwerkte fout in Silverlight 2 applicatie</value>
+  </data>
+  <data name="UpdateAddress" xml:space="preserve">
+    <value>Actualiseer adres</value>
+  </data>
+  <data name="UpdateLayerError" xml:space="preserve">
+    <value>Fout bij updaten laag: {0}</value>
+  </data>
+  <data name="UpdateListError" xml:space="preserve">
+    <value>Fout bij toepassen wijzigingen lijst: {0}</value>
+  </data>
+  <data name="UrlPrompt" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="UserNamePrompt" xml:space="preserve">
+    <value>Gebruiker:</value>
+  </data>
+  <data name="UseStagingServer" xml:space="preserve">
+    <value>Gebruik staging server</value>
+  </data>
+  <data name="ValidAddressError" xml:space="preserve">
+    <value>Voer een geldig adres in</value>
+  </data>
+  <data name="ValidAddressErrorCaption" xml:space="preserve">
+    <value>Ongeldig adres</value>
+  </data>
+  <data name="ValidCoordinatesError" xml:space="preserve">
+    <value>Voer geldige coördinaten in</value>
+  </data>
+  <data name="ValidCoordinatesErrorCaption" xml:space="preserve">
+    <value>Ongeldige coördinaten</value>
+  </data>
+  <data name="ValueRanges" xml:space="preserve">
+    <value>Waardebereik</value>
+  </data>
+  <data name="ValueRangesTooltip" xml:space="preserve">
+    <value>Geef de huidige dataset weer op basis van waardebereik</value>
+  </data>
+  <data name="ViewItem" xml:space="preserve">
+    <value>Geef item weer</value>
+  </data>
+  <data name="VisibleHeader" xml:space="preserve">
+    <value>Zichtbaar</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Breedte</value>
+  </data>
+  <data name="XamlRepresentation" xml:space="preserve">
+    <value>XAML-representatie van huidige laag</value>
+  </data>
+  <data name="XamlViewTabHeader" xml:space="preserve">
+    <value>XAML-weergave</value>
+  </data>
+  <data name="XamlViewTabHeaderTooltip" xml:space="preserve">
+    <value>Geef de gegenereerde XAML voor de laag weer</value>
+  </data>
+  <data name="ZeroPercent" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="Zip4Prompt" xml:space="preserve">
+    <value>Zip4:</value>
+  </data>
+  <data name="ZipPrompt" xml:space="preserve">
+    <value>Postcode:</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Zoom in</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Zoom uit</value>
+  </data>
+  <data name="ZoomOutButton" xml:space="preserve">
+    <value>Zoom uit</value>
+  </data>
+  <data name="ZoomRangeTooltip" xml:space="preserve">
+    <value>Zoom in op bereik</value>
+  </data>
+  <data name="ZoomToAllRecords" xml:space="preserve">
+    <value>Ga naar</value>
+  </data>
+  <data name="ZoomToItem" xml:space="preserve">
+    <value>Zoom naar item</value>
+  </data>
+  <data name="ZoomToSelection" xml:space="preserve">
+    <value>Zoom naar selectie</value>
+  </data>
+  <data name="ConfigFileUrlTextboxTooltip" xml:space="preserve">
+    <value>Voer URL naar configuratiebestand in</value>
+  </data>
+  <data name="ConnectToSharePointDataSource" xml:space="preserve">
+    <value>&lt;Voer URL naar een SharePoint-site in&gt;</value>
+  </data>
+  <data name="ExportToFile" xml:space="preserve">
+    <value>Exporteer naar bestand</value>
+  </data>
+  <data name="FileNamePrompt" xml:space="preserve">
+    <value>FileName:</value>
+  </data>
+  <data name="MustEnterFileName" xml:space="preserve">
+    <value>Voer een bestandsnaam in</value>
+  </data>
+  <data name="MustEnterFileNameTitle" xml:space="preserve">
+    <value>Bestandsnaam ontbreekt</value>
+  </data>
+  <data name="OverwriteExistingFile" xml:space="preserve">
+    <value>Overschrijf bestaand bestand</value>
+  </data>
+  <data name="UrlToSitePrompt" xml:space="preserve">
+    <value>URL site:</value>
+  </data>
+  <data name="CustomBaseMap" xml:space="preserve">
+    <value>ArcGIS Server-basiskaart</value>
+  </data>
+  <data name="AGSDataSourceTooltip" xml:space="preserve">
+    <value>Voer de URL van een ArcGIS Server-eindpunt in</value>
+  </data>
+  <data name="NotUsingBingMapsResource" xml:space="preserve">
+    <value>Uw applicatie gebruikt geen resources van Bing Maps. Er hoeven op dit moment geen accountgegevens te worden geconfigureerd.</value>
+  </data>
+  <data name="NotUsingBingMapsResourceCaption" xml:space="preserve">
+    <value>Geen Bing Maps-resource</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="BrowseForBaseMap" xml:space="preserve">
+    <value>Blader naar basiskaart</value>
+  </data>
+  <data name="EnterUrl" xml:space="preserve">
+    <value>Voer URL in</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatch" xml:space="preserve">
+    <value>De ruimtelijke referentie van de cached mapservice komt niet overeen met de ruimtelijke referentie van de basiskaart. Deze mapservice kan niet worden toegevoegd.</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatchCaption" xml:space="preserve">
+    <value>Ruimtelijke referentie komt niet overeen</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemoved" xml:space="preserve">
+    <value>Uw operationele datasets bevatten mapservices waarvan de ruimtelijke referenties niet overeenkomen met de basiskaart die u hebt gekozen. Deze mapservices moeten worden verwijderd voordat u kunt doorgaan. Klik op OK om te verwijderen.</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemovedCaption" xml:space="preserve">
+    <value>Operationele dataset komt niet overeen</value>
+  </data>
+  <data name="AddContentTitle" xml:space="preserve">
+    <value>Inhoud toevoegen</value>
+  </data>
+  <data name="BaseMapGalleryTitle" xml:space="preserve">
+    <value>Kies basiskaart</value>
+  </data>
+  <data name="BrowseForBaseMapTitle" xml:space="preserve">
+    <value>Blader naar basiskaart</value>
+  </data>
+  <data name="EnterUrlDialogTitle" xml:space="preserve">
+    <value>Voer URL voor basiskaart in</value>
+  </data>
+  <data name="MapContentsTitle" xml:space="preserve">
+    <value>Kaartinhoud</value>
+  </data>
+  <data name="CanOnlyUseCachedMapServicesAsBaseMap" xml:space="preserve">
+    <value>Alleen ArcGIS cached mapservices kunnen worden gebruikt als de basiskaart.</value>
+  </data>
+  <data name="InvalidMapServiceCaption" xml:space="preserve">
+    <value>Ongeldige mapservice </value>
+  </data>
+  <data name="MapTipBorderColorTooltip" xml:space="preserve">
+    <value>Wijzig randkleur voor MapTip</value>
+  </data>
+  <data name="MapTipFillColorTooltip" xml:space="preserve">
+    <value>Wijzig opvulkleur voor MapTip</value>
+  </data>
+  <data name="MapTipForegroundColorTooltip" xml:space="preserve">
+    <value>Wijzig tekstkleur voor MapTip</value>
+  </data>
+  <data name="SampleMapTipText" xml:space="preserve">
+    <value>Voorbeeldtekst</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Voeg geselecteerde laag toe</value>
+  </data>
+  <data name="AttributePrompt" xml:space="preserve">
+    <value>Attribuut:</value>
+  </data>
+  <data name="ColorScheme" xml:space="preserve">
+    <value>Kleurschema</value>
+  </data>
+  <data name="MoreOptions" xml:space="preserve">
+    <value>Meer opties</value>
+  </data>
+  <data name="RendererPrompt" xml:space="preserve">
+    <value>Renderer:</value>
+  </data>
+  <data name="SymbolOptions" xml:space="preserve">
+    <value>Schema-opties</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Huidig symbool:</value>
+  </data>
+  <data name="Basemap" xml:space="preserve">
+    <value>Basiskaart</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Breng naar voren</value>
+  </data>
+  <data name="ClassBreaks" xml:space="preserve">
+    <value>Klasse Breukpunten</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Kleur</value>
+  </data>
+  <data name="FromServer" xml:space="preserve">
+    <value>Bladeren...</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Startpagina</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Kaart</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Kaartinhoud</value>
+  </data>
+  <data name="MapTip" xml:space="preserve">
+    <value>Kaarttip</value>
+  </data>
+  <data name="MoreSymbolOptions" xml:space="preserve">
+    <value>Schema-opties</value>
+  </data>
+  <data name="Organize" xml:space="preserve">
+    <value>Ordenen</value>
+  </data>
+  <data name="RefreshLayer" xml:space="preserve">
+    <value>Vernieuwen</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Zoeken...</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Stuur naar achteren</value>
+  </data>
+  <data name="SingleSymbol" xml:space="preserve">
+    <value>Enkel symbool</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Grootte</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="UniqueValues" xml:space="preserve">
+    <value>Unieke waarden</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="CategoryPrompt" xml:space="preserve">
+    <value>Categorie:</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>Symbool</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Beeld</value>
+  </data>
+  <data name="DrawOrder" xml:space="preserve">
+    <value>Teken volgorde</value>
+  </data>
+  <data name="Popups" xml:space="preserve">
+    <value>Pop-ups</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Tabel</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>Configureer pop-ups</value>
+  </data>
+  <data name="AddUniqueValue" xml:space="preserve">
+    <value>Voeg waarde toe</value>
+  </data>
+  <data name="DeleteUniqueValue" xml:space="preserve">
+    <value>Verwijder geselecteerde waarde</value>
+  </data>
+  <data name="NextUniqueValue" xml:space="preserve">
+    <value>Volgende unieke waarde</value>
+  </data>
+  <data name="PreviousUniqueValue" xml:space="preserve">
+    <value>Vorige unieke waarde</value>
+  </data>
+  <data name="ValuePrompt" xml:space="preserve">
+    <value>Waarde:</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Laag</value>
+  </data>
+  <data name="MapCenterTooltip" xml:space="preserve">
+    <value>Kaartcentrum ArcGIS.com</value>
+  </data>
+  <data name="ClassesPrompt" xml:space="preserve">
+    <value>Klassen:</value>
+  </data>
+  <data name="InvalidClassBreakValue" xml:space="preserve">
+    <value>Ongeldige waarde</value>
+  </data>
+  <data name="DefaultSymbol" xml:space="preserve">
+    <value>Standaardsymbool</value>
+  </data>
+  <data name="MaxPointsPrompt" xml:space="preserve">
+    <value>Maximum aantal punten:</value>
+  </data>
+  <data name="RadiusPrompt" xml:space="preserve">
+    <value>Straal:</value>
+  </data>
+  <data name="UsePointClustering" xml:space="preserve">
+    <value>Gebruik puntclustering</value>
+  </data>
+  <data name="AddContent" xml:space="preserve">
+    <value>Inhoud toevoegen</value>
+  </data>
+  <data name="LayerSymbology" xml:space="preserve">
+    <value>Symbologie</value>
+  </data>
+  <data name="AutoUpdates" xml:space="preserve">
+    <value>Automatische updates</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>Interval</value>
+  </data>
+  <data name="PollForUpdates" xml:space="preserve">
+    <value>Zoek updates</value>
+  </data>
+  <data name="UpdateOnExtentChanged" xml:space="preserve">
+    <value>Update op extent gewijzigd</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="FilterLayerTitle" xml:space="preserve">
+    <value>Geef filterexpressie op</value>
+  </data>
+  <data name="FilterByMapExtent" xml:space="preserve">
+    <value>Filter op extent</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Volledig scherm</value>
+  </data>
+  <data name="AutoScrollRow" xml:space="preserve">
+    <value>Scroll rij automatisch</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Servicedetails</value>
+  </data>
+  <data name="DatasetPrompt" xml:space="preserve">
+    <value>Dataset:</value>
+  </data>
+  <data name="DistancePrompt" xml:space="preserve">
+    <value>Afstand:</value>
+  </data>
+  <data name="FindNearbyTitle" xml:space="preserve">
+    <value>Zoek in de buurt</value>
+  </data>
+  <data name="InvalidDistance" xml:space="preserve">
+    <value>Voer een geldige afstand in</value>
+  </data>
+  <data name="InvalidDistanceCaption" xml:space="preserve">
+    <value>Ongeldige afstand</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>Kilometer</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Meter</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>Mijl</value>
+  </data>
+  <data name="SelectionTools" xml:space="preserve">
+    <value>Selectietools</value>
+  </data>
+  <data name="BufferDistance" xml:space="preserve">
+    <value>Bufferafstand</value>
+  </data>
+  <data name="Feed" xml:space="preserve">
+    <value>GeoRSS...</value>
+  </data>
+  <data name="FindNearbyBufferPrefix" xml:space="preserve">
+    <value>Zoek buffer in de buurt - </value>
+  </data>
+  <data name="FindNearbyPrefix" xml:space="preserve">
+    <value>Zoek in de buurt - </value>
+  </data>
+  <data name="SelectByDraw" xml:space="preserve">
+    <value>Selecteer door te tekenen</value>
+  </data>
+  <data name="ColorSchemePrompt" xml:space="preserve">
+    <value>Kleurschema:</value>
+  </data>
+  <data name="EditValuesPrompt" xml:space="preserve">
+    <value>Wijzig waarden:</value>
+  </data>
+  <data name="TypeValueToAdd" xml:space="preserve">
+    <value>Voer een geldige waarde in om toe te voegen</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Thema</value>
+  </data>
+  <data name="AddGeoRSSTitle" xml:space="preserve">
+    <value>Voer URL voor GeoRSS-feed in</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>Koptekst:</value>
+  </data>
+  <data name="BrowseDialogGeographicDataNotFound" xml:space="preserve">
+    <value>Geografische data niet gevonden</value>
+  </data>
+  <data name="DefaultBasemapLayerDisplayName" xml:space="preserve">
+    <value>Basiskaart</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>Laag:</value>
+  </data>
+  <data name="AddLayerTooltip" xml:space="preserve">
+    <value>Voeg de geselecteerde dataset van ArcGIS-server, SharePoint of Spatial Data Service toe aan de kaart</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Naam wijzigen</value>
+  </data>
+  <data name="ODataFeed" xml:space="preserve">
+    <value>OData...</value>
+  </data>
+  <data name="SignInWithGlobalAccount" xml:space="preserve">
+    <value>Meld u aan met uw ESRI Global Account</value>
+  </data>
+  <data name="ClusterColor" xml:space="preserve">
+    <value>Achtergrondkleur cluster</value>
+  </data>
+  <data name="ClusterTextColor" xml:space="preserve">
+    <value>Voorgrondkleur cluster</value>
+  </data>
+  <data name="Clustering" xml:space="preserve">
+    <value>Clusteren</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Algemeen</value>
+  </data>
+  <data name="HeatMapAdd" xml:space="preserve">
+    <value>Voeg heatmap toe</value>
+  </data>
+  <data name="Intensity" xml:space="preserve">
+    <value>Intensiteit</value>
+  </data>
+  <data name="OpenItemOnClick" xml:space="preserve">
+    <value>Open item wanneer wordt geklikt</value>
+  </data>
+  <data name="Symbology" xml:space="preserve">
+    <value>Symbologie</value>
+  </data>
+  <data name="ShowMapContents" xml:space="preserve">
+    <value>Vorige</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>Attributen</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Diversen</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Geavanceerd</value>
+  </data>
+  <data name="ExtensionLoadFailed" xml:space="preserve">
+    <value>Laden extensie mislukt</value>
+  </data>
+  <data name="ToolClassLoadFailed" xml:space="preserve">
+    <value>Laden klasse tool mislukt</value>
+  </data>
+  <data name="ToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Laden van de Klassetool-configuratie mislukt</value>
+  </data>
+  <data name="ExtensionInitializationFailed" xml:space="preserve">
+    <value>Kan een instance van een aangepaste opdracht niet bevestigen.</value>
+  </data>
+  <data name="ExtensionInitializationFailedHeader" xml:space="preserve">
+    <value>Initialiseren extensie mislukt</value>
+  </data>
+  <data name="Less" xml:space="preserve">
+    <value>Minder</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Meer</value>
+  </data>
+  <data name="ConfiguringLayer" xml:space="preserve">
+    <value>Configureren:</value>
+  </data>
+  <data name="RemoveLayerCaption" xml:space="preserve">
+    <value>Laag verwijderen?</value>
+  </data>
+  <data name="RemoveLayerNameSubstitude" xml:space="preserve">
+    <value>geselecteerde</value>
+  </data>
+  <data name="RemoveLayerPrompt" xml:space="preserve">
+    <value>Wilt u de {0}-laag uit de kaart verwijderen?</value>
+  </data>
+  <data name="BrowseNoEllipsis" xml:space="preserve">
+    <value>Bladeren</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Inhoud</value>
+  </data>
+  <data name="GeoRSS" xml:space="preserve">
+    <value>GeoRSS</value>
+  </data>
+  <data name="SearchNoEllipsis" xml:space="preserve">
+    <value>Zoeken</value>
+  </data>
+  <data name="ErrorLoadConfigurationOfExtension" xml:space="preserve">
+    <value>Onverwerkte fout in LoadConfiguration van extensie ({0})</value>
+  </data>
+  <data name="ErrorNoPrinterContainerFoundInPrintTemplate" xml:space="preserve">
+    <value>Geen afdrukcontainer gevonden in de afdruktemplate.</value>
+  </data>
+  <data name="ErrorSaveConfigurationOfExtension" xml:space="preserve">
+    <value>Onverwerkte fout in SaveConfiguration van extensie ({0})</value>
+  </data>
+  <data name="ExceptionCachedMapServiceSpatialReferenceDoesNotMatch" xml:space="preserve">
+    <value>Ruimtelijke referentie cached mapservice komt niet overeen.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitialized" xml:space="preserve">
+    <value>Kan ZoomMapToExtent niet aanroepen voordat kaart is geïnitialiseerd. Gebruik MapLayersInitialized om te wachten op deze gebeurtenis.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitializedMapReferenceNull" xml:space="preserve">
+    <value>Kan ZoomMapToExtent niet aanroepen voordat kaart is geïnitialiseerd. Ruimtelijke referentie kaart is leeg.</value>
+  </data>
+  <data name="ExceptionConnectionTypeDoesNotCoorespondToDatasourceWhichHasResources" xml:space="preserve">
+    <value>Het verbindingstype {0} komt niet overeen met een databron ({1}) die resources heeft</value>
+  </data>
+  <data name="ExceptionCouldNotFindElementWithName" xml:space="preserve">
+    <value>Kan geen element vinden met de naam {0}.</value>
+  </data>
+  <data name="ExceptionCouldNotFindToggleButtonWithName" xml:space="preserve">
+    <value>Kan geen wisselknop vinden met de naam {0}.</value>
+  </data>
+  <data name="ExceptionDatasourceNotLoadedForBaseMapType" xml:space="preserve">
+    <value>DataSource niet geladen voor basiskaarttype {0}</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>element</value>
+  </data>
+  <data name="ExceptionMapHasNotBeenInitializedYet" xml:space="preserve">
+    <value>Kaart is nog niet geïnitialiseerd</value>
+  </data>
+  <data name="ExceptionMapLayersHaveNotBeenInstantiated" xml:space="preserve">
+    <value>Kaartlagen zijn nog niet geconcretiseerd. Basiskaart kan alleen worden gewijzigd nadat de MapLayersInitialized is geactiveerd</value>
+  </data>
+  <data name="ExceptionMapNotSet" xml:space="preserve">
+    <value>Kaart is niet ingesteld</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationProvider" xml:space="preserve">
+    <value>ConfigurationProvider moet worden opgegeven</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationStoreProvider" xml:space="preserve">
+    <value>ConfigurationStoreProvider moet worden opgegeven</value>
+  </data>
+  <data name="ExceptionMustSpecifyDataSourceProvider" xml:space="preserve">
+    <value>DataSourceProvider moet worden opgegeven</value>
+  </data>
+  <data name="ExceptionMustSpecifyLayoutProvider" xml:space="preserve">
+    <value>LayoutProvider moet worden opgegeven</value>
+  </data>
+  <data name="ExceptionMustSpecifySpatialReferenceOnEnvelope" xml:space="preserve">
+    <value>Ruimtelijke referentie op omtrek moet worden opgegeven</value>
+  </data>
+  <data name="ExceptionMustSpecifyThemeProvider" xml:space="preserve">
+    <value>ThemeProvider moet worden opgegeven</value>
+  </data>
+  <data name="ExceptionNoBingMapsTokenAvailable" xml:space="preserve">
+    <value>Geen token Bing Maps beschikbaar</value>
+  </data>
+  <data name="ExceptionNoGeometryServiceUrlSpecifiedLayerZoomedIsDifferentSpatialReference" xml:space="preserve">
+    <value>Geen URL voor geometrieservice opgegeven. De laag waarop wordt ingezoomd, bevindt zich in een andere ruimtelijke referentie dan die van de kaart. Het volledige extent moet opnieuw worden geprojecteerd met behulp van een geometrieservice</value>
+  </data>
+  <data name="ExceptionNotSupported" xml:space="preserve">
+    <value>Niet ondersteund</value>
+  </data>
+  <data name="ExceptionNullBaseMapInfo" xml:space="preserve">
+    <value>baseMapInfo</value>
+  </data>
+  <data name="ExceptionOnlyCachedServicesCanBeUsedAsBaseMaps" xml:space="preserve">
+    <value>Alleen cached mapservices kunnen worden gebruikt als basiskaarten</value>
+  </data>
+  <data name="ExceptionUnableToInstantiateDatasourceForBaseMapType" xml:space="preserve">
+    <value>Kan databron voor basiskaarttype {0} niet bevestigen</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Kan configuratiegegevens niet ophalen. Geen gegevens geretourneerd.</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasource" xml:space="preserve">
+    <value>Kan databron voor {0} niet ophalen</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasourceConnectionType" xml:space="preserve">
+    <value>Kan databron niet ophalen voor verbindingstype {0}</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Laden...</value>
+  </data>
+  <data name="LoadingMapCenter" xml:space="preserve">
+    <value>Kaartcentrum laden...</value>
+  </data>
+  <data name="LogUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Kan configuratiegegevens niet ophalen</value>
+  </data>
+  <data name="MsgErrorExecutingBufferOperation" xml:space="preserve">
+    <value>Fout bij uitvoeren bufferbewerking.</value>
+  </data>
+  <data name="MsgErrorExecutingRelationAsyncOperation" xml:space="preserve">
+    <value>Fout bij uitvoeren van RelationAsync</value>
+  </data>
+  <data name="MsgErrorOpeningFile" xml:space="preserve">
+    <value>Fout bij openen bestand</value>
+  </data>
+  <data name="MsgErrorRetrievingSubLayersForMapService" xml:space="preserve">
+    <value>Fout bij ophalen sublagen voor mapservice</value>
+  </data>
+  <data name="MsgErrorSavingFile" xml:space="preserve">
+    <value>Fout bij opslaan bestand</value>
+  </data>
+  <data name="MsgNoFeaturesSelected" xml:space="preserve">
+    <value>Geen objecten geselecteerd</value>
+  </data>
+  <data name="MsgNoResourcesFound" xml:space="preserve">
+    <value>Geen resources gevonden</value>
+  </data>
+  <data name="MsgUnableToAccessGeometryService" xml:space="preserve">
+    <value>Kan geometrieservice niet openen</value>
+  </data>
+  <data name="MsgUnableToCreateLayer" xml:space="preserve">
+    <value>Kan laag niet maken</value>
+  </data>
+  <data name="MsgUnableToRetrieveResources" xml:space="preserve">
+    <value>Kan resources niet ophalen.</value>
+  </data>
+  <data name="MsgUnknownError" xml:space="preserve">
+    <value>Onbekende fout</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>Onbekende gebruiker</value>
+  </data>
+  <data name="NotValidMapDocument" xml:space="preserve">
+    <value>Geen geldig kaartdocument.</value>
+  </data>
+  <data name="ErrorRetrievingSymbols" xml:space="preserve">
+    <value>Fout bij ophalen symbolen</value>
+  </data>
+  <data name="ExceptionCacheMapServicesCannotReproject" xml:space="preserve">
+    <value>Cached mapservices in de toepassing kunnen niet opnieuw worden geprojecteerd</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Open een webmap van ArcGIS.com</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Aanmelden</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Afmelden</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Achtergrondtekst</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Leden</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Voorbeeld</value>
+  </data>
+  <data name="SelectedItem" xml:space="preserve">
+    <value>Geselecteerd item</value>
+  </data>
+  <data name="RecordOutOfSelected" xml:space="preserve">
+    <value>Records ({0} van {1} geselecteerd)</value>
+  </data>
+  <data name="ExtensionInitializationFailedUrl" xml:space="preserve">
+    <value>Kan een instance van aangepaste opdracht niet bevestigen. URL: {0}</value>
+  </data>
+  <data name="HeatMapTitle" xml:space="preserve">
+    <value>{0} Heatmap</value>
+  </data>
+  <data name="CurrentColor" xml:space="preserve">
+    <value>Huidige kleur</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Beschrijving:</value>
+  </data>
+  <data name="HeightPrompt" xml:space="preserve">
+    <value>Hoogte:</value>
+  </data>
+  <data name="Moredotdot" xml:space="preserve">
+    <value>Meer...</value>
+  </data>
+  <data name="NotificationDontShowDialogOnStartup" xml:space="preserve">
+    <value>Deze dialoog niet weergeven bij opstarten</value>
+  </data>
+  <data name="RecordPrompt" xml:space="preserve">
+    <value>Rij:</value>
+  </data>
+  <data name="StandardColors" xml:space="preserve">
+    <value>Standaardkleuren</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Themakleuren</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Titel:</value>
+  </data>
+  <data name="WidthPrompt" xml:space="preserve">
+    <value>Breedte:</value>
+  </data>
+  <data name="MapBehaviors" xml:space="preserve">
+    <value>Kaartgedragingen</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Naar beneden</value>
+  </data>
+  <data name="MapBehaviorAdd" xml:space="preserve">
+    <value>Voeg nieuw kaartgedrag toe</value>
+  </data>
+  <data name="MapBehaviorConfigure" xml:space="preserve">
+    <value>Configureer het geselecteerde kaartgedrag</value>
+  </data>
+  <data name="MapBehaviorMoveDown" xml:space="preserve">
+    <value>Verplaats het geselecteerde kaartgedrag een positie naar beneden</value>
+  </data>
+  <data name="MapBehaviorMoveUp" xml:space="preserve">
+    <value>Verplaats het geselecteerde kaartgedrag een positie naar boven</value>
+  </data>
+  <data name="MapBehaviorRemove" xml:space="preserve">
+    <value>Verwijder het geselecteerde kaartgedrag</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviors" xml:space="preserve">
+    <value>Er zijn geen gedragingen gekoppeld aan de kaart.</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviorsInEdit" xml:space="preserve">
+    <value>Klik op Toevoegen om een nieuw kaartgedrag te configureren.</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Verplaatsen</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Bovenkant</value>
+  </data>
+  <data name="AddLabel" xml:space="preserve">
+    <value>Toevoegen</value>
+  </data>
+  <data name="BehaviorClassLoadFailed" xml:space="preserve">
+    <value>Laden klasse gedrag mislukt</value>
+  </data>
+  <data name="BehaviorConfigurationFailed" xml:space="preserve">
+    <value>Configuratie gedrag mislukt</value>
+  </data>
+  <data name="BehaviorConfigurationFailedDescription" xml:space="preserve">
+    <value>De configuratiemethode heeft een uitzondering geretourneerd.</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Configuratie laden klasse gedrag mislukt</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailedDescription" xml:space="preserve">
+    <value>Het laden van de configuratie van het gedrag heeft een uitzondering geretourneerd.</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Maak een heatmapkaart op basis van de objecten van de huidige laag</value>
+  </data>
+  <data name="ClusterColorDescription" xml:space="preserve">
+    <value>Stel de achtergrondkleur in voor de clusters van de huidige laag</value>
+  </data>
+  <data name="ClusterTextColorDescription" xml:space="preserve">
+    <value>Stel de rand- en tekstkleur in voor de clusters van de huidige laag</value>
+  </data>
+  <data name="FilterDescription" xml:space="preserve">
+    <value>Filter de objecten die zijn opgenomen in de huidige laag door een attribuutquery op te geven</value>
+  </data>
+  <data name="HeatMapColorDescription" xml:space="preserve">
+    <value>Selecteer het kleurenschema voor de heatmap</value>
+  </data>
+  <data name="IntensityDescription" xml:space="preserve">
+    <value>Stel de intensiteit van de heatmap in. Een hogere intensiteit zorgt voor grotere hotspots.</value>
+  </data>
+  <data name="MaxPoints" xml:space="preserve">
+    <value>Maximum aantal punten</value>
+  </data>
+  <data name="MaxPointsDescription" xml:space="preserve">
+    <value>Stel het maximale aantal objecten in dat kan worden gegroepeerd binnen een enkele cluster</value>
+  </data>
+  <data name="OpenItemOnClickDescription" xml:space="preserve">
+    <value>Geef de details van een object weer in een nieuw browservenster wanneer erop wordt geklikt</value>
+  </data>
+  <data name="PollForUpdatesDescription" xml:space="preserve">
+    <value>Stel in of feedupdates worden opgehaald met de opgegeven interval</value>
+  </data>
+  <data name="PopupsDescription" xml:space="preserve">
+    <value>Configureer de attributen die worden weergegeven op de pop-ups van de huidige laag</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>Straal</value>
+  </data>
+  <data name="RadiusDescription" xml:space="preserve">
+    <value>Geef in pixels de straal op waarbinnen objecten in een enkel cluster worden gegroepeerd</value>
+  </data>
+  <data name="SymbologyDescription" xml:space="preserve">
+    <value>Configureer de symbolen die worden gebruikt om de huidige laag weer te geven</value>
+  </data>
+  <data name="TableDescription" xml:space="preserve">
+    <value>Configureer de velden die worden getoond binnen de attribuuttabel van de huidige laag</value>
+  </data>
+  <data name="UpdateOnExtentChangedDescription" xml:space="preserve">
+    <value>Stel in of feedupdates worden opgehaald wanneer pannen of zoomen wordt uitgevoerd op de kaart</value>
+  </data>
+  <data name="UsePointClusteringDescription" xml:space="preserve">
+    <value>Geef op of groepen van punten worden weergegeven als één geclusterd object</value>
+  </data>
+  <data name="SelectTheLayout" xml:space="preserve">
+    <value>Selecteer de lay-out...</value>
+  </data>
+  <data name="SelectThePrintLayout" xml:space="preserve">
+    <value>Selecteer de afdruklay-out</value>
+  </data>
+  <data name="BehaviorPrompt" xml:space="preserve">
+    <value>Gedrag:</value>
+  </data>
+  <data name="Cluster" xml:space="preserve">
+    <value>Cluster</value>
+  </data>
+  <data name="ClusterFeatures" xml:space="preserve">
+    <value>Clusterobjecten</value>
+  </data>
+  <data name="ConfigureRange" xml:space="preserve">
+    <value>Configureer bereik</value>
+  </data>
+  <data name="EnablePrompt" xml:space="preserve">
+    <value>Inschakelen:</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Objecten</value>
+  </data>
+  <data name="RenderAsHeatMap" xml:space="preserve">
+    <value>Render als heatmap</value>
+  </data>
+  <data name="RenderHeatMapAdvancedProperties" xml:space="preserve">
+    <value>Geavanceerde eigenschappen voor renderen heatmap</value>
+  </data>
+  <data name="Tolerance" xml:space="preserve">
+    <value>Tolerantie</value>
+  </data>
+  <data name="LayoutPrompt" xml:space="preserve">
+    <value>Lay-out:</value>
+  </data>
+  <data name="ConfigurePrint" xml:space="preserve">
+    <value>Configureer afdrukken</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Afdrukken</value>
+  </data>
+  <data name="LayoutResourceDownloadError" xml:space="preserve">
+    <value>Fout bij downloaden lay-outresources.</value>
+  </data>
+  <data name="ChangeBackground" xml:space="preserve">
+    <value>Wijzig achtergrond</value>
+  </data>
+  <data name="PreviewTheme" xml:space="preserve">
+    <value>Voorbeeld thema</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>Naamloos</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Voeg gedrag toe</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>Vloeiend</value>
+  </data>
+  <data name="Solid" xml:space="preserve">
+    <value>Dicht</value>
+  </data>
+  <data name="ToggleRibbonVisibility" xml:space="preserve">
+    <value>Wissel zichtbaarheid lint</value>
+  </data>
+  <data name="ArcGISSilverlightVersion" xml:space="preserve">
+    <value>ArcGIS API for Silverlight:</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versie:</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Verplaats naar beneden</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Verplaats naar boven</value>
+  </data>
+  <data name="ConstrainExtentBehaviorMessage" xml:space="preserve">
+    <value>Zoom naar het kaartextent dat u wilt gebruiken als een beperking en klik op Toepassen.</value>
+  </data>
+  <data name="ConstrainExtentBehaviorTitle" xml:space="preserve">
+    <value>Stel beperking kaartextent in</value>
+  </data>
+  <data name="DeleteBehaviorCaption" xml:space="preserve">
+    <value>Weet u zeker dat u dit gedrag wilt verwijderen?</value>
+  </data>
+  <data name="DeleteBehaviorPrompt" xml:space="preserve">
+    <value>Bevestig verwijderen</value>
+  </data>
+  <data name="CurrentConstrainExtentLabel" xml:space="preserve">
+    <value>Envelop beperking huidige extent:</value>
+  </data>
+  <data name="ConstrainExtentNotSetMessage" xml:space="preserve">
+    <value>Beperking kaartextent nog niet ingesteld.</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>Niet ingesteld</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Configureer basiskaarten</value>
+  </data>
+  <data name="ConfigureTheSetOfBaseMaps" xml:space="preserve">
+    <value>Configureer de set met basiskaarten</value>
+  </data>
+  <data name="AddNewBaseMap" xml:space="preserve">
+    <value>Voeg een nieuwe basiskaart toe</value>
+  </data>
+  <data name="ClickImageToChangeThumbnailIcon" xml:space="preserve">
+    <value>Klik op de afbeelding om miniatuuricoon te wijzigen</value>
+  </data>
+  <data name="RequiresBingAppID" xml:space="preserve">
+    <value>Vereist Bing App ID</value>
+  </data>
+  <data name="DeleteCurrentlySelectedBaseMap" xml:space="preserve">
+    <value>Verwijder de huidige geselecteerde basiskaart</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapDown" xml:space="preserve">
+    <value>Verplaats de huidige geselecteerde basiskaart naar beneden</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapUp" xml:space="preserve">
+    <value>Verplaats de huidige geselecteerde basiskaart naar boven</value>
+  </data>
+  <data name="SubTypePrompt" xml:space="preserve">
+    <value>Subtype:</value>
+  </data>
+  <data name="TextPrompt" xml:space="preserve">
+    <value>Tekst:</value>
+  </data>
+  <data name="ThumbnailPrompt" xml:space="preserve">
+    <value>Miniatuur:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Volgende</value>
+  </data>
+  <data name="NoBehaviorTitleSpecified" xml:space="preserve">
+    <value>Geen titel gedrag opgegeven</value>
+  </data>
+  <data name="PleaseProvideValidTitleForNewBehavior" xml:space="preserve">
+    <value>Geef een geldige titel voor het nieuwe gedrag op.</value>
+  </data>
+  <data name="SelectBehaviorToAdd" xml:space="preserve">
+    <value>Selecteer een gedrag</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Modus</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Cachegrootte: </value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>Haal objecten op binnen kaartgebied</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>Haal alle objecten tegelijk op</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Object cachegrootte</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Het maximale aantal objecten dat de laag kan bevatten. Als deze limiet wordt overschreden bij het ophalen van nieuwe objecten, worden de oudste objecten uit de laag verwijderd.</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>Haal objecten op binnen kaartgebied</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Uitsluitend de objecten binnen het huidige kaartgebied worden opgehaald als de laag wordt geladen of vernieuwd. Meer objecten worden opgehaald als het kaartgebied verandert.</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>Haal alle objecten op</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Alle objecten in de laag worden opgehaald wanneer de laag wordt geladen of vernieuwd.</value>
+  </data>
+  <data name="BrowseContentUrlWatermark" xml:space="preserve">
+    <value>Voer URL server of laag in</value>
+  </data>
+  <data name="BrowseDialogNoResourcesFound" xml:space="preserve">
+    <value>Geen resources gevonden.</value>
+  </data>
+  <data name="BrowseDialogNoServerOrLayerFound" xml:space="preserve">
+    <value>Geen service of laag gevonden.</value>
+  </data>
+  <data name="SecureServices" xml:space="preserve">
+    <value>Beveiligde services</value>
+  </data>
+  <data name="AutoUpdateNumericDescription" xml:space="preserve">
+    <value>Stelt het vernieuwingsinterval in seconden of minuten in. Deze laag wordt automatisch met dit interval vernieuwd totdat dit wordt uitgeschakeld.</value>
+  </data>
+  <data name="AutoUpdateNumericTooltip" xml:space="preserve">
+    <value>Interval vernieuwen automatisch updaten</value>
+  </data>
+  <data name="AutoUpdatePollingDescription" xml:space="preserve">
+    <value>Stelt in of de objectlaag automatisch met een vast interval wordt vernieuwd.</value>
+  </data>
+  <data name="AutoUpdatePollingTooltip" xml:space="preserve">
+    <value>Actualiseer automatisch objectlagen</value>
+  </data>
+  <data name="AutoUpdateIntervalText" xml:space="preserve">
+    <value>Interval:</value>
+  </data>
+  <data name="AutoUpdateLayerConfigTitle" xml:space="preserve">
+    <value>Automatisch updaten</value>
+  </data>
+  <data name="AvailableLayers" xml:space="preserve">
+    <value>Beschikbare lagen:</value>
+  </data>
+  <data name="EnablePopups" xml:space="preserve">
+    <value>Pop-ups weergeven</value>
+  </data>
+  <data name="EnablePopupsForLayer" xml:space="preserve">
+    <value>Geef pop-ups voor deze laag weer</value>
+  </data>
+  <data name="OnClick" xml:space="preserve">
+    <value>bij klikken</value>
+  </data>
+  <data name="OnHover" xml:space="preserve">
+    <value>aanwijzen</value>
+  </data>
+  <data name="ConfigureEditorWidget" xml:space="preserve">
+    <value>Configureer bewerken</value>
+  </data>
+  <data name="SnapshotModeNote" xml:space="preserve">
+    <value>Let op: als het aantal objecten in de dataset het maximale aantal objecten dat door de service wordt geretourneerd, overschrijdt, worden niet alle objecten opgenomen in de laag.</value>
+  </data>
+  <data name="GraphicSymbolsTakePrecedence" xml:space="preserve">
+    <value>De symbolen die hier zijn gedefinieerd, worden vervangen door de symbolen op de afzonderlijke grafische elementen, indien deze zijn gedefinieerd.</value>
+  </data>
+  <data name="SpatialReference" xml:space="preserve">
+    <value>Ruimtelijke referentie:</value>
+  </data>
+  <data name="XMax" xml:space="preserve">
+    <value>XMax:</value>
+  </data>
+  <data name="XMin" xml:space="preserve">
+    <value>XMin:</value>
+  </data>
+  <data name="YMax" xml:space="preserve">
+    <value>YMax</value>
+  </data>
+  <data name="YMin" xml:space="preserve">
+    <value>YMin</value>
+  </data>
+  <data name="NotFoundInLayout" xml:space="preserve">
+    <value>{0} is niet gevonden in de huidige lay-out</value>
+  </data>
+  <data name="ToggleEditFailed" xml:space="preserve">
+    <value>Kan besturingselementen voor bewerking niet wisselen. De huidige lay-out ondersteunt bewerken mogelijk niet</value>
+  </data>
+  <data name="PopupFromWebMap" xml:space="preserve">
+    <value>Gebruik pop-updefinitie van webmap.</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>Zoom automatisch in op selectie</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Toewijzen</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opties</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>Records ({0} van {1} geselecteerd)</value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>Veranderen selectie</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Ophalen object</value>
+  </data>
+  <data name="ConfigureSecuredServices" xml:space="preserve">
+    <value>Configureer beveiligde services</value>
+  </data>
+  <data name="ErrorChangingProxies" xml:space="preserve">
+    <value>Fout bij wijzigen proxy's</value>
+  </data>
+  <data name="ProxyUrl" xml:space="preserve">
+    <value>URL proxy:</value>
+  </data>
+  <data name="SpecifyUrlToProxyPageUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Geef de URL naar een proxypagina op die wordt gebruikt voor toegang tot beveiligde services voor deze applicatie. Deze proxy wordt gedeeld door alle lagen in de applicatie die gebruikmaken van een beveiligde service.</value>
+  </data>
+  <data name="UsesProxy" xml:space="preserve">
+    <value>Gebruikt proxy</value>
+  </data>
+  <data name="WhetherThisLayerUsesProxyServiceForaccessingRestrictedService" xml:space="preserve">
+    <value>Of deze laag een proxyservice gebruikt voor toegang tot een beperkte service. Klik op Configureer proxy om de proxy-URL in te stellen.</value>
+  </data>
+  <data name="LayerHasNoAttributes" xml:space="preserve">
+    <value>De geselecteerde laag bevat geen attributen die kunnen worden weergegeven.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="ToggleErrorDetails" xml:space="preserve">
+    <value>Geef de details van de fout weer of verberg deze.</value>
+  </data>
+  <data name="LayerIsNotGraphicsLayer" xml:space="preserve">
+    <value>Attributen van de geselecteerde laag kunnen niet worden weergegeven omdat de laag een dynamische of cached mapservicelaag van ArcGIS Server is. Lees voor meer details het onderwerp Layer Types (Laagtypen) in het hulpsysteem.</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteBasemap" xml:space="preserve">
+    <value>Weet u zeker dat u deze basiskaart wilt verwijderen?</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Bevestig verwijderen</value>
+  </data>
+  <data name="NewBasemap" xml:space="preserve">
+    <value>Nieuwe basiskaart</value>
+  </data>
+  <data name="ConfigureSelectedLayer" xml:space="preserve">
+    <value>Configureer geselecteerde laag</value>
+  </data>
+  <data name="SelectLayerToAdd" xml:space="preserve">
+    <value>Selecteer een laag om toe te voegen</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Open beveiligde services</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Voeg beveiligde services toe</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Configureer proxy</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServices" xml:space="preserve">
+    <value>Configureer de proxy die wordt gebruikt om beveiligde services te openen voor deze applicatie</value>
+  </data>
+  <data name="BehaviorSaveFailed" xml:space="preserve">
+    <value>Kan configuratie gedrag niet opslaan</value>
+  </data>
+  <data name="BehaviorSaveFailedMessage" xml:space="preserve">
+    <value>Er is een fout opgetreden bij het opslaan van de configuratie van de verbonden kaartgedragingen.</value>
+  </data>
+  <data name="LayerInitFailure" xml:space="preserve">
+    <value>Initialisatie laag mislukt</value>
+  </data>
+  <data name="LayerNotInitialized" xml:space="preserve">
+    <value>Laag kan niet worden geïnitialiseerd.</value>
+  </data>
+  <data name="DeleteGraphicConfirmation" xml:space="preserve">
+    <value>Object verwijderen?</value>
+  </data>
+  <data name="DeleteGraphicConfirmationTitle" xml:space="preserve">
+    <value>Bevestiging</value>
+  </data>
+  <data name="EditValuesCommandEditorBackButtonContent" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="ConfigureBehavior" xml:space="preserve">
+    <value>Configureer het gedrag</value>
+  </data>
+  <data name="DisablePopupForLayer" xml:space="preserve">
+    <value>Schakel pop-ups uit</value>
+  </data>
+  <data name="EnablePopupForLayer" xml:space="preserve">
+    <value>Schakel pop-ups in</value>
+  </data>
+  <data name="LinkWebMapDialogCaption" xml:space="preserve">
+    <value>Maak koppeling naar webmap</value>
+  </data>
+  <data name="LinkWebMapDialogMessage" xml:space="preserve">
+    <value>Kaartconfiguratie wordt geladen van de webmap. Bestaande kaartconfiguratie gaat verloren. Doorgaan?</value>
+  </data>
+  <data name="UnlinkWebMapDialogCaption" xml:space="preserve">
+    <value>Verwijder koppeling met webmap</value>
+  </data>
+  <data name="UnlinkWebMapDialogMessage" xml:space="preserve">
+    <value>Kaartconfiguratie wordt losgekoppeld van de webmap. U kunt lagen toevoegen, verwijderen en configureren, maar updates van de webmap worden niet meer in de kaart weergegeven. Doorgaan?</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standaard</value>
+  </data>
+  <data name="Business" xml:space="preserve">
+    <value>Economie</value>
+  </data>
+  <data name="Cartography" xml:space="preserve">
+    <value>Cartografie</value>
+  </data>
+  <data name="Outdoor_Recreation" xml:space="preserve">
+    <value>Recreatie in openlucht</value>
+  </data>
+  <data name="People_and_Places" xml:space="preserve">
+    <value>Mensen en plaatsen</value>
+  </data>
+  <data name="Public_Safety_and_Health" xml:space="preserve">
+    <value>Openbare veiligheid en gezondheid</value>
+  </data>
+  <data name="Transportation" xml:space="preserve">
+    <value>Vervoer</value>
+  </data>
+  <data name="WebMapLoadFailed" xml:space="preserve">
+    <value>De webmap met id {0} kan niet worden geladen. Mogelijk hebt u geen machtigingen voor het openen van deze kaart, of bestaat de kaart niet meer.</value>
+  </data>
+  <data name="ClusteringDisallowedCaption" xml:space="preserve">
+    <value>Clusteren niet toegestaan</value>
+  </data>
+  <data name="ClusteringDisallowedMessage" xml:space="preserve">
+    <value>Clusteren is niet toegestaan omdat de laag is geselecteerd voor bewerking.</value>
+  </data>
+  <data name="UnsupportedBasemapType" xml:space="preserve">
+    <value>Niet-ondersteund type basiskaart</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Proxy gebruiken</value>
+  </data>
+  <data name="AreaNotesLayer" xml:space="preserve">
+    <value>{0} - Gebieden</value>
+  </data>
+  <data name="LineNotesLayer" xml:space="preserve">
+    <value>{0} - Lijnen</value>
+  </data>
+  <data name="PointNotesLayer" xml:space="preserve">
+    <value>{0} - Punten</value>
+  </data>
+  <data name="Editing" xml:space="preserve">
+    <value>Bewerken</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Ingeschakeld</value>
+  </data>
+  <data name="ArcGISPortalDefaultName" xml:space="preserve">
+    <value>Portal for ArcGIS</value>
+  </data>
+  <data name="SignInToArcGISServer" xml:space="preserve">
+    <value>Meld u aan bij ArcGIS Server op {0}</value>
+  </data>
+  <data name="InvalidUrlUserPassword" xml:space="preserve">
+    <value>Ongeldige URL, gebruikersnaam of wachtwoord</value>
+  </data>
+  <data name="SignInTo" xml:space="preserve">
+    <value>Meld u aan bij {0}</value>
+  </data>
+  <data name="SignInToServer" xml:space="preserve">
+    <value>Meld u aan bij ArcGIS Server</value>
+  </data>
+  <data name="SignInToSecureServices" xml:space="preserve">
+    <value>Meld u aan voor toegang tot beveiligde services</value>
+  </data>
+  <data name="OpenStreetMap" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="FeatureLayer" xml:space="preserve">
+    <value>Objectlaag</value>
+  </data>
+  <data name="MapLayer" xml:space="preserve">
+    <value>Kaartlaag</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>Aanmelding mislukt.</value>
+  </data>
+</root>

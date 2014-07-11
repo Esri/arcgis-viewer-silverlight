@@ -1,0 +1,2079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptChangesTooltip" xml:space="preserve">
+    <value>Kinnita muudatused</value>
+  </data>
+  <data name="AddCoordsToListFailedCaption" xml:space="preserve">
+    <value>Lokaalsete tulemuste salvestamine nurjus</value>
+  </data>
+  <data name="AddCoordsToListFailedPrompt" xml:space="preserve">
+    <value>Geokodeerimise koordinaatide lisamine listi nurjus.  Kas üritad uuesti?</value>
+  </data>
+  <data name="AddData" xml:space="preserve">
+    <value>Lisa andmed</value>
+  </data>
+  <data name="AddDataSetTooltip" xml:space="preserve">
+    <value>Lisa andmehulk</value>
+  </data>
+  <data name="AddDataTooltip" xml:space="preserve">
+    <value>Lisa kaardile rohkem andmeid</value>
+  </data>
+  <data name="AddRange" xml:space="preserve">
+    <value>Lisa vahemik</value>
+  </data>
+  <data name="AddressMatchError" xml:space="preserve">
+    <value>Viga geokodeerimisel: {0}</value>
+  </data>
+  <data name="AddressMatchingServicePrompt" xml:space="preserve">
+    <value>Teenus:</value>
+  </data>
+  <data name="AdvancedClusterProperties" xml:space="preserve">
+    <value>Täiendavad klasterdamise omadused</value>
+  </data>
+  <data name="AGSOImagery" xml:space="preserve">
+    <value>Satelliitpildid</value>
+  </data>
+  <data name="AGSOStreets" xml:space="preserve">
+    <value>Tänavad</value>
+  </data>
+  <data name="AGSOTopo" xml:space="preserve">
+    <value>Topo</value>
+  </data>
+  <data name="AliasHeader" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Kehtesta</value>
+  </data>
+  <data name="ArcGISOnline" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="ArcGISServer" xml:space="preserve">
+    <value>ArcGIS Server</value>
+  </data>
+  <data name="AssociatedMapPrompt" xml:space="preserve">
+    <value>Kaart:</value>
+  </data>
+  <data name="AutoScroll" xml:space="preserve">
+    <value>Autoskroll:</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Taust</value>
+  </data>
+  <data name="BaseMapConfigurationSectionHeader" xml:space="preserve">
+    <value>Aluskaart</value>
+  </data>
+  <data name="BaseMapPrompt" xml:space="preserve">
+    <value>Aluskaart:</value>
+  </data>
+  <data name="BingMaps" xml:space="preserve">
+    <value>Bing Maps</value>
+  </data>
+  <data name="BingMapsAccountInfo" xml:space="preserve">
+    <value>Bing Maps konto info</value>
+  </data>
+  <data name="BingMapsAerial" xml:space="preserve">
+    <value>Aeropildid</value>
+  </data>
+  <data name="BingMapsAerialWithLabels" xml:space="preserve">
+    <value>Aeropildid märgistega</value>
+  </data>
+  <data name="BingMapsInitializeFailed" xml:space="preserve">
+    <value>Bing Maps autentimine ebaõnnestu. ArcGIS Online aluskaarti kasutatakse sellele vaatamata. Edasiste tegevuste osas kontakteeru administraatoriga.</value>
+  </data>
+  <data name="BingMapsRoads" xml:space="preserve">
+    <value>Teed</value>
+  </data>
+  <data name="Border" xml:space="preserve">
+    <value>Piir</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Sirvi...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Tühista</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>Tühistamine</value>
+  </data>
+  <data name="ChangeBaseMapTooltip" xml:space="preserve">
+    <value>Muuda aluskaarti</value>
+  </data>
+  <data name="ChangeColorRampTooltip" xml:space="preserve">
+    <value>Vali värviskeem</value>
+  </data>
+  <data name="ChangeGradientStopsTooltip" xml:space="preserve">
+    <value>Klikka mõjualade kaardi gradientide vahemike valimiseks</value>
+  </data>
+  <data name="CheckForUpdatesPrompt" xml:space="preserve">
+    <value>Kontrolli uuendusi:</value>
+  </data>
+  <data name="CheckForUpdateTooltip" xml:space="preserve">
+    <value>Lae uuendatud andmete loend kaardi liigutamisel või suumisel</value>
+  </data>
+  <data name="ChooseBaseMapLayer" xml:space="preserve">
+    <value>Vali aluskaart</value>
+  </data>
+  <data name="ChooseLayerHeader" xml:space="preserve">
+    <value>Vali andmehulk</value>
+  </data>
+  <data name="CityPrompt" xml:space="preserve">
+    <value>Linn:</value>
+  </data>
+  <data name="ClassifyBy" xml:space="preserve">
+    <value>Vali väli, millel väärtusvahemikud põhinevad</value>
+  </data>
+  <data name="ClassifyByPrompt" xml:space="preserve">
+    <value>Rühmita:</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Tühista kõik</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Tühista valik</value>
+  </data>
+  <data name="ClickSeqmentToZoom" xml:space="preserve">
+    <value>Kliki vastavale segmendile, et sellele suumida.</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>Kliki liikumiseks itta</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>Kliki liikumiseks põhja</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>Kliki liikumiseks lõuna</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>Kliki liikumiseks läände</value>
+  </data>
+  <data name="ClusterAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Täiustatud valikud</value>
+  </data>
+  <data name="ClusterFeaturesTooltipFirstBit" xml:space="preserve">
+    <value>Klaster</value>
+  </data>
+  <data name="ClusterFeaturesTooltipSecondBit" xml:space="preserve">
+    <value>Omadused</value>
+  </data>
+  <data name="ClusterTooltip" xml:space="preserve">
+    <value>Joonista objektide tihendamiseks klastrid</value>
+  </data>
+  <data name="ColorsPrompt" xml:space="preserve">
+    <value>Värvid:</value>
+  </data>
+  <data name="ConfigurationTooltip" xml:space="preserve">
+    <value>Seadistus</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Seadista</value>
+  </data>
+  <data name="ConfigureBingMapsCredentials" xml:space="preserve">
+    <value>Kliki Bing Maps konto info muutmiseks</value>
+  </data>
+  <data name="ConfigureSettings" xml:space="preserve">
+    <value>Seadista omadused</value>
+  </data>
+  <data name="ConfigureTooltip" xml:space="preserve">
+    <value>Seadista</value>
+  </data>
+  <data name="CountryPrompt" xml:space="preserve">
+    <value>Riik:</value>
+  </data>
+  <data name="CurrentSymbolPrompt" xml:space="preserve">
+    <value>Praegune sümbol:</value>
+  </data>
+  <data name="CustomColorRamp" xml:space="preserve">
+    <value>Kohandatud</value>
+  </data>
+  <data name="CustomColorRampToolTip" xml:space="preserve">
+    <value>Vali värvid igale väärtusvahemikule</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Andmeallikas:</value>
+  </data>
+  <data name="DataSourceTooltip" xml:space="preserve">
+    <value>Sisesta URL SharePoint-ile, ruumiandmete teenusele või ArcGIS Server lõpupunktile</value>
+  </data>
+  <data name="DefinitionTabHeader" xml:space="preserve">
+    <value>Definitsioon</value>
+  </data>
+  <data name="DefinitionTabHeaderTooltip" xml:space="preserve">
+    <value>Määra omadused olemasolevale andmehulgale</value>
+  </data>
+  <data name="DeleteConnectionCaption" xml:space="preserve">
+    <value>Kinnita kustutamine</value>
+  </data>
+  <data name="DeleteConnectionPrompt" xml:space="preserve">
+    <value>Olete kindel, et soovite antud ühenduse kustutada?</value>
+  </data>
+  <data name="DeleteLayerMessageCaption" xml:space="preserve">
+    <value>Kinnita kustutamine</value>
+  </data>
+  <data name="DeleteLayerPrompt" xml:space="preserve">
+    <value>Olete kindel, et soovite kaardilt antud andmestiku kustutada?</value>
+  </data>
+  <data name="DeleteRange" xml:space="preserve">
+    <value>Kustuta ulatus</value>
+  </data>
+  <data name="DisplayNamePrompt" xml:space="preserve">
+    <value>Kuvanimi:</value>
+  </data>
+  <data name="DisplayNameTooltip" xml:space="preserve">
+    <value>Määra olemasoleva andmestiku kuvanimetus</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>Haara pööramiseks</value>
+  </data>
+  <data name="DuplicateDataSource" xml:space="preserve">
+    <value>{0} on juba andmeallikana lisatud</value>
+  </data>
+  <data name="DuplicateMapServiceLayer" xml:space="preserve">
+    <value>Kaarditeenus on juba lisatud</value>
+  </data>
+  <data name="DuplicateMapServiceLayerCaption" xml:space="preserve">
+    <value>Avatasti duplikaat</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Muuda</value>
+  </data>
+  <data name="EnterCredentials" xml:space="preserve">
+    <value>Palun sisestage kasutajanimi ja parool</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>Viga</value>
+  </data>
+  <data name="Europe" xml:space="preserve">
+    <value>Euroopa</value>
+  </data>
+  <data name="Every" xml:space="preserve">
+    <value>Kõik</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>Laienda/Sulge</value>
+  </data>
+  <data name="ExportSelection" xml:space="preserve">
+    <value>Ekspordi valik</value>
+  </data>
+  <data name="FieldHeader" xml:space="preserve">
+    <value>Väli</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>Täide</value>
+  </data>
+  <data name="FilterByMapView" xml:space="preserve">
+    <value>Filtreeri kaardivaatega:</value>
+  </data>
+  <data name="FilterExpressionPrompt" xml:space="preserve">
+    <value>Filtri avaldis:</value>
+  </data>
+  <data name="FilterExpressionTooltip" xml:space="preserve">
+    <value>Kehtesta filter olemasolevale andmekogule</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Otsi</value>
+  </data>
+  <data name="FindDirections" xml:space="preserve">
+    <value>Hangi juhised</value>
+  </data>
+  <data name="FindLocation" xml:space="preserve">
+    <value>Leia asukoht</value>
+  </data>
+  <data name="FindNearby" xml:space="preserve">
+    <value>Leia ligilähedane</value>
+  </data>
+  <data name="FixLocation" xml:space="preserve">
+    <value>Parenda asukoht</value>
+  </data>
+  <data name="Foreground" xml:space="preserve">
+    <value>Esiplaan</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>Detailsem info</value>
+  </data>
+  <data name="FromPrompt" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>Täisulatus</value>
+  </data>
+  <data name="GetListItemsFailed" xml:space="preserve">
+    <value>Sisu hankimine ebaõnnestus {0} kohapeal {1}</value>
+  </data>
+  <data name="GetListItemsFailedPromptRemove" xml:space="preserve">
+    <value>Sisu hankimine ebaõnnestus {0} kohapeal {1}.  Eemaldan selle vaate kaardilt?</value>
+  </data>
+  <data name="GetListsFailed" xml:space="preserve">
+    <value>Ebaõnnestunud pöördumised: {0}</value>
+  </data>
+  <data name="HeatMap" xml:space="preserve">
+    <value>Mõjuala kaart</value>
+  </data>
+  <data name="HeatMapAdvancedProperties" xml:space="preserve">
+    <value>Mõjuala kaardi omadused</value>
+  </data>
+  <data name="HeatMapAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Mõjuala kaardi renderdamise omadused</value>
+  </data>
+  <data name="HeatMapTooltip" xml:space="preserve">
+    <value>Kuva andmeid mõjuala kaardina</value>
+  </data>
+  <data name="HundredPercent" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="InitializationError" xml:space="preserve">
+    <value>Lähtestamise viga: {0}</value>
+  </data>
+  <data name="IntensityPrompt" xml:space="preserve">
+    <value>Intensiivus:</value>
+  </data>
+  <data name="InvalidUrlCaption" xml:space="preserve">
+    <value>Vigane URL</value>
+  </data>
+  <data name="InvalidUrlPrompt" xml:space="preserve">
+    <value>Palun sisestage kehtiv URL</value>
+  </data>
+  <data name="LatitudePrompt" xml:space="preserve">
+    <value>Laius (Y):</value>
+  </data>
+  <data name="LayerInfoRetrievalError" xml:space="preserve">
+    <value>Viga kihi info hankimisel: {0}</value>
+  </data>
+  <data name="LayersTabHeader" xml:space="preserve">
+    <value>Kihi nähtavus</value>
+  </data>
+  <data name="LayersTabHeaderTooltip" xml:space="preserve">
+    <value>Seadista kihtide nähtavus</value>
+  </data>
+  <data name="ListViewHeader" xml:space="preserve">
+    <value>Vaadete loend</value>
+  </data>
+  <data name="LoadDataSourceTooltip" xml:space="preserve">
+    <value>Laadi andmeallikas</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>Paiguta</value>
+  </data>
+  <data name="LocateByAddress" xml:space="preserve">
+    <value>Aadress</value>
+  </data>
+  <data name="LocateByAddressTooltip" xml:space="preserve">
+    <value>Kasuta praeguse andmete sisu kuvamiseks aadresside geokodeeringut</value>
+  </data>
+  <data name="LocateByCoordinates" xml:space="preserve">
+    <value>Koordinaadid</value>
+  </data>
+  <data name="LocateByCoordinatesTooltip" xml:space="preserve">
+    <value>Kasuta olemasoleva andmete sisu kuvamiseks koordinaate</value>
+  </data>
+  <data name="LocateByPrompt" xml:space="preserve">
+    <value>Paiguta:</value>
+  </data>
+  <data name="LocateTooltip" xml:space="preserve">
+    <value>Geokodeeri olemasolev loend</value>
+  </data>
+  <data name="LocateUpdateTooltip" xml:space="preserve">
+    <value>Joonista vastav loend valitud koordinaatväljade alusel</value>
+  </data>
+  <data name="LocationFieldsTabHeader" xml:space="preserve">
+    <value>Asukoha väljad</value>
+  </data>
+  <data name="LocationFieldsTabHeaderTooltip" xml:space="preserve">
+    <value>Vali olemasoleva andmekogu aadressid või geograafilised väljad</value>
+  </data>
+  <data name="LongitudePrompt" xml:space="preserve">
+    <value>Pikkus (X):</value>
+  </data>
+  <data name="MapContentsTooltip" xml:space="preserve">
+    <value>Kaardi sisu</value>
+  </data>
+  <data name="MapXaml" xml:space="preserve">
+    <value>Kaardi XAML</value>
+  </data>
+  <data name="MapXamlRepresentation" xml:space="preserve">
+    <value>Kaardi XAML representatsioon</value>
+  </data>
+  <data name="MaxPrompt" xml:space="preserve">
+    <value>Max:</value>
+  </data>
+  <data name="MinPrompt" xml:space="preserve">
+    <value>Min:</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minutid</value>
+  </data>
+  <data name="ModifyRangeTooltip" xml:space="preserve">
+    <value>Muuda ulatust</value>
+  </data>
+  <data name="MoveBarUpDown" xml:space="preserve">
+    <value>Liiguta riba ülespoole sisse suumiseks ja allapoole välja suumimiseks</value>
+  </data>
+  <data name="MoveDownTooltip" xml:space="preserve">
+    <value>Liigu allapoole</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>Liigu esimesele</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>Liigu viimasele</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>Liigu järgmisele</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>Liigu eelmisele</value>
+  </data>
+  <data name="MoveRangeTooltip" xml:space="preserve">
+    <value>Liikumise ulatus</value>
+  </data>
+  <data name="MoveUpTooltip" xml:space="preserve">
+    <value>Liigu ülespoole</value>
+  </data>
+  <data name="MultiLayerCacheNotSupported" xml:space="preserve">
+    <value>Mitme kihi pildiüksuste kaarditeenused (Cache Tiled Map Service) ei ole toetatud. Kasuta või loo selle asemel üksik fused-cache.</value>
+  </data>
+  <data name="MultiLayerCacheNotSupportedCaption" xml:space="preserve">
+    <value>Mitme kihi pildiüksuste kaarditeenused (Cache Tiled Map Service) ei ole toetatud.</value>
+  </data>
+  <data name="MultipleViewsNotAllowed" xml:space="preserve">
+    <value>SharePoint loendi vaateid ei saa mitu korda lisada</value>
+  </data>
+  <data name="NewDataSourceHelpText" xml:space="preserve">
+    <value>&lt;Sisesta serveri nimi või http liides&gt;</value>
+  </data>
+  <data name="NextRange" xml:space="preserve">
+    <value>Järgmine ulatus</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefined" xml:space="preserve">
+    <value>Loendi asukohaväljad ei olnud kaardistatavad. Märkige kaardi väljad loendis sobivale kujule.</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefinedCaption" xml:space="preserve">
+    <value>Määra asukohavälja kaardistamine</value>
+  </data>
+  <data name="NoAssociatedMapWebPart" xml:space="preserve">
+    <value>Veebikaardi osasid ei leitud.</value>
+  </data>
+  <data name="NoDistinctNumericFields" xml:space="preserve">
+    <value>Kõik selles andmestikus olevad numbrilised väljad omavad samu miinimum - ja maksimumväärtusi.  Väärtusvahemike seadistamiseks peavad miinimum ja maksimum olema eristatavad.</value>
+  </data>
+  <data name="NoGeographicListsFound" xml:space="preserve">
+    <value>Geoandmeid sisaldavad loendeid ei leitud {0}</value>
+  </data>
+  <data name="NoLayersAdded" xml:space="preserve">
+    <value>Kliki andmete kaardile lisamiseks nupule 'Lisa andmed'</value>
+  </data>
+  <data name="NoGPServicesFound" xml:space="preserve">
+    <value>Geotöötluse teenuseid ei leitud {0}</value>
+  </data>
+  <data name="NoMapServicesFound" xml:space="preserve">
+    <value>Kaarditeenuseid ei leitud {0}</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Puudub</value>
+  </data>
+  <data name="NoNumericFieldsFound" xml:space="preserve">
+    <value>Antud andmestik ei sisalda ühtegi numbrilist välja.  Väärtusvahemikke saab määrata vaid neile andmekihtidele, mis sisaldavad vähemalt ühte numbrilist välja.</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>Kirjed puuduvad</value>
+  </data>
+  <data name="NoRecordsForVisibleLayer" xml:space="preserve">
+    <value>Antud loendi sisukirjed ei ole kaardi poolt tagastatud. Lülita vaate sisu nägemiseks sisse vastav tingimus.</value>
+  </data>
+  <data name="NoResultsCaption" xml:space="preserve">
+    <value>Tulemused puuduvad</value>
+  </data>
+  <data name="NoResultsLayerNotVisible" xml:space="preserve">
+    <value>Kirjeid ei leitud, sest loend ei ole kaardil nähtav</value>
+  </data>
+  <data name="NorthAmerica" xml:space="preserve">
+    <value>Põhja-Ameerika</value>
+  </data>
+  <data name="NoSpatialTablesFound" xml:space="preserve">
+    <value>Ruumiandmeid sisaldavaid tabeleid ei leitud {0}</value>
+  </data>
+  <data name="NumericFieldNotDistinct" xml:space="preserve">
+    <value>See {0} väli sisaldab samu miinimu- ja maksimumväärtusi.  Väärtusvahemike seadistamiseks peavad miinimum ja maksimum olema eristatavad.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OnPanAndZoom" xml:space="preserve">
+    <value>Navigeeri ja suumi</value>
+  </data>
+  <data name="OperationalDataSectionHeader" xml:space="preserve">
+    <value>Andmed</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Parool:</value>
+  </data>
+  <data name="PleaseSpecifyDataSourceMessage" xml:space="preserve">
+    <value>Palun määra andmeallikas</value>
+  </data>
+  <data name="PollForUpdatesTooltip" xml:space="preserve">
+    <value>Määra uuendatud andmete loendi saamiseks intervall</value>
+  </data>
+  <data name="PopUpTabHeader" xml:space="preserve">
+    <value>Hüpikaken</value>
+  </data>
+  <data name="PopUpTabHeaderTooltip" xml:space="preserve">
+    <value>Seadista kaardi vastava andmekihi info hüpikaknad</value>
+  </data>
+  <data name="PreDefinedColorRamp" xml:space="preserve">
+    <value>Eelmääratud</value>
+  </data>
+  <data name="PreDefinedColorRampTooltip" xml:space="preserve">
+    <value>Kehtesta eelmääratud värvide kogum</value>
+  </data>
+  <data name="PreviousRange" xml:space="preserve">
+    <value>Eelmine ulatus</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>Produktsioon</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Omadused - {0}</value>
+  </data>
+  <data name="RecordsPrompt" xml:space="preserve">
+    <value>Kirjeid:</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Värskenda</value>
+  </data>
+  <data name="RefreshError" xml:space="preserve">
+    <value>Värskendamise tõrge esines kihil {0}</value>
+  </data>
+  <data name="RefreshMapXamlTooltip" xml:space="preserve">
+    <value>Värskenda kaardi XAML</value>
+  </data>
+  <data name="RefreshTooltip" xml:space="preserve">
+    <value>Värskenda</value>
+  </data>
+  <data name="RemoveTooltip" xml:space="preserve">
+    <value>Eemalda</value>
+  </data>
+  <data name="ResetExtent" xml:space="preserve">
+    <value>Lähtesta ulatus</value>
+  </data>
+  <data name="ResetExtentTooltip" xml:space="preserve">
+    <value>Lähtesta kaardi ulatus sisemise ulatusena, mis on määratud ArcGIS Server teenuse kaudu.</value>
+  </data>
+  <data name="ResetMapRotation" xml:space="preserve">
+    <value>Lähtesta kaardi pööramine</value>
+  </data>
+  <data name="ResolutionPrompt" xml:space="preserve">
+    <value>Resolutsioon:</value>
+  </data>
+  <data name="ResultsViewHeader" xml:space="preserve">
+    <value>Tulemuste vaade</value>
+  </data>
+  <data name="RetrievingBaseMaps" xml:space="preserve">
+    <value>Hangi kättesaadavaid aluskaarte</value>
+  </data>
+  <data name="RetrievingGeometryType" xml:space="preserve">
+    <value>Hangi geomeetriatüüp</value>
+  </data>
+  <data name="RetrievingInformation" xml:space="preserve">
+    <value>Hangi info serverist</value>
+  </data>
+  <data name="RollBackChangesTooltip" xml:space="preserve">
+    <value>Pööra muudatused tagasi</value>
+  </data>
+  <data name="ScaleBarUnit_feet" xml:space="preserve">
+    <value>ft</value>
+  </data>
+  <data name="ScaleBarUnit_kilometers" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="ScaleBarUnit_meters" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="ScaleBarUnit_miles" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>Sekundid</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Vali kõik</value>
+  </data>
+  <data name="SelectAllTooltip" xml:space="preserve">
+    <value>Vali kõik</value>
+  </data>
+  <data name="SelectedRangePrompt" xml:space="preserve">
+    <value>Ulatus:</value>
+  </data>
+  <data name="SelectedRecordsFormatString" xml:space="preserve">
+    <value>Kirjeid ({0} : {1} on valitud)</value>
+  </data>
+  <data name="SelectRangeTooltip" xml:space="preserve">
+    <value>Vali muutmise ulatus</value>
+  </data>
+  <data name="ServerPrompt" xml:space="preserve">
+    <value>Server:</value>
+  </data>
+  <data name="ServiceConnectionError" xml:space="preserve">
+    <value>Tekkis tõrge ühendamisel {0}.  Palun kontrolli serveri toimimise osas URL-i ning proovi seejärel uuesti.</value>
+  </data>
+  <data name="ServiceConnectionErrorCaption" xml:space="preserve">
+    <value>Ühendumise viga</value>
+  </data>
+  <data name="ServiceConnectionErrorDuringInit" xml:space="preserve">
+    <value>Võimetu ühenduma {0}.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Seaded</value>
+  </data>
+  <data name="ShowHide" xml:space="preserve">
+    <value>Kuva/peida</value>
+  </data>
+  <data name="ShowHideTooltip" xml:space="preserve">
+    <value>Kuva/peida</value>
+  </data>
+  <data name="SimpleSymbolType" xml:space="preserve">
+    <value>Lihtne</value>
+  </data>
+  <data name="SimpleSymbolTypeTooltip" xml:space="preserve">
+    <value>Kuva praegust andmestikku ühe sümboliga</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Allikas:</value>
+  </data>
+  <data name="Staging" xml:space="preserve">
+    <value>Lavastus</value>
+  </data>
+  <data name="StatePrompt" xml:space="preserve">
+    <value>Alamjaotus:</value>
+  </data>
+  <data name="SymbolsTabHeader" xml:space="preserve">
+    <value>Sümbolid</value>
+  </data>
+  <data name="SymbolsTabHeaderTooltip" xml:space="preserve">
+    <value>Seadista olemasoleva andmestiku kuvamist</value>
+  </data>
+  <data name="SymbolTypePrompt" xml:space="preserve">
+    <value>Sümboli tüüp:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>kuni</value>
+  </data>
+  <data name="TokenAuthenticationFailed" xml:space="preserve">
+    <value>Bing Maps autentimine ebaõnnestus.  Kontrolli vahendite olemasolu ja proovi uuesti.</value>
+  </data>
+  <data name="TokenConnectionFailed" xml:space="preserve">
+    <value>Ühendus tokeni otsimiseks nurjus.  Kontrolli majutusserveri ühendust ning proovi uuesti.</value>
+  </data>
+  <data name="TolerancePrompt" xml:space="preserve">
+    <value>Tolerants:</value>
+  </data>
+  <data name="ToPrompt" xml:space="preserve">
+    <value>Kuni:</value>
+  </data>
+  <data name="TotalDistancePrompt" xml:space="preserve">
+    <value>Kogupikkus:</value>
+  </data>
+  <data name="TotalTimePrompt" xml:space="preserve">
+    <value>Koguaeg:</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>Läbipaistvus</value>
+  </data>
+  <data name="TransparencyPrompt" xml:space="preserve">
+    <value>Läbipaistvus:</value>
+  </data>
+  <data name="UnhandledSilverlightError" xml:space="preserve">
+    <value>Käsitlematu viga Silverlight 2 aplikatsioonis</value>
+  </data>
+  <data name="UpdateAddress" xml:space="preserve">
+    <value>Uuenda aadressi</value>
+  </data>
+  <data name="UpdateLayerError" xml:space="preserve">
+    <value>Viga kihi uuendamisel: {0}</value>
+  </data>
+  <data name="UpdateListError" xml:space="preserve">
+    <value>Viga loendi muudatuste kinnitamisel: {0}</value>
+  </data>
+  <data name="UrlPrompt" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="UserNamePrompt" xml:space="preserve">
+    <value>Kasutaja:</value>
+  </data>
+  <data name="UseStagingServer" xml:space="preserve">
+    <value>Kasuta prooviserverit</value>
+  </data>
+  <data name="ValidAddressError" xml:space="preserve">
+    <value>Palun sisesta kehtiv aadress</value>
+  </data>
+  <data name="ValidAddressErrorCaption" xml:space="preserve">
+    <value>Vigane aadress</value>
+  </data>
+  <data name="ValidCoordinatesError" xml:space="preserve">
+    <value>Palun sisesta kehtivad koordinaadid</value>
+  </data>
+  <data name="ValidCoordinatesErrorCaption" xml:space="preserve">
+    <value>Vigased koordinaadid</value>
+  </data>
+  <data name="ValueRanges" xml:space="preserve">
+    <value>Väärtusvahemikud</value>
+  </data>
+  <data name="ValueRangesTooltip" xml:space="preserve">
+    <value>Kuva olemasolevaid andmeid väärtusvahemike alusel</value>
+  </data>
+  <data name="ViewItem" xml:space="preserve">
+    <value>Vaata sisu</value>
+  </data>
+  <data name="VisibleHeader" xml:space="preserve">
+    <value>Nähtav</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Laius</value>
+  </data>
+  <data name="XamlRepresentation" xml:space="preserve">
+    <value>Olemasoleva kihi XAML representatsioon</value>
+  </data>
+  <data name="XamlViewTabHeader" xml:space="preserve">
+    <value>Xaml vaade</value>
+  </data>
+  <data name="XamlViewTabHeaderTooltip" xml:space="preserve">
+    <value>Vaata loodud kihi juurde kuuluvat Xaml-i</value>
+  </data>
+  <data name="ZeroPercent" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="Zip4Prompt" xml:space="preserve">
+    <value>Zip4:</value>
+  </data>
+  <data name="ZipPrompt" xml:space="preserve">
+    <value>Nr/postiindeks:</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Suumi sisse</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Suumi välja</value>
+  </data>
+  <data name="ZoomOutButton" xml:space="preserve">
+    <value>Suumi välja</value>
+  </data>
+  <data name="ZoomRangeTooltip" xml:space="preserve">
+    <value>Suumi sisse ulatuses</value>
+  </data>
+  <data name="ZoomToAllRecords" xml:space="preserve">
+    <value>Liigu</value>
+  </data>
+  <data name="ZoomToItem" xml:space="preserve">
+    <value>Suumi sisule</value>
+  </data>
+  <data name="ZoomToSelection" xml:space="preserve">
+    <value>Suumi valitule</value>
+  </data>
+  <data name="ConfigFileUrlTextboxTooltip" xml:space="preserve">
+    <value>Sisesta konfiguratsioonifaili URL</value>
+  </data>
+  <data name="ConnectToSharePointDataSource" xml:space="preserve">
+    <value>&lt;Sisesta SharePoint-i URL&gt;</value>
+  </data>
+  <data name="ExportToFile" xml:space="preserve">
+    <value>Ekspordi failina</value>
+  </data>
+  <data name="FileNamePrompt" xml:space="preserve">
+    <value>Faili nimi:</value>
+  </data>
+  <data name="MustEnterFileName" xml:space="preserve">
+    <value>Palun sisesta faili nimi</value>
+  </data>
+  <data name="MustEnterFileNameTitle" xml:space="preserve">
+    <value>Faili nimi on puudu</value>
+  </data>
+  <data name="OverwriteExistingFile" xml:space="preserve">
+    <value>Kirjuta olemasolev fail üle</value>
+  </data>
+  <data name="UrlToSitePrompt" xml:space="preserve">
+    <value>Lehe Url:</value>
+  </data>
+  <data name="CustomBaseMap" xml:space="preserve">
+    <value>ArcGIS Server aluskaart</value>
+  </data>
+  <data name="AGSDataSourceTooltip" xml:space="preserve">
+    <value>Sisesta URL ArcGIS Server lõpupunktina</value>
+  </data>
+  <data name="NotUsingBingMapsResource" xml:space="preserve">
+    <value>Teie rakendus ei kasuta ühtegi Bing Maps ressurssi. Konto info ei ole praegusel juhul seadistamise osas vajalik.</value>
+  </data>
+  <data name="NotUsingBingMapsResourceCaption" xml:space="preserve">
+    <value>Bings Maps ressurss puudub</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Sulge</value>
+  </data>
+  <data name="BrowseForBaseMap" xml:space="preserve">
+    <value>Vali aluskaartidest</value>
+  </data>
+  <data name="EnterUrl" xml:space="preserve">
+    <value>Sisesta URL</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatch" xml:space="preserve">
+    <value>Cache-tud kaarditeenuse ruumiline viitamine ei ühti aluskaardi süsteemiga. Antud kaarditeenust ei saa lisada.</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatchCaption" xml:space="preserve">
+    <value>Ruumiline viitamise süsteem ei ühildu</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemoved" xml:space="preserve">
+    <value>Teie operatsioonilised andmestikud sisaldavad kaarditeenuseid, mille ruumilise viitamise süsteem ei ühildu Teie valitud aluskaardi omaga. Selleks, et jätkata, peate need kaarditeenused eemaldama. Eemaldamiseks kliki nupule Ok.</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemovedCaption" xml:space="preserve">
+    <value>Operatsioonilise andmestiku mittesobivus</value>
+  </data>
+  <data name="AddContentTitle" xml:space="preserve">
+    <value>Lisa sisu</value>
+  </data>
+  <data name="BaseMapGalleryTitle" xml:space="preserve">
+    <value>Vali aluskaart</value>
+  </data>
+  <data name="BrowseForBaseMapTitle" xml:space="preserve">
+    <value>Vali aluskaartidest</value>
+  </data>
+  <data name="EnterUrlDialogTitle" xml:space="preserve">
+    <value>Sisesta aluskaardi URL</value>
+  </data>
+  <data name="MapContentsTitle" xml:space="preserve">
+    <value>Kaardi sisu</value>
+  </data>
+  <data name="CanOnlyUseCachedMapServicesAsBaseMap" xml:space="preserve">
+    <value>Antud aluskaardi juures on kasutatavad ainult ArcGIS cache-i läbinud kaarditeenused.</value>
+  </data>
+  <data name="InvalidMapServiceCaption" xml:space="preserve">
+    <value>Vigane kaarditeenus </value>
+  </data>
+  <data name="MapTipBorderColorTooltip" xml:space="preserve">
+    <value>Muuda kohtspikri äärejoone värvi</value>
+  </data>
+  <data name="MapTipFillColorTooltip" xml:space="preserve">
+    <value>Muuda kaardi kohtspikri täitevärvi</value>
+  </data>
+  <data name="MapTipForegroundColorTooltip" xml:space="preserve">
+    <value>Muuda kaardi teksti värvi</value>
+  </data>
+  <data name="SampleMapTipText" xml:space="preserve">
+    <value>Tekstinäidis</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Lisa valitud kiht</value>
+  </data>
+  <data name="AttributePrompt" xml:space="preserve">
+    <value>Atribuut:</value>
+  </data>
+  <data name="ColorScheme" xml:space="preserve">
+    <value>Värviskeem</value>
+  </data>
+  <data name="MoreOptions" xml:space="preserve">
+    <value>Rohkem valikuid</value>
+  </data>
+  <data name="RendererPrompt" xml:space="preserve">
+    <value>Renderdaja:</value>
+  </data>
+  <data name="SymbolOptions" xml:space="preserve">
+    <value>Skeemi parameetrid</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Praegune sümbol:</value>
+  </data>
+  <data name="Basemap" xml:space="preserve">
+    <value>Aluskaart</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Tõsta esile</value>
+  </data>
+  <data name="ClassBreaks" xml:space="preserve">
+    <value>Üleminekud</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Värv</value>
+  </data>
+  <data name="FromServer" xml:space="preserve">
+    <value>Sirvi...</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Esileht</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Kaart</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Kaardi sisu</value>
+  </data>
+  <data name="MapTip" xml:space="preserve">
+    <value>Kaardi kohtspikker</value>
+  </data>
+  <data name="MoreSymbolOptions" xml:space="preserve">
+    <value>Skeemi parameetrid</value>
+  </data>
+  <data name="Organize" xml:space="preserve">
+    <value>Organiseeri</value>
+  </data>
+  <data name="RefreshLayer" xml:space="preserve">
+    <value>Värskenda</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Eemalda</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Otsin...</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Saada tahaplaanile</value>
+  </data>
+  <data name="SingleSymbol" xml:space="preserve">
+    <value>Üksik sümbol</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Suurus</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Töövahendid</value>
+  </data>
+  <data name="UniqueValues" xml:space="preserve">
+    <value>Unikaalsed väärtused</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="CategoryPrompt" xml:space="preserve">
+    <value>Kategooria:</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>Sümbol</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Vaata</value>
+  </data>
+  <data name="DrawOrder" xml:space="preserve">
+    <value>Kuvamise järjekord</value>
+  </data>
+  <data name="Popups" xml:space="preserve">
+    <value>Hüpikaknad</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Tabel</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>Seadista hüpikaknaid</value>
+  </data>
+  <data name="AddUniqueValue" xml:space="preserve">
+    <value>Lisa väärtus</value>
+  </data>
+  <data name="DeleteUniqueValue" xml:space="preserve">
+    <value>Kustuta valitud väärtus</value>
+  </data>
+  <data name="NextUniqueValue" xml:space="preserve">
+    <value>Järgmine unikaalne väärtus</value>
+  </data>
+  <data name="PreviousUniqueValue" xml:space="preserve">
+    <value>Eelmine unikaalne väärtus</value>
+  </data>
+  <data name="ValuePrompt" xml:space="preserve">
+    <value>Väärtus:</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Kiht</value>
+  </data>
+  <data name="MapCenterTooltip" xml:space="preserve">
+    <value>ArcGIS.com kaartide keskus</value>
+  </data>
+  <data name="ClassesPrompt" xml:space="preserve">
+    <value>Klassid:</value>
+  </data>
+  <data name="InvalidClassBreakValue" xml:space="preserve">
+    <value>Vigane väärtus</value>
+  </data>
+  <data name="DefaultSymbol" xml:space="preserve">
+    <value>Vaikimisi sümbol</value>
+  </data>
+  <data name="MaxPointsPrompt" xml:space="preserve">
+    <value>Maksimumpunktid:</value>
+  </data>
+  <data name="RadiusPrompt" xml:space="preserve">
+    <value>Raadius:</value>
+  </data>
+  <data name="UsePointClustering" xml:space="preserve">
+    <value>Kasuta punkt-klasterdamist</value>
+  </data>
+  <data name="AddContent" xml:space="preserve">
+    <value>Lisa sisu</value>
+  </data>
+  <data name="LayerSymbology" xml:space="preserve">
+    <value>Sümboloogia</value>
+  </data>
+  <data name="AutoUpdates" xml:space="preserve">
+    <value>Autom. uuendused</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>Intervall</value>
+  </data>
+  <data name="PollForUpdates" xml:space="preserve">
+    <value>Uuenduste küsitlus</value>
+  </data>
+  <data name="UpdateOnExtentChanged" xml:space="preserve">
+    <value>Uuenda muudetud ulatusele</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="FilterLayerTitle" xml:space="preserve">
+    <value>Määra filtri avaldis</value>
+  </data>
+  <data name="FilterByMapExtent" xml:space="preserve">
+    <value>Filtreeri ulatuse alusel</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Täisekraan</value>
+  </data>
+  <data name="AutoScrollRow" xml:space="preserve">
+    <value>Autom. reaskroll</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Teenuse detailid</value>
+  </data>
+  <data name="DatasetPrompt" xml:space="preserve">
+    <value>Andmestik:</value>
+  </data>
+  <data name="DistancePrompt" xml:space="preserve">
+    <value>Vahemaa:</value>
+  </data>
+  <data name="FindNearbyTitle" xml:space="preserve">
+    <value>Leia ligilähedane</value>
+  </data>
+  <data name="InvalidDistance" xml:space="preserve">
+    <value>Palun sisesta sobiv vahemaa</value>
+  </data>
+  <data name="InvalidDistanceCaption" xml:space="preserve">
+    <value>Vigane vahemaa</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>Kilomeetrid</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Meetrid</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>Miilid</value>
+  </data>
+  <data name="SelectionTools" xml:space="preserve">
+    <value>Valimise tööriistad</value>
+  </data>
+  <data name="BufferDistance" xml:space="preserve">
+    <value>Puhvri ulatus</value>
+  </data>
+  <data name="Feed" xml:space="preserve">
+    <value>GeoRSS...</value>
+  </data>
+  <data name="FindNearbyBufferPrefix" xml:space="preserve">
+    <value>Leia ligilähedane puhver - </value>
+  </data>
+  <data name="FindNearbyPrefix" xml:space="preserve">
+    <value>Leia ligilähedane - </value>
+  </data>
+  <data name="SelectByDraw" xml:space="preserve">
+    <value>Vali joonistamise kaudu</value>
+  </data>
+  <data name="ColorSchemePrompt" xml:space="preserve">
+    <value>Värviskeem:</value>
+  </data>
+  <data name="EditValuesPrompt" xml:space="preserve">
+    <value>Muuda väärtusi:</value>
+  </data>
+  <data name="TypeValueToAdd" xml:space="preserve">
+    <value>Sisesta väärtus lisamiseks</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Teema</value>
+  </data>
+  <data name="AddGeoRSSTitle" xml:space="preserve">
+    <value>Sisesta GeoRSS voo tarbeks Url</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>Päis:</value>
+  </data>
+  <data name="BrowseDialogGeographicDataNotFound" xml:space="preserve">
+    <value>Geoandmeid ei leitud</value>
+  </data>
+  <data name="DefaultBasemapLayerDisplayName" xml:space="preserve">
+    <value>Aluskaart</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>Kiht:</value>
+  </data>
+  <data name="AddLayerTooltip" xml:space="preserve">
+    <value>Lisa kaardile valitud ArcGIS Server, SharePoint või ruumiandmete teenuse kiht</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Nimeta ümber</value>
+  </data>
+  <data name="ODataFeed" xml:space="preserve">
+    <value>OData...</value>
+  </data>
+  <data name="SignInWithGlobalAccount" xml:space="preserve">
+    <value>Logi sisse Esri globaalse kontoga</value>
+  </data>
+  <data name="ClusterColor" xml:space="preserve">
+    <value>Klastri taustvärv</value>
+  </data>
+  <data name="ClusterTextColor" xml:space="preserve">
+    <value>Klastri esiplaani värv</value>
+  </data>
+  <data name="Clustering" xml:space="preserve">
+    <value>Klasterdamine</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Üldine</value>
+  </data>
+  <data name="HeatMapAdd" xml:space="preserve">
+    <value>Lisa mõjuala kaart</value>
+  </data>
+  <data name="Intensity" xml:space="preserve">
+    <value>Intensiivsus</value>
+  </data>
+  <data name="OpenItemOnClick" xml:space="preserve">
+    <value>Ava sisu klikkamise kaudu</value>
+  </data>
+  <data name="Symbology" xml:space="preserve">
+    <value>Sümboloogia</value>
+  </data>
+  <data name="ShowMapContents" xml:space="preserve">
+    <value>Tagasi</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>Atribuudid</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Varia</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Täiustatud</value>
+  </data>
+  <data name="ExtensionLoadFailed" xml:space="preserve">
+    <value>Laienduse laadimine nurjus</value>
+  </data>
+  <data name="ToolClassLoadFailed" xml:space="preserve">
+    <value>Tööriista klassi laadimine nurjus</value>
+  </data>
+  <data name="ToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Tööriista klassi laadimise seadistamine nurjus</value>
+  </data>
+  <data name="ExtensionInitializationFailed" xml:space="preserve">
+    <value>Valikulise käskluse instantsi loomine nurjus.</value>
+  </data>
+  <data name="ExtensionInitializationFailedHeader" xml:space="preserve">
+    <value>Laienduse lähtestamine nurjus</value>
+  </data>
+  <data name="Less" xml:space="preserve">
+    <value>Vähem</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Rohkem</value>
+  </data>
+  <data name="ConfiguringLayer" xml:space="preserve">
+    <value>Seadistamine:</value>
+  </data>
+  <data name="RemoveLayerCaption" xml:space="preserve">
+    <value>Eemalda kiht?</value>
+  </data>
+  <data name="RemoveLayerNameSubstitude" xml:space="preserve">
+    <value>valitud</value>
+  </data>
+  <data name="RemoveLayerPrompt" xml:space="preserve">
+    <value>Kas soovite eemaldada {0} kihti kaardilt?</value>
+  </data>
+  <data name="BrowseNoEllipsis" xml:space="preserve">
+    <value>Sirvi</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Sisu</value>
+  </data>
+  <data name="GeoRSS" xml:space="preserve">
+    <value>GeoRSS</value>
+  </data>
+  <data name="SearchNoEllipsis" xml:space="preserve">
+    <value>Otsi</value>
+  </data>
+  <data name="ErrorLoadConfigurationOfExtension" xml:space="preserve">
+    <value>Käsitlematu viga laienduse ({0}) LoadConfiguration juures</value>
+  </data>
+  <data name="ErrorNoPrinterContainerFoundInPrintTemplate" xml:space="preserve">
+    <value>Printimise konteinerit ei leitud printimise mallist.</value>
+  </data>
+  <data name="ErrorSaveConfigurationOfExtension" xml:space="preserve">
+    <value>Käsitlematu viga laienduse ({0}) SaveConfiguration all</value>
+  </data>
+  <data name="ExceptionCachedMapServiceSpatialReferenceDoesNotMatch" xml:space="preserve">
+    <value>Cache kujul kaarditeenuse ruumiline viitamine ei ühildu.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitialized" xml:space="preserve">
+    <value>Ei saa kutsuda ZoomMapToExtent enne kaardi initsialiseerimist. Kasuta sündmuse ootamiseks Use MapLayersInitialized.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitializedMapReferenceNull" xml:space="preserve">
+    <value>Ei saa kutsuda ZoomMapToExtent enne kaardi initsialiseerimist. Kaardi ruumilise viitamise süsteem on null.</value>
+  </data>
+  <data name="ExceptionConnectionTypeDoesNotCoorespondToDatasourceWhichHasResources" xml:space="preserve">
+    <value>Ühenduse tüüp {0} ei ole vastavuses andmeallikaga ({1}), mis sisaldab ressursse</value>
+  </data>
+  <data name="ExceptionCouldNotFindElementWithName" xml:space="preserve">
+    <value>Ei suuda leida elementi nimega {0}.</value>
+  </data>
+  <data name="ExceptionCouldNotFindToggleButtonWithName" xml:space="preserve">
+    <value>Ei suuda leida tumbleri nuppu nimega {0}.</value>
+  </data>
+  <data name="ExceptionDatasourceNotLoadedForBaseMapType" xml:space="preserve">
+    <value>DataSource ei ole laaditud aluskaardi tüübiks {0}</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>element</value>
+  </data>
+  <data name="ExceptionMapHasNotBeenInitializedYet" xml:space="preserve">
+    <value>Kaart ei olnud veel initsialiseeritud</value>
+  </data>
+  <data name="ExceptionMapLayersHaveNotBeenInstantiated" xml:space="preserve">
+    <value>Kaardikihid ei olnud initsialiseeritud. Aluskaarti saab vahetada vaid siis, kui MapLayersInitialized on likvideeritud</value>
+  </data>
+  <data name="ExceptionMapNotSet" xml:space="preserve">
+    <value>Kaart ei ole määratud</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationProvider" xml:space="preserve">
+    <value>ConfigurationProvider peab olema määratud</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationStoreProvider" xml:space="preserve">
+    <value>ConfigurationStoreProvider peab olema määratud</value>
+  </data>
+  <data name="ExceptionMustSpecifyDataSourceProvider" xml:space="preserve">
+    <value>DataSourceProvider peab olema määratud</value>
+  </data>
+  <data name="ExceptionMustSpecifyLayoutProvider" xml:space="preserve">
+    <value>LayoutProvider peab olema määratud</value>
+  </data>
+  <data name="ExceptionMustSpecifySpatialReferenceOnEnvelope" xml:space="preserve">
+    <value>Ümbriskasti ruumiline viitamise süsteem peab olema määratud</value>
+  </data>
+  <data name="ExceptionMustSpecifyThemeProvider" xml:space="preserve">
+    <value>ThemeProvider peab olema määratud</value>
+  </data>
+  <data name="ExceptionNoBingMapsTokenAvailable" xml:space="preserve">
+    <value>Bing Maps juurdepääs puudub</value>
+  </data>
+  <data name="ExceptionNoGeometryServiceUrlSpecifiedLayerZoomedIsDifferentSpatialReference" xml:space="preserve">
+    <value>Geomeetriateenuse Url ei ole määratud. Selle kasutamiseks on kiht vaja suumida kaardist erinevasse koordinaatsüsteemi ja re-projitseerida täisvaate ulatus</value>
+  </data>
+  <data name="ExceptionNotSupported" xml:space="preserve">
+    <value>Ei ole toetatud</value>
+  </data>
+  <data name="ExceptionNullBaseMapInfo" xml:space="preserve">
+    <value>baseMapInfo</value>
+  </data>
+  <data name="ExceptionOnlyCachedServicesCanBeUsedAsBaseMaps" xml:space="preserve">
+    <value>Aluskaartidena saab kasutada ainult cache kujul kaarditeenuseid</value>
+  </data>
+  <data name="ExceptionUnableToInstantiateDatasourceForBaseMapType" xml:space="preserve">
+    <value>Võimetu lähtestama aluskaardi tüübi andmeallikat {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Võimetu hankima konfiguratsiooni infot. Infot ei tagastatud.</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasource" xml:space="preserve">
+    <value>Võimetu hankima andmeallikat {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasourceConnectionType" xml:space="preserve">
+    <value>Võimetu hankima ühenduse tüübi andmeallikat {0}</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Laen...</value>
+  </data>
+  <data name="LoadingMapCenter" xml:space="preserve">
+    <value>Laadi kaartide kogum...</value>
+  </data>
+  <data name="LogUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Võimetu hankima konfiguratsiooni infot</value>
+  </data>
+  <data name="MsgErrorExecutingBufferOperation" xml:space="preserve">
+    <value>Viga puhvri loomisel.</value>
+  </data>
+  <data name="MsgErrorExecutingRelationAsyncOperation" xml:space="preserve">
+    <value>Viga RelationAsync tegevuse juures</value>
+  </data>
+  <data name="MsgErrorOpeningFile" xml:space="preserve">
+    <value>Viga faili avamisel</value>
+  </data>
+  <data name="MsgErrorRetrievingSubLayersForMapService" xml:space="preserve">
+    <value>Viga alamkihtide hankimisel kaarditeenusest</value>
+  </data>
+  <data name="MsgErrorSavingFile" xml:space="preserve">
+    <value>Viga faili salvestamisel</value>
+  </data>
+  <data name="MsgNoFeaturesSelected" xml:space="preserve">
+    <value>Ühtegi objekti ei ole valitud</value>
+  </data>
+  <data name="MsgNoResourcesFound" xml:space="preserve">
+    <value>Ühtegi tulemust ei leitud</value>
+  </data>
+  <data name="MsgUnableToAccessGeometryService" xml:space="preserve">
+    <value>Võimetu ligi pääsema geomeetriateenusele.</value>
+  </data>
+  <data name="MsgUnableToCreateLayer" xml:space="preserve">
+    <value>Võimetu koostama kihti</value>
+  </data>
+  <data name="MsgUnableToRetrieveResources" xml:space="preserve">
+    <value>Võimetu hankima ressursse.</value>
+  </data>
+  <data name="MsgUnknownError" xml:space="preserve">
+    <value>Tundmatu viga</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nimi</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>Tundmatu kasutaja</value>
+  </data>
+  <data name="NotValidMapDocument" xml:space="preserve">
+    <value>Kaardidokument ei ole kehtiv.</value>
+  </data>
+  <data name="ErrorRetrievingSymbols" xml:space="preserve">
+    <value>Viga sümbolite hankimisel</value>
+  </data>
+  <data name="ExceptionCacheMapServicesCannotReproject" xml:space="preserve">
+    <value>Rakenduses olevad Cache kujul kaarditeenused ei ole re-projitseeritavad</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Ava veebikaart ArcGIS.com keskkonnast</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Logi sisse</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Logi välja</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Tausta tekst</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Liikmed</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Eelvaade</value>
+  </data>
+  <data name="SelectedItem" xml:space="preserve">
+    <value>Valitud sisu</value>
+  </data>
+  <data name="RecordOutOfSelected" xml:space="preserve">
+    <value>Kirjeid ({0} : {1} on valitud)</value>
+  </data>
+  <data name="ExtensionInitializationFailedUrl" xml:space="preserve">
+    <value>Kohandatud käskluse alglähtestamine nurjus. Url: {0}</value>
+  </data>
+  <data name="HeatMapTitle" xml:space="preserve">
+    <value>{0} Mõjuala kaart</value>
+  </data>
+  <data name="CurrentColor" xml:space="preserve">
+    <value>Praegune värv</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Kirjeldus:</value>
+  </data>
+  <data name="HeightPrompt" xml:space="preserve">
+    <value>Kõrgus:</value>
+  </data>
+  <data name="Moredotdot" xml:space="preserve">
+    <value>Rohkem...</value>
+  </data>
+  <data name="NotificationDontShowDialogOnStartup" xml:space="preserve">
+    <value>Ära kuva avamisel seda dialoogi</value>
+  </data>
+  <data name="RecordPrompt" xml:space="preserve">
+    <value>Kirje:</value>
+  </data>
+  <data name="StandardColors" xml:space="preserve">
+    <value>Standardvärvid</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Temaatilised värvid</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Nimi:</value>
+  </data>
+  <data name="WidthPrompt" xml:space="preserve">
+    <value>Laius:</value>
+  </data>
+  <data name="MapBehaviors" xml:space="preserve">
+    <value>Kaardista käitumismustreid</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Alla</value>
+  </data>
+  <data name="MapBehaviorAdd" xml:space="preserve">
+    <value>Lisa uus kaardi eeskiri</value>
+  </data>
+  <data name="MapBehaviorConfigure" xml:space="preserve">
+    <value>Seadista valitud kaardi eeskiri</value>
+  </data>
+  <data name="MapBehaviorMoveDown" xml:space="preserve">
+    <value>Liiguta valitud kaardi eeskiri ühe astme võrra alla</value>
+  </data>
+  <data name="MapBehaviorMoveUp" xml:space="preserve">
+    <value>Liiguta valitud kaardi eeskiri ühe astme võrra üles</value>
+  </data>
+  <data name="MapBehaviorRemove" xml:space="preserve">
+    <value>Eemalda valitud kaardi eeskiri</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviors" xml:space="preserve">
+    <value>Eeskirju ei ole kaardiga seotud.</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviorsInEdit" xml:space="preserve">
+    <value>Kliki nupule 'Lisa', et seadistada uue kaardi eeskirja.</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Liiguta</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Üles</value>
+  </data>
+  <data name="AddLabel" xml:space="preserve">
+    <value>Lisa</value>
+  </data>
+  <data name="BehaviorClassLoadFailed" xml:space="preserve">
+    <value>Eeskirja klassi laadimine nurjus</value>
+  </data>
+  <data name="BehaviorConfigurationFailed" xml:space="preserve">
+    <value>Eeskirja seadistamine nurjus</value>
+  </data>
+  <data name="BehaviorConfigurationFailedDescription" xml:space="preserve">
+    <value>Eeskirja seadistamise meetod paigutati erandiks.</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Eeskirja klassi laadimise seadistamine nurjus</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailedDescription" xml:space="preserve">
+    <value>Eeskirja klassi laadimise seadistamine paigutati erandiks.</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>Tüüp:</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Koosta olemasoleva kihi objektidel põhinev mõjuala kaart</value>
+  </data>
+  <data name="ClusterColorDescription" xml:space="preserve">
+    <value>Määra olemasoleva kihi klastritele taustvärv</value>
+  </data>
+  <data name="ClusterTextColorDescription" xml:space="preserve">
+    <value>Määra olemasoleva kihi klastritele äärejoone ja teksti värv</value>
+  </data>
+  <data name="FilterDescription" xml:space="preserve">
+    <value>Filtreeri olemasoleva kihi objektid asjakohase atribuutide päringu kaudu</value>
+  </data>
+  <data name="HeatMapColorDescription" xml:space="preserve">
+    <value>Vali mõjuala kaardile värviskeem</value>
+  </data>
+  <data name="IntensityDescription" xml:space="preserve">
+    <value>Kohanda mõjuala kaardi intensiivsus.  Kõrgem intensiivus märgib suuremaid alasid.</value>
+  </data>
+  <data name="MaxPoints" xml:space="preserve">
+    <value>Maksimumpunktid</value>
+  </data>
+  <data name="MaxPointsDescription" xml:space="preserve">
+    <value>Määra maksimaalne objektide arv, mis grupeeritakse ühte klastrisse</value>
+  </data>
+  <data name="OpenItemOnClickDescription" xml:space="preserve">
+    <value>Kuva objekti detaile uues brauseriaknas juhul, kui sellele klikatakse</value>
+  </data>
+  <data name="PollForUpdatesDescription" xml:space="preserve">
+    <value>Määra, kas määratud intervallide osas hangitakse voo-uuendusi või mitte</value>
+  </data>
+  <data name="PopupsDescription" xml:space="preserve">
+    <value>Seadista olemasoleva kihi hüpikakna atribuutide kuvamine</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>Raadius</value>
+  </data>
+  <data name="RadiusDescription" xml:space="preserve">
+    <value>Määra raadius (pikslites), mille juures objektid grupeeritakse üheks klastriks</value>
+  </data>
+  <data name="SymbologyDescription" xml:space="preserve">
+    <value>Seadista sümbolite kasutus olemasoleva kihi juures</value>
+  </data>
+  <data name="TableDescription" xml:space="preserve">
+    <value>Seadista olemasoleva kihi atribuuditabeli kuvatavad väljad</value>
+  </data>
+  <data name="UpdateOnExtentChangedDescription" xml:space="preserve">
+    <value>Määra, kas voo-uuendusi hangitakse kaardi navigeerimisel/suumimisel või mitte</value>
+  </data>
+  <data name="UsePointClusteringDescription" xml:space="preserve">
+    <value>Määra, kas objektide gruppe kuvatakse ühe klasterdatud objektina või mitte</value>
+  </data>
+  <data name="SelectTheLayout" xml:space="preserve">
+    <value>Vali paigutus...</value>
+  </data>
+  <data name="SelectThePrintLayout" xml:space="preserve">
+    <value>Vali printimise paigutus</value>
+  </data>
+  <data name="BehaviorPrompt" xml:space="preserve">
+    <value>Eeskiri:</value>
+  </data>
+  <data name="Cluster" xml:space="preserve">
+    <value>Klaster</value>
+  </data>
+  <data name="ClusterFeatures" xml:space="preserve">
+    <value>Klasterda objekte</value>
+  </data>
+  <data name="ConfigureRange" xml:space="preserve">
+    <value>Seadista ulatus</value>
+  </data>
+  <data name="EnablePrompt" xml:space="preserve">
+    <value>Luba:</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Omadused</value>
+  </data>
+  <data name="RenderAsHeatMap" xml:space="preserve">
+    <value>Renderda mõjuala kaardina</value>
+  </data>
+  <data name="RenderHeatMapAdvancedProperties" xml:space="preserve">
+    <value>Täiendavad mõjuala kaardi renderdamise valikud</value>
+  </data>
+  <data name="Tolerance" xml:space="preserve">
+    <value>Tolerants</value>
+  </data>
+  <data name="LayoutPrompt" xml:space="preserve">
+    <value>Paigutus:</value>
+  </data>
+  <data name="ConfigurePrint" xml:space="preserve">
+    <value>Seadista printimine</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Prindi</value>
+  </data>
+  <data name="LayoutResourceDownloadError" xml:space="preserve">
+    <value>Viga paigutuse ressursside allalaadimisel.</value>
+  </data>
+  <data name="ChangeBackground" xml:space="preserve">
+    <value>Vaheta tausta</value>
+  </data>
+  <data name="PreviewTheme" xml:space="preserve">
+    <value>Vaata teemat</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>Pealkirjata</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Lisa eeskiri</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>Gradient</value>
+  </data>
+  <data name="Solid" xml:space="preserve">
+    <value>Pidev</value>
+  </data>
+  <data name="ToggleRibbonVisibility" xml:space="preserve">
+    <value>Vaheta riba nähtavust</value>
+  </data>
+  <data name="ArcGISSilverlightVersion" xml:space="preserve">
+    <value>ArcGIS API for Silverlight:</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versioon:</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Liigu allapoole</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Liigu ülespoole</value>
+  </data>
+  <data name="ConstrainExtentBehaviorMessage" xml:space="preserve">
+    <value>Suumi kaardi ulatusele juhul, kui soovid rakendada piiranguid ja vajuta nupule Kehtesta.</value>
+  </data>
+  <data name="ConstrainExtentBehaviorTitle" xml:space="preserve">
+    <value>Määra kaardi ulatuse piirang</value>
+  </data>
+  <data name="DeleteBehaviorCaption" xml:space="preserve">
+    <value>Oled kindel, et soovid antud eeskirja eemaldada?</value>
+  </data>
+  <data name="DeleteBehaviorPrompt" xml:space="preserve">
+    <value>Kinnita kustutamine</value>
+  </data>
+  <data name="CurrentConstrainExtentLabel" xml:space="preserve">
+    <value>Olemasoleva piirangu ümbriskasti ulatus:</value>
+  </data>
+  <data name="ConstrainExtentNotSetMessage" xml:space="preserve">
+    <value>Kaardi ulatuse piirang ei ole veel määratud.</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>Pole määratud</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Seadista aluskaarte</value>
+  </data>
+  <data name="ConfigureTheSetOfBaseMaps" xml:space="preserve">
+    <value>Seadista aluskaartide kogum</value>
+  </data>
+  <data name="AddNewBaseMap" xml:space="preserve">
+    <value>Lisa uus aluskaart</value>
+  </data>
+  <data name="ClickImageToChangeThumbnailIcon" xml:space="preserve">
+    <value>Kliki pisipildi muutmiseks pildile</value>
+  </data>
+  <data name="RequiresBingAppID" xml:space="preserve">
+    <value>Nõuab Bing App ID-d</value>
+  </data>
+  <data name="DeleteCurrentlySelectedBaseMap" xml:space="preserve">
+    <value>Kustuta hetkel valitud aluskaart</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapDown" xml:space="preserve">
+    <value>Liiguta hetkel valitud aluskaart</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapUp" xml:space="preserve">
+    <value>Liiguta hetkel valitud aluskaart ülespoole</value>
+  </data>
+  <data name="SubTypePrompt" xml:space="preserve">
+    <value>Alamtüüp:</value>
+  </data>
+  <data name="TextPrompt" xml:space="preserve">
+    <value>Tekst:</value>
+  </data>
+  <data name="ThumbnailPrompt" xml:space="preserve">
+    <value>Pisipilt:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Järgmine</value>
+  </data>
+  <data name="NoBehaviorTitleSpecified" xml:space="preserve">
+    <value>Eeskirja nimetust ei ole määratud</value>
+  </data>
+  <data name="PleaseProvideValidTitleForNewBehavior" xml:space="preserve">
+    <value>Palun märkige uuele eeskirjale sobilik pealkiri.</value>
+  </data>
+  <data name="SelectBehaviorToAdd" xml:space="preserve">
+    <value>Vali eeskiri</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Mood</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Mahu (cache) suurus: </value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>Hangi objektid kaardiala seest</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>Hangi kõik objektid korraga</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Objekti cache-suurus</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Maksimaalne objektide arv, mida kiht saab hankida.  Kui antud limiit on uute objektide hankimisel, siis vanemad objektid eemaldatakse kihist.</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>Hangi objekte kaardialast</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Ainult olemasoleva kaardivälja sees olevad objektid hangitakse situatsioonis, kui kiht on lisatud või värskendatud.  Rohkem objekte hangitakse juhul, kui kaardi ulatus muutub.</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>Hangi kõik objektid</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Kõik kihis olevad objektid hangitakse juhul, kui kihti laetakse või värskendatakse.</value>
+  </data>
+  <data name="BrowseContentUrlWatermark" xml:space="preserve">
+    <value>Sisesta serveri või kihi URL</value>
+  </data>
+  <data name="BrowseDialogNoResourcesFound" xml:space="preserve">
+    <value>Tulemusi ei leitud.</value>
+  </data>
+  <data name="BrowseDialogNoServerOrLayerFound" xml:space="preserve">
+    <value>Ühtegi teenust ega kihti ei leitud.</value>
+  </data>
+  <data name="SecureServices" xml:space="preserve">
+    <value>Turvatud teenused</value>
+  </data>
+  <data name="AutoUpdateNumericDescription" xml:space="preserve">
+    <value>Määra värskendamise intervall sekundites või minutites.  Seda kihti värskendatakse sellel intervallil automaatselt, kuni katkestatakse.</value>
+  </data>
+  <data name="AutoUpdateNumericTooltip" xml:space="preserve">
+    <value>Autom. uuenduse värskenduse sagedus</value>
+  </data>
+  <data name="AutoUpdatePollingDescription" xml:space="preserve">
+    <value>Määra, kas objektikihti uuendatakse automaatselt regulaarse intervalli tagant.</value>
+  </data>
+  <data name="AutoUpdatePollingTooltip" xml:space="preserve">
+    <value>Objektikihtide automaatne uuendamine</value>
+  </data>
+  <data name="AutoUpdateIntervalText" xml:space="preserve">
+    <value>Intervall:</value>
+  </data>
+  <data name="AutoUpdateLayerConfigTitle" xml:space="preserve">
+    <value>Automaatne uuendamine</value>
+  </data>
+  <data name="AvailableLayers" xml:space="preserve">
+    <value>Kättesaadavad kihid:</value>
+  </data>
+  <data name="EnablePopups" xml:space="preserve">
+    <value>Kuva hüpikaknaid</value>
+  </data>
+  <data name="EnablePopupsForLayer" xml:space="preserve">
+    <value>Kuva sellel kihil hüpikaknaid</value>
+  </data>
+  <data name="OnClick" xml:space="preserve">
+    <value>klikates</value>
+  </data>
+  <data name="OnHover" xml:space="preserve">
+    <value>üle liikumisel</value>
+  </data>
+  <data name="ConfigureEditorWidget" xml:space="preserve">
+    <value>Seadista muutmist</value>
+  </data>
+  <data name="SnapshotModeNote" xml:space="preserve">
+    <value>Märkus: Kui andmestiku objektide arv ületab teenuse poolt tagastatud objektide maksimaalse arvu, siis kõiki objekte ei lisata kihti.</value>
+  </data>
+  <data name="GraphicSymbolsTakePrecedence" xml:space="preserve">
+    <value>Siin defineeritud sümbolid on asendatud individuaalse graafika sümbolitega juhul, kui need on defineeritud.</value>
+  </data>
+  <data name="SpatialReference" xml:space="preserve">
+    <value>Ruumiline viitamine:</value>
+  </data>
+  <data name="XMax" xml:space="preserve">
+    <value>XMax:</value>
+  </data>
+  <data name="XMin" xml:space="preserve">
+    <value>XMin:</value>
+  </data>
+  <data name="YMax" xml:space="preserve">
+    <value>YMax</value>
+  </data>
+  <data name="YMin" xml:space="preserve">
+    <value>YMin</value>
+  </data>
+  <data name="NotFoundInLayout" xml:space="preserve">
+    <value>{0} ei leitud olemasolevast paigutusest</value>
+  </data>
+  <data name="ToggleEditFailed" xml:space="preserve">
+    <value>Muutmise kontrolli vahetus nurjus.  Olemasolev paigutus ei pruugi muutmist toetada</value>
+  </data>
+  <data name="PopupFromWebMap" xml:space="preserve">
+    <value>Kasuta hüpikakna definitsiooni veebikaardist.</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>Automaatne suum valitule</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Teosta</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Valikud</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>Kirjeid ({0} : {1} on valitud)</value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>Vaheta valitud osa</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Objekti taastamine</value>
+  </data>
+  <data name="ConfigureSecuredServices" xml:space="preserve">
+    <value>Seadista turvatud teenused</value>
+  </data>
+  <data name="ErrorChangingProxies" xml:space="preserve">
+    <value>Viga prokside muutmisel</value>
+  </data>
+  <data name="ProxyUrl" xml:space="preserve">
+    <value>Proksi Url:</value>
+  </data>
+  <data name="SpecifyUrlToProxyPageUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Määra selle rakenduse tarbeks URL, mida kasutatakse turvatud teenustele ligipääsul.  See proksi võib olla jagatud kõigi rakenduses olevate kihtide poolt, mis kasutavad turvatud teenust.</value>
+  </data>
+  <data name="UsesProxy" xml:space="preserve">
+    <value>Kasutab proksit</value>
+  </data>
+  <data name="WhetherThisLayerUsesProxyServiceForaccessingRestrictedService" xml:space="preserve">
+    <value>Kas see kiht kasutab proksi serverit keelatud teenusele ligipääsuks.  Proksi URL-i määramiseks kliki nupule 'Seadista proksi'.</value>
+  </data>
+  <data name="LayerHasNoAttributes" xml:space="preserve">
+    <value>Valitud kiht ei sisalda ühtegi kuvatavat atribuuti.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detailid</value>
+  </data>
+  <data name="ToggleErrorDetails" xml:space="preserve">
+    <value>Kuva või peida vea detailid.</value>
+  </data>
+  <data name="LayerIsNotGraphicsLayer" xml:space="preserve">
+    <value>Valitud kihi atribuute ei saa kuvada, sest kiht on ArcGIS Serveri dünaamiline või cache kujul teenuse kiht.  Täpsema info saamiseks lugege lähemalt kihtide tüüpide kohta abist.</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteBasemap" xml:space="preserve">
+    <value>Oled kindel, et soovid antud aluskaardi kustutada?</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Kinnita kustutamine</value>
+  </data>
+  <data name="NewBasemap" xml:space="preserve">
+    <value>Uus aluskaart</value>
+  </data>
+  <data name="ConfigureSelectedLayer" xml:space="preserve">
+    <value>Seadista valitud kiht</value>
+  </data>
+  <data name="SelectLayerToAdd" xml:space="preserve">
+    <value>Vali kiht lisamiseks</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Turvatud teenuste juurdepääs</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Lisa turvatud teenused</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Proksi seadistamine</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServices" xml:space="preserve">
+    <value>Seadista proksi, mida kasutatakse rakenduses turvatud teenustele ligipääsuks</value>
+  </data>
+  <data name="BehaviorSaveFailed" xml:space="preserve">
+    <value>Seadistuse eeskirja salvestamine nurjus</value>
+  </data>
+  <data name="BehaviorSaveFailedMessage" xml:space="preserve">
+    <value>Manustatud kaardi eeskirjade rakenduses seadete salvestamisel tekkis tõrge.</value>
+  </data>
+  <data name="LayerInitFailure" xml:space="preserve">
+    <value>Kihi initsialiseerimine nurjus</value>
+  </data>
+  <data name="LayerNotInitialized" xml:space="preserve">
+    <value>Kihti ei saa lähtestada.</value>
+  </data>
+  <data name="DeleteGraphicConfirmation" xml:space="preserve">
+    <value>Eemalda objekt?</value>
+  </data>
+  <data name="DeleteGraphicConfirmationTitle" xml:space="preserve">
+    <value>Kinnitus</value>
+  </data>
+  <data name="EditValuesCommandEditorBackButtonContent" xml:space="preserve">
+    <value>Tühista</value>
+  </data>
+  <data name="ConfigureBehavior" xml:space="preserve">
+    <value>Seadista käitumist</value>
+  </data>
+  <data name="DisablePopupForLayer" xml:space="preserve">
+    <value>Ära luba hüpikaknaid</value>
+  </data>
+  <data name="EnablePopupForLayer" xml:space="preserve">
+    <value>Luba hüpikaknaid</value>
+  </data>
+  <data name="LinkWebMapDialogCaption" xml:space="preserve">
+    <value>Link veebikaardile</value>
+  </data>
+  <data name="LinkWebMapDialogMessage" xml:space="preserve">
+    <value>Kaardi seadistamine laetakse veebikaardist.  Olemasolev kaardi seadistus kaob.  Soovid jätkata?</value>
+  </data>
+  <data name="UnlinkWebMapDialogCaption" xml:space="preserve">
+    <value>Ühenda veebikaardist lahti</value>
+  </data>
+  <data name="UnlinkWebMapDialogMessage" xml:space="preserve">
+    <value>Kaardi seadistamine katkestatakse veebikaardist.  Teil on võimalik kihte lisada, eemaldada ja neid seadistada, kuid veebikaardiga seotud uuendusi rohkem kaardile ei kuvata.  Soovid jätkata?</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standardne</value>
+  </data>
+  <data name="Business" xml:space="preserve">
+    <value>Äri</value>
+  </data>
+  <data name="Cartography" xml:space="preserve">
+    <value>Kartograafia</value>
+  </data>
+  <data name="Outdoor_Recreation" xml:space="preserve">
+    <value>Välirekreatsioon</value>
+  </data>
+  <data name="People_and_Places" xml:space="preserve">
+    <value>Inimesed ja paigad</value>
+  </data>
+  <data name="Public_Safety_and_Health" xml:space="preserve">
+    <value>Avalik julgeolek ja tervishoid</value>
+  </data>
+  <data name="Transportation" xml:space="preserve">
+    <value>Transport</value>
+  </data>
+  <data name="WebMapLoadFailed" xml:space="preserve">
+    <value>Veebikaart id-ga {0} ei saa laadida.  Teil ei pruugi olla sellele kaardile ligipääsuks õigusi  või ei pruugi seda enam eksisteerida.</value>
+  </data>
+  <data name="ClusteringDisallowedCaption" xml:space="preserve">
+    <value>Klasterdamine ei ole lubatud</value>
+  </data>
+  <data name="ClusteringDisallowedMessage" xml:space="preserve">
+    <value>Klasterdamine ei ole lubatud, kuna kiht on valitud muutmiseks.</value>
+  </data>
+  <data name="UnsupportedBasemapType" xml:space="preserve">
+    <value>Mittetoetatud aluskaardi tüüp</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Kasuta proksit</value>
+  </data>
+  <data name="AreaNotesLayer" xml:space="preserve">
+    <value>{0} - Alad</value>
+  </data>
+  <data name="LineNotesLayer" xml:space="preserve">
+    <value>{0} - Jooned</value>
+  </data>
+  <data name="PointNotesLayer" xml:space="preserve">
+    <value>{0} - Punktid</value>
+  </data>
+  <data name="Editing" xml:space="preserve">
+    <value>Muutmine</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Lubatud</value>
+  </data>
+  <data name="ArcGISPortalDefaultName" xml:space="preserve">
+    <value>Portal for ArcGIS</value>
+  </data>
+  <data name="SignInToArcGISServer" xml:space="preserve">
+    <value>Logi sisse ArcGIS Serverisse {0}</value>
+  </data>
+  <data name="InvalidUrlUserPassword" xml:space="preserve">
+    <value>Vigane URL, kasutajanimi või parool</value>
+  </data>
+  <data name="SignInTo" xml:space="preserve">
+    <value>Logi sisse {0}</value>
+  </data>
+  <data name="SignInToServer" xml:space="preserve">
+    <value>Logi sisse ArcGIS Serverisse</value>
+  </data>
+  <data name="SignInToSecureServices" xml:space="preserve">
+    <value>Logi sisse turvatud teenustele ligipääsuks</value>
+  </data>
+  <data name="OpenStreetMap" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="FeatureLayer" xml:space="preserve">
+    <value>Objektikiht</value>
+  </data>
+  <data name="MapLayer" xml:space="preserve">
+    <value>Kaardikiht</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>Sisse logimine ebaõnnestus.</value>
+  </data>
+</root>

@@ -1,0 +1,29 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="ESRI.ArcGIS.Mapping.Viewer" EntryPointType="ESRI.ArcGIS.Mapping.Builder.App" RuntimeVersion="4.0.50826.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.Extensibility.resources" Source="ESRI.ArcGIS.Client.Extensibility.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.Application.Layout.resources" Source="ESRI.ArcGIS.Client.Application.Layout.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Mapping.Controls.Editor.resources" Source="ESRI.ArcGIS.Mapping.Controls.Editor.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Mapping.Controls.MapContents.resources" Source="ESRI.ArcGIS.Mapping.Controls.MapContents.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Mapping.Builder.resources" Source="ESRI.ArcGIS.Mapping.Builder.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Mapping.Core.resources" Source="ESRI.ArcGIS.Mapping.Core.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Mapping.Controls.resources" Source="ESRI.ArcGIS.Mapping.Controls.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Mapping.Controls.ArcGISOnline" Source="ESRI.ArcGIS.Mapping.Controls.ArcGISOnline.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Mapping.DataSources.resources" Source="ESRI.ArcGIS.Mapping.DataSources.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Mapping.Identify.resources" Source="ESRI.ArcGIS.Mapping.Identify.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Mapping.Windowing.resources" Source="ESRI.ArcGIS.Mapping.Windowing.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Mapping.GP.resources" Source="ESRI.ArcGIS.Mapping.GP.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.Behaviors.resources" Source="ESRI.ArcGIS.Client.Behaviors.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.Bing.resources" Source="ESRI.ArcGIS.Client.Bing.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.resources" Source="ESRI.ArcGIS.Client.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.Toolkit.DataSources.resources" Source="ESRI.ArcGIS.Client.Toolkit.DataSources.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.Toolkit.resources" Source="ESRI.ArcGIS.Client.Toolkit.resources.dll" />
+    <AssemblyPart x:Name="ESRI.ArcGIS.Client.WebMap.resources" Source="ESRI.ArcGIS.Client.WebMap.resources.dll" />
+  </Deployment.Parts>
+</Deployment>

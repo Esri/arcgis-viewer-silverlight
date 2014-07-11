@@ -1,0 +1,2079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptChangesTooltip" xml:space="preserve">
+    <value>Godta endringer</value>
+  </data>
+  <data name="AddCoordsToListFailedCaption" xml:space="preserve">
+    <value>Lagring av resultater mislyktes</value>
+  </data>
+  <data name="AddCoordsToListFailedPrompt" xml:space="preserve">
+    <value>Mislyktes i å legge adressesamsvarende koordinater til listen. Prøve igjen?</value>
+  </data>
+  <data name="AddData" xml:space="preserve">
+    <value>Legg til data</value>
+  </data>
+  <data name="AddDataSetTooltip" xml:space="preserve">
+    <value>Legg til datasett</value>
+  </data>
+  <data name="AddDataTooltip" xml:space="preserve">
+    <value>Legg flere data til kartet</value>
+  </data>
+  <data name="AddRange" xml:space="preserve">
+    <value>Legg til område</value>
+  </data>
+  <data name="AddressMatchError" xml:space="preserve">
+    <value>Feil ved adressesamsvar: {0}</value>
+  </data>
+  <data name="AddressMatchingServicePrompt" xml:space="preserve">
+    <value>Tjeneste:</value>
+  </data>
+  <data name="AdvancedClusterProperties" xml:space="preserve">
+    <value>Avanserte grupperingsegenskaper</value>
+  </data>
+  <data name="AGSOImagery" xml:space="preserve">
+    <value>Bilder</value>
+  </data>
+  <data name="AGSOStreets" xml:space="preserve">
+    <value>Gater</value>
+  </data>
+  <data name="AGSOTopo" xml:space="preserve">
+    <value>Topografisk</value>
+  </data>
+  <data name="AliasHeader" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Bruk</value>
+  </data>
+  <data name="ArcGISOnline" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="ArcGISServer" xml:space="preserve">
+    <value>ArcGIS Server</value>
+  </data>
+  <data name="AssociatedMapPrompt" xml:space="preserve">
+    <value>Kart:</value>
+  </data>
+  <data name="AutoScroll" xml:space="preserve">
+    <value>Autorull:</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Bakgrunn</value>
+  </data>
+  <data name="BaseMapConfigurationSectionHeader" xml:space="preserve">
+    <value>Bakgrunnskart</value>
+  </data>
+  <data name="BaseMapPrompt" xml:space="preserve">
+    <value>Bakgrunnskart:</value>
+  </data>
+  <data name="BingMaps" xml:space="preserve">
+    <value>Bing Maps</value>
+  </data>
+  <data name="BingMapsAccountInfo" xml:space="preserve">
+    <value>Kontoinformasjon for Bing Maps</value>
+  </data>
+  <data name="BingMapsAerial" xml:space="preserve">
+    <value>Ortofoto</value>
+  </data>
+  <data name="BingMapsAerialWithLabels" xml:space="preserve">
+    <value>Ortofoto - Etiketter</value>
+  </data>
+  <data name="BingMapsInitializeFailed" xml:space="preserve">
+    <value>Godkjenning av Bing Maps mislyktes. Et ArcGIS Online-bakgrunnskart blir brukt i stedet. Kontakt administratoren hvis du trenger mer hjelp.</value>
+  </data>
+  <data name="BingMapsRoads" xml:space="preserve">
+    <value>Veier</value>
+  </data>
+  <data name="Border" xml:space="preserve">
+    <value>Kantlinje</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Bla gjennom...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>Avbryter</value>
+  </data>
+  <data name="ChangeBaseMapTooltip" xml:space="preserve">
+    <value>Endre bakgrunnskart</value>
+  </data>
+  <data name="ChangeColorRampTooltip" xml:space="preserve">
+    <value>Velg fargeskjema</value>
+  </data>
+  <data name="ChangeGradientStopsTooltip" xml:space="preserve">
+    <value>Klikk for å velge gradientstopp for varmekartet</value>
+  </data>
+  <data name="CheckForUpdatesPrompt" xml:space="preserve">
+    <value>Søk etter oppdateringer:</value>
+  </data>
+  <data name="CheckForUpdateTooltip" xml:space="preserve">
+    <value>Hent oppdaterte listedata når kartet panoreres eller zoomes</value>
+  </data>
+  <data name="ChooseBaseMapLayer" xml:space="preserve">
+    <value>Velg et bakgrunnskart</value>
+  </data>
+  <data name="ChooseLayerHeader" xml:space="preserve">
+    <value>Velg datasett</value>
+  </data>
+  <data name="CityPrompt" xml:space="preserve">
+    <value>Poststed:</value>
+  </data>
+  <data name="ClassifyBy" xml:space="preserve">
+    <value>Velg feltet som verdiområdene skal baseres på</value>
+  </data>
+  <data name="ClassifyByPrompt" xml:space="preserve">
+    <value>Klassifiser etter:</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Fjern alle</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Fjern utvalg</value>
+  </data>
+  <data name="ClickSeqmentToZoom" xml:space="preserve">
+    <value>Klikk på et enkeltsegment for å zoome til det segmentet.</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>Klikk for å flytte østover</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>Klikk for å flytte nordover</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>Klikk for å flytte sørover</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>Klikk for å flytte vestover</value>
+  </data>
+  <data name="ClusterAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Avanserte egenskaper</value>
+  </data>
+  <data name="ClusterFeaturesTooltipFirstBit" xml:space="preserve">
+    <value>Gruppering</value>
+  </data>
+  <data name="ClusterFeaturesTooltipSecondBit" xml:space="preserve">
+    <value>Geoobjekter</value>
+  </data>
+  <data name="ClusterTooltip" xml:space="preserve">
+    <value>Dra grupperinger av geoobjekter sammen</value>
+  </data>
+  <data name="ColorsPrompt" xml:space="preserve">
+    <value>Farger:</value>
+  </data>
+  <data name="ConfigurationTooltip" xml:space="preserve">
+    <value>Konfigurasjon</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Konfigurer</value>
+  </data>
+  <data name="ConfigureBingMapsCredentials" xml:space="preserve">
+    <value>Klikk for å konfigurere kontoinformasjon for Bing Maps</value>
+  </data>
+  <data name="ConfigureSettings" xml:space="preserve">
+    <value>Konfigurer innstillinger</value>
+  </data>
+  <data name="ConfigureTooltip" xml:space="preserve">
+    <value>Konfigurer</value>
+  </data>
+  <data name="CountryPrompt" xml:space="preserve">
+    <value>Land:</value>
+  </data>
+  <data name="CurrentSymbolPrompt" xml:space="preserve">
+    <value>Gjeldende symbol:</value>
+  </data>
+  <data name="CustomColorRamp" xml:space="preserve">
+    <value>Tilpasset</value>
+  </data>
+  <data name="CustomColorRampToolTip" xml:space="preserve">
+    <value>Velg farger for hvert verdiområde</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Datakilde:</value>
+  </data>
+  <data name="DataSourceTooltip" xml:space="preserve">
+    <value>Oppgi URL til et sluttpunkt for SharePoint, romlig datatjeneste eller ArcGIS Server</value>
+  </data>
+  <data name="DefinitionTabHeader" xml:space="preserve">
+    <value>Definisjon</value>
+  </data>
+  <data name="DefinitionTabHeaderTooltip" xml:space="preserve">
+    <value>Definer egenskaper for gjeldende datasett</value>
+  </data>
+  <data name="DeleteConnectionCaption" xml:space="preserve">
+    <value>Bekreft sletting</value>
+  </data>
+  <data name="DeleteConnectionPrompt" xml:space="preserve">
+    <value>Er du sikker på at du vil slette denne tilkoblingen?</value>
+  </data>
+  <data name="DeleteLayerMessageCaption" xml:space="preserve">
+    <value>Bekreft sletting</value>
+  </data>
+  <data name="DeleteLayerPrompt" xml:space="preserve">
+    <value>Er du sikker på at du vil slette dette datasettet fra kartet?</value>
+  </data>
+  <data name="DeleteRange" xml:space="preserve">
+    <value>Slett område</value>
+  </data>
+  <data name="DisplayNamePrompt" xml:space="preserve">
+    <value>Visningsnavn:</value>
+  </data>
+  <data name="DisplayNameTooltip" xml:space="preserve">
+    <value>Definer visningsnavnet for gjeldende datasett</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>Dra for å rotere</value>
+  </data>
+  <data name="DuplicateDataSource" xml:space="preserve">
+    <value>{0} er allerede lagt til som datakilde</value>
+  </data>
+  <data name="DuplicateMapServiceLayer" xml:space="preserve">
+    <value>Karttjeneste er allerede lagt til</value>
+  </data>
+  <data name="DuplicateMapServiceLayerCaption" xml:space="preserve">
+    <value>Duplikat oppdaget</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Rediger</value>
+  </data>
+  <data name="EnterCredentials" xml:space="preserve">
+    <value>Oppgi brukernavn og passord</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>Feil</value>
+  </data>
+  <data name="Europe" xml:space="preserve">
+    <value>Europa</value>
+  </data>
+  <data name="Every" xml:space="preserve">
+    <value>Hver</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>Utvid/trekk sammen</value>
+  </data>
+  <data name="ExportSelection" xml:space="preserve">
+    <value>Eksporter utvalg</value>
+  </data>
+  <data name="FieldHeader" xml:space="preserve">
+    <value>Felt</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>Fyll</value>
+  </data>
+  <data name="FilterByMapView" xml:space="preserve">
+    <value>Filtrer etter kartvisning:</value>
+  </data>
+  <data name="FilterExpressionPrompt" xml:space="preserve">
+    <value>Filteruttrykk:</value>
+  </data>
+  <data name="FilterExpressionTooltip" xml:space="preserve">
+    <value>Bruk et filter på gjeldende datasett</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Søk etter</value>
+  </data>
+  <data name="FindDirections" xml:space="preserve">
+    <value>Finn anvisninger</value>
+  </data>
+  <data name="FindLocation" xml:space="preserve">
+    <value>Finn plassering</value>
+  </data>
+  <data name="FindNearby" xml:space="preserve">
+    <value>Finn i nærheten</value>
+  </data>
+  <data name="FixLocation" xml:space="preserve">
+    <value>Fiks plassering</value>
+  </data>
+  <data name="Foreground" xml:space="preserve">
+    <value>Forgrunn</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>Mer informasjon</value>
+  </data>
+  <data name="FromPrompt" xml:space="preserve">
+    <value>Fra:</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>Full utstrekning</value>
+  </data>
+  <data name="GetListItemsFailed" xml:space="preserve">
+    <value>Kunne ikke hente objekter fra {0} på sted {1}</value>
+  </data>
+  <data name="GetListItemsFailedPromptRemove" xml:space="preserve">
+    <value>Kunne ikke hente objekter fra {0} på sted {1}. Vil du fjerne denne visningen fra kartet?</value>
+  </data>
+  <data name="GetListsFailed" xml:space="preserve">
+    <value>Henting av lister mislyktes: {0}</value>
+  </data>
+  <data name="HeatMap" xml:space="preserve">
+    <value>Varmekart</value>
+  </data>
+  <data name="HeatMapAdvancedProperties" xml:space="preserve">
+    <value>Egenskaper for varmekart</value>
+  </data>
+  <data name="HeatMapAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Egenskaper for opptegning av varmekart</value>
+  </data>
+  <data name="HeatMapTooltip" xml:space="preserve">
+    <value>Vis data som et varmekart</value>
+  </data>
+  <data name="HundredPercent" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="InitializationError" xml:space="preserve">
+    <value>Initialiseringsfeil: {0}</value>
+  </data>
+  <data name="IntensityPrompt" xml:space="preserve">
+    <value>Intensitet:</value>
+  </data>
+  <data name="InvalidUrlCaption" xml:space="preserve">
+    <value>Ugyldig URL</value>
+  </data>
+  <data name="InvalidUrlPrompt" xml:space="preserve">
+    <value>Oppgi en gyldig URL</value>
+  </data>
+  <data name="LatitudePrompt" xml:space="preserve">
+    <value>Breddegrad (Y):</value>
+  </data>
+  <data name="LayerInfoRetrievalError" xml:space="preserve">
+    <value>Feil ved henting av kartlaginformasjon: {0}</value>
+  </data>
+  <data name="LayersTabHeader" xml:space="preserve">
+    <value>Lagsynlighet</value>
+  </data>
+  <data name="LayersTabHeaderTooltip" xml:space="preserve">
+    <value>Konfigurer kartlagenes synlighet</value>
+  </data>
+  <data name="ListViewHeader" xml:space="preserve">
+    <value>Listevisning</value>
+  </data>
+  <data name="LoadDataSourceTooltip" xml:space="preserve">
+    <value>Last inn datakilde</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>Finn</value>
+  </data>
+  <data name="LocateByAddress" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="LocateByAddressTooltip" xml:space="preserve">
+    <value>Bruk adressesamsvar til å tegne gjeldende listedata</value>
+  </data>
+  <data name="LocateByCoordinates" xml:space="preserve">
+    <value>Koordinater</value>
+  </data>
+  <data name="LocateByCoordinatesTooltip" xml:space="preserve">
+    <value>Bruk koordinater til å tegne gjeldende listedata</value>
+  </data>
+  <data name="LocateByPrompt" xml:space="preserve">
+    <value>Finn ved:</value>
+  </data>
+  <data name="LocateTooltip" xml:space="preserve">
+    <value>Lag adressesamsvar for gjeldende liste</value>
+  </data>
+  <data name="LocateUpdateTooltip" xml:space="preserve">
+    <value>Tegn gjeldende liste basert på valgte koordinatfelter</value>
+  </data>
+  <data name="LocationFieldsTabHeader" xml:space="preserve">
+    <value>Plasseringsfelter</value>
+  </data>
+  <data name="LocationFieldsTabHeaderTooltip" xml:space="preserve">
+    <value>Velg adresse eller geografiske felter for gjeldende datasett</value>
+  </data>
+  <data name="LongitudePrompt" xml:space="preserve">
+    <value>Lengdegrad (X):</value>
+  </data>
+  <data name="MapContentsTooltip" xml:space="preserve">
+    <value>Kartinnhold</value>
+  </data>
+  <data name="MapXaml" xml:space="preserve">
+    <value>Kart-XAML</value>
+  </data>
+  <data name="MapXamlRepresentation" xml:space="preserve">
+    <value>XAML-representasjon av kart</value>
+  </data>
+  <data name="MaxPrompt" xml:space="preserve">
+    <value>Maks:</value>
+  </data>
+  <data name="MinPrompt" xml:space="preserve">
+    <value>Min:</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minutter</value>
+  </data>
+  <data name="ModifyRangeTooltip" xml:space="preserve">
+    <value>Endre område</value>
+  </data>
+  <data name="MoveBarUpDown" xml:space="preserve">
+    <value>Flytt stolpen opp for å zoome inn, ned for å zoome ut</value>
+  </data>
+  <data name="MoveDownTooltip" xml:space="preserve">
+    <value>Flytt ned</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>Flytt fremst</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>Flytt bakerst</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>Flytt neste</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>Flytt forrige</value>
+  </data>
+  <data name="MoveRangeTooltip" xml:space="preserve">
+    <value>Flytt område</value>
+  </data>
+  <data name="MoveUpTooltip" xml:space="preserve">
+    <value>Flytt opp</value>
+  </data>
+  <data name="MultiLayerCacheNotSupported" xml:space="preserve">
+    <value>Flerlagsbufrede oppdelte karttjenester støttes ikke. Bruk eller opprett en enkelt-fused buffer i stedet.</value>
+  </data>
+  <data name="MultiLayerCacheNotSupportedCaption" xml:space="preserve">
+    <value>Flerlagsbufrede oppdelte karttjenester støttes ikke</value>
+  </data>
+  <data name="MultipleViewsNotAllowed" xml:space="preserve">
+    <value>SharePoint-listevisninger kan ikke legges til flere ganger</value>
+  </data>
+  <data name="NewDataSourceHelpText" xml:space="preserve">
+    <value>&lt;Oppgi servernavn  eller http-sluttpunkt&gt;</value>
+  </data>
+  <data name="NextRange" xml:space="preserve">
+    <value>Neste område</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefined" xml:space="preserve">
+    <value>Plasseringsfelter for listen er ikke tilordnet. Tilordne kolonner i listen til riktige felter.</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefinedCaption" xml:space="preserve">
+    <value>Definer tilordning for plasseringsfelt</value>
+  </data>
+  <data name="NoAssociatedMapWebPart" xml:space="preserve">
+    <value>Fant ingen kartwebdeler.</value>
+  </data>
+  <data name="NoDistinctNumericFields" xml:space="preserve">
+    <value>Alle numeriske felter i dette datasettet har samme minimums- og maksimumsverdier. Minimums- og maksimumsverdiene må være forskjellige for å konfigurere verdiområder.</value>
+  </data>
+  <data name="NoGeographicListsFound" xml:space="preserve">
+    <value>Fant ingen lister som inneholder geografiske data på {0}</value>
+  </data>
+  <data name="NoLayersAdded" xml:space="preserve">
+    <value>Klikk på Legg til data-knappen for å legge data til kartet</value>
+  </data>
+  <data name="NoGPServicesFound" xml:space="preserve">
+    <value>Ingen geoprosesseringstjenester ble funnet på {0}</value>
+  </data>
+  <data name="NoMapServicesFound" xml:space="preserve">
+    <value>Fant ingen karttjenester på {0}</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
+  <data name="NoNumericFieldsFound" xml:space="preserve">
+    <value>Dette datasettet inneholder ingen numeriske felter. Verdiområder kan bare angis for datasett som inneholder minst ett numerisk felt.</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>Ingen poster</value>
+  </data>
+  <data name="NoRecordsForVisibleLayer" xml:space="preserve">
+    <value>Objekter for denne listen er ikke hentet av kartet. Slå på synlighet for listen for å vise objekter.</value>
+  </data>
+  <data name="NoResultsCaption" xml:space="preserve">
+    <value>Ingen resultater</value>
+  </data>
+  <data name="NoResultsLayerNotVisible" xml:space="preserve">
+    <value>Fant ingen poster fordi listen ikke er synlig på kartet</value>
+  </data>
+  <data name="NorthAmerica" xml:space="preserve">
+    <value>Nord-Amerika</value>
+  </data>
+  <data name="NoSpatialTablesFound" xml:space="preserve">
+    <value>Fant ingen tabeller som inneholder geografiske data på {0}</value>
+  </data>
+  <data name="NumericFieldNotDistinct" xml:space="preserve">
+    <value>Feltet {0} inneholder samme minimums- og maksimumsverdier. Verdiområder kan bare konfigureres for felter som har forskjellige minimums- og maksimumsverdier.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OnPanAndZoom" xml:space="preserve">
+    <value>Ved panorering og zooming</value>
+  </data>
+  <data name="OperationalDataSectionHeader" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Passord:</value>
+  </data>
+  <data name="PleaseSpecifyDataSourceMessage" xml:space="preserve">
+    <value>Angi en datakilde</value>
+  </data>
+  <data name="PollForUpdatesTooltip" xml:space="preserve">
+    <value>Definer et intervall for henting av oppdaterte listedata</value>
+  </data>
+  <data name="PopUpTabHeader" xml:space="preserve">
+    <value>Popupfelt</value>
+  </data>
+  <data name="PopUpTabHeaderTooltip" xml:space="preserve">
+    <value>Konfigurer popupfeltets kartinformasjon for gjeldende datasett</value>
+  </data>
+  <data name="PreDefinedColorRamp" xml:space="preserve">
+    <value>Forhåndsdefinert</value>
+  </data>
+  <data name="PreDefinedColorRampTooltip" xml:space="preserve">
+    <value>Bruk et sett med forhåndsdefinerte farger</value>
+  </data>
+  <data name="PreviousRange" xml:space="preserve">
+    <value>Forrige område</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>Produksjon</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Egenskaper - {0}</value>
+  </data>
+  <data name="RecordsPrompt" xml:space="preserve">
+    <value>Poster:</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Oppdater</value>
+  </data>
+  <data name="RefreshError" xml:space="preserve">
+    <value>Det oppstod en feil under oppdatering av {0}-kartlaget</value>
+  </data>
+  <data name="RefreshMapXamlTooltip" xml:space="preserve">
+    <value>Oppdater kart-XAML</value>
+  </data>
+  <data name="RefreshTooltip" xml:space="preserve">
+    <value>Oppdater</value>
+  </data>
+  <data name="RemoveTooltip" xml:space="preserve">
+    <value>Fjern</value>
+  </data>
+  <data name="ResetExtent" xml:space="preserve">
+    <value>Tilbakestill utstrekning</value>
+  </data>
+  <data name="ResetExtentTooltip" xml:space="preserve">
+    <value>Tilbakestill kartets utstrekning til den opprinnelige utstrekningen som definert av ArcGIS Server-tjenesten.</value>
+  </data>
+  <data name="ResetMapRotation" xml:space="preserve">
+    <value>Tilbakestill kartrotasjon</value>
+  </data>
+  <data name="ResolutionPrompt" xml:space="preserve">
+    <value>Oppløsning:</value>
+  </data>
+  <data name="ResultsViewHeader" xml:space="preserve">
+    <value>Resultatvisning</value>
+  </data>
+  <data name="RetrievingBaseMaps" xml:space="preserve">
+    <value>Henter tilgjengelige bakgrunnskart</value>
+  </data>
+  <data name="RetrievingGeometryType" xml:space="preserve">
+    <value>Henter geometritype</value>
+  </data>
+  <data name="RetrievingInformation" xml:space="preserve">
+    <value>Henter informasjon fra server</value>
+  </data>
+  <data name="RollBackChangesTooltip" xml:space="preserve">
+    <value>Rull tilbake endringer</value>
+  </data>
+  <data name="ScaleBarUnit_feet" xml:space="preserve">
+    <value>ft</value>
+  </data>
+  <data name="ScaleBarUnit_kilometers" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="ScaleBarUnit_meters" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="ScaleBarUnit_miles" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>Sekunder</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Velg alle</value>
+  </data>
+  <data name="SelectAllTooltip" xml:space="preserve">
+    <value>Velg alle</value>
+  </data>
+  <data name="SelectedRangePrompt" xml:space="preserve">
+    <value>Område:</value>
+  </data>
+  <data name="SelectedRecordsFormatString" xml:space="preserve">
+    <value>Poster ({0} av {1} valgt)</value>
+  </data>
+  <data name="SelectRangeTooltip" xml:space="preserve">
+    <value>Velg område for redigering</value>
+  </data>
+  <data name="ServerPrompt" xml:space="preserve">
+    <value>Server:</value>
+  </data>
+  <data name="ServiceConnectionError" xml:space="preserve">
+    <value>Det oppstod en feil ved tilkobling til {0}. Kontroller URLen, kontroller at tjenesten kjører og prøv igjen.</value>
+  </data>
+  <data name="ServiceConnectionErrorCaption" xml:space="preserve">
+    <value>Feil ved tilkobling</value>
+  </data>
+  <data name="ServiceConnectionErrorDuringInit" xml:space="preserve">
+    <value>Kan ikke koble til {0}.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Innstillinger</value>
+  </data>
+  <data name="ShowHide" xml:space="preserve">
+    <value>Vis/skjul</value>
+  </data>
+  <data name="ShowHideTooltip" xml:space="preserve">
+    <value>Vis/skjul</value>
+  </data>
+  <data name="SimpleSymbolType" xml:space="preserve">
+    <value>Enkel</value>
+  </data>
+  <data name="SimpleSymbolTypeTooltip" xml:space="preserve">
+    <value>Vis gjeldende datasett med ett symbol</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Kilde:</value>
+  </data>
+  <data name="Staging" xml:space="preserve">
+    <value>Oppstilling</value>
+  </data>
+  <data name="StatePrompt" xml:space="preserve">
+    <value>Stat/underdeling:</value>
+  </data>
+  <data name="SymbolsTabHeader" xml:space="preserve">
+    <value>Symboler</value>
+  </data>
+  <data name="SymbolsTabHeaderTooltip" xml:space="preserve">
+    <value>Konfigurer visningen av gjeldende datasett</value>
+  </data>
+  <data name="SymbolTypePrompt" xml:space="preserve">
+    <value>Symboltyper:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>til</value>
+  </data>
+  <data name="TokenAuthenticationFailed" xml:space="preserve">
+    <value>Godkjenning av Bing Maps mislyktes. Sjekk akkreditivene og prøv igjen.</value>
+  </data>
+  <data name="TokenConnectionFailed" xml:space="preserve">
+    <value>Tilkobling for henting av token mislyktes. Sjekk tilkoblingen til vertsserveren, og prøv igjen.</value>
+  </data>
+  <data name="TolerancePrompt" xml:space="preserve">
+    <value>Toleranse:</value>
+  </data>
+  <data name="ToPrompt" xml:space="preserve">
+    <value>Til:</value>
+  </data>
+  <data name="TotalDistancePrompt" xml:space="preserve">
+    <value>Total avstand:</value>
+  </data>
+  <data name="TotalTimePrompt" xml:space="preserve">
+    <value>Total tid:</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>Gjennomsiktighet</value>
+  </data>
+  <data name="TransparencyPrompt" xml:space="preserve">
+    <value>Gjennomsiktighet:</value>
+  </data>
+  <data name="UnhandledSilverlightError" xml:space="preserve">
+    <value>Uhåndtert feil i Silverlight 2-program</value>
+  </data>
+  <data name="UpdateAddress" xml:space="preserve">
+    <value>Oppdater adresse</value>
+  </data>
+  <data name="UpdateLayerError" xml:space="preserve">
+    <value>Feil ved oppdatering av kartlag: {0}</value>
+  </data>
+  <data name="UpdateListError" xml:space="preserve">
+    <value>Feil ved bruk av listeendringer: {0}</value>
+  </data>
+  <data name="UrlPrompt" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="UserNamePrompt" xml:space="preserve">
+    <value>Bruker:</value>
+  </data>
+  <data name="UseStagingServer" xml:space="preserve">
+    <value>Bruk oppstillingsserver</value>
+  </data>
+  <data name="ValidAddressError" xml:space="preserve">
+    <value>Oppgi en gyldig adresse</value>
+  </data>
+  <data name="ValidAddressErrorCaption" xml:space="preserve">
+    <value>Ugyldig adresse</value>
+  </data>
+  <data name="ValidCoordinatesError" xml:space="preserve">
+    <value>Oppgi gyldige koordinater</value>
+  </data>
+  <data name="ValidCoordinatesErrorCaption" xml:space="preserve">
+    <value>Ugyldige koordinater</value>
+  </data>
+  <data name="ValueRanges" xml:space="preserve">
+    <value>Verdiområder</value>
+  </data>
+  <data name="ValueRangesTooltip" xml:space="preserve">
+    <value>Vis gjeldende datasett basert på verdiområder</value>
+  </data>
+  <data name="ViewItem" xml:space="preserve">
+    <value>Vis objekt</value>
+  </data>
+  <data name="VisibleHeader" xml:space="preserve">
+    <value>Synlig</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Bredde</value>
+  </data>
+  <data name="XamlRepresentation" xml:space="preserve">
+    <value>XAML-representasjon av gjeldende kartlag</value>
+  </data>
+  <data name="XamlViewTabHeader" xml:space="preserve">
+    <value>Xaml-visning</value>
+  </data>
+  <data name="XamlViewTabHeaderTooltip" xml:space="preserve">
+    <value>Vis generert Xaml for kartlaget</value>
+  </data>
+  <data name="ZeroPercent" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="Zip4Prompt" xml:space="preserve">
+    <value>Postnummer4:</value>
+  </data>
+  <data name="ZipPrompt" xml:space="preserve">
+    <value>Postnummer:</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Zoom inn</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Zoom ut</value>
+  </data>
+  <data name="ZoomOutButton" xml:space="preserve">
+    <value>Zoom ut</value>
+  </data>
+  <data name="ZoomRangeTooltip" xml:space="preserve">
+    <value>Zoom inn på område</value>
+  </data>
+  <data name="ZoomToAllRecords" xml:space="preserve">
+    <value>Gå til</value>
+  </data>
+  <data name="ZoomToItem" xml:space="preserve">
+    <value>Zoom til objekt</value>
+  </data>
+  <data name="ZoomToSelection" xml:space="preserve">
+    <value>Zoom til utvalg</value>
+  </data>
+  <data name="ConfigFileUrlTextboxTooltip" xml:space="preserve">
+    <value>Oppgi URL til konfigurasjonsfil</value>
+  </data>
+  <data name="ConnectToSharePointDataSource" xml:space="preserve">
+    <value>&lt;Oppgi URL til et SharePoint-sted&gt;</value>
+  </data>
+  <data name="ExportToFile" xml:space="preserve">
+    <value>Eksporter til fil</value>
+  </data>
+  <data name="FileNamePrompt" xml:space="preserve">
+    <value>Filnavn:</value>
+  </data>
+  <data name="MustEnterFileName" xml:space="preserve">
+    <value>Oppgi et filnavn</value>
+  </data>
+  <data name="MustEnterFileNameTitle" xml:space="preserve">
+    <value>Manglende filnavn</value>
+  </data>
+  <data name="OverwriteExistingFile" xml:space="preserve">
+    <value>Overskriv eksisterende fil</value>
+  </data>
+  <data name="UrlToSitePrompt" xml:space="preserve">
+    <value>Område-URL:</value>
+  </data>
+  <data name="CustomBaseMap" xml:space="preserve">
+    <value>ArcGIS Server-bakgrunnskart</value>
+  </data>
+  <data name="AGSDataSourceTooltip" xml:space="preserve">
+    <value>Oppgi URLen til et ArcGIS Server-sluttpunkt</value>
+  </data>
+  <data name="NotUsingBingMapsResource" xml:space="preserve">
+    <value>Programmet bruker ikke noen ressurser fra Bing Maps. Det er ikke nødvendig å konfigurere noen kontoinformasjon nå.</value>
+  </data>
+  <data name="NotUsingBingMapsResourceCaption" xml:space="preserve">
+    <value>Ingen Bings Maps-ressurs</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Lukk</value>
+  </data>
+  <data name="BrowseForBaseMap" xml:space="preserve">
+    <value>Bla for å finne bakgrunnskart</value>
+  </data>
+  <data name="EnterUrl" xml:space="preserve">
+    <value>Oppgi URL</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatch" xml:space="preserve">
+    <value>Koordinatsystemet for den bufrede karttjenesten stemmer ikke overens med bakgrunnskartets koordinatsystem. Denne karttjenesten kan ikke legges til.</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatchCaption" xml:space="preserve">
+    <value>Ikke samsvarende koordinatsystem</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemoved" xml:space="preserve">
+    <value>Dine aktive datasett inkluderer karttjenester der koordinatsystemer ikke stemmer overens med bakgrunnskartet som du valgte. Disse karttjenestene må fjernes for å fortsette. Klikk på OK for å fjerne.</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemovedCaption" xml:space="preserve">
+    <value>Ikke samsvar i operativt datasett</value>
+  </data>
+  <data name="AddContentTitle" xml:space="preserve">
+    <value>Legg til innhold</value>
+  </data>
+  <data name="BaseMapGalleryTitle" xml:space="preserve">
+    <value>Velg et bakgrunnskart</value>
+  </data>
+  <data name="BrowseForBaseMapTitle" xml:space="preserve">
+    <value>Bla for å finne bakgrunnskart</value>
+  </data>
+  <data name="EnterUrlDialogTitle" xml:space="preserve">
+    <value>Oppgi URL for bakgrunnskart</value>
+  </data>
+  <data name="MapContentsTitle" xml:space="preserve">
+    <value>Kartinnhold</value>
+  </data>
+  <data name="CanOnlyUseCachedMapServicesAsBaseMap" xml:space="preserve">
+    <value>Bare ArcGIS-bufrede karttjenester kan brukes som bakgrunnskart.</value>
+  </data>
+  <data name="InvalidMapServiceCaption" xml:space="preserve">
+    <value>Ugyldig karttjeneste </value>
+  </data>
+  <data name="MapTipBorderColorTooltip" xml:space="preserve">
+    <value>Endre kantlinjefarge for MapTip</value>
+  </data>
+  <data name="MapTipFillColorTooltip" xml:space="preserve">
+    <value>Endre fyllfarge for MapTip</value>
+  </data>
+  <data name="MapTipForegroundColorTooltip" xml:space="preserve">
+    <value>Endre tekstfarge for MapTip</value>
+  </data>
+  <data name="SampleMapTipText" xml:space="preserve">
+    <value>Eksempeltekst</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Legg til valgt kartlag</value>
+  </data>
+  <data name="AttributePrompt" xml:space="preserve">
+    <value>Attributt:</value>
+  </data>
+  <data name="ColorScheme" xml:space="preserve">
+    <value>Fargevalg</value>
+  </data>
+  <data name="MoreOptions" xml:space="preserve">
+    <value>Flere alternativer</value>
+  </data>
+  <data name="RendererPrompt" xml:space="preserve">
+    <value>Tegneregel:</value>
+  </data>
+  <data name="SymbolOptions" xml:space="preserve">
+    <value>Skjemaalternativer</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Gjeldende symbol:</value>
+  </data>
+  <data name="Basemap" xml:space="preserve">
+    <value>Bakgrunnskart</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Flytt fremover</value>
+  </data>
+  <data name="ClassBreaks" xml:space="preserve">
+    <value>Klassebrudd</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Farge</value>
+  </data>
+  <data name="FromServer" xml:space="preserve">
+    <value>Bla gjennom...</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Hjem</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Kart</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Kartinnhold</value>
+  </data>
+  <data name="MapTip" xml:space="preserve">
+    <value>Karttips</value>
+  </data>
+  <data name="MoreSymbolOptions" xml:space="preserve">
+    <value>Skjemaalternativer</value>
+  </data>
+  <data name="Organize" xml:space="preserve">
+    <value>Organiser</value>
+  </data>
+  <data name="RefreshLayer" xml:space="preserve">
+    <value>Oppdater</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Fjern</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Søk...</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Flytt bakover</value>
+  </data>
+  <data name="SingleSymbol" xml:space="preserve">
+    <value>Enkeltsymbol</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Størrelse</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Verktøy</value>
+  </data>
+  <data name="UniqueValues" xml:space="preserve">
+    <value>Unike verdier</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="CategoryPrompt" xml:space="preserve">
+    <value>Kategori:</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>Symbol</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Visning</value>
+  </data>
+  <data name="DrawOrder" xml:space="preserve">
+    <value>Tegnerekkefølge</value>
+  </data>
+  <data name="Popups" xml:space="preserve">
+    <value>Popupfelter</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Tabell</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>Konfigurer popupfelter</value>
+  </data>
+  <data name="AddUniqueValue" xml:space="preserve">
+    <value>Legg til verdi</value>
+  </data>
+  <data name="DeleteUniqueValue" xml:space="preserve">
+    <value>Slett valgt verdi</value>
+  </data>
+  <data name="NextUniqueValue" xml:space="preserve">
+    <value>Neste unike verdi</value>
+  </data>
+  <data name="PreviousUniqueValue" xml:space="preserve">
+    <value>Forrige unike verdi</value>
+  </data>
+  <data name="ValuePrompt" xml:space="preserve">
+    <value>Verdi:</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Kartlag</value>
+  </data>
+  <data name="MapCenterTooltip" xml:space="preserve">
+    <value>ArcGIS.com Map Center</value>
+  </data>
+  <data name="ClassesPrompt" xml:space="preserve">
+    <value>Klasser:</value>
+  </data>
+  <data name="InvalidClassBreakValue" xml:space="preserve">
+    <value>Ugyldig verdi</value>
+  </data>
+  <data name="DefaultSymbol" xml:space="preserve">
+    <value>Standardsymbol</value>
+  </data>
+  <data name="MaxPointsPrompt" xml:space="preserve">
+    <value>Maksimalt antall punkter:</value>
+  </data>
+  <data name="RadiusPrompt" xml:space="preserve">
+    <value>Radius:</value>
+  </data>
+  <data name="UsePointClustering" xml:space="preserve">
+    <value>Bruk punktgruppering</value>
+  </data>
+  <data name="AddContent" xml:space="preserve">
+    <value>Legg til innhold</value>
+  </data>
+  <data name="LayerSymbology" xml:space="preserve">
+    <value>Symboler</value>
+  </data>
+  <data name="AutoUpdates" xml:space="preserve">
+    <value>Automatiske oppdateringer</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>Intervall</value>
+  </data>
+  <data name="PollForUpdates" xml:space="preserve">
+    <value>Poll etter oppdateringer</value>
+  </data>
+  <data name="UpdateOnExtentChanged" xml:space="preserve">
+    <value>Oppdatering på utstrekning endret</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtrer</value>
+  </data>
+  <data name="FilterLayerTitle" xml:space="preserve">
+    <value>Angi filteruttrykk</value>
+  </data>
+  <data name="FilterByMapExtent" xml:space="preserve">
+    <value>Filtrer etter utstrekning</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Full skjerm</value>
+  </data>
+  <data name="AutoScrollRow" xml:space="preserve">
+    <value>Autorullrad</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Tjenestedetaljer</value>
+  </data>
+  <data name="DatasetPrompt" xml:space="preserve">
+    <value>Datasett:</value>
+  </data>
+  <data name="DistancePrompt" xml:space="preserve">
+    <value>Avstand:</value>
+  </data>
+  <data name="FindNearbyTitle" xml:space="preserve">
+    <value>Finn i nærheten</value>
+  </data>
+  <data name="InvalidDistance" xml:space="preserve">
+    <value>Oppgi en gyldig avstand</value>
+  </data>
+  <data name="InvalidDistanceCaption" xml:space="preserve">
+    <value>Ugyldig avstand</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>Kilometer</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Meter</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>Miles</value>
+  </data>
+  <data name="SelectionTools" xml:space="preserve">
+    <value>Utvalgsverktøy</value>
+  </data>
+  <data name="BufferDistance" xml:space="preserve">
+    <value>Bufferavstand</value>
+  </data>
+  <data name="Feed" xml:space="preserve">
+    <value>GeoRSS...</value>
+  </data>
+  <data name="FindNearbyBufferPrefix" xml:space="preserve">
+    <value>Finn i nærheten-buffer - </value>
+  </data>
+  <data name="FindNearbyPrefix" xml:space="preserve">
+    <value>Finn i nærheten - </value>
+  </data>
+  <data name="SelectByDraw" xml:space="preserve">
+    <value>Velg ved å tegne</value>
+  </data>
+  <data name="ColorSchemePrompt" xml:space="preserve">
+    <value>Fargevalg:</value>
+  </data>
+  <data name="EditValuesPrompt" xml:space="preserve">
+    <value>Rediger verdier:</value>
+  </data>
+  <data name="TypeValueToAdd" xml:space="preserve">
+    <value>Skriv inn en verdi som skal legges til</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="AddGeoRSSTitle" xml:space="preserve">
+    <value>Oppgi Url for GeoRSS-feed</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>Topptekst:</value>
+  </data>
+  <data name="BrowseDialogGeographicDataNotFound" xml:space="preserve">
+    <value>Fant ikke geografiske data</value>
+  </data>
+  <data name="DefaultBasemapLayerDisplayName" xml:space="preserve">
+    <value>Bakgrunnskart</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>Kartlag:</value>
+  </data>
+  <data name="AddLayerTooltip" xml:space="preserve">
+    <value>Legg det valgte datasett fra ArcGIS Server, SharePoint eller romlig datatjeneste til kartet</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Gi nytt navn</value>
+  </data>
+  <data name="ODataFeed" xml:space="preserve">
+    <value>OData...</value>
+  </data>
+  <data name="SignInWithGlobalAccount" xml:space="preserve">
+    <value>Logg på med ESRI Global-kontoen</value>
+  </data>
+  <data name="ClusterColor" xml:space="preserve">
+    <value>Bakgrunnsfarge for gruppering</value>
+  </data>
+  <data name="ClusterTextColor" xml:space="preserve">
+    <value>Forgrunnsfarge for gruppering</value>
+  </data>
+  <data name="Clustering" xml:space="preserve">
+    <value>Gruppering</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Generelt</value>
+  </data>
+  <data name="HeatMapAdd" xml:space="preserve">
+    <value>Legg til varmekart</value>
+  </data>
+  <data name="Intensity" xml:space="preserve">
+    <value>Intensitet</value>
+  </data>
+  <data name="OpenItemOnClick" xml:space="preserve">
+    <value>Åpne objekt ved klikk</value>
+  </data>
+  <data name="Symbology" xml:space="preserve">
+    <value>Symboler</value>
+  </data>
+  <data name="ShowMapContents" xml:space="preserve">
+    <value>Tilbake</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>Attributter</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Diverse</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avansert</value>
+  </data>
+  <data name="ExtensionLoadFailed" xml:space="preserve">
+    <value>Innlasting av tilleggsmodul mislyktes</value>
+  </data>
+  <data name="ToolClassLoadFailed" xml:space="preserve">
+    <value>Innlasting av verktøyklasse mislyktes</value>
+  </data>
+  <data name="ToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Innlasting av konfigurasjon for verktøyklasse mislyktes</value>
+  </data>
+  <data name="ExtensionInitializationFailed" xml:space="preserve">
+    <value>Kunne ikke instantiere en forekomst av en tilpasset kommando.</value>
+  </data>
+  <data name="ExtensionInitializationFailedHeader" xml:space="preserve">
+    <value>Initialisering av tilleggsmodul mislyktes</value>
+  </data>
+  <data name="Less" xml:space="preserve">
+    <value>Mindre</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Mer</value>
+  </data>
+  <data name="ConfiguringLayer" xml:space="preserve">
+    <value>Konfigurerer:</value>
+  </data>
+  <data name="RemoveLayerCaption" xml:space="preserve">
+    <value>Fjerne kartlag?</value>
+  </data>
+  <data name="RemoveLayerNameSubstitude" xml:space="preserve">
+    <value>valgte</value>
+  </data>
+  <data name="RemoveLayerPrompt" xml:space="preserve">
+    <value>Vil du fjerne {0}-kartlaget fra kartet?</value>
+  </data>
+  <data name="BrowseNoEllipsis" xml:space="preserve">
+    <value>Bla gjennom</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Innhold</value>
+  </data>
+  <data name="GeoRSS" xml:space="preserve">
+    <value>GeoRSS</value>
+  </data>
+  <data name="SearchNoEllipsis" xml:space="preserve">
+    <value>Søk</value>
+  </data>
+  <data name="ErrorLoadConfigurationOfExtension" xml:space="preserve">
+    <value>Uhåndtert feil i LoadConfiguration for tilleggsmodul ({0})</value>
+  </data>
+  <data name="ErrorNoPrinterContainerFoundInPrintTemplate" xml:space="preserve">
+    <value>Ingen utskriftsbeholder ble funnet i utskriftsmalen.</value>
+  </data>
+  <data name="ErrorSaveConfigurationOfExtension" xml:space="preserve">
+    <value>Uhåndtert feil i SaveConfiguration i tilleggsmodul ({0})</value>
+  </data>
+  <data name="ExceptionCachedMapServiceSpatialReferenceDoesNotMatch" xml:space="preserve">
+    <value>Koordinatsystem for bufret karttjeneste samsvarer ikke.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitialized" xml:space="preserve">
+    <value>Kan ikke kalle opp ZoomMapToExtent før kartet er initialisert. Bruk MapLayersInitialized for å vente på denne hendelsen.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitializedMapReferenceNull" xml:space="preserve">
+    <value>Kan ikke kalle opp ZoomMapToExtent før kartet er initialisert. Kartets koordinatsystem er null.</value>
+  </data>
+  <data name="ExceptionConnectionTypeDoesNotCoorespondToDatasourceWhichHasResources" xml:space="preserve">
+    <value>Tilkoblingstypen {0} tilsvarer ikke noen datakilde ({1}) som har ressurser</value>
+  </data>
+  <data name="ExceptionCouldNotFindElementWithName" xml:space="preserve">
+    <value>Fant ikke noe element med navnet {0}.</value>
+  </data>
+  <data name="ExceptionCouldNotFindToggleButtonWithName" xml:space="preserve">
+    <value>Fant ikke noen veksleknapp med navnet {0}.</value>
+  </data>
+  <data name="ExceptionDatasourceNotLoadedForBaseMapType" xml:space="preserve">
+    <value>DataSource ikke lastet for bakgrunnskarttype {0}</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>element</value>
+  </data>
+  <data name="ExceptionMapHasNotBeenInitializedYet" xml:space="preserve">
+    <value>Kartet er ikke initialisert ennå</value>
+  </data>
+  <data name="ExceptionMapLayersHaveNotBeenInstantiated" xml:space="preserve">
+    <value>Kartlag er ikke instantiert. Bakgrunnskart kan bare endres etter at MapLayersInitialized er startet</value>
+  </data>
+  <data name="ExceptionMapNotSet" xml:space="preserve">
+    <value>Kart er ikke angitt</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationProvider" xml:space="preserve">
+    <value>Må angi en ConfigurationProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationStoreProvider" xml:space="preserve">
+    <value>Må angi en ConfigurationStoreProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyDataSourceProvider" xml:space="preserve">
+    <value>Må angi DataSourceProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyLayoutProvider" xml:space="preserve">
+    <value>Må angi en LayoutProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifySpatialReferenceOnEnvelope" xml:space="preserve">
+    <value>Må angi koordinatsystem på omsluttende boks</value>
+  </data>
+  <data name="ExceptionMustSpecifyThemeProvider" xml:space="preserve">
+    <value>Må angi en ThemeProvider</value>
+  </data>
+  <data name="ExceptionNoBingMapsTokenAvailable" xml:space="preserve">
+    <value>Ingen Bing Maps-token tilgjengelig</value>
+  </data>
+  <data name="ExceptionNoGeometryServiceUrlSpecifiedLayerZoomedIsDifferentSpatialReference" xml:space="preserve">
+    <value>Ingen URL til geometritjeneste angitt. Kartlaget det zoomes til, er i et annet koordinatsystem enn kartet, og den fulle utstrekningen må projiseres på nytt ved bruk av en geometritjeneste</value>
+  </data>
+  <data name="ExceptionNotSupported" xml:space="preserve">
+    <value>Ikke støttet</value>
+  </data>
+  <data name="ExceptionNullBaseMapInfo" xml:space="preserve">
+    <value>baseMapInfo</value>
+  </data>
+  <data name="ExceptionOnlyCachedServicesCanBeUsedAsBaseMaps" xml:space="preserve">
+    <value>Bare bufrede karttjenester kan brukes som bakgrunnskart</value>
+  </data>
+  <data name="ExceptionUnableToInstantiateDatasourceForBaseMapType" xml:space="preserve">
+    <value>Kan ikke instantiere datakilde for bakgrunnskarttype {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Kan ikke hente konfigurasjonsinformasjon. Ingen informasjon returnert.</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasource" xml:space="preserve">
+    <value>Kan ikke hente datakilde for {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasourceConnectionType" xml:space="preserve">
+    <value>Kan ikke hente datakilde for tilkoblingstype {0}</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Laster inn...</value>
+  </data>
+  <data name="LoadingMapCenter" xml:space="preserve">
+    <value>Laster inn Map Center...</value>
+  </data>
+  <data name="LogUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Kan ikke hente konfigurasjonsinformasjon</value>
+  </data>
+  <data name="MsgErrorExecutingBufferOperation" xml:space="preserve">
+    <value>Feil ved kjøring av bufferoperasjon.</value>
+  </data>
+  <data name="MsgErrorExecutingRelationAsyncOperation" xml:space="preserve">
+    <value>Feil ved kjøring av RelationAsync-operasjon</value>
+  </data>
+  <data name="MsgErrorOpeningFile" xml:space="preserve">
+    <value>Feil ved åpning av fil</value>
+  </data>
+  <data name="MsgErrorRetrievingSubLayersForMapService" xml:space="preserve">
+    <value>Feil ved henting av underkartlag for karttjeneste</value>
+  </data>
+  <data name="MsgErrorSavingFile" xml:space="preserve">
+    <value>Feil ved lagring av fil</value>
+  </data>
+  <data name="MsgNoFeaturesSelected" xml:space="preserve">
+    <value>Ingen geoobjekter valgt</value>
+  </data>
+  <data name="MsgNoResourcesFound" xml:space="preserve">
+    <value>Fant ingen ressurser</value>
+  </data>
+  <data name="MsgUnableToAccessGeometryService" xml:space="preserve">
+    <value>Får ikke tilgang til geometritjeneste.</value>
+  </data>
+  <data name="MsgUnableToCreateLayer" xml:space="preserve">
+    <value>Kan ikke opprette kartlag</value>
+  </data>
+  <data name="MsgUnableToRetrieveResources" xml:space="preserve">
+    <value>Kan ikke hente ressurser.</value>
+  </data>
+  <data name="MsgUnknownError" xml:space="preserve">
+    <value>Ukjent feil</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Navn</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>Ukjent bruker</value>
+  </data>
+  <data name="NotValidMapDocument" xml:space="preserve">
+    <value>Ikke et gyldig kartdokument.</value>
+  </data>
+  <data name="ErrorRetrievingSymbols" xml:space="preserve">
+    <value>Feil ved henting av symboler</value>
+  </data>
+  <data name="ExceptionCacheMapServicesCannotReproject" xml:space="preserve">
+    <value>Bufrede karttjenester i programmet kan ikke reprojiseres</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Åpne et webkart fra ArcGIS.com</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Logg på</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Logg av</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Bakgrunnstekst</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Medlemmer</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Forhåndsvis</value>
+  </data>
+  <data name="SelectedItem" xml:space="preserve">
+    <value>Valgt objekt</value>
+  </data>
+  <data name="RecordOutOfSelected" xml:space="preserve">
+    <value>Poster ({0} av {1} valgt)</value>
+  </data>
+  <data name="ExtensionInitializationFailedUrl" xml:space="preserve">
+    <value>Kunne ikke instantiere en forekomst av en tilpasset kommando. Url: {0}</value>
+  </data>
+  <data name="HeatMapTitle" xml:space="preserve">
+    <value>{0} Varmekart</value>
+  </data>
+  <data name="CurrentColor" xml:space="preserve">
+    <value>Gjeldende farge</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Beskrivelse:</value>
+  </data>
+  <data name="HeightPrompt" xml:space="preserve">
+    <value>Høyde:</value>
+  </data>
+  <data name="Moredotdot" xml:space="preserve">
+    <value>Mer...</value>
+  </data>
+  <data name="NotificationDontShowDialogOnStartup" xml:space="preserve">
+    <value>Ikke vis denne dialogboksen ved oppstart</value>
+  </data>
+  <data name="RecordPrompt" xml:space="preserve">
+    <value>Post:</value>
+  </data>
+  <data name="StandardColors" xml:space="preserve">
+    <value>Standardfarger</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Temafarger</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Tittel:</value>
+  </data>
+  <data name="WidthPrompt" xml:space="preserve">
+    <value>Bredde:</value>
+  </data>
+  <data name="MapBehaviors" xml:space="preserve">
+    <value>Kartvirkemåter</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Ned</value>
+  </data>
+  <data name="MapBehaviorAdd" xml:space="preserve">
+    <value>Legg til en ny kartvirkemåte</value>
+  </data>
+  <data name="MapBehaviorConfigure" xml:space="preserve">
+    <value>Konfigurer virkemåten for det valgte kartet</value>
+  </data>
+  <data name="MapBehaviorMoveDown" xml:space="preserve">
+    <value>Flytt den valgte kartvirkemåten én posisjon ned</value>
+  </data>
+  <data name="MapBehaviorMoveUp" xml:space="preserve">
+    <value>Flytt den valgte kartvirkemåten én posisjon opp</value>
+  </data>
+  <data name="MapBehaviorRemove" xml:space="preserve">
+    <value>Fjern den valgte kartvirkemåten</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviors" xml:space="preserve">
+    <value>Ingen virkemåter er knyttet til kartet.</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviorsInEdit" xml:space="preserve">
+    <value>Klikk på Legg til for å konfigurere en ny kartvirkemåte.</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Flytt</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Opp</value>
+  </data>
+  <data name="AddLabel" xml:space="preserve">
+    <value>Legg til</value>
+  </data>
+  <data name="BehaviorClassLoadFailed" xml:space="preserve">
+    <value>Innlasting av virkemåteklasse mislyktes</value>
+  </data>
+  <data name="BehaviorConfigurationFailed" xml:space="preserve">
+    <value>Konfigurasjon av virkemåte mislyktes</value>
+  </data>
+  <data name="BehaviorConfigurationFailedDescription" xml:space="preserve">
+    <value>Virkemåtens konfigurasjonsmetode sendte et unntak.</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Innlasting av konfigurasjon for virkemåteklasse mislyktes</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailedDescription" xml:space="preserve">
+    <value>Innlasting av virkemåtens konfigurasjon sendte et unntak.</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Oppgi varmekartlaget som er basert på geoobjektene i gjeldende kartlag</value>
+  </data>
+  <data name="ClusterColorDescription" xml:space="preserve">
+    <value>Angi bakgrunnsfargen for grupperingene på gjeldende kartlag</value>
+  </data>
+  <data name="ClusterTextColorDescription" xml:space="preserve">
+    <value>Angi kantlinje- og tekstfargen for grupperingene på gjeldende kartlag</value>
+  </data>
+  <data name="FilterDescription" xml:space="preserve">
+    <value>Filtrer geoobjektene på gjeldende kartlag ved å angi en attributtspørring</value>
+  </data>
+  <data name="HeatMapColorDescription" xml:space="preserve">
+    <value>Velg farger for varmekartet</value>
+  </data>
+  <data name="IntensityDescription" xml:space="preserve">
+    <value>Juster intensiteten på varmekartet. En høy intensitet gir større varme områder.</value>
+  </data>
+  <data name="MaxPoints" xml:space="preserve">
+    <value>Maksimalt antall punkter</value>
+  </data>
+  <data name="MaxPointsDescription" xml:space="preserve">
+    <value>Angi maksimalt antall geoobjekter som kan grupperes innenfor én enkelt gruppering</value>
+  </data>
+  <data name="OpenItemOnClickDescription" xml:space="preserve">
+    <value>Vis detaljer om et geoobjekt i et nytt nettleservindu når objektet klikkes på</value>
+  </data>
+  <data name="PollForUpdatesDescription" xml:space="preserve">
+    <value>Angi om det skal hentes feed-oppdateringer ved det angitte intervallet</value>
+  </data>
+  <data name="PopupsDescription" xml:space="preserve">
+    <value>Konfigurer attributtene som vises i popupfeltene på gjeldende kartlag</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>Radius</value>
+  </data>
+  <data name="RadiusDescription" xml:space="preserve">
+    <value>Angi radiusen, i piksler, på området der geoobjekter skal grupperes i én enkelt gruppering</value>
+  </data>
+  <data name="SymbologyDescription" xml:space="preserve">
+    <value>Konfigurer symbolene som brukes til å vise gjeldende kartlag</value>
+  </data>
+  <data name="TableDescription" xml:space="preserve">
+    <value>Konfigurer feltene som vises innenfor gjeldende kartlags attributtabell</value>
+  </data>
+  <data name="UpdateOnExtentChangedDescription" xml:space="preserve">
+    <value>Angir om det skal hentes feed-oppdateringer når kartet panoreres eller zoomes</value>
+  </data>
+  <data name="UsePointClusteringDescription" xml:space="preserve">
+    <value>Angi om grupper med punkter skal vises som ett gruppert geoobjekt</value>
+  </data>
+  <data name="SelectTheLayout" xml:space="preserve">
+    <value>Velg oppsettet...</value>
+  </data>
+  <data name="SelectThePrintLayout" xml:space="preserve">
+    <value>Velg utskriftsoppsettet</value>
+  </data>
+  <data name="BehaviorPrompt" xml:space="preserve">
+    <value>Virkemåte:</value>
+  </data>
+  <data name="Cluster" xml:space="preserve">
+    <value>Gruppering</value>
+  </data>
+  <data name="ClusterFeatures" xml:space="preserve">
+    <value>Grupper geoobjekter</value>
+  </data>
+  <data name="ConfigureRange" xml:space="preserve">
+    <value>Konfigurer område</value>
+  </data>
+  <data name="EnablePrompt" xml:space="preserve">
+    <value>Aktiver:</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Geoobjekter</value>
+  </data>
+  <data name="RenderAsHeatMap" xml:space="preserve">
+    <value>Tegn opp som varmekart</value>
+  </data>
+  <data name="RenderHeatMapAdvancedProperties" xml:space="preserve">
+    <value>Avanserte egenskaper for opptegning av varmekart</value>
+  </data>
+  <data name="Tolerance" xml:space="preserve">
+    <value>Toleranse</value>
+  </data>
+  <data name="LayoutPrompt" xml:space="preserve">
+    <value>Oppsett:</value>
+  </data>
+  <data name="ConfigurePrint" xml:space="preserve">
+    <value>Konfigurer utskrift</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Skriv ut</value>
+  </data>
+  <data name="LayoutResourceDownloadError" xml:space="preserve">
+    <value>Feil ved nedlasting av oppsettressurser.</value>
+  </data>
+  <data name="ChangeBackground" xml:space="preserve">
+    <value>Endre bakgrunn</value>
+  </data>
+  <data name="PreviewTheme" xml:space="preserve">
+    <value>Forhåndsvis tema</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>Uten tittel</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Legg til virkemåte</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>Gradient</value>
+  </data>
+  <data name="Solid" xml:space="preserve">
+    <value>Heltrukket</value>
+  </data>
+  <data name="ToggleRibbonVisibility" xml:space="preserve">
+    <value>Slå båndsynlighet på eller av</value>
+  </data>
+  <data name="ArcGISSilverlightVersion" xml:space="preserve">
+    <value>ArcGIS API for Silverlight:</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versjon:</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Om</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Flytt ned</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Flytt opp</value>
+  </data>
+  <data name="ConstrainExtentBehaviorMessage" xml:space="preserve">
+    <value>Zoom til kartutstrekningen du vil bruke som begrensning, og trykk på Bruk.</value>
+  </data>
+  <data name="ConstrainExtentBehaviorTitle" xml:space="preserve">
+    <value>Angi begrensning for kartutstrekning</value>
+  </data>
+  <data name="DeleteBehaviorCaption" xml:space="preserve">
+    <value>Er du sikker på at du vil slette denne virkemåten?</value>
+  </data>
+  <data name="DeleteBehaviorPrompt" xml:space="preserve">
+    <value>Bekreft sletting</value>
+  </data>
+  <data name="CurrentConstrainExtentLabel" xml:space="preserve">
+    <value>Begrensningsboks for gjeldende utstrekning:</value>
+  </data>
+  <data name="ConstrainExtentNotSetMessage" xml:space="preserve">
+    <value>Begrensning for kartutstrekning er ikke angitt ennå.</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>Ikke angitt</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Konfigurer bakgrunnskart</value>
+  </data>
+  <data name="ConfigureTheSetOfBaseMaps" xml:space="preserve">
+    <value>Konfigurer settet med bakgrunnskart</value>
+  </data>
+  <data name="AddNewBaseMap" xml:space="preserve">
+    <value>Legg til nytt bakgrunnskart</value>
+  </data>
+  <data name="ClickImageToChangeThumbnailIcon" xml:space="preserve">
+    <value>Klikk på et bilde for å endre miniatyrbildeikonet</value>
+  </data>
+  <data name="RequiresBingAppID" xml:space="preserve">
+    <value>Krever Bing App-ID</value>
+  </data>
+  <data name="DeleteCurrentlySelectedBaseMap" xml:space="preserve">
+    <value>Slett det valgte bakgrunnskartet</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapDown" xml:space="preserve">
+    <value>Flytt det valgte bakgrunnskartet ned</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapUp" xml:space="preserve">
+    <value>Flytt det valgte bakgrunnskartet opp</value>
+  </data>
+  <data name="SubTypePrompt" xml:space="preserve">
+    <value>Undertype:</value>
+  </data>
+  <data name="TextPrompt" xml:space="preserve">
+    <value>Tekst:</value>
+  </data>
+  <data name="ThumbnailPrompt" xml:space="preserve">
+    <value>Miniatyr:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Neste</value>
+  </data>
+  <data name="NoBehaviorTitleSpecified" xml:space="preserve">
+    <value>Ingen virkemåtetittel angitt</value>
+  </data>
+  <data name="PleaseProvideValidTitleForNewBehavior" xml:space="preserve">
+    <value>Oppgi en gyldig tittel for den nye virkemåten.</value>
+  </data>
+  <data name="SelectBehaviorToAdd" xml:space="preserve">
+    <value>Velg en virkemåte</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Modus</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Bufferstørrelse: </value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>Hent geoobjekter innenfor kartområde</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>Hent alle geoobjekter samtidig</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Størrelse på geoobjektbuffer</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Maksimalt antall geoobjekter som kartlaget kan inneholde. Hvis denne grensen overskrides når nye geoobjekter hentes, blir de eldste geoobjektene fjernet fra kartlaget.</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>Hent geoobjekter innenfor kartområde</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Bare geoobjektene innenfor gjeldende kartområde hentes når kartlaget lastes inn eller oppdateres. Flere geoobjekter hentes når kartområdet endres.</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>Hent alle geoobjekter</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Alle geoobjektene på kartlaget hentes når kartlaget lastes inn eller oppdateres.</value>
+  </data>
+  <data name="BrowseContentUrlWatermark" xml:space="preserve">
+    <value>Oppgi URL til server eller kartlag</value>
+  </data>
+  <data name="BrowseDialogNoResourcesFound" xml:space="preserve">
+    <value>Fant ingen ressurser.</value>
+  </data>
+  <data name="BrowseDialogNoServerOrLayerFound" xml:space="preserve">
+    <value>Fant ingen tjeneste eller kartlag.</value>
+  </data>
+  <data name="SecureServices" xml:space="preserve">
+    <value>Sikre tjenester</value>
+  </data>
+  <data name="AutoUpdateNumericDescription" xml:space="preserve">
+    <value>Angir oppdateringsintervallet i sekunder eller minutter. Dette kartlaget vil bli oppdatert automatisk ved dette intervallet til det deaktiveres.</value>
+  </data>
+  <data name="AutoUpdateNumericTooltip" xml:space="preserve">
+    <value>Oppdateringsintervall for automatisk oppdatering</value>
+  </data>
+  <data name="AutoUpdatePollingDescription" xml:space="preserve">
+    <value>Angir hvorvidt geoobjektlaget vil bli oppdatert automatisk med jevne intervaller eller ikke.</value>
+  </data>
+  <data name="AutoUpdatePollingTooltip" xml:space="preserve">
+    <value>Automatisk oppdatering av geoobjektlag</value>
+  </data>
+  <data name="AutoUpdateIntervalText" xml:space="preserve">
+    <value>Intervall:</value>
+  </data>
+  <data name="AutoUpdateLayerConfigTitle" xml:space="preserve">
+    <value>Automatisk oppdatering</value>
+  </data>
+  <data name="AvailableLayers" xml:space="preserve">
+    <value>Tilgjengelige kartlag:</value>
+  </data>
+  <data name="EnablePopups" xml:space="preserve">
+    <value>Vis popupfelter</value>
+  </data>
+  <data name="EnablePopupsForLayer" xml:space="preserve">
+    <value>Vis popupfelter for dette kartlaget</value>
+  </data>
+  <data name="OnClick" xml:space="preserve">
+    <value>ved klikk</value>
+  </data>
+  <data name="OnHover" xml:space="preserve">
+    <value>ved musepeker</value>
+  </data>
+  <data name="ConfigureEditorWidget" xml:space="preserve">
+    <value>Konfigurer redigering</value>
+  </data>
+  <data name="SnapshotModeNote" xml:space="preserve">
+    <value>Merk: Hvis antall geoobjekter i datasettet overskrider maksimalt antall geoobjekter som returneres av tjenesten, blir ikke alle geoobjektene inkludert i kartlaget.</value>
+  </data>
+  <data name="GraphicSymbolsTakePrecedence" xml:space="preserve">
+    <value>Symbolene som defineres her, overstyres av symbolene på de enkelte grafikkobjektene, hvis definert.</value>
+  </data>
+  <data name="SpatialReference" xml:space="preserve">
+    <value>Koordinatsystem:</value>
+  </data>
+  <data name="XMax" xml:space="preserve">
+    <value>XMaks:</value>
+  </data>
+  <data name="XMin" xml:space="preserve">
+    <value>XMin:</value>
+  </data>
+  <data name="YMax" xml:space="preserve">
+    <value>YMaks</value>
+  </data>
+  <data name="YMin" xml:space="preserve">
+    <value>YMin</value>
+  </data>
+  <data name="NotFoundInLayout" xml:space="preserve">
+    <value>{0} ble ikke funnet i gjeldende oppsett</value>
+  </data>
+  <data name="ToggleEditFailed" xml:space="preserve">
+    <value>Kunne ikke slå redigeringskontroller på eller av. Gjeldende oppsett støtter kanskje ikke redigering</value>
+  </data>
+  <data name="PopupFromWebMap" xml:space="preserve">
+    <value>Bruk popupdefinisjon fra webkart.</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>Autozoom til valgt</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Bekreft</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Alternativer</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>Poster ({0} av {1} valgt)</value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>Bytt utvalg</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Henting av geoobjekt</value>
+  </data>
+  <data name="ConfigureSecuredServices" xml:space="preserve">
+    <value>Konfigurer sikrede tjenester</value>
+  </data>
+  <data name="ErrorChangingProxies" xml:space="preserve">
+    <value>Feil ved endring av proxyer</value>
+  </data>
+  <data name="ProxyUrl" xml:space="preserve">
+    <value>Proxy-URL:</value>
+  </data>
+  <data name="SpecifyUrlToProxyPageUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Angi URLen til en proxyside som brukes for å få tilgang til sikre tjenester for dette programmet. Denne proxyen vil deles av alle kartlagene i programmet som bruker en sikret tjeneste.</value>
+  </data>
+  <data name="UsesProxy" xml:space="preserve">
+    <value>Bruker proxy</value>
+  </data>
+  <data name="WhetherThisLayerUsesProxyServiceForaccessingRestrictedService" xml:space="preserve">
+    <value>Hvorvidt dette kartlaget bruker en proxytjeneste for tilgang til en begrenset tjeneste. Klikk på Konfigurer proxy for å angi proxy-URLen.</value>
+  </data>
+  <data name="LayerHasNoAttributes" xml:space="preserve">
+    <value>Det valgte kartlaget har ingen attributter som kan vises.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detaljer</value>
+  </data>
+  <data name="ToggleErrorDetails" xml:space="preserve">
+    <value>Vis eller skjul detaljene i feilen.</value>
+  </data>
+  <data name="LayerIsNotGraphicsLayer" xml:space="preserve">
+    <value>Attributter på det valgte kartlaget kan ikke vises fordi kartlaget er et ArcGIS Server dynamisk eller bufret karttjenestelag. Du finner mer informasjon i emnet Kartlagtyper i hjelpesystemet.</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteBasemap" xml:space="preserve">
+    <value>Er du sikker på at du vil slette dette bakgrunnskartet?</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Bekreft sletting</value>
+  </data>
+  <data name="NewBasemap" xml:space="preserve">
+    <value>Nytt bakgrunnskart</value>
+  </data>
+  <data name="ConfigureSelectedLayer" xml:space="preserve">
+    <value>Konfigurer valgt kartlag</value>
+  </data>
+  <data name="SelectLayerToAdd" xml:space="preserve">
+    <value>Velg et kartlag som skal legges til</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Få tilgang til sikrede tjenester</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Legg til sikrede tjenester</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Konfigurer proxy</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServices" xml:space="preserve">
+    <value>Konfigurer proxyen som skal brukes for tilgang til sikre tjenester for dette programmet</value>
+  </data>
+  <data name="BehaviorSaveFailed" xml:space="preserve">
+    <value>Kunne ikke lagre konfigurasjon av virkemåte</value>
+  </data>
+  <data name="BehaviorSaveFailedMessage" xml:space="preserve">
+    <value>Det oppstod en feil under lagring av konfigurasjonen for de vedlagte kartvirkemåtene.</value>
+  </data>
+  <data name="LayerInitFailure" xml:space="preserve">
+    <value>Initialisering av kartlag mislyktes</value>
+  </data>
+  <data name="LayerNotInitialized" xml:space="preserve">
+    <value>Kartlaget kunne ikke initialiseres.</value>
+  </data>
+  <data name="DeleteGraphicConfirmation" xml:space="preserve">
+    <value>Fjerne geoobjekt?</value>
+  </data>
+  <data name="DeleteGraphicConfirmationTitle" xml:space="preserve">
+    <value>Bekreftelse</value>
+  </data>
+  <data name="EditValuesCommandEditorBackButtonContent" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="ConfigureBehavior" xml:space="preserve">
+    <value>Konfigurer virkemåten</value>
+  </data>
+  <data name="DisablePopupForLayer" xml:space="preserve">
+    <value>Deaktiver popupfelter</value>
+  </data>
+  <data name="EnablePopupForLayer" xml:space="preserve">
+    <value>Aktiver popupfelter</value>
+  </data>
+  <data name="LinkWebMapDialogCaption" xml:space="preserve">
+    <value>Koble til webkart</value>
+  </data>
+  <data name="LinkWebMapDialogMessage" xml:space="preserve">
+    <value>Kartkonfigurasjonen vil bli lastet inn fra webkartet. Eksisterende kartkonfigurasjon vil gå tapt. Fortsette?</value>
+  </data>
+  <data name="UnlinkWebMapDialogCaption" xml:space="preserve">
+    <value>Koble fra webkart</value>
+  </data>
+  <data name="UnlinkWebMapDialogMessage" xml:space="preserve">
+    <value>Kartkonfigurasjonen vil bli koblet fra webkartet. Du kan legge til, fjerne og konfigurere kartlag, men oppdateringer til webkartet vil ikke lenger vises i kartet. Fortsette?</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="Business" xml:space="preserve">
+    <value>Bedrift</value>
+  </data>
+  <data name="Cartography" xml:space="preserve">
+    <value>Kartografi</value>
+  </data>
+  <data name="Outdoor_Recreation" xml:space="preserve">
+    <value>Utendørs rekreasjon</value>
+  </data>
+  <data name="People_and_Places" xml:space="preserve">
+    <value>Personer og steder</value>
+  </data>
+  <data name="Public_Safety_and_Health" xml:space="preserve">
+    <value>Offentlig sikkerhet og helse</value>
+  </data>
+  <data name="Transportation" xml:space="preserve">
+    <value>Transport</value>
+  </data>
+  <data name="WebMapLoadFailed" xml:space="preserve">
+    <value>Webkartet med IDen {0} kunne ikke lastes inn. Du har kanskje ikke tillatelse til å åpne dette kartet, eller det finnes ikke lenger.</value>
+  </data>
+  <data name="ClusteringDisallowedCaption" xml:space="preserve">
+    <value>Gruppering er ikke tillatt</value>
+  </data>
+  <data name="ClusteringDisallowedMessage" xml:space="preserve">
+    <value>Gruppering er ikke tillatt fordi kartlaget er valgt for redigering.</value>
+  </data>
+  <data name="UnsupportedBasemapType" xml:space="preserve">
+    <value>Ikke støttet bakgrunnskarttype</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Bruk proxy</value>
+  </data>
+  <data name="AreaNotesLayer" xml:space="preserve">
+    <value>{0} – områder</value>
+  </data>
+  <data name="LineNotesLayer" xml:space="preserve">
+    <value>{0} – linjer</value>
+  </data>
+  <data name="PointNotesLayer" xml:space="preserve">
+    <value>{0} – punkter</value>
+  </data>
+  <data name="Editing" xml:space="preserve">
+    <value>Redigerer</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Aktivert</value>
+  </data>
+  <data name="ArcGISPortalDefaultName" xml:space="preserve">
+    <value>Portal for ArcGIS</value>
+  </data>
+  <data name="SignInToArcGISServer" xml:space="preserve">
+    <value>Logg på ArcGIS Server på {0}</value>
+  </data>
+  <data name="InvalidUrlUserPassword" xml:space="preserve">
+    <value>Ugyldig URL, brukernavn eller passord</value>
+  </data>
+  <data name="SignInTo" xml:space="preserve">
+    <value>Logg inn på {0}</value>
+  </data>
+  <data name="SignInToServer" xml:space="preserve">
+    <value>Logg inn på ArcGIS Server</value>
+  </data>
+  <data name="SignInToSecureServices" xml:space="preserve">
+    <value>Logg inn for å få tilgang til sikre tjenester</value>
+  </data>
+  <data name="OpenStreetMap" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="FeatureLayer" xml:space="preserve">
+    <value>Geoobjektlag</value>
+  </data>
+  <data name="MapLayer" xml:space="preserve">
+    <value>Kartlag</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>Pålogging mislyktes</value>
+  </data>
+</root>

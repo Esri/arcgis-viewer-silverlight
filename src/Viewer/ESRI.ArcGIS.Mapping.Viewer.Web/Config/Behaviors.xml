@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Behaviors xmlns:esri="http://schemas.esri.com/arcgis/mapping/2009">
+  <Behavior IsEnabled="True" Title="_Identify_">
+    <Behavior.Class>
+      <esri:IdentifyBehavior />
+    </Behavior.Class>
+    <Behavior.ConfigData></Behavior.ConfigData>
+  </Behavior>
+</Behaviors>

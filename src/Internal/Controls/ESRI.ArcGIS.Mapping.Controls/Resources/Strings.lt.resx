@@ -1,0 +1,2079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptChangesTooltip" xml:space="preserve">
+    <value>Priimti keitimus</value>
+  </data>
+  <data name="AddCoordsToListFailedCaption" xml:space="preserve">
+    <value>Nepavyko išsaugoti vietos nustatymo rezultatų</value>
+  </data>
+  <data name="AddCoordsToListFailedPrompt" xml:space="preserve">
+    <value>Nepavyko į sąrašą pridėti adreso koordinačių. Bandyti dar kartą?</value>
+  </data>
+  <data name="AddData" xml:space="preserve">
+    <value>Pridėti duomenis</value>
+  </data>
+  <data name="AddDataSetTooltip" xml:space="preserve">
+    <value>Pridėti duomenų rinkinį</value>
+  </data>
+  <data name="AddDataTooltip" xml:space="preserve">
+    <value>Pridėti daugiau duomenų į žemėlapį</value>
+  </data>
+  <data name="AddRange" xml:space="preserve">
+    <value>Pridėti intervalą</value>
+  </data>
+  <data name="AddressMatchError" xml:space="preserve">
+    <value>Adreso atitikties klaida: {0}</value>
+  </data>
+  <data name="AddressMatchingServicePrompt" xml:space="preserve">
+    <value>Paslauga:</value>
+  </data>
+  <data name="AdvancedClusterProperties" xml:space="preserve">
+    <value>Papildomos klasterio savybės</value>
+  </data>
+  <data name="AGSOImagery" xml:space="preserve">
+    <value>Aeronuotrauka</value>
+  </data>
+  <data name="AGSOStreets" xml:space="preserve">
+    <value>Gatvės</value>
+  </data>
+  <data name="AGSOTopo" xml:space="preserve">
+    <value>Vektorinis žemėlapis</value>
+  </data>
+  <data name="AliasHeader" xml:space="preserve">
+    <value>Pseudonimas</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Taikyti</value>
+  </data>
+  <data name="ArcGISOnline" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="ArcGISServer" xml:space="preserve">
+    <value>ArcGIS Server</value>
+  </data>
+  <data name="AssociatedMapPrompt" xml:space="preserve">
+    <value>Žemėlapis:</value>
+  </data>
+  <data name="AutoScroll" xml:space="preserve">
+    <value>Automatinis slinkimas:</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Fonas</value>
+  </data>
+  <data name="BaseMapConfigurationSectionHeader" xml:space="preserve">
+    <value>Pagrindo žemėlapis</value>
+  </data>
+  <data name="BaseMapPrompt" xml:space="preserve">
+    <value>Pagrindo žemėlapis:</value>
+  </data>
+  <data name="BingMaps" xml:space="preserve">
+    <value>Bing Maps</value>
+  </data>
+  <data name="BingMapsAccountInfo" xml:space="preserve">
+    <value>Bing Maps paskyros informacija</value>
+  </data>
+  <data name="BingMapsAerial" xml:space="preserve">
+    <value>Aeronuotrauka</value>
+  </data>
+  <data name="BingMapsAerialWithLabels" xml:space="preserve">
+    <value>Aeronuotrauka su žymėmis</value>
+  </data>
+  <data name="BingMapsInitializeFailed" xml:space="preserve">
+    <value>Nepavyko atpažinti Bing Maps. Vietoj jo bus naudojamas ArcGIS Online pagrindo žemėlapis. Norėdami gauti daugiau pagalbos, susisiekite su savo administratoriumi.</value>
+  </data>
+  <data name="BingMapsRoads" xml:space="preserve">
+    <value>Keliai</value>
+  </data>
+  <data name="Border" xml:space="preserve">
+    <value>Riba</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Parinkti...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Atšaukti</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>Atšaukiama</value>
+  </data>
+  <data name="ChangeBaseMapTooltip" xml:space="preserve">
+    <value>Pakeisti pagrindo žemėlapį</value>
+  </data>
+  <data name="ChangeColorRampTooltip" xml:space="preserve">
+    <value>Pasirinkti spalvų schemą</value>
+  </data>
+  <data name="ChangeGradientStopsTooltip" xml:space="preserve">
+    <value>Pasirinkite spalvų intervalus intensyvumo žemėlapiui</value>
+  </data>
+  <data name="CheckForUpdatesPrompt" xml:space="preserve">
+    <value>Patikrinti atnaujinimus:</value>
+  </data>
+  <data name="CheckForUpdateTooltip" xml:space="preserve">
+    <value>Gauti atnaujinto sąrašo duomenis, perstūmus žemėlapį arba pakeitus jo mastelį</value>
+  </data>
+  <data name="ChooseBaseMapLayer" xml:space="preserve">
+    <value>Pasirinkti pagrindo žemėlapį</value>
+  </data>
+  <data name="ChooseLayerHeader" xml:space="preserve">
+    <value>Pasirinkti duomenų rinkinį</value>
+  </data>
+  <data name="CityPrompt" xml:space="preserve">
+    <value>Miestas:</value>
+  </data>
+  <data name="ClassifyBy" xml:space="preserve">
+    <value>Pasirinkite laukelį, kuriam norite priskirti reikšmių intervalus</value>
+  </data>
+  <data name="ClassifyByPrompt" xml:space="preserve">
+    <value>Klasifikuoti pagal:</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Šalinti visus</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Iš naujo</value>
+  </data>
+  <data name="ClickSeqmentToZoom" xml:space="preserve">
+    <value>Paspaudę atskirą segmentą, jį priartinsite.</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>Paspaudę paslinksite į rytus</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>Paspaudę paslinksite į šiaurę</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>Paspaudę paslinksite į pietus</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>Paspaudę paslinksite į vakarus</value>
+  </data>
+  <data name="ClusterAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Papildomos savybės</value>
+  </data>
+  <data name="ClusterFeaturesTooltipFirstBit" xml:space="preserve">
+    <value>Grupavimas</value>
+  </data>
+  <data name="ClusterFeaturesTooltipSecondBit" xml:space="preserve">
+    <value>Elementai</value>
+  </data>
+  <data name="ClusterTooltip" xml:space="preserve">
+    <value>Grupuoti gretimus elementus</value>
+  </data>
+  <data name="ColorsPrompt" xml:space="preserve">
+    <value>Spalvos:</value>
+  </data>
+  <data name="ConfigurationTooltip" xml:space="preserve">
+    <value>Konfigūracija</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Konfigūruoti</value>
+  </data>
+  <data name="ConfigureBingMapsCredentials" xml:space="preserve">
+    <value>Paspaudę galėsite konfigūruoti Bing Maps paskyros informaciją</value>
+  </data>
+  <data name="ConfigureSettings" xml:space="preserve">
+    <value>Konfigūruoti nuostatas</value>
+  </data>
+  <data name="ConfigureTooltip" xml:space="preserve">
+    <value>Konfigūruoti</value>
+  </data>
+  <data name="CountryPrompt" xml:space="preserve">
+    <value>Šalis:</value>
+  </data>
+  <data name="CurrentSymbolPrompt" xml:space="preserve">
+    <value>Dabartinis simbolis:</value>
+  </data>
+  <data name="CustomColorRamp" xml:space="preserve">
+    <value>Kita</value>
+  </data>
+  <data name="CustomColorRampToolTip" xml:space="preserve">
+    <value>Pasirinkti spalvas kiekvienam reikšmių intervalui</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Duomenų šaltinis:</value>
+  </data>
+  <data name="DataSourceTooltip" xml:space="preserve">
+    <value>Įveskite  SharePoint, Spatial Data Service arba ArcGIS Server URL adresą</value>
+  </data>
+  <data name="DefinitionTabHeader" xml:space="preserve">
+    <value>Apibrėžtis</value>
+  </data>
+  <data name="DefinitionTabHeaderTooltip" xml:space="preserve">
+    <value>Nustatyti duomenų rinkinio savybes</value>
+  </data>
+  <data name="DeleteConnectionCaption" xml:space="preserve">
+    <value>Patvirtinti šalinimą</value>
+  </data>
+  <data name="DeleteConnectionPrompt" xml:space="preserve">
+    <value>Ar tikrai norite pašalinti šį ryšį?</value>
+  </data>
+  <data name="DeleteLayerMessageCaption" xml:space="preserve">
+    <value>Patvirtinti šalinimą</value>
+  </data>
+  <data name="DeleteLayerPrompt" xml:space="preserve">
+    <value>Ar tikrai norite pašalinti šį duomenų rinkinį iš žemėlapio?</value>
+  </data>
+  <data name="DeleteRange" xml:space="preserve">
+    <value>Pašalinti intervalą</value>
+  </data>
+  <data name="DisplayNamePrompt" xml:space="preserve">
+    <value>Rodyti pavadinimą:</value>
+  </data>
+  <data name="DisplayNameTooltip" xml:space="preserve">
+    <value>Nustatyti rodomą duomenų rinkinio pavadinimą</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>Patempę pasuksite</value>
+  </data>
+  <data name="DuplicateDataSource" xml:space="preserve">
+    <value>{0} jau pridėtas duomenų šaltinis</value>
+  </data>
+  <data name="DuplicateMapServiceLayer" xml:space="preserve">
+    <value>Žemėlapio paslauga jau yra pridėta</value>
+  </data>
+  <data name="DuplicateMapServiceLayerCaption" xml:space="preserve">
+    <value>Kopijuoti aptiktus</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Redaguoti</value>
+  </data>
+  <data name="EnterCredentials" xml:space="preserve">
+    <value>Įveskite prisijungimo vardą ir slaptažodį</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>Klaida</value>
+  </data>
+  <data name="Europe" xml:space="preserve">
+    <value>Europa</value>
+  </data>
+  <data name="Every" xml:space="preserve">
+    <value>Kiekvienas</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>Išskleisti/Suskleisti</value>
+  </data>
+  <data name="ExportSelection" xml:space="preserve">
+    <value>Išrinkimas eksportui</value>
+  </data>
+  <data name="FieldHeader" xml:space="preserve">
+    <value>Laukas</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>Užpildas</value>
+  </data>
+  <data name="FilterByMapView" xml:space="preserve">
+    <value>Filtruoti pagal žemėlapio vaizdą:</value>
+  </data>
+  <data name="FilterExpressionPrompt" xml:space="preserve">
+    <value>Filtravimo sąlyga:</value>
+  </data>
+  <data name="FilterExpressionTooltip" xml:space="preserve">
+    <value>Filtruoti pasirinktą duomenų rinkinį</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Rasti</value>
+  </data>
+  <data name="FindDirections" xml:space="preserve">
+    <value>Rasti maršrutą</value>
+  </data>
+  <data name="FindLocation" xml:space="preserve">
+    <value>Rasti vietą</value>
+  </data>
+  <data name="FindNearby" xml:space="preserve">
+    <value>Rasti netoliese</value>
+  </data>
+  <data name="FixLocation" xml:space="preserve">
+    <value>Nustatyti vietą</value>
+  </data>
+  <data name="Foreground" xml:space="preserve">
+    <value>Priekinis planas</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>Plačiau</value>
+  </data>
+  <data name="FromPrompt" xml:space="preserve">
+    <value>Iš:</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>Visa aprėptis</value>
+  </data>
+  <data name="GetListItemsFailed" xml:space="preserve">
+    <value>Nepavyko gauti elementų iš {0} svetainėje {1}</value>
+  </data>
+  <data name="GetListItemsFailedPromptRemove" xml:space="preserve">
+    <value>Nepavyko gauti elementų iš {0} svetainėje {1}.  Pašalinti iš žemėlapio šį vaizdą?</value>
+  </data>
+  <data name="GetListsFailed" xml:space="preserve">
+    <value>Nepavyko gauti sąrašų: {0}</value>
+  </data>
+  <data name="HeatMap" xml:space="preserve">
+    <value>Intensyvumo žemėlapis</value>
+  </data>
+  <data name="HeatMapAdvancedProperties" xml:space="preserve">
+    <value>Intensyvumo žemėlapio savybės</value>
+  </data>
+  <data name="HeatMapAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Intensyvumo žemėlapio vaizdavimo savybės</value>
+  </data>
+  <data name="HeatMapTooltip" xml:space="preserve">
+    <value>Duomenis atvaizduoti intensyvumo žemėlapiu</value>
+  </data>
+  <data name="HundredPercent" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="InitializationError" xml:space="preserve">
+    <value>Aktyvavimo klaida: {0}</value>
+  </data>
+  <data name="IntensityPrompt" xml:space="preserve">
+    <value>Ryškumas:</value>
+  </data>
+  <data name="InvalidUrlCaption" xml:space="preserve">
+    <value>Netinkamas URL</value>
+  </data>
+  <data name="InvalidUrlPrompt" xml:space="preserve">
+    <value>Įveskite tinkamą URL</value>
+  </data>
+  <data name="LatitudePrompt" xml:space="preserve">
+    <value>Platuma (Y):</value>
+  </data>
+  <data name="LayerInfoRetrievalError" xml:space="preserve">
+    <value>Klaida nuskaitant sluoksnio informaciją: {0}</value>
+  </data>
+  <data name="LayersTabHeader" xml:space="preserve">
+    <value>Sluoksnio matomumas</value>
+  </data>
+  <data name="LayersTabHeaderTooltip" xml:space="preserve">
+    <value>Konfigūruoti sluoksnių matomumą</value>
+  </data>
+  <data name="ListViewHeader" xml:space="preserve">
+    <value>Sąrašo rodinys</value>
+  </data>
+  <data name="LoadDataSourceTooltip" xml:space="preserve">
+    <value>Įkelti duomenų šaltinį</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>Surasti</value>
+  </data>
+  <data name="LocateByAddress" xml:space="preserve">
+    <value>Adresas</value>
+  </data>
+  <data name="LocateByAddressTooltip" xml:space="preserve">
+    <value>Sąrašo duomenis braižyti pagal aptiktus adresus</value>
+  </data>
+  <data name="LocateByCoordinates" xml:space="preserve">
+    <value>Koordinatės</value>
+  </data>
+  <data name="LocateByCoordinatesTooltip" xml:space="preserve">
+    <value>Sąrašo duomenis braižyti pagal koordinates</value>
+  </data>
+  <data name="LocateByPrompt" xml:space="preserve">
+    <value>Nustatyti vietą pagal:</value>
+  </data>
+  <data name="LocateTooltip" xml:space="preserve">
+    <value>Aptikti sąrašo adresus</value>
+  </data>
+  <data name="LocateUpdateTooltip" xml:space="preserve">
+    <value>Sąrašo duomenis braižyti pagal pasirinktus koordinačių laukus</value>
+  </data>
+  <data name="LocationFieldsTabHeader" xml:space="preserve">
+    <value>Padėties laukai</value>
+  </data>
+  <data name="LocationFieldsTabHeaderTooltip" xml:space="preserve">
+    <value>Nurodykite duomenų rinkinio adreso ar koordinačių laukus</value>
+  </data>
+  <data name="LongitudePrompt" xml:space="preserve">
+    <value>Ilguma (X):</value>
+  </data>
+  <data name="MapContentsTooltip" xml:space="preserve">
+    <value>Žemėlapio turinys</value>
+  </data>
+  <data name="MapXaml" xml:space="preserve">
+    <value>Žemėlapio XAML</value>
+  </data>
+  <data name="MapXamlRepresentation" xml:space="preserve">
+    <value>Žemėlapio XAML vaizdavimas</value>
+  </data>
+  <data name="MaxPrompt" xml:space="preserve">
+    <value>Maks:</value>
+  </data>
+  <data name="MinPrompt" xml:space="preserve">
+    <value>Min:</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Minutės</value>
+  </data>
+  <data name="ModifyRangeTooltip" xml:space="preserve">
+    <value>Keisti intervalą</value>
+  </data>
+  <data name="MoveBarUpDown" xml:space="preserve">
+    <value>Tempdami juostą aukštyn priartinsite, tempdami žemyn - atitolinsite</value>
+  </data>
+  <data name="MoveDownTooltip" xml:space="preserve">
+    <value>Žemyn</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>Perkelti pirmą</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>Perkelti paskutinį</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>Perkelti kitą</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>Perkelti ankstesnį</value>
+  </data>
+  <data name="MoveRangeTooltip" xml:space="preserve">
+    <value>Perkelti intervalą</value>
+  </data>
+  <data name="MoveUpTooltip" xml:space="preserve">
+    <value>Aukštyn</value>
+  </data>
+  <data name="MultiLayerCacheNotSupported" xml:space="preserve">
+    <value>Nepalaikomos daugiasluoksnės išklotinių paslaugos. Vietoj jų naudokite arba sukurkite vienasluoksnę išklotinių paslaugą.</value>
+  </data>
+  <data name="MultiLayerCacheNotSupportedCaption" xml:space="preserve">
+    <value>Nepalaikomos daugiasluoksnės išklotinių paslaugos.</value>
+  </data>
+  <data name="MultipleViewsNotAllowed" xml:space="preserve">
+    <value>SharePoint sąrašo rodinys negali būti pridedamas pakartotinai</value>
+  </data>
+  <data name="NewDataSourceHelpText" xml:space="preserve">
+    <value>&lt;Įveskite serverio pavadinimą arba URL adresą&gt;</value>
+  </data>
+  <data name="NextRange" xml:space="preserve">
+    <value>Kitas intervalas</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefined" xml:space="preserve">
+    <value>Nesusieti vietos nustatymui skirti sąrašo laukai. Susiekite sąrašo stulpelius su atitinkamais laukais.</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefinedCaption" xml:space="preserve">
+    <value>Nustatyti vietos laukų susiejimą</value>
+  </data>
+  <data name="NoAssociatedMapWebPart" xml:space="preserve">
+    <value>Nerasta žemėlapio žiniatinklio dalių (web parts).</value>
+  </data>
+  <data name="NoDistinctNumericFields" xml:space="preserve">
+    <value>Visi šio elementų rinkinio skaitiniai laukai turi vienodą minimalią ir maksimalią reikšmes.  Norint konfigūruoti reikšmių intervalus, reikšmių minimumas ir maksimumas turi skirtis.</value>
+  </data>
+  <data name="NoGeographicListsFound" xml:space="preserve">
+    <value>{0} nerasta sąrašų su geografiniais duomenimis</value>
+  </data>
+  <data name="NoLayersAdded" xml:space="preserve">
+    <value>Paspaudę mygtuką 'Pridėti duomenis', pridėsite duomenis į žemėlapį</value>
+  </data>
+  <data name="NoGPServicesFound" xml:space="preserve">
+    <value>{0} nerasta geoduomenų apdorojimo paslaugų</value>
+  </data>
+  <data name="NoMapServicesFound" xml:space="preserve">
+    <value>{0} nerasta žemėlapio paslaugų</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Nėra</value>
+  </data>
+  <data name="NoNumericFieldsFound" xml:space="preserve">
+    <value>Šis duomenų rinkinys neturi skaitinių laukų. Reikšmių intervalus galima nustatyti tik duomenų rinkiniams su mažiausiai vienu skaitiniu lauku.</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>Įrašų nėra</value>
+  </data>
+  <data name="NoRecordsForVisibleLayer" xml:space="preserve">
+    <value>Šių sąrašo elementų iš žemėlapio nepavyko gauti. Įjunkite sąrašo matomumą elementų peržiūrai.</value>
+  </data>
+  <data name="NoResultsCaption" xml:space="preserve">
+    <value>Rezultatų nėra</value>
+  </data>
+  <data name="NoResultsLayerNotVisible" xml:space="preserve">
+    <value>Rezultatų nerasta, nes sąrašas nėra matomas žemėlapyje</value>
+  </data>
+  <data name="NorthAmerica" xml:space="preserve">
+    <value>Šiaurės Amerika</value>
+  </data>
+  <data name="NoSpatialTablesFound" xml:space="preserve">
+    <value>{0} nerasta lentelių su erdviniais duomenimis</value>
+  </data>
+  <data name="NumericFieldNotDistinct" xml:space="preserve">
+    <value>{0} laukas turi vienodą minimalią ir maksimalią reikšmes. Reikšmių intervalus galima nustatyti tik laukams, kurių minimali ir maksimali reikšmės skiriasi.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Gerai</value>
+  </data>
+  <data name="OnPanAndZoom" xml:space="preserve">
+    <value>Tempiant ir artinant</value>
+  </data>
+  <data name="OperationalDataSectionHeader" xml:space="preserve">
+    <value>Duomenys</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Slaptažodis:</value>
+  </data>
+  <data name="PleaseSpecifyDataSourceMessage" xml:space="preserve">
+    <value>Nurodykite duomenų šaltinį</value>
+  </data>
+  <data name="PollForUpdatesTooltip" xml:space="preserve">
+    <value>Nustatyti intervalą atnaujinto sąrašo duomenų gavimui</value>
+  </data>
+  <data name="PopUpTabHeader" xml:space="preserve">
+    <value>Informacinis pranešimas</value>
+  </data>
+  <data name="PopUpTabHeaderTooltip" xml:space="preserve">
+    <value>Konfigūruoti duomenų rinkinio informaciniame pranešime rodomą žemėlapio informaciją</value>
+  </data>
+  <data name="PreDefinedColorRamp" xml:space="preserve">
+    <value>Numatytas</value>
+  </data>
+  <data name="PreDefinedColorRampTooltip" xml:space="preserve">
+    <value>Taikyti numatytą spalvų rinkinį</value>
+  </data>
+  <data name="PreviousRange" xml:space="preserve">
+    <value>Ankstesnis intervalas</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>Gaminimas</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Savybės - {0}</value>
+  </data>
+  <data name="RecordsPrompt" xml:space="preserve">
+    <value>Įrašų:</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Atnaujinti</value>
+  </data>
+  <data name="RefreshError" xml:space="preserve">
+    <value>Atnaujinant {0} sluoksnį įvyko klaida</value>
+  </data>
+  <data name="RefreshMapXamlTooltip" xml:space="preserve">
+    <value>Atnaujinti žemėlapio XAML</value>
+  </data>
+  <data name="RefreshTooltip" xml:space="preserve">
+    <value>Atnaujinti</value>
+  </data>
+  <data name="RemoveTooltip" xml:space="preserve">
+    <value>Pašalinti</value>
+  </data>
+  <data name="ResetExtent" xml:space="preserve">
+    <value>Atstatyti aprėptį</value>
+  </data>
+  <data name="ResetExtentTooltip" xml:space="preserve">
+    <value>Pakeisti žemėlapio aprėptį į nustatytą ArcGIS server paslaugoje.</value>
+  </data>
+  <data name="ResetMapRotation" xml:space="preserve">
+    <value>Atstatyti žemėlapio pasukimą</value>
+  </data>
+  <data name="ResolutionPrompt" xml:space="preserve">
+    <value>Raiška:</value>
+  </data>
+  <data name="ResultsViewHeader" xml:space="preserve">
+    <value>Rezultatai</value>
+  </data>
+  <data name="RetrievingBaseMaps" xml:space="preserve">
+    <value>Gaunami galimi pagrindo žemėlapiai</value>
+  </data>
+  <data name="RetrievingGeometryType" xml:space="preserve">
+    <value>Gaunamas geometrijos tipas</value>
+  </data>
+  <data name="RetrievingInformation" xml:space="preserve">
+    <value>Gaunama informacija iš serverio</value>
+  </data>
+  <data name="RollBackChangesTooltip" xml:space="preserve">
+    <value>Atšaukti pakeitimus</value>
+  </data>
+  <data name="ScaleBarUnit_feet" xml:space="preserve">
+    <value>pėd.</value>
+  </data>
+  <data name="ScaleBarUnit_kilometers" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="ScaleBarUnit_meters" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="ScaleBarUnit_miles" xml:space="preserve">
+    <value>myl.</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>Sekundės</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Pasirinkti visus</value>
+  </data>
+  <data name="SelectAllTooltip" xml:space="preserve">
+    <value>Pasirinkti visus</value>
+  </data>
+  <data name="SelectedRangePrompt" xml:space="preserve">
+    <value>Intervalas:</value>
+  </data>
+  <data name="SelectedRecordsFormatString" xml:space="preserve">
+    <value>Įrašai ({0} iš {1} pažymėti)</value>
+  </data>
+  <data name="SelectRangeTooltip" xml:space="preserve">
+    <value>Pažymėkite intervalą redagavimui</value>
+  </data>
+  <data name="ServerPrompt" xml:space="preserve">
+    <value>Serveris:</value>
+  </data>
+  <data name="ServiceConnectionError" xml:space="preserve">
+    <value>Jungiantis prie {0} įvyko klaida.  Patikrinkite URL, įsitikinkite, kad paslauga veikia, ir bandykite dar kartą.</value>
+  </data>
+  <data name="ServiceConnectionErrorCaption" xml:space="preserve">
+    <value>Ryšio klaida</value>
+  </data>
+  <data name="ServiceConnectionErrorDuringInit" xml:space="preserve">
+    <value>Negalima prisijungti prie {0}.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Nustatymai</value>
+  </data>
+  <data name="ShowHide" xml:space="preserve">
+    <value>Rodyti/Slėpti</value>
+  </data>
+  <data name="ShowHideTooltip" xml:space="preserve">
+    <value>Rodyti/Slėpti</value>
+  </data>
+  <data name="SimpleSymbolType" xml:space="preserve">
+    <value>Paprastas</value>
+  </data>
+  <data name="SimpleSymbolTypeTooltip" xml:space="preserve">
+    <value>Atvaizduoti pasirinktą duomenų rinkinį su vienu simboliu</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Šaltinis:</value>
+  </data>
+  <data name="Staging" xml:space="preserve">
+    <value>Talpinama</value>
+  </data>
+  <data name="StatePrompt" xml:space="preserve">
+    <value>Valstybė/Regionas:</value>
+  </data>
+  <data name="SymbolsTabHeader" xml:space="preserve">
+    <value>Simboliai</value>
+  </data>
+  <data name="SymbolsTabHeaderTooltip" xml:space="preserve">
+    <value>Konfigūruoti pasirinkto duomenų rinkinio rodymą</value>
+  </data>
+  <data name="SymbolTypePrompt" xml:space="preserve">
+    <value>Simbolio tipas:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>iki</value>
+  </data>
+  <data name="TokenAuthenticationFailed" xml:space="preserve">
+    <value>Bing Maps autentifikavimas nepavyko.  Patikrinkite savo prisijungimo duomenis ir bandykite dar kartą.</value>
+  </data>
+  <data name="TokenConnectionFailed" xml:space="preserve">
+    <value>Nepavyko gauti rakto.  Patikrinkite ryšį su pagrindiniu serveriu ir bandykite dar kartą.</value>
+  </data>
+  <data name="TolerancePrompt" xml:space="preserve">
+    <value>Leistinas nuokrypis:</value>
+  </data>
+  <data name="ToPrompt" xml:space="preserve">
+    <value>Į:</value>
+  </data>
+  <data name="TotalDistancePrompt" xml:space="preserve">
+    <value>Visas atstumas:</value>
+  </data>
+  <data name="TotalTimePrompt" xml:space="preserve">
+    <value>Visas laikas:</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>Permatomumas</value>
+  </data>
+  <data name="TransparencyPrompt" xml:space="preserve">
+    <value>Permatomumas:</value>
+  </data>
+  <data name="UnhandledSilverlightError" xml:space="preserve">
+    <value>Neapdorota klaida  Silverlight 2 aplikacijoje</value>
+  </data>
+  <data name="UpdateAddress" xml:space="preserve">
+    <value>Atnaujinti adresą</value>
+  </data>
+  <data name="UpdateLayerError" xml:space="preserve">
+    <value>Klaida atnaujinant sluoksnį: {0}</value>
+  </data>
+  <data name="UpdateListError" xml:space="preserve">
+    <value>Klaida išsaugant sąrašo pakeitimus: {0}</value>
+  </data>
+  <data name="UrlPrompt" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="UserNamePrompt" xml:space="preserve">
+    <value>Naudotojas:</value>
+  </data>
+  <data name="UseStagingServer" xml:space="preserve">
+    <value>Naudoti darbinį serverį</value>
+  </data>
+  <data name="ValidAddressError" xml:space="preserve">
+    <value>Įveskite tinkamą adresą</value>
+  </data>
+  <data name="ValidAddressErrorCaption" xml:space="preserve">
+    <value>Netinkamas adresas</value>
+  </data>
+  <data name="ValidCoordinatesError" xml:space="preserve">
+    <value>Įveskite tinkamas koordinates</value>
+  </data>
+  <data name="ValidCoordinatesErrorCaption" xml:space="preserve">
+    <value>Netinkamos koordinatės</value>
+  </data>
+  <data name="ValueRanges" xml:space="preserve">
+    <value>Reikšmių intervalai</value>
+  </data>
+  <data name="ValueRangesTooltip" xml:space="preserve">
+    <value>Parodyti duomenų rinkinį taikant reikšmių intervalus</value>
+  </data>
+  <data name="ViewItem" xml:space="preserve">
+    <value>Peržiūrėti elementą</value>
+  </data>
+  <data name="VisibleHeader" xml:space="preserve">
+    <value>Matomas</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Plotis</value>
+  </data>
+  <data name="XamlRepresentation" xml:space="preserve">
+    <value>Pasirinkto sluoksnio XAML vaizdavimas</value>
+  </data>
+  <data name="XamlViewTabHeader" xml:space="preserve">
+    <value>Xaml rodinys</value>
+  </data>
+  <data name="XamlViewTabHeaderTooltip" xml:space="preserve">
+    <value>Peržiūrėti sugeneruotą sluoksnio Xaml</value>
+  </data>
+  <data name="ZeroPercent" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="Zip4Prompt" xml:space="preserve">
+    <value>Zip4:</value>
+  </data>
+  <data name="ZipPrompt" xml:space="preserve">
+    <value>Pašto kodas:</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Artinti</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Tolinti</value>
+  </data>
+  <data name="ZoomOutButton" xml:space="preserve">
+    <value>Tolinti</value>
+  </data>
+  <data name="ZoomRangeTooltip" xml:space="preserve">
+    <value>Priartinti masteliu</value>
+  </data>
+  <data name="ZoomToAllRecords" xml:space="preserve">
+    <value>Eiti į</value>
+  </data>
+  <data name="ZoomToItem" xml:space="preserve">
+    <value>Priartinti elementą</value>
+  </data>
+  <data name="ZoomToSelection" xml:space="preserve">
+    <value>Priartinti išrinktus</value>
+  </data>
+  <data name="ConfigFileUrlTextboxTooltip" xml:space="preserve">
+    <value>Įveskite URL į konfigūracinį failą</value>
+  </data>
+  <data name="ConnectToSharePointDataSource" xml:space="preserve">
+    <value>&lt;Įveskite SharePoint svetainės URL&gt;</value>
+  </data>
+  <data name="ExportToFile" xml:space="preserve">
+    <value>Eksportuoti į failą</value>
+  </data>
+  <data name="FileNamePrompt" xml:space="preserve">
+    <value>Failo pavadinimas:</value>
+  </data>
+  <data name="MustEnterFileName" xml:space="preserve">
+    <value>Įveskite failo pavadinimą</value>
+  </data>
+  <data name="MustEnterFileNameTitle" xml:space="preserve">
+    <value>Trūksta failo pavadinimo</value>
+  </data>
+  <data name="OverwriteExistingFile" xml:space="preserve">
+    <value>Perrašyti ankstesnį failą</value>
+  </data>
+  <data name="UrlToSitePrompt" xml:space="preserve">
+    <value>Svetainės URL:</value>
+  </data>
+  <data name="CustomBaseMap" xml:space="preserve">
+    <value>ArcGIS Server pagrindo žemėlapis</value>
+  </data>
+  <data name="AGSDataSourceTooltip" xml:space="preserve">
+    <value>Įveskite ArcGIS Server galinio taško URL</value>
+  </data>
+  <data name="NotUsingBingMapsResource" xml:space="preserve">
+    <value>Jūsų aplikacija nenaudoja Bing Maps resursų. Šiuo metu paskyros informacijos konfigūruoti nereikia.</value>
+  </data>
+  <data name="NotUsingBingMapsResourceCaption" xml:space="preserve">
+    <value>Nėra Bings Maps resurso</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Užverti</value>
+  </data>
+  <data name="BrowseForBaseMap" xml:space="preserve">
+    <value>Ieškoti pagrindo žemėlapio</value>
+  </data>
+  <data name="EnterUrl" xml:space="preserve">
+    <value>Įveskite URL</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatch" xml:space="preserve">
+    <value>Išklotinių paslaugos ir pagrindo žemėlapio koordinačių sistemos nesutampa. Šios žemėlapio paslaugos pridėti negalima.</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatchCaption" xml:space="preserve">
+    <value>Nesutampa koordinačių sistemos</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemoved" xml:space="preserve">
+    <value>Tarp darbinių sluoksnių yra žemėlapio paslaugų, kurių koordinačių sistema nesutampa su pagrindo žemėlapio. Norėdami tęsti darbą, šias žemėlapio paslaugas turėsite pašalinti. Spauskite OK, jei norite pašalinti.</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemovedCaption" xml:space="preserve">
+    <value>Darbinio duomenų rinkinio neatitiktis</value>
+  </data>
+  <data name="AddContentTitle" xml:space="preserve">
+    <value>Pridėti turinį</value>
+  </data>
+  <data name="BaseMapGalleryTitle" xml:space="preserve">
+    <value>Pasirinkite pagrindo žemėlapį</value>
+  </data>
+  <data name="BrowseForBaseMapTitle" xml:space="preserve">
+    <value>Nurodykite pagrindo žemėlapį</value>
+  </data>
+  <data name="EnterUrlDialogTitle" xml:space="preserve">
+    <value>Įveskite pagrindo žemėlapio URL</value>
+  </data>
+  <data name="MapContentsTitle" xml:space="preserve">
+    <value>Žemėlapio turinys</value>
+  </data>
+  <data name="CanOnlyUseCachedMapServicesAsBaseMap" xml:space="preserve">
+    <value>Tik ArcGIS išklotinių paslaugos gali būti naudojamos pagrindo žemėlapiams.</value>
+  </data>
+  <data name="InvalidMapServiceCaption" xml:space="preserve">
+    <value>Neleistina žemėlapio paslauga </value>
+  </data>
+  <data name="MapTipBorderColorTooltip" xml:space="preserve">
+    <value>Keisti žemėlapio užuominos rėmelio spalvą</value>
+  </data>
+  <data name="MapTipFillColorTooltip" xml:space="preserve">
+    <value>Keisti žemėlapio užuominos užpildymo spalvą</value>
+  </data>
+  <data name="MapTipForegroundColorTooltip" xml:space="preserve">
+    <value>Keisti žemėlapio užuominos teksto spalvą</value>
+  </data>
+  <data name="SampleMapTipText" xml:space="preserve">
+    <value>Pavyzdynis tekstas</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Pridėti pažymėtą sluoksnį</value>
+  </data>
+  <data name="AttributePrompt" xml:space="preserve">
+    <value>Atributas:</value>
+  </data>
+  <data name="ColorScheme" xml:space="preserve">
+    <value>Spalvų schema</value>
+  </data>
+  <data name="MoreOptions" xml:space="preserve">
+    <value>Daugiau parinkčių</value>
+  </data>
+  <data name="RendererPrompt" xml:space="preserve">
+    <value>Vaizdavimas:</value>
+  </data>
+  <data name="SymbolOptions" xml:space="preserve">
+    <value>Schemos savybės</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Dabartinis simbolis:</value>
+  </data>
+  <data name="Basemap" xml:space="preserve">
+    <value>Pagrindo žemėlapis</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Perkelti pirmyn</value>
+  </data>
+  <data name="ClassBreaks" xml:space="preserve">
+    <value>Intervalai</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Spalva</value>
+  </data>
+  <data name="FromServer" xml:space="preserve">
+    <value>Parinkti</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Pradžia</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Žemėlapis</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Žemėlapio turinys</value>
+  </data>
+  <data name="MapTip" xml:space="preserve">
+    <value>Žemėlapio užuomina</value>
+  </data>
+  <data name="MoreSymbolOptions" xml:space="preserve">
+    <value>Schemos savybės</value>
+  </data>
+  <data name="Organize" xml:space="preserve">
+    <value>Tvarkyti</value>
+  </data>
+  <data name="RefreshLayer" xml:space="preserve">
+    <value>Atnaujinti</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Pašalinti</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Ieškoma...</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Perkelti atgal</value>
+  </data>
+  <data name="SingleSymbol" xml:space="preserve">
+    <value>Vienu simboliu</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Dydis</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Įrankiai</value>
+  </data>
+  <data name="UniqueValues" xml:space="preserve">
+    <value>Unikalios reikšmės</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="CategoryPrompt" xml:space="preserve">
+    <value>Kategorija:</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>Simbolis</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Rodinys</value>
+  </data>
+  <data name="DrawOrder" xml:space="preserve">
+    <value>Braižymo tvarka</value>
+  </data>
+  <data name="Popups" xml:space="preserve">
+    <value>Informaciniai langai</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Lentelė</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>Konfigūruoti informacinius langus</value>
+  </data>
+  <data name="AddUniqueValue" xml:space="preserve">
+    <value>Pridėti reikšmę</value>
+  </data>
+  <data name="DeleteUniqueValue" xml:space="preserve">
+    <value>Pašalinti pažymėtą reikšmę</value>
+  </data>
+  <data name="NextUniqueValue" xml:space="preserve">
+    <value>Kita unikali reikšmė</value>
+  </data>
+  <data name="PreviousUniqueValue" xml:space="preserve">
+    <value>Ankstesnė unikali reikšmė</value>
+  </data>
+  <data name="ValuePrompt" xml:space="preserve">
+    <value>Reikšmė:</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Sluoksnis</value>
+  </data>
+  <data name="MapCenterTooltip" xml:space="preserve">
+    <value>ArcGIS.com žemėlapių centras</value>
+  </data>
+  <data name="ClassesPrompt" xml:space="preserve">
+    <value>Klasės:</value>
+  </data>
+  <data name="InvalidClassBreakValue" xml:space="preserve">
+    <value>Neleistina reikšmė</value>
+  </data>
+  <data name="DefaultSymbol" xml:space="preserve">
+    <value>Numatytasis simbolis</value>
+  </data>
+  <data name="MaxPointsPrompt" xml:space="preserve">
+    <value>Taškų maskimumas:</value>
+  </data>
+  <data name="RadiusPrompt" xml:space="preserve">
+    <value>Spindulys:</value>
+  </data>
+  <data name="UsePointClustering" xml:space="preserve">
+    <value>Naudoti taškų grupavimą</value>
+  </data>
+  <data name="AddContent" xml:space="preserve">
+    <value>Pridėti turinį</value>
+  </data>
+  <data name="LayerSymbology" xml:space="preserve">
+    <value>Sutartiniai ženklai</value>
+  </data>
+  <data name="AutoUpdates" xml:space="preserve">
+    <value>Automatinis atnaujinimas</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>Intervalas</value>
+  </data>
+  <data name="PollForUpdates" xml:space="preserve">
+    <value>Ieškoti atnaujinimų</value>
+  </data>
+  <data name="UpdateOnExtentChanged" xml:space="preserve">
+    <value>Atnaujinti aprėpčiai pasikeitus</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtras</value>
+  </data>
+  <data name="FilterLayerTitle" xml:space="preserve">
+    <value>Nurodykite filtravimo sąlygą</value>
+  </data>
+  <data name="FilterByMapExtent" xml:space="preserve">
+    <value>Filtruoti pagal aprėptį</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Visas ekranas</value>
+  </data>
+  <data name="AutoScrollRow" xml:space="preserve">
+    <value>Automatiškai slenkanti eilutė</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Paslaugos apibūdinimas</value>
+  </data>
+  <data name="DatasetPrompt" xml:space="preserve">
+    <value>Duomenų rinkinys:</value>
+  </data>
+  <data name="DistancePrompt" xml:space="preserve">
+    <value>Atstumas:</value>
+  </data>
+  <data name="FindNearbyTitle" xml:space="preserve">
+    <value>Rasti netoliese</value>
+  </data>
+  <data name="InvalidDistance" xml:space="preserve">
+    <value>Įveskite tinkamą atstumą</value>
+  </data>
+  <data name="InvalidDistanceCaption" xml:space="preserve">
+    <value>Netinkamas atstumas</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>Kilometrai</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Metrai</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>Mylios</value>
+  </data>
+  <data name="SelectionTools" xml:space="preserve">
+    <value>Išrinkimo įrankiai</value>
+  </data>
+  <data name="BufferDistance" xml:space="preserve">
+    <value>Buferio atstumas</value>
+  </data>
+  <data name="Feed" xml:space="preserve">
+    <value>GeoRSS...</value>
+  </data>
+  <data name="FindNearbyBufferPrefix" xml:space="preserve">
+    <value>Paieškos zonos buferis - </value>
+  </data>
+  <data name="FindNearbyPrefix" xml:space="preserve">
+    <value>Rasti netoliese - </value>
+  </data>
+  <data name="SelectByDraw" xml:space="preserve">
+    <value>Pažymėti apibrėžiant</value>
+  </data>
+  <data name="ColorSchemePrompt" xml:space="preserve">
+    <value>Spalvų schema:</value>
+  </data>
+  <data name="EditValuesPrompt" xml:space="preserve">
+    <value>Redaguoti reikšmes:</value>
+  </data>
+  <data name="TypeValueToAdd" xml:space="preserve">
+    <value>Įrašykite reikšmę pridėjimui</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="AddGeoRSSTitle" xml:space="preserve">
+    <value>Įveskite URL GeoRSS tiekimui</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>Antraštė:</value>
+  </data>
+  <data name="BrowseDialogGeographicDataNotFound" xml:space="preserve">
+    <value>Nerasta geografinių duomenų</value>
+  </data>
+  <data name="DefaultBasemapLayerDisplayName" xml:space="preserve">
+    <value>Pagrindo žemėlapis</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>Sluoksnis:</value>
+  </data>
+  <data name="AddLayerTooltip" xml:space="preserve">
+    <value>Į žemėlapį pridėti pažymėtą ArcGIS Server, SharePoint, arba Spatial Data Service duomenų rinkinį</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Pervadinti</value>
+  </data>
+  <data name="ODataFeed" xml:space="preserve">
+    <value>OData...</value>
+  </data>
+  <data name="SignInWithGlobalAccount" xml:space="preserve">
+    <value>Prisijunkite su savo ESRI globalia paskyra</value>
+  </data>
+  <data name="ClusterColor" xml:space="preserve">
+    <value>Grupės fono spalva</value>
+  </data>
+  <data name="ClusterTextColor" xml:space="preserve">
+    <value>Grupės užpildo spalva</value>
+  </data>
+  <data name="Clustering" xml:space="preserve">
+    <value>Grupavimas</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Trumpai</value>
+  </data>
+  <data name="HeatMapAdd" xml:space="preserve">
+    <value>Pridėti intensyvumo žemėlapį</value>
+  </data>
+  <data name="Intensity" xml:space="preserve">
+    <value>Intensyvumas</value>
+  </data>
+  <data name="OpenItemOnClick" xml:space="preserve">
+    <value>Paspaudę atversite elementą</value>
+  </data>
+  <data name="Symbology" xml:space="preserve">
+    <value>Sutartiniai ženklai</value>
+  </data>
+  <data name="ShowMapContents" xml:space="preserve">
+    <value>Grįžti</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>Atributai</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Įvairūs</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Papildomi</value>
+  </data>
+  <data name="ExtensionLoadFailed" xml:space="preserve">
+    <value>Plėtinių įkėlimas nepavyko</value>
+  </data>
+  <data name="ToolClassLoadFailed" xml:space="preserve">
+    <value>Įrankių klasės įkėlimas nepavyko</value>
+  </data>
+  <data name="ToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Įrankių klasės įkėlimo konfigūracija nepavyko</value>
+  </data>
+  <data name="ExtensionInitializationFailed" xml:space="preserve">
+    <value>Nepavyko sukonkretinti vartotojo komandos pavyzdžio.</value>
+  </data>
+  <data name="ExtensionInitializationFailedHeader" xml:space="preserve">
+    <value>Nepavyko aktyvuoti plėtinio</value>
+  </data>
+  <data name="Less" xml:space="preserve">
+    <value>Mažiau</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Daugiau</value>
+  </data>
+  <data name="ConfiguringLayer" xml:space="preserve">
+    <value>Konfigūruojama:</value>
+  </data>
+  <data name="RemoveLayerCaption" xml:space="preserve">
+    <value>Pašalinti sluoksnį?</value>
+  </data>
+  <data name="RemoveLayerNameSubstitude" xml:space="preserve">
+    <value>pažymėtas</value>
+  </data>
+  <data name="RemoveLayerPrompt" xml:space="preserve">
+    <value>Ar norite iš žemėlapio pašalinti {0} sluoksnį?</value>
+  </data>
+  <data name="BrowseNoEllipsis" xml:space="preserve">
+    <value>Parinkti</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Turinys</value>
+  </data>
+  <data name="GeoRSS" xml:space="preserve">
+    <value>GeoRSS</value>
+  </data>
+  <data name="SearchNoEllipsis" xml:space="preserve">
+    <value>Ieškoti</value>
+  </data>
+  <data name="ErrorLoadConfigurationOfExtension" xml:space="preserve">
+    <value>Neapdorota klaida plėtinio ({0}) LoadConfiguration</value>
+  </data>
+  <data name="ErrorNoPrinterContainerFoundInPrintTemplate" xml:space="preserve">
+    <value>Spausdinimo šablone nerastas spaudinio rodinys.</value>
+  </data>
+  <data name="ErrorSaveConfigurationOfExtension" xml:space="preserve">
+    <value>Neapdorota klaida plėtinio ({0}) SaveConfiguration</value>
+  </data>
+  <data name="ExceptionCachedMapServiceSpatialReferenceDoesNotMatch" xml:space="preserve">
+    <value>Išklotinių paslaugos koordinačių sistema netinka.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitialized" xml:space="preserve">
+    <value>Negalima kreiptis į ZoomMapToExtent, jei žemėlapis dar nėra aktyvuotas. Naudokite MapLayersInitialized.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitializedMapReferenceNull" xml:space="preserve">
+    <value>Negalima kreiptis į ZoomMapToExtent, jei žemėlapis dar nėra aktyvuotas. Žemėlapio koordinačių sistema yra null.</value>
+  </data>
+  <data name="ExceptionConnectionTypeDoesNotCoorespondToDatasourceWhichHasResources" xml:space="preserve">
+    <value>Ryšio tipas {0} neatitinka resursus turinčio duomenų šaltinio ({1})</value>
+  </data>
+  <data name="ExceptionCouldNotFindElementWithName" xml:space="preserve">
+    <value>Nerasta objektų su pavadinimu {0}.</value>
+  </data>
+  <data name="ExceptionCouldNotFindToggleButtonWithName" xml:space="preserve">
+    <value>Negalima rasti perjungimo mygtuko su pavadinimu {0}.</value>
+  </data>
+  <data name="ExceptionDatasourceNotLoadedForBaseMapType" xml:space="preserve">
+    <value>Pagrindo žemėlapio tipui {0} dataSource nebuvo įkeltas</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>elementas</value>
+  </data>
+  <data name="ExceptionMapHasNotBeenInitializedYet" xml:space="preserve">
+    <value>Žemėlapis dar neaktyvuotas</value>
+  </data>
+  <data name="ExceptionMapLayersHaveNotBeenInstantiated" xml:space="preserve">
+    <value>Žemėlapio sluoksniai dar neaktyvuoti. BaseMap gali būti keičiami tik atlikus MapLayersInitialized</value>
+  </data>
+  <data name="ExceptionMapNotSet" xml:space="preserve">
+    <value>Nenurodytas žemėlapis</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationProvider" xml:space="preserve">
+    <value>Privaloma nurodyti ConfigurationProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationStoreProvider" xml:space="preserve">
+    <value>Privaloma nurodyti ConfigurationStoreProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyDataSourceProvider" xml:space="preserve">
+    <value>Privaloma nurodyti DataSourceProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyLayoutProvider" xml:space="preserve">
+    <value>Privaloma nurodyti LayoutProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifySpatialReferenceOnEnvelope" xml:space="preserve">
+    <value>Privaloma ant voko nurodyti koordinačių sistemą</value>
+  </data>
+  <data name="ExceptionMustSpecifyThemeProvider" xml:space="preserve">
+    <value>Privaloma nurodyti ThemeProvider</value>
+  </data>
+  <data name="ExceptionNoBingMapsTokenAvailable" xml:space="preserve">
+    <value>Nėra galimų Bing Maps raktų</value>
+  </data>
+  <data name="ExceptionNoGeometryServiceUrlSpecifiedLayerZoomedIsDifferentSpatialReference" xml:space="preserve">
+    <value>Nenurodytas geometrijos serviso URL. Sluoksnis buvo priartintas naudojant skirtingą žemėlapio koordinačių sistemą, viso ekrano vaizdas turi būti perprojektuotas naudojant geometrijos servisą</value>
+  </data>
+  <data name="ExceptionNotSupported" xml:space="preserve">
+    <value>Nepalaikoma</value>
+  </data>
+  <data name="ExceptionNullBaseMapInfo" xml:space="preserve">
+    <value>baseMapInfo</value>
+  </data>
+  <data name="ExceptionOnlyCachedServicesCanBeUsedAsBaseMaps" xml:space="preserve">
+    <value>Tik išklotinių paslaugos gali būti naudojamos pagrindo žemėlapiams</value>
+  </data>
+  <data name="ExceptionUnableToInstantiateDatasourceForBaseMapType" xml:space="preserve">
+    <value>Negalima konkretizuoti duomenų šaltinio pagrindo žemėlapio tipui {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Negalima gauti informacijos apie konfigūraciją. Negrąžinama jokia informacija.</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasource" xml:space="preserve">
+    <value>Negalima gauti duomenų šaltinio {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasourceConnectionType" xml:space="preserve">
+    <value>Negalima gauti duomenų šaltinio ryšio tipui {0}</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Įkeliama...</value>
+  </data>
+  <data name="LoadingMapCenter" xml:space="preserve">
+    <value>Įkeliamas žemėlapių centras...</value>
+  </data>
+  <data name="LogUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Negalima gauti informacijos apie konfigūraciją</value>
+  </data>
+  <data name="MsgErrorExecutingBufferOperation" xml:space="preserve">
+    <value>Klaida kuriant buferį.</value>
+  </data>
+  <data name="MsgErrorExecutingRelationAsyncOperation" xml:space="preserve">
+    <value>Klaida atliekant operaciją RelationAsync</value>
+  </data>
+  <data name="MsgErrorOpeningFile" xml:space="preserve">
+    <value>Klaida atveriant failą</value>
+  </data>
+  <data name="MsgErrorRetrievingSubLayersForMapService" xml:space="preserve">
+    <value>Klaida atkuriant posluoksnius  žemėlapio servisui</value>
+  </data>
+  <data name="MsgErrorSavingFile" xml:space="preserve">
+    <value>Klaida saugant failą</value>
+  </data>
+  <data name="MsgNoFeaturesSelected" xml:space="preserve">
+    <value>Nepasirinkta objektų</value>
+  </data>
+  <data name="MsgNoResourcesFound" xml:space="preserve">
+    <value>Nerasta šaltinių</value>
+  </data>
+  <data name="MsgUnableToAccessGeometryService" xml:space="preserve">
+    <value>Negalima pasiekti geometrjios serviso.</value>
+  </data>
+  <data name="MsgUnableToCreateLayer" xml:space="preserve">
+    <value>Negalima sukurti sluoksnio</value>
+  </data>
+  <data name="MsgUnableToRetrieveResources" xml:space="preserve">
+    <value>Negalima gauti resursų.</value>
+  </data>
+  <data name="MsgUnknownError" xml:space="preserve">
+    <value>Nenustatyta klaida</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Vardas</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>Nenustatytas vartotojas</value>
+  </data>
+  <data name="NotValidMapDocument" xml:space="preserve">
+    <value>Žemėlapio dokumentas netinkamas.</value>
+  </data>
+  <data name="ErrorRetrievingSymbols" xml:space="preserve">
+    <value>Klaida įkeliant simbolius</value>
+  </data>
+  <data name="ExceptionCacheMapServicesCannotReproject" xml:space="preserve">
+    <value>Išklotinių paslaugų aplikacijoje projektuoti negalima</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Atverti internetinį žemėlapį iš ArcGIS.com</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Prisijungti</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Atsijungti</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Fono tekstas</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Nariai</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Peržiūra</value>
+  </data>
+  <data name="SelectedItem" xml:space="preserve">
+    <value>Pažymėtas elementas</value>
+  </data>
+  <data name="RecordOutOfSelected" xml:space="preserve">
+    <value>Įrašų ({0} iš {1} pažymėtų)</value>
+  </data>
+  <data name="ExtensionInitializationFailedUrl" xml:space="preserve">
+    <value>Nepavyko sukonkretinti vartotojo komandos pavyzdžio. URL: {0}</value>
+  </data>
+  <data name="HeatMapTitle" xml:space="preserve">
+    <value>{0} Intensivymo žemėlapis</value>
+  </data>
+  <data name="CurrentColor" xml:space="preserve">
+    <value>Dabartinė spalva</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Aprašas:</value>
+  </data>
+  <data name="HeightPrompt" xml:space="preserve">
+    <value>Aukštis:</value>
+  </data>
+  <data name="Moredotdot" xml:space="preserve">
+    <value>Daugiau...</value>
+  </data>
+  <data name="NotificationDontShowDialogOnStartup" xml:space="preserve">
+    <value>Nerodyti šio lango paleidžiant programą</value>
+  </data>
+  <data name="RecordPrompt" xml:space="preserve">
+    <value>Įrašas:</value>
+  </data>
+  <data name="StandardColors" xml:space="preserve">
+    <value>Įprastinė spalvos</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Temos spalvos</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Antraštė:</value>
+  </data>
+  <data name="WidthPrompt" xml:space="preserve">
+    <value>Plotis:</value>
+  </data>
+  <data name="MapBehaviors" xml:space="preserve">
+    <value>Žemėlapio veikimo taisyklės</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Žemyn</value>
+  </data>
+  <data name="MapBehaviorAdd" xml:space="preserve">
+    <value>Pridėti naują žemėlapio veikimo taisyklę</value>
+  </data>
+  <data name="MapBehaviorConfigure" xml:space="preserve">
+    <value>Konfigūruoti pažymėtą žemėlapio veikimo taisyklę</value>
+  </data>
+  <data name="MapBehaviorMoveDown" xml:space="preserve">
+    <value>Perkelti pažymėtą žemėlapio veikimo taisyklę viena pozicija žemyn</value>
+  </data>
+  <data name="MapBehaviorMoveUp" xml:space="preserve">
+    <value>Perkelti pažymėtą žemėlapio veikimo taisyklę viena pozicija aukštyn</value>
+  </data>
+  <data name="MapBehaviorRemove" xml:space="preserve">
+    <value>Pašalinti pažymėtą žemėlapio veikimo taisyklę</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviors" xml:space="preserve">
+    <value>Jokia veikimo taisyklė nebuvo susieta su žemėlapiu.</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviorsInEdit" xml:space="preserve">
+    <value>Paspaudę Pridėti galėsite konfigūruoti naują žemėlapio veikimo taisyklę.</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Perkelti</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Aukštyn</value>
+  </data>
+  <data name="AddLabel" xml:space="preserve">
+    <value>Pridėti</value>
+  </data>
+  <data name="BehaviorClassLoadFailed" xml:space="preserve">
+    <value>Nepavyko įkelti veikimo taisyklių klasės</value>
+  </data>
+  <data name="BehaviorConfigurationFailed" xml:space="preserve">
+    <value>Nepavyko veikimo taisyklių konfigūracija</value>
+  </data>
+  <data name="BehaviorConfigurationFailedDescription" xml:space="preserve">
+    <value>Veikimo taisyklės konfigūravimo metodas pateikė išimtį.</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Nepavyko veikimo taisyklių klasės įkėlimo konfigūracija</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailedDescription" xml:space="preserve">
+    <value>Nenumatytas įvykis įkeliant veikimo taisyklių konfigūraciją .</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>Tipas:</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Pasirinkto sluoksnio pagrindu sukuriamas intensyvumo žemėlapio sluoksnis</value>
+  </data>
+  <data name="ClusterColorDescription" xml:space="preserve">
+    <value>Fono spalvos nustatymas pasirinkto sluoksnio elementų grupėms</value>
+  </data>
+  <data name="ClusterTextColorDescription" xml:space="preserve">
+    <value>Kraštinės ir teksto spalvų nustatymas pasirinkto sluoksnio elementų grupėms</value>
+  </data>
+  <data name="FilterDescription" xml:space="preserve">
+    <value>Pasirinkto sluoksnio elementų filtravimas pagal nurodytą atributo užklausą</value>
+  </data>
+  <data name="HeatMapColorDescription" xml:space="preserve">
+    <value>Spalvų schemos parinkimas intensyvumo žemėlapiui</value>
+  </data>
+  <data name="IntensityDescription" xml:space="preserve">
+    <value>Koreguojamas intensyvumo žemėlapio ryškumas. Didesnis ryškumas atitiks didesnį intensyvumą.</value>
+  </data>
+  <data name="MaxPoints" xml:space="preserve">
+    <value>Maksimalūs taškai</value>
+  </data>
+  <data name="MaxPointsDescription" xml:space="preserve">
+    <value>Nurodomas maksimalus elementų skaičius, kurį galima sugrupuoti vienoje grupėje</value>
+  </data>
+  <data name="OpenItemOnClickDescription" xml:space="preserve">
+    <value>Spustelėjus elementą, jo išsami informacija parodoma naujame naršyklės lange</value>
+  </data>
+  <data name="PollForUpdatesDescription" xml:space="preserve">
+    <value>Pasirinkite, ar priimti gaunamus atnaujinimus pagal nurodytą intervalą</value>
+  </data>
+  <data name="PopupsDescription" xml:space="preserve">
+    <value>Pasirinkto sluoksnio informaciniuose languose rodomų atributų konfigūravimas</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>Spindulys</value>
+  </data>
+  <data name="RadiusDescription" xml:space="preserve">
+    <value>Spindulys nurodomas pikseliais, pagal kuriuos bus grupuojami elementai į vieną grupę</value>
+  </data>
+  <data name="SymbologyDescription" xml:space="preserve">
+    <value>Pasirinkto sluoksnio rodymui naudojamų simbolių konfigūravimas</value>
+  </data>
+  <data name="TableDescription" xml:space="preserve">
+    <value>Pasirinkto sluoksnio atributų lentelėje rodomų laukų konfigūravimas</value>
+  </data>
+  <data name="UpdateOnExtentChangedDescription" xml:space="preserve">
+    <value>Pasirinkite, ar priimti gaunamus atnaujinimus perstūmus arba pakeitus žemėlapio mastelį</value>
+  </data>
+  <data name="UsePointClusteringDescription" xml:space="preserve">
+    <value>Pasirinkite, ar rodyti taškų grupes kaip vieną grupės objektą</value>
+  </data>
+  <data name="SelectTheLayout" xml:space="preserve">
+    <value>Pasirinkti maketą...</value>
+  </data>
+  <data name="SelectThePrintLayout" xml:space="preserve">
+    <value>Pasirinkti spausdinimo maketą</value>
+  </data>
+  <data name="BehaviorPrompt" xml:space="preserve">
+    <value>Veikimas:</value>
+  </data>
+  <data name="Cluster" xml:space="preserve">
+    <value>Grupė</value>
+  </data>
+  <data name="ClusterFeatures" xml:space="preserve">
+    <value>Grupės elementai</value>
+  </data>
+  <data name="ConfigureRange" xml:space="preserve">
+    <value>Konfigūruoti intervalą</value>
+  </data>
+  <data name="EnablePrompt" xml:space="preserve">
+    <value>Įjungti:</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Elementai</value>
+  </data>
+  <data name="RenderAsHeatMap" xml:space="preserve">
+    <value>Atvaizduoti itensyvumo žemėlapiu</value>
+  </data>
+  <data name="RenderHeatMapAdvancedProperties" xml:space="preserve">
+    <value>Papildomos savybės intensyvumo žemėlapio atvaizdavimui</value>
+  </data>
+  <data name="Tolerance" xml:space="preserve">
+    <value>Leistinas nuokrypis</value>
+  </data>
+  <data name="LayoutPrompt" xml:space="preserve">
+    <value>Maketas:</value>
+  </data>
+  <data name="ConfigurePrint" xml:space="preserve">
+    <value>Konfigūruoti spausdinimą</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Spausdinti</value>
+  </data>
+  <data name="LayoutResourceDownloadError" xml:space="preserve">
+    <value>Klaida parsiunčiant maketo resursus.</value>
+  </data>
+  <data name="ChangeBackground" xml:space="preserve">
+    <value>Pakeisti foną</value>
+  </data>
+  <data name="PreviewTheme" xml:space="preserve">
+    <value>Peržiūrėti temą</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>Be pavadinimo</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Pridėti veikimo taisyklę</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>Gradientas</value>
+  </data>
+  <data name="Solid" xml:space="preserve">
+    <value>Tolydi</value>
+  </data>
+  <data name="ToggleRibbonVisibility" xml:space="preserve">
+    <value>Perjungimo juostelės matomumas</value>
+  </data>
+  <data name="ArcGISSilverlightVersion" xml:space="preserve">
+    <value>ArcGIS API for Silverlight:</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versija:</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>Apie</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Žemyn</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Aukštyn</value>
+  </data>
+  <data name="ConstrainExtentBehaviorMessage" xml:space="preserve">
+    <value>Priartinkite žemėlapį iki aprėpties, kurią naudosite kaip apribojimą, ir spauskite Taikyti.</value>
+  </data>
+  <data name="ConstrainExtentBehaviorTitle" xml:space="preserve">
+    <value>Žemėlapio aprėpties apribojimo nustatymas</value>
+  </data>
+  <data name="DeleteBehaviorCaption" xml:space="preserve">
+    <value>Ar tikrai norite pašalinti šią veikimo taisyklę?</value>
+  </data>
+  <data name="DeleteBehaviorPrompt" xml:space="preserve">
+    <value>Patvirtinti šalinimą</value>
+  </data>
+  <data name="CurrentConstrainExtentLabel" xml:space="preserve">
+    <value>Pasirinkta aprėptis riboja plotą:</value>
+  </data>
+  <data name="ConstrainExtentNotSetMessage" xml:space="preserve">
+    <value>Žemėlapio aprėpties ribojimas nenustatytas.</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>Nenustatyta</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Konfigūruoti pagrindo žemėlapius</value>
+  </data>
+  <data name="ConfigureTheSetOfBaseMaps" xml:space="preserve">
+    <value>Konfigūruoti pagrindo žemėlapių rinkinį</value>
+  </data>
+  <data name="AddNewBaseMap" xml:space="preserve">
+    <value>Pridėti naują pagrindo žemėlapį</value>
+  </data>
+  <data name="ClickImageToChangeThumbnailIcon" xml:space="preserve">
+    <value>Spragtelkite paveikslėlį norėdami pakeisti miniatūros piktogramą</value>
+  </data>
+  <data name="RequiresBingAppID" xml:space="preserve">
+    <value>Reikia Bing App ID</value>
+  </data>
+  <data name="DeleteCurrentlySelectedBaseMap" xml:space="preserve">
+    <value>Pašalinti pažymėtą pagrindo žemėlapį</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapDown" xml:space="preserve">
+    <value>Perkelti pažymėtą pagrindo žemėlapį žemyn</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapUp" xml:space="preserve">
+    <value>Perkelti pažymėtą pagrindo žemėlapį aukštyn</value>
+  </data>
+  <data name="SubTypePrompt" xml:space="preserve">
+    <value>Potipis:</value>
+  </data>
+  <data name="TextPrompt" xml:space="preserve">
+    <value>Tekstas:</value>
+  </data>
+  <data name="ThumbnailPrompt" xml:space="preserve">
+    <value>Miniatiūra:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Kitas</value>
+  </data>
+  <data name="NoBehaviorTitleSpecified" xml:space="preserve">
+    <value>Nenurodyta veikimo taisyklės antraštė</value>
+  </data>
+  <data name="PleaseProvideValidTitleForNewBehavior" xml:space="preserve">
+    <value>Pateikite tinkamą antraštę naujai veikimo taisyklei.</value>
+  </data>
+  <data name="SelectBehaviorToAdd" xml:space="preserve">
+    <value>Pasirinkite veikimo taisyklę</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Režimas</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Podėlio dydis: </value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>Gauti žemėlapio teritorijos elementus</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>Gauti visus elementus iškart</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Objektų podėlio dydis</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Maksimalus sluoksnio objektų skaičius. Jei įkėlus naujus objektus, šis skaičius yra viršijamas, senesni objektai pašalinami iš sluoksnio.</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>Gauti žemėlapio objektus</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Perkrovus arba iš naujo įkėlus žemėlapį, bus atkurti tik dabartinės žemėlapio aprėpties objektai. Padidinus žemėlapio aprėptį, bus atkurta daugiau objektų.</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>Gauti visus elementus</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Iš naujo įkėlus arba atnaujinus sluoksnį, bus atkurti visi sluoksnio objektai.</value>
+  </data>
+  <data name="BrowseContentUrlWatermark" xml:space="preserve">
+    <value>Įveskite serverio arba sluoksnio URL adresą</value>
+  </data>
+  <data name="BrowseDialogNoResourcesFound" xml:space="preserve">
+    <value>Nerasta resursų.</value>
+  </data>
+  <data name="BrowseDialogNoServerOrLayerFound" xml:space="preserve">
+    <value>Servisas arba sluoksnis nerastas.</value>
+  </data>
+  <data name="SecureServices" xml:space="preserve">
+    <value>Apsaugoti servisai</value>
+  </data>
+  <data name="AutoUpdateNumericDescription" xml:space="preserve">
+    <value>Atnaujinimų laiko intervalo nustatymas sekundėmis arba minutėmis. Šis sluoksnis bus automatiškai atnaujinamas nustatytu laiko intervalu, kol nebus išjungtas.</value>
+  </data>
+  <data name="AutoUpdateNumericTooltip" xml:space="preserve">
+    <value>Automatinio atnaujinimų intervalas</value>
+  </data>
+  <data name="AutoUpdatePollingDescription" xml:space="preserve">
+    <value>Nurodoma, ar FeatureLayer bus automatiškai atnaujinimas nustatytu intervalu.</value>
+  </data>
+  <data name="AutoUpdatePollingTooltip" xml:space="preserve">
+    <value>Automatiškai atnaujinami objektų sluoksniai</value>
+  </data>
+  <data name="AutoUpdateIntervalText" xml:space="preserve">
+    <value>Intervalas:</value>
+  </data>
+  <data name="AutoUpdateLayerConfigTitle" xml:space="preserve">
+    <value>Automatinis atnaujinimas</value>
+  </data>
+  <data name="AvailableLayers" xml:space="preserve">
+    <value>Galimi sluoksniai:</value>
+  </data>
+  <data name="EnablePopups" xml:space="preserve">
+    <value>Rodyti iškylančius langus</value>
+  </data>
+  <data name="EnablePopupsForLayer" xml:space="preserve">
+    <value>Parodyti šio sluoksnio informacinius langus</value>
+  </data>
+  <data name="OnClick" xml:space="preserve">
+    <value>paspaudus</value>
+  </data>
+  <data name="OnHover" xml:space="preserve">
+    <value>užvedus</value>
+  </data>
+  <data name="ConfigureEditorWidget" xml:space="preserve">
+    <value>Konfigūruoti redagavimą</value>
+  </data>
+  <data name="SnapshotModeNote" xml:space="preserve">
+    <value>Pastaba: Kai objektų skaičius duomenų rinkinyje viršys maksimalų serviso grąžinamų objektų skaičių,  ne visi objektai bus įtraukti į sluoksnį.</value>
+  </data>
+  <data name="GraphicSymbolsTakePrecedence" xml:space="preserve">
+    <value>Jei buvo nustatyta, čia nurodyti simboliai gali būti pakeisti individualių grafinių objektų simboliais.</value>
+  </data>
+  <data name="SpatialReference" xml:space="preserve">
+    <value>Erdvinis pririšimas:</value>
+  </data>
+  <data name="XMax" xml:space="preserve">
+    <value>XMaks:</value>
+  </data>
+  <data name="XMin" xml:space="preserve">
+    <value>XMin:</value>
+  </data>
+  <data name="YMax" xml:space="preserve">
+    <value>YMaks</value>
+  </data>
+  <data name="YMin" xml:space="preserve">
+    <value>YMin</value>
+  </data>
+  <data name="NotFoundInLayout" xml:space="preserve">
+    <value>{0} nerastas dabartiniame išdėstyme</value>
+  </data>
+  <data name="ToggleEditFailed" xml:space="preserve">
+    <value>Nepavyko perjungti redagavimo valdiklių.  Dabartinis maketas gali nepalaikyti redagavimo</value>
+  </data>
+  <data name="PopupFromWebMap" xml:space="preserve">
+    <value>Naudoti informacinio lango apibrėžtį iš žiniatinklio žemėlapio.</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>Automatiškai priartinti pažymėtą</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Nusiųsti</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Parametrai</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>Įrašų ({0} iš {1} pažymėtų)</value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>Pereiti prie kito išrinkimo</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Elementų atsiuntimas</value>
+  </data>
+  <data name="ConfigureSecuredServices" xml:space="preserve">
+    <value>Konfigūruoti apsaugotus servisus</value>
+  </data>
+  <data name="ErrorChangingProxies" xml:space="preserve">
+    <value>Proxy pakeitimo klaida</value>
+  </data>
+  <data name="ProxyUrl" xml:space="preserve">
+    <value>Tarpininko (proxy) URL:</value>
+  </data>
+  <data name="SpecifyUrlToProxyPageUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Nurodykite URL proxy puslapiui, kurio apsaugoti servisai yra naudojami šioje aplikacijoje.  Šis proxy bus  bendrai naudojamas visiems aplikacijos sluoksniams, kurie naudoja apsaugotus servisus.</value>
+  </data>
+  <data name="UsesProxy" xml:space="preserve">
+    <value>Naudoti proxy</value>
+  </data>
+  <data name="WhetherThisLayerUsesProxyServiceForaccessingRestrictedService" xml:space="preserve">
+    <value>Nurodykite ar servisas apsaugotas ir turi būti pasiekiamas per proxy. Nurodykite Proxy URL adresą</value>
+  </data>
+  <data name="LayerHasNoAttributes" xml:space="preserve">
+    <value>Pasirinktas sluoksnis neturi peržiūrai tinkamų atributų.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Išsami informacija</value>
+  </data>
+  <data name="ToggleErrorDetails" xml:space="preserve">
+    <value>Parodyti ar paslėpti klaidos informaciją.</value>
+  </data>
+  <data name="LayerIsNotGraphicsLayer" xml:space="preserve">
+    <value>Pasirinkto sluoksnio atributų parodyti negalima, nes pasirinktas ArcGIS Server dinaminis arba žemėlapio išklotinių serviso sluoksnis. Išsamesnę informaciją galite rasti naudojimo instrukcijoje, skyriuje Sluoksnio tipai.</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteBasemap" xml:space="preserve">
+    <value>Ar tikrai norite pašalinti šį pagrindo žemėlapį?</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Patvirtinti šalinimą</value>
+  </data>
+  <data name="NewBasemap" xml:space="preserve">
+    <value>Naujas pagrindo žemėlapis</value>
+  </data>
+  <data name="ConfigureSelectedLayer" xml:space="preserve">
+    <value>Konfigūruoti pažymėtą sluoksnį</value>
+  </data>
+  <data name="SelectLayerToAdd" xml:space="preserve">
+    <value>Pasirinkite sluoksnį, kurį pridėti</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Naudoti apsaugotus servisus</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Pridėti apsaugotus servisus</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Konfigūruoti proxy</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServices" xml:space="preserve">
+    <value>Konfigūruoti proxy, naudojamą šios aplikacijos apsaugotiems servisams pasiekti</value>
+  </data>
+  <data name="BehaviorSaveFailed" xml:space="preserve">
+    <value>Nepavyko išsaugoti veikimo konfigūracijos</value>
+  </data>
+  <data name="BehaviorSaveFailedMessage" xml:space="preserve">
+    <value>Saugant prisegto žemėlapio veikimo konfigūraciją įvyko nenumatyta klaida.</value>
+  </data>
+  <data name="LayerInitFailure" xml:space="preserve">
+    <value>Nepavyko aktyvuoti sluoksnio</value>
+  </data>
+  <data name="LayerNotInitialized" xml:space="preserve">
+    <value>Negalima aktyvuoti sluoksnio.</value>
+  </data>
+  <data name="DeleteGraphicConfirmation" xml:space="preserve">
+    <value>Pašalinti elementus?</value>
+  </data>
+  <data name="DeleteGraphicConfirmationTitle" xml:space="preserve">
+    <value>Patvirtinimas</value>
+  </data>
+  <data name="EditValuesCommandEditorBackButtonContent" xml:space="preserve">
+    <value>Atsisakyti</value>
+  </data>
+  <data name="ConfigureBehavior" xml:space="preserve">
+    <value>Konfigūruoti veikimą</value>
+  </data>
+  <data name="DisablePopupForLayer" xml:space="preserve">
+    <value>Išjungti informacinius langus</value>
+  </data>
+  <data name="EnablePopupForLayer" xml:space="preserve">
+    <value>Įjungti informacinius langus</value>
+  </data>
+  <data name="LinkWebMapDialogCaption" xml:space="preserve">
+    <value>Susieti su žiniatinklio žemėlapiu</value>
+  </data>
+  <data name="LinkWebMapDialogMessage" xml:space="preserve">
+    <value>Žemėlapio konfigūracija bus įkelta iš žiniatinklio žemėlapio.  Dabartinė žemėlapio konfigūracija bus prarasta. Tęsti?</value>
+  </data>
+  <data name="UnlinkWebMapDialogCaption" xml:space="preserve">
+    <value>Atsieti nuo žiniatinklio žemėlapio</value>
+  </data>
+  <data name="UnlinkWebMapDialogMessage" xml:space="preserve">
+    <value>Žemėlapio konfigūracija bus atjungta nuo žiniatinklio žemėlapio.  Galėsite pridėti, pašalinti ir konfigūruoti sluoksnius, bet žiniatinklio žemėlapio atnaujinimai daugiau nebus rodomi jūsų žemėlapyje. Tęsti?</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standartinis</value>
+  </data>
+  <data name="Business" xml:space="preserve">
+    <value>Verslo</value>
+  </data>
+  <data name="Cartography" xml:space="preserve">
+    <value>Kartografija</value>
+  </data>
+  <data name="Outdoor_Recreation" xml:space="preserve">
+    <value>Lauko rekreacija</value>
+  </data>
+  <data name="People_and_Places" xml:space="preserve">
+    <value>Žmonės ir vietos</value>
+  </data>
+  <data name="Public_Safety_and_Health" xml:space="preserve">
+    <value>Visuomenės saugumas ir sveikata</value>
+  </data>
+  <data name="Transportation" xml:space="preserve">
+    <value>Transportas</value>
+  </data>
+  <data name="WebMapLoadFailed" xml:space="preserve">
+    <value>Negalima įkelti žemėlapio su id {0}.  Jūs neturite teisės naudoti šio žemėlapio arba  žemėlapis neegzistuoja.</value>
+  </data>
+  <data name="ClusteringDisallowedCaption" xml:space="preserve">
+    <value>Grupavimas neleidžiamas</value>
+  </data>
+  <data name="ClusteringDisallowedMessage" xml:space="preserve">
+    <value>Grupavimas neleidžiamas kai sluoksnis yra redaguojamas.</value>
+  </data>
+  <data name="UnsupportedBasemapType" xml:space="preserve">
+    <value>Nepalaikomas pagrindo žemėlapio tipas</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Naudoti proxy</value>
+  </data>
+  <data name="AreaNotesLayer" xml:space="preserve">
+    <value>{0} - Plotai</value>
+  </data>
+  <data name="LineNotesLayer" xml:space="preserve">
+    <value>{0} - Linijos</value>
+  </data>
+  <data name="PointNotesLayer" xml:space="preserve">
+    <value>{0} - Taškai</value>
+  </data>
+  <data name="Editing" xml:space="preserve">
+    <value>Redagavimas</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Įjungtas</value>
+  </data>
+  <data name="ArcGISPortalDefaultName" xml:space="preserve">
+    <value>Portal for ArcGIS</value>
+  </data>
+  <data name="SignInToArcGISServer" xml:space="preserve">
+    <value>Prisijungti prie ArcGIS Server {0}</value>
+  </data>
+  <data name="InvalidUrlUserPassword" xml:space="preserve">
+    <value>Neteisingas URL, vartotojo vardas, arba slaptažodis</value>
+  </data>
+  <data name="SignInTo" xml:space="preserve">
+    <value>Prisijungti prie {0}</value>
+  </data>
+  <data name="SignInToServer" xml:space="preserve">
+    <value>Prisijungti prie ArcGIS Server</value>
+  </data>
+  <data name="SignInToSecureServices" xml:space="preserve">
+    <value>Prisijungti apsaugotoms paslaugoms pasiekti</value>
+  </data>
+  <data name="OpenStreetMap" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="FeatureLayer" xml:space="preserve">
+    <value>Elementų sluoksnis</value>
+  </data>
+  <data name="MapLayer" xml:space="preserve">
+    <value>Žemėlapio sluoksnis</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>Nepavyko prisijungti.</value>
+  </data>
+</root>

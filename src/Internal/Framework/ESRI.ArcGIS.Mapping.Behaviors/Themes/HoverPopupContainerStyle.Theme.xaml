@@ -1,0 +1,233 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:extensibility="http://schemas.esri.com/arcgis/client/extensibility/2010"
+    mc:Ignorable="d">
+
+    <Color x:Key="ArrowButtonDisabledColor">#FFDEDEDE</Color>
+
+    <Style x:Key="ToggleButton_MapTipHeader" TargetType="ToggleButton">
+        <Setter Property="Background" Value="#FF1F3B53"/>
+        <Setter Property="Foreground" Value="#FF000000"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Pressed" />
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Checked">
+                                </VisualState>
+                                <VisualState x:Name="Unchecked">
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ContentPresenter
+                              x:Name="contentPresenter"
+                              Content="{TemplateBinding Content}"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              Margin="{TemplateBinding Padding}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="UpDownToggleButton" TargetType="ToggleButton">
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Cursor="Hand" Background="#01FFFFFF">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="OverlayPath" Storyboard.TargetProperty="(Path.Opacity)" To="0.3"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="OverlayPath" Storyboard.TargetProperty="(Path.Opacity)" To="0.3"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                    Duration="00:00:00.0010000"
+                                                    Storyboard.TargetName="ArrowPath"
+                                                    Storyboard.TargetProperty="Stroke">
+                                            <EasingColorKeyFrame  KeyTime="00:00:00"
+                                             Value="{StaticResource ArrowButtonDisabledColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="ArrowPath" Storyboard.TargetProperty="(Shape.RenderTransform).(RotateTransform.Angle)" To="180"/>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="OverlayPath" Storyboard.TargetProperty="(Shape.RenderTransform).(RotateTransform.Angle)" To="180"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="ArrowPath" Storyboard.TargetProperty="(Shape.RenderTransform).(RotateTransform.Angle)" To="0"/>
+                                        <DoubleAnimation Duration="0" Storyboard.TargetName="OverlayPath" Storyboard.TargetProperty="(Shape.RenderTransform).(RotateTransform.Angle)" To="0"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Path x:Name="ArrowPath"
+                            Height="Auto"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="{TemplateBinding Padding}"
+                            Width="Auto"
+                            RenderTransformOrigin="0.5,0.5"
+                            Stroke="{StaticResource BackgroundTextColorBrush}"
+                            StrokeThickness="2"
+                            Data="M 1,1.5 L 4.5,5 L 8,1.5">
+                            <Path.RenderTransform>
+                                <RotateTransform Angle="0" />
+                            </Path.RenderTransform>
+                        </Path>
+                        <Path x:Name="OverlayPath" 
+                            Height="Auto"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Margin="{TemplateBinding Padding}"
+                            Width="Auto"
+                            RenderTransformOrigin="0.5,0.5"
+                            Stroke="Gray"
+                            Opacity="0"
+                            StrokeThickness="2"
+                            Data="M 1,1.5 L 4.5,5 L 8,1.5">
+                            <Path.RenderTransform>
+                                <RotateTransform Angle="0" />
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HoverPopupContainerStyle" TargetType="Control">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Control">
+                    <Border BorderThickness="1" CornerRadius="5" BorderBrush="{StaticResource BackgroundStartGradientStopColorBrush}" 
+                        Background="{StaticResource BackgroundStartGradientStopColorBrush}">
+                        <Border.Resources>
+                            <extensibility:BooleanToVisibilityConverter x:Key="VisibilityConverter" />
+                            <extensibility:BooleanToCollapsedConverter x:Key="InvertVisibilityConverter" />
+                            <extensibility:NotNullVisibilityConverter x:Key="NotNullVisibilityConverter"/>
+                            <extensibility:NullVisibilityConverter x:Key="NullVisibilityConverter"/>
+                            <extensibility:NullOrEmptyStringToBoolConverter x:Key="NullOrEmptyStringToBoolConverter" />
+                        </Border.Resources>
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="15" Color="#99000000" Direction="300" ShadowDepth="15" Opacity="0.695"/>
+                        </Border.Effect>
+                        <Border BorderBrush="{StaticResource AccentColorBrush}" Background="{StaticResource BackgroundGradientBrush}" 
+                            BorderThickness="2" CornerRadius="5" x:Name="PopUpContainer">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="3,3,0,0"
+                                        Grid.ColumnSpan="2" Background="{StaticResource BackgroundEndGradientStopColorBrush}">
+                                        <Border.OpacityMask>
+                                            <LinearGradientBrush StartPoint="0.15,0" EndPoint="0.85,1">
+                                                <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                                <GradientStop Color="Transparent" Offset="1.4"/>
+                                            </LinearGradientBrush>
+                                        </Border.OpacityMask>
+                                    </Border>
+                                    <ToggleButton x:Name="TitleToggleButton" Style="{StaticResource ToggleButton_MapTipHeader}" 
+                                        Visibility="{Binding PopupItem.DataTemplate, Converter={StaticResource NotNullVisibilityConverter}}"
+                                        HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Cursor="Hand"
+                                        Foreground="{StaticResource BackgroundTextColorBrush}"
+                                        IsChecked="{Binding PopupItem.Title, Converter={StaticResource NullOrEmptyStringToBoolConverter}}">
+                                        <TextBlock x:Name="TitleContainer" MaxWidth="280" TextTrimming="WordEllipsis" FontSize="13" FontWeight="Bold" Margin="5,2,3,2" Text="{Binding PopupItem.Title}" 
+                                             Visibility="{Binding PopupItem.Title, Converter={StaticResource NotNullVisibilityConverter}}"/>
+                                    </ToggleButton>
+                                    <StackPanel Visibility="{Binding PopupItem.DataTemplate, Converter={StaticResource NullVisibilityConverter}}"
+                                                HorizontalAlignment="Stretch">
+                                        <TextBlock MaxWidth="280" TextTrimming="WordEllipsis" FontSize="13" FontStyle="Italic" FontWeight="Bold" Margin="5,2,3,2" Text="{Binding PopupItem.Title}" 
+                                           Foreground="{StaticResource BackgroundTextColorBrush}" Visibility="{Binding PopupItem.Title, Converter={StaticResource NotNullVisibilityConverter}}"/>
+                                    </StackPanel>
+                                    <Grid Visibility="{Binding PopupItem.Title, Converter={StaticResource NotNullVisibilityConverter}}" Margin="0,0,1,0" Grid.Column="1" HorizontalAlignment="Right">
+                                        <ToggleButton x:Name="UpDownToggleButton" Style="{StaticResource UpDownToggleButton}" 
+                                            IsChecked="{Binding ElementName=TitleToggleButton, Path=IsChecked, Mode=TwoWay}"                                 
+                                            Visibility="{Binding PopupItem.DataTemplate, Converter={StaticResource NotNullVisibilityConverter}}" 
+                                            Foreground="{StaticResource BackgroundTextColorBrush}"/>
+                                    </Grid>
+                                </Grid>
+                                <Rectangle  Grid.Row="1" Width="1" Height="4" Fill="Transparent" 
+                                    Visibility="{Binding ElementName=TitleContainer, Path=Visibility}" />
+                                <ScrollViewer Grid.Row="2" x:Name="AttributeContainer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"  
+                                        MaxHeight="300" MaxWidth="300" BorderThickness="0"
+                                        BorderBrush="{TemplateBinding BorderBrush}" Foreground="{TemplateBinding Foreground}" Padding="5,0,5,5"  
+                                         Visibility="{Binding ElementName=UpDownToggleButton, Path=IsChecked, Converter={StaticResource VisibilityConverter}}" >
+                                    <Grid Visibility="{Binding PopupItem.DataTemplate, Converter={StaticResource NotNullVisibilityConverter}}">
+                                        <ContentControl ContentTemplate="{Binding PopupItem.DataTemplate}"  Content="{Binding}"
+                                                HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
+                                                Foreground="{StaticResource BackgroundTextColorBrush}" Background="{TemplateBinding Background}">
+                                        </ContentControl>
+                                    </Grid>
+                                </ScrollViewer>
+                            </Grid>
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

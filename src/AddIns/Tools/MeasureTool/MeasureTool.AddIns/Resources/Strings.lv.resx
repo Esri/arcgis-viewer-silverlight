@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AreaLabelFormat" xml:space="preserve">
+    <value>Laukums: {0}</value>
+  </data>
+  <data name="DrawClickContinue" xml:space="preserve">
+    <value>Klikšķis, lai ievietotu citu punktu</value>
+  </data>
+  <data name="LengthLabelFormat" xml:space="preserve">
+    <value>Garums: {0}</value>
+  </data>
+  <data name="MeasureLabelArea" xml:space="preserve">
+    <value>Laukums:</value>
+  </data>
+  <data name="MeasureLabelClickFeature" xml:space="preserve">
+    <value>Klikšķis uz elementa no {0} slāņa</value>
+  </data>
+  <data name="MeasureLabelFeaturesMap" xml:space="preserve">
+    <value>Izvēlēties elementus, ko mērīt</value>
+  </data>
+  <data name="MeasureLabelLatitude" xml:space="preserve">
+    <value>Platums:</value>
+  </data>
+  <data name="MeasureLabelLength" xml:space="preserve">
+    <value>Garums:</value>
+  </data>
+  <data name="MeasureLabelLongitude" xml:space="preserve">
+    <value>Garums:</value>
+  </data>
+  <data name="MeasureLabelMeasurements" xml:space="preserve">
+    <value>Mērījums</value>
+  </data>
+  <data name="MeasureLabelPerimeter" xml:space="preserve">
+    <value>Perimetrs:</value>
+  </data>
+  <data name="MeasureLabelShapesDraw" xml:space="preserve">
+    <value>Zīmēt formu, ko mērīt</value>
+  </data>
+  <data name="MeasurementFormat" xml:space="preserve">
+    <value>{0:0,0.0000} {1}</value>
+  </data>
+  <data name="MeasureTitle" xml:space="preserve">
+    <value>Izmērīt</value>
+  </data>
+  <data name="MeasureToolCategory" xml:space="preserve">
+    <value>Analīze</value>
+  </data>
+  <data name="MeasureToolDescription" xml:space="preserve">
+    <value>Saņemt mērījumus no esošā elementa, vai zīmējot uz kartes</value>
+  </data>
+  <data name="NoFeaturesFound" xml:space="preserve">
+    <value>Nav atrasti elementi. Lūdzu, mēģiniet vēlreiz, vai izvēlieties citu slāni.</value>
+  </data>
+  <data name="PerimeterLabelFormat" xml:space="preserve">
+    <value>Perimetrs: {0}</value>
+  </data>
+  <data name="ProjectInputsNotValid" xml:space="preserve">
+    <value>Mērķa ģeometrija, izejas telpiskā atskaite un URL ar ģeometrijas servisu ir jāprecizē</value>
+  </data>
+  <data name="QueryFailed" xml:space="preserve">
+    <value>Vaicājuma neveiksme: {0}</value>
+  </data>
+  <data name="RadiusLabelFormat" xml:space="preserve">
+    <value>Radiuss: {0}</value>
+  </data>
+  <data name="SegmentLengthLabelFormat" xml:space="preserve">
+    <value>Segments: {0}</value>
+  </data>
+  <data name="SimplifyFailed" xml:space="preserve">
+    <value>Ģeometrijas vienkāršošanas neveiksme, lietojot {0}.  Kļūda:
+{1}</value>
+  </data>
+  <data name="SimplifyInputsNotValid" xml:space="preserve">
+    <value>Jābūt definētai mērķa ģeometrijai un URL uz ģeometrijas servisu</value>
+  </data>
+  <data name="TooltipCircle" xml:space="preserve">
+    <value>Aplis</value>
+  </data>
+  <data name="TooltipEllipse" xml:space="preserve">
+    <value>Elipse</value>
+  </data>
+  <data name="TooltipFreehandLine" xml:space="preserve">
+    <value>Brīvrokas līnija</value>
+  </data>
+  <data name="TooltipFreehandPolygon" xml:space="preserve">
+    <value>Brīvrokas laukums</value>
+  </data>
+  <data name="TooltipPoint" xml:space="preserve">
+    <value>Punkts</value>
+  </data>
+  <data name="TooltipPolygon" xml:space="preserve">
+    <value>Laukums</value>
+  </data>
+  <data name="TooltipPolyline" xml:space="preserve">
+    <value>Līnija</value>
+  </data>
+  <data name="TooltipRectangle" xml:space="preserve">
+    <value>Taisnstūris</value>
+  </data>
+  <data name="TotalLengthLabelFormat" xml:space="preserve">
+    <value>Totāls: {0}</value>
+  </data>
+  <data name="UnitsAcres" xml:space="preserve">
+    <value>Akri</value>
+  </data>
+  <data name="UnitsCentimeters" xml:space="preserve">
+    <value>Centimetri</value>
+  </data>
+  <data name="UnitsFeet" xml:space="preserve">
+    <value>Pēdas</value>
+  </data>
+  <data name="UnitsHectares" xml:space="preserve">
+    <value>Hektāri</value>
+  </data>
+  <data name="UnitsInches" xml:space="preserve">
+    <value>Collas</value>
+  </data>
+  <data name="UnitsKilometers" xml:space="preserve">
+    <value>Kilometri</value>
+  </data>
+  <data name="UnitsMeters" xml:space="preserve">
+    <value>Metri</value>
+  </data>
+  <data name="UnitsMiles" xml:space="preserve">
+    <value>Jūdzes</value>
+  </data>
+  <data name="UnitsNauticalMiles" xml:space="preserve">
+    <value>Jūras jūdzes</value>
+  </data>
+  <data name="UnitsSquareFeet" xml:space="preserve">
+    <value>Kvadrātpēdas</value>
+  </data>
+  <data name="UnitsSquareKilometers" xml:space="preserve">
+    <value>Kvadrātkilometri</value>
+  </data>
+  <data name="UnitsSquareMeters" xml:space="preserve">
+    <value>Kvadrātmetri</value>
+  </data>
+  <data name="UnitsSquareMiles" xml:space="preserve">
+    <value>Kvadrātjūdzes</value>
+  </data>
+  <data name="UnitsYards" xml:space="preserve">
+    <value>Jardi</value>
+  </data>
+  <data name="DrawClickContinueDoubleClickFinish" xml:space="preserve">
+    <value>Klikšķiniet, lai izvietotu vēl vienu punktu, vai veiciet dubultklikšķi, lai pabeigtu</value>
+  </data>
+  <data name="DrawClickDrag" xml:space="preserve">
+    <value>Noklikšķiniet un velciet, lai zīmētu</value>
+  </data>
+  <data name="DrawClickStart" xml:space="preserve">
+    <value>Noklikšķiniet, lai novietotu pirmo punktu</value>
+  </data>
+  <data name="DrawReleaseFinish" xml:space="preserve">
+    <value>Atlaidiet peli, lai pabeigtu zīmējumu</value>
+  </data>
+  <data name="DrawShapePoint" xml:space="preserve">
+    <value>Noklikšķiniet, lai uzzīmētu punktu</value>
+  </data>
+  <data name="StatusCalculateCompleteDrawAgain" xml:space="preserve">
+    <value>Kalkulācija pabeigta. Zīmējiet, lai mērītu vēlreiz.</value>
+  </data>
+  <data name="StatusCalculating" xml:space="preserve">
+    <value>Kalkulē...</value>
+  </data>
+  <data name="StatusClickShapeButton" xml:space="preserve">
+    <value>Izvēlieties formu, ko zīmēt</value>
+  </data>
+  <data name="StatusDrawing" xml:space="preserve">
+    <value>Zīmēt...</value>
+  </data>
+  <data name="StatusDrawShape" xml:space="preserve">
+    <value>Zīmē formu uz kartes</value>
+  </data>
+  <data name="MeasureLabelClickAnotherFeature" xml:space="preserve">
+    <value>Jauniem mērījumiem klikšķiniet citu elementu</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>Slānis:</value>
+  </data>
+  <data name="SubLayerPrompt" xml:space="preserve">
+    <value>Apakšslānis:</value>
+  </data>
+  <data name="ErrorDetails" xml:space="preserve">
+    <value>Detaļas</value>
+  </data>
+  <data name="MeasureFailed" xml:space="preserve">
+    <value>Mērīšanas operācijas neveiksme</value>
+  </data>
+  <data name="UnsupportedLayerType" xml:space="preserve">
+    <value>Izvēlētajam elementam neatbalstīts slāņa tips</value>
+  </data>
+  <data name="GeometryServiceNotSpecified" xml:space="preserve">
+    <value>Ģeometrijai, kas prasa pārprojicēšanu, ir jānosaka ģeometrijas servisa URL</value>
+  </data>
+  <data name="NoProjectionResults" xml:space="preserve">
+    <value>Neveiksme, projicējot ģeometriju uz WGS 84. Nav rezultātu {0}.</value>
+  </data>
+  <data name="ProjectFailure" xml:space="preserve">
+    <value>Neveiksme, projicējot ģeometriju WGS 84 using {0}.  Kļūda:
+{1}</value>
+  </data>
+  <data name="ConverterCannotConvertBack" xml:space="preserve">
+    <value>Konvertētājs nevar konvertēt atpakaļ</value>
+  </data>
+  <data name="DrawPopupBehaviorNoMap" xml:space="preserve">
+    <value>DrawPopupBehavior var tikai piesaistīt objektiem Zīmēt, kas ir saistīti ar Karti</value>
+  </data>
+  <data name="MeasureUnsupportedGeometryType" xml:space="preserve">
+    <value>Neatbalstītas ģeometrijas tips priekš mērīšanas operācijas</value>
+  </data>
+  <data name="NonClientSpatialRef" xml:space="preserve">
+    <value>Kalkulēšana tiek atbalstīta tikai ģeometrijai ar Web Mercator vai WGS84 telpisko atskaiti</value>
+  </data>
+</root>

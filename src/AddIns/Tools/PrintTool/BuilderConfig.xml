@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Extension Name="PrintTool.AddIns" InsertPath="//Extensions">
+    <Assemblies>
+        <Assembly Name="PrintTool.AddIns" />
+        <Assembly Name="ESRI.ArcGIS.Client.Printing" />
+        <Assembly Name="System.Json" />
+    </Assemblies>
+</Extension>

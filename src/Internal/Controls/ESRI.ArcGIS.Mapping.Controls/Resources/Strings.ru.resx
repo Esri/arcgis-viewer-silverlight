@@ -1,0 +1,2079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptChangesTooltip" xml:space="preserve">
+    <value>Принять изменения</value>
+  </data>
+  <data name="AddCoordsToListFailedCaption" xml:space="preserve">
+    <value>Не удалось сохранить результаты обнаружения</value>
+  </data>
+  <data name="AddCoordsToListFailedPrompt" xml:space="preserve">
+    <value>Ошибка добавления сопоставленных с адресом координат в список.  Повторить?</value>
+  </data>
+  <data name="AddData" xml:space="preserve">
+    <value>Добавить данные</value>
+  </data>
+  <data name="AddDataSetTooltip" xml:space="preserve">
+    <value>Добавить набор данных</value>
+  </data>
+  <data name="AddDataTooltip" xml:space="preserve">
+    <value>Добавить дополнительные данные к карте</value>
+  </data>
+  <data name="AddRange" xml:space="preserve">
+    <value>Добавить диапазон</value>
+  </data>
+  <data name="AddressMatchError" xml:space="preserve">
+    <value>Ошибка сопоставления адреса: {0}</value>
+  </data>
+  <data name="AddressMatchingServicePrompt" xml:space="preserve">
+    <value>Сервис:</value>
+  </data>
+  <data name="AdvancedClusterProperties" xml:space="preserve">
+    <value>Дополнительные свойства кластера</value>
+  </data>
+  <data name="AGSOImagery" xml:space="preserve">
+    <value>Изображение</value>
+  </data>
+  <data name="AGSOStreets" xml:space="preserve">
+    <value>Улицы</value>
+  </data>
+  <data name="AGSOTopo" xml:space="preserve">
+    <value>Топо</value>
+  </data>
+  <data name="AliasHeader" xml:space="preserve">
+    <value>Псевдоним</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="ArcGISOnline" xml:space="preserve">
+    <value>ArcGIS Online</value>
+  </data>
+  <data name="ArcGISServer" xml:space="preserve">
+    <value>ArcGIS Server</value>
+  </data>
+  <data name="AssociatedMapPrompt" xml:space="preserve">
+    <value>Карта:</value>
+  </data>
+  <data name="AutoScroll" xml:space="preserve">
+    <value>Автопрокрутка:</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>Фон</value>
+  </data>
+  <data name="BaseMapConfigurationSectionHeader" xml:space="preserve">
+    <value>Базовая карта</value>
+  </data>
+  <data name="BaseMapPrompt" xml:space="preserve">
+    <value>Базовая карта:</value>
+  </data>
+  <data name="BingMaps" xml:space="preserve">
+    <value>Bing Maps</value>
+  </data>
+  <data name="BingMapsAccountInfo" xml:space="preserve">
+    <value>Информация учетной записи Bing Maps</value>
+  </data>
+  <data name="BingMapsAerial" xml:space="preserve">
+    <value>Aerial</value>
+  </data>
+  <data name="BingMapsAerialWithLabels" xml:space="preserve">
+    <value>Aerial - Labels</value>
+  </data>
+  <data name="BingMapsInitializeFailed" xml:space="preserve">
+    <value>Не удалась аутентификация Bing Maps. В ArcGIS Online содержится базовая карта, которая может быть использована вместо этой. Свяжитесь с администратором для решения проблем в будущем.</value>
+  </data>
+  <data name="BingMapsRoads" xml:space="preserve">
+    <value>Дороги</value>
+  </data>
+  <data name="Border" xml:space="preserve">
+    <value>Граница</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Обзор...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="ChangeBaseMapTooltip" xml:space="preserve">
+    <value>Сменить базовую карту</value>
+  </data>
+  <data name="ChangeColorRampTooltip" xml:space="preserve">
+    <value>Выбрать цветовую схему</value>
+  </data>
+  <data name="ChangeGradientStopsTooltip" xml:space="preserve">
+    <value>Щелкните, чтобы выбрать границы градиента тепловой карты</value>
+  </data>
+  <data name="CheckForUpdatesPrompt" xml:space="preserve">
+    <value>Проверить обновления:</value>
+  </data>
+  <data name="CheckForUpdateTooltip" xml:space="preserve">
+    <value>Получать обновленный список данных при панорамировании или масштабировании карты</value>
+  </data>
+  <data name="ChooseBaseMapLayer" xml:space="preserve">
+    <value>Выберите базовую карту</value>
+  </data>
+  <data name="ChooseLayerHeader" xml:space="preserve">
+    <value>Выберите набор данных</value>
+  </data>
+  <data name="CityPrompt" xml:space="preserve">
+    <value>Город:</value>
+  </data>
+  <data name="ClassifyBy" xml:space="preserve">
+    <value>Выберите поле для диапазонов значений</value>
+  </data>
+  <data name="ClassifyByPrompt" xml:space="preserve">
+    <value>Распределить по:</value>
+  </data>
+  <data name="ClearAll" xml:space="preserve">
+    <value>Очистить все</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Очистить выборку</value>
+  </data>
+  <data name="ClickSeqmentToZoom" xml:space="preserve">
+    <value>Щелкните отдельный сегмент, чтобы приблизиться к нему.</value>
+  </data>
+  <data name="ClickToMoveEast" xml:space="preserve">
+    <value>Щелкните, чтобы переместить к востоку</value>
+  </data>
+  <data name="ClickToMoveNorth" xml:space="preserve">
+    <value>Щелкните, чтобы переместить к северу</value>
+  </data>
+  <data name="ClickToMoveSouth" xml:space="preserve">
+    <value>Щелкните, чтобы переместить к югу</value>
+  </data>
+  <data name="ClickToMoveWest" xml:space="preserve">
+    <value>Щелкните, чтобы переместить к западу</value>
+  </data>
+  <data name="ClusterAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Дополнительные свойства</value>
+  </data>
+  <data name="ClusterFeaturesTooltipFirstBit" xml:space="preserve">
+    <value>Кластер</value>
+  </data>
+  <data name="ClusterFeaturesTooltipSecondBit" xml:space="preserve">
+    <value>Объекты</value>
+  </data>
+  <data name="ClusterTooltip" xml:space="preserve">
+    <value>Отображать кластера пространственных объектов вместе</value>
+  </data>
+  <data name="ColorsPrompt" xml:space="preserve">
+    <value>Цвета:</value>
+  </data>
+  <data name="ConfigurationTooltip" xml:space="preserve">
+    <value>Конфигурация</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>Настроить</value>
+  </data>
+  <data name="ConfigureBingMapsCredentials" xml:space="preserve">
+    <value>Щелкните, чтобы настроить учетную запись Bing Maps</value>
+  </data>
+  <data name="ConfigureSettings" xml:space="preserve">
+    <value>Настроить параметры</value>
+  </data>
+  <data name="ConfigureTooltip" xml:space="preserve">
+    <value>Настроить</value>
+  </data>
+  <data name="CountryPrompt" xml:space="preserve">
+    <value>Страна:</value>
+  </data>
+  <data name="CurrentSymbolPrompt" xml:space="preserve">
+    <value>Текущий символ:</value>
+  </data>
+  <data name="CustomColorRamp" xml:space="preserve">
+    <value>Настраиваемый</value>
+  </data>
+  <data name="CustomColorRampToolTip" xml:space="preserve">
+    <value>Выбрать цвета для каждого диапазона значений</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Источник данных:</value>
+  </data>
+  <data name="DataSourceTooltip" xml:space="preserve">
+    <value>Введите URL для SharePoint, Spatial Data Service или ArcGIS Server</value>
+  </data>
+  <data name="DefinitionTabHeader" xml:space="preserve">
+    <value>Определение</value>
+  </data>
+  <data name="DefinitionTabHeaderTooltip" xml:space="preserve">
+    <value>Задать свойства текущего набора данных</value>
+  </data>
+  <data name="DeleteConnectionCaption" xml:space="preserve">
+    <value>Подтвердите удаление</value>
+  </data>
+  <data name="DeleteConnectionPrompt" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить это подключение?</value>
+  </data>
+  <data name="DeleteLayerMessageCaption" xml:space="preserve">
+    <value>Подтвердите удаление</value>
+  </data>
+  <data name="DeleteLayerPrompt" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить этот набор данных из карты?</value>
+  </data>
+  <data name="DeleteRange" xml:space="preserve">
+    <value>Удалить диапазон</value>
+  </data>
+  <data name="DisplayNamePrompt" xml:space="preserve">
+    <value>Показать имя:</value>
+  </data>
+  <data name="DisplayNameTooltip" xml:space="preserve">
+    <value>Задать отображаемое имя текущего набора данных</value>
+  </data>
+  <data name="DragToRotate" xml:space="preserve">
+    <value>Потяните, чтобы повернуть</value>
+  </data>
+  <data name="DuplicateDataSource" xml:space="preserve">
+    <value>{0} уже добавлен как источник данных</value>
+  </data>
+  <data name="DuplicateMapServiceLayer" xml:space="preserve">
+    <value>Картографический сервис уже добавлен</value>
+  </data>
+  <data name="DuplicateMapServiceLayerCaption" xml:space="preserve">
+    <value>Выявлены дубликаты</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Изменить</value>
+  </data>
+  <data name="EnterCredentials" xml:space="preserve">
+    <value>Введите имя пользователя и пароль</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Europe" xml:space="preserve">
+    <value>Европа</value>
+  </data>
+  <data name="Every" xml:space="preserve">
+    <value>Каждый</value>
+  </data>
+  <data name="ExpandCollapse" xml:space="preserve">
+    <value>Развернуть/Свернуть</value>
+  </data>
+  <data name="ExportSelection" xml:space="preserve">
+    <value>Экспорт выборки</value>
+  </data>
+  <data name="FieldHeader" xml:space="preserve">
+    <value>Поле</value>
+  </data>
+  <data name="Fill" xml:space="preserve">
+    <value>Заполнить</value>
+  </data>
+  <data name="FilterByMapView" xml:space="preserve">
+    <value>Фильтр по виду карты:</value>
+  </data>
+  <data name="FilterExpressionPrompt" xml:space="preserve">
+    <value>Выражение фильтра:</value>
+  </data>
+  <data name="FilterExpressionTooltip" xml:space="preserve">
+    <value>Применить фильтр к текущему набору данных</value>
+  </data>
+  <data name="Find" xml:space="preserve">
+    <value>Найти</value>
+  </data>
+  <data name="FindDirections" xml:space="preserve">
+    <value>Найти направления</value>
+  </data>
+  <data name="FindLocation" xml:space="preserve">
+    <value>Найти местоположение</value>
+  </data>
+  <data name="FindNearby" xml:space="preserve">
+    <value>Найти ближайший</value>
+  </data>
+  <data name="FixLocation" xml:space="preserve">
+    <value>Зафиксировать местоположение</value>
+  </data>
+  <data name="Foreground" xml:space="preserve">
+    <value>Передний план</value>
+  </data>
+  <data name="ForMoreInformation" xml:space="preserve">
+    <value>Дополнительная информация</value>
+  </data>
+  <data name="FromPrompt" xml:space="preserve">
+    <value>От:</value>
+  </data>
+  <data name="FullExtent" xml:space="preserve">
+    <value>Полный экстент</value>
+  </data>
+  <data name="GetListItemsFailed" xml:space="preserve">
+    <value>Ошибка извлечения элементов из {0} на сайте {1}</value>
+  </data>
+  <data name="GetListItemsFailedPromptRemove" xml:space="preserve">
+    <value>Ошибка извлечения элементов из {0} на сайте {1}.  Удалить это изображение с карты?</value>
+  </data>
+  <data name="GetListsFailed" xml:space="preserve">
+    <value>Не удалось извлечь список: {0}</value>
+  </data>
+  <data name="HeatMap" xml:space="preserve">
+    <value>Тепловая карта</value>
+  </data>
+  <data name="HeatMapAdvancedProperties" xml:space="preserve">
+    <value>Свойства тепловой карты</value>
+  </data>
+  <data name="HeatMapAdvancedPropertiesTooltip" xml:space="preserve">
+    <value>Свойства отображения тепловой карты</value>
+  </data>
+  <data name="HeatMapTooltip" xml:space="preserve">
+    <value>Отобразить данные как тепловую карту</value>
+  </data>
+  <data name="HundredPercent" xml:space="preserve">
+    <value>100%</value>
+  </data>
+  <data name="InitializationError" xml:space="preserve">
+    <value>Ошибка инициализации: {0}</value>
+  </data>
+  <data name="IntensityPrompt" xml:space="preserve">
+    <value>Интенсивность:</value>
+  </data>
+  <data name="InvalidUrlCaption" xml:space="preserve">
+    <value>Неверный URL</value>
+  </data>
+  <data name="InvalidUrlPrompt" xml:space="preserve">
+    <value>Введите правильный URL</value>
+  </data>
+  <data name="LatitudePrompt" xml:space="preserve">
+    <value>Широта (Y):</value>
+  </data>
+  <data name="LayerInfoRetrievalError" xml:space="preserve">
+    <value>Ошибка получения информации о слое: {0}</value>
+  </data>
+  <data name="LayersTabHeader" xml:space="preserve">
+    <value>Видимость слоя</value>
+  </data>
+  <data name="LayersTabHeaderTooltip" xml:space="preserve">
+    <value>Настроить видимость слоев</value>
+  </data>
+  <data name="ListViewHeader" xml:space="preserve">
+    <value>Вид списка</value>
+  </data>
+  <data name="LoadDataSourceTooltip" xml:space="preserve">
+    <value>Загрузить источник данных</value>
+  </data>
+  <data name="Locate" xml:space="preserve">
+    <value>Определить местоположение</value>
+  </data>
+  <data name="LocateByAddress" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="LocateByAddressTooltip" xml:space="preserve">
+    <value>Использовать сопоставление адресов для отображения данных текущего списка</value>
+  </data>
+  <data name="LocateByCoordinates" xml:space="preserve">
+    <value>Координаты</value>
+  </data>
+  <data name="LocateByCoordinatesTooltip" xml:space="preserve">
+    <value>Использовать координаты для отображения данных текущего списка</value>
+  </data>
+  <data name="LocateByPrompt" xml:space="preserve">
+    <value>Определить местоположение по:</value>
+  </data>
+  <data name="LocateTooltip" xml:space="preserve">
+    <value>Сопоставить адреса текущего списка</value>
+  </data>
+  <data name="LocateUpdateTooltip" xml:space="preserve">
+    <value>Отобразить текущий список на основе выбранных полей координат</value>
+  </data>
+  <data name="LocationFieldsTabHeader" xml:space="preserve">
+    <value>Поля местоположения</value>
+  </data>
+  <data name="LocationFieldsTabHeaderTooltip" xml:space="preserve">
+    <value>Выберите адрес текущего набора данных или географические поля</value>
+  </data>
+  <data name="LongitudePrompt" xml:space="preserve">
+    <value>Долгота (X):</value>
+  </data>
+  <data name="MapContentsTooltip" xml:space="preserve">
+    <value>Содержание карты</value>
+  </data>
+  <data name="MapXaml" xml:space="preserve">
+    <value>Карта XAML</value>
+  </data>
+  <data name="MapXamlRepresentation" xml:space="preserve">
+    <value>XAML представление карты</value>
+  </data>
+  <data name="MaxPrompt" xml:space="preserve">
+    <value>Макс:</value>
+  </data>
+  <data name="MinPrompt" xml:space="preserve">
+    <value>Мин:</value>
+  </data>
+  <data name="Minutes" xml:space="preserve">
+    <value>Минуты</value>
+  </data>
+  <data name="ModifyRangeTooltip" xml:space="preserve">
+    <value>Изменить диапазон</value>
+  </data>
+  <data name="MoveBarUpDown" xml:space="preserve">
+    <value>Перемещайтесь по линейке вверх, чтобы увеличить, вниз - чтобы уменьшить</value>
+  </data>
+  <data name="MoveDownTooltip" xml:space="preserve">
+    <value>Переместить вниз</value>
+  </data>
+  <data name="MoveFirst" xml:space="preserve">
+    <value>Переместить к первому</value>
+  </data>
+  <data name="MoveLast" xml:space="preserve">
+    <value>Переместить к последнему</value>
+  </data>
+  <data name="MoveNext" xml:space="preserve">
+    <value>Переместить вперед</value>
+  </data>
+  <data name="MovePrevious" xml:space="preserve">
+    <value>Переместить назад</value>
+  </data>
+  <data name="MoveRangeTooltip" xml:space="preserve">
+    <value>Переместить диапазон</value>
+  </data>
+  <data name="MoveUpTooltip" xml:space="preserve">
+    <value>Переместить вверх</value>
+  </data>
+  <data name="MultiLayerCacheNotSupported" xml:space="preserve">
+    <value>Мультислойный кэш полистного картографического сервиса не поддерживается. Используйте или создайте отдельный кэш.</value>
+  </data>
+  <data name="MultiLayerCacheNotSupportedCaption" xml:space="preserve">
+    <value>Мультислойный кэш полистного картографического сервиса не поддерживается</value>
+  </data>
+  <data name="MultipleViewsNotAllowed" xml:space="preserve">
+    <value>Представления списков SharePoint не могут быть добавлены несколько раз</value>
+  </data>
+  <data name="NewDataSourceHelpText" xml:space="preserve">
+    <value>&lt;Введите имя сервера или адрес http&gt;</value>
+  </data>
+  <data name="NextRange" xml:space="preserve">
+    <value>Следующий диапазон</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefined" xml:space="preserve">
+    <value>Поля местоположений для списка не сопоставлены. Сопоставьте столбцы в списке с соответствующими полями.</value>
+  </data>
+  <data name="NoAddressMappingHasBeenDefinedCaption" xml:space="preserve">
+    <value>Задать сопоставление поля местоположения</value>
+  </data>
+  <data name="NoAssociatedMapWebPart" xml:space="preserve">
+    <value>Веб-компоненты карты не найдены.</value>
+  </data>
+  <data name="NoDistinctNumericFields" xml:space="preserve">
+    <value>Все числовые поля набора данных имеют одинаковые минимальные и максимальные значения. Для настройки диапазона значений, минимальное и максимальное значения должны отличаться.</value>
+  </data>
+  <data name="NoGeographicListsFound" xml:space="preserve">
+    <value>В {0} не найдены списки, содержащие географические данные</value>
+  </data>
+  <data name="NoLayersAdded" xml:space="preserve">
+    <value>Щелкните 'Добавить данные', чтобы добавить данные к карте</value>
+  </data>
+  <data name="NoGPServicesFound" xml:space="preserve">
+    <value>В {0} не найдены сервисы геообработки</value>
+  </data>
+  <data name="NoMapServicesFound" xml:space="preserve">
+    <value>В {0} не найдены картографические сервисы</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="NoNumericFieldsFound" xml:space="preserve">
+    <value>В наборе данных отсутствуют числовые поля.  Для задания диапазона значений необходимо хотя бы одно числовое поле.</value>
+  </data>
+  <data name="NoRecords" xml:space="preserve">
+    <value>Нет записей</value>
+  </data>
+  <data name="NoRecordsForVisibleLayer" xml:space="preserve">
+    <value>Элементы списка не были загружены в карту. Включите отображение списка для просмотра элементов.</value>
+  </data>
+  <data name="NoResultsCaption" xml:space="preserve">
+    <value>Нет результатов</value>
+  </data>
+  <data name="NoResultsLayerNotVisible" xml:space="preserve">
+    <value>Записи не найдены, поскольку список не виден на карте</value>
+  </data>
+  <data name="NorthAmerica" xml:space="preserve">
+    <value>Северная Америка</value>
+  </data>
+  <data name="NoSpatialTablesFound" xml:space="preserve">
+    <value>В {0} не найдены таблицы, содержащие пространственные данные</value>
+  </data>
+  <data name="NumericFieldNotDistinct" xml:space="preserve">
+    <value>Поле {0} содержит одинаковые минимальное и максимальное значения. Для настройки диапазона значений, минимальное и максимальное значения должны отличаться.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OnPanAndZoom" xml:space="preserve">
+    <value>Включить масштабирование и панаромирование</value>
+  </data>
+  <data name="OperationalDataSectionHeader" xml:space="preserve">
+    <value>Данные</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Пароль:</value>
+  </data>
+  <data name="PleaseSpecifyDataSourceMessage" xml:space="preserve">
+    <value>Укажите источник данных</value>
+  </data>
+  <data name="PollForUpdatesTooltip" xml:space="preserve">
+    <value>Задать интервал получения обновленного списка данных</value>
+  </data>
+  <data name="PopUpTabHeader" xml:space="preserve">
+    <value>Всплывающее окно</value>
+  </data>
+  <data name="PopUpTabHeaderTooltip" xml:space="preserve">
+    <value>Настроить всплывающие сообщения карты для текущего набора данных</value>
+  </data>
+  <data name="PreDefinedColorRamp" xml:space="preserve">
+    <value>Предварительно заданное</value>
+  </data>
+  <data name="PreDefinedColorRampTooltip" xml:space="preserve">
+    <value>Применить готовый набор цветов</value>
+  </data>
+  <data name="PreviousRange" xml:space="preserve">
+    <value>Предыдущий диапазон</value>
+  </data>
+  <data name="Production" xml:space="preserve">
+    <value>Рабочая версия</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Свойства - {0}</value>
+  </data>
+  <data name="RecordsPrompt" xml:space="preserve">
+    <value>Записи:</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="RefreshError" xml:space="preserve">
+    <value>Ошибка обновления слоя {0}</value>
+  </data>
+  <data name="RefreshMapXamlTooltip" xml:space="preserve">
+    <value>Обновить карту XAML</value>
+  </data>
+  <data name="RefreshTooltip" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="RemoveTooltip" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="ResetExtent" xml:space="preserve">
+    <value>Сбросить экстент</value>
+  </data>
+  <data name="ResetExtentTooltip" xml:space="preserve">
+    <value>Возврат к экстенту карты, заданному сервисом сервера ArcGIS.</value>
+  </data>
+  <data name="ResetMapRotation" xml:space="preserve">
+    <value>Отменить поворот карты</value>
+  </data>
+  <data name="ResolutionPrompt" xml:space="preserve">
+    <value>Разрешение:</value>
+  </data>
+  <data name="ResultsViewHeader" xml:space="preserve">
+    <value>Просмотр результатов</value>
+  </data>
+  <data name="RetrievingBaseMaps" xml:space="preserve">
+    <value>Получение доступных базовых карт</value>
+  </data>
+  <data name="RetrievingGeometryType" xml:space="preserve">
+    <value>Получение типа геометрии</value>
+  </data>
+  <data name="RetrievingInformation" xml:space="preserve">
+    <value>Получение информации с сервера</value>
+  </data>
+  <data name="RollBackChangesTooltip" xml:space="preserve">
+    <value>Отмена изменений</value>
+  </data>
+  <data name="ScaleBarUnit_feet" xml:space="preserve">
+    <value>фт</value>
+  </data>
+  <data name="ScaleBarUnit_kilometers" xml:space="preserve">
+    <value>км</value>
+  </data>
+  <data name="ScaleBarUnit_meters" xml:space="preserve">
+    <value>м</value>
+  </data>
+  <data name="ScaleBarUnit_miles" xml:space="preserve">
+    <value>мл</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>Секунды</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="SelectAllTooltip" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="SelectedRangePrompt" xml:space="preserve">
+    <value>Диапазон:</value>
+  </data>
+  <data name="SelectedRecordsFormatString" xml:space="preserve">
+    <value>Записи ({0} из {1} выбраны)</value>
+  </data>
+  <data name="SelectRangeTooltip" xml:space="preserve">
+    <value>Выберите диапазон для редактирования</value>
+  </data>
+  <data name="ServerPrompt" xml:space="preserve">
+    <value>Сервер:</value>
+  </data>
+  <data name="ServiceConnectionError" xml:space="preserve">
+    <value>Ошибка подключения к {0}.  Проверьте URL, убедитесь, что сервис запущен и повторите попытку.</value>
+  </data>
+  <data name="ServiceConnectionErrorCaption" xml:space="preserve">
+    <value>Ошибка подключения</value>
+  </data>
+  <data name="ServiceConnectionErrorDuringInit" xml:space="preserve">
+    <value>Не удалось подключиться к {0}.</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="ShowHide" xml:space="preserve">
+    <value>Показать/Скрыть</value>
+  </data>
+  <data name="ShowHideTooltip" xml:space="preserve">
+    <value>Показать/Скрыть</value>
+  </data>
+  <data name="SimpleSymbolType" xml:space="preserve">
+    <value>Простой</value>
+  </data>
+  <data name="SimpleSymbolTypeTooltip" xml:space="preserve">
+    <value>Отобразить текущий набор данных с использованием одного символа</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Источник:</value>
+  </data>
+  <data name="Staging" xml:space="preserve">
+    <value>Подготовка к использованию</value>
+  </data>
+  <data name="StatePrompt" xml:space="preserve">
+    <value>Штат/Район:</value>
+  </data>
+  <data name="SymbolsTabHeader" xml:space="preserve">
+    <value>Символы</value>
+  </data>
+  <data name="SymbolsTabHeaderTooltip" xml:space="preserve">
+    <value>Настроить отображение текущего набора данных</value>
+  </data>
+  <data name="SymbolTypePrompt" xml:space="preserve">
+    <value>Тип символа:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>к</value>
+  </data>
+  <data name="TokenAuthenticationFailed" xml:space="preserve">
+    <value>Ошибка аутентификации Bing Maps.  Проверьте данные и повторите попытку.</value>
+  </data>
+  <data name="TokenConnectionFailed" xml:space="preserve">
+    <value>Не удалось подключиться, чтобы получить маркер.  Проверьте подключение к серверу и попробуйте еще раз.</value>
+  </data>
+  <data name="TolerancePrompt" xml:space="preserve">
+    <value>Допуск:</value>
+  </data>
+  <data name="ToPrompt" xml:space="preserve">
+    <value>К:</value>
+  </data>
+  <data name="TotalDistancePrompt" xml:space="preserve">
+    <value>Общее расстояние:</value>
+  </data>
+  <data name="TotalTimePrompt" xml:space="preserve">
+    <value>Общее время:</value>
+  </data>
+  <data name="Transparency" xml:space="preserve">
+    <value>Прозрачность</value>
+  </data>
+  <data name="TransparencyPrompt" xml:space="preserve">
+    <value>Прозрачность:</value>
+  </data>
+  <data name="UnhandledSilverlightError" xml:space="preserve">
+    <value>Неустранимая ошибка в приложении Silverlight 2</value>
+  </data>
+  <data name="UpdateAddress" xml:space="preserve">
+    <value>Обновить адрес</value>
+  </data>
+  <data name="UpdateLayerError" xml:space="preserve">
+    <value>Ошибка обновления слоя: {0}</value>
+  </data>
+  <data name="UpdateListError" xml:space="preserve">
+    <value>Ошибка обработки списка изменений: {0}</value>
+  </data>
+  <data name="UrlPrompt" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="UserNamePrompt" xml:space="preserve">
+    <value>Пользователь:</value>
+  </data>
+  <data name="UseStagingServer" xml:space="preserve">
+    <value>Использовать промежуточный сервер</value>
+  </data>
+  <data name="ValidAddressError" xml:space="preserve">
+    <value>Введите правильный адрес</value>
+  </data>
+  <data name="ValidAddressErrorCaption" xml:space="preserve">
+    <value>Неверный адрес</value>
+  </data>
+  <data name="ValidCoordinatesError" xml:space="preserve">
+    <value>Введите координаты</value>
+  </data>
+  <data name="ValidCoordinatesErrorCaption" xml:space="preserve">
+    <value>Неверные координаты</value>
+  </data>
+  <data name="ValueRanges" xml:space="preserve">
+    <value>Диапазоны значений</value>
+  </data>
+  <data name="ValueRangesTooltip" xml:space="preserve">
+    <value>Отобразить текущий набор данных на основе диапазона значений</value>
+  </data>
+  <data name="ViewItem" xml:space="preserve">
+    <value>Просмотр элемента</value>
+  </data>
+  <data name="VisibleHeader" xml:space="preserve">
+    <value>Видимый</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Ширина</value>
+  </data>
+  <data name="XamlRepresentation" xml:space="preserve">
+    <value>XAML представление текущего слоя</value>
+  </data>
+  <data name="XamlViewTabHeader" xml:space="preserve">
+    <value>Вид Xaml</value>
+  </data>
+  <data name="XamlViewTabHeaderTooltip" xml:space="preserve">
+    <value>Просмотр Xaml сгенерированного для слоя</value>
+  </data>
+  <data name="ZeroPercent" xml:space="preserve">
+    <value>0%</value>
+  </data>
+  <data name="Zip4Prompt" xml:space="preserve">
+    <value>Zip4:</value>
+  </data>
+  <data name="ZipPrompt" xml:space="preserve">
+    <value>Почтовый индекс:</value>
+  </data>
+  <data name="ZoomIn" xml:space="preserve">
+    <value>Увеличить</value>
+  </data>
+  <data name="ZoomOut" xml:space="preserve">
+    <value>Уменьшить</value>
+  </data>
+  <data name="ZoomOutButton" xml:space="preserve">
+    <value>Уменьшить</value>
+  </data>
+  <data name="ZoomRangeTooltip" xml:space="preserve">
+    <value>Приблизить к диапазону</value>
+  </data>
+  <data name="ZoomToAllRecords" xml:space="preserve">
+    <value>Перейти к</value>
+  </data>
+  <data name="ZoomToItem" xml:space="preserve">
+    <value>Приблизить к элементу</value>
+  </data>
+  <data name="ZoomToSelection" xml:space="preserve">
+    <value>Приблизить к выборке</value>
+  </data>
+  <data name="ConfigFileUrlTextboxTooltip" xml:space="preserve">
+    <value>Введите URL файла конфигурации</value>
+  </data>
+  <data name="ConnectToSharePointDataSource" xml:space="preserve">
+    <value>&lt;Введите url сайта SharePoint&gt;</value>
+  </data>
+  <data name="ExportToFile" xml:space="preserve">
+    <value>Экспорт в файл</value>
+  </data>
+  <data name="FileNamePrompt" xml:space="preserve">
+    <value>Имя файла:</value>
+  </data>
+  <data name="MustEnterFileName" xml:space="preserve">
+    <value>Введите имя файла</value>
+  </data>
+  <data name="MustEnterFileNameTitle" xml:space="preserve">
+    <value>Имя файла отсутствует</value>
+  </data>
+  <data name="OverwriteExistingFile" xml:space="preserve">
+    <value>Заменить существующий файл</value>
+  </data>
+  <data name="UrlToSitePrompt" xml:space="preserve">
+    <value>URL сайта:</value>
+  </data>
+  <data name="CustomBaseMap" xml:space="preserve">
+    <value>Базовая карта ArcGIS Server</value>
+  </data>
+  <data name="AGSDataSourceTooltip" xml:space="preserve">
+    <value>Введите URL ArcGIS Server</value>
+  </data>
+  <data name="NotUsingBingMapsResource" xml:space="preserve">
+    <value>Приложение не использует ресурсы Bing Maps. Данные учетной записи сейчас не требуются.</value>
+  </data>
+  <data name="NotUsingBingMapsResourceCaption" xml:space="preserve">
+    <value>Ресурсы Bings Maps отсутствуют</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="BrowseForBaseMap" xml:space="preserve">
+    <value>Открыть базовую карту</value>
+  </data>
+  <data name="EnterUrl" xml:space="preserve">
+    <value>Введите URL</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatch" xml:space="preserve">
+    <value>Пространственная привязка кэшированного картографического сервиса не совпадает с пространственной привязкой базовой карты. Картографический сервис не может быть добавлен.</value>
+  </data>
+  <data name="CachedMapServiceSpatialReferenceMisMatchCaption" xml:space="preserve">
+    <value>Несоответствие пространственной привязки</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemoved" xml:space="preserve">
+    <value>Рабочие наборы данных включают картографические сервисы, пространственная привязка которых отличается от базовой карты. Для продолжения, эти сервисы необходимо удалить. Щелкните Ок, чтобы удалить сервисы.</value>
+  </data>
+  <data name="OperationMapServicesLayersWillBeRemovedCaption" xml:space="preserve">
+    <value>Несоответствие рабочего набора данных</value>
+  </data>
+  <data name="AddContentTitle" xml:space="preserve">
+    <value>Добавить ресурсы</value>
+  </data>
+  <data name="BaseMapGalleryTitle" xml:space="preserve">
+    <value>Выберите базовую карту</value>
+  </data>
+  <data name="BrowseForBaseMapTitle" xml:space="preserve">
+    <value>Открыть базовую карту</value>
+  </data>
+  <data name="EnterUrlDialogTitle" xml:space="preserve">
+    <value>Введите URL базовой карты</value>
+  </data>
+  <data name="MapContentsTitle" xml:space="preserve">
+    <value>Содержание карты</value>
+  </data>
+  <data name="CanOnlyUseCachedMapServicesAsBaseMap" xml:space="preserve">
+    <value>Только кэшированные картографические сервисы ArcGIS могут использоваться для базовой карты.</value>
+  </data>
+  <data name="InvalidMapServiceCaption" xml:space="preserve">
+    <value>Некорректный картографический сервис </value>
+  </data>
+  <data name="MapTipBorderColorTooltip" xml:space="preserve">
+    <value>Изменить цвет границы подсказки карты</value>
+  </data>
+  <data name="MapTipFillColorTooltip" xml:space="preserve">
+    <value>Изменить цвет заливки подсказки карты</value>
+  </data>
+  <data name="MapTipForegroundColorTooltip" xml:space="preserve">
+    <value>Изменить цвет текста подсказки карты</value>
+  </data>
+  <data name="SampleMapTipText" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Добавить выделенный слой</value>
+  </data>
+  <data name="AttributePrompt" xml:space="preserve">
+    <value>Атрибут:</value>
+  </data>
+  <data name="ColorScheme" xml:space="preserve">
+    <value>Цветовая схема</value>
+  </data>
+  <data name="MoreOptions" xml:space="preserve">
+    <value>Больше опций</value>
+  </data>
+  <data name="RendererPrompt" xml:space="preserve">
+    <value>Механизм отображения:</value>
+  </data>
+  <data name="SymbolOptions" xml:space="preserve">
+    <value>Опции схемы</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Текущий символ:</value>
+  </data>
+  <data name="Basemap" xml:space="preserve">
+    <value>Базовая карта</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>Переместить вперед</value>
+  </data>
+  <data name="ClassBreaks" xml:space="preserve">
+    <value>Границы классов</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Цвет</value>
+  </data>
+  <data name="FromServer" xml:space="preserve">
+    <value>Обзор...</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Домашняя страница</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>Содержание карты</value>
+  </data>
+  <data name="MapTip" xml:space="preserve">
+    <value>Подсказки карты</value>
+  </data>
+  <data name="MoreSymbolOptions" xml:space="preserve">
+    <value>Опции схемы</value>
+  </data>
+  <data name="Organize" xml:space="preserve">
+    <value>Организовать</value>
+  </data>
+  <data name="RefreshLayer" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск...</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>Переместить назад</value>
+  </data>
+  <data name="SingleSymbol" xml:space="preserve">
+    <value>Единый символ</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="UniqueValues" xml:space="preserve">
+    <value>Уникальные значения</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="CategoryPrompt" xml:space="preserve">
+    <value>Категория:</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>Символ</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Просмотр</value>
+  </data>
+  <data name="DrawOrder" xml:space="preserve">
+    <value>Порядок отображения</value>
+  </data>
+  <data name="Popups" xml:space="preserve">
+    <value>Всплывающие окна</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Таблица</value>
+  </data>
+  <data name="ConfigurePopups" xml:space="preserve">
+    <value>Настроить всплывающие окна</value>
+  </data>
+  <data name="AddUniqueValue" xml:space="preserve">
+    <value>Добавить значение</value>
+  </data>
+  <data name="DeleteUniqueValue" xml:space="preserve">
+    <value>Удалить выбранное значение</value>
+  </data>
+  <data name="NextUniqueValue" xml:space="preserve">
+    <value>Следующее уникальное значение</value>
+  </data>
+  <data name="PreviousUniqueValue" xml:space="preserve">
+    <value>Предыдущее уникальное значение</value>
+  </data>
+  <data name="ValuePrompt" xml:space="preserve">
+    <value>Значение:</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>Слой</value>
+  </data>
+  <data name="MapCenterTooltip" xml:space="preserve">
+    <value>ArcGIS.com Map Center</value>
+  </data>
+  <data name="ClassesPrompt" xml:space="preserve">
+    <value>Классы:</value>
+  </data>
+  <data name="InvalidClassBreakValue" xml:space="preserve">
+    <value>Неверное значение</value>
+  </data>
+  <data name="DefaultSymbol" xml:space="preserve">
+    <value>Символ по умолчанию</value>
+  </data>
+  <data name="MaxPointsPrompt" xml:space="preserve">
+    <value>Максимальное количество точек:</value>
+  </data>
+  <data name="RadiusPrompt" xml:space="preserve">
+    <value>Радиус:</value>
+  </data>
+  <data name="UsePointClustering" xml:space="preserve">
+    <value>Использовать кластеризацию точек</value>
+  </data>
+  <data name="AddContent" xml:space="preserve">
+    <value>Добавить ресурсы</value>
+  </data>
+  <data name="LayerSymbology" xml:space="preserve">
+    <value>Символы</value>
+  </data>
+  <data name="AutoUpdates" xml:space="preserve">
+    <value>Автообновление</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>Интервал</value>
+  </data>
+  <data name="PollForUpdates" xml:space="preserve">
+    <value>Прокрутите для поиска обновлений</value>
+  </data>
+  <data name="UpdateOnExtentChanged" xml:space="preserve">
+    <value>Обновлять при смене экстента</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Фильтр</value>
+  </data>
+  <data name="FilterLayerTitle" xml:space="preserve">
+    <value>Задать выражение фильтра</value>
+  </data>
+  <data name="FilterByMapExtent" xml:space="preserve">
+    <value>Фильтр по экстенту</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>Во весь экран</value>
+  </data>
+  <data name="AutoScrollRow" xml:space="preserve">
+    <value>Строка автопрокрутки</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>Детали сервиса</value>
+  </data>
+  <data name="DatasetPrompt" xml:space="preserve">
+    <value>Набор данных:</value>
+  </data>
+  <data name="DistancePrompt" xml:space="preserve">
+    <value>Расстояние:</value>
+  </data>
+  <data name="FindNearbyTitle" xml:space="preserve">
+    <value>Найти ближайший</value>
+  </data>
+  <data name="InvalidDistance" xml:space="preserve">
+    <value>Введите расстояние</value>
+  </data>
+  <data name="InvalidDistanceCaption" xml:space="preserve">
+    <value>Недопустимое значение расстояния</value>
+  </data>
+  <data name="Kilometers" xml:space="preserve">
+    <value>Километры</value>
+  </data>
+  <data name="Meters" xml:space="preserve">
+    <value>Метры</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>Мили</value>
+  </data>
+  <data name="SelectionTools" xml:space="preserve">
+    <value>Инструменты выборки</value>
+  </data>
+  <data name="BufferDistance" xml:space="preserve">
+    <value>Буферное расстояние</value>
+  </data>
+  <data name="Feed" xml:space="preserve">
+    <value>GeoRSS...</value>
+  </data>
+  <data name="FindNearbyBufferPrefix" xml:space="preserve">
+    <value>Буфер для поиска ближайшего - </value>
+  </data>
+  <data name="FindNearbyPrefix" xml:space="preserve">
+    <value>Найти ближайший - </value>
+  </data>
+  <data name="SelectByDraw" xml:space="preserve">
+    <value>Выбрать графикой</value>
+  </data>
+  <data name="ColorSchemePrompt" xml:space="preserve">
+    <value>Цветовая схема:</value>
+  </data>
+  <data name="EditValuesPrompt" xml:space="preserve">
+    <value>Редактировать значения:</value>
+  </data>
+  <data name="TypeValueToAdd" xml:space="preserve">
+    <value>Введите добавляемое значение</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="AddGeoRSSTitle" xml:space="preserve">
+    <value>Введите URL для GeoRSS Feed</value>
+  </data>
+  <data name="HeaderPrompt" xml:space="preserve">
+    <value>Верхний колонтитул:</value>
+  </data>
+  <data name="BrowseDialogGeographicDataNotFound" xml:space="preserve">
+    <value>Географические данные не найдены</value>
+  </data>
+  <data name="DefaultBasemapLayerDisplayName" xml:space="preserve">
+    <value>Базовая карта</value>
+  </data>
+  <data name="LayerPrompt" xml:space="preserve">
+    <value>Слой:</value>
+  </data>
+  <data name="AddLayerTooltip" xml:space="preserve">
+    <value>Добавить выбранный ArcGIS Server, SharePoint или набор данных Spatial Data Service на карту</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Переименовать</value>
+  </data>
+  <data name="ODataFeed" xml:space="preserve">
+    <value>OData...</value>
+  </data>
+  <data name="SignInWithGlobalAccount" xml:space="preserve">
+    <value>Подключиться, используя ваш ESRI Global Account</value>
+  </data>
+  <data name="ClusterColor" xml:space="preserve">
+    <value>Цвет фона кластера</value>
+  </data>
+  <data name="ClusterTextColor" xml:space="preserve">
+    <value>Цвет переднего плана кластера</value>
+  </data>
+  <data name="Clustering" xml:space="preserve">
+    <value>Кластеризация</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Общие</value>
+  </data>
+  <data name="HeatMapAdd" xml:space="preserve">
+    <value>Добавить тепловую карту</value>
+  </data>
+  <data name="Intensity" xml:space="preserve">
+    <value>Интенсивность</value>
+  </data>
+  <data name="OpenItemOnClick" xml:space="preserve">
+    <value>Открыть элемент по щелчку</value>
+  </data>
+  <data name="Symbology" xml:space="preserve">
+    <value>Символы</value>
+  </data>
+  <data name="ShowMapContents" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="Attributes" xml:space="preserve">
+    <value>Атрибуты</value>
+  </data>
+  <data name="Miscellaneous" xml:space="preserve">
+    <value>Разное</value>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Дополнительно</value>
+  </data>
+  <data name="ExtensionLoadFailed" xml:space="preserve">
+    <value>Загрузка расширения не удалась</value>
+  </data>
+  <data name="ToolClassLoadFailed" xml:space="preserve">
+    <value>Загрузка класса инструмента не удалась</value>
+  </data>
+  <data name="ToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Конфигурация класса инструмента не удалась</value>
+  </data>
+  <data name="ExtensionInitializationFailed" xml:space="preserve">
+    <value>Сбой установки пользовательской команды.</value>
+  </data>
+  <data name="ExtensionInitializationFailedHeader" xml:space="preserve">
+    <value>Не удалось инициализировать дополнительный модуль</value>
+  </data>
+  <data name="Less" xml:space="preserve">
+    <value>Меньше</value>
+  </data>
+  <data name="More" xml:space="preserve">
+    <value>Еще</value>
+  </data>
+  <data name="ConfiguringLayer" xml:space="preserve">
+    <value>Настройка:</value>
+  </data>
+  <data name="RemoveLayerCaption" xml:space="preserve">
+    <value>Удалить слой?</value>
+  </data>
+  <data name="RemoveLayerNameSubstitude" xml:space="preserve">
+    <value>выбранные</value>
+  </data>
+  <data name="RemoveLayerPrompt" xml:space="preserve">
+    <value>Вы хотите удалить слой {0} с карты?</value>
+  </data>
+  <data name="BrowseNoEllipsis" xml:space="preserve">
+    <value>Обзор</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>Ресурсы</value>
+  </data>
+  <data name="GeoRSS" xml:space="preserve">
+    <value>GeoRSS</value>
+  </data>
+  <data name="SearchNoEllipsis" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="ErrorLoadConfigurationOfExtension" xml:space="preserve">
+    <value>Неподдерживаемая ошибка в LoadConfiguration расширения ({0})</value>
+  </data>
+  <data name="ErrorNoPrinterContainerFoundInPrintTemplate" xml:space="preserve">
+    <value>В шаблоне печати отсутствует ссылка на хранилище принтеров.</value>
+  </data>
+  <data name="ErrorSaveConfigurationOfExtension" xml:space="preserve">
+    <value>Неподдерживаемая ошибка в SaveConfiguration расширения ({0})</value>
+  </data>
+  <data name="ExceptionCachedMapServiceSpatialReferenceDoesNotMatch" xml:space="preserve">
+    <value>Пространственная привязка кэшированного картографического сервиса не совпадает с текущей.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitialized" xml:space="preserve">
+    <value>Не удалось вызвать ZoomMapToExtent до инициализации карты. Используйте MapLayersInitialized для этого процесса.</value>
+  </data>
+  <data name="ExceptionCannotCallZoomMapToExtentBeforeMapHasInitializedMapReferenceNull" xml:space="preserve">
+    <value>Не удалось вызвать ZoomMapToExtent до инициализации карты. Пространственная привязка карты пустая.</value>
+  </data>
+  <data name="ExceptionConnectionTypeDoesNotCoorespondToDatasourceWhichHasResources" xml:space="preserve">
+    <value>Тип подключения не соответствует {0} источнику данных ({1}) содержащему ресурсы</value>
+  </data>
+  <data name="ExceptionCouldNotFindElementWithName" xml:space="preserve">
+    <value>Не удалось найти элемент с именем {0}.</value>
+  </data>
+  <data name="ExceptionCouldNotFindToggleButtonWithName" xml:space="preserve">
+    <value>Не удалось найти переключатель с именем {0}.</value>
+  </data>
+  <data name="ExceptionDatasourceNotLoadedForBaseMapType" xml:space="preserve">
+    <value>Для базовой карты {0} не загружен источник данных</value>
+  </data>
+  <data name="ExceptionElement" xml:space="preserve">
+    <value>элемент</value>
+  </data>
+  <data name="ExceptionMapHasNotBeenInitializedYet" xml:space="preserve">
+    <value>Карта не инициализирована</value>
+  </data>
+  <data name="ExceptionMapLayersHaveNotBeenInstantiated" xml:space="preserve">
+    <value>Слои карты не установлены. Изменить базовую карту можно только после вызова MapLayersInitialized</value>
+  </data>
+  <data name="ExceptionMapNotSet" xml:space="preserve">
+    <value>Карта не установлена</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationProvider" xml:space="preserve">
+    <value>Необходимо задать ConfigurationProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyConfigurationStoreProvider" xml:space="preserve">
+    <value>Необходимо задать ConfigurationStoreProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyDataSourceProvider" xml:space="preserve">
+    <value>Необходимо задать DataSourceProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifyLayoutProvider" xml:space="preserve">
+    <value>Необходимо задать LayoutProvider</value>
+  </data>
+  <data name="ExceptionMustSpecifySpatialReferenceOnEnvelope" xml:space="preserve">
+    <value>Необходимо задать пространственную привязку или конверт</value>
+  </data>
+  <data name="ExceptionMustSpecifyThemeProvider" xml:space="preserve">
+    <value>Необходимо задать ThemeProvider</value>
+  </data>
+  <data name="ExceptionNoBingMapsTokenAvailable" xml:space="preserve">
+    <value>Bing Maps не доступны</value>
+  </data>
+  <data name="ExceptionNoGeometryServiceUrlSpecifiedLayerZoomedIsDifferentSpatialReference" xml:space="preserve">
+    <value>Не указан URL сервиса геометрии. Пространственная привязка соответствующего слоя отличается от карты, и для повторного проецирования с использованием сервиса геометрии необходим полный экстент</value>
+  </data>
+  <data name="ExceptionNotSupported" xml:space="preserve">
+    <value>Не поддерживается</value>
+  </data>
+  <data name="ExceptionNullBaseMapInfo" xml:space="preserve">
+    <value>baseMapInfo</value>
+  </data>
+  <data name="ExceptionOnlyCachedServicesCanBeUsedAsBaseMaps" xml:space="preserve">
+    <value>Только кэшированные картографические сервисы могут использоваться для базовой карты.</value>
+  </data>
+  <data name="ExceptionUnableToInstantiateDatasourceForBaseMapType" xml:space="preserve">
+    <value>Не удалось установить источник данных для типа базовой карты {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Не удалось получить сведения о конфигурации. Информация не предоставлена.</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasource" xml:space="preserve">
+    <value>Не удалось получить источник данных для {0}</value>
+  </data>
+  <data name="ExceptionUnableToRetrieveDatasourceConnectionType" xml:space="preserve">
+    <value>Не удалось получить источник данных для типа соединения {0}</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Загрузка...</value>
+  </data>
+  <data name="LoadingMapCenter" xml:space="preserve">
+    <value>Загрузка Картографического центра...</value>
+  </data>
+  <data name="LogUnableToRetrieveConfigurationInformation" xml:space="preserve">
+    <value>Не удалось получить сведения о конфигурации</value>
+  </data>
+  <data name="MsgErrorExecutingBufferOperation" xml:space="preserve">
+    <value>Ошибка при выполнении операции буфера.</value>
+  </data>
+  <data name="MsgErrorExecutingRelationAsyncOperation" xml:space="preserve">
+    <value>Ошибка при выполнении операции RelationAsync</value>
+  </data>
+  <data name="MsgErrorOpeningFile" xml:space="preserve">
+    <value>Ошибка при открытии файла</value>
+  </data>
+  <data name="MsgErrorRetrievingSubLayersForMapService" xml:space="preserve">
+    <value>Ошибка при получении подслоев для картографического сервиса</value>
+  </data>
+  <data name="MsgErrorSavingFile" xml:space="preserve">
+    <value>Ошибка при сохранении файла</value>
+  </data>
+  <data name="MsgNoFeaturesSelected" xml:space="preserve">
+    <value>Объекты не выбраны</value>
+  </data>
+  <data name="MsgNoResourcesFound" xml:space="preserve">
+    <value>Ресурсы не найдены</value>
+  </data>
+  <data name="MsgUnableToAccessGeometryService" xml:space="preserve">
+    <value>Не удалось получить доступ к сервису геометрии.</value>
+  </data>
+  <data name="MsgUnableToCreateLayer" xml:space="preserve">
+    <value>Не удалось создать слой</value>
+  </data>
+  <data name="MsgUnableToRetrieveResources" xml:space="preserve">
+    <value>Не удалось получить ресурсы.</value>
+  </data>
+  <data name="MsgUnknownError" xml:space="preserve">
+    <value>Неизвестная ошибка</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="UnknownUser" xml:space="preserve">
+    <value>Неизвестный пользователь</value>
+  </data>
+  <data name="NotValidMapDocument" xml:space="preserve">
+    <value>Некорректный документ карты.</value>
+  </data>
+  <data name="ErrorRetrievingSymbols" xml:space="preserve">
+    <value>Ошибка при получении символов</value>
+  </data>
+  <data name="ExceptionCacheMapServicesCannotReproject" xml:space="preserve">
+    <value>Кэшированные картографические сервисы нельзя перепроецировать в приложении</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>Открыть Веб-карту на ArcGIS.com</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Подключиться</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>Текст фона</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Члены</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Предварительный просмотр</value>
+  </data>
+  <data name="SelectedItem" xml:space="preserve">
+    <value>Выбранный объект</value>
+  </data>
+  <data name="RecordOutOfSelected" xml:space="preserve">
+    <value>Записи ({0} из {1} выбраны)</value>
+  </data>
+  <data name="ExtensionInitializationFailedUrl" xml:space="preserve">
+    <value>Не удалось создать пример пользовательской команды. Url: {0}</value>
+  </data>
+  <data name="HeatMapTitle" xml:space="preserve">
+    <value>{0} Тепловая карта</value>
+  </data>
+  <data name="CurrentColor" xml:space="preserve">
+    <value>Текущий цвет</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>Описание:</value>
+  </data>
+  <data name="HeightPrompt" xml:space="preserve">
+    <value>Высота:</value>
+  </data>
+  <data name="Moredotdot" xml:space="preserve">
+    <value>Еще...</value>
+  </data>
+  <data name="NotificationDontShowDialogOnStartup" xml:space="preserve">
+    <value>Не показывать больше это диалоговое окно</value>
+  </data>
+  <data name="RecordPrompt" xml:space="preserve">
+    <value>Запись:</value>
+  </data>
+  <data name="StandardColors" xml:space="preserve">
+    <value>Стандартные цвета</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>Цвета темы</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>Название:</value>
+  </data>
+  <data name="WidthPrompt" xml:space="preserve">
+    <value>Ширина:</value>
+  </data>
+  <data name="MapBehaviors" xml:space="preserve">
+    <value>Поведение карты</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>Вниз</value>
+  </data>
+  <data name="MapBehaviorAdd" xml:space="preserve">
+    <value>Добавить новое поведение</value>
+  </data>
+  <data name="MapBehaviorConfigure" xml:space="preserve">
+    <value>Настроить поведение выбранной карты</value>
+  </data>
+  <data name="MapBehaviorMoveDown" xml:space="preserve">
+    <value>Переместить поведение выбранной карты на одну позицию вниз в списке отображения</value>
+  </data>
+  <data name="MapBehaviorMoveUp" xml:space="preserve">
+    <value>Переместить поведение выбранной карты на одну позицию вверх в списке отображения</value>
+  </data>
+  <data name="MapBehaviorRemove" xml:space="preserve">
+    <value>Удаляет поведение выбранной карты</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviors" xml:space="preserve">
+    <value>Нет связанных с картой поведений.</value>
+  </data>
+  <data name="MapBehaviorsNoBehaviorsInEdit" xml:space="preserve">
+    <value>Щелкните Добавить для настройки нового поведения карты.</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Переместить</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>Вверх</value>
+  </data>
+  <data name="AddLabel" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="BehaviorClassLoadFailed" xml:space="preserve">
+    <value>Не удалось загрузить класс поведения</value>
+  </data>
+  <data name="BehaviorConfigurationFailed" xml:space="preserve">
+    <value>Не удалось настроить поведение</value>
+  </data>
+  <data name="BehaviorConfigurationFailedDescription" xml:space="preserve">
+    <value>Появилось исключение в настройке типа поведения.</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailed" xml:space="preserve">
+    <value>Не удалось загрузить конфигурацию класса поведения</value>
+  </data>
+  <data name="BehaviorToolClassLoadConfigurationFailedDescription" xml:space="preserve">
+    <value>При загрузке настроек поведения выявлено исключение.</value>
+  </data>
+  <data name="TypeLabel" xml:space="preserve">
+    <value>Тип:</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Создать тепловую карту на основе объектов текущего слоя</value>
+  </data>
+  <data name="ClusterColorDescription" xml:space="preserve">
+    <value>Установить цвет фона для кластеров текущего слоя</value>
+  </data>
+  <data name="ClusterTextColorDescription" xml:space="preserve">
+    <value>Установить цвет границы и текста для кластеров текущего слоя</value>
+  </data>
+  <data name="FilterDescription" xml:space="preserve">
+    <value>Выбрать объекты, включенные в текущий слой, путем построения запроса к его атрибутам</value>
+  </data>
+  <data name="HeatMapColorDescription" xml:space="preserve">
+    <value>Выберите цветовую схему для тепловой карты</value>
+  </data>
+  <data name="IntensityDescription" xml:space="preserve">
+    <value>Отрегулировать интенсивность тепловой карты. Более высокая интенсивность приведет к получению больших по охвату горячих зон.</value>
+  </data>
+  <data name="MaxPoints" xml:space="preserve">
+    <value>Максимальное количество точек</value>
+  </data>
+  <data name="MaxPointsDescription" xml:space="preserve">
+    <value>Установить максимальное число точек, которые могут быть сгруппированы в один кластер</value>
+  </data>
+  <data name="OpenItemOnClickDescription" xml:space="preserve">
+    <value>При нажатии показывает подробную информацию об объекте в новом окне браузера</value>
+  </data>
+  <data name="PollForUpdatesDescription" xml:space="preserve">
+    <value>Установить, нужно ли получать обновления канала через заданный интервал времени</value>
+  </data>
+  <data name="PopupsDescription" xml:space="preserve">
+    <value>Настроить атрибуты, которые отображаются во всплывающих окнах текущего слоя</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>Радиус</value>
+  </data>
+  <data name="RadiusDescription" xml:space="preserve">
+    <value>Укажите радиус в пикселах, в пределах которого объекты будут объединены в один кластер</value>
+  </data>
+  <data name="SymbologyDescription" xml:space="preserve">
+    <value>Настроить символы, которые используются для отображения текущего слоя</value>
+  </data>
+  <data name="TableDescription" xml:space="preserve">
+    <value>Настроить поля, которые отображаются в таблице атрибутов текущего слоя</value>
+  </data>
+  <data name="UpdateOnExtentChangedDescription" xml:space="preserve">
+    <value>Установить, необходимо ли получать обновления канала во время сдвига и масштабирования карты</value>
+  </data>
+  <data name="UsePointClusteringDescription" xml:space="preserve">
+    <value>Указывает, нужно ли отображать группы точек в качестве одного кластера</value>
+  </data>
+  <data name="SelectTheLayout" xml:space="preserve">
+    <value>Выберите компоновку...</value>
+  </data>
+  <data name="SelectThePrintLayout" xml:space="preserve">
+    <value>Выберите компоновку для печати</value>
+  </data>
+  <data name="BehaviorPrompt" xml:space="preserve">
+    <value>Поведение:</value>
+  </data>
+  <data name="Cluster" xml:space="preserve">
+    <value>Кластер</value>
+  </data>
+  <data name="ClusterFeatures" xml:space="preserve">
+    <value>Объединение объектов в кластеры</value>
+  </data>
+  <data name="ConfigureRange" xml:space="preserve">
+    <value>Настроить диапазон</value>
+  </data>
+  <data name="EnablePrompt" xml:space="preserve">
+    <value>Включить:</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>Объекты</value>
+  </data>
+  <data name="RenderAsHeatMap" xml:space="preserve">
+    <value>Визуализировать как тепловую карту</value>
+  </data>
+  <data name="RenderHeatMapAdvancedProperties" xml:space="preserve">
+    <value>Дополнительные свойства визуализации тепловой карты</value>
+  </data>
+  <data name="Tolerance" xml:space="preserve">
+    <value>Допуск</value>
+  </data>
+  <data name="LayoutPrompt" xml:space="preserve">
+    <value>Компоновка:</value>
+  </data>
+  <data name="ConfigurePrint" xml:space="preserve">
+    <value>Настроить печать</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Печать</value>
+  </data>
+  <data name="LayoutResourceDownloadError" xml:space="preserve">
+    <value>Ошибка при загрузке ресурсов компоновок</value>
+  </data>
+  <data name="ChangeBackground" xml:space="preserve">
+    <value>Изменить фон</value>
+  </data>
+  <data name="PreviewTheme" xml:space="preserve">
+    <value>Предварительный просмотр темы</value>
+  </data>
+  <data name="Untitled" xml:space="preserve">
+    <value>Без названия</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>Добавить поведение</value>
+  </data>
+  <data name="Gradient" xml:space="preserve">
+    <value>Градиент</value>
+  </data>
+  <data name="Solid" xml:space="preserve">
+    <value>Сплошная</value>
+  </data>
+  <data name="ToggleRibbonVisibility" xml:space="preserve">
+    <value>Переключить видимость ленты</value>
+  </data>
+  <data name="ArcGISSilverlightVersion" xml:space="preserve">
+    <value>ArcGIS API for Silverlight:</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Версия:</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Переместить вниз</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Переместить вверх</value>
+  </data>
+  <data name="ConstrainExtentBehaviorMessage" xml:space="preserve">
+    <value>Приблизьтесь к экстенту карты, которым вы хотите ограничить обзор карты, и нажмите Применить.</value>
+  </data>
+  <data name="ConstrainExtentBehaviorTitle" xml:space="preserve">
+    <value>Установка ограничения экстента карты</value>
+  </data>
+  <data name="DeleteBehaviorCaption" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить это поведение?</value>
+  </data>
+  <data name="DeleteBehaviorPrompt" xml:space="preserve">
+    <value>Подтвердите удаление</value>
+  </data>
+  <data name="CurrentConstrainExtentLabel" xml:space="preserve">
+    <value>Конверт, ограничивающий текущий экстент:</value>
+  </data>
+  <data name="ConstrainExtentNotSetMessage" xml:space="preserve">
+    <value>Ограничение экстента карты еще не установлено.</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>Не установлено</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>Настроить базовые карты</value>
+  </data>
+  <data name="ConfigureTheSetOfBaseMaps" xml:space="preserve">
+    <value>Настроить набор базовых карт</value>
+  </data>
+  <data name="AddNewBaseMap" xml:space="preserve">
+    <value>Добавить новую базовую карту</value>
+  </data>
+  <data name="ClickImageToChangeThumbnailIcon" xml:space="preserve">
+    <value>Щелкните на картинке для смены иконки</value>
+  </data>
+  <data name="RequiresBingAppID" xml:space="preserve">
+    <value>Необходим Bing App ID</value>
+  </data>
+  <data name="DeleteCurrentlySelectedBaseMap" xml:space="preserve">
+    <value>Удалить выбранную в данный момент базовую карту</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapDown" xml:space="preserve">
+    <value>Сдвинуть вниз выбранную в данный момент базовую карту</value>
+  </data>
+  <data name="MoveCurrentlySelectedBaseMapUp" xml:space="preserve">
+    <value>Сдвинуть вверх выбранную в данный момент базовую карту</value>
+  </data>
+  <data name="SubTypePrompt" xml:space="preserve">
+    <value>Подтип:</value>
+  </data>
+  <data name="TextPrompt" xml:space="preserve">
+    <value>Текст:</value>
+  </data>
+  <data name="ThumbnailPrompt" xml:space="preserve">
+    <value>Образец:</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Далее</value>
+  </data>
+  <data name="NoBehaviorTitleSpecified" xml:space="preserve">
+    <value>Не указано название поведения</value>
+  </data>
+  <data name="PleaseProvideValidTitleForNewBehavior" xml:space="preserve">
+    <value>Пожалуйста, укажите корректное название нового поведения.</value>
+  </data>
+  <data name="SelectBehaviorToAdd" xml:space="preserve">
+    <value>Выберите поведение</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>Режим</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>Размер кэша: </value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>Получить объекты в пределах области карты</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>Получить сразу все объекты</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>Размера кэша объектов</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>Максимальное число объектов, которое может содержаться в слое. Если лимит превышен, новые объекты будут оставлены, а старые - удалены из слоя.</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>Получить объекты в пределах области карты</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>Будут оставлены только объекты, находящиеся в пределах текущей территории карты при загрузке и обновлении слоя. Когда территория карты увеличится, будет оставлено больше объектов.</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>Получить все объекты</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>Будут оставлены все объекты слоя при его загрузке и обновлении.</value>
+  </data>
+  <data name="BrowseContentUrlWatermark" xml:space="preserve">
+    <value>Введите URL сервера или слоя</value>
+  </data>
+  <data name="BrowseDialogNoResourcesFound" xml:space="preserve">
+    <value>Ресурсы не найдены.</value>
+  </data>
+  <data name="BrowseDialogNoServerOrLayerFound" xml:space="preserve">
+    <value>Слой или сервис не найден.</value>
+  </data>
+  <data name="SecureServices" xml:space="preserve">
+    <value>Безопасные сервисы</value>
+  </data>
+  <data name="AutoUpdateNumericDescription" xml:space="preserve">
+    <value>Устанавливает интервал обновления в секундах или минутах. Этот слой будет автоматически обновляться через заданный интервал вплоть до выключения.</value>
+  </data>
+  <data name="AutoUpdateNumericTooltip" xml:space="preserve">
+    <value>Интервал обновления</value>
+  </data>
+  <data name="AutoUpdatePollingDescription" xml:space="preserve">
+    <value>Устанавливает, будет ли слой будет автоматически обновляться через одинаковый интервал времени.</value>
+  </data>
+  <data name="AutoUpdatePollingTooltip" xml:space="preserve">
+    <value>Автоматическое обновление слоев объектов</value>
+  </data>
+  <data name="AutoUpdateIntervalText" xml:space="preserve">
+    <value>Интервал:</value>
+  </data>
+  <data name="AutoUpdateLayerConfigTitle" xml:space="preserve">
+    <value>Автоматическое обновление</value>
+  </data>
+  <data name="AvailableLayers" xml:space="preserve">
+    <value>Доступные слои:</value>
+  </data>
+  <data name="EnablePopups" xml:space="preserve">
+    <value>Показывать всплывающие окна</value>
+  </data>
+  <data name="EnablePopupsForLayer" xml:space="preserve">
+    <value>Показывать всплывающие окна для этого слоя</value>
+  </data>
+  <data name="OnClick" xml:space="preserve">
+    <value>по щелчку</value>
+  </data>
+  <data name="OnHover" xml:space="preserve">
+    <value>при наведении курсора</value>
+  </data>
+  <data name="ConfigureEditorWidget" xml:space="preserve">
+    <value>Настройка редактирования</value>
+  </data>
+  <data name="SnapshotModeNote" xml:space="preserve">
+    <value>Обратите внимание, что если число объектов в наборе превысит максимально допустимое сервисом, не все объекты будут добавлены к слою.</value>
+  </data>
+  <data name="GraphicSymbolsTakePrecedence" xml:space="preserve">
+    <value>Символы, заданные здесь, заменяются индивидуальными символами, если они определены.</value>
+  </data>
+  <data name="SpatialReference" xml:space="preserve">
+    <value>Пространственная привязка:</value>
+  </data>
+  <data name="XMax" xml:space="preserve">
+    <value>XMax:</value>
+  </data>
+  <data name="XMin" xml:space="preserve">
+    <value>XMin:</value>
+  </data>
+  <data name="YMax" xml:space="preserve">
+    <value>YMax</value>
+  </data>
+  <data name="YMin" xml:space="preserve">
+    <value>YMin</value>
+  </data>
+  <data name="NotFoundInLayout" xml:space="preserve">
+    <value>{0} не был найден в текущей компоновке</value>
+  </data>
+  <data name="ToggleEditFailed" xml:space="preserve">
+    <value>Не удалось переключить средства редактирования. Возможно, текущая компоновка не поддерживает редактирование</value>
+  </data>
+  <data name="PopupFromWebMap" xml:space="preserve">
+    <value>Использовать определение всплывающего окна из веб-карты.</value>
+  </data>
+  <data name="AutoZoomToSelected" xml:space="preserve">
+    <value>Автоматическое приближение к выбранным объектам</value>
+  </data>
+  <data name="Commit" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Опции</value>
+  </data>
+  <data name="RecordsOutOfSelected" xml:space="preserve">
+    <value>Записи ({0} из {1} выбраны)</value>
+  </data>
+  <data name="SwitchSelection" xml:space="preserve">
+    <value>Переключить выборку</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>Получение объектов</value>
+  </data>
+  <data name="ConfigureSecuredServices" xml:space="preserve">
+    <value>Настроить защищенные сервисы</value>
+  </data>
+  <data name="ErrorChangingProxies" xml:space="preserve">
+    <value>Ошибка изменения прокси-серверов</value>
+  </data>
+  <data name="ProxyUrl" xml:space="preserve">
+    <value>URL прокси-сервера:</value>
+  </data>
+  <data name="SpecifyUrlToProxyPageUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>Введите URL станицы прокси-сервера, используемого для доступа к защищенным сервисам из этого приложения. Этот прокси-сервер будет использоваться всеми слоями приложения, работающего с защищенным сервисом.</value>
+  </data>
+  <data name="UsesProxy" xml:space="preserve">
+    <value>Использует прокси-сервер</value>
+  </data>
+  <data name="WhetherThisLayerUsesProxyServiceForaccessingRestrictedService" xml:space="preserve">
+    <value>При использовании слоем прокси-сервера для доступа к защищенному сервису. Щелкните Настроить прокси-сервер, чтобы задать URL прокси-сервера.</value>
+  </data>
+  <data name="LayerHasNoAttributes" xml:space="preserve">
+    <value>Выбранный слой не имеет отображаемых атрибутов.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Подробнее</value>
+  </data>
+  <data name="ToggleErrorDetails" xml:space="preserve">
+    <value>Показать или скрыть подробную информацию об ошибке.</value>
+  </data>
+  <data name="LayerIsNotGraphicsLayer" xml:space="preserve">
+    <value>Атрибуты выбранного слоя не отображаются, поскольку он является динамическим слоем ArcGIS Server или слоем кэшированного картографического сервиса. Подробнее, см. раздел Типы слоев в Справке.</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteBasemap" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить эту базовую карту?</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Подтвердите удаление</value>
+  </data>
+  <data name="NewBasemap" xml:space="preserve">
+    <value>Новая базовая карта</value>
+  </data>
+  <data name="ConfigureSelectedLayer" xml:space="preserve">
+    <value>Настроить выделенный слой</value>
+  </data>
+  <data name="SelectLayerToAdd" xml:space="preserve">
+    <value>Выберите слой для добавления</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>Доступ к защищенным сервисам</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>Добавить защищенные сервисы</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>Настроить прокси-сервер</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServices" xml:space="preserve">
+    <value>Настроить прокси-сервер, используемый для доступа к защищенным сервисам из этого приложения</value>
+  </data>
+  <data name="BehaviorSaveFailed" xml:space="preserve">
+    <value>Не удалось сохранить конфигурацию поведения</value>
+  </data>
+  <data name="BehaviorSaveFailedMessage" xml:space="preserve">
+    <value>Ошибка при сохранении конфигурации поведения вложенной карты.</value>
+  </data>
+  <data name="LayerInitFailure" xml:space="preserve">
+    <value>Ошибка инициализации слоя</value>
+  </data>
+  <data name="LayerNotInitialized" xml:space="preserve">
+    <value>Слой не может быть инициализирован</value>
+  </data>
+  <data name="DeleteGraphicConfirmation" xml:space="preserve">
+    <value>Удалить объекты?</value>
+  </data>
+  <data name="DeleteGraphicConfirmationTitle" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
+  <data name="EditValuesCommandEditorBackButtonContent" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="ConfigureBehavior" xml:space="preserve">
+    <value>Конфигурация поведения</value>
+  </data>
+  <data name="DisablePopupForLayer" xml:space="preserve">
+    <value>Отключить всплывающие окна</value>
+  </data>
+  <data name="EnablePopupForLayer" xml:space="preserve">
+    <value>Включить всплывающие окна</value>
+  </data>
+  <data name="LinkWebMapDialogCaption" xml:space="preserve">
+    <value>Ссылка на Веб-карту</value>
+  </data>
+  <data name="LinkWebMapDialogMessage" xml:space="preserve">
+    <value>Конфигурация карты будет загружена с веб-карты. Существующая конфигурация карты будет потеряна. Продолжить?</value>
+  </data>
+  <data name="UnlinkWebMapDialogCaption" xml:space="preserve">
+    <value>Отключиться от Веб-карты</value>
+  </data>
+  <data name="UnlinkWebMapDialogMessage" xml:space="preserve">
+    <value>Конфигурация карты будет отключена от веб-карты.  Вы сможете добавлять, удалять и настраивать слои, но обновления веб-карты не будут отображаться на вашей карте. Продолжить?</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="Business" xml:space="preserve">
+    <value>Бизнес</value>
+  </data>
+  <data name="Cartography" xml:space="preserve">
+    <value>Картография</value>
+  </data>
+  <data name="Outdoor_Recreation" xml:space="preserve">
+    <value>Отдых на природе</value>
+  </data>
+  <data name="People_and_Places" xml:space="preserve">
+    <value>Общество и места</value>
+  </data>
+  <data name="Public_Safety_and_Health" xml:space="preserve">
+    <value>Общественная безопасность и здравоохранение</value>
+  </data>
+  <data name="Transportation" xml:space="preserve">
+    <value>Транспорт</value>
+  </data>
+  <data name="WebMapLoadFailed" xml:space="preserve">
+    <value>Веб-карта с идентификатором {0} не может быть загружена. Возможно, она не существует, или у вас недостаточно прав для доступа к этой карте.</value>
+  </data>
+  <data name="ClusteringDisallowedCaption" xml:space="preserve">
+    <value>Кластеризация не поддерживается</value>
+  </data>
+  <data name="ClusteringDisallowedMessage" xml:space="preserve">
+    <value>Выбранный для редактирования слой не поддерживает кластеризацию.</value>
+  </data>
+  <data name="UnsupportedBasemapType" xml:space="preserve">
+    <value>Неподдерживаемый тип базовой карты</value>
+  </data>
+  <data name="UseProxy" xml:space="preserve">
+    <value>Использовать прокси-сервер</value>
+  </data>
+  <data name="AreaNotesLayer" xml:space="preserve">
+    <value>{0} - Полигоны</value>
+  </data>
+  <data name="LineNotesLayer" xml:space="preserve">
+    <value>{0} - Линии</value>
+  </data>
+  <data name="PointNotesLayer" xml:space="preserve">
+    <value>{0} - Точки</value>
+  </data>
+  <data name="Editing" xml:space="preserve">
+    <value>Редактирование</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Включено</value>
+  </data>
+  <data name="ArcGISPortalDefaultName" xml:space="preserve">
+    <value>Portal for ArcGIS</value>
+  </data>
+  <data name="SignInToArcGISServer" xml:space="preserve">
+    <value>Подключиться к ArcGIS Server как {0}</value>
+  </data>
+  <data name="InvalidUrlUserPassword" xml:space="preserve">
+    <value>Неверный URL, имя пользователя или пароль</value>
+  </data>
+  <data name="SignInTo" xml:space="preserve">
+    <value>Подключиться к {0}</value>
+  </data>
+  <data name="SignInToServer" xml:space="preserve">
+    <value>Подключиться к ArcGIS Server</value>
+  </data>
+  <data name="SignInToSecureServices" xml:space="preserve">
+    <value>Подключиться для доступа к защищенным сервисам</value>
+  </data>
+  <data name="OpenStreetMap" xml:space="preserve">
+    <value>OpenStreetMap</value>
+  </data>
+  <data name="FeatureLayer" xml:space="preserve">
+    <value>Векторный слой</value>
+  </data>
+  <data name="MapLayer" xml:space="preserve">
+    <value>Слой карты</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>Подключение не удалось.</value>
+  </data>
+</root>

@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddFeatureLayer" xml:space="preserve">
+    <value>Pievieno elementu slāni</value>
+  </data>
+  <data name="AddFeatureLayerWindowCheckAll" xml:space="preserve">
+    <value>Pārbaudīt visu</value>
+  </data>
+  <data name="AddFeatureLayerWindowUnCheckAll" xml:space="preserve">
+    <value>Nepārbaudīts viss</value>
+  </data>
+  <data name="ArcGIS" xml:space="preserve">
+    <value>ArcGIS</value>
+  </data>
+  <data name="BackStageControlFeatureMaps" xml:space="preserve">
+    <value>Piedāvātās kartes</value>
+  </data>
+  <data name="BackStageControlGroups" xml:space="preserve">
+    <value>Grupas</value>
+  </data>
+  <data name="BackStageControlMyGroups" xml:space="preserve">
+    <value>Manas Grupas</value>
+  </data>
+  <data name="BackStageControlMyOrgGroups" xml:space="preserve">
+    <value>Manas Organizācijas Grupas</value>
+  </data>
+  <data name="BackStageControlMyOrgPublicGroups" xml:space="preserve">
+    <value>Manas Organizācijas Publiskās Grupas</value>
+  </data>
+  <data name="BackStageControlMyMaps" xml:space="preserve">
+    <value>Manas Kartes</value>
+  </data>
+  <data name="BackStageControlSearch" xml:space="preserve">
+    <value>Meklēt</value>
+  </data>
+  <data name="ClickHere" xml:space="preserve">
+    <value>Klikšķiniet šeit, lai apskatītu aprakstu atsevišķā pārlūka logā</value>
+  </data>
+  <data name="CloseDetails" xml:space="preserve">
+    <value>Aizvērt detaļas</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Komentāri</value>
+  </data>
+  <data name="ContentEveryone" xml:space="preserve">
+    <value>ikviens</value>
+  </data>
+  <data name="ContentGroups" xml:space="preserve">
+    <value>grupas</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Izveidoja</value>
+  </data>
+  <data name="DefineQueryWindowAlias" xml:space="preserve">
+    <value>Aizstājvārds:</value>
+  </data>
+  <data name="DefineQueryWindowAnd" xml:space="preserve">
+    <value>un</value>
+  </data>
+  <data name="DefineQueryWindowApply" xml:space="preserve">
+    <value>Lietot</value>
+  </data>
+  <data name="DefineQueryWindowClickPickDate" xml:space="preserve">
+    <value>Klikšķis, lai izvēlētos datumu, kas ir formatēts izmantošanai izteiksmē.</value>
+  </data>
+  <data name="DefineQueryWindowData" xml:space="preserve">
+    <value>Dati</value>
+  </data>
+  <data name="DefineQueryWindowExpression" xml:space="preserve">
+    <value>Izteiksme:</value>
+  </data>
+  <data name="DefineQueryWindowFailedToRetrieveSampleFeaturesForLayer" xml:space="preserve">
+    <value>Neizdevās atgūt slāņa parauga elementus.</value>
+  </data>
+  <data name="DefineQueryWindowFields" xml:space="preserve">
+    <value>Lauki:</value>
+  </data>
+  <data name="DefineQueryWindowLike" xml:space="preserve">
+    <value>līdzīgs</value>
+  </data>
+  <data name="DefineQueryWindowName" xml:space="preserve">
+    <value>Nosaukums:</value>
+  </data>
+  <data name="DefineQueryWindowNot" xml:space="preserve">
+    <value>ne</value>
+  </data>
+  <data name="DefineQueryWindowOr" xml:space="preserve">
+    <value>vai</value>
+  </data>
+  <data name="DefineQueryWindowQuery" xml:space="preserve">
+    <value>Vaicājums</value>
+  </data>
+  <data name="DefineQueryWindowTableIsSampleOfFeatureLayer" xml:space="preserve">
+    <value>Sekojošā tabula ir slāņa elementu paraugs.</value>
+  </data>
+  <data name="DefineQueryWindowType" xml:space="preserve">
+    <value>Tips:</value>
+  </data>
+  <data name="DescriptionForMapCanotBeDisplayed" xml:space="preserve">
+    <value>Šīs kartes aprakstu nevar parādīt šajā logā.</value>
+  </data>
+  <data name="EnterPlaceNameAddressLatLongitutePair" xml:space="preserve">
+    <value>Ievadiet vietas nosaukumu; adresi vai platuma, garuma pāri</value>
+  </data>
+  <data name="ExceptionDeleteFailed" xml:space="preserve">
+    <value>Izdzēšanas neveiksme</value>
+  </data>
+  <data name="ExceptionDeleteFailedUserSignIn" xml:space="preserve">
+    <value>Izdzēšanas neveiksme. Lietotājs nav pierakstījies.</value>
+  </data>
+  <data name="ExceptionFaileAcceptApplicateForGroup" xml:space="preserve">
+    <value>Neizdevās akceptēt pretendentu {0} uz grupu {1}</value>
+  </data>
+  <data name="ExceptionFaileDeclineApplicateForGroup" xml:space="preserve">
+    <value>Neizdevās noraidīt pretendentu {0} uz grupu {1}</value>
+  </data>
+  <data name="ExceptionFailedInviteUserToGroup" xml:space="preserve">
+    <value>Neizdevās ielūgt lietotājus {0} uz grupu {1}</value>
+  </data>
+  <data name="ExceptionFailedLeaveRequestForGroup" xml:space="preserve">
+    <value>Neizdevās nosūtīt atstādināšanas pieprasījumu lietotājam {0} no grupas {1}</value>
+  </data>
+  <data name="ExceptionFailedSendJoinRequestToGroup" xml:space="preserve">
+    <value>Neizdevās nosūtīt pievienošanās lūgumu lietotājam {0} grupai {1}</value>
+  </data>
+  <data name="ExceptionFailedToAcceptGroupInvitationForGroup" xml:space="preserve">
+    <value>Neizdevās pieņemt grupas uzaicinājumu uz grupu {0} no {1}</value>
+  </data>
+  <data name="ExceptionFailedToCreateGroup" xml:space="preserve">
+    <value>Neizdevās izveidot grupu.</value>
+  </data>
+  <data name="ExceptionFailedToDeclineGroupInvitationForGroup" xml:space="preserve">
+    <value>Neizdevās noraidīt grupas uzaicinājumu uz grupu {0} no {1}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteGroup" xml:space="preserve">
+    <value>Neizdevās izdzēst grupu {0}</value>
+  </data>
+  <data name="ExceptionFailedToDeleteNoitification" xml:space="preserve">
+    <value>Neizdevās izdzēst paziņojumu {0} no {1}</value>
+  </data>
+  <data name="ExceptionFailedToGetGroupApplicationsForGroup" xml:space="preserve">
+    <value>Neizdevās iegūt grupu aplikācijas grupai {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveTagForUser" xml:space="preserve">
+    <value>Neizdevās atgūt tagus lietotājiem {0}</value>
+  </data>
+  <data name="ExceptionFailedToRetrieveOrgGroups" xml:space="preserve">
+    <value>Neizdevās atgūt organizatoriskās grupas</value>
+  </data>
+  <data name="ExceptionFailedToShareItem" xml:space="preserve">
+    <value>Neizdevās koplietot vienības {0}</value>
+  </data>
+  <data name="ExceptionFailedToUpdateGroup" xml:space="preserve">
+    <value>Neizdevās jaunināt grupu {0}</value>
+  </data>
+  <data name="ExceptionGetCommentsFailed" xml:space="preserve">
+    <value>Neizdevās iegūt komentārus.</value>
+  </data>
+  <data name="ExceptionGetFolderFailedUserSignedIn" xml:space="preserve">
+    <value>GetFolder neizdevās. Lietotājs nav pierakstījies</value>
+  </data>
+  <data name="ExceptionNoUserSignedIn" xml:space="preserve">
+    <value>Neviens lietotājs nav pierakstījies.</value>
+  </data>
+  <data name="ExceptionSignInFailed" xml:space="preserve">
+    <value>Pierakstīties neizdevās.</value>
+  </data>
+  <data name="FeatureMapsControlCloseParenthesis" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="FeatureMapsControlDetails" xml:space="preserve">
+    <value>Detaļas</value>
+  </data>
+  <data name="FeatureMapsControlLastModified" xml:space="preserve">
+    <value>(pēdējo reizi modificēts: </value>
+  </data>
+  <data name="FeatureMapsControlOpen" xml:space="preserve">
+    <value>Atvērt</value>
+  </data>
+  <data name="GroupControlClickHereToViewInSeparateBrowser" xml:space="preserve">
+    <value>Klikšķiniet šeit, lai apskatītu aprakstu atsevišķā pārlūka logā</value>
+  </data>
+  <data name="GroupControlCloseGroup" xml:space="preserve">
+    <value>Aizvērt šo grupu</value>
+  </data>
+  <data name="GroupControlDescription" xml:space="preserve">
+    <value>Apraksts</value>
+  </data>
+  <data name="GroupControlFeaturedMaps" xml:space="preserve">
+    <value>Piedāvātās kartes</value>
+  </data>
+  <data name="GroupControlNoFeaturedMapsFound" xml:space="preserve">
+    <value>Nav atrastas piedāvātās kartes.</value>
+  </data>
+  <data name="GroupControlNoMapsFound" xml:space="preserve">
+    <value>Nav atrastas kartes.</value>
+  </data>
+  <data name="GroupControlOwner" xml:space="preserve">
+    <value>Īpašnieks</value>
+  </data>
+  <data name="GroupControlPrivateUserCannotFindGroup" xml:space="preserve">
+    <value>Privātā (Lietotāji nevar atrast grupu un var pievienoties tikai ar ielūgumiem)</value>
+  </data>
+  <data name="GroupControlPublicUserCanSearchAndFindGroup" xml:space="preserve">
+    <value>Publiskā (Lietotāji var meklēt un atrast grupu)</value>
+  </data>
+  <data name="GroupControlSearchOwner" xml:space="preserve">
+    <value>īpašnieks: {0}</value>
+  </data>
+  <data name="GroupControlTags" xml:space="preserve">
+    <value>Tagi</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Grupas</value>
+  </data>
+  <data name="HighestRated" xml:space="preserve">
+    <value>Augstākais novērtējums</value>
+  </data>
+  <data name="HintTextBoxToolTip" xml:space="preserve">
+    <value>Ievadiet vietas nosaukumu; adresi vai platuma,garuma pāri</value>
+  </data>
+  <data name="ItemNotFound" xml:space="preserve">
+    <value>Vienību nevar atrast: {0}</value>
+  </data>
+  <data name="LastModified" xml:space="preserve">
+    <value>Pēdējā modificēšana</value>
+  </data>
+  <data name="MapDetailsRating" xml:space="preserve">
+    <value>({0} vērtējumi)</value>
+  </data>
+  <data name="Maps" xml:space="preserve">
+    <value>Kartes</value>
+  </data>
+  <data name="MapServiceReferenceInvalid" xml:space="preserve">
+    <value>Karšu servisa atsauce ir nederīga. Servisu nevar pievienot kartei.</value>
+  </data>
+  <data name="MapServiceReferenceNoDetails" xml:space="preserve">
+    <value>Karšu servisa atsauce ir nederīga. Nevar parādīt detaļas.</value>
+  </data>
+  <data name="MostComments" xml:space="preserve">
+    <value>Visvairāk komentāru</value>
+  </data>
+  <data name="MostPopular" xml:space="preserve">
+    <value>Vispopulārākais</value>
+  </data>
+  <data name="MostRecentlyAdded" xml:space="preserve">
+    <value>Pievienots pēdējā laikā</value>
+  </data>
+  <data name="MostRelevant" xml:space="preserve">
+    <value>Visatbilstošākais</value>
+  </data>
+  <data name="MyGroupControlGroups" xml:space="preserve">
+    <value>{0} grupas</value>
+  </data>
+  <data name="MyGroupControlOn" xml:space="preserve">
+    <value>iesl</value>
+  </data>
+  <data name="MyGroupControlOpenGroup" xml:space="preserve">
+    <value>Atvērt šo grupu</value>
+  </data>
+  <data name="MyGroupControlZeroGroups" xml:space="preserve">
+    <value>0 grupas</value>
+  </data>
+  <data name="MyMapControlMaps" xml:space="preserve">
+    <value>{0} kartes</value>
+  </data>
+  <data name="MyMapControlZeroMaps" xml:space="preserve">
+    <value>0 kartes</value>
+  </data>
+  <data name="Places" xml:space="preserve">
+    <value>Vietas</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Īpašības</value>
+  </data>
+  <data name="RecentMaps" xml:space="preserve">
+    <value>Jaunākās kartes</value>
+  </data>
+  <data name="SearchArcGISCom" xml:space="preserve">
+    <value>Meklēt ArcGIS.com</value>
+  </data>
+  <data name="SearchControlAdd" xml:space="preserve">
+    <value>Pievienot</value>
+  </data>
+  <data name="SearchControlMapServiceFound" xml:space="preserve">
+    <value>Kartes serviss atrasts.</value>
+  </data>
+  <data name="SearchControlResultsFound" xml:space="preserve">
+    <value>{0} rezultāti atrasti.</value>
+  </data>
+  <data name="SearchControlServiceCouldNotBeAccessed" xml:space="preserve">
+    <value>Servisam nevarēja piekļūt.</value>
+  </data>
+  <data name="SearchControlZeroResultsFound" xml:space="preserve">
+    <value>0 rezultāti atrasti.</value>
+  </data>
+  <data name="SearchDetailsBy" xml:space="preserve">
+    <value>ar</value>
+  </data>
+  <data name="SearchDetailsRating" xml:space="preserve">
+    <value>Novērtējums: </value>
+  </data>
+  <data name="SearchMapResultsFor" xml:space="preserve">
+    <value>{0} rezultāti priekš {1}</value>
+  </data>
+  <data name="SearchTextBoxToolTip" xml:space="preserve">
+    <value>Ievadiet vietas nosaukumu; adresi vai platuma, garuma pāri</value>
+  </data>
+  <data name="SearchTheWeb" xml:space="preserve">
+    <value>Meklēt web"</value>
+  </data>
+  <data name="SearchWebDetailsAdd" xml:space="preserve">
+    <value>Pievienot</value>
+  </data>
+  <data name="SearchWebDetailsCopyright" xml:space="preserve">
+    <value>Autortiesības: </value>
+  </data>
+  <data name="SearchWebDetailsDescription" xml:space="preserve">
+    <value>Apraksts: </value>
+  </data>
+  <data name="SearchWebDetailsExploreGISServer" xml:space="preserve">
+    <value>Izpētiet šo ĢIS serveri</value>
+  </data>
+  <data name="SearchWebDetailsName" xml:space="preserve">
+    <value>Nosaukums:</value>
+  </data>
+  <data name="SortBy" xml:space="preserve">
+    <value>Kārtot pēc</value>
+  </data>
+  <data name="SortResults" xml:space="preserve">
+    <value>Kārtošanas rezultāti</value>
+  </data>
+  <data name="SortSearchResults" xml:space="preserve">
+    <value>Kārtot meklēšanas rezultātus.</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Kopsavilkums</value>
+  </data>
+  <data name="TheWeb" xml:space="preserve">
+    <value>Web</value>
+  </data>
+  <data name="TitleAZ" xml:space="preserve">
+    <value>Virsraksts A-Z</value>
+  </data>
+  <data name="TitleZA" xml:space="preserve">
+    <value>Virsraksts Z-A</value>
+  </data>
+  <data name="Url" xml:space="preserve">
+    <value>Url</value>
+  </data>
+  <data name="UserSearchFailed" xml:space="preserve">
+    <value>Lietotāju meklēšana neizdevās.</value>
+  </data>
+  <data name="BackStageControlRecent" xml:space="preserve">
+    <value>Jaunākais</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Atcelt</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Pierakstīties</value>
+  </data>
+  <data name="SignInForgotYourPassword" xml:space="preserve">
+    <value>Aizmirsāt savu paroli?</value>
+  </data>
+  <data name="SignInSignUp" xml:space="preserve">
+    <value>Pierakstīties</value>
+  </data>
+  <data name="InvalidIDOrPassword" xml:space="preserve">
+    <value>Nederīgs ID vai parole.</value>
+  </data>
+  <data name="NewHere" xml:space="preserve">
+    <value>Jauns šeit?</value>
+  </data>
+  <data name="PasswordPrompt" xml:space="preserve">
+    <value>Parole:</value>
+  </data>
+  <data name="UsernamePrompt" xml:space="preserve">
+    <value>Lietotājvārds:</value>
+  </data>
+  <data name="DescriptionForGroupCanotBeDisplayed" xml:space="preserve">
+    <value>Šīs grupas aprakstu nevar parādīt šajā logā.</value>
+  </data>
+  <data name="GroupControlOwnerParenthesis" xml:space="preserve">
+    <value>(Īpašnieks)</value>
+  </data>
+  <data name="LastModifiedPrompt" xml:space="preserve">
+    <value>(pēdējo reizi modificēts:</value>
+  </data>
+  <data name="LastModifiedPromptEnd" xml:space="preserve">
+    <value>)</value>
+  </data>
+  <data name="MapDetailsControlAverageRating" xml:space="preserve">
+    <value>Vidējais vērtējums</value>
+  </data>
+  <data name="MapDetailsControlType" xml:space="preserve">
+    <value>Tips</value>
+  </data>
+  <data name="OnWithSpace" xml:space="preserve">
+    <value> iesl </value>
+  </data>
+  <data name="SearchR" xml:space="preserve">
+    <value>r</value>
+  </data>
+  <data name="LoadingMaps" xml:space="preserve">
+    <value>Ielādē kartes...</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Izņemt</value>
+  </data>
+  <data name="NoFeaturedMaps" xml:space="preserve">
+    <value>Piedāvātās kartes šobrīd nav pieejamas</value>
+  </data>
+  <data name="SigningIn" xml:space="preserve">
+    <value>Pierakstās...</value>
+  </data>
+  <data name="SignInLabel" xml:space="preserve">
+    <value>Pierakstīties uz {0}</value>
+  </data>
+  <data name="CreatedByOwnerOnDate" xml:space="preserve">
+    <value>Izveidoja {0} uz {1}</value>
+  </data>
+  <data name="WebMapOwnerDateFormat" xml:space="preserve">
+    <value>Web karte {0} (pēdējā modificēšana: {1})</value>
+  </data>
+  <data name="WebMapBy" xml:space="preserve">
+    <value>Web karte {0}</value>
+  </data>
+  <data name="SignInFailed" xml:space="preserve">
+    <value>Pierakstīšanās neveiksme.</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>Biedri</value>
+  </data>
+</root>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+    <Extension Url="Extensions/Esri.ArcGIS.Client.Application.AddIns.CenterQueryStringBehavior.xap" InsertPath="//Extensions" />
+    <Behavior xmlns:QueryStringSupport="clr-namespace:Esri.ArcGIS.Client.Application.AddIns;assembly=Esri.ArcGIS.Client.Application.AddIns.CenterQueryStringBehavior"
+            IsEnabled="True" Title="_CenterQueryStringBehaviorTitle_"
+            InsertPath="//Behaviors" InsertIndex="0">
+        <Behavior.Class>
+            <QueryStringSupport:GetCenterFromQueryStringBehavior />
+        </Behavior.Class>
+    </Behavior>
+</Config>

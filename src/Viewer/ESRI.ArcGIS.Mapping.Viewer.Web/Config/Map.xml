@@ -1,0 +1,16 @@
+﻿<esri:Map xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:esri="http://schemas.esri.com/arcgis/client/2009"
+   xmlns:esriMapping="http://schemas.esri.com/arcgis/mapping/2009"
+   xmlns:esriExtensibility="http://schemas.esri.com/arcgis/client/extensibility/2010">
+  <esriMapping:ScaleBarExtensions.ScaleBarMapUnit>Meters</esriMapping:ScaleBarExtensions.ScaleBarMapUnit>
+  <esri:Map.IsLogoVisible>False</esri:Map.IsLogoVisible>
+  <esri:Map.Extent>
+    <esri:Envelope XMin="_StartXMin_" XMax="_StartXMax_" YMin="_StartYMin_" YMax="_StartYMax_">
+      <esri:Envelope.SpatialReference>
+        <esri:SpatialReference WKID="102100" />
+      </esri:Envelope.SpatialReference>
+    </esri:Envelope>
+  </esri:Map.Extent>
+  <esri:ArcGISTiledMapServiceLayer Url="http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer" esriExtensibility:Document.IsBaseMap="True" esriExtensibility:MapApplication.LayerName="_Topographic_"/>
+</esri:Map>

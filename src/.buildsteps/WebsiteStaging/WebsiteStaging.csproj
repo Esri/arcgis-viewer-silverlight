@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9769EBF-5073-49CE-AC26-05C309263CC1}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ESRI.ArcGIS.Mapping.Builder.Package</RootNamespace>
+    <AssemblyName>ESRI.ArcGIS.Mapping.Builder.Package</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\build\include\build.txt">
+      <Link>build.txt</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>@echo ----------------- Viewer Website staging -------------------------------------
+
+@echo Copy Viewer website to output directory
+xcopy "$(ProjectDir)..\..\Viewer\ESRI.ArcGIS.Mapping.Viewer.Web" "$(ProjectDir)..\..\..\output\Viewer" /i /f /y /s
+
+@echo Copy pop-up templates
+copy "$(ProjectDir)..\..\Internal\Framework\ESRI.ArcGIS.Mapping.Behaviors\Themes\HoverPopupContainerStyle.Theme.xaml" "$(ProjectDir)..\..\..\output\Viewer\Config\Layouts\ResourceDictionaries\Common\HoverPopupContainerStyle.xaml" /Y
+
+copy "$(ProjectDir)..\..\Internal\Controls\ESRI.ArcGIS.Mapping.Controls\Themes\OnClickPopupContainerStyle.Theme.xaml"  "$(ProjectDir)..\..\..\output\Viewer\Config\Layouts\ResourceDictionaries\Common\OnClickPopupContainerStyle.xaml" /Y
+
+@echo ----------------- App Builder Website staging -------------------------------------
+
+@echo compile and package App Builder ASP.NET website
+
+REM try invoking the VS tools program "cl" to test whether VS command line 
+REM has already been loaded.  If it has, flow will skip to the Build label.
+REM If it hasn't, flow will skip the loop entirely and hit the lines to initialize the 
+REM developer tools.
+for /f "tokens=*" %25%25i IN ('cl') DO ( 
+	GOTO PackageBuilder
+)
+
+REM load VS developer tools.  Check for VS 2013 first, then 2012, then 2010.
+if exist "%25VS120COMNTOOLS%25" (
+     call "%25VS120COMNTOOLS%25\vsvars32.bat"
+) else (
+     if exist "%25VS110COMNTOOLS%25" (
+          call "%25VS110COMNTOOLS%25\vsvars32.bat"
+     ) else (
+          if exist "%25VS100COMNTOOLS%25" (
+               call "%25VS100COMNTOOLS%25\vsvars32.bat"
+          )
+     )
+)
+
+:PackageBuilder
+REM compile and package App Builder website
+msbuild "$(ProjectDir)..\..\Builder\ESRI.ArcGIS.Mapping.Builder.Web\ESRI.ArcGIS.Mapping.Builder.Web.csproj" /t:Package /p:Configuration=$(ConfigurationName) /p:Platform=$(PlatformName) /p:BuildProjectReferences=false
+
+REM Copy Builder website to output directory
+xcopy "$(ProjectDir)..\..\Builder\ESRI.ArcGIS.Mapping.Builder.Web\obj\$(ConfigurationName)\Package\PackageTmp" "$(ProjectDir)..\..\..\output\Builder" /i /f /y /s
+
+REM add search tool to Viewer and Builder config.  Need to do it here and not as part of Search Tool build because Builder has an 
+REM explicit dependency on it.
+call "$(ProjectDir)..\..\..\build\addins\InsertAddInConfig_Viewer.bat" "$(ProjectDir)..\..\..\" "$(ProjectDir)..\..\AddIns\Tools\SearchTool\ViewerConfig.xml"
+call "$(ProjectDir)..\..\..\build\addins\InsertAddInConfig_Builder.bat" "$(ProjectDir)..\..\..\" "$(ProjectDir)..\..\AddIns\Tools\SearchTool\BuilderConfig.xml"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

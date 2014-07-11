@@ -1,0 +1,32 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl x:Class="QueryRelatedRecords.AddIns.KeepOnMap"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:QueryRelatedRecords.AddIns;assembly=QueryRelatedRecords.AddIns"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <local:StringResourcesManager x:Key="Localization" />
+    </UserControl.Resources>
+        <!--Checkbox that displays on the popup window for persisting the result of the Query task as a layer. The IsChecked property is bound to the
+    KeepOnMap property in the ViewModel-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <CheckBox 
+            Content="{Binding ConverterParameter=KeepOnMap, 
+                Converter={StaticResource Localization}}"
+            IsChecked="{Binding KeepOnMap, Mode=TwoWay}"  
+            Grid.Column="0" Grid.Row="2" 
+            VerticalAlignment="Bottom" HorizontalAlignment="Left" 
+            Margin="5,0,0,4"  
+            FontFamily="SegoeUI" 
+            Cursor="Hand"/>
+
+    </Grid>
+</UserControl>

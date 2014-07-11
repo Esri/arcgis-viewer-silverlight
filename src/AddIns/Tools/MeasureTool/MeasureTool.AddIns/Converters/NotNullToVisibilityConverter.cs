@@ -1,0 +1,32 @@
+/*
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+*/
+
+using System;
+using System.Windows;
+using System.Windows.Data;
+using System.Globalization;
+using MeasureTool.Addins.Resources;
+
+namespace MeasureTool.Addins
+{
+    /// <summary>
+    /// Converts the bound object to a Visibility value based on whether the object is null.  Returns Visible if the object
+    /// is not null, Collapsed otherwise.
+    /// </summary>
+    public class NotNullToVisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (value != null) ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new InvalidOperationException(Strings.ConverterCannotConvertBack); 
+        }
+    }
+}

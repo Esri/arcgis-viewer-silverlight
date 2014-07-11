@@ -1,0 +1,29 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<SampleData:ViewerApplication xmlns:SampleData="clr-namespace:Expression.Blend.SampleData.ViewerDataSource" 
+LogoFilePath="/$safeprojectname$;component/Images/logo.png" LayoutFilePath="Config/Layouts/Glass.xaml" TitleText="ArcGIS Viewer for Silverlight" ShowSidePanelLayerConfiguration="True" GeometryService="http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer" BingMapsAppId="AhSZtOGb51X9fKt5KT8Cxi4CkcMIvPYei7QmT0plKbUuZLQjgCU3CUz-7eCaoR7y" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+  <SampleData:ViewerApplication.HelpLinks>
+    <SampleData:HelpLink DisplayText="Help" Url="http://www.arcgis.com" />
+    <SampleData:HelpLink DisplayText="Forums" Url="http://www.arcgis.com" />
+    <SampleData:HelpLink DisplayText="Blog" Url="http://www.arcgis.com" />
+  </SampleData:ViewerApplication.HelpLinks>
+  <SampleData:ViewerApplication.Extensions>
+    <SampleData:Extensions />
+  </SampleData:ViewerApplication.Extensions>
+  <SampleData:ViewerApplication.AboutXaml>
+    <SampleData:AboutXaml>
+      <SampleData:AboutXaml.Paragraph>
+        <SampleData:Paragraph TextAlignment="Center">
+          <SampleData:Paragraph.Run>
+            <SampleData:Run FontWeight="Bold" />
+          </SampleData:Paragraph.Run>
+        </SampleData:Paragraph>
+      </SampleData:AboutXaml.Paragraph>
+    </SampleData:AboutXaml>
+  </SampleData:ViewerApplication.AboutXaml>
+</SampleData:ViewerApplication>

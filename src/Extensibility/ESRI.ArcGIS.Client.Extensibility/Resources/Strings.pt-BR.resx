@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Mostra o diálogo Sobre</value>
+  </data>
+  <data name="AboutDisplayName" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="AddGeoRssFeedDescription" xml:space="preserve">
+    <value>Adiciona um serviço GeoRSS no mapa</value>
+  </data>
+  <data name="AddGeoRssFeedDisplayName" xml:space="preserve">
+    <value>Adicionar GeoRSS</value>
+  </data>
+  <data name="AddHeatMapDescription" xml:space="preserve">
+    <value>Adiciona um Mapa de Calor no mapa</value>
+  </data>
+  <data name="AddHeatMapDisplayName" xml:space="preserve">
+    <value>Adicionar Mapa de Calor</value>
+  </data>
+  <data name="BaseMapGalleryDescription" xml:space="preserve">
+    <value>Escolhe um mapa base para o mapa</value>
+  </data>
+  <data name="BaseMapGalleryDisplayName" xml:space="preserve">
+    <value>Escolher Mapa Base</value>
+  </data>
+  <data name="BrowseDescription" xml:space="preserve">
+    <value>Adiciona dados no mapa pela procura de parâmetro no ArcGIS Server </value>
+  </data>
+  <data name="BrowseDisplayName" xml:space="preserve">
+    <value>Procurar</value>
+  </data>
+  <data name="CategoryApplication" xml:space="preserve">
+    <value>Aplicativo</value>
+  </data>
+  <data name="CategoryAttributeTable" xml:space="preserve">
+    <value>Tabela de Atributos</value>
+  </data>
+  <data name="CategoryConfigure" xml:space="preserve">
+    <value>Configurar</value>
+  </data>
+  <data name="CategoryEditing" xml:space="preserve">
+    <value>Edição</value>
+  </data>
+  <data name="CategoryGeoprocessing" xml:space="preserve">
+    <value>Geoprocessamento</value>
+  </data>
+  <data name="CategoryLayer" xml:space="preserve">
+    <value>Camada</value>
+  </data>
+  <data name="CategoryMap" xml:space="preserve">
+    <value>Mapa</value>
+  </data>
+  <data name="CategoryMouseEvents" xml:space="preserve">
+    <value>Eventos do Mouse</value>
+  </data>
+  <data name="CategoryPopup" xml:space="preserve">
+    <value>Popup</value>
+  </data>
+  <data name="CategorySelection" xml:space="preserve">
+    <value>Seleção</value>
+  </data>
+  <data name="CategorySymbology" xml:space="preserve">
+    <value>Simbologia</value>
+  </data>
+  <data name="CategoryTheme" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="ChangeThemeBackgroundDescription" xml:space="preserve">
+    <value>Altera o segundo plano para um tema</value>
+  </data>
+  <data name="ChangeThemeBackgroundDisplayName" xml:space="preserve">
+    <value>Alterar Segundo Plano do Tema</value>
+  </data>
+  <data name="ClearSelectionDescription" xml:space="preserve">
+    <value>Limpa a seleção de uma camada atual</value>
+  </data>
+  <data name="ClearSelectionDisplayName" xml:space="preserve">
+    <value>Limpar Seleção</value>
+  </data>
+  <data name="ConfigureLayerDescription" xml:space="preserve">
+    <value>Especifica a aparência e comportamento da camada selecionada</value>
+  </data>
+  <data name="ConfigureLayerDisplayName" xml:space="preserve">
+    <value>Configurar Camada</value>
+  </data>
+  <data name="ConfigureLayerRendererDescription" xml:space="preserve">
+    <value>Permite a configuração do renderizador da camada atual</value>
+  </data>
+  <data name="ConfigureLayerRendererDisplayName" xml:space="preserve">
+    <value>Configurar símbolo</value>
+  </data>
+  <data name="ConfigureSelectedLayerDescription" xml:space="preserve">
+    <value>Permite a configuração da camada selecionada</value>
+  </data>
+  <data name="ConfigureSelectedLayerDisplayName" xml:space="preserve">
+    <value>Configurar camada</value>
+  </data>
+  <data name="DeleteGraphicToolDescription" xml:space="preserve">
+    <value>Remove a feição da camada</value>
+  </data>
+  <data name="DeleteGraphicToolDisplayName" xml:space="preserve">
+    <value>Excluir Feição</value>
+  </data>
+  <data name="DeleteLayerDescription" xml:space="preserve">
+    <value>Remove a camada selecionada do mapa</value>
+  </data>
+  <data name="DeleteLayerDisplayName" xml:space="preserve">
+    <value>Remover Camada</value>
+  </data>
+  <data name="EditShapeToolDescription" xml:space="preserve">
+    <value>Modifica a geometria da feição</value>
+  </data>
+  <data name="EditShapeToolDisplayName" xml:space="preserve">
+    <value>Editar Forma</value>
+  </data>
+  <data name="EditValuesToolDescription" xml:space="preserve">
+    <value>Modifica os valores de atributo da feição</value>
+  </data>
+  <data name="EditValuesToolDisplayName" xml:space="preserve">
+    <value>Editar Valores</value>
+  </data>
+  <data name="AddAttachmentsToolDescription" xml:space="preserve">
+    <value>Adiciona anexos na feição</value>
+  </data>
+  <data name="AddAttachmentsToolDisplayName" xml:space="preserve">
+    <value>Adicionar Anexo</value>
+  </data>
+  <data name="ExceptionNoValidApplicationContextForApplication" xml:space="preserve">
+    <value>Nenhum Contexto de Aplicativo Válido para este aplicativo</value>
+  </data>
+  <data name="ExportSelectionDescription" xml:space="preserve">
+    <value>Exporta os atributos das feições selecionadas na camada atual para um arquivo CSV</value>
+  </data>
+  <data name="ExportSelectionDisplayName" xml:space="preserve">
+    <value>Exportar Seleção</value>
+  </data>
+  <data name="FilterByMapExtentDescription" xml:space="preserve">
+    <value>Mostrar somente registros para feições dentro da extensão de mapa atual</value>
+  </data>
+  <data name="FilterByMapExtentName" xml:space="preserve">
+    <value>Filtrar por Extensão de Mapa</value>
+  </data>
+  <data name="FilterBySelectionAll" xml:space="preserve">
+    <value>Mostrar Todos na Tabela</value>
+  </data>
+  <data name="FilterBySelectionAllDescription" xml:space="preserve">
+    <value>A tabela exibirá feições selecionadas e não selecionadas</value>
+  </data>
+  <data name="FilterBySelectionNotSelected" xml:space="preserve">
+    <value>Mostrar Não Selecionados na Tabela</value>
+  </data>
+  <data name="FilterBySelectionNotSelectedDescription" xml:space="preserve">
+    <value>Filtra a tabela para mostrar somente as feições não selecionadas atualmente.</value>
+  </data>
+  <data name="FilterBySelectionSelected" xml:space="preserve">
+    <value>Mostrar Tabela de Selecionados</value>
+  </data>
+  <data name="FilterBySelectionSelectedDescription" xml:space="preserve">
+    <value>Filtra a tabela para mostrar somente as feições que estão selecionadas.</value>
+  </data>
+  <data name="FilterLayerDescription" xml:space="preserve">
+    <value>Filtra as feições na camada selecionada baseado em uma consulta de atributo</value>
+  </data>
+  <data name="FilterLayerDisplayName" xml:space="preserve">
+    <value>Filtrar Camada</value>
+  </data>
+  <data name="FindNearbyDescription" xml:space="preserve">
+    <value>Localiza feições próximas à seleção atual</value>
+  </data>
+  <data name="FindNearbyDisplayName" xml:space="preserve">
+    <value>Localizar Próximo</value>
+  </data>
+  <data name="GeoprocessingDescription" xml:space="preserve">
+    <value>Uma ferramenta que utiliza um Serviço de Geoprocessamento do ArcGIS Server</value>
+  </data>
+  <data name="GeoprocessingDisplayName" xml:space="preserve">
+    <value>Geoprocessamento</value>
+  </data>
+  <data name="GoToLayerDescription" xml:space="preserve">
+    <value>Zoom na camada selecionada</value>
+  </data>
+  <data name="GoToLayerDisplayName" xml:space="preserve">
+    <value>Ir para Camada</value>
+  </data>
+  <data name="IdentifyBehaviorDisplayName" xml:space="preserve">
+    <value>Identificar Comportamento</value>
+  </data>
+  <data name="MoveLayerDownDescription" xml:space="preserve">
+    <value>Move a ordem de visualização da camada uma posição acima do mapa</value>
+  </data>
+  <data name="MoveLayerDownDisplayName" xml:space="preserve">
+    <value>Mover para Cima</value>
+  </data>
+  <data name="MoveLayerUpDescription" xml:space="preserve">
+    <value>Move a ordem de visualização da camada uma posição abaixo do mapa</value>
+  </data>
+  <data name="MoveLayerUpDisplayName" xml:space="preserve">
+    <value>Mover para Baixo</value>
+  </data>
+  <data name="NavigateToHelpLinkDescription" xml:space="preserve">
+    <value>Navega até a ajuda do sistema</value>
+  </data>
+  <data name="NavigateToHelpLinkDisplayName" xml:space="preserve">
+    <value>Navegar até o link de ajuda</value>
+  </data>
+  <data name="PrintDescription" xml:space="preserve">
+    <value>Imprime o mapa</value>
+  </data>
+  <data name="PrintDisplayName" xml:space="preserve">
+    <value>Imprimir</value>
+  </data>
+  <data name="RefreshLayerDescription" xml:space="preserve">
+    <value>Atualiza a camada selecionada</value>
+  </data>
+  <data name="RefreshLayerDisplayName" xml:space="preserve">
+    <value>Atualizar Camada</value>
+  </data>
+  <data name="RenameLayerDescription" xml:space="preserve">
+    <value>Renomeia a camada selecionada</value>
+  </data>
+  <data name="RenameLayerDisplayName" xml:space="preserve">
+    <value>Renomear Camada</value>
+  </data>
+  <data name="RestoreDefaultThemeDescription" xml:space="preserve">
+    <value>Restaura as cores utilizadas pelo mapa para o padrão</value>
+  </data>
+  <data name="RestoreDefaultThemeDisplayName" xml:space="preserve">
+    <value>Restaurar Tema</value>
+  </data>
+  <data name="SelectAllDescription" xml:space="preserve">
+    <value>Seleciona todas as feições na camada atual</value>
+  </data>
+  <data name="SelectAllDisplayName" xml:space="preserve">
+    <value>Selecionar Tudo</value>
+  </data>
+  <data name="SelectByDrawDescription" xml:space="preserve">
+    <value>Seleciona feições desenhando uma caixa ao redor das mesmas no mapa</value>
+  </data>
+  <data name="SelectByDrawDisplayName" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="SelectedIndexOfTotal" xml:space="preserve">
+    <value>{0} de {1}</value>
+  </data>
+  <data name="ServiceDetailsDescription" xml:space="preserve">
+    <value>Abre o parâmetro de serviço da camada selecionada</value>
+  </data>
+  <data name="ServiceDetailsDisplayName" xml:space="preserve">
+    <value>Detalhes do Serviço</value>
+  </data>
+  <data name="ShowMapCoordinatesDescription" xml:space="preserve">
+    <value>Exibe cooordenadas conforme pairar o mouse sobre o mapa</value>
+  </data>
+  <data name="ShowMapCoordinatesDisplayName" xml:space="preserve">
+    <value>Mostrar Coordenadas do Mapa</value>
+  </data>
+  <data name="ShowPreviewControlDescription" xml:space="preserve">
+    <value>Exibe um diálogo que demonstra como as cores do tema aparecem quando aplicadas em diferentes componentes do mapa</value>
+  </data>
+  <data name="ShowPreviewControlDisplayName" xml:space="preserve">
+    <value>Visualizar Tema</value>
+  </data>
+  <data name="ToggleAddContentDescription" xml:space="preserve">
+    <value>Adiciona dados do ArcGIS Server, SharePoint, Servidor de Dados Espacial ou GeoRSS no mapa</value>
+  </data>
+  <data name="ToggleAddContentDisplayName" xml:space="preserve">
+    <value>Adicionar Conteúdo</value>
+  </data>
+  <data name="ToggleEditDescription" xml:space="preserve">
+    <value>Mostra ou oculta as ferramentas de edição</value>
+  </data>
+  <data name="ToggleEditDisplayName" xml:space="preserve">
+    <value>Edição</value>
+  </data>
+  <data name="ToggleFullScreenDescription" xml:space="preserve">
+    <value>Exibe o mapa em modo de tela cheia</value>
+  </data>
+  <data name="ToggleFullScreenDisplayName" xml:space="preserve">
+    <value>Tela Cheia</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>Abre o painel de Conteúdo do Mapa para visualizar as camadas do mapa</value>
+  </data>
+  <data name="ToggleMapContentsDisplayName" xml:space="preserve">
+    <value>Conteúdo do Mapa</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>Pesquisa por locais ou serviços do ArcGIS Server</value>
+  </data>
+  <data name="ToggleSearchDisplayName" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>Abre a tabela de atributos da camada selecionada</value>
+  </data>
+  <data name="ToggleTableDisplayName" xml:space="preserve">
+    <value>Mostrar Tabela</value>
+  </data>
+  <data name="ZoomToSelectionDescription" xml:space="preserve">
+    <value>Zoom nas feições selecionadas na camada atual</value>
+  </data>
+  <data name="ZoomToSelectionDisplayName" xml:space="preserve">
+    <value>Zoom Para</value>
+  </data>
+</root>

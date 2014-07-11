@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="AddBehavior" xml:space="preserve">
+    <value>إضافة سلوك</value>
+  </data>
+  <data name="AddBehaviorDescription" xml:space="preserve">
+    <value>إضافة سلوك إلي العارض</value>
+  </data>
+  <data name="AddGeoprocessing" xml:space="preserve">
+    <value>إضافة المعالجة الجغرافية</value>
+  </data>
+  <data name="AddGeoprocessingDescription" xml:space="preserve">
+    <value>إضافة أداة المعالجة الجغرافية إلي العارض. تتيح أداة المعالجة الجغرافية لمستخدمي العارض استخدام خدمة معالجة ArcGIS for Server  الجغرافية.</value>
+  </data>
+  <data name="AddGeoRSSDescription" xml:space="preserve">
+    <value>إضافة موجز RSS ممكَن جغرافيًا إلى الخريطة</value>
+  </data>
+  <data name="AddGP" xml:space="preserve">
+    <value>إضافة معالجة جغرافية</value>
+  </data>
+  <data name="AddTool" xml:space="preserve">
+    <value>إضافة أداة</value>
+  </data>
+  <data name="AddToolDescription" xml:space="preserve">
+    <value>إضافة أداة إلى العارض</value>
+  </data>
+  <data name="ApplicationBuilderSettings" xml:space="preserve">
+    <value>إعدادات منشئ التطبيق</value>
+  </data>
+  <data name="ApplicationBuilderSettingsDescription" xml:space="preserve">
+    <value>عرض إعدادات منشئ التطبيق وتعديلها بما في ذلك إدارة الوظائف الإضافية وخرائط الأساس.</value>
+  </data>
+  <data name="AttributeTable" xml:space="preserve">
+    <value>جدول البيانات</value>
+  </data>
+  <data name="BasemapGalleryDescription" xml:space="preserve">
+    <value>تحديد طبقة أساس مختلفة للخريطة</value>
+  </data>
+  <data name="Behaviors" xml:space="preserve">
+    <value>سلوكيات</value>
+  </data>
+  <data name="Branding" xml:space="preserve">
+    <value>علامة تجارية</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>تغيير</value>
+  </data>
+  <data name="ChangeLayout" xml:space="preserve">
+    <value>تغيير التخطيط</value>
+  </data>
+  <data name="ChangeLayoutDescription" xml:space="preserve">
+    <value>تحديد تخطيط جديد للعارض</value>
+  </data>
+  <data name="ChangeLogo" xml:space="preserve">
+    <value>تغيير الشعار</value>
+  </data>
+  <data name="ChangeLogoDescription" xml:space="preserve">
+    <value>تحديد الشعار للعارض</value>
+  </data>
+  <data name="ChangeTitleAndLinks" xml:space="preserve">
+    <value>تغيير العنوان والارتباطات</value>
+  </data>
+  <data name="ChangeTitleAndLinksDescription" xml:space="preserve">
+    <value>تحرير عنوان العارض والارتباطات التشعبية</value>
+  </data>
+  <data name="Configure" xml:space="preserve">
+    <value>تكوين</value>
+  </data>
+  <data name="ConfigureTheme" xml:space="preserve">
+    <value>تكوين السمة</value>
+  </data>
+  <data name="ConfigureThemeDescription" xml:space="preserve">
+    <value>تحرير ألوان سمة العارض</value>
+  </data>
+  <data name="FullScreen" xml:space="preserve">
+    <value>ملء الشاشة</value>
+  </data>
+  <data name="FullScreenDescription" xml:space="preserve">
+    <value>وضع منشئ التطبيق في وضع ملء الشاشة</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="HomeDescription" xml:space="preserve">
+    <value>الرجوع إلى صفحة بدء منشئ التطبيق</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>التخطيط</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>الشعار</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>إدارة</value>
+  </data>
+  <data name="ManageBehaviors" xml:space="preserve">
+    <value>إدارة السلوكيات</value>
+  </data>
+  <data name="ManageBehaviorsDescription" xml:space="preserve">
+    <value>تمكين سلوكيات العارض أو تعطيلها أو ترتيبها أو إضافتها أو حذفها</value>
+  </data>
+  <data name="ManageToolbars" xml:space="preserve">
+    <value>إدارة شريط الأدوات</value>
+  </data>
+  <data name="ManageToolbarsDescription" xml:space="preserve">
+    <value>إضافة الأدوات في شريط أدوات العارض وحذفها ونقلها وتهيئتها</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>نشر</value>
+  </data>
+  <data name="PublishDescription" xml:space="preserve">
+    <value>نشر العارض الحالي في موقع ويب جديد</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>إعادة تعيين</value>
+  </data>
+  <data name="ResetTheme" xml:space="preserve">
+    <value>إعادة تعيين السمة</value>
+  </data>
+  <data name="ResetThemeDescription" xml:space="preserve">
+    <value>إعادة تعيين ألوان سمة العارض إلى القيمة الافتراضية</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="SaveDescription" xml:space="preserve">
+    <value>حفظ العارض الحالي</value>
+  </data>
+  <data name="SelectTheTool" xml:space="preserve">
+    <value>جارِ تحديد الأداة...</value>
+  </data>
+  <data name="TitleAndLinks" xml:space="preserve">
+    <value>العنوان والارتباطات</value>
+  </data>
+  <data name="ToggleBrowseDescription" xml:space="preserve">
+    <value>إظهار لوحة الاستعراض أو إخفائها. يتيح المستعرض عرض محتويات ArcGIS Server أو نقطة النهاية لخدمة البيانات المكانية وإضافة طبقات إلى الخريطة.</value>
+  </data>
+  <data name="ToggleMapContentsDescription" xml:space="preserve">
+    <value>إظهار قائمة محتويات الخريطة أو إخفائها</value>
+  </data>
+  <data name="ToggleSearchDescription" xml:space="preserve">
+    <value>إظهار لوحة البحث أو إخفائها. تتيح عملية البحث العثور على الأماكن، أو البحث عن محتوى على ArcGIS.com ، أو البحث على الويب لخدمات ArcGIS Server.</value>
+  </data>
+  <data name="ToggleTableDescription" xml:space="preserve">
+    <value>إظهار جدول البيانات للطبقة المحددة حالياً أو إخفائها</value>
+  </data>
+  <data name="ToggleToolbar" xml:space="preserve">
+    <value>تبديل شريط الأدوات</value>
+  </data>
+  <data name="ToggleToolbarDescription" xml:space="preserve">
+    <value>إظهار شريط أدوات منشئ التطبيق أو إخفائه</value>
+  </data>
+  <data name="Toolbar" xml:space="preserve">
+    <value>شريط الأدوات</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>أدوات</value>
+  </data>
+  <data name="Accent" xml:space="preserve">
+    <value>تمييز</value>
+  </data>
+  <data name="AccentText" xml:space="preserve">
+    <value>نص مميز</value>
+  </data>
+  <data name="AddNewGroupOrControl" xml:space="preserve">
+    <value>إضافة مجموعة جديدة أو عنصر تحكم</value>
+  </data>
+  <data name="AddOns" xml:space="preserve">
+    <value>وظائف إضافية</value>
+  </data>
+  <data name="ApplicationProperties" xml:space="preserve">
+    <value>خصائص التطبيق</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>تطبيق</value>
+  </data>
+  <data name="ArcGISApplicationBuilder" xml:space="preserve">
+    <value>منشئ التطبيق - {0}</value>
+  </data>
+  <data name="ArcGISViewerForMicrosoftSilverlight" xml:space="preserve">
+    <value>ArcGIS Viewer for Silverlight</value>
+  </data>
+  <data name="Background" xml:space="preserve">
+    <value>الخلفية</value>
+  </data>
+  <data name="BackgroundText" xml:space="preserve">
+    <value>نص الخلفية</value>
+  </data>
+  <data name="BaseMaps" xml:space="preserve">
+    <value>خرائط الأساس</value>
+  </data>
+  <data name="BrowseForFile" xml:space="preserve">
+    <value>استعراض ملف</value>
+  </data>
+  <data name="BrowseForResource" xml:space="preserve">
+    <value>استعراض مورد</value>
+  </data>
+  <data name="BuilderTutorial" xml:space="preserve">
+    <value>منشئ البرنامج التعليمي</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء الأمر</value>
+  </data>
+  <data name="ChangesSavedSuccessfully" xml:space="preserve">
+    <value>‏‏تم حفظ التغييرات بنجاح.</value>
+  </data>
+  <data name="ChooseExistingProject" xml:space="preserve">
+    <value>اختيار مشروع حالي</value>
+  </data>
+  <data name="ChooseLayout" xml:space="preserve">
+    <value>اختيار تخطيط</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>تكوين</value>
+  </data>
+  <data name="ConfigureExtensions" xml:space="preserve">
+    <value>تكوين الملحقات</value>
+  </data>
+  <data name="ConfigureOptionsThatApplyToCurrentUser" xml:space="preserve">
+    <value>تكوين الخيارات التي يجرى تطبيقها على المستخدم الحالي</value>
+  </data>
+  <data name="ConfigureSelectedGroupOrControl" xml:space="preserve">
+    <value>تكوين المجموعة أو عنصر التحكم المحدد</value>
+  </data>
+  <data name="ConfigureSetOfBaseMapsUsedByBuilder" xml:space="preserve">
+    <value>تكوين مجموعة خرائط الأساس المتوفرة في منشئ التطبيق</value>
+  </data>
+  <data name="CopySite" xml:space="preserve">
+    <value>نسخ الموقع</value>
+  </data>
+  <data name="CreateApplicationUsingDefaultMap" xml:space="preserve">
+    <value>خريطة جديدة</value>
+  </data>
+  <data name="CreateApplicationUsingWebMapFromArcGISCom" xml:space="preserve">
+    <value>خرائط الويب</value>
+  </data>
+  <data name="CreateNewApplication" xml:space="preserve">
+    <value>إنشاء تطبيق جديد</value>
+  </data>
+  <data name="CurrentToolbars" xml:space="preserve">
+    <value>شرائط الأدوات الحالية</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="DeleteSite" xml:space="preserve">
+    <value>حذف موقع</value>
+  </data>
+  <data name="DescriptionPrompt" xml:space="preserve">
+    <value>الوصف:</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="Down" xml:space="preserve">
+    <value>أسفل</value>
+  </data>
+  <data name="EditSelectedGroupOrControl" xml:space="preserve">
+    <value>تحرير المجموعة أو عنصر التحكم المحدد</value>
+  </data>
+  <data name="EditSite" xml:space="preserve">
+    <value>تحرير الموقع</value>
+  </data>
+  <data name="ExceptionUnhandledError" xml:space="preserve">
+    <value>خطأ لم يتم معالجته {0}</value>
+  </data>
+  <data name="ExtensionNotifications" xml:space="preserve">
+    <value>إعلامات الملحق</value>
+  </data>
+  <data name="Extensions" xml:space="preserve">
+    <value>الملحقات</value>
+  </data>
+  <data name="HelpLinks" xml:space="preserve">
+    <value>ارتباطات</value>
+  </data>
+  <data name="IconPrompt" xml:space="preserve">
+    <value>الرمز:</value>
+  </data>
+  <data name="LabelPrompt" xml:space="preserve">
+    <value>لافتة التسمية:</value>
+  </data>
+  <data name="LoadingSites" xml:space="preserve">
+    <value>جارِ تحميل المواقع...</value>
+  </data>
+  <data name="ManageExtensions" xml:space="preserve">
+    <value>إدارة الملحقات</value>
+  </data>
+  <data name="MoreSiteOptions" xml:space="preserve">
+    <value>المزيد من خيارات الموقع</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>تحريك</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>تحريك لأسفل</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>تحريك لأعلى</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="NamePrompt" xml:space="preserve">
+    <value>الاسم:</value>
+  </data>
+  <data name="NewMap" xml:space="preserve">
+    <value>خريطة جديدة</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>فتح</value>
+  </data>
+  <data name="PersonalSettings" xml:space="preserve">
+    <value>إعدادات شخصية</value>
+  </data>
+  <data name="PublishApplication" xml:space="preserve">
+    <value>نشر التطبيق</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>إزالة</value>
+  </data>
+  <data name="RemoveSelectedGroupOrControl" xml:space="preserve">
+    <value>إزالة المجموعة أو عنصر التحكم المحدد</value>
+  </data>
+  <data name="ReturnToPreviousScreen" xml:space="preserve">
+    <value>العودة إلي الشاشة السابقة</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>تحديد</value>
+  </data>
+  <data name="SelectionOutline" xml:space="preserve">
+    <value>تحديد المخطط التفصيلي</value>
+  </data>
+  <data name="Setting" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="StartWithExistingMap" xml:space="preserve">
+    <value>البدء من الموجود</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>نجاح</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>تكوين السمة</value>
+  </data>
+  <data name="ThemeColors" xml:space="preserve">
+    <value>ألوان السمة</value>
+  </data>
+  <data name="TitlePrompt" xml:space="preserve">
+    <value>العنوان:</value>
+  </data>
+  <data name="ToolbarPrompt" xml:space="preserve">
+    <value>شريط الأدوات:</value>
+  </data>
+  <data name="TooltipPrompt" xml:space="preserve">
+    <value>تعريف الأداة:</value>
+  </data>
+  <data name="TypePrompt" xml:space="preserve">
+    <value>النوع:</value>
+  </data>
+  <data name="Up" xml:space="preserve">
+    <value>أعلى</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>تحميل</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>مرحبًا</value>
+  </data>
+  <data name="WelcomeMsgParagraph1" xml:space="preserve">
+    <value>تطبيق ArcGIS Builder هو تطبيق على الويب يسمح لك بإنشاء تطبيقات العارض وتحريرها في الوقت الفعلي وبطريقة تفاعلية تمامًا. تم إنشاء كلًا من Application Builder و Viewer باستخدام ArcGIS API for Silverlight.</value>
+  </data>
+  <data name="WelcomeMsgParagraph2" xml:space="preserve">
+    <value>للبدء في إنشاء العارض، انقر فوق زر "إنشاء تطبيق جديد". يظهر العارض الذي تقوم بتكوينه أسفل شريط أدوات منشئ التطبيق. يمكنك تكوين خريطة أساس العارض والطبقات والأدوات والعنوان والشعار والألوان وغير ذلك، باستخدام الأدوات الموجودة في شريط الأدوات. بمجرد الانتهاء من تكوين العارض، انقر فوق زر "نشر" لنشر موقع الويب الجديد.</value>
+  </data>
+  <data name="AvailableTools" xml:space="preserve">
+    <value>الأدوات المتوفرة</value>
+  </data>
+  <data name="BrowseForImage" xml:space="preserve">
+    <value>استعراض صورة</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تحرير</value>
+  </data>
+  <data name="ErrorUnableToRetrieveDetailsForExtension" xml:space="preserve">
+    <value>تعذر استرداد تفاصيل حزمة الوظيفة الإضافية.</value>
+  </data>
+  <data name="ExtensionContainsTheFollowingAddOns" xml:space="preserve">
+    <value>تحتوي حزمة الوظيفة الإضافية '{0}' على الوظائف الإضافية التالية:</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteButton" xml:space="preserve">
+    <value>هل تريد بالتأكيد حذف هذا الزر؟</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteGroup" xml:space="preserve">
+    <value>هل تريد بالتأكيد حذف هذه المجموعة؟</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteWebSite" xml:space="preserve">
+    <value>هل تريد بالتأكيد حذف موقع الويب؟</value>
+  </data>
+  <data name="AssemblyAlreadyIncludeInTheApplication" xml:space="preserve">
+    <value>{1} التجميع '{0}' يتم تضمينه بالفعل في وقت تشغيل التطبيق. {1} يفضل تحسين حجم تحميل الملحق وتحميله بواسطة ضبط مرجع التجميع مع CopyLocal=false لاستبعاد التجميع في حزمة .xap</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>تأكيد الحذف</value>
+  </data>
+  <data name="DeletingExtensionWillMakeItUnavailableForFurtherUse" xml:space="preserve">
+    <value>عند حذف أحد الملحقات، سوف تجعله غير متوافر للمزيد من الاستخدام في تطبيقات جديدة وإجراء تحريرات في تطبيقات موجودة. هل تريد بالتأكيد حذف{0}؟</value>
+  </data>
+  <data name="DeletingSite" xml:space="preserve">
+    <value>جارِ حذف الموقع...</value>
+  </data>
+  <data name="EditTool" xml:space="preserve">
+    <value>تحرير الأداة</value>
+  </data>
+  <data name="EnterNameForApplication" xml:space="preserve">
+    <value>الرجاء إدخال اسم للتطبيق</value>
+  </data>
+  <data name="ErrorDetailsNotKnown" xml:space="preserve">
+    <value>تفاصيل الخطأ ليست معروفة</value>
+  </data>
+  <data name="ErrorOccured" xml:space="preserve">
+    <value>حدث خطأ</value>
+  </data>
+  <data name="ErrorRetrievingMapDocumentForSite" xml:space="preserve">
+    <value>حدث خطأ عند استرداد مستند الخريطة للموقع</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>أخطاء</value>
+  </data>
+  <data name="ExtensionAlreadyExists" xml:space="preserve">
+    <value>وظيفة إضافية موجودة بالفعل</value>
+  </data>
+  <data name="ExtensionDetails" xml:space="preserve">
+    <value>تفاصيل الوظيفة الإضافية: {0}</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsErrors" xml:space="preserve">
+    <value>تحتوي حزمة الوظيفة الإضافية التي تحاول نشرها على أخطاء. يتعين حلها قبل الاستمرا.</value>
+  </data>
+  <data name="ExtensionPackageAttemptingToDeployContainsWarnings" xml:space="preserve">
+    <value>تحتوي حزمة الوظيفة الإضافية التي تحاول نشرها على تحذيرات. الرجاء المراجعة قبل الاستمرار.</value>
+  </data>
+  <data name="ExtensionWithSameNameAlreadyExist" xml:space="preserve">
+    <value>توجد حزمة وظيفة إضافية بنفس الاسم موجودة بالفعل. ‏‏هل ترغب بالكتابة فوقها؟</value>
+  </data>
+  <data name="FailedToCreateAndPublishApplication" xml:space="preserve">
+    <value>فشل إنشاء تطبيق ونشره</value>
+  </data>
+  <data name="FollowingErrorsFound" xml:space="preserve">
+    <value>تم العثور على الأخطاء التالية.</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>اسم غير صحيح</value>
+  </data>
+  <data name="OpenWebMapFromArcGISCom" xml:space="preserve">
+    <value>فتح خريطة ويب داخل ArcGIS.com</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>الرجاء الانتظار...</value>
+  </data>
+  <data name="TutorialModeDisable" xml:space="preserve">
+    <value>تعطيل بدء الاستخدام</value>
+  </data>
+  <data name="TutorialModeEnable" xml:space="preserve">
+    <value>تمكين بدء الاستخدام</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>نبذة عن منشئ التطبيق</value>
+  </data>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>عرض مربع حوار عن منشئ التطبيق</value>
+  </data>
+  <data name="AboutDialogTitle" xml:space="preserve">
+    <value>نبذة عن</value>
+  </data>
+  <data name="GettingStartedAddGPDescription" xml:space="preserve">
+    <value>زيادة التحليلات المكانية لخدمات المعالجة الجغرافية فيArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddGPTitle" xml:space="preserve">
+    <value>إضافة خدمات المعالجة الجغرافية</value>
+  </data>
+  <data name="GettingStartedAddLayersDescription" xml:space="preserve">
+    <value>إضافة بيانات من ArcGIS Online و ArcGIS Server.</value>
+  </data>
+  <data name="GettingStartedAddLayersTitle" xml:space="preserve">
+    <value>إضافة طبقات جاهزة للعمل</value>
+  </data>
+  <data name="GettingStartedAddToolsDescription" xml:space="preserve">
+    <value>تكوين وظيفة التطبيق</value>
+  </data>
+  <data name="GettingStartedAddToolsTitle" xml:space="preserve">
+    <value>إضافة أدوات</value>
+  </data>
+  <data name="GettingStartedBasemapDescription" xml:space="preserve">
+    <value>تحديد خريطة أساس من ArcGIS Online أو خرائط Bing أو OpenStreetMap.</value>
+  </data>
+  <data name="GettingStartedBasemapTitle" xml:space="preserve">
+    <value>اختر خريطة أساس</value>
+  </data>
+  <data name="GettingStartedChooseLogoDescription" xml:space="preserve">
+    <value>التعرف على العارض بشعار المؤسسة.</value>
+  </data>
+  <data name="GettingStartedChooseLogoTitle" xml:space="preserve">
+    <value>اختر شعار</value>
+  </data>
+  <data name="GettingStartedSelectLayoutDescription" xml:space="preserve">
+    <value>تعريف شكل العارض وأسلوبه.</value>
+  </data>
+  <data name="GettingStartedSelectLayoutTitle" xml:space="preserve">
+    <value>تحديد تخطيط</value>
+  </data>
+  <data name="GettingStartedSetTitleDescription" xml:space="preserve">
+    <value>تعيين عنوان التطبيق.</value>
+  </data>
+  <data name="GettingStartedSetTitleTitle" xml:space="preserve">
+    <value>تعيين العنوان</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailable" xml:space="preserve">
+    <value>الوظائف الإضافية التالية متوفرة. انقر</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableHere" xml:space="preserve">
+    <value>هنا</value>
+  </data>
+  <data name="FollowingAddOnsAreAvailableToUploadANewOne" xml:space="preserve">
+    <value>لتحميل وظيفة إضافية جديدة من القرص.</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlDownToolbarTree" xml:space="preserve">
+    <value>تحريك المجموعة أو عنصر التحكم المحدد أسفل شجرة شريط الأدوات</value>
+  </data>
+  <data name="MoveSelectedGroupOrControlUpToolbarTree" xml:space="preserve">
+    <value>تحريك المجموعة أو عنصر التحكم المحدد أعلى شجرة شريط الأدوات</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>السابق</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="SelectAToolToAdd" xml:space="preserve">
+    <value>تحدد أداة للإضافة:</value>
+  </data>
+  <data name="ChooseMap" xml:space="preserve">
+    <value>منشئ التطبيق - اختيار خريطة</value>
+  </data>
+  <data name="AddInPackagesContain" xml:space="preserve">
+    <value>تحتوي حزمة الوظيفة الإضافية على وظائف إضافية: أدوات وسلوكيات وعناصر تحكم تستخدم في التخطيطات</value>
+  </data>
+  <data name="AvailableAddInPackages" xml:space="preserve">
+    <value>حزم الوظيفة الإضافية المتوفرة:</value>
+  </data>
+  <data name="Button" xml:space="preserve">
+    <value>زر</value>
+  </data>
+  <data name="ConfigureElementsRelatedToMap" xml:space="preserve">
+    <value>تكوين العناصر المرتبطة بالخريطة</value>
+  </data>
+  <data name="ConfigureToolsOfYourApplication" xml:space="preserve">
+    <value>تكوين أدوات التطبيق</value>
+  </data>
+  <data name="DisableGettingStarted" xml:space="preserve">
+    <value>تعطيل بدء الاستخدام</value>
+  </data>
+  <data name="GettingStarted" xml:space="preserve">
+    <value>البدء في</value>
+  </data>
+  <data name="ShowMe" xml:space="preserve">
+    <value>إظهار</value>
+  </data>
+  <data name="SpecifyLayoutOfYourApplication" xml:space="preserve">
+    <value>تحديد تخطيط التطبيق</value>
+  </data>
+  <data name="UploadAddInPackages" xml:space="preserve">
+    <value>تحميل حزم الوظيفة الإضافية</value>
+  </data>
+  <data name="UploadAddIns" xml:space="preserve">
+    <value>تحميل الوظائف الإضافية</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>خريطة</value>
+  </data>
+  <data name="AreYouSureYouWantToLeavePageUnsavedChangesLost" xml:space="preserve">
+    <value>هل تريد بالتأكيد في الانتقال من هذه الصفحة؟ يتم فقد كافة التغييرات التي لم يتم حفظها.</value>
+  </data>
+  <data name="ConfirmPageChange" xml:space="preserve">
+    <value>تأكيد تغيير الصفحة</value>
+  </data>
+  <data name="SpecifyToolProperties" xml:space="preserve">
+    <value>تحديد خصائص الاداة</value>
+  </data>
+  <data name="SaveAs" xml:space="preserve">
+    <value>جارِ الحفظ باسم...</value>
+  </data>
+  <data name="AddGroupButton" xml:space="preserve">
+    <value>إضافة مجموعة</value>
+  </data>
+  <data name="CannotAddElement" xml:space="preserve">
+    <value>يتعذر إضافة عنصر</value>
+  </data>
+  <data name="CannotAddGroupButton" xml:space="preserve">
+    <value>يتعذر إضافة مجموعة</value>
+  </data>
+  <data name="CannotAddTool" xml:space="preserve">
+    <value>يتعذر إضافة أداة</value>
+  </data>
+  <data name="ChooseAvailableTool" xml:space="preserve">
+    <value>يجب اختيار أداة فردية من شجرة الأدوات المتوفرة.</value>
+  </data>
+  <data name="DefaultGroupButtonDescription" xml:space="preserve">
+    <value>مجموعة جديدة</value>
+  </data>
+  <data name="DefaultGroupButtonLabel" xml:space="preserve">
+    <value>مجموعة جديدة</value>
+  </data>
+  <data name="RootLevelToAddGroup" xml:space="preserve">
+    <value>يجب عليك اختيار شريط أدوات أو عقدة مستوى الجذر من شريط أدوات لإضافته إلى مجموعة.</value>
+  </data>
+  <data name="Separator" xml:space="preserve">
+    <value>&lt;فاصل&gt;</value>
+  </data>
+  <data name="MoveIntoGroup" xml:space="preserve">
+    <value>تحريك داخل مجموعة '{0}'</value>
+  </data>
+  <data name="EditGroup" xml:space="preserve">
+    <value>تحرير المجموعة</value>
+  </data>
+  <data name="ConfigureControls" xml:space="preserve">
+    <value>تكوين عناصر التحكم</value>
+  </data>
+  <data name="ConfigureControlsDescription" xml:space="preserve">
+    <value>تحرير تكوين عناصر التحكم في العارض</value>
+  </data>
+  <data name="FeatureLayerMode" xml:space="preserve">
+    <value>الوضع</value>
+  </data>
+  <data name="ModeCacheSizeLabel" xml:space="preserve">
+    <value>حجم ذاكرة التخزين المؤقتة:</value>
+  </data>
+  <data name="UseOnDemandMode" xml:space="preserve">
+    <value>OnDemand</value>
+  </data>
+  <data name="UseSnapShotMode" xml:space="preserve">
+    <value>SnapShot</value>
+  </data>
+  <data name="OnDemandCacheSize" xml:space="preserve">
+    <value>حجم ذاكرة تخزين OnDemand المؤقتة لطبقة المعلم</value>
+  </data>
+  <data name="OnDemandCacheSizeDescription" xml:space="preserve">
+    <value>تعيين حجم ذاكرة تخزين وضع OnDemand لطبقة المعلم (الوضع الافتراضي = 100)</value>
+  </data>
+  <data name="OnDemandRadio" xml:space="preserve">
+    <value>وضع OnDemand لطبقة المعلم</value>
+  </data>
+  <data name="OnDemandRadioDescription" xml:space="preserve">
+    <value>تحديد وضع الاستعلام للطبقة ليصبح OnDemand (FeatureLayers فقط)</value>
+  </data>
+  <data name="SnapShotRadio" xml:space="preserve">
+    <value>وضع SnapShot لـ FeatureLayer</value>
+  </data>
+  <data name="SnapShotRadioDescription" xml:space="preserve">
+    <value>تحديد وضع الاستعلام للطبقة ليصبح SnapShot (FeatureLayers فقط)</value>
+  </data>
+  <data name="AddLink" xml:space="preserve">
+    <value>إضافة ارتباط</value>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>حذف ارتباط</value>
+  </data>
+  <data name="ConfigureControlsBanner" xml:space="preserve">
+    <value>عناصر التحكم المراد تكوينها</value>
+  </data>
+  <data name="Controls" xml:space="preserve">
+    <value>عناصر التحكم</value>
+  </data>
+  <data name="FeatureRetrieval" xml:space="preserve">
+    <value>استرداد المعالم</value>
+  </data>
+  <data name="AddGroupDotDot" xml:space="preserve">
+    <value>جارِ إضافة مجموعة...</value>
+  </data>
+  <data name="AddSeparator" xml:space="preserve">
+    <value>إضافة فاصل</value>
+  </data>
+  <data name="ApplicationBuilderDashSettings" xml:space="preserve">
+    <value>منشئ التطبيق - إعدادات</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>استعراض</value>
+  </data>
+  <data name="Contents" xml:space="preserve">
+    <value>المحتويات</value>
+  </data>
+  <data name="CurrentViewerApplications" xml:space="preserve">
+    <value>تطبيقات العارض الحالية</value>
+  </data>
+  <data name="MapContents" xml:space="preserve">
+    <value>محتويات الخريطة</value>
+  </data>
+  <data name="NoFilesFound" xml:space="preserve">
+    <value>لم يتم العثور على ملفات.</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="ViewerProject" xml:space="preserve">
+    <value>مشروع العارض</value>
+  </data>
+  <data name="WebMap" xml:space="preserve">
+    <value>Webmap</value>
+  </data>
+  <data name="AddLayerFailed" xml:space="preserve">
+    <value>فشل إضافة الطبقة</value>
+  </data>
+  <data name="AddLayerFailedExplanation" xml:space="preserve">
+    <value>تعذرت إضافة الطبقة. سبب الفشل: {0}.</value>
+  </data>
+  <data name="AddLayerFailedNoDetails" xml:space="preserve">
+    <value>[تعذر استخراج التفاصيل]</value>
+  </data>
+  <data name="ConfigureLayers" xml:space="preserve">
+    <value>تكوين الطبقات</value>
+  </data>
+  <data name="ConfigureLayersDescription" xml:space="preserve">
+    <value>تعديل مظهر الطبقات وسلوكياتها في الخريطة</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>طبقات</value>
+  </data>
+  <data name="SiteCopyFailed" xml:space="preserve">
+    <value>فشل نسخ الموقع</value>
+  </data>
+  <data name="SiteDeploymentFailed" xml:space="preserve">
+    <value>فشل نشر الموقع</value>
+  </data>
+  <data name="BringForward" xml:space="preserve">
+    <value>تحريك لأعلى</value>
+  </data>
+  <data name="BringsCurrentlySelectedLayerForward" xml:space="preserve">
+    <value>تحريك ترتيب عرض الطبقة موضع واحد أقرب لأعلى الخريطة</value>
+  </data>
+  <data name="ConfigureCurrentlySelectedLayer" xml:space="preserve">
+    <value>تكوين الطبقة المحددة حالياً</value>
+  </data>
+  <data name="ConfigureProxyUsedToAccessSecureServicesForApplication" xml:space="preserve">
+    <value>تكوين الوكيل المستخدم للوصول إلى الخدمات المؤمنة لهذا التطبيق</value>
+  </data>
+  <data name="ConfigureSecureServices" xml:space="preserve">
+    <value>تكوين الخدمات المؤمنة</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>انتقل إلى</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="RefreshCurrentlySelectedLayer" xml:space="preserve">
+    <value>تحديث الطبقة المحددة حالياً</value>
+  </data>
+  <data name="RemovesCurrentlySelectedLayer" xml:space="preserve">
+    <value>حذف الطبقة المحددة حالياً</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>إعادة تسمية</value>
+  </data>
+  <data name="RenameCurrentlySelectedLayer" xml:space="preserve">
+    <value>إعادة تسمية الطبقة المحددة حالياً</value>
+  </data>
+  <data name="SendBackward" xml:space="preserve">
+    <value>تحريك لأسفل</value>
+  </data>
+  <data name="SendsCurrentlySelectedLayerBackward" xml:space="preserve">
+    <value>تحريك ترتيب عرض الطبقة المحددة موضع واحد أقرب لأسفل الخريطة</value>
+  </data>
+  <data name="ServiceDetails" xml:space="preserve">
+    <value>تفاصيل الخدمة</value>
+  </data>
+  <data name="ViewInformationAboutSelectedLayerDatasource" xml:space="preserve">
+    <value>عرض معلومات عن مصدر بيانات الطبقة المحددة</value>
+  </data>
+  <data name="ZoomToCurrentlySelectedLayer" xml:space="preserve">
+    <value>تكبير/تصغير الطبقة المحددة حالياً</value>
+  </data>
+  <data name="CannotAddDropdownCommandsToAGroup" xml:space="preserve">
+    <value>يتعذر إضافة الأوامر المنسدلة إلى المجموعة.</value>
+  </data>
+  <data name="ConfigureBasemaps" xml:space="preserve">
+    <value>تكوين خرائط الأساس</value>
+  </data>
+  <data name="FlashAnimationIsNotDefinedOnTargetBuilderToolbarButton" xml:space="preserve">
+    <value>لم يتم تعريف حركة Flash على زر شريط أدوات منشئ الهدف</value>
+  </data>
+  <data name="ManageAddInsToolsBehaviorsControls" xml:space="preserve">
+    <value>إدارة الوظائف الإضافية: الأدوات، والسلوكيات، وعناصر التحكم</value>
+  </data>
+  <data name="ManagePersonalSettings" xml:space="preserve">
+    <value>إدارة الإعدادات الشخصية</value>
+  </data>
+  <data name="AccessSecuredServices" xml:space="preserve">
+    <value>الوصول إلى الخدمات المؤمنة</value>
+  </data>
+  <data name="AddSecuredServices" xml:space="preserve">
+    <value>إضافة الخدمات المؤمنة</value>
+  </data>
+  <data name="ConfigureProxy" xml:space="preserve">
+    <value>تكوين الوكيل</value>
+  </data>
+  <data name="NewApplication" xml:space="preserve">
+    <value>منشئ التطبيق - التطبيق الجديد (لم يتم نشره)</value>
+  </data>
+  <data name="NotDeployed" xml:space="preserve">
+    <value>(غير منشور)</value>
+  </data>
+  <data name="DeployingApplication" xml:space="preserve">
+    <value>جارِ نشر التطبيق...</value>
+  </data>
+  <data name="ApplicationSettings" xml:space="preserve">
+    <value>إعدادات التطبيق</value>
+  </data>
+  <data name="ArcGISOnlineSecure" xml:space="preserve">
+    <value>ArcGIS Online Secure:</value>
+  </data>
+  <data name="ArcGISOnlineSharing" xml:space="preserve">
+    <value>مشاركة ArcGIS Online:</value>
+  </data>
+  <data name="BingAppId" xml:space="preserve">
+    <value>معرف تطبيق Bing:</value>
+  </data>
+  <data name="CurrentApplicationSettings" xml:space="preserve">
+    <value>إعدادات التطبيق الحالية</value>
+  </data>
+  <data name="DefaultSettings" xml:space="preserve">
+    <value>الإعدادات الافتراضية</value>
+  </data>
+  <data name="GeometryService" xml:space="preserve">
+    <value>خدمة الشكل الهندسي:</value>
+  </data>
+  <data name="ManageApplicationSettings" xml:space="preserve">
+    <value>إدارة إعدادات التطبيق</value>
+  </data>
+  <data name="BasedOnWebMap" xml:space="preserve">
+    <value>تقوم على خريطة الويب:</value>
+  </data>
+  <data name="LinkedToWebMap" xml:space="preserve">
+    <value>مرتبط بخريطة الويب:</value>
+  </data>
+  <data name="LinkToWebMap" xml:space="preserve">
+    <value>ارتباط</value>
+  </data>
+  <data name="MapConfigurationUnavailable" xml:space="preserve">
+    <value>تم ربط تكوين الخريطة لهذا التطبيق بخريطة الويب.  لتحرير تكوين الخريطة، قم بإلغاء ارتباط التطبيق من خدمة الويب</value>
+  </data>
+  <data name="UnlinkFromWebMap" xml:space="preserve">
+    <value>إلغاء الارتباط</value>
+  </data>
+  <data name="UnableToDeployApplication" xml:space="preserve">
+    <value>يتعذر نشر التطبيق.</value>
+  </data>
+  <data name="UnableToSaveApplicationChanges" xml:space="preserve">
+    <value>يتعذر حفظ تغييرات الطبيق</value>
+  </data>
+  <data name="Proxy" xml:space="preserve">
+    <value>وكيل:</value>
+  </data>
+  <data name="HideGettingStarted" xml:space="preserve">
+    <value>إخفاء تعليمات البدء</value>
+  </data>
+  <data name="ShowGettingStarted" xml:space="preserve">
+    <value>إظهار تعليمات البدء</value>
+  </data>
+  <data name="DisplayText" xml:space="preserve">
+    <value>عرض النص</value>
+  </data>
+  <data name="UpgradeSite" xml:space="preserve">
+    <value>ترقية تطبيق العارض للإصدار الحالي</value>
+  </data>
+  <data name="UpgradingApplication" xml:space="preserve">
+    <value>جارِ ترقية التطبيق...</value>
+  </data>
+  <data name="NewLink" xml:space="preserve">
+    <value>رابط جديد</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>سلوك</value>
+  </data>
+  <data name="Control" xml:space="preserve">
+    <value>التحكم</value>
+  </data>
+  <data name="Layer" xml:space="preserve">
+    <value>طبقة</value>
+  </data>
+  <data name="Tool" xml:space="preserve">
+    <value>أداة</value>
+  </data>
+</root>

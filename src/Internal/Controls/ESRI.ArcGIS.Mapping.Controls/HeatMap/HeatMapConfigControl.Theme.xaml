@@ -1,0 +1,93 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:local="clr-namespace:ESRI.ArcGIS.Mapping.Controls"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:Layout="clr-namespace:ESRI.ArcGIS.Client.Application.Layout;assembly=ESRI.ArcGIS.Client.Application.Layout"
+    xmlns:Converters="clr-namespace:ESRI.ArcGIS.Mapping.Controls.Converters">
+
+
+    <Layout:RTLHelper x:Key="RTLHelper" /> 
+    <Converters:RtlImageConverter x:Key="RtlImageConverter" />
+    <local:StringResourcesManager x:Key="Localization" />
+
+    <Style TargetType="local:HeatMapConfigControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:HeatMapConfigControl">
+                    <StackPanel Orientation="Vertical" x:Name="HeatMapContainer">
+                        <local:RibbonDropDownButton x:Name="AddHeatMapButton"
+                                            ImageSource="/ESRI.ArcGIS.Mapping.Controls;component/Images/toolbar/AddHeatMap32.png"
+                                            Content="{Binding ConverterParameter=HeatMapAdd, Converter={StaticResource Localization}, Source={StaticResource Localization}}">
+                            <local:RibbonDropDownButton.Command>
+                                <local:AddHeatMapCommand />
+                            </local:RibbonDropDownButton.Command>
+                        </local:RibbonDropDownButton >
+
+                        <local:RibbonDropDownButton x:Name="IntensitySliderDropdownButton"
+                                        Content="{Binding ConverterParameter=Intensity, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                        ImageSource="/ESRI.ArcGIS.Mapping.Controls;component/Images/toolbar/HeatMapIntensity32.png">
+                            <local:RibbonDropDownButton.PopupContent>
+                                <StackPanel Orientation="Vertical"  FlowDirection="LeftToRight" >
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="PropertyChanged"  SourceObject="{StaticResource RTLHelper}">
+                                            <ei:ChangePropertyAction PropertyName="FlowDirection" Value="LeftToRight" />
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                    <Image Source="/ESRI.ArcGIS.Mapping.Controls;component/Images/toolbar/intensitySlider_Horizontal.png"
+                                           Stretch="None"
+                                           Width="145"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           RenderTransformOrigin="0.5,0.5" 
+                                           Margin="5,7,5,5">
+                                        <Image.Projection>
+                                            <PlaneProjection RotationY="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection, Converter={StaticResource RtlImageConverter}}" />
+                                        </Image.Projection>
+                                    </Image>
+                                    <Slider x:Name="IntensitySlider"
+                                            Orientation="Horizontal"
+                                            FlowDirection="{Binding Source={StaticResource RTLHelper}, Path=FlowDirection}"
+                                            Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Layer.Intensity, Mode=TwoWay}"
+                                            Minimum="5"
+                                            Maximum="100"
+                                            Width="145"
+                                            Height="30"
+                                            IsDirectionReversed="True"
+                                            Margin="5,0,5,7" />
+                                </StackPanel>
+                            </local:RibbonDropDownButton.PopupContent>
+                            <local:RibbonDropDownButton.Command>
+                                <local:CheckIfHeatmapLayerCommand />
+                            </local:RibbonDropDownButton.Command>
+                        </local:RibbonDropDownButton>
+
+                        <local:RibbonDropDownButton x:Name="HeatMapColorRampButton"
+                                    Content="{Binding ConverterParameter=ColorScheme, Converter={StaticResource Localization}, Source={StaticResource Localization}}"
+                                    ImageSource="/ESRI.ArcGIS.Mapping.Controls;component/Images/toolbar/ColorScheme32.png">
+                            <local:RibbonDropDownButton.PopupContent>
+                                <StackPanel Orientation="Horizontal">
+                                    <local:ColorRampControl x:Name="HeatMapColorRampControl" ColorRampType="HeatMap" 
+                                                            SymbolConfigProvider="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SymbolConfigProvider}" 
+                                                            SelectedColorBrushStops="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Layer.Gradient, Mode=TwoWay}" />
+                                </StackPanel>
+                            </local:RibbonDropDownButton.PopupContent>
+                            <local:RibbonDropDownButton.Command>
+                                <local:CheckIfHeatmapLayerCommand />
+                            </local:RibbonDropDownButton.Command>
+                        </local:RibbonDropDownButton>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

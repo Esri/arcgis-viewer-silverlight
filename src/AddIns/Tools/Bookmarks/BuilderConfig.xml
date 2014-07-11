@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Extension Name="Bookmarks.AddIns" InsertPath="//Extensions">
+    <Assemblies>
+        <Assembly Name="Bookmarks.AddIns" />
+    </Assemblies>
+</Extension>

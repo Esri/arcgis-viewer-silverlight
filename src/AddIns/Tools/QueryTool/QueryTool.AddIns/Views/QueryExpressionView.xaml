@@ -1,0 +1,570 @@
+<!--
+(c) Copyright ESRI.
+This source is subject to the Microsoft Public License (Ms-PL).
+Please see http://go.microsoft.com/fwlink/?LinkID=131993 for details.
+All other rights reserved.
+-->
+
+<UserControl 
+    x:Class="QueryTool.AddIns.QueryExpressionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:local="clr-namespace:QueryTool.AddIns"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/QueryTool.AddIns;component/Themes/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:StringResourcesManager x:Key="Localization" />
+            <local:BoolVisibilityConverter x:Key="BoolVisibilityConverter" />
+            <local:ReverseBoolVisibilityConverter x:Key="ReverseBoolVisibilityConverter" />
+            <local:ReverseBoolConverter x:Key="ReverseBoolConverter" />
+            <local:NotNullVisibilityConverter x:Key="NotNullVisibilityConverter" />
+            <local:NotEmptyTextVisibilityConverter x:Key="NotEmptyTextVisibilityConverter" />
+            <local:EmptyTextVisibilityConverter x:Key="EmptyTextVisibilityConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- Query Field + Comparison Operator -->
+            <RowDefinition Height="Auto" />
+            <!-- Choice Values-->
+            <RowDefinition Height="Auto" />
+            <!-- Ok + Cancel-->
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!-- Field label and drop-down -->
+            <TextBlock 
+                x:Name="FieldLabel" 
+                Text="{Binding ConverterParameter=FieldAndOperatorLabel, 
+                    Converter={StaticResource Localization}, 
+                    Source={StaticResource Localization}}"
+                VerticalAlignment="Center"
+                FontSize="12"
+                FontWeight="Bold"/>
+            <ComboBox 
+                x:Name="FieldsComboBox"
+                ItemsSource="{Binding Fields}"
+                SelectedItem="{Binding Field, Mode=TwoWay}"
+                local:Extensions.NoItemSelectedText="{Binding 
+                    ConverterParameter=SelectField, 
+                    Converter={StaticResource Localization}, 
+                    Source={StaticResource Localization}}"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                Style="{StaticResource ComboBoxStyle}"
+                Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                Background="{StaticResource DesignHostBackgroundBrush}"
+                BorderBrush="#44FFFFFF"
+                Margin="7,0,0,0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Alias}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <!-- Operator drop-down -->
+            <ComboBox 
+                ItemsSource="{Binding ComparisonOperators}"
+                SelectedItem="{Binding ComparisonOperator, Mode=TwoWay}"
+                Grid.Column="2"
+                HorizontalAlignment="Left"
+                Style="{StaticResource ComboBoxStyle}"
+                Foreground="{StaticResource DesignHostBackgroundTextBrush}"
+                Background="{StaticResource DesignHostBackgroundBrush}"
+                Visibility="{Binding Field, Converter={StaticResource NotNullVisibilityConverter}}"
+                BorderBrush="#44FFFFFF"
+                Margin="7,0,0,0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>
+
+
+        <!-- Radio buttons to select user input method -->
+        <Grid
+            Grid.Row="1"
+            Margin="0,10,0,0"
+            Visibility="{Binding IsNullValue, 
+                Converter={StaticResource ReverseBoolVisibilityConverter}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock 
+                Text="{Binding ConverterParameter=InputMethod,
+                    Converter={StaticResource Localization},
+                    Source={StaticResource Localization}}" 
+                FontSize="12"
+                FontWeight="Bold"
+                VerticalAlignment="Top"
+                MaxWidth="140"
+                TextWrapping="Wrap"/>
+            <RadioButton 
+                GroupName="Default"
+                Cursor="Hand"
+                IsChecked="{Binding UseDefaultValue, Mode=TwoWay}"
+                IsEnabled="{Binding HasDomain, Converter={StaticResource ReverseBoolConverter}}"
+                Foreground="{Binding Foreground, ElementName=FieldLabel}"
+                Grid.Column="1"
+                Margin="7,0,0,0">
+                <TextBlock 
+                    Text="{Binding ConverterParameter=UsersTypeValue,
+                        Converter={StaticResource Localization},
+                        Source={StaticResource Localization}}"
+                    TextWrapping="Wrap"
+                    MaxWidth="130"/>
+            </RadioButton>
+            <RadioButton  
+                GroupName="Default"
+                Cursor="Hand"                
+                IsChecked="{Binding UseDefaultValue, Mode=TwoWay, 
+                    Converter={StaticResource ReverseBoolConverter}}"
+                IsEnabled="{Binding CanUseChoiceList}"
+                Foreground="{Binding Foreground, ElementName=FieldLabel}" 
+                Grid.Column="2"
+                Margin="7,0,0,0">
+                <TextBlock 
+                    Text="{Binding ConverterParameter=SelectFromList,
+                        Converter={StaticResource Localization},
+                        Source={StaticResource Localization}}"
+                    TextWrapping="Wrap" />
+            </RadioButton>
+        </Grid>
+
+        <!-- User-typed input section -->
+        <Grid
+            Visibility="{Binding UseDefaultValue, 
+                Converter={StaticResource BoolVisibilityConverter}}"
+            Grid.Row="2"
+            Margin="0,8,0,0">
+            <Grid
+                Visibility="{Binding IsNullValue, 
+                    Converter={StaticResource ReverseBoolVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock 
+                    Text="{Binding ConverterParameter=DefaultValueLabel, 
+                        Converter={StaticResource Localization}, 
+                        Source={StaticResource Localization}}"
+                    VerticalAlignment="Center"
+                    FontSize="10"
+                    Opacity="0.7"/>
+                <TextBox 
+                    x:Name="DefaultValueTextBox"
+                    Text="{Binding ChoiceValues.DefaultValue.Value, 
+                        Mode=TwoWay}"
+                    IsEnabled="{Binding UseDefaultValue}"
+                    Grid.Row="1"
+                    Margin="0,3,0,0"
+                    local:Extensions.ValidationError="{Binding ChoiceValues.DefaultValue.ValidationException}"
+                    Style="{StaticResource ValidationTextBoxStyle}">
+                    <i:Interaction.Behaviors>
+                        <local:UpdateBindingOnTextChanged />
+                    </i:Interaction.Behaviors>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="LayoutUpdated">
+                            <i:Interaction.Behaviors>
+                                <ei:ConditionBehavior>
+                                    <ei:ConditionalExpression ForwardChaining="And">
+                                        <ei:ComparisonCondition 
+                                            LeftOperand="{Binding ChoiceValues}"
+                                            Operator="NotEqual"
+                                            RightOperand="{x:Null}"/>
+                                        <ei:ComparisonCondition 
+                                            LeftOperand="{Binding ChoiceValues.DefaultValue}"
+                                            Operator="NotEqual"
+                                            RightOperand="{x:Null}"/>
+                                    </ei:ConditionalExpression>
+                                </ei:ConditionBehavior>
+                            </i:Interaction.Behaviors>
+                            <ei:ChangePropertyAction
+                                TargetObject="{Binding ChoiceValues.DefaultValue}"
+                                PropertyName="AllowEmptyValues"
+                                Value="True" />
+                        </i:EventTrigger>
+                        <ei:PropertyChangedTrigger Binding="{Binding ChoiceValues.DefaultValue}">
+                            <i:Interaction.Behaviors>
+                                <ei:ConditionBehavior>
+                                    <ei:ConditionalExpression ForwardChaining="And">
+                                        <ei:ComparisonCondition 
+                                            LeftOperand="{Binding ChoiceValues}"
+                                            Operator="NotEqual"
+                                            RightOperand="{x:Null}"/>
+                                        <ei:ComparisonCondition 
+                                            LeftOperand="{Binding ChoiceValues.DefaultValue}"
+                                            Operator="NotEqual"
+                                            RightOperand="{x:Null}"/>
+                                    </ei:ConditionalExpression>
+                                </ei:ConditionBehavior>
+                            </i:Interaction.Behaviors>
+                            <ei:ChangePropertyAction
+                                TargetObject="{Binding ChoiceValues.DefaultValue}"
+                                PropertyName="AllowEmptyValues"
+                                Value="True" />
+                        </ei:PropertyChangedTrigger>
+                    </i:Interaction.Triggers>
+                </TextBox>
+            </Grid>
+        </Grid>
+                
+        <!-- Input from list section -->        
+        <Grid
+            Visibility="{Binding UseDefaultValue, 
+                Converter={StaticResource ReverseBoolVisibilityConverter}}"
+            Grid.Row="3"
+            Margin="0,8,0,0">
+            <Grid
+                Visibility="{Binding IsNullValue, 
+                    Converter={StaticResource ReverseBoolVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <TextBlock 
+                        Text="{Binding ConverterParameter=SampleValues, 
+                            Converter={StaticResource Localization}, 
+                            Source={StaticResource Localization}}"
+                        FontSize="10"
+                        Opacity=".7"/>
+                <ListBox 
+                    x:Name="SampleValues"
+                    ItemsSource="{Binding ChoiceValues.SampleValues}"
+                    SelectionMode="Extended"
+                    IsEnabled="{Binding UseDefaultValue, 
+                        Converter={StaticResource ReverseBoolConverter}}"
+                    Grid.Row="1"
+                    Margin="0,2,0,0"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Value}" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction 
+                                Command="{Binding SelectToAdd}"
+                                CommandParameter="{Binding ElementName=SampleValues, Path=SelectedItems}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ListBox>
+                <TextBlock 
+                    Text="{Binding ConverterParameter=IncludedValues, 
+                        Converter={StaticResource Localization}, 
+                        Source={StaticResource Localization}}"
+                    Grid.Row="3"
+                    VerticalAlignment="Bottom"
+                    HorizontalAlignment="Left"
+                    FontSize="10"
+                    Opacity=".7"/>
+                <Button 
+                    BorderBrush="{StaticResource DesignHostBackgroundTextBrush}"
+                    Background="{StaticResource DesignHostBackgroundBrush}"
+                    Cursor="Hand"
+                    Grid.Row="2"
+                    Grid.RowSpan="2"
+                    Margin="0,6,0,4"
+                    Padding="8,6"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Command="{Binding AddSelection}">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Storyboard.TargetName="HighlightBorder" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Duration="0" To="1" />
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Storyboard.TargetName="HighlightBorder" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Duration="0" To="0.3" />
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimation 
+                                                    Storyboard.TargetName="HighlightBorder" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Duration="0" To="0.3" />
+                                                <DoubleAnimation 
+                                                    Storyboard.TargetName="ContentImage" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Duration="0" To="0.5" />
+                                                <DoubleAnimation 
+                                                    Storyboard.TargetName="DisabledOverlay" 
+                                                    Storyboard.TargetProperty="Opacity" 
+                                                    Duration="0" To="0.2" />
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Rectangle 
+                                    x:Name="Background" 
+                                    Fill="{TemplateBinding Background}"
+                                    StrokeThickness="0" RadiusX="3" RadiusY="3" />
+                                <Rectangle 
+                                    x:Name="HighlightBorder" 
+                                    Stroke="{TemplateBinding BorderBrush}" 
+                                    StrokeThickness="1" RadiusX="3" RadiusY="3" 
+                                    Opacity="0.5"/>
+                                <Image
+                                    x:Name="ContentImage"
+                                    Source="/QueryTool.AddIns;component/Images/ChevronDown.png"
+                                    Stretch="None"
+                                    Margin="{TemplateBinding Padding}" />
+                                <Rectangle 
+                                    x:Name="DisabledOverlay" 
+                                    Fill="White" 
+                                    StrokeThickness="0" RadiusX="3" RadiusY="3" 
+                                    Opacity="0"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <ListBox 
+                    x:Name="Choices"
+                    ItemsSource="{Binding ChoiceValues.Choices, Mode=TwoWay}"
+                    IsEnabled="{Binding UseDefaultValue, Converter={StaticResource ReverseBoolConverter}}"
+                    Grid.Row="4"
+                    Margin="0,2,0,0"
+                    HorizontalContentAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    SelectionMode="Extended">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <!-- Read-only value -->
+                                <TextBlock x:Name="ReadValue"
+                                               Text="{Binding Value}"
+                                               TextTrimming="WordEllipsis"
+                                               TextWrapping="NoWrap"
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Bottom" />
+                                <!-- Editable value -->
+                                <TextBox x:Name="EditValue"
+                                             Text="{Binding Value, Mode=TwoWay}"
+                                             Visibility="{Binding IsEditing, Mode=TwoWay, Converter={StaticResource BoolVisibilityConverter}}"
+                                             HorizontalAlignment="Stretch"
+                                            local:Extensions.ValidationError="{Binding ValidationException}"
+                                            Style="{StaticResource ValidationTextBoxStyle}">
+                                    <i:Interaction.Behaviors>
+                                        <local:UpdateBindingOnTextChanged />
+                                    </i:Interaction.Behaviors>
+                                    <i:Interaction.Triggers>
+                                        <!-- Hide textbox on enter, show label and edit button -->
+                                        <local:KeyPressedTrigger Key="Enter">
+                                            <i:Interaction.Behaviors>
+                                                <ei:ConditionBehavior>
+                                                    <ei:ConditionalExpression>
+                                                        <ei:ComparisonCondition LeftOperand="{Binding ValidationException}"
+                                                                                    Operator="Equal"
+                                                                                    RightOperand="{x:Null}" />
+                                                    </ei:ConditionalExpression>
+                                                </ei:ConditionBehavior>
+                                            </i:Interaction.Behaviors>
+                                            <ei:ChangePropertyAction PropertyName="Visibility"
+                                                                         Value="Collapsed" />
+                                            <ei:ChangePropertyAction TargetObject="{Binding ElementName=ReadValue}"
+                                                                         PropertyName="Opacity"
+                                                                         Value="1" />
+                                            <ei:ChangePropertyAction TargetObject="{Binding ElementName=EditButton}"
+                                                                         PropertyName="Visibility"
+                                                                         Value="Visible" />
+                                        </local:KeyPressedTrigger>
+                                        <i:EventTrigger EventName="Loaded">
+                                            <i:Interaction.Behaviors>
+                                                <ei:ConditionBehavior>
+                                                    <ei:ConditionalExpression>
+                                                        <ei:ComparisonCondition LeftOperand="{Binding OutField.IsEditable}"
+                                                                                    Operator="Equal"
+                                                                                    RightOperand="True" />
+                                                        <ei:ComparisonCondition LeftOperand="{Binding IsEditing}"
+                                                                                    Operator="Equal"
+                                                                                    RightOperand="True" />
+                                                    </ei:ConditionalExpression>
+                                                </ei:ConditionBehavior>
+                                            </i:Interaction.Behaviors>
+                                            <ei:ChangePropertyAction TargetObject="{Binding ElementName=EditButton}"
+                                                                         PropertyName="Visibility"
+                                                                         Value="Collapsed" />
+                                            <local:FocusAction TargetObject="{Binding ElementName=EditValue}" />
+                                            <ei:CallMethodAction MethodName="SelectAll"
+                                                                     TargetObject="{Binding ElementName=EditValue}" />
+                                        </i:EventTrigger>
+                                        <i:EventTrigger EventName="LostFocus">
+                                            <i:Interaction.Behaviors>
+                                                <ei:ConditionBehavior>
+                                                    <ei:ConditionalExpression>
+                                                        <ei:ComparisonCondition LeftOperand="{Binding ValidationException}"
+                                                                                    Operator="NotEqual"
+                                                                                    RightOperand="{x:Null}" />
+                                                    </ei:ConditionalExpression>
+                                                </ei:ConditionBehavior>
+                                            </i:Interaction.Behaviors>
+                                            <ei:ChangePropertyAction PropertyName="Visibility"
+                                                                         Value="Visible" />
+                                            <local:FocusAction TargetObject="{Binding ElementName=EditValue}" />
+                                            <ei:CallMethodAction MethodName="SelectAll"
+                                                                     TargetObject="{Binding ElementName=EditValue}" />
+                                        </i:EventTrigger>
+                                        <!-- Hide textbox on lost focus, show label and edit button -->
+                                        <i:EventTrigger EventName="LostFocus">
+                                            <i:Interaction.Behaviors>
+                                                <ei:ConditionBehavior>
+                                                    <ei:ConditionalExpression>
+                                                        <ei:ComparisonCondition LeftOperand="{Binding ValidationException}"
+                                                                                    Operator="Equal"
+                                                                                    RightOperand="{x:Null}" />
+                                                    </ei:ConditionalExpression>
+                                                </ei:ConditionBehavior>
+                                            </i:Interaction.Behaviors>
+                                            <ei:ChangePropertyAction PropertyName="Visibility"
+                                                                         Value="Collapsed" />
+                                            <ei:ChangePropertyAction TargetObject="{Binding ElementName=ReadValue}"
+                                                                         PropertyName="Opacity"
+                                                                         Value="1" />
+                                            <ei:ChangePropertyAction TargetObject="{Binding ElementName=EditButton}"
+                                                                         PropertyName="Visibility"
+                                                                         Value="Visible" />
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </TextBox>
+                                <!-- Edit button for editing value -->
+                                <Grid  Grid.Column="1"
+                                           Visibility="{Binding OutField.IsEditable, Converter={StaticResource BoolVisibilityConverter}}">
+                                    <Button x:Name="EditButton"
+                                                Margin="5,0,0,0"
+                                                VerticalAlignment="Center"
+                                            HorizontalAlignment="Left"
+                                            Cursor="Hand"
+                                            Visibility="{Binding IsEditing, Converter={StaticResource ReverseBoolVisibilityConverter}}"
+                                            ToolTipService.ToolTip="{Binding ConverterParameter=EditLabel,
+                                            Converter={StaticResource Localization},
+                                            Source={StaticResource Localization}}">
+                                        <Button.Content>
+                                            <Image Source="/QueryTool.AddIns;component/Images/edit.png"
+                                                   Stretch="None" />
+                                        </Button.Content>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Grid>
+                                                    <ContentPresenter Content="{TemplateBinding Content}" />
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                        <i:Interaction.Triggers>
+                                            <!-- Show textbox on click, hide label and edit button -->
+                                            <i:EventTrigger EventName="Click">
+                                                <i:Interaction.Behaviors>
+                                                    <ei:ConditionBehavior>
+                                                        <ei:ConditionalExpression>
+                                                            <ei:ComparisonCondition LeftOperand="{Binding OutField.IsEditable}"
+                                                                                    Operator="Equal"
+                                                                                    RightOperand="True" />
+                                                        </ei:ConditionalExpression>
+                                                    </ei:ConditionBehavior>
+                                                </i:Interaction.Behaviors>
+                                                <ei:ChangePropertyAction TargetObject="{Binding ElementName=ReadValue}"
+                                                                         PropertyName="Opacity"
+                                                                         Value="0.01" />
+                                                <ei:ChangePropertyAction TargetObject="{Binding ElementName=EditValue}"
+                                                                         PropertyName="Visibility"
+                                                                             Value="Visible" />
+                                                <local:FocusAction TargetObject="{Binding ElementName=EditValue}" />
+                                                <ei:CallMethodAction MethodName="SelectAll"
+                                                                         TargetObject="{Binding ElementName=EditValue}" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SelectToRemove}"
+                                                       CommandParameter="{Binding ElementName=Choices, Path=SelectedItems}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ListBox>
+                <Grid
+                    Visibility="{Binding UseDefaultValue, 
+                        Converter={StaticResource ReverseBoolVisibilityConverter}}"
+                    Grid.Row="5"
+                    Margin="0,3,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Button 
+                        x:Name="AddNewValueButton"
+                        Content="{Binding ConverterParameter=AddLabel,
+                            Converter={StaticResource Localization},
+                            Source={StaticResource Localization}}"
+                        Command="{Binding Add}" 
+                        Foreground="{Binding Foreground, ElementName=FieldLabel}"
+                        Template="{StaticResource HyperlinkButtonTemplate}"/>
+                    <Rectangle 
+                        Fill="#01000000" Width="8" Grid.Column="1"
+                        Visibility="{Binding IsEnabled, ElementName=AddNewValueButton,
+                            Converter={StaticResource BoolVisibilityConverter}}" />
+                    <Button 
+                        Content="{Binding ConverterParameter=RemoveLabel,
+                            Converter={StaticResource Localization},
+                            Source={StaticResource Localization}}"
+                        Command="{Binding Remove}" 
+                        Template="{StaticResource HyperlinkButtonTemplate}"
+                        Foreground="{Binding Foreground, ElementName=FieldLabel}"
+                        Grid.Column="2"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
