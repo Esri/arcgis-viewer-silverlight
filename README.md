@@ -6,7 +6,7 @@ This repository contains the source code for the ArcGIS Viewer for Silverlight (
 ![ArcGIS Viewer for Silverlight](https://cloud.githubusercontent.com/assets/3933510/3559658/46dac540-094e-11e4-89fa-b57765e6e726.png)
 
 ###Overview
-The ArcGIS Viewer for Silverlight is a ready-to-deploy GIS web mapping app.  The product includes an Application Builder web application that allows users to interactively build Viewer applications interactively in the browser by pointing and clicking - no code or editing of configuration files is required.  The Viewer provides the ability to configure interactive maps containing content from ArcGIS Server and ArcGIS Online, and includes many tools and capabilities for analyzing and interacting with map data.  The Viewer's capabilities can be extended by developing add-ins with the Extensibility SDK.  A Visual Studio project template is included to provide a starting point for creating add-ins.
+The ArcGIS Viewer for Silverlight is a ready-to-deploy GIS web mapping app.  The product includes an Application Builder web application that allows users to build Viewer applications interactively in the browser by pointing and clicking - no code or editing of configuration files is required.  The Viewer provides the ability to configure interactive maps containing content from ArcGIS Server and ArcGIS Online, and includes many tools and capabilities for analyzing and interacting with map data.  The Viewer's capabilities can be extended by developing add-ins with the Extensibility SDK.  A Visual Studio project template is included to provide a starting point for creating add-ins.
 
 ###Getting Started
 
