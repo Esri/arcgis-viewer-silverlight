@@ -98,7 +98,7 @@ Once these steps are complete, the application should appear with text in the de
 The ArcGIS Viewer for Silverlight references the 3rd party dependencies listed below.  Where possible, NuGet is used to dynamically download the assemblies for these dependencies at compile time by leveraging its [Package Restore](http://docs.nuget.org/docs/reference/package-restore) capability.  In a few cases, dependencies are not available via NuGet.  Assemblies for these are included in the repo.  The dependencies are as follows:
 
 - [ArcGIS API 3.2 for Silverlight](http://links.esri.com/silverlight)
-- [ArcGIS Silverlight Toolkit 3.2](http://esrisilverlight.codeplex.com/)
+- [ArcGIS Silverlight Toolkit 3.2](https://github.com/Esri/arcgis-toolkit-sl-wpf)
 - Expression Blend 5 SDK
 - [Silverlight 5 Toolkit](http://silverlight.codeplex.com/)
 - [Microsoft Async Targeting Pack](http://blogs.msdn.com/b/bclteam/p/asynctargetingpackkb.aspx)
