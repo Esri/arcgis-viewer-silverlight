@@ -106,7 +106,7 @@ pushd "%25TempFolder%25\ESRIViewer
 "$(ProjectDir)..\..\..\build\utilities\7za.exe" a -tzip -r "%25OutFolder%25\ESRIViewer.zip" *.*
 popd
 
-REM rd /s /q "%25TempFolder%25\"
+rd /s /q "%25TempFolder%25\"
 </PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

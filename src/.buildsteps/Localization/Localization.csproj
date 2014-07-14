@@ -84,7 +84,14 @@
 call "$(ProjectDir)..\..\..\build\localization\DoLocalization.cmd" $(SolutionDir)..\
 
 REM Copy Viewer website to Builder as default template
-xcopy "$(ProjectDir)..\..\..\output\Viewer" "$(ProjectDir)..\..\..\output\Builder\Templates\Default" /i /f /y /s</PreBuildEvent>
+xcopy "$(ProjectDir)..\..\..\output\Viewer" "$(ProjectDir)..\..\..\output\Builder\Templates\Default" /i /f /y /s
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+REM remove folder for temporary localization files
+rmdir "$(SolutionDir)..\output\localization\" /S /Q
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
