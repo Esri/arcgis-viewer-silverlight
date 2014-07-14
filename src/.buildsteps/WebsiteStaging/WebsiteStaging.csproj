@@ -82,8 +82,20 @@
   <PropertyGroup>
     <PreBuildEvent>@echo ----------------- Viewer Website staging -------------------------------------
 
+
+REM if Default Viewer's Tools.xml is already present, preserve a copy
+if exist "$(ProjectDir)..\..\..\output\Viewer\Config\Tools.xml" (
+    xcopy "$(ProjectDir)..\..\..\output\Viewer\Config\Tools.xml" "$(ProjectDir)..\..\..\output" /i /f /y
+)
+
 @echo Copy Viewer website to output directory
 xcopy "$(ProjectDir)..\..\Viewer\ESRI.ArcGIS.Mapping.Viewer.Web" "$(ProjectDir)..\..\..\output\Viewer" /i /f /y /s
+
+REM Replace default Viewer's Tools.xml with preserved copy
+if exist "$(ProjectDir)..\..\..\output\Tools.xml" (
+     xcopy "$(ProjectDir)..\..\..\output\Tools.xml" "$(ProjectDir)..\..\..\output\Viewer\Config" /i /f /y
+     del "$(ProjectDir)..\..\..\output\Tools.xml" /f /q
+)
 
 @echo Copy pop-up templates
 copy "$(ProjectDir)..\..\Internal\Framework\ESRI.ArcGIS.Mapping.Behaviors\Themes\HoverPopupContainerStyle.Theme.xaml" "$(ProjectDir)..\..\..\output\Viewer\Config\Layouts\ResourceDictionaries\Common\HoverPopupContainerStyle.xaml" /Y
@@ -121,7 +133,7 @@ msbuild "$(ProjectDir)..\..\Builder\ESRI.ArcGIS.Mapping.Builder.Web\ESRI.ArcGIS.
 
 REM if Default Viewer's Tools.xml is already present, preserve a copy
 if exist "$(ProjectDir)..\..\..\output\Builder\Templates\Default\Config\Tools.xml" (
-    xcopy "$(ProjectDir)..\..\..\output\Builder\Templates\Default\Config\Tools.xml" "$(ProjectDir)..\..\..\output\Tools.xml" /f /y
+    xcopy "$(ProjectDir)..\..\..\output\Builder\Templates\Default\Config\Tools.xml" "$(ProjectDir)..\..\..\output" /i /f /y
 )
 
 REM Copy Builder website to output directory
@@ -129,7 +141,7 @@ xcopy "$(ProjectDir)..\..\Builder\ESRI.ArcGIS.Mapping.Builder.Web\obj\$(Configur
 
 REM Replace default Viewer's Tools.xml with preserved copy
 if exist "$(ProjectDir)..\..\..\output\Tools.xml" (
-     xcopy "$(ProjectDir)..\..\..\output\Tools.xml" "$(ProjectDir)..\..\..\output\Builder\Templates\Default\Config\Tools.xml" /f /y
+     xcopy "$(ProjectDir)..\..\..\output\Tools.xml" "$(ProjectDir)..\..\..\output\Builder\Templates\Default\Config" /i /f /y
      del "$(ProjectDir)..\..\..\output\Tools.xml" /f /q
 )
 
