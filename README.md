@@ -49,7 +49,7 @@ Once specified in the *web.config* file, these would appear as follows:
 
 Additionally, the directory specified must be [configured as a virtual directory in IIS](http://technet.microsoft.com/en-us/library/cc771804%28v=WS.10%29.aspx) and must have write permissions granted to the identity under which the Application Builder's web service runs.  When debugging from Visual Studio, the web server process (iisexpress.exe) generally runs under the identity of the logged-in user.  
 
-Finally, to ensure the ability to deploy Viewer Applications, the machine that is targeted for deployment should have a [*crossdomain.xml* file](http://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html) that permits requests from the Application Builder's URL.  When debugging from Visual Studio, this will generally be `http://localhost:<port number>/default.aspx`.  The *crossdomain.xml* file may be modified to explicitly allow this domain, or wildcards may be used to permit broader access that is inclusive of this domain.
+Finally, to ensure the ability to deploy Viewer Applications, the machine that is targeted for deployment may require a [*clientaccesspolicy.xml*](http://msdn.microsoft.com/en-us/library/cc197955%28v=vs.95%29.aspx) or [*crossdomain.xml* file](http://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html) that permits requests from the Application Builder's URL.  When debugging from Visual Studio, this will generally be `http://localhost:<port number>/default.aspx`.  The *crossdomain.xml* file may be modified to explicitly allow this domain, or wildcards may be used to permit broader access that is inclusive of this domain.
 
 Note also that, if you are deploying applications while debugging in Visual Studio, and the deployment directory for your applications is within the root directory of IIS (wwwroot), you may need to run Visual Studio as an administrator.  This is because User Access Control (UAC) on Windows requires administrator privileges to write to this location.
 
@@ -66,6 +66,8 @@ When the ArcGISSilverlightViewer solution is compiled, a Visual Studio project t
 Once the template is installed, it will be available in Visual Studio's New Project dialog under *Visual C# --> Silverlight --> Esri:*
 
 ![Viewer Visual Studio Template](https://cloud.githubusercontent.com/assets/3933510/3559679/92e97986-094e-11e4-8947-f08c53ec19e9.png)
+
+**Note**: In order for the ArcGIS assemblies referenced by the project template to be resolved, version 3.2 of the ArcGIS API for Silverlight must be installed, and the paths to the Extensibility SDK assemblies will need to be updated to those of the locally compiled versions.
 
 **Using Localized Versions**
 
@@ -98,7 +100,7 @@ Once these steps are complete, the application should appear with text in the de
 The ArcGIS Viewer for Silverlight references the 3rd party dependencies listed below.  Where possible, NuGet is used to dynamically download the assemblies for these dependencies at compile time by leveraging its [Package Restore](http://docs.nuget.org/docs/reference/package-restore) capability.  In a few cases, dependencies are not available via NuGet.  Assemblies for these are included in the repo.  The dependencies are as follows:
 
 - [ArcGIS API 3.2 for Silverlight](http://links.esri.com/silverlight)
-- [ArcGIS Silverlight Toolkit 3.2](http://esrisilverlight.codeplex.com/)
+- [ArcGIS Silverlight Toolkit 3.2](https://github.com/esri/arcgis-toolkit-sl-wpf/)
 - Expression Blend 5 SDK
 - [Silverlight 5 Toolkit](http://silverlight.codeplex.com/)
 - [Microsoft Async Targeting Pack](http://blogs.msdn.com/b/bclteam/p/asynctargetingpackkb.aspx)
