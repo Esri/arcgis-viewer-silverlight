@@ -119,8 +119,19 @@ if exist "%25VS120COMNTOOLS%25" (
 REM compile and package App Builder website
 msbuild "$(ProjectDir)..\..\Builder\ESRI.ArcGIS.Mapping.Builder.Web\ESRI.ArcGIS.Mapping.Builder.Web.csproj" /t:Package /p:Configuration=$(ConfigurationName) /p:Platform=$(PlatformName) /p:BuildProjectReferences=false
 
+REM if Default Viewer's Tools.xml is already present, preserve a copy
+if exist "$(ProjectDir)..\..\..\output\Builder\Templates\Default\Config\Tools.xml" (
+    xcopy "$(ProjectDir)..\..\..\output\Builder\Templates\Default\Config\Tools.xml" "$(ProjectDir)..\..\..\output\Tools.xml" /f /y
+)
+
 REM Copy Builder website to output directory
 xcopy "$(ProjectDir)..\..\Builder\ESRI.ArcGIS.Mapping.Builder.Web\obj\$(ConfigurationName)\Package\PackageTmp" "$(ProjectDir)..\..\..\output\Builder" /i /f /y /s
+
+REM Replace default Viewer's Tools.xml with preserved copy
+if exist "$(ProjectDir)..\..\..\output\Tools.xml" (
+     xcopy "$(ProjectDir)..\..\..\output\Tools.xml" "$(ProjectDir)..\..\..\output\Builder\Templates\Default\Config\Tools.xml" /f /y
+     del "$(ProjectDir)..\..\..\output\Tools.xml" /f /q
+)
 
 REM add search tool to Viewer and Builder config.  Need to do it here and not as part of Search Tool build because Builder has an 
 REM explicit dependency on it.

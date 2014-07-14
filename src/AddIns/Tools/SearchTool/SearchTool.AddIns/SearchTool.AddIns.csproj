@@ -410,11 +410,13 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>if NOT EXIST "$(TargetDir)..\Builder\Extensions\$(TargetName).xap" (
-    REM insert Add-In config into App Builder and default Viewer - only need to do this once
+    <PostBuildEvent>REM insert Add-In config into App Builder
+call "$(TargetDir)..\..\build\addins\InsertAddInConfig_Builder.bat" "$(TargetDir)..\..\" "$(ProjectDir)..\BuilderConfig.xml"
+if NOT EXIST "$(TargetDir)..\Builder\Extensions\$(TargetName).xap" (
+    REM insert Add-In config into default Viewer - only need to do this once
     call "$(TargetDir)..\..\build\addins\InsertAddInConfig_Viewer.bat" "$(TargetDir)..\..\" "$(ProjectDir)..\ViewerConfig.xml"
-    call "$(TargetDir)..\..\build\addins\InsertAddInConfig_Builder.bat" "$(TargetDir)..\..\" "$(ProjectDir)..\BuilderConfig.xml"
 )
+
 
 REM copy Add-In xap file to App Builder's extension repository
 xcopy "$(TargetDir)$(TargetName).xap" "$(TargetDir)..\Builder\Extensions\" /S /Y
