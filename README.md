@@ -113,7 +113,7 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 
 ### Contributing
 
-Anyone and everyone is welcome to [contribute](https://www.github.com/arcgis/arcgis-viewer-silverlight/wiki/contributing).
+Anyone and everyone is welcome to [contribute](https://www.github.com/esri/arcgis-viewer-silverlight/wiki/contributing).
 
 ### Licensing
 Copyright 2014 Esri
@@ -129,7 +129,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-A copy of the license is available in the repository's [license.txt](https://www.github.com/arcgis/arcgis-viewer-silverlight/blob/master/license.txt) file.
+A copy of the license is available in the repository's [license.txt](https://www.github.com/esri/arcgis-viewer-silverlight/blob/master/license.txt) file.
 
 [](Esri Tags: ArcGIS Silverlight SDK .NET Viewer Applications C# C-Sharp cs DotNet XAML)
 [](Esri Language: DotNet)
