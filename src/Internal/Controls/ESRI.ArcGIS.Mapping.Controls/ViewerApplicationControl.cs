@@ -693,7 +693,8 @@ namespace ESRI.ArcGIS.Mapping.Controls
             ApplicationColorSet applicationColorSet = ApplicationColorSet;
             if (applicationColorSet != null)
             {
-                foreach (XElement resource in (xDoc.FirstNode as XElement).Elements())
+                var firstNode = xDoc.Nodes().FirstOrDefault(n => n is XElement);
+                foreach (XElement resource in (firstNode as XElement).Elements())
                 {
                     string resourceKey = null;
                     foreach (XAttribute attrib in resource.Attributes())
