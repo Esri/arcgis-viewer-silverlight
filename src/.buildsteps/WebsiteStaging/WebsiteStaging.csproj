@@ -131,9 +131,12 @@ if exist "%25VS120COMNTOOLS%25" (
 REM compile and package App Builder website
 msbuild "$(ProjectDir)..\..\Builder\ESRI.ArcGIS.Mapping.Builder.Web\ESRI.ArcGIS.Mapping.Builder.Web.csproj" /t:Package /p:Configuration=$(ConfigurationName) /p:Platform=$(PlatformName) /p:BuildProjectReferences=false
 
+SET insertConfig=true
+
 REM if Default Viewer's Tools.xml is already present, preserve a copy
 if exist "$(ProjectDir)..\..\..\output\Builder\Templates\Default\Config\Tools.xml" (
     xcopy "$(ProjectDir)..\..\..\output\Builder\Templates\Default\Config\Tools.xml" "$(ProjectDir)..\..\..\output" /i /f /y
+    SET insertConfig=false
 )
 
 REM Copy Builder website to output directory
@@ -147,8 +150,11 @@ if exist "$(ProjectDir)..\..\..\output\Tools.xml" (
 
 REM add search tool to Viewer and Builder config.  Need to do it here and not as part of Search Tool build because Builder has an 
 REM explicit dependency on it.
-call "$(ProjectDir)..\..\..\build\addins\InsertAddInConfig_Viewer.bat" "$(ProjectDir)..\..\..\" "$(ProjectDir)..\..\AddIns\Tools\SearchTool\ViewerConfig.xml"
-call "$(ProjectDir)..\..\..\build\addins\InsertAddInConfig_Builder.bat" "$(ProjectDir)..\..\..\" "$(ProjectDir)..\..\AddIns\Tools\SearchTool\BuilderConfig.xml"</PreBuildEvent>
+call "$(ProjectDir)..\..\..\build\addins\InsertAddInConfig_Builder.bat" "$(ProjectDir)..\..\..\" "$(ProjectDir)..\..\AddIns\Tools\SearchTool\BuilderConfig.xml"
+
+if [%25insertConfig%25]==[true] (
+    call "$(ProjectDir)..\..\..\build\addins\InsertAddInConfig_Viewer.bat" "$(ProjectDir)..\..\..\" "$(ProjectDir)..\..\AddIns\Tools\SearchTool\ViewerConfig.xml"
+)</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
