@@ -268,7 +268,8 @@ namespace ESRI.ArcGIS.Mapping.Controls.Utils
                     container.IsOpen = false;
 
                 if (featureLayer.LayerInfo.GeometryType == GeometryType.Polygon
-                    || featureLayer.LayerInfo.GeometryType == GeometryType.Polyline)
+                    || featureLayer.LayerInfo.GeometryType == GeometryType.Polyline
+                    || featureLayer.LayerInfo.GeometryType == GeometryType.MultiPoint)
                 {
                     EditGeometry(graphic, featureLayer);
                 }

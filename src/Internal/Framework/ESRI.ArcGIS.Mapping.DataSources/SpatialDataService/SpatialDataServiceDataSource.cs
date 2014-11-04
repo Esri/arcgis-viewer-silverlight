@@ -58,6 +58,9 @@ namespace ESRI.ArcGIS.Mapping.DataSources.SpatialDataService
                         case "esriGeometryPoint":
                             GeometryType = GeometryType.Point;
                             break;
+                        case "esriGeometryMultiPoint":
+                            GeometryType = GeometryType.MultiPoint;
+                            break;
                         case "esriGeometryPolyline":
                             GeometryType = GeometryType.Polyline;
                             break;

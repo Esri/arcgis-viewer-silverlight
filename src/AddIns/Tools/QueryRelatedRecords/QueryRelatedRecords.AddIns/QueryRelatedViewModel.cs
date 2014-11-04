@@ -442,7 +442,7 @@ namespace QueryRelatedRecords.AddIns
                 Symbol test = new SimpleMarkerSymbol();
 
                 // Set the renderers to a "temporary" look for the temp Layer
-                if (temporaryLayer.LayerInfo.GeometryType == GeometryType.Point)
+                if (temporaryLayer.LayerInfo.GeometryType == GeometryType.Point || temporaryLayer.LayerInfo.GeometryType == GeometryType.MultiPoint)
                     temporaryLayer.Renderer = new SimpleRenderer()
                    {
                        Symbol = new MarkerSymbol() { ControlTemplate = template as ControlTemplate, OffsetX = 10, OffsetY = 10 }
