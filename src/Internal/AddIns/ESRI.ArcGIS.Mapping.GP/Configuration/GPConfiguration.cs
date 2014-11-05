@@ -384,6 +384,11 @@ namespace ESRI.ArcGIS.Mapping.GP
                                     layerConfig.GeometryType = ESRI.ArcGIS.Mapping.Core.GeometryType.Point;
                                     layerConfig.HelpText = Resources.Strings.DrawPoint;
                                 }
+                                else if (frs.GeometryType == "esriGeometryMultipoint")
+                                {
+                                    layerConfig.GeometryType = ESRI.ArcGIS.Mapping.Core.GeometryType.MultiPoint;
+                                    layerConfig.HelpText = Resources.Strings.DrawPoint;
+                                }
                                 #region Layer with field info, geometry type and renderer
                                 GraphicsLayer layer = new GraphicsLayer();
                                 if (frs.Fields != null && frs.Fields.Length > 0)

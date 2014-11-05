@@ -15,6 +15,7 @@ using ESRI.ArcGIS.Mapping.Core;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using ESRI.ArcGIS.Client.Extensibility;
+using ESRI.ArcGIS.Client.Geometry;
 namespace ESRI.ArcGIS.Mapping.GP.ParameterSupport
 {
     public class SketchLayerParameter : FeatureLayerParameterBase
@@ -96,8 +97,29 @@ namespace ESRI.ArcGIS.Mapping.GP.ParameterSupport
             #endregion
 
             #region Add geometry to layer
-            Graphic g = new Graphic() { Geometry = geometry };
-            layer.Graphics.Add(g);
+            if (config.GeometryType == Core.GeometryType.MultiPoint) // Special handling for MultiPoint geometry
+            {
+                if (layer.Graphics.Count == 0) 
+                {
+                    // Create a new MultiPoint geometry and add the passed-in point to it
+                    var multipoint = new MultiPoint() { SpatialReference = geometry.SpatialReference };
+                    multipoint.Points.Add((MapPoint)geometry);
+                    var g = new Graphic() { Geometry = multipoint };
+                    layer.Graphics.Add(g);
+                }
+                else
+                {
+                    // Get the sketch graphic's MultiPoint geometry and add the passed-in point to it
+                    var multipoint = (MultiPoint)layer.Graphics[0].Geometry;
+                    multipoint.Points.Add((MapPoint)geometry);
+                    layer.Refresh();
+                }
+            }
+            else
+            {
+                Graphic g = new Graphic() { Geometry = geometry };
+                layer.Graphics.Add(g);
+            }
             #endregion
         }
 
@@ -125,7 +147,8 @@ namespace ESRI.ArcGIS.Mapping.GP.ParameterSupport
                         if (Map == null) return;
                         if (flConfig.GeometryType == ESRI.ArcGIS.Mapping.Core.GeometryType.Polyline)
                             Draw.DrawMode = DrawMode.Polyline;
-                        else if (flConfig.GeometryType == ESRI.ArcGIS.Mapping.Core.GeometryType.Point)
+                        else if (flConfig.GeometryType == ESRI.ArcGIS.Mapping.Core.GeometryType.Point
+                            || flConfig.GeometryType == ESRI.ArcGIS.Mapping.Core.GeometryType.MultiPoint)
                             Draw.DrawMode = DrawMode.Point;
                         else if (flConfig.GeometryType == ESRI.ArcGIS.Mapping.Core.GeometryType.Polygon)
                             Draw.DrawMode = DrawMode.Polygon;
@@ -153,6 +176,7 @@ namespace ESRI.ArcGIS.Mapping.GP.ParameterSupport
                             };
                             break;
                         case ESRI.ArcGIS.Mapping.Core.GeometryType.Point:
+                        case ESRI.ArcGIS.Mapping.Core.GeometryType.MultiPoint:
                             btn.Content = new Image()
                             {
                                 Source = new BitmapImage(new Uri("/ESRI.ArcGIS.Mapping.GP;component/Images/DrawPoint16.png", UriKind.Relative)),

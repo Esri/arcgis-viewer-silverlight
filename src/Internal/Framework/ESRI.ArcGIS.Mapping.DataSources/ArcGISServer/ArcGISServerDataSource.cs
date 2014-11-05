@@ -354,7 +354,7 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
                                 case "esriGeometryPoint":
                                     GeometryType = GeometryType.Point;
                                     break;
-                                case "esriGeometryMultiPoint":
+                                case "esriGeometryMultipoint":
                                     GeometryType = GeometryType.MultiPoint;
                                     break;
                                 case "esriGeometryPolyline":
