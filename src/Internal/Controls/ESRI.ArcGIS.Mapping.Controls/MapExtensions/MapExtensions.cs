@@ -19,6 +19,7 @@ using ESRI.ArcGIS.Mapping.Core.DataSources;
 using ESRI.ArcGIS.Mapping.DataSources;
 using esriControlsResources = ESRI.ArcGIS.Mapping.Controls.Resources;
 using System.Windows;
+using ESRI.ArcGIS.Client.Toolkit.DataSources;
 
 namespace ESRI.ArcGIS.Mapping.Controls
 {
@@ -385,10 +386,9 @@ namespace ESRI.ArcGIS.Mapping.Controls
         private static IEnumerable<Layer> FlattenLayers(this IEnumerable<Layer> layers, GroupLayer parent = null)
         {
             LayerCollection flattenedLayers = new LayerCollection();
-
             foreach (Layer layer in layers)
             {
-                if (layer is GroupLayer)
+                if (layer is GroupLayer && !(layer is KmlLayer))
                 {
                     // Flatten group layers
                     GroupLayer groupLayer = (GroupLayer)layer;
