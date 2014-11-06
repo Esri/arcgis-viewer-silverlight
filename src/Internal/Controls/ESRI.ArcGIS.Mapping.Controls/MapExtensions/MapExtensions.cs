@@ -152,17 +152,20 @@ namespace ESRI.ArcGIS.Mapping.Controls
                    ESRI.ArcGIS.Mapping.Core.LayerExtensions.SetUsesBingAppID((ESRI.ArcGIS.Client.Bing.TileLayer) layer, true);
 
                 layer.ProcessWebMapProperties(e.DocumentValues);
+                var isBasemapLayer = Document.GetIsBaseMap(layer);
 
-                // Check whether any layers flagged for adding to the map have the same ID as the current one.  Layers
-                // with the same ID represent feature collections that show up as part of the same layer in the online
-                // viewers, but are actually serialized as separate layers.
-                if (!layers.Any(l => l.ID == layer.ID 
+                if (isBasemapLayer)
+                {
+                    basemapLayers.Add(layer);
+                    layers.Add(layer);
+                }
+                // Check whether any graphics layers flagged for adding to the map have the same ID as the current one.  
+                // Graphics layers with the same ID represent feature collections that show up as part of the same layer 
+                // in the online viewers, but are actually serialized as separate layers.
+                else if (!(layer is GraphicsLayer) || !layers.Any(l => l.ID == layer.ID 
                 || l.DisplayName == layer.DisplayName 
                 || featureCollectionLayerNames.Contains(layer.DisplayName)))
                 {
-                    if ((bool)(layer.GetValue(ESRI.ArcGIS.Client.WebMap.Document.IsBaseMapProperty)))
-                        basemapLayers.Add(layer);
-
                     layers.Add(layer);
                 }
                 else // Layer belongs to a multi-layer feature collection.  Combine with layer already included in the list.
