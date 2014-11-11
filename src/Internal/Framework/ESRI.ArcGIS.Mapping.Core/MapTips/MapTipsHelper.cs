@@ -16,6 +16,7 @@ using System.Windows.Data;
 using ESRI.ArcGIS.Client;
 using ESRI.ArcGIS.Client.Extensibility;
 using ESRI.ArcGIS.Client.FeatureService;
+using System.Xml.Linq;
 
 namespace ESRI.ArcGIS.Mapping.Core
 {
@@ -270,7 +271,7 @@ namespace ESRI.ArcGIS.Mapping.Core
                             content.AppendFormat(@"<Grid Grid.Row=""{0}""><TextBlock Grid.Column=""0"" Text=""{1}"" 
                                                 Margin=""5,2"" Opacity="".6"" VerticalAlignment=""Center"" 
                                                 TextWrapping=""Wrap"" /></Grid>",
-                                numRows - 1, field.DisplayName);
+                                numRows - 1, PopupInfo.SafeXML(field.DisplayName));
                         }
 
                         // Process this field regardless of value. We need to create a control that has binding so that as
