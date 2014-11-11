@@ -92,10 +92,11 @@ namespace ESRI.ArcGIS.Mapping.Controls
             {
                 if (IdentityManager.Current != null)
                 {
+                    var options = new IdentityManager.GenerateTokenOptions() { ProxyUrl = ProxyUrl };
                     // Authenticate against ArcGIS Online/Portal to retrieve user token
                     IdentityManager.Credential cred =
                         await IdentityManager.Current.GenerateCredentialTaskAsync(
-                        portalUrl, viewModel.Username, viewModel.Password);
+                        portalUrl, viewModel.Username, viewModel.Password, options);
 
                     if (cred != null)
                     {

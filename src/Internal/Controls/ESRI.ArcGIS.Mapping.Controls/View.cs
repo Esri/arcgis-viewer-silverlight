@@ -1428,6 +1428,15 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 return;
             }
 
+            var uri = new Uri(url);
+            var tree = uri.AbsolutePath.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            if (tree[tree.Length - 2].ToLower() == "services" && tree[tree.Length - 3].ToLower() == "rest")
+            {
+                // Challenge is coming from a secure folder.  Do not prompt.
+                callback(null, null);
+                return;
+            }
+
             // In some cases, multiple challenges are raised for resources at the same endpoint (e.g. tiles from 
             // hosted tile services in ArcGIS Online).  To keep the user from being prompted to login multiple times
             // in succession, each new credential is cached for a half-second.  If another challenge is raised
@@ -1492,9 +1501,10 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 catch { }
             }
 
+            var proxyUrl = options != null ? options.ProxyUrl : null;
             // Sign in suppression checks passed.  Try to authenticate using existing credentials
             // Try existing credentials
-            IdentityManager.Credential cred = await ApplicationHelper.TryExistingCredentials(url);
+            IdentityManager.Credential cred = await ApplicationHelper.TryExistingCredentials(url, proxyUrl);
             if (cred != null)
             {
                 // The existing credentials were sufficient for authentication.
@@ -1518,7 +1528,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
             // the browser has authenticated the user (e.g. using PKI or IWA auth)
             try
             {
-                cred = await IdentityManager.Current.GenerateCredentialTaskAsyncEx(url);
+                cred = await IdentityManager.Current.GenerateCredentialTaskAsyncEx(url, options);
             }
             catch { } // Swallow authorization exception
 
@@ -1532,9 +1542,9 @@ namespace ESRI.ArcGIS.Mapping.Controls
 
             SignInCommand signInCommand = null;
             if (url.IsPortalUrl()) // Sign into ArcGIS portal
-                signInCommand = new SignInToAGSOLCommand();
+                signInCommand = new SignInToAGSOLCommand() { ProxyUrl = proxyUrl };
             else // Sign into ArcGIS Server
-                signInCommand = new SignInToServerCommand() { Url = url };
+                signInCommand = new SignInToServerCommand() { Url = url, ProxyUrl = proxyUrl };
 
             signInCommand.SignedIn += (o, e) =>
             {

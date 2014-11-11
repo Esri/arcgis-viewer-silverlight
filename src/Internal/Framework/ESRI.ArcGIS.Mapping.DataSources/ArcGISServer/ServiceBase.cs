@@ -62,10 +62,10 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
             builder.Query = Utils.GetQueryParameters(Uri);
             finalUrl = builder.Uri;
 
-            finalUrl = ESRI.ArcGIS.Mapping.Core.Utility.CreateUriWithProxy(ProxyUrl, finalUrl);
-
             if (webClient == null)
                 webClient = new ArcGISWebClient();
+            webClient.ProxyUrl = ProxyUrl;
+
             try
             {
                 ArcGISWebClient.DownloadStringCompletedEventArgs result = await webClient.DownloadStringTaskAsync(finalUrl, userState);

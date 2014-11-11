@@ -129,10 +129,11 @@ namespace ESRI.ArcGIS.Mapping.Controls
 
                 if (IdentityManager.Current != null)
                 {
+                    var options = new IdentityManager.GenerateTokenOptions() { ProxyUrl = ProxyUrl };
                     // Authenticate against the server to retrieve user token
                     IdentityManager.Credential cred =
                         await IdentityManager.Current.GenerateCredentialTaskAsync(
-                        credentialUrl, viewModel.Username, viewModel.Password);
+                        credentialUrl, viewModel.Username, viewModel.Password, options);
 
                     if (cred != null)
                     {

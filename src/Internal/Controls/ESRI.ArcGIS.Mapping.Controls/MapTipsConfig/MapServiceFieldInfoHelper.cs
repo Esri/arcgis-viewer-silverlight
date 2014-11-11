@@ -49,9 +49,9 @@ namespace ESRI.ArcGIS.Mapping.Controls
             if (webClient.IsBusy)
                 webClient.CancelAsync();
 
-            Uri uri = ESRI.ArcGIS.Mapping.Core.Utility.CreateUriWithProxy(ProxyUrl, url);            
+            webClient.ProxyUrl = ProxyUrl;
             ArcGISWebClient.DownloadStringCompletedEventArgs result =  
-                await webClient.DownloadStringTaskAsync(uri, userState);
+                await webClient.DownloadStringTaskAsync(new Uri(url), userState);
             processPre10LayerInfoResult(result);
         }
 
@@ -156,12 +156,11 @@ namespace ESRI.ArcGIS.Mapping.Controls
             if (cancelSingleRequests)
                 return;
             string layerUrl = string.Format("{0}/{1}?f=pjson", Url, layerID);
-            ArcGISWebClient webClient = new ArcGISWebClient();
+            ArcGISWebClient webClient = new ArcGISWebClient() { ProxyUrl = ProxyUrl };
             singleRequestWebClients.Add(webClient);
 
-            Uri uri = ESRI.ArcGIS.Mapping.Core.Utility.CreateUriWithProxy(ProxyUrl, layerUrl);
             ArcGISWebClient.DownloadStringCompletedEventArgs result =
-                await webClient.DownloadStringTaskAsync(uri, userState);
+                await webClient.DownloadStringTaskAsync(new Uri(layerUrl), userState);
             processLayerInfoResult(result);
         }
 

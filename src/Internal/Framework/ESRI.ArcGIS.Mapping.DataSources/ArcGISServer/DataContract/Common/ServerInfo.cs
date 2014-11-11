@@ -53,8 +53,18 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
         public AuthenticationInfo AuthenticationInfo { get; set; }
 
         /// <summary>
-        /// The URL used to retrieve server info
+        /// The URL used to retrieve server info, including any necessary query string parameters
         /// </summary>
         public string Url { get; set; }
+
+        /// <summary>
+        /// The URL used to retrieve server info, excluding query string parameters
+        /// </summary>
+        public string BaseUrl { get; set; }
+
+        /// <summary>
+        /// The URL of a proxy service used to retrieve server info
+        /// </summary>
+        public string ProxyUrl { get; set; }
     }
 }

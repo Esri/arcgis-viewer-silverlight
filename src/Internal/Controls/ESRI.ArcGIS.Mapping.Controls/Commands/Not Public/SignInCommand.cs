@@ -51,6 +51,20 @@ namespace ESRI.ArcGIS.Mapping.Controls
                     WindowType.DesignTimeFloating);
         }
 
+        private string _proxyUrl;
+        /// <summary>
+        /// Gets or sets the URL to the ArcGIS Server to sign into
+        /// </summary>
+        public string ProxyUrl
+        {
+            get { return _proxyUrl; }
+            set
+            {
+                _proxyUrl = value;
+                RaisePropertyChanged("ProxyUrl");
+            }
+        }
+
         #region Command Handling - canSignIn, onSignIn, onCancel
 
         /// <summary>
