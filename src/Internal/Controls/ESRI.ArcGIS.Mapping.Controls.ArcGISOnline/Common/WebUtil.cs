@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Windows.Threading;
 using System.Windows.Browser;
 using System.Text;
+using ESRI.ArcGIS.Client;
 
 namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
 {
@@ -43,7 +44,7 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
     /// Helper method to read from a web service asynchronously.
     /// </summary>
     public static void OpenReadAsync(Uri uri, object userState, EventHandler<OpenReadEventArgs> callback,
-        bool forceBrowserAuth = false)
+        bool forceBrowserAuth = false, string proxyUrl = null)
     {
         System.Diagnostics.Debug.WriteLine(uri.ToString());
         if (m_browserAuthInProgress)
@@ -97,9 +98,9 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
         }
     }
 
-    private static void doOpenRead(Uri uri, object userState, EventHandler<OpenReadEventArgs> callback)
+    private static void doOpenRead(Uri uri, object userState, EventHandler<OpenReadEventArgs> callback, string proxyUrl = null)
     {
-        WebClient wc = new WebClient();
+        var wc = new ArcGISWebClient() { ProxyUrl = proxyUrl };
         wc.OpenReadCompleted += (sender, e) =>
         {
             // if the request failed because of a security exception - missing clientaccesspolicy file -
@@ -114,16 +115,15 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
                     return;
                 }
 
-                wc = new WebClient();
+                wc = new ArcGISWebClient() { ProxyUrl = ArcGISOnlineEnvironment.ConfigurationUrls.ProxyServer };
                 wc.OpenReadCompleted += (sender2, e2) =>
                 {
                     handleQueuedRequests();
                     callback(sender, new OpenReadEventArgs(e2) { UsedProxy = true });
                 };
 
-                uri = new Uri(ArcGISOnlineEnvironment.ConfigurationUrls.ProxyServer + "?" + uri.ToString());
                 System.Diagnostics.Debug.WriteLine(uri.ToString());
-                wc.OpenReadAsync(uri, userState);
+                wc.OpenReadAsync(uri, null, ArcGISWebClient.HttpMethods.Auto, userState);
             }
             else
             {
@@ -131,7 +131,7 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
                 callback(sender, new OpenReadEventArgs(e));
             }
         };
-        wc.OpenReadAsync(uri, userState);
+        wc.OpenReadAsync(uri, null, ArcGISWebClient.HttpMethods.Auto, userState);
     }
 
     private static void handleQueuedRequests()
@@ -363,7 +363,7 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
     public Stream Result { get; set; }
     public bool UsedProxy { get; set; }
 
-    public OpenReadEventArgs(OpenReadCompletedEventArgs e)
+    public OpenReadEventArgs(ArcGISWebClient.OpenReadCompletedEventArgs e)
     {
         if (e != null)
         {
