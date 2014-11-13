@@ -94,7 +94,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
                         build = "0";
                 }
 
-                return string.Format("3.2.0.{0}", build);
+                return string.Format("3.3.0.{0}", build);
             }
 
             return null;
