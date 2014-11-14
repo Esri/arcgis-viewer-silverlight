@@ -1132,19 +1132,75 @@ namespace ESRI.ArcGIS.Mapping.Controls
 
         void l_InitializationFailed(object sender, EventArgs e)
         {
-            Layer lay = sender as Layer;
-            if (lay != null)
+            Layer layer = sender as Layer;
+            if (layer != null)
             {
-                if (lay.InitializationFailure != null)
+                // Try proxy URL if defined for application
+                if (!string.IsNullOrEmpty(MapApplication.Current.Urls.ProxyUrl))
                 {
-                    NotificationPanel.Instance.AddNotification(ESRI.ArcGIS.Mapping.Controls.Resources.Strings.LayerInitFailure, lay.InitializationFailure.Message != null ? lay.InitializationFailure.Message : ESRI.ArcGIS.Mapping.Controls.Resources.Strings.LayerNotInitialized, lay.InitializationFailure.ToString(), MessageType.Error);
-                    lay.SetValue(ESRI.ArcGIS.Client.Extensibility.LayerExtensions.ErrorMessageProperty, lay.InitializationFailure.Message);
+                    dynamic dLayer = layer;
+                    try
+                    {
+                        // Try accessing property named "ProxyUrl"
+                        if (string.IsNullOrEmpty(dLayer.ProxyUrl))
+                        {
+                            // Set proxy
+                            dLayer.ProxyUrl = MapApplication.Current.Urls.ProxyUrl;
+
+                            // Re-initialize layer by re-applying URL
+                            dLayer.Url = getNewUrl(dLayer);
+                            return;
+                        }
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            // Try accessing property named "ProxyURL"
+                            if (string.IsNullOrEmpty(dLayer.ProxyURL))
+                            {
+                                // Set proxy
+                                dLayer.ProxyURL = MapApplication.Current.Urls.ProxyUrl;
+
+                                // Re-initialize layer by re-applying URL
+                                dLayer.Url = getNewUrl(dLayer);
+                                return;
+                            }
+                        }
+                        catch { }
+                    }
+                }
+                if (layer.InitializationFailure != null)
+                {
+                    NotificationPanel.Instance.AddNotification(ESRI.ArcGIS.Mapping.Controls.Resources.Strings.LayerInitFailure, layer.InitializationFailure.Message != null ? layer.InitializationFailure.Message : ESRI.ArcGIS.Mapping.Controls.Resources.Strings.LayerNotInitialized, layer.InitializationFailure.ToString(), MessageType.Error);
+                    layer.SetValue(ESRI.ArcGIS.Client.Extensibility.LayerExtensions.ErrorMessageProperty, layer.InitializationFailure.Message);
                 }
                 else
-                    lay.SetValue(ESRI.ArcGIS.Client.Extensibility.LayerExtensions.ErrorMessageProperty, ESRI.ArcGIS.Mapping.Controls.Resources.Strings.LayerNotInitialized);
+                    layer.SetValue(ESRI.ArcGIS.Client.Extensibility.LayerExtensions.ErrorMessageProperty, ESRI.ArcGIS.Mapping.Controls.Resources.Strings.LayerNotInitialized);
 
-                lay.InitializationFailed -= layerInitFailed;
+                layer.InitializationFailed -= layerInitFailed;
             }
+        }
+
+        private dynamic getNewUrl(dynamic dLayer)
+        {
+            var url = dLayer.Url;
+            string urlString = url as string;
+            var urlIsString = true;
+
+            if (urlString == null) // assume Uri
+            {
+                urlIsString = false;
+                urlString = ((Uri)url).ToString();
+            }
+
+            var connector = urlString.Contains('?') ? "&" : "?";
+            urlString = string.Format("{0}{1}r={2}", urlString, connector, DateTime.Now.Ticks);
+
+            if (!urlIsString)
+                url = new Uri(urlString);
+
+            return url;
         }
 
         private void AttachToControlEvents()
@@ -2629,7 +2685,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
             if (e.Error == null && e.Map != null)
             {
                 attemptingReload = false;
-                Map.InitializeFromWebMap(e);
+                Map.InitializeFromWebMap(e, l_InitializationFailed);
                 Map.GetMapUnitsAsync(SetScaleBarMapUnit, getMapUnitsFailed);
 
                 doc.GetItemCompleted -= LoadWebMap_GetItemCompleted;
