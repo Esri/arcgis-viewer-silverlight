@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Windows.Threading;
 using System.Windows.Browser;
 using System.Text;
+using ESRI.ArcGIS.Client;
 
 namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
 {
@@ -99,7 +100,7 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
 
     private static void doOpenRead(Uri uri, object userState, EventHandler<OpenReadEventArgs> callback)
     {
-        WebClient wc = new WebClient();
+        var wc = new ArcGISWebClient();
         wc.OpenReadCompleted += (sender, e) =>
         {
             // if the request failed because of a security exception - missing clientaccesspolicy file -
@@ -114,16 +115,16 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
                     return;
                 }
 
-                wc = new WebClient();
+                wc = new ArcGISWebClient();
                 wc.OpenReadCompleted += (sender2, e2) =>
                 {
                     handleQueuedRequests();
                     callback(sender, new OpenReadEventArgs(e2) { UsedProxy = true });
                 };
 
-                uri = new Uri(ArcGISOnlineEnvironment.ConfigurationUrls.ProxyServer + "?" + uri.ToString());
+                wc.ProxyUrl = ArcGISOnlineEnvironment.ConfigurationUrls.ProxyServer;
                 System.Diagnostics.Debug.WriteLine(uri.ToString());
-                wc.OpenReadAsync(uri, userState);
+                wc.OpenReadAsync(uri, null, ArcGISWebClient.HttpMethods.Auto, userState);
             }
             else
             {
@@ -131,7 +132,7 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
                 callback(sender, new OpenReadEventArgs(e));
             }
         };
-        wc.OpenReadAsync(uri, userState);
+        wc.OpenReadAsync(uri, null, ArcGISWebClient.HttpMethods.Auto, userState);
     }
 
     private static void handleQueuedRequests()
@@ -147,7 +148,7 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
     /// <summary>
     /// Helper method to download a string from a web service asynchronously.
     /// </summary>
-    public static void DownloadStringAsync(string url, object userState, DownloadStringCompletedEventHandler callback)
+    public static void DownloadStringAsync(string url, object userState, EventHandler<ArcGISWebClient.DownloadStringCompletedEventArgs> callback)
     {
       DownloadStringAsync(new Uri(url), userState, callback);
     }
@@ -155,13 +156,13 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
     /// <summary>
     /// Helper method to download a string from a web service asynchronously.
     /// </summary>
-    public static void DownloadStringAsync(Uri uri, object userState, DownloadStringCompletedEventHandler callback)
+    public static void DownloadStringAsync(Uri uri, object userState, EventHandler<ArcGISWebClient.DownloadStringCompletedEventArgs> callback)
     {
       System.Diagnostics.Debug.WriteLine(uri.ToString());
-      WebClient wc = new WebClient();
+      var wc = new ArcGISWebClient();
 
       wc.DownloadStringCompleted += callback;
-      wc.DownloadStringAsync(uri, userState);
+      wc.DownloadStringAsync(uri, null, ArcGISWebClient.HttpMethods.Auto, userState);
     }
 
     /// <summary>
@@ -363,7 +364,7 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
     public Stream Result { get; set; }
     public bool UsedProxy { get; set; }
 
-    public OpenReadEventArgs(OpenReadCompletedEventArgs e)
+    public OpenReadEventArgs(ArcGISWebClient.OpenReadCompletedEventArgs e)
     {
         if (e != null)
         {
