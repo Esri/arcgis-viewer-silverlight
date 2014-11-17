@@ -177,7 +177,7 @@ namespace SearchTool
         /// <summary>
         /// Gets a display name for the specified object
         /// </summary>
-        public static string GetDisplayName(this object o)
+        public static string GetDisplayNameFromAttribute(this object o)
         {
             Type t = o.GetType();
             DisplayNameAttribute attribute = Attribute.GetCustomAttribute(
