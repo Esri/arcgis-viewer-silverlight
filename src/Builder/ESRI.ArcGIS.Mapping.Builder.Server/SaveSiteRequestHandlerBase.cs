@@ -22,11 +22,12 @@ namespace ESRI.ArcGIS.Mapping.Builder.Server
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(Request.InputStream);
             XmlElement rootElem = xDoc.DocumentElement;
+            string siteTitle = rootElem.GetAttribute("Title");
             
             SitePublishInfo info = Utils.GetSitePublishInfoFromXml(rootElem);
             try
             {
-                SaveSite(siteId, info);
+                SaveSite(siteId, siteTitle, info);
             }
             catch (Exception ex)
             {
@@ -34,6 +35,6 @@ namespace ESRI.ArcGIS.Mapping.Builder.Server
             }
         }
 
-        protected abstract void SaveSite(string siteId, SitePublishInfo info);
+        protected abstract void SaveSite(string siteId, string newTitle, SitePublishInfo info);
     }
 }
