@@ -222,7 +222,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 }
             }
             info.Fields = fieldInfos;
-            if (fieldInfos.Count > 1)
+            if (fieldInfos.Count > 0)
                 singleLayerRequestCompleted(info, e);
             else
                 singleLayerRequestCompleted(null, e);
