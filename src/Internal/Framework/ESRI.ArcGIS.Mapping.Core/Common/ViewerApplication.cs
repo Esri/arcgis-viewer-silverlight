@@ -157,6 +157,13 @@ namespace ESRI.ArcGIS.Mapping.Core
             set { bingMapsAppId = value; RaisePropertyChanged("BingMapsAppId"); }
         }
 
+        private string portalAppId;
+        public string PortalAppId
+        {
+            get { return portalAppId; }
+            set { portalAppId = value; RaisePropertyChanged("PortalAppId"); }
+        }
+
         private static WebMapSettings webMapSettings = new WebMapSettings();
         public static WebMapSettings WebMapSettings { get { return webMapSettings; } }
 
@@ -177,6 +184,7 @@ namespace ESRI.ArcGIS.Mapping.Core
         private const string GEOMETRYSERVICE = "GeometryService";
         private const string PROXY = "Proxy";
         private const string BINGMAPSPAPPID = "BingMapsAppId";
+        private const string PORTALAPPID = "PortalAppId";
 
 #region WebMap element constants
         private const string WEBMAP = "WebMap";
@@ -260,6 +268,10 @@ namespace ESRI.ArcGIS.Mapping.Core
             elem = rootElement.Element(BINGMAPSPAPPID);
             if (elem != null)
                 BingMapsAppId = elem.Value;
+
+            elem = rootElement.Element(PORTALAPPID);
+            if (elem != null)
+                PortalAppId = elem.Value;
 
             // Web map settings
             elem = rootElement.Element(WEBMAP);
@@ -422,6 +434,9 @@ namespace ESRI.ArcGIS.Mapping.Core
 
             rootElement.Add(new XElement(BINGMAPSPAPPID) { 
                 Value = string.IsNullOrEmpty(BingMapsAppId) ? string.Empty : BingMapsAppId });
+
+            rootElement.Add(new XElement(PORTALAPPID) {
+                Value = string.IsNullOrEmpty(PortalAppId) ? string.Empty : PortalAppId });
 
             XElement webMapElem = new XElement(WEBMAP); 
             rootElement.Add(webMapElem);

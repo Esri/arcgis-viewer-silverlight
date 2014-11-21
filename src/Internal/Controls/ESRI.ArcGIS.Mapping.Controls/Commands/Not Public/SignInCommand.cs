@@ -158,13 +158,19 @@ namespace ESRI.ArcGIS.Mapping.Controls
         /// <summary>
         /// Executes sign-in failure logic
         /// </summary>
-        protected virtual void onSignInFailed(Exception ex)
+        protected virtual void onSignInFailed(Exception ex, bool showWindow = false)
         {
-            if (viewModel == null)
-                return;
+            var message = StringResourcesManager.Instance.Get("SignInFailed");
+            if (viewModel != null)
+            {
+                viewModel.SignInError = message;
+                viewModel.SigningIn = false;
+            }
 
-            viewModel.SignInError = StringResourcesManager.Instance.Get("SignInFailed");
-            viewModel.SigningIn = false;
+            if (showWindow)
+            {
+                MessageBoxDialog.Show(message, StringResourcesManager.Instance.Get("ErrorCaption"), MessageType.Error, MessageBoxButton.OK);
+            }
 
             Logger.Instance.LogError(ex);
         }

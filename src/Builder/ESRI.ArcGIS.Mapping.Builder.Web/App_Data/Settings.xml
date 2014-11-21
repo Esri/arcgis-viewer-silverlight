@@ -26,4 +26,5 @@
   <GeometryService>http://tasks.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer</GeometryService>
   <Proxy></Proxy>
   <BingMapsAppId></BingMapsAppId>
+  <PortalAppId></PortalAppId>
 </Builder>

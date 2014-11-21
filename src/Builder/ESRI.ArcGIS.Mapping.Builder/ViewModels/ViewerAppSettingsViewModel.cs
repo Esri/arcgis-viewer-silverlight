@@ -40,6 +40,7 @@ namespace ESRI.ArcGIS.Mapping.Builder
         private bool canApplyCancel(object commandParameter)
         {
             return ViewerApplication != null && (BingMapsAppId != ViewerApplication.BingMapsAppId ||
+            PortalAppId != ViewerApplication.PortalAppId ||
             GeometryServiceUrl != ViewerApplication.GeometryService ||
             ArcGISOnlineSharing != ViewerApplication.ArcGISOnlineSharing ||
             ArcGISOnlineSecure != ViewerApplication.ArcGISOnlineSecure ||
@@ -67,6 +68,12 @@ namespace ESRI.ArcGIS.Mapping.Builder
                             }
                         }
                     }
+                }
+                if (ViewerApplication.PortalAppId != PortalAppId)
+                {
+                    if (View.Instance != null && View.Instance.ConfigurationStore != null)
+                        View.Instance.ConfigurationStore.PortalAppId = PortalAppId;
+                    ViewerApplication.PortalAppId = PortalAppId;
                 }
                 if (ViewerApplication.GeometryService != GeometryServiceUrl)
                 {
@@ -123,6 +130,7 @@ namespace ESRI.ArcGIS.Mapping.Builder
             if (ViewerApplication != null)
             {
                 BingMapsAppId = ViewerApplication.BingMapsAppId;
+                PortalAppId = ViewerApplication.PortalAppId;
                 GeometryServiceUrl = ViewerApplication.GeometryService;
                 ArcGISOnlineSharing = ViewerApplication.ArcGISOnlineSharing;
                 ArcGISOnlineSecure = ViewerApplication.ArcGISOnlineSecure;
@@ -165,6 +173,9 @@ namespace ESRI.ArcGIS.Mapping.Builder
                 Binding b = new Binding("BingMapsAppId") { Source = source.ViewerApplication };
                 b.Mode = BindingMode.OneWay;
                 BindingOperations.SetBinding(source, BingMapsAppIdProperty, b);
+                b = new Binding("PortalAppId") { Source = source.ViewerApplication };
+                b.Mode = BindingMode.OneWay;
+                BindingOperations.SetBinding(source, PortalAppIdProperty, b);
                 b = new Binding("GeometryService") { Source = source.ViewerApplication };
                 b.Mode = BindingMode.OneWay;
                 BindingOperations.SetBinding(source, GeometryServiceUrlProperty, b);
@@ -189,6 +200,16 @@ namespace ESRI.ArcGIS.Mapping.Builder
         // Using a DependencyProperty as the backing store for BingMapsAppId.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty BingMapsAppIdProperty =
             DependencyProperty.Register("BingMapsAppId", typeof(string), typeof(ViewerAppSettingsViewModel), new PropertyMetadata(OnChange));
+
+        public string PortalAppId
+        {
+            get { return (string)GetValue(PortalAppIdProperty); }
+            set { SetValue(PortalAppIdProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for PortalAppId.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PortalAppIdProperty =
+            DependencyProperty.Register("PortalAppId", typeof(string), typeof(ViewerAppSettingsViewModel), new PropertyMetadata(OnChange));
 
         public string GeometryServiceUrl
         {
