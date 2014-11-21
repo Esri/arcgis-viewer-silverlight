@@ -47,7 +47,7 @@ namespace SearchTool
             PagedResults.PageChanging += PagedResults_PageChanging;
             ResultsView = new ServiceSearchResultsView();
             InputView = new SingleLineSearchInputView();
-            Properties.SetDisplayName(this, this.GetDisplayName());
+            Properties.SetDisplayName(this, this.GetDisplayNameFromAttribute());
         }
 
         public static readonly DependencyProperty PortalProperty = DependencyProperty.Register(
@@ -77,9 +77,9 @@ namespace SearchTool
             {
                 // Initialize display name if portal is initialized.  Otherwise, listen for property changes
                 // and wait for portal initialization.
-                if (newPortal.IsInitialized && string.IsNullOrEmpty(Properties.GetDisplayName(provider)))
+                if (newPortal.IsInitialized && !provider.isDisplayNameInitialized())
                     provider.initDisplayName();
-                else
+                else if (!newPortal.IsInitialized)
                     newPortal.PropertyChanged += provider.Portal_PropertyChanged;
             }
 
@@ -272,10 +272,17 @@ namespace SearchTool
 
         #endregion
 
+        private bool isDisplayNameInitialized()
+        {
+            var name = Properties.GetDisplayName(this);
+            return !string.IsNullOrEmpty(name) && name != this.GetDisplayNameFromAttribute();
+        }
+
         // Initializes the search provider's display name based on the portal's name
         private void initDisplayName()
         {
-            string name = Portal.ArcGISPortalInfo.Name ?? Portal.ArcGISPortalInfo.PortalName;
+            string name = !string.IsNullOrEmpty(Portal.ArcGISPortalInfo.Name) ? Portal.ArcGISPortalInfo.Name : Portal.ArcGISPortalInfo.PortalName;
+            name = !string.IsNullOrEmpty(name) ? name : this.GetDisplayNameFromAttribute();
             Properties.SetDisplayName(this, name);
         }
     }

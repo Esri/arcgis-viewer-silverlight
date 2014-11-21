@@ -147,7 +147,7 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
     /// <summary>
     /// Helper method to download a string from a web service asynchronously.
     /// </summary>
-    public static void DownloadStringAsync(string url, object userState, DownloadStringCompletedEventHandler callback)
+    public static void DownloadStringAsync(string url, object userState, EventHandler<ArcGISWebClient.DownloadStringCompletedEventArgs> callback)
     {
       DownloadStringAsync(new Uri(url), userState, callback);
     }
@@ -155,13 +155,13 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
     /// <summary>
     /// Helper method to download a string from a web service asynchronously.
     /// </summary>
-    public static void DownloadStringAsync(Uri uri, object userState, DownloadStringCompletedEventHandler callback)
+    public static void DownloadStringAsync(Uri uri, object userState, EventHandler<ArcGISWebClient.DownloadStringCompletedEventArgs> callback)
     {
       System.Diagnostics.Debug.WriteLine(uri.ToString());
-      WebClient wc = new WebClient();
+      var wc = new ArcGISWebClient();
 
       wc.DownloadStringCompleted += callback;
-      wc.DownloadStringAsync(uri, userState);
+      wc.DownloadStringAsync(uri, null, ArcGISWebClient.HttpMethods.Auto, userState);
     }
 
     /// <summary>

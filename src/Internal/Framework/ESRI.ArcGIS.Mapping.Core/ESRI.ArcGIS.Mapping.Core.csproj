@@ -194,7 +194,6 @@
     <Compile Include="Symbols\CustomSymbolXamlWriter.cs" />
     <Compile Include="Symbols\GeometryConverter.cs" />
     <Compile Include="Common\GeometryServiceOperationHelper.cs" />
-    <Compile Include="ConfigurationStore\Locators\LocatorServiceMetaDataRetrievalHelper.cs" />
     <Compile Include="Common\Utility.cs" />
     <Compile Include="Configuration\ConfigurationStoreHelper.cs" />
     <Compile Include="CustomFields\DateTimeFieldValue.cs" />

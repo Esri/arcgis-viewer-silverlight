@@ -53,15 +53,6 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
                 Fault.Message = "Unable to copy website files " + status;
                 return false;
             }
-
-            // Apply app title to index.htm
-            var path = Path.Combine(targetSite.PhysicalPath, "index.htm");
-            var html = File.ReadAllText(path);
-            var encodedName = HttpUtility.HtmlEncode(targetSite.Title);
-            var defaultTitle = string.Format("<title>{0}</title>", Strings._ArcGISViewerForMicrosoftSilverlight_);
-            var newTitle = string.Format("<title>{0}</title>", encodedName);
-            html = html.Replace(defaultTitle, newTitle);
-            File.WriteAllText(path, html);
             
             return true;
         }
@@ -141,7 +132,7 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
             return true;
         }
 
-        public bool SaveConfigurationForSite(Site site, SitePublishInfo info, out FaultContract Fault)
+        public bool SaveConfigurationForSite(Site site, SitePublishInfo info, out FaultContract Fault, string newTitle = null)
         {
             Fault = null;
 
@@ -297,6 +288,35 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
 
             // Save a preview image
             PreviewImageManager.SavePreviewImageForSite(site.ID, info.PreviewImageBytes);
+
+            // Apply app title to index.htm
+
+            // Get path of home page
+            path = Path.Combine(site.PhysicalPath, "index.htm");
+            if (File.Exists(path)) // make sure it exists
+            {
+                var updateTitle = newTitle != null; // Check whether title needs to be updated or is being specified for the first time
+
+                // Determine title to be replaced and title to replace it with
+                var titleToReplace = updateTitle ? site.Title : Strings._ArcGISViewerForMicrosoftSilverlight_;
+                var replacementTitle = updateTitle ? newTitle : site.Title;
+
+                // HTML-encode new title
+                replacementTitle = HttpUtility.HtmlEncode(replacementTitle); 
+
+                // Format titles as HTML title elements
+                var currentTitleElement = string.Format("<title>{0}</title>", titleToReplace);
+                var newTitleElement = string.Format("<title>{0}</title>", replacementTitle);
+
+                // Get HTML for home page 
+                var html = File.ReadAllText(path);
+
+                // Insert title
+                html = html.Replace(currentTitleElement, newTitleElement);
+
+                // Save home page
+                File.WriteAllText(path, html);
+            }
 
             return true;
         }
