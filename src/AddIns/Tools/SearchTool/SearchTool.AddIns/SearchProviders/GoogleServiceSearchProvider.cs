@@ -50,7 +50,7 @@ namespace SearchTool
                 PageSize = 12,
                 Filter = (o) => { return ((SearchResultViewModel)o).IsInitialized; }
             };
-            Properties.SetDisplayName(this, this.GetDisplayName());
+            Properties.SetDisplayName(this, this.GetDisplayNameFromAttribute());
             ResultsView = new ServiceSearchResultsView();
             InputView = new SingleLineSearchInputView();
         }
