@@ -1470,9 +1470,6 @@ namespace ESRI.ArcGIS.Mapping.Controls
         private ThrottleTimer signInCancelledTimer; // Timer for suppressing challenges immediately after sign-in has been cancelled
         private bool signInCancelled; // Flag indicating whether a sign-in cancellation has just occurred
         private string signInCancelUrl; // URL for which sign-in was cancelled
-
-        private ThrottleTimer credentialCacheTimer; // Timer for suppressing challenges immediately after sign-in has completed
-        private IdentityManager.Credential cachedCredential; // Credential that was just retrieved from sign-in
         
         // Raised when an authentication challenge occurs in the application
         private async void OnChallenge(string url, Action<IdentityManager.Credential, Exception> callback,
@@ -1492,37 +1489,6 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 callback(null, null);
                 return;
             }
-
-            // In some cases, multiple challenges are raised for resources at the same endpoint (e.g. tiles from 
-            // hosted tile services in ArcGIS Online).  To keep the user from being prompted to login multiple times
-            // in succession, each new credential is cached for a half-second.  If another challenge is raised
-            // within a half second, and the domain of the current challenge matches that of the cached credential,
-            // then the cached credential is used.
-
-            // Initialize timer for clearing cached credential
-            if (credentialCacheTimer == null)
-            {
-                credentialCacheTimer = new ThrottleTimer(2000, () => cachedCredential = null);
-            }
-
-
-            // If there is a credential cached, then sign-in has just occurred.  Check to see if the saved 
-            // should also be used for this challenge
-            if (cachedCredential != null)
-            {
-                try
-                {
-                    // check whether the domain of the currently requested URL matches that of the cached credential
-                    if ((new Uri(url)).Domain().ToLower() == (new Uri(cachedCredential.Url).Domain().ToLower()))
-                    {
-                        // Domains match, so use the cached credential
-                        callback(cachedCredential, null);
-                        return;
-                    }
-                }
-                catch { }
-            }
-
 
             // Sometimes challenges are raised after sign-in is cancelled.  To avoid prompting the user after
             // cancellation, this timer will suppress challenges for two seconds.
@@ -1604,12 +1570,6 @@ namespace ESRI.ArcGIS.Mapping.Controls
 
             signInCommand.SignedIn += (o, e) =>
             {
-                // Temporarily store the credential and start the timer.  This allows this credential
-                // to be re-used if there is another challenge with the same domain within a couple 
-                // seconds of sign-in.
-                cachedCredential = e.Credential;
-                credentialCacheTimer.Invoke();
-
                 // Pass the retrieved credential to the callback
                 callback(e.Credential, null);
             };
