@@ -97,14 +97,14 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
             FeatureLayer layer = e.NewValue as FeatureLayer;
             if (layer != null && !(string.IsNullOrWhiteSpace(layer.Url)))
             {
-                ESRI.ArcGIS.Mapping.Controls.ArcGISOnline.SubLayerDescription.GetServiceInfoAsync(ESRI.ArcGIS.Mapping.Core.Utility.CreateUrlWithProxy(layer.ProxyUrl, layer.Url), (sender2, e2) =>
+                ESRI.ArcGIS.Mapping.Controls.ArcGISOnline.SubLayerDescription.GetServiceInfoAsync(layer.Url, (sender2, e2) =>
                 {
                     if (e2.Description != null && e2.Description.Fields != null && e2.Description.Fields.Length > 0)
                     {
                         ESRI.ArcGIS.Mapping.Controls.ArcGISOnline.Query query = new ESRI.ArcGIS.Mapping.Controls.ArcGISOnline.Query(new ESRI.ArcGIS.Mapping.Controls.ArcGISOnline.QueryDescription() { WhereClause = layer.Where });
                         o.QueryProperties = new ESRI.ArcGIS.Mapping.Controls.ArcGISOnline.DefineQueryControl.QueryWindowProperties() { Query = query, SubLayerDescription = e2.Description };
                     }
-                });
+                }, layer.ProxyUrl);
             }
         }
         #endregion
