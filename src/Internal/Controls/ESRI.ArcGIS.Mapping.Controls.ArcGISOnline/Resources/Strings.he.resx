@@ -538,10 +538,10 @@
     <value>נוצר על ידי {0} ב- {1}</value>
   </data>
   <data name="WebMapOwnerDateFormat" xml:space="preserve">
-    <value>מפת רשת על ידי {0} (שונתה לאחרונה: {1})</value>
+    <value>Web Map על ידי {0} (שונתה לאחרונה: {1})</value>
   </data>
   <data name="WebMapBy" xml:space="preserve">
-    <value>מפת רשת על ידי {0}</value>
+    <value>Web Map על ידי {0}</value>
   </data>
   <data name="SignInFailed" xml:space="preserve">
     <value>הכניסה נכשלה.</value>
