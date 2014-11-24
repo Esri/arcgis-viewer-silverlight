@@ -51,7 +51,7 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
     /// <summary>
     /// Retrieves a SubLayerDescription asynchronously for the specified url.
     /// </summary>
-    public static void GetServiceInfoAsync(string url, EventHandler<SubLayerEventArgs> callback)
+    public static void GetServiceInfoAsync(string url, EventHandler<SubLayerEventArgs> callback, string proxyUrl = null)
     {
       WebUtil.OpenReadAsync(new Uri(url + "?f=json"), null, (sender, e) =>
       {

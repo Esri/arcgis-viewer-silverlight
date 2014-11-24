@@ -101,15 +101,6 @@ namespace ESRI.ArcGIS.Mapping.Core
         {
             return System.Windows.Browser.HttpUtility.UrlEncode(str);
         }
-        public static string CreateUrlWithProxy(string proxyUrl, string url)
-        {
-            if (!string.IsNullOrEmpty(proxyUrl))
-            {
-                string proxy = proxyUrl.EndsWith("?", StringComparison.Ordinal) ? proxyUrl : proxyUrl + "?";
-                return proxy + ESRI.ArcGIS.Mapping.Core.Utility.UrlEncode(url);
-            }
-            return url;
-        }
         public static Uri CreateUriWithProxy(string proxyUrl, string url)
         {
             if (!string.IsNullOrEmpty(proxyUrl))
