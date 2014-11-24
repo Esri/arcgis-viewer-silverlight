@@ -144,6 +144,9 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
         [DataMember(Name = "user", IsRequired = false)]
         public PortalUser User { get; set; }
 
+        [DataMember(Name = "supportsOAuth", IsRequired = false)]
+        public bool SupportsOAuth { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)

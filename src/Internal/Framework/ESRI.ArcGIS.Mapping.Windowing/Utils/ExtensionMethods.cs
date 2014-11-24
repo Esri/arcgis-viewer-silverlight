@@ -60,34 +60,5 @@ namespace ESRI.ArcGIS.Mapping.Windowing
             return hostParts.Length > 1 ? string.Format("{0}.{1}",
                 hostParts[hostParts.Length - 2], hostParts[hostParts.Length - 1]) : host;
         }
-
-        /// <summary>
-        /// Checks whether the string represents a URL for a resource within the application environment's
-        /// current ArcGIS Online or Portal instance
-        /// </summary>
-        public static bool IsPortalUrl(this string url)
-        {
-            // Check the domain of the requested URL against that of the current ArcGIS Portal.
-            bool isPortalUrl = false;
-            try
-            {
-                // Get the domain of the request URL
-                string requestDomain = (new Uri(url)).Domain();
-                
-                Uri portalUri = null;
-                if (MapApplication.Current != null && MapApplication.Current.Portal != null)
-                        portalUri = new Uri(MapApplication.Current.Portal.Url);
-
-                // Get the domain of the portal
-                if (portalUri != null)
-                {
-                    string portalDomain = portalUri.Domain();
-                    // Compare the domains
-                    isPortalUrl = requestDomain.ToLower() == portalDomain.ToLower();
-                }
-            }
-            catch { }
-            return isPortalUrl;
-        }
     }
 }

@@ -371,6 +371,7 @@
     <Compile Include="Utils\BehaviorUtils.cs" />
     <Compile Include="Utils\EditorCommandUtility.cs" />
     <Compile Include="PopupControls\PopupHelper.cs" />
+    <Compile Include="Utils\ExtensionMethods.cs" />
     <Compile Include="Utils\PopupFeatureDataFormStyleHelper.cs" />
     <Compile Include="Utils\ThrottleTimer.cs" />
     <Compile Include="Utils\Transform.cs" />

@@ -133,7 +133,6 @@ All other rights reserved.
                                     <RowDefinition></RowDefinition>
                                     <RowDefinition></RowDefinition>
                                     <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
                                 
                                 <!-- Bing Key -->
@@ -147,7 +146,7 @@ All other rights reserved.
                                         <behaviors:UpdateBindingOnTextChanged />
                                     </i:Interaction.Behaviors>
                                 </TextBox>
-                                
+
                                 <!-- Geometry Service -->
                                 <TextBlock Foreground="White" Grid.Row="1" Text="{Binding ConverterParameter=GeometryService, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
                                 <TextBox Grid.Column="1" Grid.Row="1" Margin="3" FlowDirection="LeftToRight"
@@ -160,34 +159,10 @@ All other rights reserved.
                                     </i:Interaction.Behaviors>
                                 </TextBox>
                                 
-                                <!-- ArcGIS Portal URL -->
-                                <TextBlock Foreground="White" Grid.Row="2" Text="{Binding ConverterParameter=ArcGISOnlineSharing, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
-                                <TextBox Grid.Column="1" Grid.Row="2" Margin="3" FlowDirection="LeftToRight"
-                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
-                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
-                                         Template="{StaticResource AlignmentTextBoxTemplate}"
-                                     Text="{Binding ArcGISOnlineSharing, Source={StaticResource BuilderApplication}, Mode=TwoWay}">
-                                    <i:Interaction.Behaviors>
-                                        <behaviors:UpdateBindingOnTextChanged />
-                                    </i:Interaction.Behaviors>
-                                </TextBox>
-                                
-                                <!-- ArcGIS Portal Secure URL -->
-                                <TextBlock Foreground="White" Grid.Row="3" Text="{Binding ConverterParameter=ArcGISOnlineSecure, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
-                                <TextBox Grid.Column="1" Grid.Row="3" Margin="3" FlowDirection="LeftToRight"
-                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
-                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
-                                         Template="{StaticResource AlignmentTextBoxTemplate}"
-                                     Text="{Binding ArcGISOnlineSecure, Source={StaticResource BuilderApplication}, Mode=TwoWay}">
-                                    <i:Interaction.Behaviors>
-                                        <behaviors:UpdateBindingOnTextChanged />
-                                    </i:Interaction.Behaviors>
-                                </TextBox>
-                                
                                 <!-- Proxy Url -->
-                                <TextBlock Foreground="White" Grid.Row="4" Text="{Binding ConverterParameter=Proxy, 
+                                <TextBlock Foreground="White" Grid.Row="2" Text="{Binding ConverterParameter=Proxy, 
                                     Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
-                                <TextBox Grid.Column="1" Grid.Row="4" Margin="3" FlowDirection="LeftToRight"
+                                <TextBox Grid.Column="1" Grid.Row="2" Margin="3" FlowDirection="LeftToRight"
                                          HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
                                             Converter={StaticResource FlowDirectionToAlignmentConverter}}"
                                          Template="{StaticResource AlignmentTextBoxTemplate}"
@@ -196,6 +171,68 @@ All other rights reserved.
                                         <behaviors:UpdateBindingOnTextChanged />
                                     </i:Interaction.Behaviors>
                                 </TextBox>
+
+                                <!-- ArcGIS Online / Portal settings -->
+                                <Grid Grid.Row="3" Grid.ColumnSpan="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,7,0,3" Grid.ColumnSpan="2">
+                                        <TextBlock Foreground="White" Text="{Binding ConverterParameter=ArcGISOnline, Converter={StaticResource Localization}}" VerticalAlignment="Center"
+                                               Grid.ColumnSpan="2" FontSize="12"/>
+                                        <TextBlock Foreground="White" Text=" / " VerticalAlignment="Center"
+                                               Grid.ColumnSpan="2" FontSize="12"/>
+                                        <TextBlock Foreground="White" Text="{Binding ConverterParameter=ArcGISPortalDefaultName, Converter={StaticResource Localization}}" VerticalAlignment="Center"
+                                               Grid.ColumnSpan="2" FontSize="12"/>
+                                    </StackPanel>
+
+                                    <!-- ArcGIS Portal App ID (for OAuth authentication) -->
+                                    <TextBlock Foreground="White" Grid.Row="1" Text="{Binding ConverterParameter=PortalAppID, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center"
+                                               Margin="10,0,0,0"/>
+                                    <TextBox Grid.Column="1" Grid.Row="1" Margin="3" FlowDirection="LeftToRight"
+                                             HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                                Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                             Template="{StaticResource AlignmentTextBoxTemplate}"
+                                         Text="{Binding PortalAppId, Source={StaticResource BuilderApplication}, Mode=TwoWay}">
+                                        <i:Interaction.Behaviors>
+                                            <behaviors:UpdateBindingOnTextChanged />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+
+                                    <!-- ArcGIS Portal URL -->
+                                    <TextBlock Foreground="White" Grid.Row="2" Text="{Binding ConverterParameter=ArcGISOnlineSharing, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" 
+                                               Margin="10,0,0,0"/>
+                                    <TextBox Grid.Column="1" Grid.Row="2" Margin="3"
+                                         Text="{Binding ArcGISOnlineSharing, Source={StaticResource BuilderApplication}, Mode=TwoWay}" FlowDirection="LeftToRight"
+                                             HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                                Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                             Template="{StaticResource AlignmentTextBoxTemplate}">
+                                        <i:Interaction.Behaviors>
+                                            <behaviors:UpdateBindingOnTextChanged />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+
+                                    <!-- ArcGIS Portal Secure URL -->
+                                    <TextBlock Foreground="White" Grid.Row="3" Text="{Binding ConverterParameter=ArcGISOnlineSecure, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" 
+                                               Margin="10,0,0,0"/>
+                                    <TextBox Grid.Column="1" Grid.Row="3" Margin="3"
+                                         Text="{Binding ArcGISOnlineSecure, Source={StaticResource BuilderApplication}, Mode=TwoWay}" FlowDirection="LeftToRight"
+                                             HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                                Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                             Template="{StaticResource AlignmentTextBoxTemplate}">
+                                        <i:Interaction.Behaviors>
+                                            <behaviors:UpdateBindingOnTextChanged />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+                                </Grid>
                             </Grid>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                 <Button Margin="3"
@@ -226,7 +263,6 @@ All other rights reserved.
                                     <RowDefinition></RowDefinition>
                                     <RowDefinition></RowDefinition>
                                     <RowDefinition></RowDefinition>
-                                    <RowDefinition></RowDefinition>
                                 </Grid.RowDefinitions>
                                 
                                 <!-- Bing Key -->
@@ -240,7 +276,7 @@ All other rights reserved.
                                         <behaviors:UpdateBindingOnTextChanged />
                                     </i:Interaction.Behaviors>
                                 </TextBox>
-                                
+
                                 <!-- Geometry Service -->
                                 <TextBlock Foreground="White" Grid.Row="1" Text="{Binding ConverterParameter=GeometryService, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
                                 <TextBox Grid.Column="1" Grid.Row="1" Margin="3"
@@ -252,35 +288,11 @@ All other rights reserved.
                                         <behaviors:UpdateBindingOnTextChanged />
                                     </i:Interaction.Behaviors>
                                 </TextBox>
-                                
-                                <!-- ArcGIS Portal URL -->
-                                <TextBlock Foreground="White" Grid.Row="2" Text="{Binding ConverterParameter=ArcGISOnlineSharing, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
-                                <TextBox Grid.Column="1" Grid.Row="2" Margin="3"
-                                     Text="{Binding ArcGISOnlineSharing, Source={StaticResource ViewerApplication}, Mode=TwoWay}" FlowDirection="LeftToRight"
-                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
-                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
-                                         Template="{StaticResource AlignmentTextBoxTemplate}">
-                                    <i:Interaction.Behaviors>
-                                        <behaviors:UpdateBindingOnTextChanged />
-                                    </i:Interaction.Behaviors>
-                                </TextBox>
-                                
-                                <!-- ArcGIS Portal Secure URL -->
-                                <TextBlock Foreground="White" Grid.Row="3" Text="{Binding ConverterParameter=ArcGISOnlineSecure, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
-                                <TextBox Grid.Column="1" Grid.Row="3" Margin="3"
-                                     Text="{Binding ArcGISOnlineSecure, Source={StaticResource ViewerApplication}, Mode=TwoWay}" FlowDirection="LeftToRight"
-                                         HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
-                                            Converter={StaticResource FlowDirectionToAlignmentConverter}}"
-                                         Template="{StaticResource AlignmentTextBoxTemplate}">
-                                    <i:Interaction.Behaviors>
-                                        <behaviors:UpdateBindingOnTextChanged />
-                                    </i:Interaction.Behaviors>
-                                </TextBox>
 
                                 <!-- Proxy URL -->
-                                <TextBlock Foreground="White" Grid.Row="4" Text="{Binding ConverterParameter=Proxy, 
+                                <TextBlock Foreground="White" Grid.Row="2" Text="{Binding ConverterParameter=Proxy, 
                                         Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" />
-                                <TextBox Grid.Column="1" Grid.Row="4" Margin="3"
+                                <TextBox Grid.Column="1" Grid.Row="2" Margin="3"
                                      Text="{Binding Proxy, Source={StaticResource ViewerApplication}, Mode=TwoWay}" FlowDirection="LeftToRight"
                                          HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
                                             Converter={StaticResource FlowDirectionToAlignmentConverter}}"
@@ -289,6 +301,68 @@ All other rights reserved.
                                         <behaviors:UpdateBindingOnTextChanged />
                                     </i:Interaction.Behaviors>
                                 </TextBox>
+
+                                <!-- ArcGIS Online / Portal settings -->
+                                <Grid Grid.Row="3" Grid.ColumnSpan="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,7,0,3" Grid.ColumnSpan="2">
+                                        <TextBlock Foreground="White" Text="{Binding ConverterParameter=ArcGISOnline, Converter={StaticResource Localization}}" VerticalAlignment="Center"
+                                               Grid.ColumnSpan="2" FontSize="12"/>
+                                        <TextBlock Foreground="White" Text=" / " VerticalAlignment="Center"
+                                               Grid.ColumnSpan="2" FontSize="12"/>
+                                        <TextBlock Foreground="White" Text="{Binding ConverterParameter=ArcGISPortalDefaultName, Converter={StaticResource Localization}}" VerticalAlignment="Center"
+                                               Grid.ColumnSpan="2" FontSize="12"/>
+                                    </StackPanel>
+
+                                    <!-- ArcGIS Portal App ID (for OAuth authentication) -->
+                                    <TextBlock Foreground="White" Grid.Row="1" Text="{Binding ConverterParameter=PortalAppID, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center"
+                                               Margin="10,0,0,0"/>
+                                    <TextBox Grid.Column="1" Grid.Row="1" Margin="3" FlowDirection="LeftToRight"
+                                             HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                                Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                             Template="{StaticResource AlignmentTextBoxTemplate}"
+                                         Text="{Binding PortalAppId, Source={StaticResource ViewerApplication}, Mode=TwoWay}">
+                                        <i:Interaction.Behaviors>
+                                            <behaviors:UpdateBindingOnTextChanged />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+
+                                    <!-- ArcGIS Portal URL -->
+                                    <TextBlock Foreground="White" Grid.Row="2" Text="{Binding ConverterParameter=ArcGISOnlineSharing, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" 
+                                               Margin="10,0,0,0"/>
+                                    <TextBox Grid.Column="1" Grid.Row="2" Margin="3"
+                                         Text="{Binding ArcGISOnlineSharing, Source={StaticResource ViewerApplication}, Mode=TwoWay}" FlowDirection="LeftToRight"
+                                             HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                                Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                             Template="{StaticResource AlignmentTextBoxTemplate}">
+                                        <i:Interaction.Behaviors>
+                                            <behaviors:UpdateBindingOnTextChanged />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+                                
+                                    <!-- ArcGIS Portal Secure URL -->
+                                    <TextBlock Foreground="White" Grid.Row="3" Text="{Binding ConverterParameter=ArcGISOnlineSecure, Converter={StaticResource BuilderLocalization}}" VerticalAlignment="Center" 
+                                               Margin="10,0,0,0"/>
+                                    <TextBox Grid.Column="1" Grid.Row="3" Margin="3"
+                                         Text="{Binding ArcGISOnlineSecure, Source={StaticResource ViewerApplication}, Mode=TwoWay}" FlowDirection="LeftToRight"
+                                             HorizontalContentAlignment="{Binding FlowDirection, Source={StaticResource RTLHelper}, 
+                                                Converter={StaticResource FlowDirectionToAlignmentConverter}}"
+                                             Template="{StaticResource AlignmentTextBoxTemplate}">
+                                        <i:Interaction.Behaviors>
+                                            <behaviors:UpdateBindingOnTextChanged />
+                                        </i:Interaction.Behaviors>
+                                    </TextBox>
+                                </Grid>
                             </Grid>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                 <Button Margin="3"

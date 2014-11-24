@@ -12,6 +12,9 @@ using ESRI.ArcGIS.Client.Extensibility;
 using ESRI.ArcGIS.Mapping.Controls.Resources;
 using ESRI.ArcGIS.Mapping.Core;
 using ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;
+using ESRI.ArcGIS.Client.Toolkit;
+using System.Threading.Tasks;
+using System.Windows.Browser;
 
 namespace ESRI.ArcGIS.Mapping.Controls
 {
@@ -38,7 +41,39 @@ namespace ESRI.ArcGIS.Mapping.Controls
         /// </summary>
         public override void Execute(object parameter)
         {
-            base.Execute(parameter);
+            bool supportsOAuth = false;
+            var appPortal = MapApplication.Current != null ? MapApplication.Current.Portal : null;
+            if (appPortal != null && appPortal.ArcGISPortalInfo != null)
+                supportsOAuth = appPortal.ArcGISPortalInfo.SupportsOAuth;
+            else if (ArcGISOnline != null && ArcGISOnline.PortalInfo != null)
+                supportsOAuth = ArcGISOnline.PortalInfo.SupportsOAuth;
+            else if (ArcGISOnlineEnvironment.ArcGISOnline != null && ArcGISOnlineEnvironment.ArcGISOnline.PortalInfo != null)
+                supportsOAuth = ArcGISOnlineEnvironment.ArcGISOnline.PortalInfo.SupportsOAuth;
+
+            string portalAppID = null;
+            if (supportsOAuth)
+            {
+                var appInstance = ViewerApplicationControl.Instance;
+                if (appInstance != null)
+                {
+                    // Get portal App ID from current Viewer app, if there is one
+                    portalAppID = appInstance.ViewerApplication != null ? appInstance.ViewerApplication.PortalAppId : null;
+                    if (string.IsNullOrEmpty(portalAppID) && appInstance.BuilderApplication != null)
+                    {
+                        // No current Viewer app, so get App ID from Builder settings
+                        portalAppID = appInstance.BuilderApplication.PortalAppId;
+                    }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(portalAppID))
+            {
+                onSignIn(portalAppID);
+            }
+            else
+            {
+                base.Execute(parameter);
+            }
 
             if (viewModel != null)
                 updateSignInLabel();
@@ -73,31 +108,21 @@ namespace ESRI.ArcGIS.Mapping.Controls
         /// </summary>
         protected async override void onSignIn(object parameter)
         {
-            if (viewModel == null)
+            if (viewModel == null && !(parameter is string))
                 return;
 
             // Update busy state
-            viewModel.SigningIn = true;
+            if (viewModel != null)
+                viewModel.SigningIn = true;
 
-            // Get the ArcGIS Online or Portal URL to try to authenticate against
-            string portalUrl = null;
-            if (MapApplication.Current != null &&
-            MapApplication.Current.Portal != null &&
-            !string.IsNullOrEmpty(MapApplication.Current.Portal.Url))
-                portalUrl = MapApplication.Current.Portal.Url;
-            else
-                portalUrl = ArcGISOnline != null ? ArcGISOnline.Url : ArcGISOnlineEnvironment.ArcGISOnline.Url;
+            var portalAppID = parameter is string ? (string)parameter : null;
+            var useOAuth = !string.IsNullOrEmpty(portalAppID);
 
             try
             {
                 if (IdentityManager.Current != null)
                 {
-                    var options = new IdentityManager.GenerateTokenOptions() { ProxyUrl = ProxyUrl };
-                    // Authenticate against ArcGIS Online/Portal to retrieve user token
-                    IdentityManager.Credential cred =
-                        await IdentityManager.Current.GenerateCredentialTaskAsync(
-                        portalUrl, viewModel.Username, viewModel.Password, options);
-
+                    var cred = await generateCredential(portalAppID);
                     if (cred != null)
                     {
                         // Save the credential info so it can be used to try to access other services
@@ -113,26 +138,84 @@ namespace ESRI.ArcGIS.Mapping.Controls
                             await ApplicationHelper.SignInToPortal(cred, ArcGISOnline);
 
                             // Complete sign-in
-                            viewModel.SigningIn = false;
-                            viewModel.SignInError = null;
+                            if (viewModel != null)
+                            {
+                                viewModel.SigningIn = false;
+                                viewModel.SignInError = null;
+                            }
                             closeWindow();
                             OnSignedIn(cred);
                         }
                         catch (Exception ex)
                         {
-                            onSignInFailed(ex);
+                            onSignInFailed(ex, useOAuth);
                         }
                     }
                     else
                     {
-                        onSignInFailed(new Exception(agolStrings.Get("SignInFailed")));
+                        onSignInFailed(new Exception(agolStrings.Get("SignInFailed")), useOAuth);
                     }
                 }
             }
             catch (Exception ex)
             {
-                onSignInFailed(ex);
+                onSignInFailed(ex, useOAuth);
             }
+        }
+
+        private async Task<IdentityManager.Credential> generateCredential(string portalAppID)
+        {
+            // Get the ArcGIS Online or Portal URL to try to authenticate against
+            string portalUrl = null;
+            var appPortal = MapApplication.Current != null ? MapApplication.Current.Portal : null;
+            if (appPortal != null && !string.IsNullOrEmpty(appPortal.Url))
+                portalUrl = MapApplication.Current.Portal.Url;
+            else if (ArcGISOnline != null)
+                portalUrl = ArcGISOnline.Url; 
+            else if (ArcGISOnlineEnvironment.ArcGISOnline != null)
+                portalUrl = ArcGISOnlineEnvironment.ArcGISOnline.Url;
+
+            IdentityManager.Credential cred = null;
+            if (IdentityManager.Current != null && !string.IsNullOrEmpty(portalUrl))
+            {
+                portalUrl = portalUrl.TrimEnd('/');
+
+                var options = new IdentityManager.GenerateTokenOptions() 
+                { 
+                    ProxyUrl = ProxyUrl,
+                    TokenAuthenticationType = !string.IsNullOrEmpty(portalAppID) ? IdentityManager.TokenAuthenticationType.OAuthImplicit : 
+                        IdentityManager.TokenAuthenticationType.ArcGISToken
+                };
+
+                if (!string.IsNullOrEmpty(portalAppID))
+                {
+                    var oauthAuthorize = new OAuthAuthorize() { UsePopup = true };
+                    options.OAuthAuthorize = oauthAuthorize;
+                    var oauthClientInfo = new IdentityManager.OAuthClientInfo()
+                    {
+                        ClientId = portalAppID, 
+                        OAuthAuthorize = oauthAuthorize,
+                        RedirectUri = HtmlPage.Document.DocumentUri.ToString()
+                    };
+
+                    var serverInfoRegistered = IdentityManager.Current.ServerInfos.Any(info => info.ServerUrl == portalUrl);
+                    var serverInfo = serverInfoRegistered ? IdentityManager.Current.ServerInfos.First(info => info.ServerUrl == portalUrl) 
+                        : new IdentityManager.ServerInfo();
+                    serverInfo.ServerUrl = portalUrl;
+                    serverInfo.OAuthClientInfo = oauthClientInfo;
+                    serverInfo.TokenAuthenticationType = IdentityManager.TokenAuthenticationType.OAuthImplicit;
+                    if (!serverInfoRegistered)
+                        IdentityManager.Current.RegisterServers(new IdentityManager.ServerInfo[] { serverInfo });
+                    cred = await IdentityManager.Current.GenerateCredentialTaskAsync(portalUrl, options);
+                }
+                else
+                {
+                    // Authenticate against ArcGIS Online/Portal to retrieve user token
+                    cred = await IdentityManager.Current.GenerateCredentialTaskAsync(
+                        portalUrl, viewModel.Username, viewModel.Password, options);
+                }
+            }
+            return cred;
         }
 
         #endregion

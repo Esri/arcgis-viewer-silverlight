@@ -116,20 +116,25 @@ namespace ESRI.ArcGIS.Mapping.Controls
             if (string.IsNullOrEmpty(requestUrl) || UserManagement.Current.Credentials.Count == 0)
                 return null;
 
-            bool isPortalUrl = requestUrl.IsPortalUrl();
+            bool isPortalUrl = await requestUrl.IsFederatedWithPortal();
             string credentialUrl = requestUrl;
 
             // Get the token auth endpoint if the requested URL is not an ArcGIS Online/Portal URL
             if (!isPortalUrl)
-                credentialUrl = await ArcGISServerDataSource.GetTokenURL(requestUrl, proxyUrl);
+                credentialUrl = await ArcGISServerDataSource.GetServicesDirectoryURL(requestUrl, proxyUrl);
 
             // Check whether there's already a credential for the url
             foreach (IdentityManager.Credential cred in UserManagement.Current.Credentials)
             {
                 IdentityManager.Credential newCred = null;
-                if (isPortalUrl && !string.IsNullOrEmpty(cred.Url) && cred.Url.IsPortalUrl())
+                if (isPortalUrl && !string.IsNullOrEmpty(cred.Url) && await cred.Url.IsFederatedWithPortal())
                 {
-                    newCred = cred; // If a portal credential already exists, try it
+                    try
+                    {
+                        // If a portal credential already exists, try simply getting a new credential for the same portal
+                        newCred = await IdentityManager.Current.GetCredentialTaskAsync(requestUrl, false); 
+                    }
+                    catch { }
                 }
                 else if (!string.IsNullOrEmpty(cred.Url) 
                 && cred.Url.Equals(credentialUrl, StringComparison.OrdinalIgnoreCase))

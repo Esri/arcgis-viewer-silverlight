@@ -122,7 +122,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 if (viewModel.Url != null)
                 {
                     // Get the token URL for the ArcGIS Server
-                    credentialUrl = await ArcGISServerDataSource.GetTokenURL(viewModel.Url, null);
+                    credentialUrl = await ArcGISServerDataSource.GetServicesDirectoryURL(viewModel.Url, null);
                     if (credentialUrl == null)
                         onSignInFailed(new Exception(Strings.InvalidUrlUserPassword));
                 }

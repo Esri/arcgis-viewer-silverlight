@@ -1566,7 +1566,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 // The existing credentials were sufficient for authentication.
 
                 // If the request was for a URL in the current ArcGIS Portal, sign into Portal
-                if (url.IsPortalUrl())
+                if (await url.IsFederatedWithPortal())
                     await ApplicationHelper.SignInToPortal(cred);
 
                 // If there is not already a credential in the app's credentials collection that has the
@@ -1597,7 +1597,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
             // Existing credentials were insufficient.  Prompt user to sign in.
 
             SignInCommand signInCommand = null;
-            if (url.IsPortalUrl()) // Sign into ArcGIS portal
+            if (await url.IsFederatedWithPortal()) // Sign into ArcGIS portal
                 signInCommand = new SignInToAGSOLCommand() { ProxyUrl = proxyUrl };
             else // Sign into ArcGIS Server
                 signInCommand = new SignInToServerCommand() { Url = url, ProxyUrl = proxyUrl };
@@ -3000,7 +3000,13 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 MapApplication.Current.SetValue(MapApplication.PortalProperty, portal);
 
             if (portal != null && !portal.IsInitialized && !string.IsNullOrEmpty(portal.Url))
-                portal.InitializeAsync(portal.Url, null);
+            {
+                portal.InitializeAsync(portal.Url, (p, ex) => 
+                {
+                    if (ex == null && p!= null && !string.IsNullOrEmpty(p.Url))
+                        OAuthAuthorize.Initialize(p.Url);
+                });
+            }
         }
 
         public string ArcGISOnlineSharing
