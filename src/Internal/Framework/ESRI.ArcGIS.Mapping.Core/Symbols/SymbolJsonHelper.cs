@@ -53,8 +53,14 @@ namespace ESRI.ArcGIS.Mapping.Core
                             #region
                             ESRI.ArcGIS.Mapping.Core.Symbols.ImageFillSymbol imgsymb = new ESRI.ArcGIS.Mapping.Core.Symbols.ImageFillSymbol();
                             double size = 64; // standard size of images used for Viewer symbols
-                            if (jsonObject.ContainsKey("width"))
-                                size = jsonObject["width"];
+                            if (jsonObject.ContainsKey("width") || jsonObject.ContainsKey("height"))
+                            {
+                                // Get the greater of the width or height, converting from points to pixels in the process
+                                var pointsToPixelsFactor = 4d / 3d;
+                                var width = jsonObject.ContainsKey("width") ? jsonObject["width"] * pointsToPixelsFactor : 0;
+                                var height = jsonObject.ContainsKey("height") ? jsonObject["height"] * pointsToPixelsFactor : 0;
+                                size = width > height ? width : height;
+                            }
                             imgsymb.Size = size;
                             if (jsonObject.ContainsKey("xoffset"))
                                 imgsymb.OriginX = (size /2 + jsonObject["xoffset"]) / size;
@@ -64,6 +70,10 @@ namespace ESRI.ArcGIS.Mapping.Core
                                 imgsymb.ImageData = jsonObject["imageData"];
                             else if (jsonObject.ContainsKey("url"))
                                 imgsymb.Source = jsonObject["url"];
+
+                            var fill = imgsymb.Fill as ImageBrush;
+                            if (fill != null)
+                                fill.Stretch = Stretch.Uniform;
 
                             symb = imgsymb;
                             break;

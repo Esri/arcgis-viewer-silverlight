@@ -387,6 +387,7 @@ namespace QueryRelatedRecords.AddIns
 
             // Specify the Feature Service url for the QueryTask.
             queryTask.Url = relatesLayer.Url;
+            queryTask.ProxyURL = relatesLayer.ProxyUrl;
 
             // Events for the successful completion of the RelationshipQuery and for if the Query fails
             queryTask.ExecuteRelationshipQueryCompleted += QueryTask_ExecuteRelationshipQueryCompleted;
@@ -734,7 +735,8 @@ namespace QueryRelatedRecords.AddIns
                 // retrieve all the graphics/info from the layer. In the resultsLayer_Initialized, we trim that down based on the Object id field.
                 resultsLayer = new FeatureLayer()
                 {
-                    Url = resultsUrl
+                    Url = resultsUrl,
+                    ProxyUrl = relatesLayer.ProxyUrl
                 };
 
                 resultsLayer.OutFields.Add("*");

@@ -93,7 +93,7 @@ namespace SearchTool
             }
 
             // Initialize display name
-            Properties.SetDisplayName(this, this.GetDisplayName());
+            Properties.SetDisplayName(this, this.GetDisplayNameFromAttribute());
 
             // Listen for changes to the proxy URL
             Properties.NotifyOnDependencyPropertyChanged("ProxyUrl", this, OnProxyUrlChanged);

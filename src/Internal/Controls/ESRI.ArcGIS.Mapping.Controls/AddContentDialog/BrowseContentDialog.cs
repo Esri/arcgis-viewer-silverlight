@@ -745,7 +745,7 @@ Application.Current.RootVisual as UIElement
                     _currentRestUrl = 
                         await ArcGISServerDataSource.GetTokenURL(connection.Url, connection.ProxyUrl);
                     // Initialize the command allowing users to sign-in
-                    await initializeSignInCommand(_currentRestUrl);
+                    await initializeSignInCommand(_currentRestUrl, connection.ProxyUrl);
 
                     dataSourceWithResource.GetCatalogCompleted += (o, e) =>
                     {
@@ -786,7 +786,7 @@ Application.Current.RootVisual as UIElement
                         // if a user has signed in to another server with a username and password that is
                         // valid for this server, it will authenticate using those credentials automatically
                         IdentityManager.Credential newCred = 
-                            await ApplicationHelper.TryExistingCredentials(connection.Url);
+                            await ApplicationHelper.TryExistingCredentials(connection.Url, connection.ProxyUrl);
                         if (newCred != null)
                         {
                             // If authentication is successful and the URL belong to the current ArcGIS Portal,
@@ -852,7 +852,7 @@ Application.Current.RootVisual as UIElement
                 _currentRestUrl = 
                     await ArcGISServerDataSource.GetTokenURL(connection.Url, connection.ProxyUrl);
                 // Initialize the command allowing users to sign-in
-                await initializeSignInCommand(_currentRestUrl);
+                await initializeSignInCommand(_currentRestUrl, connection.ProxyUrl);
 
                 dataSource.GetCatalogCompleted += (o, e) =>
                 {
@@ -888,7 +888,7 @@ Application.Current.RootVisual as UIElement
                     // with the existing set of credentials in the application.  This makes it so that
                     // if a user has signed in to another server with a username and password that is
                     // valid for this server, it will authenticate using those credentials automatically
-                    IdentityManager.Credential newCred = await ApplicationHelper.TryExistingCredentials(connection.Url);
+                    IdentityManager.Credential newCred = await ApplicationHelper.TryExistingCredentials(connection.Url, connection.ProxyUrl);
                     if (newCred != null)
                     {
                         // If authentication is successful and the URL belong to the current ArcGIS Portal,
@@ -919,13 +919,13 @@ Application.Current.RootVisual as UIElement
 
         // Initializes the command used to prompt the user to sign in to the current 
         // ArcGIS Server or Portal instance
-        private async Task initializeSignInCommand(string tokenUrl)
+        private async Task initializeSignInCommand(string tokenUrl, string proxyUrl)
         {
             if (tokenUrl != null)
             {
                 // Before intializing the command, attempt to authenticate using existing credentials.  If
                 // successful, add the credential to the app environment's collection
-                IdentityManager.Credential newCred = await ApplicationHelper.TryExistingCredentials(tokenUrl);
+                IdentityManager.Credential newCred = await ApplicationHelper.TryExistingCredentials(tokenUrl, proxyUrl);
                 if (newCred != null && !UserManagement.Current.Credentials.Any(c => c.Url != null 
                 && c.Url.Equals(newCred.Url, StringComparison.OrdinalIgnoreCase) 
                 && !string.IsNullOrEmpty(c.Token)))
@@ -933,12 +933,14 @@ Application.Current.RootVisual as UIElement
 
                 if (tokenUrl.IsPortalUrl())
                 {
+                    SignInToPortalCommand.ProxyUrl = proxyUrl;
                     NeedsServerCredentials = false;
                     NeedsPortalCredentials = newCred == null;
                 }
                 else
                 {
                     SignInToServerCommand.Url = tokenUrl;
+                    SignInToServerCommand.ProxyUrl = proxyUrl;
                     NeedsServerCredentials = newCred == null;
                     NeedsPortalCredentials = false;
                 }

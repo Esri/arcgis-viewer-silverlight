@@ -209,6 +209,9 @@ namespace ESRI.ArcGIS.Mapping.DataSources.SpatialDataService
 
         public override Resource GetResource(string connectionString, string proxyUrl)
         {
+            if (!connectionString.StartsWith("http://") && !connectionString.StartsWith("https://"))
+                connectionString = string.Format("http://{0}", connectionString);
+
             // Initialize to "Server" so that "catalog" will be called with this value unless this logic detects that the
             // connection string actually refers to another type of resource like a map service, layer, etc.
             Resource res = new Resource()
