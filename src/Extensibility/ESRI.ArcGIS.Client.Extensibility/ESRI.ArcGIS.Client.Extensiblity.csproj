@@ -198,7 +198,14 @@ pushd "$(SolutionDir)..\build\include\"
 copy build.txt +,,
 
 @echo restore NuGet packages
-"$(SolutionDir).nuget\nuget.exe" restore "$(SolutionDir)$(SolutionName)$(SolutionExt)"</PreBuildEvent>
+"$(SolutionDir).nuget\nuget.exe" restore "$(SolutionDir)$(SolutionName)$(SolutionExt)"
+
+if exist "$(SolutionDir)..\..\..\buildnum\buildnum.cs" (
+    if exist "$(SolutionDir)..\..\..\depfiles\sharedlibs\ReplaceStringInFile\ReplaceStringInFile.exe" (
+        xcopy "$(SolutionDir)..\..\..\buildnum\buildnum.cs" "$(SolutionDir)..\build\include\*" /Y /R
+        "$(SolutionDir)..\..\..\depfiles\sharedlibs\ReplaceStringInFile\ReplaceStringInFile.exe" "$(SolutionDir)..\build\include\buildnum.cs" "10.2.5" "3.3.0"
+    )
+)</PreBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
