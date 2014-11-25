@@ -72,60 +72,62 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 {
                     using (Stream fs = (Stream)dialog.OpenFile())
                     {
-                        StringBuilder sb = new StringBuilder();
+                        using (var writer = new StreamWriter(fs, Encoding.UTF8))
+                        {
+                            StringBuilder sb = new StringBuilder();
 
-                        bool wroteHeader = false;
-                        Collection<FieldInfo> fields = Core.LayerExtensions.GetFields(graphicsLayer);
-                        if (fields == null)
-                            return;
-                        foreach (Graphic record in graphicsLayer.SelectedGraphics)
-                        {                            
-                            if (!wroteHeader)
+                            bool wroteHeader = false;
+                            Collection<FieldInfo> fields = Core.LayerExtensions.GetFields(graphicsLayer);
+                            if (fields == null)
+                                return;
+                            foreach (Graphic record in graphicsLayer.SelectedGraphics)
                             {
-                                // Header Row
-                                foreach (string key in record.Attributes.Keys)
+                                if (!wroteHeader)
                                 {
+                                    // Header Row
+                                    foreach (string key in record.Attributes.Keys)
+                                    {
+                                        FieldInfo field = getField(key, fields);
+                                        if (field == null || !field.VisibleInAttributeDisplay)
+                                            continue;
+                                        if (sb.Length > 0)
+                                            sb.Append(",");
+                                        sb.Append(field.DisplayName);
+                                    }
+                                    sb.AppendLine();
+                                    wroteHeader = true;
+                                }
+
+                                StringBuilder line = new StringBuilder();
+                                foreach (KeyValuePair<string, object> display in record.Attributes)
+                                {
+                                    object o = display.Value;
+                                    string key = display.Key;
                                     FieldInfo field = getField(key, fields);
                                     if (field == null || !field.VisibleInAttributeDisplay)
                                         continue;
-                                    if (sb.Length > 0)
-                                        sb.Append(",");
-                                    sb.Append(field.DisplayName);
-                                }
-                                sb.AppendLine();
-                                wroteHeader = true;
-                            }
+                                    if (o == null)
+                                    {
+                                        line.Append(",");
+                                        continue;
+                                    }
+                                    string val = Convert.ToString(o);
+                                    if (val == null)
+                                        val = string.Empty;
 
-                            StringBuilder line = new StringBuilder();
-                            foreach (KeyValuePair<string, object> display in record.Attributes)
-                            {
-                                object o = display.Value;
-                                string key = display.Key;
-                                FieldInfo field = getField(key, fields);
-                                if (field == null || !field.VisibleInAttributeDisplay)
-                                    continue;
-                                if (o == null)
-                                {
-                                    line.Append(",");
-                                    continue;
+                                    // If the value contains commas, enclose it in quotes
+                                    if (val.Contains(","))
+                                        val = string.Format("\"{0}\"", val.Trim('"'));
+                                    line.AppendFormat("{0},", val);
                                 }
-                                string val = Convert.ToString(o);
-                                if (val == null)
-                                    val = string.Empty;
-
-                                // If the value contains commas, enclose it in quotes
-                                if (val.Contains(","))
-                                    val = string.Format("\"{0}\"", val.Trim('"'));
-                                line.AppendFormat("{0},", val);
+                                string s = line.ToString();
+                                if (s.Length > 0)
+                                    s = s.Substring(0, s.Length - 1); // remove trailing ,
+                                if (!string.IsNullOrEmpty(s))
+                                    sb.AppendLine(s);
                             }
-                            string s = line.ToString();
-                            if (s.Length > 0)
-                                s = s.Substring(0, s.Length - 1); // remove trailing ,
-                            if (!string.IsNullOrEmpty(s))
-                                sb.AppendLine(s);
+                            writer.Write(sb.ToString());
                         }
-                        byte[] fileBytes = UTF8Encoding.UTF8.GetBytes(sb.ToString());
-                        fs.Write(fileBytes, 0, fileBytes.Length);
                     }
                 }
             }

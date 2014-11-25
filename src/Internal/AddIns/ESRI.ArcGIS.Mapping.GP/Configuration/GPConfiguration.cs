@@ -112,7 +112,7 @@ namespace ESRI.ArcGIS.Mapping.GP
 
         private bool useProxy;
         /// <summary>
-        /// Gets the name of the current GP Task
+        /// Gets or sets whether to use a proxy for accessing the GP service
         /// </summary>
         public bool UseProxy
         {
@@ -129,7 +129,7 @@ namespace ESRI.ArcGIS.Mapping.GP
 
         private string proxyUrl;
         /// <summary>
-        /// Gets the name of the current GP Task
+        /// Gets or sets the URL of the proxy to use when accessing the GP service
         /// </summary>
         public string ProxyUrl
         {

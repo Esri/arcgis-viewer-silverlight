@@ -1300,7 +1300,7 @@
     <value>נבחרים</value>
   </data>
   <data name="RemoveLayerPrompt" xml:space="preserve">
-    <value>האם ברצונך להזיז את {0} שכבה מהמפה?</value>
+    <value>האם ברצונך להסיר את השכבה {0} מהמפה?</value>
   </data>
   <data name="BrowseNoEllipsis" xml:space="preserve">
     <value>דפדף</value>

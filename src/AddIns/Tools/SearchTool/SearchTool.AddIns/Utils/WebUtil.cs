@@ -39,7 +39,7 @@ namespace SearchTool
         /// </summary>
         public static void OpenReadAsync(Uri uri, object userState, EventHandler<OpenReadEventArgs> callback, string proxyUrl = null)
         {
-            ArcGISWebClient wc = new ArcGISWebClient();
+            ArcGISWebClient wc = new ArcGISWebClient() { ProxyUrl = proxyUrl };
 
             wc.OpenReadCompleted += (sender, e) =>
             {
@@ -71,8 +71,6 @@ namespace SearchTool
                 callback(sender, new OpenReadEventArgs(e) { UsedProxy = !string.IsNullOrEmpty(proxyUrl) });
             };
 
-            if (!string.IsNullOrEmpty(proxyUrl))
-                uri = new Uri(proxyUrl + "?" + uri.ToString());
             wc.OpenReadAsync(uri, null, ArcGISWebClient.HttpMethods.Auto, userState);
         }
 

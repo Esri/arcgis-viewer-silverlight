@@ -78,7 +78,7 @@ All other rights reserved.
                                         Visibility="Collapsed"
                                         IsEnabled="{Binding ProductVersion, 
                                             Converter={StaticResource EqualsConverter},
-                                            ConverterParameter=3.2.0.0}" />
+                                            ConverterParameter=3.3.0.0}" />
 
                                     <!-- Edit button -->
                                     <Button 
