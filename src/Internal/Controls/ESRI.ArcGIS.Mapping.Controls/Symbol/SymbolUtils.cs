@@ -100,6 +100,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
             switch (geomType)
             {
                 case GeometryType.Point:
+                case GeometryType.MultiPoint:
                     {
                         symbol = new SimpleMarkerSymbol() { Color = new SolidColorBrush(Colors.Red) };
                     } break;

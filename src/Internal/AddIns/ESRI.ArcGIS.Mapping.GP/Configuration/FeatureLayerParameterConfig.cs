@@ -401,6 +401,8 @@ namespace ESRI.ArcGIS.Mapping.GP.ParameterSupport
             {
                 case ESRI.ArcGIS.Mapping.Core.GeometryType.Point:
                     return ESRI.ArcGIS.Client.Tasks.GeometryType.Point;
+                case ESRI.ArcGIS.Mapping.Core.GeometryType.MultiPoint:
+                    return ESRI.ArcGIS.Client.Tasks.GeometryType.MultiPoint;
                 case ESRI.ArcGIS.Mapping.Core.GeometryType.Polygon:
                     return ESRI.ArcGIS.Client.Tasks.GeometryType.Polygon;
                 case ESRI.ArcGIS.Mapping.Core.GeometryType.Polyline:
@@ -416,12 +418,13 @@ namespace ESRI.ArcGIS.Mapping.GP.ParameterSupport
             {
                 case ESRI.ArcGIS.Client.Tasks.GeometryType.Point:
                     return Core.GeometryType.Point;
+                case ESRI.ArcGIS.Client.Tasks.GeometryType.MultiPoint:
+                    return Core.GeometryType.MultiPoint;
                 case ESRI.ArcGIS.Client.Tasks.GeometryType.Polygon:
                     return Core.GeometryType.Polygon;
                 case ESRI.ArcGIS.Client.Tasks.GeometryType.Polyline:
                     return Core.GeometryType.Polyline;
                 case ESRI.ArcGIS.Client.Tasks.GeometryType.Envelope:
-                case ESRI.ArcGIS.Client.Tasks.GeometryType.MultiPoint:
                 default:
                     return Core.GeometryType.Unknown;
             }
@@ -469,6 +472,7 @@ namespace ESRI.ArcGIS.Mapping.GP.ParameterSupport
             switch (geometryType)
             {
                 case ESRI.ArcGIS.Mapping.Core.GeometryType.Point:
+                case ESRI.ArcGIS.Mapping.Core.GeometryType.MultiPoint:
                     return new ESRI.ArcGIS.Mapping.Core.Symbols.ImageFillSymbol()
                     {
                         DisplayName = Resources.Strings.OrangeStickpin,

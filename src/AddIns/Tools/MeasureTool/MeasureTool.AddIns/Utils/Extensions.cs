@@ -17,6 +17,7 @@ using ESRI.ArcGIS.Client.Geometry;
 using ESRI.ArcGIS.Client.Projection;
 using ESRI.ArcGIS.Client.Extensibility;
 using MeasureTool.Addins.Resources;
+using ESRI.ArcGIS.Client.Tasks;
 
 namespace MeasureTool.Addins
 {
@@ -85,8 +86,12 @@ namespace MeasureTool.Addins
         {
             // Check whether the layer is visible, of a measurable type, has a defined layer name, and is not
             // hidden due to scale dependency
-            bool measurable = layer.Visible && ((layer is ArcGISDynamicMapServiceLayer) || (layer is GraphicsLayer) 
-                || (layer is FeatureLayer)) && !string.IsNullOrEmpty(MapApplication.GetLayerName(layer)) 
+            bool measurable = layer.Visible 
+                && ((layer is ArcGISDynamicMapServiceLayer) 
+                || (layer is GraphicsLayer 
+                    && ((GraphicsLayer)layer).GeometryType() != null 
+                    && ((GraphicsLayer)layer).GeometryType() != ESRI.ArcGIS.Client.Tasks.GeometryType.MultiPoint)) 
+                && !string.IsNullOrEmpty(MapApplication.GetLayerName(layer)) 
                 && layer.IsInVisibleRange(map);
 
             // For map service layers, make sure at least one sub-layer is visible
@@ -416,6 +421,33 @@ namespace MeasureTool.Addins
         {
             if (!geometry.SupportsClientGeometricOps())
                 throw new NotSupportedException(Strings.NonClientSpatialRef);
+        }
+
+        private static GeometryType? GeometryType(this GraphicsLayer layer)
+        {
+            var fLayer = layer as FeatureLayer;
+            if (fLayer != null && fLayer.LayerInfo != null)
+            {
+                return fLayer.LayerInfo.GeometryType;
+            }
+            else if (layer.Graphics != null && layer.Graphics.Count > 0)
+            {
+                var g = layer.Graphics[0];
+                if (g.Geometry is MapPoint)
+                    return ESRI.ArcGIS.Client.Tasks.GeometryType.Point;
+                else if (g.Geometry is MultiPoint)
+                    return ESRI.ArcGIS.Client.Tasks.GeometryType.MultiPoint;
+                else if (g.Geometry is Envelope)
+                    return ESRI.ArcGIS.Client.Tasks.GeometryType.Envelope;
+                else if (g.Geometry is Polyline)
+                    return ESRI.ArcGIS.Client.Tasks.GeometryType.Polyline;
+                else
+                    return ESRI.ArcGIS.Client.Tasks.GeometryType.Polygon;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

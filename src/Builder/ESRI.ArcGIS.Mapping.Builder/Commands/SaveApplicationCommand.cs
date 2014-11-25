@@ -78,9 +78,11 @@ namespace ESRI.ArcGIS.Mapping.Builder
                     PreviewImageBytes = previewImageBytes,
                     ToolsXml = toolsXml,
                 };
-                ApplicationBuilderClient client = WCFProxyFactory.CreateApplicationBuilderProxy();
+                var title = "";
+                if (ViewerApplicationControl.Instance != null && ViewerApplicationControl.Instance.ViewerApplication != null)
+                    title = ViewerApplicationControl.Instance.ViewerApplication.TitleText; ApplicationBuilderClient client = WCFProxyFactory.CreateApplicationBuilderProxy();
                 client.SaveConfigurationForSiteCompleted += new EventHandler<SaveConfigurationForSiteCompletedEventArgs>(client_SaveConfigurationForSiteCompleted);
-                client.SaveConfigurationForSiteAsync(BuilderApplication.Instance.CurrentSite.ID, info);
+                client.SaveConfigurationForSiteAsync(BuilderApplication.Instance.CurrentSite.ID, info, title);
             }
         }
 

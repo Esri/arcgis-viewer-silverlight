@@ -53,7 +53,7 @@ namespace ESRI.ArcGIS.Mapping.Core
             List<SymbolResourceDictionaryEntry> list = new List<SymbolResourceDictionaryEntry>();            
             foreach (SymbolResourceDictionaryEntry entry in m_symbolResourceDictionaries)
             {                
-                if (entry.GeometryType == geometryType)
+                if (entry.GeometryType == geometryType || (entry.GeometryType == GeometryType.Point && geometryType == GeometryType.MultiPoint))
                     list.Add(entry);
             }
             return list;

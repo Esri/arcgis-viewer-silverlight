@@ -56,7 +56,7 @@ namespace ESRI.ArcGIS.Mapping.Core
                     writer.WriteAttributeString("Url", kmlLayer.Url.OriginalString);
 
                 if (!LayerExtensions.GetUsesProxy(layer) && !string.IsNullOrEmpty(kmlLayer.ProxyUrl))
-                    WriteAttribute("ProxyURL", kmlLayer.ProxyUrl);
+                    WriteAttribute("ProxyUrl", kmlLayer.ProxyUrl);
 
                 writer.WriteAttributeString("DisableClientCaching", kmlLayer.DisableClientCaching.ToString());
 

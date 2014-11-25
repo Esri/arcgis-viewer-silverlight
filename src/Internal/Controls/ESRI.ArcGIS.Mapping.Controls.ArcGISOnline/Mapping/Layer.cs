@@ -238,6 +238,8 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
             {
                 if (fLayer.LayerInfo.GeometryType == ESRI.ArcGIS.Client.Tasks.GeometryType.Point)
                     fLayer.SetValue(LayerExtensions.GeometryTypeProperty, GeometryType.Point);
+                if (fLayer.LayerInfo.GeometryType == ESRI.ArcGIS.Client.Tasks.GeometryType.MultiPoint)
+                    fLayer.SetValue(LayerExtensions.GeometryTypeProperty, GeometryType.MultiPoint);
                 else if (fLayer.LayerInfo.GeometryType == ESRI.ArcGIS.Client.Tasks.GeometryType.Polyline)
                     fLayer.SetValue(LayerExtensions.GeometryTypeProperty, GeometryType.Polyline);
                 else if (fLayer.LayerInfo.GeometryType == ESRI.ArcGIS.Client.Tasks.GeometryType.Polygon)

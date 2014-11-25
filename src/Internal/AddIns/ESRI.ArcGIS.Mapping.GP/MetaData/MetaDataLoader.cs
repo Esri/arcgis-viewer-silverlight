@@ -52,15 +52,11 @@ namespace ESRI.ArcGIS.Mapping.GP.MetaData
                     LoadSucceeded(this, null);
                 return;
             }
-            ArcGISWebClient wc = new ArcGISWebClient();
+            ArcGISWebClient wc = new ArcGISWebClient() { ProxyUrl = proxyUrl };
             wc.DownloadStringCompleted += wc_OpenReadCompleted;
             
             // Get service endpoint JSON URL
             string url = ServiceEndpoint.AbsoluteUri + "?f=json";
-            
-            // If proxy is specified use it to prefix the URL
-            if (!string.IsNullOrEmpty(proxyUrl))
-                url = proxyUrl + "?" + url;
 
             Uri uri = new Uri(url, UriKind.Absolute);
             wc.DownloadStringAsync(uri, null, ArcGISWebClient.HttpMethods.Auto, proxyUrl);
@@ -198,16 +194,12 @@ namespace ESRI.ArcGIS.Mapping.GP.MetaData
             object graph = serializer.ReadObject(ms);
             ServiceInfo = (GPMetaData)graph;
 
-            ArcGISWebClient wc = new ArcGISWebClient();
+            ArcGISWebClient wc = new ArcGISWebClient() { ProxyUrl = e.UserState as string };
             wc.DownloadStringCompleted += GPServerInfoDownloaded;
             string gp = "/GPServer/";
 
             string url = ServiceEndpoint.AbsoluteUri.Substring(0, 
                 ServiceEndpoint.AbsoluteUri.LastIndexOf(gp) + gp.Length - 1) + "?f=json";
-
-            // Check for proxy URL
-            if (e.UserState != null && !string.IsNullOrEmpty(e.UserState as string))
-                url = e.UserState as string + "?" + url;
 
             Uri uri = new Uri(url, UriKind.Absolute);
             wc.DownloadStringAsync(uri);

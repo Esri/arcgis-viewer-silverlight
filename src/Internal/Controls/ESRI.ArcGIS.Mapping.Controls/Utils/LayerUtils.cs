@@ -88,6 +88,10 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 {
                     return GeometryType.Polygon;
                 }
+                else if (graphic.Geometry is MultiPoint)
+                {
+                    return GeometryType.MultiPoint;
+                }
             }
             return GeometryType.Unknown;
         }

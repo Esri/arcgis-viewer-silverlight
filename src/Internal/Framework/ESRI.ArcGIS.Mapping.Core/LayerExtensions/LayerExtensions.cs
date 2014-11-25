@@ -983,6 +983,8 @@ namespace ESRI.ArcGIS.Mapping.Core
                             {
                                 if (featureLayer.LayerInfo.GeometryType == Tasks.GeometryType.Point)
                                     graphicsLayer.SetValue(LayerExtensions.GeometryTypeProperty, GeometryType.Point);
+                                else if (featureLayer.LayerInfo.GeometryType == Tasks.GeometryType.MultiPoint)
+                                    graphicsLayer.SetValue(LayerExtensions.GeometryTypeProperty, GeometryType.MultiPoint);
                                 else if (featureLayer.LayerInfo.GeometryType == Tasks.GeometryType.Polyline)
                                     graphicsLayer.SetValue(LayerExtensions.GeometryTypeProperty, GeometryType.Polyline);
                                 else if (featureLayer.LayerInfo.GeometryType == Tasks.GeometryType.Polygon)
@@ -1211,6 +1213,8 @@ namespace ESRI.ArcGIS.Mapping.Core
             {
                 if (graphic.Geometry is MapPoint)
                     return GeometryType.Point;
+                else if (graphic.Geometry is MultiPoint)
+                    return GeometryType.MultiPoint;
                 else if (graphic.Geometry is Polyline)
                     return GeometryType.Polyline;
                 else if (graphic.Geometry is Polygon || graphic.Geometry is Envelope)

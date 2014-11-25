@@ -1814,15 +1814,20 @@ namespace PrintTool.AddIns
 			{
 				Error = e.Error;
 				return;
-			}			
-			if(showStatus) Status = Resources.Strings.GetLayoutTemplatesCompleted;
+			}
+            // Use service-defined choice lists.
+            if (e.ServiceInfo.LayoutTemplates == null || e.ServiceInfo.LayoutTemplates.Count() == 0)
+            {
+                Error = new Exception("No layouts found for the specified URL");
+                return;
+            }
+            else
+            {
+                LayoutTemplates = new List<string>(e.ServiceInfo.LayoutTemplates);
+            }
+            if (showStatus) Status = Resources.Strings.GetLayoutTemplatesCompleted;
 			IsServiceAsynchronous = e.ServiceInfo.IsServiceAsynchronous;
 
-			// Use service-defined choice lists.
-			if (e.ServiceInfo.LayoutTemplates != null)
-			{
-				LayoutTemplates = new List<string>(e.ServiceInfo.LayoutTemplates);
-			}
 			if (e.ServiceInfo.Formats != null)
 			{
 				Formats = new List<string>(e.ServiceInfo.Formats);

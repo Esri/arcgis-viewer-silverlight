@@ -114,10 +114,11 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
             }
 
             Uri finalUrl = new Uri(string.Format("{0}/layers?f=json", Uri));
-            finalUrl = ESRI.ArcGIS.Mapping.Core.Utility.CreateUriWithProxy(ProxyUrl, finalUrl);
 
             if (webClient == null)
                 webClient = new ArcGISWebClient();
+            webClient.ProxyUrl = ProxyUrl;
+
             try
             {
                 ArcGISWebClient.DownloadStringCompletedEventArgs result =
