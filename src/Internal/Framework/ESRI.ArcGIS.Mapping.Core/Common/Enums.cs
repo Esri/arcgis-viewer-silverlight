@@ -13,5 +13,6 @@ namespace ESRI.ArcGIS.Mapping.Core
         Point,
         Polyline,
         Polygon,
+        MultiPoint
     }
 }

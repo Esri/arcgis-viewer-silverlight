@@ -62,7 +62,7 @@ namespace ESRI.ArcGIS.Mapping.Core
                 List<SymbolResourceDictionaryEntry> resourceDictionaries = new List<SymbolResourceDictionaryEntry>();
                 foreach (SymbolResourceDictionaryEntry entry in m_symbolResourceDictionaries)
                 {
-                    if (entry.GeometryType == geometryType)
+                    if (entry.GeometryType == geometryType || (entry.GeometryType == GeometryType.Point && geometryType == GeometryType.MultiPoint))
                         resourceDictionaries.Add(entry);
                 }
                 OnGetResourceDictionariesCompleted(new GetSymbolResourceDictionaryEntriesCompletedEventArgs() { SymbolResourceDictionaries = resourceDictionaries, UserState = userState });
@@ -127,9 +127,8 @@ namespace ESRI.ArcGIS.Mapping.Core
                 List<SymbolResourceDictionaryEntry> filteredEntries = new List<SymbolResourceDictionaryEntry>();
                 foreach (SymbolResourceDictionaryEntry entry in m_symbolResourceDictionaries)
                 {
-                    if (entry.GeometryType != geometryType)
-                        continue;
-                    filteredEntries.Add(entry);
+                    if (entry.GeometryType == geometryType || (entry.GeometryType == GeometryType.Point && geometryType == GeometryType.MultiPoint))
+                        filteredEntries.Add(entry);
                 }
 
                 onCompleted(this, new GetSymbolResourceDictionaryEntriesCompletedEventArgs()
@@ -313,7 +312,9 @@ namespace ESRI.ArcGIS.Mapping.Core
             else
             {
                 // Find the one for the geometry type
-                SymbolResourceDictionaryEntry entry = m_symbolResourceDictionaries.FirstOrDefault<SymbolResourceDictionaryEntry>(e => e.GeometryType == geometryType);
+                SymbolResourceDictionaryEntry entry = m_symbolResourceDictionaries.FirstOrDefault<SymbolResourceDictionaryEntry>(
+                    e => e.GeometryType == geometryType
+                    || (e.GeometryType == GeometryType.Point && geometryType == GeometryType.MultiPoint));
                 if (entry == null)
                 {
                     base.OnGetDefaultSymbolFailed(new ExceptionEventArgs(string.Format(Resources.Strings.ExceptionNoResourceDictionaryfoundForGeometryType, geometryType), userState));

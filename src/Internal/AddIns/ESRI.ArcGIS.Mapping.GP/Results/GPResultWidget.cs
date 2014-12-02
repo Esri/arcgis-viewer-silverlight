@@ -390,6 +390,8 @@ namespace ESRI.ArcGIS.Mapping.GP
                     {
                         if (item.Geometry is MapPoint)
                             geomType = Core.GeometryType.Point;
+                        else if (item.Geometry is MultiPoint)
+                            geomType = Core.GeometryType.MultiPoint;
                         else if (item.Geometry is ESRI.ArcGIS.Client.Geometry.Polygon)
                             geomType = Core.GeometryType.Polygon;
                         else if (item.Geometry is ESRI.ArcGIS.Client.Geometry.Polyline)
