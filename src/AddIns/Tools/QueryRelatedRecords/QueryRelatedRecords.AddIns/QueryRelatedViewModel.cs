@@ -813,7 +813,6 @@ namespace QueryRelatedRecords.AddIns
                 {
                     //  graphic.Geometry.SpatialReference.WKID = map.SpatialReference.WKID;
                     list.Add((int)graphic.Attributes[oidField]);
-                    resultsLayer.Graphics.Add(graphic);
                 }
             }
 
