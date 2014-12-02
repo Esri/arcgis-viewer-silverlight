@@ -261,6 +261,7 @@
     <Compile Include="CredentialManagement.cs" />
     <Compile Include="Utils\AsyncExtensions.cs" />
     <Compile Include="WebMap\WebMapSettings.cs" />
+    <Compile Include="WebRequest\ArcGISTokenWebRequestProvider.cs" />
     <Compile Include="XamlWriter\BehaviorXamlWriter.cs" />
     <Compile Include="XamlWriter\BrushXamlWriter.cs" />
     <Compile Include="XamlWriter\Layers\ArcGISDynamicMapServiceLayerXamlWriter.cs" />
