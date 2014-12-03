@@ -943,10 +943,10 @@
     <value>Programinnstillinger</value>
   </data>
   <data name="ArcGISOnlineSecure" xml:space="preserve">
-    <value>Secure:</value>
+    <value>Sikret:</value>
   </data>
   <data name="ArcGISOnlineSharing" xml:space="preserve">
-    <value>Sharing:</value>
+    <value>Deling:</value>
   </data>
   <data name="BingAppId" xml:space="preserve">
     <value>Bing AppID:</value>
