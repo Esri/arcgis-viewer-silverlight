@@ -60,10 +60,8 @@
     </NoWarn>
     <DocumentationFile>..\..\..\output\Extensibility\ESRI.ArcGIS.Client.Application.Controls.xml</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
+  <PropertyGroup Condition="Exists('Q:\esriKey.snk')">
+    <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Q:\esriKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
