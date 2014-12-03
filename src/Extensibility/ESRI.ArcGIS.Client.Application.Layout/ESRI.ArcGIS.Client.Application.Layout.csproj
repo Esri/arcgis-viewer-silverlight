@@ -58,10 +58,8 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\..\..\output\Extensibility\ESRI.ArcGIS.Client.Application.Layout.XML</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
+  <PropertyGroup Condition="Exists('Q:\esriKey.snk')">
+    <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Q:\esriKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
