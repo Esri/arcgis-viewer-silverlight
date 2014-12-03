@@ -133,7 +133,7 @@
     <value>뷰어에 지오프로세싱 도구를 추가합니다. 지오프로세싱 도구는 뷰어 사용자가 ArcGIS Server 지오프로세싱 서비스를 사용할 수 있게 해줍니다.</value>
   </data>
   <data name="AddGeoRSSDescription" xml:space="preserve">
-    <value>지오 지원 RSS 피드를 맵에 추가합니다.</value>
+    <value>Geo-enabled RSS 피드를 맵에 추가합니다.</value>
   </data>
   <data name="AddGP" xml:space="preserve">
     <value>GP 추가</value>
@@ -148,13 +148,13 @@
     <value>응용프로그램 빌더 설정</value>
   </data>
   <data name="ApplicationBuilderSettingsDescription" xml:space="preserve">
-    <value>추가 기능 및 베이스맵 관리를 비롯한 응용프로그램 빌더 설정을 보거나 수정합니다.</value>
+    <value>애드-인 및 베이스맵 관리를 비롯한 응용프로그램 빌더 설정을 보거나 수정합니다.</value>
   </data>
   <data name="AttributeTable" xml:space="preserve">
     <value>속성 테이블</value>
   </data>
   <data name="BasemapGalleryDescription" xml:space="preserve">
-    <value>맵에 대해 다른 베이스 레이어를 선택합니다.</value>
+    <value>맵에 대해 다른 기본 레이어를 선택합니다.</value>
   </data>
   <data name="Behaviors" xml:space="preserve">
     <value>동작</value>
@@ -253,13 +253,13 @@
     <value>제목 및 링크</value>
   </data>
   <data name="ToggleBrowseDescription" xml:space="preserve">
-    <value>탐색 패널을 표시하거나 숨깁니다. 탐색을 통해 ArcGIS Server 또는 Spatial Data Service 엔드포인트의 컨텐츠를 보고 맵에 레이어를 추가할 수 있습니다.</value>
+    <value>탐색 패널을 표시하거나 숨깁니다. 탐색을 통해 ArcGIS Server 또는 Spatial Data Service 엔드포인트의 콘텐츠를 보고 맵에 레이어를 추가할 수 있습니다.</value>
   </data>
   <data name="ToggleMapContentsDescription" xml:space="preserve">
-    <value>맵의 컨텐츠 목록을 표시하거나 숨깁니다.</value>
+    <value>맵의 콘텐츠 목록을 표시하거나 숨깁니다.</value>
   </data>
   <data name="ToggleSearchDescription" xml:space="preserve">
-    <value>검색 패널을 표시하거나 숨깁니다. 검색을 통해 장소를 검색하거나, ArcGIS.com에서 컨텐츠를 검색하거나, 웹에서 ArcGIS Server 서비스를 검색할 수 있습니다.</value>
+    <value>검색 패널을 표시하거나 숨깁니다. 검색을 통해 장소를 검색하거나, ArcGIS.com에서 콘텐츠를 검색하거나, 웹에서 ArcGIS Server 서비스를 검색할 수 있습니다.</value>
   </data>
   <data name="ToggleTableDescription" xml:space="preserve">
     <value>현재 선택된 레이어의 속성 테이블을 표시하거나 숨깁니다.</value>
@@ -286,7 +286,7 @@
     <value>새 그룹 또는 컨트롤 추가</value>
   </data>
   <data name="AddOns" xml:space="preserve">
-    <value>추가 기능</value>
+    <value>애드-인</value>
   </data>
   <data name="ApplicationProperties" xml:space="preserve">
     <value>응용프로그램 등록정보</value>
@@ -511,10 +511,10 @@
     <value>편집</value>
   </data>
   <data name="ErrorUnableToRetrieveDetailsForExtension" xml:space="preserve">
-    <value>추가 기능 패키지에 대한 설명을 가져올 수 없습니다.</value>
+    <value>애드-인 패키지에 대한 설명을 가져올 수 없습니다.</value>
   </data>
   <data name="ExtensionContainsTheFollowingAddOns" xml:space="preserve">
-    <value>추가 기능 패키지 '{0}'에 다음 추가 기능이 포함되어 있습니다.</value>
+    <value>애드-인 패키지 '{0}'에 다음 애드-인이 포함되어 있습니다.</value>
   </data>
   <data name="AreYouSureYouWantToDeleteButton" xml:space="preserve">
     <value>이 단추를 삭제하시겠습니까?</value>
@@ -556,19 +556,20 @@
     <value>오류</value>
   </data>
   <data name="ExtensionAlreadyExists" xml:space="preserve">
-    <value>추가 기능이 이미 존재함</value>
+    <value>애드-인이 이미 존재함</value>
   </data>
   <data name="ExtensionDetails" xml:space="preserve">
-    <value>추가 기능 설명: {0}</value>
+    <value>애드-인 세부 정보: {0}</value>
   </data>
   <data name="ExtensionPackageAttemptingToDeployContainsErrors" xml:space="preserve">
-    <value>배포하려는 추가 기능 패키지에 오류가 포함되어 있습니다. 계속하려면 먼저 오류를 해결해야 합니다.</value>
+    <value>배포하려는 애드-인 패키지에 오류가 포함되어 있습니다. 계속하려면 먼저 오류를 해결해야 합니다.</value>
   </data>
   <data name="ExtensionPackageAttemptingToDeployContainsWarnings" xml:space="preserve">
     <value>배포하려는 추가 기능 패키지에 경고가 포함되어 있습니다. 경고 내용을 검토한 후에 계속하세요.</value>
   </data>
   <data name="ExtensionWithSameNameAlreadyExist" xml:space="preserve">
-    <value>같은 이름의 추가 기능 패키지가 이미 있습니다. 덮어쓰시겠습니까?</value>
+    <value>a같은 이름의 애드-인 패키지가 이미 있습니다. 덮어쓰시겠습니까?
+?</value>
   </data>
   <data name="FailedToCreateAndPublishApplication" xml:space="preserve">
     <value>응용프로그램을 만들고 배포하지 못했음</value>
@@ -670,10 +671,10 @@
     <value>응용프로그램 빌더 - 맵 선택</value>
   </data>
   <data name="AddInPackagesContain" xml:space="preserve">
-    <value>추가 기능 패키지에는 추가 기능(레이아웃에 사용되는 도구, 동작 및 컨트롤)이 포함되어 있음</value>
+    <value>애드-인 패키지에는 애드-인(레이아웃에 사용되는 도구, 동작 및 컨트롤)이 포함되어 있음</value>
   </data>
   <data name="AvailableAddInPackages" xml:space="preserve">
-    <value>사용 가능한 추가 기능 패키지:</value>
+    <value>사용 가능한 애드-인 패키지:</value>
   </data>
   <data name="Button" xml:space="preserve">
     <value>단추</value>
@@ -697,10 +698,10 @@
     <value>응용프로그램의 레이아웃 지정</value>
   </data>
   <data name="UploadAddInPackages" xml:space="preserve">
-    <value>추가 기능 패키지 업로드</value>
+    <value>애드-인 패키지 업로드</value>
   </data>
   <data name="UploadAddIns" xml:space="preserve">
-    <value>추가 기능 업로드</value>
+    <value>애드-인 업로드</value>
   </data>
   <data name="Map" xml:space="preserve">
     <value>맵</value>
@@ -820,7 +821,7 @@
     <value>현재 뷰어 응용프로그램</value>
   </data>
   <data name="MapContents" xml:space="preserve">
-    <value>맵 컨텐츠</value>
+    <value>맵 콘텐츠</value>
   </data>
   <data name="NoFilesFound" xml:space="preserve">
     <value>파일을 찾을 수 없습니다.</value>
@@ -916,7 +917,7 @@
     <value>대상 빌더 도구 모음 단추에 플래시 애니메이션이 정의되어 있지 않음</value>
   </data>
   <data name="ManageAddInsToolsBehaviorsControls" xml:space="preserve">
-    <value>추가 기능 관리: 도구, 동작, 컨트롤</value>
+    <value>애드-인 관리: 도구, 동작, 컨트롤</value>
   </data>
   <data name="ManagePersonalSettings" xml:space="preserve">
     <value>개인 설정 관리</value>
@@ -943,10 +944,10 @@
     <value>응용프로그램 설정</value>
   </data>
   <data name="ArcGISOnlineSecure" xml:space="preserve">
-    <value>ArcGIS Online Secure:</value>
+    <value>보안:</value>
   </data>
   <data name="ArcGISOnlineSharing" xml:space="preserve">
-    <value>ArcGIS Online Sharing:</value>
+    <value>공유:</value>
   </data>
   <data name="BingAppId" xml:space="preserve">
     <value>Bing AppID:</value>
@@ -1016,5 +1017,8 @@
   </data>
   <data name="Tool" xml:space="preserve">
     <value>도구</value>
+  </data>
+  <data name="PortalAppID" xml:space="preserve">
+    <value>앱 ID:</value>
   </data>
 </root>
