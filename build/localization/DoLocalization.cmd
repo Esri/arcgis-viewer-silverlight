@@ -5,6 +5,8 @@ set BuildLocalizedResourceAssemblies=%RootDir%\build\localization\BuildLocalized
 set BuildLocalizedXaps=%RootDir%build\localization\BuildLocalizedXaps.cmd
 set Localizer=%RootDir%build\utilities\Localizer\Localizer.exe
 
+powershell $PSVersionTable.PSVersion
+
 @echo ----------------- Extensibility -------------------------------------
 set OutDirName=Extensibility
 
