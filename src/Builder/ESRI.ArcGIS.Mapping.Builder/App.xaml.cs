@@ -21,6 +21,7 @@ using System.Windows.Threading;
 using ESRI.ArcGIS.Mapping.Builder.Resources;
 using ESRI.ArcGIS.Client;
 using System.Windows.Browser;
+using System.Net;
 
 namespace ESRI.ArcGIS.Mapping.Builder
 {
@@ -40,20 +41,24 @@ namespace ESRI.ArcGIS.Mapping.Builder
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             #region Set IdentityManager Referer
-            // Get URL
-            string appUrl = HtmlPage.Document.DocumentUri.ToString();
+                // Get URL
+                string appUrl = HtmlPage.Document.DocumentUri.ToString();
 
-            // Remove query string
-            Uri appUri = new Uri(appUrl);
-            if (!string.IsNullOrEmpty(appUri.Query))
-                appUrl = appUrl.Replace(appUri.Query, "");
+                // Remove query string
+                Uri appUri = new Uri(appUrl);
+                if (!string.IsNullOrEmpty(appUri.Query))
+                    appUrl = appUrl.Replace(appUri.Query, "");
 
-            if (appUrl.ToLower().Contains("default.aspx"))
-                appUrl = appUrl.Substring(0, appUrl.Length - 12);
+                if (appUrl.ToLower().Contains("default.aspx"))
+                    appUrl = appUrl.Substring(0, appUrl.Length - 12);
 
-            // Set referer
-            IdentityManager.Current.TokenGenerationReferer = Uri.EscapeUriString(appUrl);
+                // Set referer
+                IdentityManager.Current.TokenGenerationReferer = Uri.EscapeUriString(appUrl);
             #endregion
+
+            // use Silverlight client HTTP handling instead of browser handling
+            var result = WebRequest.RegisterPrefix("http://", ArcGISTokenWebRequestProvider.Instance);
+            result = WebRequest.RegisterPrefix("https://", ArcGISTokenWebRequestProvider.Instance);
 
             // Check if Language Culture is supported
             string cultureName = System.Threading.Thread.CurrentThread.CurrentUICulture.ToString();

@@ -943,10 +943,10 @@
     <value>Sovelluksen asetukset</value>
   </data>
   <data name="ArcGISOnlineSecure" xml:space="preserve">
-    <value>Tietoturva ArcGIS Onlinessa:</value>
+    <value>Tietoturva:</value>
   </data>
   <data name="ArcGISOnlineSharing" xml:space="preserve">
-    <value>Jakaminen ArcGIS Onlinessa:</value>
+    <value>Jakaminen:</value>
   </data>
   <data name="BingAppId" xml:space="preserve">
     <value>Bing-sovelluksen tunnus:</value>
@@ -1016,5 +1016,8 @@
   </data>
   <data name="Tool" xml:space="preserve">
     <value>Työkalu</value>
+  </data>
+  <data name="PortalAppID" xml:space="preserve">
+    <value>Sovellustunnus:</value>
   </data>
 </root>
