@@ -88,6 +88,9 @@
     <Reference Include="ESRI.ArcGIS.Client.Portal">
       <HintPath>..\..\..\packages\ArcGISSilverlight-Portal.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Portal.dll</HintPath>
     </Reference>
+    <Reference Include="ESRI.ArcGIS.Client.Toolkit">
+      <HintPath>..\..\..\packages\ArcGISSilverlight-Toolkit.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="ESRI.ArcGIS.Client.Toolkit.DataSources">
       <HintPath>..\..\..\packages\ArcGISSilverlight-ToolkitDataSources.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Toolkit.DataSources.dll</HintPath>
     </Reference>

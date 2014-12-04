@@ -35,6 +35,9 @@ namespace ESRI.ArcGIS.Mapping.Builder
             client.GetConfigurationStoreXmlAsync();
 
             DataContextChanged += MainPage_DataContextChanged;
+
+            if (ViewerApplicationControl.Instance != null && BuilderApplication.Instance != null)
+                ViewerApplicationControl.Instance.BuilderApplication = BuilderApplication.Instance;
         }
 
         void MainPage_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)

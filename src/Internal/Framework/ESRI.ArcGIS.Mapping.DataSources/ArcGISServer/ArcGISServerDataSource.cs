@@ -655,7 +655,7 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
         /// <summary>
         /// Get the instance-level metadata for the server
         /// </summary>
-        public async Task<ServerInfo> GetServerInfo(string connectionString, string proxyUrl)
+        private async Task<ServerInfo> getServerInfo(string connectionString, string proxyUrl)
         {
             // Based on the input URL, get the different possible URLs that could point to the server
             Queue<string> candidateUrls = getCandidateUrls(connectionString);
@@ -671,7 +671,10 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
                     {
                         ServerInfo info = await server.GetServerInfo();
                         if (info != null)
+                        {
+                            m_cachedServerInfos.Add(info);
                             return info;
+                        }
                     }
                     catch { } // swallow exception because we're intentionally trying different URL permutations
                 }
@@ -687,14 +690,43 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
         }
 
         /// <summary>
-        /// Retrieves the token URL for the ArcGIS Server indicated by the passed-in URL
+        /// Get the instance-level metadata for the ArcGIS Server instance specified by the connection string
         /// </summary>
-        public static async Task<string> GetTokenURL(string url, string proxyUrl)
+        public async static Task<ServerInfo> GetServerInfo(string connectionString, string proxyUrl)
+        {
+            var candidateUrls = getCandidateUrls(connectionString).ToArray();
+            ServerInfo serverInfo = null;
+            foreach (var url in candidateUrls)
+            {
+                foreach (var info in m_cachedServerInfos)
+                {
+                    if (url == info.Url)
+                    {
+                        serverInfo = info;
+                        break;
+                    }
+                }
+            }
+
+            if (serverInfo == null)
+            {
+                var dataSource = new ArcGISServerDataSource();
+                serverInfo = await dataSource.getServerInfo(connectionString, proxyUrl);
+            }
+
+            return serverInfo;
+        }
+
+        private static List<ServerInfo> m_cachedServerInfos = new List<ServerInfo>();
+
+        /// <summary>
+        /// Retrieves the services directory URL for the ArcGIS Server indicated by the passed-in URL
+        /// </summary>
+        public static async Task<string> GetServicesDirectoryURL(string url, string proxyUrl)
         {
             string restUrl = null;
 
-            ArcGISServerDataSource dataSource = new ArcGISServerDataSource();
-            ServerInfo info = await dataSource.GetServerInfo(url, proxyUrl);
+            ServerInfo info = await ArcGISServerDataSource.GetServerInfo(url, proxyUrl);
             if (info != null && info.AuthenticationInfo != null && info.AuthenticationInfo.SupportsTokenAuthentication)
             {
                 // Construct services directory URL from info URL.  Services directory URL is required for
@@ -711,7 +743,7 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
             return restUrl;
         }
 
-        private Queue<string> getCandidateUrls(string connectionString)
+        private static Queue<string> getCandidateUrls(string connectionString)
         {
             Queue<string> candidateUrls = new Queue<string>();
             AddUrlCandidate(candidateUrls, getAgsRestUrlCandidate(connectionString, true, true, false));
@@ -725,7 +757,7 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
             return candidateUrls;
         }
 
-        private void AddUrlCandidate(Queue<string> urls, string candidateUrl)
+        private static void AddUrlCandidate(Queue<string> urls, string candidateUrl)
         {
             // Enqueue candidate URL only if it is not already in the list
             if (!urls.Contains(candidateUrl))
@@ -752,7 +784,7 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
             server.GetCatalog(userState);
         }
 
-        private string getAgsRestUrlCandidate(string url, bool appendOnlyInstancePath, bool useHttp, bool appendPath)
+        private static string getAgsRestUrlCandidate(string url, bool appendOnlyInstancePath, bool useHttp, bool appendPath)
         {
             string[] urlComponents = url.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
 
