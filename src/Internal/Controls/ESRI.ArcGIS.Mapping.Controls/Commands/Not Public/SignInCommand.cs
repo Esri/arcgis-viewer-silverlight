@@ -169,7 +169,11 @@ namespace ESRI.ArcGIS.Mapping.Controls
 
             if (showWindow)
             {
-                MessageBoxDialog.Show(message, StringResourcesManager.Instance.Get("ErrorCaption"), MessageType.Error, MessageBoxButton.OK);
+                MessageBoxDialog.Show(message, StringResourcesManager.Instance.Get("ErrorCaption"), MessageType.Error, MessageBoxButton.OK, (o, e) =>
+                    {
+                        // Raise cancelled event once failed message box has been dismissed
+                        OnCancelled();
+                    });
             }
 
             Logger.Instance.LogError(ex);
