@@ -42,24 +42,11 @@ namespace ESRI.ArcGIS.Mapping.Controls
             Assembly assembly = Assembly.GetExecutingAssembly();
             if (assembly != null)
             {
-                AssemblyName ver = new AssemblyName(assembly.FullName);
-                if (ver != null)
-                    return ver.Version.ToString();
-            }
-            return null;
-        }
-
-        public static string GetProductVersion()
-        {
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            if (assembly != null)
-            {
-                AssemblyName ver = new AssemblyName(assembly.FullName);
-                if (ver != null)
+                object[] attributes = assembly.GetCustomAttributes(typeof(AssemblyFileVersionAttribute), false);
+                if (attributes != null && attributes.Length > 0)
                 {
-                    Version version = new Version(ver.Version.Major, ver.Version.Minor, 
-                        ver.Version.Build, ver.Version.Revision);
-                    return version.ToString();
+                    AssemblyFileVersionAttribute fileVersionAttribute = (AssemblyFileVersionAttribute)attributes[0];
+                    return fileVersionAttribute.Version;
                 }
             }
             return null;

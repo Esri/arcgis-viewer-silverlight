@@ -78,7 +78,7 @@ All other rights reserved.
                                     FontWeight="Bold"
                                     Visibility="{Binding SilverlightApiVersion, Converter={StaticResource VisibilityStringNotNullOrEmptyConverter}}"/>
                             </Grid>
-                            <TextBlock Text="© 2013 Esri" Foreground="{StaticResource DesignHostBackgroundTextBrush}" 
+                            <TextBlock Text="© 2014 Esri" Foreground="{StaticResource DesignHostBackgroundTextBrush}" 
                                        Grid.Row="2" HorizontalAlignment="Left"/>
                         </Grid>
                     </Grid>
