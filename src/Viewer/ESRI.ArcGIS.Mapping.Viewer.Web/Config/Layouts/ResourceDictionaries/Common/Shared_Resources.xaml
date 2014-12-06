@@ -1739,7 +1739,7 @@ All other rights reserved.
                                     FontFamily="Verdana" 
                                     FontWeight="Bold" />
                             </Grid>
-                            <TextBlock Text="© 2013 Esri" Foreground="{TemplateBinding Foreground}" 
+                            <TextBlock Text="© 2014 Esri" Foreground="{TemplateBinding Foreground}" 
                                        Grid.Row="2" HorizontalAlignment="Left"/>
                         </Grid>
                     </Grid>
