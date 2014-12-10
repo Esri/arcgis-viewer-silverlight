@@ -190,27 +190,22 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 if (!string.IsNullOrEmpty(portalAppID))
                 {
                     var oauthAuthorize = new OAuthAuthorize() { UsePopup = true };
-					options.OAuthAuthorize = oauthAuthorize;
+                    options.OAuthAuthorize = oauthAuthorize;
+                    var oauthClientInfo = new IdentityManager.OAuthClientInfo()
+                    {
+                        ClientId = portalAppID, 
+                        OAuthAuthorize = oauthAuthorize,
+                        RedirectUri = HtmlPage.Document.DocumentUri.ToString()
+                    };
 
                     var serverInfoRegistered = IdentityManager.Current.ServerInfos.Any(info => info.ServerUrl == portalUrl);
                     var serverInfo = serverInfoRegistered ? IdentityManager.Current.ServerInfos.First(info => info.ServerUrl == portalUrl) 
                         : new IdentityManager.ServerInfo();
                     serverInfo.ServerUrl = portalUrl;
-					if (!serverInfoRegistered)
-					{
-						var oauthClientInfo = new IdentityManager.OAuthClientInfo()
-						{
-							ClientId = portalAppID,
-							RedirectUri = HtmlPage.Document.DocumentUri.ToString()
-						};
-						serverInfo.OAuthClientInfo = oauthClientInfo;
-						serverInfo.TokenAuthenticationType = IdentityManager.TokenAuthenticationType.OAuthImplicit;
-						IdentityManager.Current.RegisterServers(new IdentityManager.ServerInfo[] { serverInfo });
-					}
-					else
-					{
-						serverInfo.OAuthClientInfo.ClientId = portalAppID;
-					}
+                    serverInfo.OAuthClientInfo = oauthClientInfo;
+                    serverInfo.TokenAuthenticationType = IdentityManager.TokenAuthenticationType.OAuthImplicit;
+                    if (!serverInfoRegistered)
+                        IdentityManager.Current.RegisterServers(new IdentityManager.ServerInfo[] { serverInfo });
                     cred = await IdentityManager.Current.GenerateCredentialTaskAsync(portalUrl, options);
                 }
                 else
