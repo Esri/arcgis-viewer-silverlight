@@ -645,7 +645,8 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
                             || ((upgradeFrom10 || upgradeFrom30 || upgradeFrom31) && addin.Contains("QueryStringBehavior")) // Query string add-ins will be deployed
                             || ((upgradeFrom10 || upgradeFrom30) && addin.Contains("QueryRelatedRecords"))) // Query related records add-in will be deployed
                         {
-                            File.Copy(destinationFilePath, destinationFilePath + ".bak", true);
+                            if (File.Exists(destinationFilePath))
+                                File.Copy(destinationFilePath, destinationFilePath + ".bak", true); // back-up previous version
                             File.Copy(addinPath, destinationFilePath, true);
                         }
                     }
