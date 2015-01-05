@@ -202,6 +202,7 @@ if exist "$(SolutionDir)..\..\..\buildnum\buildnum.cs" (
     if exist "$(SolutionDir)..\..\..\depfiles\sharedlibs\ReplaceStringInFile\ReplaceStringInFile.exe" (
         xcopy "$(SolutionDir)..\..\..\buildnum\buildnum.cs" "$(SolutionDir)..\build\include\*" /Y /R
         "$(SolutionDir)..\..\..\depfiles\sharedlibs\ReplaceStringInFile\ReplaceStringInFile.exe" "$(SolutionDir)..\build\include\buildnum.cs" "10.2.5" "3.3.0"
+        "$(SolutionDir)..\..\..\depfiles\sharedlibs\ReplaceStringInFile\ReplaceStringInFile.exe" "$(SolutionDir)..\build\include\buildnum.cs" "10.3.0" "3.3.0"
     )
 )</PreBuildEvent>
   </PropertyGroup>

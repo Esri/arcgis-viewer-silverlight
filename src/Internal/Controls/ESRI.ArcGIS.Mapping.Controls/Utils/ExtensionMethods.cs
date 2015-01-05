@@ -17,32 +17,36 @@ namespace ESRI.ArcGIS.Mapping.Controls
         /// </summary>
         public async static Task<bool> IsFederatedWithPortal(this string url, string proxyUrl = null)
         {
-            // Check the requested URL's owning system URL to see if it matches that of the current portal
-            bool isFederatedWithPortal = false;
-            try
+            string portalUrl = null;
+            if (MapApplication.Current != null && MapApplication.Current.Portal != null)
+                portalUrl = MapApplication.Current.Portal.Url;
+
+            bool isFederatedWithPortal = url.ToLower().Contains(portalUrl.ToLower());
+
+            if (!isFederatedWithPortal)
             {
-                var serverInfo = await ArcGISServerDataSource.GetServerInfo(url, proxyUrl);
-                if (serverInfo != null)
+                try
                 {
-                    if (!string.IsNullOrEmpty(serverInfo.OwningSystemUrl))
+                    // Check the requested URL's owning system URL to see if it matches that of the current portal
+                    var serverInfo = await ArcGISServerDataSource.GetServerInfo(url, proxyUrl);
+                    if (serverInfo != null)
                     {
-                        string portalUrl = null;
-                        if (MapApplication.Current != null && MapApplication.Current.Portal != null)
-                            portalUrl = MapApplication.Current.Portal.Url;
-
-                        if (!string.IsNullOrEmpty(portalUrl))
+                        if (!string.IsNullOrEmpty(serverInfo.OwningSystemUrl))
                         {
-                            string owningUrl = serverInfo.OwningSystemUrl;
+                            if (!string.IsNullOrEmpty(portalUrl))
+                            {
+                                string owningUrl = serverInfo.OwningSystemUrl;
 
-                            // Convert to lower case, remove http/https and "/sharing" from URLs
-                            portalUrl = portalUrl.ToLower().TrimEnd('/').Replace("http://", "").Replace("https://", "").Replace("/sharing", "");
-                            owningUrl = owningUrl.ToLower().TrimEnd('/').Replace("http://", "").Replace("https://", "").Replace("/sharing", "");
-                            isFederatedWithPortal = portalUrl == owningUrl;
+                                // Convert to lower case, remove http/https and "/sharing" from URLs
+                                portalUrl = portalUrl.ToLower().TrimEnd('/').Replace("http://", "").Replace("https://", "").Replace("/sharing", "");
+                                owningUrl = owningUrl.ToLower().TrimEnd('/').Replace("http://", "").Replace("https://", "").Replace("/sharing", "");
+                                isFederatedWithPortal = portalUrl == owningUrl;
+                            }
                         }
                     }
                 }
+                catch { }
             }
-            catch { }
             return isFederatedWithPortal;
         }
 
