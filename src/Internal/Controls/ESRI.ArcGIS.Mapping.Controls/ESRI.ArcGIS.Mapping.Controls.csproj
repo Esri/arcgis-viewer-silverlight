@@ -56,10 +56,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
+  <PropertyGroup Condition="Exists('Q:\esriKey.snk')">
+    <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Q:\esriKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
@@ -371,6 +369,7 @@
     <Compile Include="Utils\BehaviorUtils.cs" />
     <Compile Include="Utils\EditorCommandUtility.cs" />
     <Compile Include="PopupControls\PopupHelper.cs" />
+    <Compile Include="Utils\ExtensionMethods.cs" />
     <Compile Include="Utils\PopupFeatureDataFormStyleHelper.cs" />
     <Compile Include="Utils\ThrottleTimer.cs" />
     <Compile Include="Utils\Transform.cs" />

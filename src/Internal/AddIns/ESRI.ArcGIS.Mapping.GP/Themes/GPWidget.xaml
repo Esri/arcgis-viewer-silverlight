@@ -88,6 +88,8 @@ All other rights reserved.
                                                       LayerOrder="{Binding Path=Configuration.LayerOrder, RelativeSource={RelativeSource TemplatedParent}}"
                                                       JobID="{Binding Path=JobID, RelativeSource={RelativeSource TemplatedParent}}"
                                                       TaskUrl="{Binding Path=ServiceEndpoint.AbsoluteUri, RelativeSource={RelativeSource TemplatedParent}}"
+                                                      ProxyUrl="{Binding Path=Configuration.ProxyUrl, RelativeSource={RelativeSource TemplatedParent}}"
+                                                      UseProxy="{Binding Path=Configuration.UseProxy, RelativeSource={RelativeSource TemplatedParent}}"
                                                       Foreground="{StaticResource BackgroundTextColorBrush}"
                                                       ></local:GPResultWidget>
                             </Grid>

@@ -943,10 +943,10 @@
     <value>Настройки приложения</value>
   </data>
   <data name="ArcGISOnlineSecure" xml:space="preserve">
-    <value>ArcGIS Online Безопасность:</value>
+    <value>Безопасность:</value>
   </data>
   <data name="ArcGISOnlineSharing" xml:space="preserve">
-    <value>ArcGIS Online Общий доступ:</value>
+    <value>Публикация:</value>
   </data>
   <data name="BingAppId" xml:space="preserve">
     <value>Bing AppID:</value>
@@ -1016,5 +1016,8 @@
   </data>
   <data name="Tool" xml:space="preserve">
     <value>Инструмент</value>
+  </data>
+  <data name="PortalAppID" xml:space="preserve">
+    <value>ID приложения:</value>
   </data>
 </root>

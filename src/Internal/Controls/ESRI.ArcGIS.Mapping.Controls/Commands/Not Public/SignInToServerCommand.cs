@@ -122,17 +122,18 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 if (viewModel.Url != null)
                 {
                     // Get the token URL for the ArcGIS Server
-                    credentialUrl = await ArcGISServerDataSource.GetTokenURL(viewModel.Url, null);
+                    credentialUrl = await ArcGISServerDataSource.GetServicesDirectoryURL(viewModel.Url, null);
                     if (credentialUrl == null)
                         onSignInFailed(new Exception(Strings.InvalidUrlUserPassword));
                 }
 
                 if (IdentityManager.Current != null)
                 {
+                    var options = new IdentityManager.GenerateTokenOptions() { ProxyUrl = ProxyUrl };
                     // Authenticate against the server to retrieve user token
                     IdentityManager.Credential cred =
                         await IdentityManager.Current.GenerateCredentialTaskAsync(
-                        credentialUrl, viewModel.Username, viewModel.Password);
+                        credentialUrl, viewModel.Username, viewModel.Password, options);
 
                     if (cred != null)
                     {

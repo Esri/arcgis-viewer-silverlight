@@ -131,7 +131,7 @@ namespace SearchTool
                     {
                         string displayName = Properties.GetDisplayName(d);
                         if (string.IsNullOrEmpty(displayName))
-                            Properties.SetDisplayName(d, d.GetDisplayName());
+                            Properties.SetDisplayName(d, d.GetDisplayNameFromAttribute());
 
                         string description = Properties.GetDescription(d);
                         if (string.IsNullOrEmpty(description))

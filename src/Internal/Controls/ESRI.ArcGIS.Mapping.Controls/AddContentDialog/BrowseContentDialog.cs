@@ -32,6 +32,8 @@ using System.Collections.Specialized;
 using System.Collections;
 using ESRI.ArcGIS.Mapping.Windowing;
 using ESRI.ArcGIS.Mapping.Controls.Resources;
+using ESRI.ArcGIS.Mapping.Controls.ArcGISOnline;
+using ESRI.ArcGIS.Client.Extensibility;
 
 namespace ESRI.ArcGIS.Mapping.Controls
 {
@@ -743,9 +745,9 @@ Application.Current.RootVisual as UIElement
                 {
                     // Get the URL to use for token authentication
                     _currentRestUrl = 
-                        await ArcGISServerDataSource.GetTokenURL(connection.Url, connection.ProxyUrl);
+                        await ArcGISServerDataSource.GetServicesDirectoryURL(connection.Url, connection.ProxyUrl);
                     // Initialize the command allowing users to sign-in
-                    await initializeSignInCommand(_currentRestUrl);
+                    await initializeSignInCommand(_currentRestUrl, connection.ProxyUrl);
 
                     dataSourceWithResource.GetCatalogCompleted += (o, e) =>
                     {
@@ -786,13 +788,13 @@ Application.Current.RootVisual as UIElement
                         // if a user has signed in to another server with a username and password that is
                         // valid for this server, it will authenticate using those credentials automatically
                         IdentityManager.Credential newCred = 
-                            await ApplicationHelper.TryExistingCredentials(connection.Url);
+                            await ApplicationHelper.TryExistingCredentials(connection.Url, connection.ProxyUrl);
                         if (newCred != null)
                         {
                             // If authentication is successful and the URL belong to the current ArcGIS Portal,
                             // use the credentials to also sign into the application environment's current 
                             // Portal instance
-                            if (connection.Url.IsPortalUrl())
+                            if (await connection.Url.IsFederatedWithPortal())
                                 await ApplicationHelper.SignInToPortal(newCred);
 
                             // If a credential for the URL has not already be saved into the application 
@@ -850,9 +852,9 @@ Application.Current.RootVisual as UIElement
             {
                 // Get the URL to use for token authentication
                 _currentRestUrl = 
-                    await ArcGISServerDataSource.GetTokenURL(connection.Url, connection.ProxyUrl);
+                    await ArcGISServerDataSource.GetServicesDirectoryURL(connection.Url, connection.ProxyUrl);
                 // Initialize the command allowing users to sign-in
-                await initializeSignInCommand(_currentRestUrl);
+                await initializeSignInCommand(_currentRestUrl, connection.ProxyUrl);
 
                 dataSource.GetCatalogCompleted += (o, e) =>
                 {
@@ -888,13 +890,13 @@ Application.Current.RootVisual as UIElement
                     // with the existing set of credentials in the application.  This makes it so that
                     // if a user has signed in to another server with a username and password that is
                     // valid for this server, it will authenticate using those credentials automatically
-                    IdentityManager.Credential newCred = await ApplicationHelper.TryExistingCredentials(connection.Url);
+                    IdentityManager.Credential newCred = await ApplicationHelper.TryExistingCredentials(connection.Url, connection.ProxyUrl);
                     if (newCred != null)
                     {
                         // If authentication is successful and the URL belong to the current ArcGIS Portal,
                         // use the credentials to also sign into the application environment's current 
                         // Portal instance
-                        if (connection.Url.IsPortalUrl())
+                        if (await connection.Url.IsFederatedWithPortal())
                             await ApplicationHelper.SignInToPortal(newCred);
 
                         // If a credential for the URL has not already be saved into the application 
@@ -919,26 +921,53 @@ Application.Current.RootVisual as UIElement
 
         // Initializes the command used to prompt the user to sign in to the current 
         // ArcGIS Server or Portal instance
-        private async Task initializeSignInCommand(string tokenUrl)
+        private async Task initializeSignInCommand(string servicesDirectoryUrl, string proxyUrl)
         {
-            if (tokenUrl != null)
+            if (servicesDirectoryUrl != null)
             {
                 // Before intializing the command, attempt to authenticate using existing credentials.  If
                 // successful, add the credential to the app environment's collection
-                IdentityManager.Credential newCred = await ApplicationHelper.TryExistingCredentials(tokenUrl);
+                IdentityManager.Credential newCred = await ApplicationHelper.TryExistingCredentials(servicesDirectoryUrl, proxyUrl);
                 if (newCred != null && !UserManagement.Current.Credentials.Any(c => c.Url != null 
                 && c.Url.Equals(newCred.Url, StringComparison.OrdinalIgnoreCase) 
                 && !string.IsNullOrEmpty(c.Token)))
                     UserManagement.Current.Credentials.Add(newCred);
 
-                if (tokenUrl.IsPortalUrl())
+                if (await servicesDirectoryUrl.IsFederatedWithPortal()) // Check whether the AGS instance referred to is a federated server
                 {
-                    NeedsServerCredentials = false;
-                    NeedsPortalCredentials = newCred == null;
+                    // Server is federated, so sign-in will be with Portal, not AGS
+
+                    SignInToPortalCommand.ProxyUrl = proxyUrl;
+                    NeedsServerCredentials = false; // don't need server credentials since we'll be signing into Portal
+                    NeedsPortalCredentials = newCred == null; // whether we need credentials for Portal depends on whether TryExistingCredentials found any
+
+                    if (!NeedsPortalCredentials 
+                    && ArcGISOnlineEnvironment.ArcGISOnline != null
+                    && (ArcGISOnlineEnvironment.ArcGISOnline.User == null 
+                        || ArcGISOnlineEnvironment.ArcGISOnline.User.Current == null)) 
+                    {
+                        // We already have credentials for Portal, so complete the "sign-in" experience for portal
+                        IdentityManager.Credential portalCred = null;
+                        if (!newCred.Url.IsPortalUrl()) // Check whether the URL originates from the Portal server
+                        { 
+                            try
+                            {
+                                // The credential we have is for a federated server that's not the portal server itself.  So try getting
+                                // one for the portal server as we'll need that to get secure Portal metadata.
+                                var portalUrl = MapApplication.Current != null && MapApplication.Current.Portal != null 
+                                    ? MapApplication.Current.Portal.Url : null;
+                                portalCred = await IdentityManager.Current.GetCredentialTaskAsync(portalUrl, false); 
+                            }
+                            catch {}
+                        }
+                        // Complete "sign-in."  This performs actions like getting the current user's metadata.
+                        await ApplicationHelper.SignInToPortal(portalCred ?? newCred);
+                    }
                 }
                 else
                 {
-                    SignInToServerCommand.Url = tokenUrl;
+                    SignInToServerCommand.Url = servicesDirectoryUrl;
+                    SignInToServerCommand.ProxyUrl = proxyUrl;
                     NeedsServerCredentials = newCred == null;
                     NeedsPortalCredentials = false;
                 }

@@ -51,6 +51,10 @@
     <WarningLevel>4</WarningLevel>
     <PackageAsSingleFile>false</PackageAsSingleFile>
   </PropertyGroup>
+  <PropertyGroup Condition="Exists('Q:\esriKey2.snk')">
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Q:\esriKey2.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System" />

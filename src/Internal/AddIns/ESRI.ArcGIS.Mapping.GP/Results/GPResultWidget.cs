@@ -17,6 +17,7 @@ using ESRI.ArcGIS.Client.Geometry;
 using ESRI.ArcGIS.Client.Tasks;
 using ESRI.ArcGIS.Mapping.Core;
 using ESRI.ArcGIS.Mapping.GP.ParameterSupport;
+using System.Windows.Browser;
 
 namespace ESRI.ArcGIS.Mapping.GP
 {
@@ -136,6 +137,24 @@ namespace ESRI.ArcGIS.Mapping.GP
         public static readonly DependencyProperty TaskUrlProperty =
             DependencyProperty.Register("TaskUrl", typeof(string), typeof(GPResultWidget), null);
 
+        public string ProxyUrl
+        {
+            get { return (string)GetValue(ProxyUrlProperty); }
+            set { SetValue(ProxyUrlProperty, value); }
+        }
+
+        public static readonly DependencyProperty ProxyUrlProperty =
+            DependencyProperty.Register("ProxyUrl", typeof(string), typeof(GPResultWidget), null);
+
+        public bool UseProxy
+        {
+            get { return (bool)GetValue(UseProxyProperty); }
+            set { SetValue(UseProxyProperty, value); }
+        }
+
+        public static readonly DependencyProperty UseProxyProperty =
+            DependencyProperty.Register("UseProxy", typeof(bool), typeof(GPResultWidget), null);
+
         #endregion
 
         bool inputLayerInfoAvailable()
@@ -202,7 +221,11 @@ namespace ESRI.ArcGIS.Mapping.GP
                     string t = "/rest/services/";
                     string url = string.Format("{0}/{1}/MapServer/jobs/{2}", TaskUrl.Substring(0, TaskUrl.IndexOf(t, StringComparison.OrdinalIgnoreCase) + t.Length - 1), mapServiceLayerParameterConfig.Name, JobID);
 
-                    ArcGISDynamicMapServiceLayer layer = new ArcGISDynamicMapServiceLayer { Url = url,  };
+                    ArcGISDynamicMapServiceLayer layer = new ArcGISDynamicMapServiceLayer 
+                    { 
+                        Url = url,
+                        ProxyURL = UseProxy ? ProxyUrl : null
+                    };
                     layer.SetValue(ESRI.ArcGIS.Mapping.Core.LayerExtensions.ExcludeSerializationProperty, true);
                     addToMap(mapServiceLayerParameterConfig, layer);
                 }
@@ -221,12 +244,15 @@ namespace ESRI.ArcGIS.Mapping.GP
                         {
                             GPResultImageLayer gpImageLayer = e.GPResultImageLayer;
                             setLayerProps(cfg, gpImageLayer);
+                            gpImageLayer.ProxyUrl = UseProxy ? ProxyUrl : null;
                             Map.Layers.Add(gpImageLayer);
                             layerParamNameIDLookup.Add(cfg.Name, gpImageLayer.ID);
                             pendingGPResultImageLayers--;
                             if (layerParamNameIDLookup.Count > 1 && pendingGPResultImageLayers == 0)
                                 LayerOrderer.OrderLayers(Map, LayerOrder, layerParamNameIDLookup);
                         };
+                        // Initialize proxy
+                        gp.ProxyURL = UseProxy ? ProxyUrl : null;
                         gp.GetResultImageLayerAsync(JobID, cfg.Name);
                         continue;
                     }
@@ -318,7 +344,13 @@ namespace ESRI.ArcGIS.Mapping.GP
             ToolTipService.SetToolTip(tb, value);
             if (url && !string.IsNullOrWhiteSpace(value))
             {
-                System.Windows.Controls.HyperlinkButton hl = new System.Windows.Controls.HyperlinkButton() { NavigateUri = new Uri(value), Content = tb, TargetName = "_blank", Padding = new Thickness(2, 0, 2, 0) };
+                System.Windows.Controls.HyperlinkButton hl = new System.Windows.Controls.HyperlinkButton()
+                {
+                    NavigateUri = new Uri(UseProxy ? string.Format("{0}?{1}", ProxyUrl, HttpUtility.UrlEncode(value)) : value),
+                    Content = tb,
+                    TargetName = "_blank",
+                    Padding = new Thickness(2, 0, 2, 0)
+                };
                 hl.SetValue(Grid.RowProperty, ParamContainer.RowDefinitions.Count - 1);
                 hl.SetValue(Grid.ColumnProperty, 1);
                 ParamContainer.Children.Add(hl); 
@@ -358,6 +390,8 @@ namespace ESRI.ArcGIS.Mapping.GP
                     {
                         if (item.Geometry is MapPoint)
                             geomType = Core.GeometryType.Point;
+                        else if (item.Geometry is MultiPoint)
+                            geomType = Core.GeometryType.MultiPoint;
                         else if (item.Geometry is ESRI.ArcGIS.Client.Geometry.Polygon)
                             geomType = Core.GeometryType.Polygon;
                         else if (item.Geometry is ESRI.ArcGIS.Client.Geometry.Polyline)

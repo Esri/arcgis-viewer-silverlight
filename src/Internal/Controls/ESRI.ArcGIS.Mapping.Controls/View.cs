@@ -1132,19 +1132,75 @@ namespace ESRI.ArcGIS.Mapping.Controls
 
         void l_InitializationFailed(object sender, EventArgs e)
         {
-            Layer lay = sender as Layer;
-            if (lay != null)
+            Layer layer = sender as Layer;
+            if (layer != null)
             {
-                if (lay.InitializationFailure != null)
+                // Try proxy URL if defined for application
+                if (!string.IsNullOrEmpty(MapApplication.Current.Urls.ProxyUrl))
                 {
-                    NotificationPanel.Instance.AddNotification(ESRI.ArcGIS.Mapping.Controls.Resources.Strings.LayerInitFailure, lay.InitializationFailure.Message != null ? lay.InitializationFailure.Message : ESRI.ArcGIS.Mapping.Controls.Resources.Strings.LayerNotInitialized, lay.InitializationFailure.ToString(), MessageType.Error);
-                    lay.SetValue(ESRI.ArcGIS.Client.Extensibility.LayerExtensions.ErrorMessageProperty, lay.InitializationFailure.Message);
+                    dynamic dLayer = layer;
+                    try
+                    {
+                        // Try accessing property named "ProxyUrl"
+                        if (string.IsNullOrEmpty(dLayer.ProxyUrl))
+                        {
+                            // Set proxy
+                            dLayer.ProxyUrl = MapApplication.Current.Urls.ProxyUrl;
+
+                            // Re-initialize layer by re-applying URL
+                            dLayer.Url = getNewUrl(dLayer);
+                            return;
+                        }
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            // Try accessing property named "ProxyURL"
+                            if (string.IsNullOrEmpty(dLayer.ProxyURL))
+                            {
+                                // Set proxy
+                                dLayer.ProxyURL = MapApplication.Current.Urls.ProxyUrl;
+
+                                // Re-initialize layer by re-applying URL
+                                dLayer.Url = getNewUrl(dLayer);
+                                return;
+                            }
+                        }
+                        catch { }
+                    }
+                }
+                if (layer.InitializationFailure != null)
+                {
+                    NotificationPanel.Instance.AddNotification(ESRI.ArcGIS.Mapping.Controls.Resources.Strings.LayerInitFailure, layer.InitializationFailure.Message != null ? layer.InitializationFailure.Message : ESRI.ArcGIS.Mapping.Controls.Resources.Strings.LayerNotInitialized, layer.InitializationFailure.ToString(), MessageType.Error);
+                    layer.SetValue(ESRI.ArcGIS.Client.Extensibility.LayerExtensions.ErrorMessageProperty, layer.InitializationFailure.Message);
                 }
                 else
-                    lay.SetValue(ESRI.ArcGIS.Client.Extensibility.LayerExtensions.ErrorMessageProperty, ESRI.ArcGIS.Mapping.Controls.Resources.Strings.LayerNotInitialized);
+                    layer.SetValue(ESRI.ArcGIS.Client.Extensibility.LayerExtensions.ErrorMessageProperty, ESRI.ArcGIS.Mapping.Controls.Resources.Strings.LayerNotInitialized);
 
-                lay.InitializationFailed -= layerInitFailed;
+                layer.InitializationFailed -= layerInitFailed;
             }
+        }
+
+        private dynamic getNewUrl(dynamic dLayer)
+        {
+            var url = dLayer.Url;
+            string urlString = url as string;
+            var urlIsString = true;
+
+            if (urlString == null) // assume Uri
+            {
+                urlIsString = false;
+                urlString = ((Uri)url).ToString();
+            }
+
+            var connector = urlString.Contains('?') ? "&" : "?";
+            urlString = string.Format("{0}{1}r={2}", urlString, connector, DateTime.Now.Ticks);
+
+            if (!urlIsString)
+                url = new Uri(urlString);
+
+            return url;
         }
 
         private void AttachToControlEvents()
@@ -1428,6 +1484,15 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 return;
             }
 
+            var uri = new Uri(url);
+            var tree = uri.AbsolutePath.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            if (tree[tree.Length - 2].ToLower() == "services" && tree[tree.Length - 3].ToLower() == "rest")
+            {
+                // Challenge is coming from a secure folder.  Do not prompt.
+                callback(null, null);
+                return;
+            }
+
             // In some cases, multiple challenges are raised for resources at the same endpoint (e.g. tiles from 
             // hosted tile services in ArcGIS Online).  To keep the user from being prompted to login multiple times
             // in succession, each new credential is cached for a half-second.  If another challenge is raised
@@ -1492,15 +1557,16 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 catch { }
             }
 
+            var proxyUrl = options != null ? options.ProxyUrl : null;
             // Sign in suppression checks passed.  Try to authenticate using existing credentials
             // Try existing credentials
-            IdentityManager.Credential cred = await ApplicationHelper.TryExistingCredentials(url);
+            IdentityManager.Credential cred = await ApplicationHelper.TryExistingCredentials(url, proxyUrl);
             if (cred != null)
             {
                 // The existing credentials were sufficient for authentication.
 
                 // If the request was for a URL in the current ArcGIS Portal, sign into Portal
-                if (url.IsPortalUrl())
+                if (await url.IsFederatedWithPortal())
                     await ApplicationHelper.SignInToPortal(cred);
 
                 // If there is not already a credential in the app's credentials collection that has the
@@ -1518,7 +1584,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
             // the browser has authenticated the user (e.g. using PKI or IWA auth)
             try
             {
-                cred = await IdentityManager.Current.GenerateCredentialTaskAsyncEx(url);
+                cred = await IdentityManager.Current.GenerateCredentialTaskAsyncEx(url, options);
             }
             catch { } // Swallow authorization exception
 
@@ -1531,10 +1597,10 @@ namespace ESRI.ArcGIS.Mapping.Controls
             // Existing credentials were insufficient.  Prompt user to sign in.
 
             SignInCommand signInCommand = null;
-            if (url.IsPortalUrl()) // Sign into ArcGIS portal
-                signInCommand = new SignInToAGSOLCommand();
+            if (await url.IsFederatedWithPortal()) // Sign into ArcGIS portal
+                signInCommand = new SignInToAGSOLCommand() { ProxyUrl = proxyUrl };
             else // Sign into ArcGIS Server
-                signInCommand = new SignInToServerCommand() { Url = url };
+                signInCommand = new SignInToServerCommand() { Url = url, ProxyUrl = proxyUrl };
 
             signInCommand.SignedIn += (o, e) =>
             {
@@ -2629,7 +2695,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
             if (e.Error == null && e.Map != null)
             {
                 attemptingReload = false;
-                Map.InitializeFromWebMap(e);
+                Map.InitializeFromWebMap(e, l_InitializationFailed);
                 Map.GetMapUnitsAsync(SetScaleBarMapUnit, getMapUnitsFailed);
 
                 doc.GetItemCompleted -= LoadWebMap_GetItemCompleted;
@@ -2934,7 +3000,13 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 MapApplication.Current.SetValue(MapApplication.PortalProperty, portal);
 
             if (portal != null && !portal.IsInitialized && !string.IsNullOrEmpty(portal.Url))
-                portal.InitializeAsync(portal.Url, null);
+            {
+                portal.InitializeAsync(portal.Url, (p, ex) => 
+                {
+                    if (ex == null && p!= null && !string.IsNullOrEmpty(p.Url))
+                        OAuthAuthorize.Initialize(p.Url);
+                });
+            }
         }
 
         public string ArcGISOnlineSharing

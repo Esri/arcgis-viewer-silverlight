@@ -51,6 +51,20 @@ namespace ESRI.ArcGIS.Mapping.Controls
                     WindowType.DesignTimeFloating);
         }
 
+        private string _proxyUrl;
+        /// <summary>
+        /// Gets or sets the URL to the ArcGIS Server to sign into
+        /// </summary>
+        public string ProxyUrl
+        {
+            get { return _proxyUrl; }
+            set
+            {
+                _proxyUrl = value;
+                RaisePropertyChanged("ProxyUrl");
+            }
+        }
+
         #region Command Handling - canSignIn, onSignIn, onCancel
 
         /// <summary>
@@ -144,13 +158,23 @@ namespace ESRI.ArcGIS.Mapping.Controls
         /// <summary>
         /// Executes sign-in failure logic
         /// </summary>
-        protected virtual void onSignInFailed(Exception ex)
+        protected virtual void onSignInFailed(Exception ex, bool showWindow = false)
         {
-            if (viewModel == null)
-                return;
+            var message = StringResourcesManager.Instance.Get("SignInFailed");
+            if (viewModel != null)
+            {
+                viewModel.SignInError = message;
+                viewModel.SigningIn = false;
+            }
 
-            viewModel.SignInError = StringResourcesManager.Instance.Get("SignInFailed");
-            viewModel.SigningIn = false;
+            if (showWindow)
+            {
+                MessageBoxDialog.Show(message, StringResourcesManager.Instance.Get("ErrorCaption"), MessageType.Error, MessageBoxButton.OK, (o, e) =>
+                    {
+                        // Raise cancelled event once failed message box has been dismissed
+                        OnCancelled();
+                    });
+            }
 
             Logger.Instance.LogError(ex);
         }

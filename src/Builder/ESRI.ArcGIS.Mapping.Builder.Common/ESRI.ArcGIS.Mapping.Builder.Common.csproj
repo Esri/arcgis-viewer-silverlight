@@ -39,10 +39,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
+  <PropertyGroup Condition="Exists('Q:\esriKey2.snk')">
+    <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Q:\esriKey2.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>

@@ -39,10 +39,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
             {
                 Title = builderTitle,
             };
-            if (ViewerApplicationControl.Instance != null)
-                info.Version = ApplicationHelper.GetProductVersion();
-            else
-                info.Version = ApplicationHelper.GetExecutingAssemblyVersion();
+            info.Version = ApplicationHelper.GetExecutingAssemblyVersion();
 
             _aboutControl.DataContext = info;
 

@@ -27,7 +27,7 @@ rem Get Version number for resource assembly
 set VersionNumberAssembly=%OutputDir%\..\%ResourceName%.dll
 
 REM get build number
-"%RootDir%Build\Utilities\sigcheck" -n -q "%OutputDir%\..\%ResourceName%.dll">version.txt
+powershell "[System.Reflection.Assembly]::LoadFrom("""%OutputDir%\..\%ResourceName%.dll""").GetName().Version.ToString()">version.txt
 SET /p AssemblyVersion=<version.txt
 del version.txt /F /Q
 
@@ -55,12 +55,21 @@ attrib -R /S "%ProjectFolder%\Resources\*.resx"
 if NOT EXIST "%OutputDir%\Languages.txt" (xcopy "%RootDir%build\localization\Languages.txt" %OutputDir%\ /C/I/R/Y )
 
 set LanguageFile=%OutputDir%\Languages.txt
+set KeyFile=Q:\esriKey.snk
 FOR /F "eol=; tokens=1* delims=," %%C in (%LanguageFile%) do (
-if EXIST Resources\Strings.%%C.resx (
-mkdir %OutputDir%\%%C
-%ResGen% /compile Resources\Strings.%%C.resx,Resources\Strings.%%C.resources
-REM %AsmLinker% /t:lib /embed:Resources\Strings.%%C.resources,%ResourceNamespace%.Resources.Strings.%%C.resources /culture:%%C /out:%OutputDir%\%%C\%ResourceName%.resources.dll %Platform% %Version% "%Keyfile%" "%Title%" "%Product%" "%Description%" "%Company%" "%Copyright%" ))
-%AsmLinker% /t:lib /embed:Resources\Strings.%%C.resources,%ResourceNamespace%.Resources.Strings.%%C.resources /culture:%%C /out:%OutputDir%\%%C\%ResourceName%.resources.dll %Platform% %Version% "%Title%" "%Product%" "%Description%" "%Company%" "%Copyright%" ))
+	if EXIST Resources\Strings.%%C.resx (
+		mkdir %OutputDir%\%%C
+		%ResGen% /compile Resources\Strings.%%C.resx,Resources\Strings.%%C.resources
+
+		if EXIST "%KeyFile%" (
+			@echo --- generating signed %ResourceName%.dll resource assembly for %%C ---
+			%AsmLinker% /t:lib /embed:Resources\Strings.%%C.resources,%ResourceNamespace%.Resources.Strings.%%C.resources /culture:%%C /out:%OutputDir%\%%C\%ResourceName%.resources.dll %Platform% %Version% "/keyfile:%KeyFile%" "%Title%" "%Product%" "%Description%" "%Company%" "%Copyright%" 
+		) else (
+			@echo --- generating unsigned %ResourceName%.dll resource assembly for %%C ---
+			%AsmLinker% /t:lib /embed:Resources\Strings.%%C.resources,%ResourceNamespace%.Resources.Strings.%%C.resources /culture:%%C /out:%OutputDir%\%%C\%ResourceName%.resources.dll %Platform% %Version% "%Title%" "%Product%" "%Description%" "%Company%" "%Copyright%"
+		)
+	)
+)
 del /F /Q "%OutputDir%\Languages.txt"
 goto End
 

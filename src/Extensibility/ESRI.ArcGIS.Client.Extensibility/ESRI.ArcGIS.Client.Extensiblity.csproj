@@ -58,10 +58,8 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\..\..\output\Extensibility\ESRI.ArcGIS.Client.Extensibility.XML</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
+  <PropertyGroup Condition="Exists('Q:\esriKey.snk')">
+    <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Q:\esriKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
@@ -192,11 +190,21 @@
     </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>pushd "$(SolutionDir)..\build\include\"
+    <PreBuildEvent>call "$(SolutionDir)..\build\CopyDependencies.bat" "$(SolutionDir)" "$(ConfigurationName)"
+
+pushd "$(SolutionDir)..\build\include\"
 copy build.txt +,,
 
 @echo restore NuGet packages
-"$(SolutionDir).nuget\nuget.exe" restore "$(SolutionDir)$(SolutionName)$(SolutionExt)"</PreBuildEvent>
+"$(SolutionDir).nuget\nuget.exe" restore "$(SolutionDir)$(SolutionName)$(SolutionExt)"
+
+if exist "$(SolutionDir)..\..\..\buildnum\buildnum.cs" (
+    if exist "$(SolutionDir)..\..\..\depfiles\sharedlibs\ReplaceStringInFile\ReplaceStringInFile.exe" (
+        xcopy "$(SolutionDir)..\..\..\buildnum\buildnum.cs" "$(SolutionDir)..\build\include\*" /Y /R
+        "$(SolutionDir)..\..\..\depfiles\sharedlibs\ReplaceStringInFile\ReplaceStringInFile.exe" "$(SolutionDir)..\build\include\buildnum.cs" "10.2.5" "3.3.0"
+        "$(SolutionDir)..\..\..\depfiles\sharedlibs\ReplaceStringInFile\ReplaceStringInFile.exe" "$(SolutionDir)..\build\include\buildnum.cs" "10.3.0" "3.3.0"
+    )
+)</PreBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -58,6 +58,8 @@ namespace ESRI.ArcGIS.Mapping.GP.ParameterSupport
               {
                   case ESRI.ArcGIS.Mapping.Core.GeometryType.Point:
                       return "point ";
+                  case ESRI.ArcGIS.Mapping.Core.GeometryType.MultiPoint:
+                      return "multipoint ";
                   case ESRI.ArcGIS.Mapping.Core.GeometryType.Polyline:
                        return "line ";
                   case ESRI.ArcGIS.Mapping.Core.GeometryType.Polygon:
@@ -160,6 +162,7 @@ namespace ESRI.ArcGIS.Mapping.GP.ParameterSupport
                     switch (geomType)
                     {
                         case ESRI.ArcGIS.Mapping.Core.GeometryType.Point:
+                        case ESRI.ArcGIS.Mapping.Core.GeometryType.MultiPoint:
                         case ESRI.ArcGIS.Mapping.Core.GeometryType.Polygon:
                         case ESRI.ArcGIS.Mapping.Core.GeometryType.Polyline:
                             if (matchesGeomType(item as GraphicsLayer))

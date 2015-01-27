@@ -192,6 +192,8 @@ namespace ESRI.ArcGIS.Mapping.GP
                             Geoprocessor gp = new Geoprocessor(ServiceEndpoint.AbsoluteUri);
                             gp.Failed += gp_FailedAsync;
                             gp.GetResultDataCompleted += gp2_GetResultDataCompleted;
+                            // Initialize proxy
+                            gp.ProxyURL = Configuration.UseProxy ? Configuration.ProxyUrl : null;
                             gp.GetResultDataAsync(e.JobInfo.JobId, param.Name);
                         }
                     }

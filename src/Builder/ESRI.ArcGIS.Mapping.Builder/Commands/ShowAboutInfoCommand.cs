@@ -30,7 +30,7 @@ namespace ESRI.ArcGIS.Mapping.Builder
             _aboutControl.DataContext = new AboutInfo()
             {
                 Title = builderTitle,
-                Version = ApplicationHelper.GetProductVersion(),
+                Version = ApplicationHelper.GetExecutingAssemblyVersion(),
                 SilverlightApiVersion = ApplicationHelper.GetSilverlightAPIVersion(),
             };
 

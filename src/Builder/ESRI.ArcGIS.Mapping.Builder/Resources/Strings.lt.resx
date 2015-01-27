@@ -943,10 +943,10 @@
     <value>Aplikacijos nustatymai</value>
   </data>
   <data name="ArcGISOnlineSecure" xml:space="preserve">
-    <value>ArcGIS Online apsauga:</value>
+    <value>Apsauga:</value>
   </data>
   <data name="ArcGISOnlineSharing" xml:space="preserve">
-    <value>ArcGIS Online bendrinimas:</value>
+    <value>Bendrinimas:</value>
   </data>
   <data name="BingAppId" xml:space="preserve">
     <value>Bing AppID:</value>
@@ -1016,5 +1016,8 @@
   </data>
   <data name="Tool" xml:space="preserve">
     <value>Įrankis</value>
+  </data>
+  <data name="PortalAppID" xml:space="preserve">
+    <value>Aplikacijos ID:</value>
   </data>
 </root>

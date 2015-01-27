@@ -19,6 +19,7 @@ using System.Windows;
 using System.IO;
 using ESRI.ArcGIS.Client;
 using System.Collections.Generic;
+using ESRI.ArcGIS.Client.Toolkit;
 
 namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
 {
@@ -147,6 +148,8 @@ namespace ESRI.ArcGIS.Mapping.Controls.ArcGISOnline
             if (_url != value)
             {
                 _url = value;
+                if (!string.IsNullOrEmpty(_url))
+                    OAuthAuthorize.Initialize(_url);
                 OnPropertyChanged("Url");
             }
         }

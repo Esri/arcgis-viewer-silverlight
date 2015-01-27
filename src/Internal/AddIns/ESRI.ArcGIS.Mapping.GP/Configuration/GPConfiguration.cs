@@ -112,7 +112,7 @@ namespace ESRI.ArcGIS.Mapping.GP
 
         private bool useProxy;
         /// <summary>
-        /// Gets the name of the current GP Task
+        /// Gets or sets whether to use a proxy for accessing the GP service
         /// </summary>
         public bool UseProxy
         {
@@ -129,7 +129,7 @@ namespace ESRI.ArcGIS.Mapping.GP
 
         private string proxyUrl;
         /// <summary>
-        /// Gets the name of the current GP Task
+        /// Gets or sets the URL of the proxy to use when accessing the GP service
         /// </summary>
         public string ProxyUrl
         {
@@ -382,6 +382,11 @@ namespace ESRI.ArcGIS.Mapping.GP
                                 else if (frs.GeometryType == "esriGeometryPoint")
                                 {
                                     layerConfig.GeometryType = ESRI.ArcGIS.Mapping.Core.GeometryType.Point;
+                                    layerConfig.HelpText = Resources.Strings.DrawPoint;
+                                }
+                                else if (frs.GeometryType == "esriGeometryMultipoint")
+                                {
+                                    layerConfig.GeometryType = ESRI.ArcGIS.Mapping.Core.GeometryType.MultiPoint;
                                     layerConfig.HelpText = Resources.Strings.DrawPoint;
                                 }
                                 #region Layer with field info, geometry type and renderer

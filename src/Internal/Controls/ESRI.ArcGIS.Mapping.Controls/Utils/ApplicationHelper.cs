@@ -42,24 +42,11 @@ namespace ESRI.ArcGIS.Mapping.Controls
             Assembly assembly = Assembly.GetExecutingAssembly();
             if (assembly != null)
             {
-                AssemblyName ver = new AssemblyName(assembly.FullName);
-                if (ver != null)
-                    return ver.Version.ToString();
-            }
-            return null;
-        }
-
-        public static string GetProductVersion()
-        {
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            if (assembly != null)
-            {
-                AssemblyName ver = new AssemblyName(assembly.FullName);
-                if (ver != null)
+                object[] attributes = assembly.GetCustomAttributes(typeof(AssemblyFileVersionAttribute), false);
+                if (attributes != null && attributes.Length > 0)
                 {
-                    Version version = new Version(ver.Version.Major, ver.Version.Minor, 
-                        ver.Version.Build, ver.Version.Revision);
-                    return version.ToString();
+                    AssemblyFileVersionAttribute fileVersionAttribute = (AssemblyFileVersionAttribute)attributes[0];
+                    return fileVersionAttribute.Version;
                 }
             }
             return null;
@@ -94,7 +81,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
                         build = "0";
                 }
 
-                return string.Format("3.2.0.{0}", build);
+                return string.Format("3.3.0.{0}", build);
             }
 
             return null;
@@ -111,25 +98,30 @@ namespace ESRI.ArcGIS.Mapping.Controls
         /// <summary>
         /// Attempt to use application environment credentials to authenticate against the specified URL
         /// </summary>
-        public static async Task<IdentityManager.Credential> TryExistingCredentials(string requestUrl)
+        public static async Task<IdentityManager.Credential> TryExistingCredentials(string requestUrl, string proxyUrl = null)
         {
             if (string.IsNullOrEmpty(requestUrl) || UserManagement.Current.Credentials.Count == 0)
                 return null;
 
-            bool isPortalUrl = requestUrl.IsPortalUrl();
+            bool isPortalUrl = await requestUrl.IsFederatedWithPortal();
             string credentialUrl = requestUrl;
 
             // Get the token auth endpoint if the requested URL is not an ArcGIS Online/Portal URL
             if (!isPortalUrl)
-                credentialUrl = await ArcGISServerDataSource.GetTokenURL(requestUrl, null);
+                credentialUrl = await ArcGISServerDataSource.GetServicesDirectoryURL(requestUrl, proxyUrl);
 
             // Check whether there's already a credential for the url
             foreach (IdentityManager.Credential cred in UserManagement.Current.Credentials)
             {
                 IdentityManager.Credential newCred = null;
-                if (isPortalUrl && !string.IsNullOrEmpty(cred.Url) && cred.Url.IsPortalUrl())
+                if (isPortalUrl && !string.IsNullOrEmpty(cred.Url) && await cred.Url.IsFederatedWithPortal())
                 {
-                    newCred = cred; // If a portal credential already exists, try it
+                    try
+                    {
+                        // If a portal credential already exists, try simply getting a new credential for the same portal
+                        newCred = await IdentityManager.Current.GetCredentialTaskAsync(requestUrl, false); 
+                    }
+                    catch { }
                 }
                 else if (!string.IsNullOrEmpty(cred.Url) 
                 && cred.Url.Equals(credentialUrl, StringComparison.OrdinalIgnoreCase))
@@ -140,8 +132,9 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 {
                     try
                     {
+                        var options = new IdentityManager.GenerateTokenOptions() { ProxyUrl = proxyUrl };
                         // Try authenticating with the user name and password
-                        newCred = await IdentityManager.Current.GenerateCredentialTaskAsync(credentialUrl, cred.UserName, cred.Password, null);
+                        newCred = await IdentityManager.Current.GenerateCredentialTaskAsync(credentialUrl, cred.UserName, cred.Password, options);
                     }
                     catch { } // Intentionally trying credentials that may not work, so swallow exceptions
                 }
@@ -156,12 +149,12 @@ namespace ESRI.ArcGIS.Mapping.Controls
                         testUrl += string.Format("&token={0}&f=json", newCred.Token);
                     else
                         testUrl += string.Format("?token={0}&f=json", newCred.Token);
-                    WebClient wc = new WebClient();
+                    var wc = new ArcGISWebClient() { ProxyUrl = proxyUrl };
                     string result = null;
                     try
                     {
                         // Issue the request
-                        result = await wc.DownloadStringTaskAsync(testUrl);
+                        result = await wc.DownloadStringTaskAsync(new Uri(testUrl));
                     }
                     catch
                     {

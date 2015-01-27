@@ -943,10 +943,10 @@
     <value>Anwendungseinstellungen</value>
   </data>
   <data name="ArcGISOnlineSecure" xml:space="preserve">
-    <value>ArcGIS Online Secure:</value>
+    <value>Sicher:</value>
   </data>
   <data name="ArcGISOnlineSharing" xml:space="preserve">
-    <value>ArcGIS Online Sharing:</value>
+    <value>Freigabe:</value>
   </data>
   <data name="BingAppId" xml:space="preserve">
     <value>Bing AppID:</value>
@@ -1016,5 +1016,8 @@
   </data>
   <data name="Tool" xml:space="preserve">
     <value>Werkzeug</value>
+  </data>
+  <data name="PortalAppID" xml:space="preserve">
+    <value>App-ID:</value>
   </data>
 </root>

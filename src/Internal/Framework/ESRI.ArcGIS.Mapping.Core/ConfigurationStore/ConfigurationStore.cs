@@ -37,7 +37,19 @@ namespace ESRI.ArcGIS.Mapping.Core
             }
         }
 
-        [DataMember(Name = "PlaceNameLookups", Order = 4, IsRequired = false)]
+        string portalAppId;
+        [DataMember(Name = "PortalAppId", Order = 4, IsRequired = false)]
+        public string PortalAppId
+        {
+            get { return portalAppId; }
+            set
+            {
+                portalAppId = value;
+                raisePropertyChange("PortalAppId");
+            }
+        }
+
+        [DataMember(Name = "PlaceNameLookups", Order = 5, IsRequired = false)]
         public List<PlaceNameLookupInfo> PlaceNameLookups { get; set; }
 
         public static ConfigurationStore Current { get; set; }

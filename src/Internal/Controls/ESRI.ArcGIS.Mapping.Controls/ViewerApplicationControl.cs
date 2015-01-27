@@ -226,6 +226,8 @@ namespace ESRI.ArcGIS.Mapping.Controls
             DependencyProperty.Register("DefaultApplicationSettings", typeof(ViewerApplication), typeof(ViewerApplicationControl), null);
         #endregion
 
+        public ViewerApplication BuilderApplication { get; set; }
+
         public FileConfigurationProvider ConfigurationProvider { get; set; }
         public bool IsEditMode { get; set; }
         private ApplicationColorSet ApplicationColorSet { get; set; }
@@ -347,6 +349,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 ViewerApplication.ArcGISOnlineSecure = DefaultApplicationSettings.ArcGISOnlineSecure;
                 ViewerApplication.ArcGISOnlineSharing = DefaultApplicationSettings.ArcGISOnlineSharing;
                 ViewerApplication.BingMapsAppId = DefaultApplicationSettings.BingMapsAppId;
+                ViewerApplication.PortalAppId = DefaultApplicationSettings.PortalAppId;
                 ViewerApplication.GeometryService = DefaultApplicationSettings.GeometryService;
                 ViewerApplication.ArcGISOnlineProxy = DefaultApplicationSettings.ArcGISOnlineProxy;
                 ViewerApplication.Proxy = DefaultApplicationSettings.Proxy;
@@ -595,7 +598,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 };
                 if (!string.IsNullOrWhiteSpace(ConfigurationStoreFilePath))
                 {
-                    View.ConfigurationStoreProvider = new ViewerConfigurationStoreProvider(ViewerApplication.GeometryService, ViewerApplication.BingMapsAppId);
+                    View.ConfigurationStoreProvider = new ViewerConfigurationStoreProvider(ViewerApplication.GeometryService, ViewerApplication.BingMapsAppId, ViewerApplication.PortalAppId);
                 }
                 View.ProxyUrl = View.DefaultProxyUrl = ViewerApplication.Proxy;
                 layoutResourceDictionaries = new List<ResourceDictionary>();
@@ -991,10 +994,12 @@ namespace ESRI.ArcGIS.Mapping.Controls
     {
         private string _geometryServiceUrl;
         private string _bingMapsAppId;
-        public ViewerConfigurationStoreProvider(string geometryServiceUrl, string bingMapsAppId)
+        private string _portalAppId;
+        public ViewerConfigurationStoreProvider(string geometryServiceUrl, string bingMapsAppId, string portalAppId)
         {
             _geometryServiceUrl = geometryServiceUrl;
             _bingMapsAppId = bingMapsAppId;
+            _portalAppId = portalAppId;
         }
 
         public override void GetConfigurationStoreAsync(object userState)
@@ -1002,6 +1007,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
             ConfigurationStore store = new ConfigurationStore() { 
                 GeometryServices = new List<GeometryServiceInfo>(),
                 BingMapsAppId = _bingMapsAppId,
+                PortalAppId = _portalAppId
             };
             if (!string.IsNullOrWhiteSpace(_geometryServiceUrl))
                 store.GeometryServices.Add(new GeometryServiceInfo() { Url = _geometryServiceUrl });

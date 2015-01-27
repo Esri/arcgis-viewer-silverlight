@@ -171,6 +171,8 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 return;
 
             SymbolDescription desc = null;
+            if (geometryType == GeometryType.MultiPoint) // Treat MultiPoint as point for looking up default symbol
+                geometryType = GeometryType.Point;
             if (Symbology.DefaultSymbols.TryGetValue(geometryType, out desc))
             {                
                 if (desc != null && desc.Symbol != null)
@@ -319,7 +321,7 @@ namespace ESRI.ArcGIS.Mapping.Controls
                 #endregion
 
                 #region Change PictureMarkerSymbol to ImageFillSymbol
-                if (gLayer.Renderer != null && geometryType == GeometryType.Point)
+                if (gLayer.Renderer != null && (geometryType == GeometryType.Point || geometryType == GeometryType.MultiPoint))
                 {
                     SimpleRenderer sr = gLayer.Renderer as SimpleRenderer;
                     ESRI.ArcGIS.Client.FeatureService.Symbols.PictureMarkerSymbol pms = null;

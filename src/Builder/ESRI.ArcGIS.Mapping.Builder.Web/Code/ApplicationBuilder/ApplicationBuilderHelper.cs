@@ -53,15 +53,6 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
                 Fault.Message = "Unable to copy website files " + status;
                 return false;
             }
-
-            // Apply app title to index.htm
-            var path = Path.Combine(targetSite.PhysicalPath, "index.htm");
-            var html = File.ReadAllText(path);
-            var encodedName = HttpUtility.HtmlEncode(targetSite.Title);
-            var defaultTitle = string.Format("<title>{0}</title>", Strings._ArcGISViewerForMicrosoftSilverlight_);
-            var newTitle = string.Format("<title>{0}</title>", encodedName);
-            html = html.Replace(defaultTitle, newTitle);
-            File.WriteAllText(path, html);
             
             return true;
         }
@@ -141,7 +132,7 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
             return true;
         }
 
-        public bool SaveConfigurationForSite(Site site, SitePublishInfo info, out FaultContract Fault)
+        public bool SaveConfigurationForSite(Site site, SitePublishInfo info, out FaultContract Fault, string newTitle = null)
         {
             Fault = null;
 
@@ -298,6 +289,35 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
             // Save a preview image
             PreviewImageManager.SavePreviewImageForSite(site.ID, info.PreviewImageBytes);
 
+            // Apply app title to index.htm
+
+            // Get path of home page
+            path = Path.Combine(site.PhysicalPath, "index.htm");
+            if (File.Exists(path)) // make sure it exists
+            {
+                var updateTitle = newTitle != null; // Check whether title needs to be updated or is being specified for the first time
+
+                // Determine title to be replaced and title to replace it with
+                var titleToReplace = updateTitle ? site.Title : Strings._ArcGISViewerForMicrosoftSilverlight_;
+                var replacementTitle = updateTitle ? newTitle : site.Title;
+
+                // HTML-encode new title
+                replacementTitle = HttpUtility.HtmlEncode(replacementTitle); 
+
+                // Format titles as HTML title elements
+                var currentTitleElement = string.Format("<title>{0}</title>", titleToReplace);
+                var newTitleElement = string.Format("<title>{0}</title>", replacementTitle);
+
+                // Get HTML for home page 
+                var html = File.ReadAllText(path);
+
+                // Insert title
+                html = html.Replace(currentTitleElement, newTitleElement);
+
+                // Save home page
+                File.WriteAllText(path, html);
+            }
+
             return true;
         }
 
@@ -373,10 +393,6 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
                 @"Config\Symbols\BasicSymbols.json.txt",
                 @"Config\Symbols\ColorSymbols.json.txt",
 
-                // SearchTool and PrintTool Add-Ins (new at 3.1)
-                @"Extensions\SearchTool.AddIns.xap",
-                @"Extensions\PrintTool.AddIns.xap",
-
                 // Resource xaps for non-English apps
                 @"Culture\Xaps\ar\Viewer.resources.xap",
                 @"Culture\Xaps\de\Viewer.resources.xap",
@@ -424,15 +440,6 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
                 // Main XAP
                 @"Viewer.xap",
 
-                // QueryRelatedRecords Add-In (new at 3.1)
-                @"Extensions\QueryRelatedRecords.AddIns.xap",
-
-                // Other add-ins (need to be updated due to recompile)
-                @"Extensions\Bookmarks.AddIns.xap",
-                @"Extensions\MeasureTool.AddIns.xap",
-                @"Extensions\PrintTool.AddIns.xap",
-                @"Extensions\SearchTool.AddIns.xap",
-
                 // Resource xaps for non-English apps
                 @"Culture\Xaps\ar\Viewer.resources.xap",
                 @"Culture\Xaps\de\Viewer.resources.xap",
@@ -454,19 +461,36 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
                 // Shared XAML resources - auto-positioning of pop-up (InfoWindow) is defined here
                 @"Config\Layouts\ResourceDictionaries\Common\Shared_Resources.xaml",
 
-                // Query string parameter behaviors (new at 3.2)
-                @"Extensions\Esri.ArcGIS.Client.Application.AddIns.CenterQueryStringBehavior.xap",
-                @"Extensions\Esri.ArcGIS.Client.Application.AddIns.ExtentQueryStringBehavior.xap",
-                @"Extensions\Esri.ArcGIS.Client.Application.AddIns.ScaleQueryStringBehavior.xap",
-                @"Extensions\Esri.ArcGIS.Client.Application.AddIns.ScaleLevelQueryStringBehavior.xap",
-                @"Extensions\Esri.ArcGIS.Client.Application.AddIns.WebMapQueryStringBehavior.xap",
+                // Resource xaps for non-English apps
+                @"Culture\Xaps\ar\Viewer.resources.xap",
+                @"Culture\Xaps\cs\Viewer.resources.xap",
+                @"Culture\Xaps\da\Viewer.resources.xap",
+                @"Culture\Xaps\de\Viewer.resources.xap",
+                @"Culture\Xaps\es\Viewer.resources.xap",
+                @"Culture\Xaps\et\Viewer.resources.xap",
+                @"Culture\Xaps\fi\Viewer.resources.xap",
+                @"Culture\Xaps\fr\Viewer.resources.xap",
+                @"Culture\Xaps\he\Viewer.resources.xap",
+                @"Culture\Xaps\it\Viewer.resources.xap",
+                @"Culture\Xaps\ja\Viewer.resources.xap",
+                @"Culture\Xaps\ko\Viewer.resources.xap",
+                @"Culture\Xaps\lt\Viewer.resources.xap",
+                @"Culture\Xaps\lv\Viewer.resources.xap",
+                @"Culture\Xaps\nb-NO\Viewer.resources.xap",
+                @"Culture\Xaps\nl\Viewer.resources.xap",
+                @"Culture\Xaps\pl\Viewer.resources.xap",
+                @"Culture\Xaps\pt-BR\Viewer.resources.xap",
+                @"Culture\Xaps\pt-PT\Viewer.resources.xap",
+                @"Culture\Xaps\ru\Viewer.resources.xap",
+                @"Culture\Xaps\ro\Viewer.resources.xap",
+                @"Culture\Xaps\zh-CN\Viewer.resources.xap"
+            };
 
-                // Other add-ins (need to be updated due to recompile)
-                @"Extensions\Bookmarks.AddIns.xap",
-                @"Extensions\MeasureTool.AddIns.xap",
-                @"Extensions\PrintTool.AddIns.xap",
-                @"Extensions\SearchTool.AddIns.xap",
-                @"Extensions\QueryRelatedRecords.AddIns.xap",
+        // Files to add/overwrite that are specific to upgrading to 3.3
+        private static string[] m_changedFilesAt33 = new string[]
+            {
+                // Main XAP
+                @"Viewer.xap",
 
                 // Resource xaps for non-English apps
                 @"Culture\Xaps\ar\Viewer.resources.xap",
@@ -558,11 +582,17 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
                 bool upgradeFrom10 = false;
                 bool upgradeFrom30 = false;
                 bool upgradeFrom31 = false;
+                bool upgradeFrom32 = false;
                 string[] copyFiles = null;
-                if (targetSite.ProductVersion == "3.1.0.0")
+                if (targetSite.ProductVersion == "3.2.0.0")
+                {
+                    copyFiles = m_changedFilesAt33;
+                    upgradeFrom32 = true;
+                }
+                else if (targetSite.ProductVersion == "3.1.0.0")
                 {
                     upgradeFrom31 = true;
-                    copyFiles = m_changedFilesAt32;
+                    copyFiles = m_changedFilesAt32; // Files changed at 3.2 is super-set of files changed at 3.3, so no need to join
                 }
                 else if (targetSite.ProductVersion == "3.0.0.0")
                 {
@@ -584,7 +614,41 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
                         string destinationFilePath = Path.Combine(targetSite.PhysicalPath, file);
                         if (File.Exists(destinationFilePath)) // make backup
                             File.Copy(destinationFilePath, destinationFilePath + ".bak", true);
+                        else if (!Directory.Exists(Path.GetDirectoryName(destinationFilePath)))
+                            Directory.CreateDirectory(Path.GetDirectoryName(destinationFilePath));
                         File.Copy(sourceFilePath, destinationFilePath, true);
+                    }
+                }
+
+                // list of add-ins - only upgrade if deployed to current site or will be added to site as part of upgrade
+                string[] addins = { 
+                    @"Extensions\Esri.ArcGIS.Client.Application.AddIns.CenterQueryStringBehavior.xap",
+                    @"Extensions\Esri.ArcGIS.Client.Application.AddIns.ExtentQueryStringBehavior.xap",
+                    @"Extensions\Esri.ArcGIS.Client.Application.AddIns.ScaleQueryStringBehavior.xap",
+                    @"Extensions\Esri.ArcGIS.Client.Application.AddIns.ScaleLevelQueryStringBehavior.xap",
+                    @"Extensions\Esri.ArcGIS.Client.Application.AddIns.WebMapQueryStringBehavior.xap",
+                    @"Extensions\Bookmarks.AddIns.xap",
+                    @"Extensions\MeasureTool.Addins.xap",
+                    @"Extensions\PrintTool.AddIns.xap",
+                    @"Extensions\QueryRelatedRecords.AddIns.xap",
+                    @"Extensions\QueryTool.AddIns.xap",
+                    @"Extensions\SearchTool.AddIns.xap" };
+
+                // Update any optional out-of-the-box add-ins that were deployed to the app, or copy those that will be added as a result of upgrading
+                foreach (var addin in addins)
+                {
+                    var addinPath = Path.Combine(extensionsPhysicalPath, addin).Replace("Extensions\\Extensions", "Extensions");
+                    var destinationFilePath = Path.Combine(targetSite.PhysicalPath, addin);
+                    if (File.Exists(addinPath))
+                    {
+                        if (File.Exists(destinationFilePath)    // Add-In already deployed
+                            || ((upgradeFrom10 || upgradeFrom30 || upgradeFrom31) && addin.Contains("QueryStringBehavior")) // Query string add-ins will be deployed
+                            || ((upgradeFrom10 || upgradeFrom30) && addin.Contains("QueryRelatedRecords"))) // Query related records add-in will be deployed
+                        {
+                            if (File.Exists(destinationFilePath))
+                                File.Copy(destinationFilePath, destinationFilePath + ".bak", true); // back-up previous version
+                            File.Copy(addinPath, destinationFilePath, true);
+                        }
                     }
                 }
 
@@ -868,6 +932,37 @@ namespace ESRI.ArcGIS.Mapping.Builder.Web
                         Message = "Tools configuration not found.  Upgrade cannot continue"
                     };
                     return false;
+                }
+
+                // Update XML namespaces for Map Contents and Editor at v3.2
+                var controlsFilePath = Path.Combine(targetSite.PhysicalPath, @"Config\Controls.xml");
+                if ((upgradeFrom10 || upgradeFrom30 || upgradeFrom31 || upgradeFrom32) && File.Exists(controlsFilePath))
+                {
+                    File.Copy(controlsFilePath, controlsFilePath + ".bak", true); // make backup
+
+                    // Get the config as a string
+                    var controlsConfig = "";
+                    using (StreamReader streamReader = new StreamReader(controlsFilePath))
+                    {
+                        controlsConfig = streamReader.ReadToEnd();
+                        streamReader.Close();
+                    }
+
+                    if (!string.IsNullOrEmpty(controlsConfig))
+                    {
+                        // Update Editor XML namespace
+                        var oldEditorXmlns = "xmlns=\"http://schemas.datacontract.org/2004/07/ESRI.ArcGIS.Client.Application.Controls\"";
+                        var newEditorXmlns = "xmlns=\"http://schemas.datacontract.org/2004/07/ESRI.ArcGIS.Mapping.Controls.Editor\"";
+                        controlsConfig = controlsConfig.Replace(oldEditorXmlns, newEditorXmlns);
+
+                        // Update Map Contents XML namespace
+                        var oldMapContentsXmlns = "xmlns=\"http://schemas.datacontract.org/2004/07/ESRI.ArcGIS.Client.Application.Controls.MapContents\"";
+                        var newMapContentsXmlns = "xmlns=\"http://schemas.datacontract.org/2004/07/ESRI.ArcGIS.Mapping.Controls.MapContents\"";
+                        controlsConfig = controlsConfig.Replace(oldMapContentsXmlns, newMapContentsXmlns);
+
+                        // Save updated configuration
+                        File.WriteAllText(controlsFilePath, controlsConfig);
+                    }
                 }
 
                 // Update version and add-ins in app config

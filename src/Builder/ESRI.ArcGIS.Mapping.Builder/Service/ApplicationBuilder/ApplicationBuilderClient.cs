@@ -311,11 +311,12 @@ namespace ESRI.ArcGIS.Mapping.Builder.ApplicationBuilder
         #endregion
 
         #region SaveConfiguration
-        public void SaveConfigurationForSiteAsync(string siteId, SitePublishInfo info, object userState = null)
+        public void SaveConfigurationForSiteAsync(string siteId, SitePublishInfo info, string siteTitle, object userState = null)
         {
             XDocument xDoc = new XDocument();
             XElement rootElem = new XElement("SaveApplication");
             xDoc.Add(rootElem);
+            rootElem.SetAttributeValue("Title", siteTitle);
 
             serializeSitePublishInfo(info, rootElem);
 

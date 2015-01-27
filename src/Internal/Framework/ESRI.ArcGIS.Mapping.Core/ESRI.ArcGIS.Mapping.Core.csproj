@@ -56,10 +56,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
+  <PropertyGroup Condition="Exists('Q:\esriKey.snk')">
+    <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Q:\esriKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
@@ -194,7 +192,6 @@
     <Compile Include="Symbols\CustomSymbolXamlWriter.cs" />
     <Compile Include="Symbols\GeometryConverter.cs" />
     <Compile Include="Common\GeometryServiceOperationHelper.cs" />
-    <Compile Include="ConfigurationStore\Locators\LocatorServiceMetaDataRetrievalHelper.cs" />
     <Compile Include="Common\Utility.cs" />
     <Compile Include="Configuration\ConfigurationStoreHelper.cs" />
     <Compile Include="CustomFields\DateTimeFieldValue.cs" />
@@ -262,6 +259,7 @@
     <Compile Include="CredentialManagement.cs" />
     <Compile Include="Utils\AsyncExtensions.cs" />
     <Compile Include="WebMap\WebMapSettings.cs" />
+    <Compile Include="WebRequest\ArcGISTokenWebRequestProvider.cs" />
     <Compile Include="XamlWriter\BehaviorXamlWriter.cs" />
     <Compile Include="XamlWriter\BrushXamlWriter.cs" />
     <Compile Include="XamlWriter\Layers\ArcGISDynamicMapServiceLayerXamlWriter.cs" />

@@ -943,10 +943,10 @@
     <value>הגדרות אפליקציה</value>
   </data>
   <data name="ArcGISOnlineSecure" xml:space="preserve">
-    <value>מאובטח ArcGIS Online</value>
+    <value>מאובטח:</value>
   </data>
   <data name="ArcGISOnlineSharing" xml:space="preserve">
-    <value>שיתוף ArcGIS Online:</value>
+    <value>שיתוף:</value>
   </data>
   <data name="BingAppId" xml:space="preserve">
     <value>Bing AppID:</value>
@@ -1016,5 +1016,8 @@
   </data>
   <data name="Tool" xml:space="preserve">
     <value>כלי</value>
+  </data>
+  <data name="PortalAppID" xml:space="preserve">
+    <value>מספר זיהוי של אפליקציה:</value>
   </data>
 </root>

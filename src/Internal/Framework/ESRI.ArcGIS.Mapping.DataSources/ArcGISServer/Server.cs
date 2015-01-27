@@ -51,10 +51,10 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
             builder.Query = Utils.GetQueryParameters(Uri);
             finalUrl = builder.Uri;
 
-            finalUrl = ESRI.ArcGIS.Mapping.Core.Utility.CreateUriWithProxy(ProxyUrl, finalUrl);
-
             if (webClient == null)
                 webClient = new ArcGISWebClient();
+            webClient.ProxyUrl = ProxyUrl;
+
             try
             {
                 ArcGISWebClient.DownloadStringCompletedEventArgs result =
@@ -100,10 +100,9 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
             builder.Query = Utils.GetQueryParameters(serverInfoUrl);
             finalUrl = builder.Uri;
 
-            finalUrl = ESRI.ArcGIS.Mapping.Core.Utility.CreateUriWithProxy(ProxyUrl, finalUrl);
-
             if (webClient == null)
                 webClient = new ArcGISWebClient();
+            webClient.ProxyUrl = ProxyUrl;
 
             string json = null;
             try
@@ -146,7 +145,12 @@ namespace ESRI.ArcGIS.Mapping.DataSources.ArcGISServer
 
             // Apply the URL used to retrieve the metadata to the ServerInfo instance
             if (info != null)
+            {
                 info.Url = finalUrl.ToString();
+                info.BaseUrl = serverInfoUrl;
+                if (!string.IsNullOrEmpty(ProxyUrl))
+                    info.ProxyUrl = ProxyUrl;
+            }
 
             // Return the ServerInfo
             return info;

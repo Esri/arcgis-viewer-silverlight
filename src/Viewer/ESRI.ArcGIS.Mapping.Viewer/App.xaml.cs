@@ -50,6 +50,9 @@ namespace ESRI.ArcGIS.Mapping.Viewer
             IdentityManager.Current.TokenGenerationReferer = Uri.EscapeUriString(appUrl);
             #endregion
 
+            var result = WebRequest.RegisterPrefix("http://", ArcGISTokenWebRequestProvider.Instance);
+            result = WebRequest.RegisterPrefix("https://", ArcGISTokenWebRequestProvider.Instance);
+
             // Check if Language Culture is supported
             string cultureName = System.Threading.Thread.CurrentThread.CurrentUICulture.ToString();
             ESRI.ArcGIS.Mapping.Core.SatelliteResources.Xap resourceXap = new ESRI.ArcGIS.Mapping.Core.SatelliteResources.Xap();
