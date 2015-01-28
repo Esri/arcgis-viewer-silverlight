@@ -75,9 +75,8 @@
     <AssemblyOriginatorKeyFile>Q:\esriKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ESRI.ArcGIS.Client, Version=10.2.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\packages\ArcGISSilverlight-Core.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.dll</HintPath>
+    <Reference Include="ESRI.ArcGIS.Client, Version=10.2.5.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\ArcGISSilverlight-Core.3.3.0.33\lib\sl50\ESRI.ArcGIS.Client.dll</HintPath>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Client.Application.Controls, Version=3.2.0.168, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -89,9 +88,8 @@
       <HintPath>..\..\..\..\..\output\Extensibility\ESRI.ArcGIS.Client.Application.Layout.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="ESRI.ArcGIS.Client.Behaviors, Version=10.2.1.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\packages\ArcGISSilverlight-Behaviors.3.2.0.22\lib\sl50\ESRI.ArcGIS.Client.Behaviors.dll</HintPath>
+    <Reference Include="ESRI.ArcGIS.Client.Behaviors, Version=10.2.5.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\ArcGISSilverlight-Behaviors.3.3.0.33\lib\sl50\ESRI.ArcGIS.Client.Behaviors.dll</HintPath>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Client.Extensibility, Version=3.2.0.168, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -136,7 +134,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\ArcGISSilverlight-Behaviors.3.2.0.22\lib\sl50\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\..\..\..\packages\ArcGISSilverlight-Behaviors.3.3.0.33\lib\sl50\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
